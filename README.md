@@ -31,10 +31,13 @@ the standard and its key concepts.
 
 ## How to contribute
 
-The [Contributors guide](CONTRIBUTING.md) provides a basic introduction about how to contribute to this project and 
-the development of the Risk Data Library Standard
+The [Contributors guide](CONTRIBUTING.md) covers the different ways in which you can contribute to this project to 
+support the development and adoption of the Risk Data Library Standard.
 
-Read [the project governance documentation](GOVERNANCE.md) for more detail.
+## Project governance
+
+Read [the project governance documentation](GOVERNANCE.md) for more detail about our approach to making decisions and 
+agreeing changes to the standard.
 
 ## Licence
 
