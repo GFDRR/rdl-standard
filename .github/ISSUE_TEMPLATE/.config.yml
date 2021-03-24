@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+contact_links:
+  - name: RDL Community Forum
+    url: https://github.com/GFDRR/rdl-standard/discussions
+    about: Please use the forum for general discussion and to ask questions
+  - name: Project Contact
+    url: http://riskdatalibrary.org/contact
+    about: Please refer to our contact page for how to contact the RDL team
+    
