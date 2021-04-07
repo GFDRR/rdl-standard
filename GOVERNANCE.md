@@ -32,10 +32,56 @@ Additional documentation and source code produced by this initiative will also b
 This project is currently managed by the Risk Data Library team working within the 
 [Global Facility for Disaster Risk and Reduction](https://www.gfdrr.org/en).
 
-We are reviewing how best to coordinate with the community to move forward with development of the 
-standard. This may involve creating specific working groups to focus on individual elements. Earlier 
-versions of the standard involved a similar collaborative approach, drawing on expertise from across a 
-wide range of organisations.
+To guide development and adoption of the standards, in addition to open working through 
+this github project the team invites expert input via an Advisory Group and, as 
+required, specific Technical Working Groups.
+
+### Advisory Group
+
+The RDL Advisory Group consists of experts in risk data management and analysis from 
+the humanitarian sector, insurance industry and other related domains.
+
+The Advisory Group will help to:
+
+1. ensure the development of the standard is informed by the needs of a broad selection 
+of stakeholders across a range of domains
+2. steer the development of the RDL standards, providing expert review on priorities, activities and major technical decisions.
+3. ensure that our work aligns with other relevant initiatives, to avoid 
+duplication of work and to build momentum around adoption of common standards
+4. identify opportunities for joint projects that can demonstrate the value of adopting the 
+RDL standards
+5. disseminate the impacts and outputs of the RDL project to other stakeholders
+
+Participation in the Advisory Group is by invitation only. The initial membership will 
+consist of representatives from organisations who have contributed to the early 
+development of the standard.
+
+Membership will be regularly reviewed. Please contact the team to discuss participation if 
+you believe that you, or your organisation, are able to contribute.
+
+The Advisory Group will meet every two months. The agenda, slides and minutes from these 
+meetings will be publicly shared via this Github forum.
+
+### Technical Working Groups
+
+At times we may create specific Technical Working Groups that will collaborate on 
+development of specific aspects of the RDL standard. For example to develop taxonomies, 
+or revise file formats or schemas.
+
+These Working Groups will have a clear remit and will coordinate their work through this 
+github. 
+
+Membership of these groups and participation in calls and workshops will be open to 
+all participants. Depending on the scope of work, they may need to draw on expertise from a wider 
+group of stakeholders. 
+
+This model reflects the process of development of early versions of the standard, which involves 
+convening a range of organisations around developing models for hazard, exposure and other types
+of data. This approach will help us to drawing on expertise, and seek focused input, from 
+across a wide range of organisations.
+
+All working documents, issue reporting and decisions made within these groups will be 
+reviewed and communicated via this repository.
 
 ## How we collaborate
 
