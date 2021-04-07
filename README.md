@@ -26,8 +26,8 @@ This repository is intended to:
 * answer questions about the governance and evolution of the standard
 
 Other more useful resources exist if you have general questions about the scope and goals 
-of the Risk Data Library project, or are looking for a more high-level introduction to 
-the standard and its key concepts.
+of [the Risk Data Library project](http://riskdatalibrary.org/), or are looking for a more [high-level introduction to 
+the standard and its key concepts](https://docs.riskdatalibrary.org/).
 
 ## How to contribute
 
