@@ -128,7 +128,7 @@ A Hazard Data Package `MUST` include an `eventset` property. The value of this p
 |Property|Type|Status|Notes
 |--------|----|------|-----
 |`hazard_type`|`String`|`REQUIRED`|Identifies the type of hazard. Valid values are defined by the "RDL Hazard Type Code list"
-|`process_type`|`String`|`REQUIRED`|Identifies the type of analysis used to generate the Footprints. Valid values are defined by the "RDL Process Type Code List".
+|`analysis_type`|`String`|`REQUIRED`|Identifies the type of analysis used to generate the Footprints. E.g. Type of analysis, probabilistic or deterministic. Valid values are defined by the "RDL Analysis Type Code List".
 |`id`|`String`|`OPTIONAL`|A unique identifier for the Event Set. E.g. a UUID
 |`spatial`|`String`|`OPTIONAL`|The value of this property `MUST` be an array containing one or more ISO 3-letter country codes, e.g. `[ "AFG" ]`
 |`start_date`|`String`|`OPTIONAL`|ISO 8601 date time. The datetime at which the modelled scenarios start.

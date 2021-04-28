@@ -85,9 +85,9 @@
            "description": "Identifies the type of hazard. Valid values are defined by the RDL Hazard Type Code list",
            "type": "string"
          },
-         "process_type": {
-           "title": "process_type",
-           "description": "Identifies the type of analysis used to generate the Footprints. Valid values are defined by the RDL Process Type Code List",
+         "analysis_type": {
+           "title": "analysis_type",
+           "description": "Identifies the type of analysis used to generate the Footprints. Valid values are defined by the RDL Analysis Type Code List",
            "type": "string"
          },
          "id": {
