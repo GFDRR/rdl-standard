@@ -8,6 +8,10 @@ It is part of [the framework of standards](https://gfdrr.github.io/rdl-docs/stan
 
 * Initial Working Draft
 
+## Schema
+
+This specification is also available as a [JSON schema](https://github.com/GFDRR/rdl-standard/blob/main/specs/hazard-data-package/schema.json).
+
 ## Language
 
 The key words `MUST`, `MUST NOT`, ``REQUIRED``, `SHALL`, `SHALL NOT`, `SHOULD`, `SHOULD NOT`, `RECOMMENDED`, `MAY`, and `OPTIONAL` in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt)
