@@ -13,7 +13,7 @@
   "spatial": [ "..." ],
   "eventset": {
     "hazard_type": "...",
-    "process_type": "...",
+    "analysis_type": "...",
     "id": "...",
     "spatial": [ "..." ],
     "start_date": "2021-04-01T20:20:39+00:00",
