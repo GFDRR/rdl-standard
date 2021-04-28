@@ -161,7 +161,7 @@ array of Event descriptors. A valid Event descriptor will have the following pro
 |`description`|`String`|`OPTIONAL`|Provides a human-readable description of the event
 |`return_period`|`String`|`OPTIONAL`|The probability of the event occuring expressed as an array of return periods ("10", "100", "1000") or as a single `String` specifying a range (10-1000)
 |`occurence`|`Object`|`OPTIONAL`|A JSON object with `start_date` and `end_date` properties, that provide the date-times during which the event starts and ends
-|`trigger`|`Object`|`OPTIONAL`|A JSON object that has `hazard_type`, `process_type` or `event` properties that describe the trigger for the event occuring
+|`trigger`|`Object`|`OPTIONAL`|A JSON object that has `hazard_type`, `process_type` or `event` properties that describe the trigger for this event occuring. The `event` property `MUST` refer to the `id` of another event
 
 Example:
 
@@ -197,7 +197,7 @@ below.
 |`mediatype`|`String`|`REQUIRED`|The media type/mime type for the resource. Mediatypes are maintained by the Internet Assigned Numbers Authority (IANA) in a [media type registry](https://www.iana.org/assignments/media-types/media-types.xhtml)
 |`process_type`|`String`|`REQUIRED`|The type of hazard process modelled. Valid values for the `process_type` property are defined by the "RDL Process Type Code List".
 |`imt`|`String`|`REQUIRED`|The intensity measure. Valid values are described in the "RDL Intensity Measure" code list
-|`event_id`|`String`|`OPTIONAL`|Associates this resource with an event. The value should match the value of an `id` attribute of in the `event` array. This associates this footprint with that specific event. IF the package contains multiple event, then this property is `REQUIRED`. See "Associating Footprints with Events" below
+|`event`|`String`|`OPTIONAL`|Associates this resource with an event. The value should match the value of an `id` attribute of in the `event` array. This associates this footprint with that specific event. IF the package contains multiple event, then this property is `REQUIRED`. See "Associating Footprints with Events" below
 |`title`|`String`|`OPTIONAL`|A title for the footprint
 |`epsg`|`String`|`OPTIONAL`|Describes the spatial reference used in the data. Values should be taken from [the EPSG registry](https://epsg.org/home.html)
 |`data_uncertainty`|`String`|`OPTIONAL`|Comments about the uncertainty of the data
@@ -213,12 +213,9 @@ Resources that have the same values for the `process_type`, `imt` and `data_unce
 
 The resources in a Hazard Data Package describe the Footprints for the Hazard associated with an Event.
 
-If there is a single element in the `event` array and the resources do not have a `event_id` property,
-then applications processing this package should assume that the Footprints are associated with
-that single Event.
+If there is a single element in the `events` array and the resources do not have a `event` property, then applications processing this package should assume that the Footprints are associated with that single Event.
 
-However if there are multiple Event descriptors in the `event` array, then resources `MUST` have
-an `event` property whose value matches an `id` for one of the events.
+However if there are multiple Event descriptors in the `event` array, then resources `MUST` have an `event` property whose value matches an `id` for one of the events.
 
 ### File system paths and folders
 

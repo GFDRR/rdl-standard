@@ -1,0 +1,58 @@
+{
+  "profile": "hazard-data-package",
+  "id": "b03ec84-77fd-4270-813b-0c698943f7ce",
+  "name": "...",
+  "title": "...",
+  "description": "...",
+  "licenses": [
+    {
+      "name": "CC-BY-SA-4.0",
+      "path": "https://licenses.opendefinition.org/licenses/CC-BY-SA-4.0.json"
+    }
+  ],
+  "spatial": [ "..." ],
+  "eventset": {
+    "hazard_type": "...",
+    "process_type": "...",
+    "id": "...",
+    "spatial": [ "..." ],
+    "start_date": "2021-04-01T20:20:39+00:00",
+    "end_date": "2021-04-01T20:20:39+00:00",
+    "year": "...",
+    "time_span": "..."
+  },
+  "events": [{
+    "id": "...",
+    "calculation_method": "...",
+    "frequency": "...",
+    "description": "",
+    "return_period": "...",
+    "occurence": {
+      "start_date": "2021-04-01T20:20:39+00:00",
+      "end_date": "2021-04-01T20:20:39+00:00"
+    },
+    "trigger": {
+      "hazard_type": "...",
+      "process_type": "...",
+      "event": "..."
+    }
+  }],
+  "resources": [
+    {
+      "name": "fp1.tif",
+      "path": "fp1.tif",
+      "title": "...",
+      "mediatype": "image/tiff",
+      "imt": "PGA:g",
+      "data_uncertainty": ""
+    },
+    {
+      "name": "fp2.tif",
+      "path": "fp2.tif",
+      "title": "...",
+      "mediatype": "image/tiff",
+      "imt": "PGA:g",
+      "data_uncertainty": ""
+    }
+  ]
+}
