@@ -27,7 +27,7 @@
     "frequency": "...",
     "description": "",
     "return_period": "...",
-    "occurence": {
+    "occurrence": {
       "start_date": "2021-04-01T20:20:39+00:00",
       "end_date": "2021-04-01T20:20:39+00:00"
     },
