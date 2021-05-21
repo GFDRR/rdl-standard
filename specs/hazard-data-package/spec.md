@@ -71,7 +71,9 @@ This structure makes it easy to exchange data, e.g. by zipping it into a single 
 
 A Hazard Data Package is a data package containing data that describes the modelled impact of a physical hazard. Earthquakes, wildfires and floods are all examples of hazards.
 
-A hazard is triggered by an __Event__. An event occurs in a specific location and might take place at a specific time or with recurring frequency (e.g. seasonal flooding).
+A hazard is triggered by an __Event__. An event 
+
+s in a specific location and might take place at a specific time or with recurring frequency (e.g. seasonal flooding).
 
 Related __Events__ that occur in the same location, or within a specific time window are known as an __Event Set__. A Hazard Data Package only contains data about a single __Event Set__.
 
@@ -164,19 +166,19 @@ array of Event descriptors. A valid Event descriptor will have the following pro
 |`frequency`|`String`|`REQUIRED`|
 |`description`|`String`|`OPTIONAL`|Provides a human-readable description of the event
 |`return_period`|`String`|`OPTIONAL`|The probability of the event occuring expressed as an array of return periods ("10", "100", "1000") or as a single `String` specifying a range (10-1000)
-|`occurence`|`Object`|`OPTIONAL`|A JSON object with `start_date` and `end_date` properties, that provide the date-times during which the event starts and ends
+|`occurrence`|`Object`|`OPTIONAL`|A JSON object with `start_date` and `end_date` properties, that provide the date-times during which the event starts and ends
 |`trigger`|`Object`|`OPTIONAL`|A JSON object that has `hazard_type`, `process_type` or `event` properties that describe the trigger for this event occuring. The `event` property `MUST` refer to the `id` of another event
 
 Example:
 
 ```
-  "event": [{
+  "events": [{
     "id": "...",
     "description": "",
     "calculation_method": "...",
     "frequency_type": "...",
     "return_period": [ ... ]
-    "occurence": {
+    "occurrence": {
       "start_date": "...",
       "end_date": "..."
     },
