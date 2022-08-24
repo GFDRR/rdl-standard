@@ -33,15 +33,15 @@ This project is currently managed by the Risk Data Library team working within t
 [Global Facility for Disaster Risk and Reduction](https://www.gfdrr.org/en).
 
 To guide development and adoption of the standards, in addition to open working through 
-this github project the team invites expert input via an Advisory Group and, as 
+this github project the team invites expert input via a Steering Committee and, as 
 required, specific Technical Working Groups.
 
-### Advisory Group
+### Steering Committee
 
-The RDL Advisory Group consists of experts in risk data management and analysis from 
+The RDL Steering Committee consists of experts in risk data management and analysis from 
 the humanitarian sector, insurance industry and other related domains.
 
-The Advisory Group will help to:
+The Steering Committee will help to:
 
 1. ensure the development of the standard is informed by the needs of a broad selection 
 of stakeholders across a range of domains
@@ -52,14 +52,14 @@ duplication of work and to build momentum around adoption of common standards
 RDL standards
 5. disseminate the impacts and outputs of the RDL project to other stakeholders
 
-Participation in the Advisory Group is by invitation only. The initial membership will 
+Participation in the Steering Committee is by invitation only. The initial membership will 
 consist of representatives from organisations who have contributed to the early 
 development of the standard.
 
 Membership will be regularly reviewed. Please contact the team to discuss participation if 
 you believe that you, or your organisation, are able to contribute.
 
-The Advisory Group will meet every two months. The agenda, slides and minutes from these 
+The Steering Committee will meet every two months. The agenda, slides and minutes from these 
 meetings will be publicly shared via this Github forum.
 
 ### Technical Working Groups
