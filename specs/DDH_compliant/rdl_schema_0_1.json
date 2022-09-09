@@ -626,7 +626,7 @@
 		},
 		"im_code": {
 			"type": "string",
-			"enum": ["PG+E47:E70A:g","PGA:m/s2","PGV:m/s","AvgSa:m/s2","Sd(T1):m","Sv(T1):m/s",
+			"enum": ["PGA:g","PGA:m/s2","PGV:m/s","AvgSa:m/s2","Sd(T1):m","Sv(T1):m/s",
 					 "PGDf:m","D:s","IA:m/s","Neq:-","EMS:-","MMI:-","CAV:m/s", "D_B:s", "fl_wd:m",
 					 "fl_wv:m/s","v_ect(3s):km/h","v_ect(1m):km/h","v_etc(10m):km/h",
 					 "PGWS_tcy:km/h","ls_fd:m","I_DF:m3/s2","v_lsl:m/s2","ls_mfd:m","SD_lsl:m","Rh_tsi:m",
