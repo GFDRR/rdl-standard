@@ -1,1 +1,1 @@
-This folder contains RDL Fellowship Steering Committe minutes and realted documents.
+This folder contains RDL Fellowship Steering Committee minutes and related documents.
