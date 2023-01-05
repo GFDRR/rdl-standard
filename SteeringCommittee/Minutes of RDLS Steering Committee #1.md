@@ -1,4 +1,4 @@
-# Minutes of RDLS Steering Committee #1
+# Minutes Steering Committee #1
 
 08 SEPTEMBER 2022 / 09:00-10:30 EDT / via Zoom
 
