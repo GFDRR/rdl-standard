@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/loss.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Loss - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Loss";
+        var mkdocs_page_input_path = "loss.md";
+        var mkdocs_page_url = "/loss.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="loss.html">Loss</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#schema-attributes">Schema attributes</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#flood-loss-scenarios-for-afghanistan-2050">Flood loss scenarios for Afghanistan, 2050</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#observed-losses">Observed losses</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li>
+<li>Data model »</li><li>Loss</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/loss.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="loss">Loss</h1>
+<h2 id="schema-attributes">Schema attributes</h2>
+<p>The loss schema enables to store information about hazard impact over exposure as a function of vulnerability. Loss datasets are directly linked to the hazard, exposure, and vulnerability datasets which were used to model losses. When no vulnerability model is applied, the potential loss is estimated as the sum of all exposed value. Losses can be expressed in form of map or in form of a curve, both sharing the same attributes and metrics.</p>
+<div class="mermaid">classDiagram
+    Model -- Map
+    Model -- Curve
+    Model: Hazard type
+    Model: Exposure category
+    Model: Calculation method
+    Model: Link data
+
+    class Map{
+      Occurrence frequency
+      Time reference
+      Impact type
+      Loss type
+      Loss metric
+      Loss unit
+    }
+    class Curve{
+      Occurrence frequency
+      Time reference
+      Impact type
+      Loss type
+      Loss metric
+      Loss unit
+    }
+</div>
+<p>The main attributes of the <strong>loss model</strong> describe the hazard and process for which the loss are calculated, the method of calculation (to discern empirical events from simulated scenarios) and the category of asset on which losses insist. The schema includes the direct links to the original dataset of hazard, exposure, and vulnerability that were used to calculate the loss.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard type</td>
+<td>Main hazard type from list of options</td>
+<td><ul><li>Coastal Flood<li>Convective Storm<li>Drought<li>Earthquake<li>Extreme Temperature<li>Flood<li>Landslide<li>Tsunami<li>Volcanic<li>Wildfire<li>Strong Wind<li>Multi-Hazard</li></li></li></li></li></li></li></li></li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Hazard process</td>
+<td>Specific hazard process</td>
+<td>Options list</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Calculation method</td>
+<td>How the scenario was calculated</td>
+<td><ul><li>Inferred<li>Simulated<li>Observed</li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Exposure occupancy</td>
+<td>Destination of use of the asset</td>
+<td><ul><li>Residential<li>Commercial<li>Industrial<li>Infrastructure<li>Healthcare<li>Educational<li>Government<li>Crop<li>Livestock<li>Forestry<li>Mixed</li></li></li></li></li></li></li></li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Exposure category</td>
+<td>Category of asset suffering the losses</td>
+<td><ul><li>Buildings<li>Indicators<li>Infrastructures<li>Crops, livestock and forestry</li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Value type</td>
+<td>Element on which loss insist</td>
+<td><ul><li>Structure<li>Content<li>Product<li>Other</li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Hazard link</td>
+<td>Hazard dataset that was used to calculate loss</td>
+<td>URL</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Exposure link</td>
+<td>Exposure dataset that was used to calculate loss</td>
+<td>URL</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Vulnerability link</td>
+<td>Vulnerability dataset that was used to calculate loss</td>
+<td>URL</td>
+</tr>
+</tbody>
+</table>
+<p><br/>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknow or inapplicabile, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td>Time start</td>
+<td>The time at which the modelled scenario starts</td>
+<td>Date</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time end</td>
+<td>The time at which the modelled scenario ends</td>
+<td>Date</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time span</td>
+<td>The duration of the modelled period</td>
+<td>Number</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time year</td>
+<td>One reference year to univocally identify the scenario</td>
+<td>Date (year)</td>
+</tr>
+</tbody>
+</table>
+<p><br/>When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occurr again: RP 100 indicates that that event has a probability of once in 100 years. This attirbute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100).</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td>Frequency type</td>
+<td>The frequency of occurrence of the present event</td>
+<td><ul><li>Rate of Exceedence<li>Probability of Exceedence<li>Return Period</li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurrence probability</td>
+<td>For probabilistic scenario, the occurrence probability is expressed according to frequency type</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><br/>Additional attributes are specific to loss, describing the type of impact, the type of loss, the loss metric and the unit used to measure it.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Impact</td>
+<td>The type of impact</td>
+<td><ul><li>Direct<li>Indirect<li>Total</li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Loss type</td>
+<td>The type of loss</td>
+<td><ul><li>Ground up<li>Insured</li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Metric</td>
+<td>Type of loss metric</td>
+<td><ul><li>Average Annual Losses<li>Annual Average Loss Ratio<li>Probable Maximal Loss</li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit</td>
+<td>Cost unit of measure</td>
+<td>Unit code</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="examples">Examples</h2>
+<p>Losses can be rapresented in many different way: regular raster grids, points, or polygons. Often, the loss data consist of measures aggregated at the administrative unit level.</p>
+<h3 id="flood-loss-scenarios-for-afghanistan-2050">Flood loss scenarios for Afghanistan, 2050</h3>
+<p>Schema attributes for loss map related to future river flood hazard scenarios (2050) over all types of exposure occupancies for Afghanistan.</p>
+<p><img alt="Flood losses in Afghanistan" src="img/lss_fl_afg.jpg"/></p>
+<p>The losses are higher in the most densely built-up area of Kabul.</p>
+<p><img alt="Flood losses in Kabul" src="img/lss_fl_kabul.jpg"/></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard type</td>
+<td>Flood</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Hazard process</td>
+<td>River flood</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Exposure occupancy</td>
+<td>Mixed</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Exposure category</td>
+<td>Buildings</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Value type</td>
+<td>Structure</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Hazard link</td>
+<td><a href="http://jkan.riskdatalibrary.org/datasets/hzd-afg-fl-baseline">Dataset</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Exposure link</td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Vulnerability link</td>
+<td></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time year</td>
+<td>2050</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Frequency type</td>
+<td>Return Period</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurrence probability</td>
+<td>RP 5-1000 years</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Impact</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Loss type</td>
+<td>Ground up</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Metric</td>
+<td>Average Annual Losses</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit</td>
+<td>USD</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p>Losses can be investigated as total or for individual exposed asset and infrastructure elements.</p>
+<p><img alt="Road losses" src="img/exp_afg_roads.jpg"/></p>
+<p><br/></p>
+<h3 id="observed-losses">Observed losses</h3>
+<p>Insert example of recorded empirical losses.</p>
+<p><img alt="Screenshot" src="img/.jpg"/></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard type</td>
+<td>Earthquake</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Analysis type</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Calculation method</td>
+<td>Simulated</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Frequency type</td>
+<td>Return Period</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurrence probability</td>
+<td>1000 years</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (start)</td>
+<td>800</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (end)</td>
+<td>2001</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (span)</td>
+<td>1200 years</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Hazard process</td>
+<td>Ground motion</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit of measure</td>
+<td>PGA (g)</td>
+</tr>
+</tbody>
+</table>
+<p><br/><hr/></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="vulnerability.html" title="Vulnerability"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="implementation.html" title="RDL adoption">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</hr></footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="vulnerability.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="implementation.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

@@ -1,0 +1,38 @@
+name: Publish docs via GitHub Pages
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v2
+
+      - name: Setup environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.8
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: docs_gen
+          environment-file: linux_docs_gen.yml
+
+      - name: Deploy docs
+        shell: bash -l {0}
+        # uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CUSTOM_DOMAIN: docs.riskdatalibrary.org
+          CONFIG_FILE: mkdocs.yml
+          EXTRA_PACKAGES: build-base
+        run: |
+          conda init bash
+          conda activate docs_gen
+          mkdocs gh-deploy --force
+

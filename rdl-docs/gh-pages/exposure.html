@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/exposure.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Exposure - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Exposure";
+        var mkdocs_page_input_path = "exposure.md";
+        var mkdocs_page_url = "/exposure.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="exposure.html">Exposure</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#schema-attributes">Schema attributes</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#exposure-map-for-kabul">Exposure map for Kabul</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li>
+<li>Data model »</li><li>Exposure</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/exposure.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="exposure">Exposure</h1>
+<h2 id="schema-attributes">Schema attributes</h2>
+<p>The exposure schema covers a wide variety of data describing structural, infrastructural and environmental asset, population, and socio-economic descriptors, each with relevant attributes for assessing risk from multiple hazards. The schema was developed based on <a href="https://wiki.openstreetmap.org/wiki/GED4ALL">GEM Taxonomy 2.0</a> to accommodate the most important spatial features commonly employed in risk analysis to identify and estimate exposed value. </p>
+<div class="mermaid">classDiagram
+    Model -- Asset1
+    Model -- Asset2
+    Model: Category
+    Model: Occupancy
+    class Asset1{
+      Taxonomy code
+      Value type
+      Value unit
+    }
+    class Asset2{
+      Taxonomy code
+      Value type
+      Value unit
+    }
+</div>
+<p>The main features of an exposure dataset are specified by the <strong>exposure model</strong> attributes.
+Each exposure model includes one or more <strong>assets</strong>. Each asset could represent a single asset (e.g. one building) or a collection of assets (e.g aggregated buildings in an area). 
+The exposure schema covers 4 categories and 11 occupancy types for consistent classification of assets across schema. The taxonomy source specifies the taxonomy string used to identify individual asset features within a dataset. Occupancy can be optionally assigned for night-time or day-time, e.g. to discern resident population from daily commuters.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Category</td>
+<td>Type of asset</td>
+<td><ul><li>Buildings<li>Indicators<li>Infrastructures<li>Crops, livestock and forestry</li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Occupancy</td>
+<td>Destination of use of the asset</td>
+<td><ul><li>Residential<li>Commercial<li>Industrial<li>Infrastructure<li>Healthcare<li>Educational<li>Government<li>Crop<li>Livestock<li>Forestry<li>Mixed</li></li></li></li></li></li></li></li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occupancy time</td>
+<td>Period of occupancy</td>
+<td><ul><li>Night<li>Day</li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Taxonomy source</td>
+<td>Name of adopted taxonomy model</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Taxonomy code</td>
+<td>String used by the taxonomy model to identify specific asset features</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Value type</td>
+<td>Element to which value refers</td>
+<td><ul><li>Structure<li>Content<li>Product<li>Other</li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Value unit</td>
+<td>Unit to measure exposed value</td>
+<td>Unit code</td>
+</tr>
+</tbody>
+</table>
+<p><br/>Within one exposure model (e.g. one geospatial layer) there can be one or more <strong>cost type</strong> associated with damage to assets. For example, the cost of the building structure by square meter and the cost of the contents of a single building. The attributes are named accordingly within the datase, e.g. "Cost_structure" and "Cost_content".
+Additional <strong>tags</strong> attributes can be associated with an asset to link any information not envised in the exposure schema.</p>
+<hr/>
+<h2 id="examples">Examples</h2>
+<p>Exposure data can be stored at multiple scales, more often using vectors, namely polygons (e.g. building footprint), points (e.g. asset geolocation) and lines (e.g. transport infrastructures, lifelines), but in same case exposure estimates are aggregated at ADM level or distributed over a raster grid.</p>
+<h3 id="exposure-map-for-kabul">Exposure map for Kabul</h3>
+<p>Two exposure datasets are shown together in the example: building footprints polygons and population density raster at 90 m resolution.</p>
+<p><img alt="Exposure example" src="img/sample_exp.jpg"/></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Geographic coverage</td>
+<td>Afghanistan</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Exposure category</td>
+<td>Buildings</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Occupancy</td>
+<td>Mixed</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Taxonomy</td>
+<td>OSM</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Value type</td>
+<td>Structure</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit of measure</td>
+<td>USD</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Geographic coverage</td>
+<td>Afghanistan</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Exposure category</td>
+<td>Indicators</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Occupancy</td>
+<td>Residential</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Period of occupancy</td>
+<td>Night</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Value type</td>
+<td>Other</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit of measure</td>
+<td>Count</td>
+</tr>
+</tbody>
+</table>
+<p><br/><hr/></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="hazard.html" title="Hazard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="vulnerability.html" title="Vulnerability">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</hr></footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="hazard.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="vulnerability.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

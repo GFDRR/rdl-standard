@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/governance.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Governance - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Governance";
+        var mkdocs_page_input_path = "governance.md";
+        var mkdocs_page_url = "/governance.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="governance.html">Governance</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#our-governance-principles">Our governance principles</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#intellectual-property">Intellectual property</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#roles-and-responsibilities">Roles and responsibilities</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#advisory-group">Advisory Group</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-working-groups">Technical Working Groups</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-we-collaborate">How we collaborate</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-and-proposing-changes">Managing and proposing changes</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-releases">Managing releases</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li>
+<li>About »</li><li>Governance</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/governance.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="risk-data-library-standard-governance">Risk Data Library Standard Governance</h1>
+<p>This document provides an overview of the governance and processes used to develop the Risk Data Library Standard. The standard aims to define a data model, taxonomies and additional specifications to improve the discovery, management and exchange of risk data.</p>
+<p>This document is intended to be a useful reference point for anyone involved in contributing to the standard. It focuses on the roles, responsibilities and processes. This is intended to complete the <a href="https://github.com/GFDRR/rdl-standard/blob/main/CONTRIBUTING.md">contributor guide</a> which outlines the range of ways in which contributors might support development of the standard.</p>
+<hr/>
+<h2 id="our-governance-principles">Our governance principles</h2>
+<p>As a group we are committed to <a href="https://open-stand.org/about-us/principles/">the OpenStand principles</a>. These are five principles that guide our work:</p>
+<ul>
+<li><strong>Due process</strong>. Decisions are made with equity and fairness among participants. No one party dominates or guides standards development. Standards processes are transparent and opportunities exist to appeal decisions. Processes for periodic standards review and updating are well defined.</li>
+<li><strong>Broad consensus</strong>. Processes allow for all views to be considered and addressed, such that agreement can be found across a range of interests.</li>
+<li><strong>Transparency</strong>. Standards organizations provide advance public notice of proposed standards development activities, the scope of work to be undertaken, and conditions for participation. Easily accessible records of decisions and the materials used in reaching those decisions are provided. Public comment periods are provided before final standards approval and adoption.</li>
+<li><strong>Balance</strong>. Standards activities are not exclusively dominated by any particular person, company or interest group.</li>
+<li><strong>Openness</strong>. Standards processes are open to all interested and informed parties.</li>
+</ul>
+<p>We are working to improve our process to ensure that we are living up to these principles. This document provides a reference point for our current practices.</p>
+<hr/>
+<h2 id="intellectual-property">Intellectual property</h2>
+<p>All the outputs from this standards initiative are openly licensed under a CC-BY-SA 4.0 licence.</p>
+<p>Additional documentation and source code produced by this initiative will also be published under a suitable open licence. We encourage other organisations to similarly licence their work, so that it can be used for the benefit of the wider community.</p>
+<hr/>
+<h2 id="roles-and-responsibilities">Roles and responsibilities</h2>
+<p>This project is currently managed by the Risk Data Library team working within the 
+<a href="https://www.gfdrr.org/en">Global Facility for Disaster Risk and Reduction</a>.</p>
+<p>To guide development and adoption of the standards, in addition to open working through this github project, the team invites expert input via an Advisory Group and, as 
+required, specific Technical Working Groups.</p>
+<h3 id="advisory-group">Advisory Group</h3>
+<p>The RDL Advisory Group consists of experts in risk data management and analysis from 
+the humanitarian sector, insurance industry and other related domains.</p>
+<p>The Advisory Group will help to:</p>
+<ol>
+<li>ensure the development of the standard is informed by the needs of a broad selection 
+of stakeholders across a range of domains</li>
+<li>steer the development of the RDL standards, providing expert review on priorities, activities and major technical decisions.</li>
+<li>ensure that our work aligns with other relevant initiatives, to avoid 
+duplication of work and to build momentum around adoption of common standards</li>
+<li>identify opportunities for joint projects that can demonstrate the value of adopting the 
+RDL standards</li>
+<li>disseminate the impacts and outputs of the RDL project to other stakeholders</li>
+</ol>
+<p>Participation in the Advisory Group is by invitation only. The initial membership will 
+consist of representatives from organisations who have contributed to the early 
+development of the standard.</p>
+<p>Membership will be regularly reviewed. Please contact the team to discuss participation if 
+you believe that you, or your organisation, are able to contribute.</p>
+<p>The Advisory Group will meet every two months. The agenda, slides and minutes from these 
+meetings will be publicly shared via this Github forum.</p>
+<h3 id="technical-working-groups">Technical Working Groups</h3>
+<p>At times we may create specific Technical Working Groups that will collaborate on 
+development of specific aspects of the RDL standard. For example to develop taxonomies, 
+or revise file formats or schemas.</p>
+<p>These Working Groups will have a clear remit and will coordinate their work through this 
+github. </p>
+<p>Membership of these groups and participation in calls and workshops will be open to 
+all participants. Depending on the scope of work, they may need to draw on expertise from a wider 
+group of stakeholders. </p>
+<p>This model reflects the process of development of early versions of the standard, which involves 
+convening a range of organisations around developing models for hazard, exposure and other types
+of data. This approach will help us to drawing on expertise, and seek focused input, from 
+across a wide range of organisations.</p>
+<p>All working documents, issue reporting and decisions made within these groups will be 
+reviewed and communicated via this repository.</p>
+<hr/>
+<h2 id="how-we-collaborate">How we collaborate</h2>
+<p>At present our primary means of collaborating on the standard is via a set of open processes 
+coordinated through this Github repository.</p>
+<p>We will use the:</p>
+<ul>
+<li><a href="https://github.com/GFDRR/rdl-standard/discussions">Discussions</a> for general discussion around the scope and adoption of the standard</li>
+<li><a href="https://github.com/GFDRR/rdl-standard/issues">Issues</a> to propose and discuss changes to the standard</li>
+<li><a href="https://github.com/GFDRR/rdl-standard/projects">Project boards</a> to provide transparency of the current progress and priorities around its development</li>
+</ul>
+<hr/>
+<h2 id="managing-and-proposing-changes">Managing and proposing changes</h2>
+<p>Anyone can propose changes to the specifications. </p>
+<p>The process for doing this is by <a href="https://github.com/GFDRR/rdl-standard/issues">submitting an issue</a> using the appropriate template.
+We ask that you provide sufficient context to the proposed changes so that it can be discussed and reviewed by others.</p>
+<p>We will then:</p>
+<ul>
+<li>regularly review issues, to ensure they are in scope for the project</li>
+<li>encourage disussion and feedback, by requesting people leave comments on Github</li>
+<li>once we feel that a broad consensus has been achieved around the proposed changes, we will update the current Working Draft with suitable wording</li>
+<li>after leaving appropriate time for further comment, we will release a new version of the specification</li>
+</ul>
+<hr/>
+<h2 id="managing-releases">Managing releases</h2>
+<p>The frequency with which we will release specifications will depend on the type and number of proposed changes.</p>
+<p>Releases of the standard will follow the <a href="https://semver.org/">semantic versioning</a> conventions:</p>
+<ul>
+<li>Major releases will be used for major extensions to the model and/or to incorporate incompatible changes</li>
+<li>Minor releases will be used for backwards compatible changes, e.g. additional of new optional attributes and relationships, or for simple clarifications and corrections</li>
+</ul>
+<p>To support gradual migration to the latest specification, we will maintain historical versions of the specifications in named folders in this repository.</p>
+<p><br/><hr/></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="history.html" title="History"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="license.html" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</hr></footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="history.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="license.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/taxonomy.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Taxonomies - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Taxonomies";
+        var mkdocs_page_input_path = "taxonomy.md";
+        var mkdocs_page_url = "/taxonomy.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="taxonomy.html">Taxonomies</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#hazard-taxonomies">Hazard taxonomies</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#rdls-hazard-taxonomy-recommended">RDLS Hazard Taxonomy (recommended)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-hazard-taxonomies">Other hazard taxonomies</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exposure-taxonomy">Exposure taxonomy</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#ged4all-recommended">GED4all (recommended)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-exposure-taxonomies">Other exposure taxonomies</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li><li>Taxonomies</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/taxonomy.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<!--https://hackmd.io/c3be76ulTnO2llvUWNM2sg-->
+<h1 id="taxonomies">Taxonomies</h1>
+<p>The RDLS defines taxonomies for describing risk data. In this section you will find a short summary of the taxonomies recommended for the RDLS, as well as the other main taxonomies for disaster risk assessments.</p>
+<h2 id="hazard-taxonomies">Hazard taxonomies</h2>
+<p>There are several existing taxonomies that could have been adopted to describe hazard data. The RDL project performed a review of most of them.</p>
+<p>This resulted in an new taxonomy to unify the existing taxonomies for the purpose of risk data classification, focusing on those hazards and processes that are more often required in disaster risk assessments while mapping and matching alternative definitions into one consistent framework.</p>
+<h3 id="rdls-hazard-taxonomy-recommended">RDLS Hazard Taxonomy (recommended)</h3>
+<p>The <strong>RDLS Hazard Taxonomy</strong> classifies hazard phenomena as main hazard (8 categories) and hazard process (27 categories):</p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col"><strong>Hazard type</strong></th>
+<th scope="col"><strong>Process type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coastal Flood</td>
+<td>Coastal Flood</td>
+</tr>
+<tr>
+<td>Coastal Flood</td>
+<td>Storm Surge</td>
+</tr>
+<tr>
+<td>Convective Storm</td>
+<td>Tornado</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Agricultural Drought</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Hydrological Drought</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Meteorological Drought</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Socio-economic Drought</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Primary Rupture</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Secondary Rupture</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Ground Motion</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Liquefaction</td>
+</tr>
+<tr>
+<td>Extreme Temperature</td>
+<td>Extreme cold</td>
+</tr>
+<tr>
+<td>Extreme Temperature</td>
+<td>Extreme heat</td>
+</tr>
+<tr>
+<td>Flood</td>
+<td>Fluvial Flood</td>
+</tr>
+<tr>
+<td>Flood</td>
+<td>Pluvial Flood</td>
+</tr>
+<tr>
+<td>Landslide</td>
+<td>Landslide</td>
+</tr>
+<tr>
+<td>Landslide</td>
+<td>Snow Avalanche</td>
+</tr>
+<tr>
+<td>Tsunami</td>
+<td>Tsunami</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Ashfall</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Ballistics</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Proximal hazards</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Lahar</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Lava</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Pyroclastic Flow</td>
+</tr>
+<tr>
+<td>Wildfire</td>
+<td>Wildfire</td>
+</tr>
+<tr>
+<td>Strong Wind</td>
+<td>Extratropical cyclone</td>
+</tr>
+<tr>
+<td>Strong Wind</td>
+<td>Tropical cyclone</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<p>Each hazard type and associated processes can have one or more type of measure metrics, which include the unit of measure:</p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col"><strong>Hazard type</strong></th>
+<th scope="col"><strong>Metric:Unit</strong></th>
+<th scope="col"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EQ</td>
+<td>PGA:g</td>
+<td>Peak ground acceleration in g</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>PGA:m/s2</td>
+<td>Peak ground acceleration in m/s2 (meters per second squared)</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>PGV:m/s</td>
+<td>Peak ground velocity in m/s</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>AvgSa:m/s2</td>
+<td>Average spectral acceleration</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>Sd(T1):m</td>
+<td>Spectral displacement</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>Sv(T1):m/s</td>
+<td>Spectral velocity</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>PGDf:m</td>
+<td>Permanent ground deformation</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>D:s</td>
+<td>Significant duration</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>IA:m/s</td>
+<td>Arias intensity (IÎ±) or (IA) or (Ia)</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>Neq:-</td>
+<td>Effective number of cycles</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>EMS:-</td>
+<td>European macroseismic scale</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>MMI:-</td>
+<td>Modified Mercalli Intensity</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>CAV:m/s</td>
+<td>Cumulative absolute velocity</td>
+</tr>
+<tr>
+<td>EQ</td>
+<td>D_B:s</td>
+<td>Bracketed duration</td>
+</tr>
+<tr>
+<td>FL, CF</td>
+<td>fl_wd:m</td>
+<td>Flood water depth</td>
+</tr>
+<tr>
+<td>FL, CF</td>
+<td>fl_wv:m/s</td>
+<td>Flood flow velocity</td>
+</tr>
+<tr>
+<td>WI</td>
+<td>v_ect(3s):km/h</td>
+<td>3-sec at 10m sustained wind speed (kph)</td>
+</tr>
+<tr>
+<td>WI</td>
+<td>v_ect(1m):km/h</td>
+<td>1-min at 10m sustained wind speed (kph)</td>
+</tr>
+<tr>
+<td>WI</td>
+<td>v_etc(10m):km/h</td>
+<td>10-min sustained wind speed (kph)</td>
+</tr>
+<tr>
+<td>WI</td>
+<td>PGWS_tcy:km/h</td>
+<td>Peak gust wind speed</td>
+</tr>
+<tr>
+<td>LS</td>
+<td>ls_fd:m</td>
+<td>Landslide flow depth</td>
+</tr>
+<tr>
+<td>LS</td>
+<td>I_DF:m3/s2</td>
+<td>Debris-flow intensity index</td>
+</tr>
+<tr>
+<td>LS</td>
+<td>v_lsl:m/s2</td>
+<td>Landslide flow velocity</td>
+</tr>
+<tr>
+<td>LS</td>
+<td>ls_mfd:m</td>
+<td>Maximum foundation displacement</td>
+</tr>
+<tr>
+<td>LS</td>
+<td>SD_lsl:m</td>
+<td>Landslide displacement</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>Rh_tsi:m</td>
+<td>Tsunami wave runup height</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>d_tsi:m</td>
+<td>Tsunami inundation depth</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>MMF:m4/s2</td>
+<td>Modified momentum flux</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>F_drag:kN</td>
+<td>Drag force</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>Fr:-</td>
+<td>Froude number</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>v_tsi:m/s</td>
+<td>Tsunami velocity</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>F_QS:kN</td>
+<td>Quasi-steady force</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>MF:m3/s2</td>
+<td>Momentum flux</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>h_tsi:m</td>
+<td>Tsunami wave height</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>Fh_tsi:m</td>
+<td>Tsunami Horizontal Force</td>
+</tr>
+<tr>
+<td>VO</td>
+<td>h_vaf:m</td>
+<td>Ash fall thickness</td>
+</tr>
+<tr>
+<td>VO</td>
+<td>L_vaf:kg/m2</td>
+<td>Ash loading</td>
+</tr>
+<tr>
+<td>DR</td>
+<td>CMI:-</td>
+<td>Crop Moisture Index</td>
+</tr>
+<tr>
+<td>DR</td>
+<td>PDSI:-</td>
+<td>Palmer Drought Severity Index</td>
+</tr>
+<tr>
+<td>DR</td>
+<td>SPI:-</td>
+<td>Standard Precipitation Index</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h3 id="other-hazard-taxonomies">Other hazard taxonomies</h3>
+<p>For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this <a href="">here</a>. </p>
+<p>List of other hazard taxonomies below:</p>
+<ul>
+<li>
+<p><a href="https://www.undrr.org/publication/hazard-definition-and-classification-review"><strong>UNDRR</strong></a> (formerly UNISDR) recently proposed an extended taxonomy that covers 300 natural and anthropogenic hazards in 8 categories (Meteo-Hydrological, Geohazard, Environmental, Extraterrestrial, Chemical, Biological, Technological, Societal).</p>
+</li>
+<li>
+<p><a href="https://drmkc.jrc.ec.europa.eu/risk-data-hub"><strong>Disaster Risk Management Knowledge Centre</strong></a> covers 32 natural and anthropogenic hazards in 8 categories (Geophysical, Hydrological, Meteorological, Climatological, Biological, Technological, Transportation, Malicious).</p>
+</li>
+<li>
+<p><a href="https://inspire.ec.europa.eu/codelist/NaturalHazardCategoryValue"><strong>Inspire</strong></a> covers 25 natural hazards in 6 categories (Geological/hydrological, Meteorological/climatological, Fires, Biological, Cosmic, Other).</p>
+</li>
+<li>
+<p><a href="https://www.emdat.be/classification"><strong>EM-DAT</strong></a> covers 34 natural and technological hazards in 9 categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial, Industrial accident, Transport accident, Miscelleanous accident).</p>
+</li>
+<li>
+<p><a href="https://www.cred.be/downloadFile.php?file=sites/default/files/DisCatClass_264.pdf"><strong>Munich-RE</strong></a> covers 27 natural hazards 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).</p>
+</li>
+</ul>
+<h2 id="exposure-taxonomy">Exposure taxonomy</h2>
+<p>The exposure schema can accomodate different descriptions of assets using a taxonomy which describes their characteristics (e.g. building occupancy, construction, age, height, etc. or road surface type).</p>
+<h3 id="ged4all-recommended">GED4all (recommended)</h3>
+<p><a href="ged4all.html"><strong>GED4all</strong></a> has been developed by GFDRR under the UK-DFID Challenge Fund, this open exposure database schema is meant for multi-hazard risk analysis. GED4ALL can be populated with building-level data from OpenStreetMap (OSM) following the <a href="https://wiki.openstreetmap.org/wiki/GED4ALL">guidance</a> from the Humanitarian OSM Team, which collects contributions from the community on how OSM tags can be best aligned with the GED4ALL taxonomy. This is the suggested option for classification of exposure data in the RDL.</p>
+<h3 id="other-exposure-taxonomies">Other exposure taxonomies</h3>
+<p><a href="https://platform.openquake.org/taxtweb"><strong>GEM-OpenQuake</strong></a>: developed specifically for the Global Earthquake Model (GEM), this taxonomy is dedicated to buildings for which it describe the size and properties (height, number of storeys, age, occupancy, material, type of roof, floor and foundations).</p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="standards.html" title="Core standards"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="datamodel.html" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="standards.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="datamodel.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+</body>
+</html>

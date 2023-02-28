@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/datamodel.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Overview - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Overview";
+        var mkdocs_page_input_path = "datamodel.md";
+        var mkdocs_page_url = "/datamodel.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="datamodel.html">Overview</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#dataset-general-attributes">Dataset general attributes</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li>
+<li>Data model »</li><li>Overview</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/datamodel.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="overview-of-standard-data-model">Overview of standard data model</h1>
+<p>Following <a href="keyconcepts.html">key concepts</a>, the Risk Data Library Standard schema includes four components:</p>
+<ul>
+<li><a href="hazard.html"><strong>Hazard</strong></a>: main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.</li>
+<li><a href="exposure.html"><strong>Exposure</strong></a>: asset category, occupancy and specific taxonomy, cost type and value.</li>
+<li><a href="vulnerability.html"><strong>Vulnerability</strong></a>: model that links hazard intensity and exposure classification to measure of impact over the total exposed value.</li>
+<li><a href="loss.html"><strong>Loss</strong></a>: modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
+</li></ul>
+
+<p>The diagram below shows the core relationships between schema components, rather than listing all of their attributes.</p>
+<div class="mermaid">classDiagram
+    Dataset -- Hazard
+    Dataset -- Exposure
+    Dataset -- Vulnerability
+    Dataset -- Loss
+    Dataset: -Project name
+    Dataset: -Coverage
+    Dataset: -Purpose
+    Dataset: -Bibliography
+    class Hazard{
+      -Type, Process
+      -Trigger
+      -Frequency
+      -Intensity unit
+      -Analytical method
+        }
+    class Exposure{
+      -Asset category
+      -Occupancy
+      -Taxonomy
+      -Cost type
+    }
+    class Vulnerability{
+      -Hazard process
+      -Exposure taxonomy
+      -Analytical  method 
+      -Applicability
+    }
+     class Loss{
+      -Hazard process
+      -Exposure taxonomy
+      -Loss frequency
+      -Loss metric
+    }          
+</div>
+<p><br/></p>
+<h2 id="dataset-general-attributes">Dataset general attributes</h2>
+<p>In addition to schema-specific attributes, each dataset is identified by a list of attributes based on <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms">DublinCore metadata standard</a>.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Component</td>
+<td>Schema to be used</td>
+<td><ul><li>Hazard<li>Exposure<li>Vulnerability<li>Loss</li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Source model</td>
+<td>Name of source model</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Release date</td>
+<td>Model release date</td>
+<td>Date</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Project name</td>
+<td>Project under which data has been produced</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Purpose</td>
+<td>Purpose for what the data has been produced</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Notes</td>
+<td>Additional details about the dataset</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Bibliography</td>
+<td>Author, titles and publication year of documents containing relevant information on the dataset</td>
+<td>Authors (Year) - Title; URL</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Version</td>
+<td>Version of the dataset</td>
+<td>Number</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Geo coverage</td>
+<td>ISO code(s) of countries covered</td>
+<td>ISOa3 country code</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>License code</td>
+<td>Type of license</td>
+<td>Licensing options</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Other attributes are specific to individual resources, covering level of aggregation, resolution and format.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Resource name</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Aggregation type</td>
+<td><ul><li>Footprints<li>Grid<li>Administrative boundaries<li>Points or lines<li>N/A</li></li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Description</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Reference coordinate system</td>
+<td>CRS EPSG</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Horizontal resolution</td>
+<td>n unit</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Format</td>
+<td>ext</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Download Url</td>
+<td>url</td>
+</tr>
+</tbody>
+</table>
+<p><br/><hr/></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="taxonomy.html" title="Taxonomies"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="hazard.html" title="Hazard">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</hr></footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="taxonomy.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="hazard.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

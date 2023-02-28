@@ -1,0 +1,44 @@
+site_name: Risk Data Library Standard
+site_url: http://docs.riskdatalibrary.org
+use_directory_urls: false
+repo_url: https://github.com/GFDRR/rdl-docs
+edit_uri: tree/main/docs
+
+nav:
+- 'Introduction': 'index.md'
+- 'Key concepts': 'keyconcepts.md'
+- 'Core standards': 'standards.md'
+- 'Taxonomies': 'taxonomy.md'
+- Data model:
+    - 'Overview': 'datamodel.md'
+    - 'Hazard': 'hazard.md'
+    - 'Exposure': 'exposure.md'
+    - 'Vulnerability': 'vulnerability.md'
+    - 'Loss': 'loss.md'
+- Implementation:
+    - 'RDL adoption': 'implementation.md'
+    - 'Local': 'local.md'
+    - 'JKAN catalogue': 'jkan.md'
+    - 'PostGRESQL DB': 'postgres.md'
+- Tutorials:
+    - 'Deploy RDL': 'deploy.md'
+    - 'Prepare data': 'data-preparation.md'
+    - 'Publish data': 'data-import.md'
+- About:
+    - 'Roadmap': 'roadmap.md'
+    - 'History': 'history.md'
+    - 'Governance': 'governance.md'
+    - 'License': 'license.md'
+
+theme: readthedocs
+
+extra_css:
+    - css/extra.css
+
+plugins:
+  - search
+  - bootstrap-tables
+  - mermaid2
+
+markdown_extensions:
+    - md_in_html

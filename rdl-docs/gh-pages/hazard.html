@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/hazard.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Hazard - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Hazard";
+        var mkdocs_page_input_path = "hazard.md";
+        var mkdocs_page_url = "/hazard.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="hazard.html">Hazard</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#schema-attributes">Schema attributes</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#flood-hazard-maps-for-kabul">Flood hazard maps for Kabul</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#earthquake-hazard-maps-for-afghanistan">Earthquake hazard maps for Afghanistan</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li>
+<li>Data model »</li><li>Hazard</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/hazard.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="hazard">Hazard</h1>
+<h2 id="schema-attributes">Schema attributes</h2>
+<p>The hazard schema stores data about the intensity and occurrence probability of physical hazard phenomena such as floods, eartquakes, wildfires or others. The specific hazard process can be defined and measured with a specific intensity unit. For example, earthquake hazard may be represented as ground shaking, liquefaction or ground displacement.</p>
+<div class="mermaid">classDiagram
+    Event set -- Event1
+    Event set -- Event2
+    Event set: Hazard type
+    Event set: Analytical method
+    class Event1{
+      Occurrence frequency
+      Time reference
+      Hazard trigger
+    }
+    class Event2{
+      Occurrence frequency
+      Time reference
+      Hazard trigger
+    }
+    Event1 -- Footprint1
+    Event1 -- Footprint2
+    Event2 -- Footprint3
+    Event2 -- Footprint4
+    class Footprint1{
+      Hazard process
+      Intensity measure
+      Uncertainty
+    }
+    class Footprint2{
+      Hazard process
+      Intensity measure
+      Uncertainty
+    }
+    class Footprint3{
+      Hazard process
+      Intensity measure
+      Uncertainty
+    }
+    class Footprint4{
+      Hazard process
+      Intensity measure
+      Uncertainty
+    }
+</div>
+<p><br/>
+The schema specifies which type of analysis and data methodology that has generated the dataset. It supports either simulated probabilistic scenarios and empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard type</td>
+<td>Main hazard type from list of options</td>
+<td><ul><li>Coastal Flood<li>Convective Storm<li>Drought<li>Earthquake<li>Extreme Temperature<li>Flood<li>Landslide<li>Tsunami<li>Volcanic<li>Wildfire<li>Strong Wind<li>Multi-Hazard</li></li></li></li></li></li></li></li></li></li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Analysis type</td>
+<td>Type of analysis that generated the data</td>
+<td><ul><li>Deterministic<li>Probabilistic</li></li></ul></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Calculation method</td>
+<td>The methodology used for the modelling of hazard</td>
+<td><ul><li>Simulated<li>Observed<li>Inferred</li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Geographic area</td>
+<td>Specific location for which the dataset has been developed</td>
+<td>Name of location</td>
+</tr>
+</tbody>
+</table>
+<p><br/>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknow or inapplicabile, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td>Time start</td>
+<td>The time at which the modelled scenario starts</td>
+<td>Date</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time end</td>
+<td>The time at which the modelled scenario ends</td>
+<td>Date</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time span</td>
+<td>The duration of the modelled period</td>
+<td>Number</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Time year</td>
+<td>One reference year to univocally identify the scenario</td>
+<td>Date (year)</td>
+</tr>
+</tbody>
+</table>
+<p><br/>When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occurr again: RP 100 indicates that that event has a probability of once in 100 years. This attirbute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of eartquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td>Frequency type</td>
+<td>The frequency of occurrence of the present event</td>
+<td><ul><li>Rate of Exceedence<li>Probability of Exceedence<li>Return Period</li></li></li></ul></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurrence probability</td>
+<td>For probabilistic scenario, the occurrence probability is expressed according to frequency type</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (start)</td>
+<td>Start date of the period used to infer the occurrence probability</td>
+<td>Date (year)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (end)</td>
+<td>End date of the period used to specify the occurrence probability</td>
+<td>Date (year)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (span)</td>
+<td>The duration of the period used to specify the occurrence probability</td>
+<td>Number of years</td>
+</tr>
+</tbody>
+</table>
+<p><br/>The schema distinguish between the hazard and process represented and the hazard and process identified as the cause, or concause for the manifestation of the represented hazard. For example, a dataset represent landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"></td>
+<td>Trigger hazard type</td>
+<td>The hazard type that has triggered the event (if any)</td>
+<td>Hazard type</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Trigger process type</td>
+<td>The process type that triggered the event (if any)</td>
+<td>Process type</td>
+</tr>
+</tbody>
+</table>
+<p><br/>The hazard dataset could include one or more footprints for the same event, where each is one possible realisation (i.e. one footprint could represent minimum, another footprint the average and another one the maximum). The event uncertainty can be represented explicitly, through the inclusion of multiple footprints per event.</p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Description</strong></th>
+<th scope="col"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard process</td>
+<td>Specific hazard process</td>
+<td>Process type</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit of measure</td>
+<td>Intensity measure of the process</td>
+<td>Option list</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Description</td>
+<td>Provides additional information about a specific event</td>
+<td>Text</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Data uncertainty</td>
+<td>The typology of uncertainty, if considered</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p><br/>Below is the list of all hazards and related process types:</p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col"><strong>Hazard type</strong></th>
+<th scope="col"><strong>Process type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coastal Flood</td>
+<td>Coastal Flood</td>
+</tr>
+<tr>
+<td>Coastal Flood</td>
+<td>Storm Surge</td>
+</tr>
+<tr>
+<td>Convective Storm</td>
+<td>Tornado</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Agricultural Drought</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Hydrological Drought</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Meteorological Drought</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Socio-economic Drought</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Primary Rupture</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Secondary Rupture</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Ground Motion</td>
+</tr>
+<tr>
+<td>Earthquake</td>
+<td>Liquefaction</td>
+</tr>
+<tr>
+<td>Extreme Temperature</td>
+<td>Extreme cold</td>
+</tr>
+<tr>
+<td>Extreme Temperature</td>
+<td>Extreme heat</td>
+</tr>
+<tr>
+<td>Flood</td>
+<td>Fluvial Flood</td>
+</tr>
+<tr>
+<td>Flood</td>
+<td>Pluvial Flood</td>
+</tr>
+<tr>
+<td>Landslide</td>
+<td>Landslide</td>
+</tr>
+<tr>
+<td>Landslide</td>
+<td>Snow Avalanche</td>
+</tr>
+<tr>
+<td>Tsunami</td>
+<td>Tsunami</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Ashfall</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Ballistics</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Proximal hazards</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Lahar</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Lava</td>
+</tr>
+<tr>
+<td>Volcanic</td>
+<td>Pyroclastic Flow</td>
+</tr>
+<tr>
+<td>Wildfire</td>
+<td>Wildfire</td>
+</tr>
+<tr>
+<td>Strong Wind</td>
+<td>Extratropical cyclone</td>
+</tr>
+<tr>
+<td>Strong Wind</td>
+<td>Tropical cyclone</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/><hr/></p>
+<h2 id="examples">Examples</h2>
+<p>Hazard data are most often represented by geospatial grids (raster); sometimes they are represented by points or polygons.</p>
+<h3 id="flood-hazard-maps-for-kabul">Flood hazard maps for Kabul</h3>
+<p>Schema attributes for flood hazard map related to occurrence probability of a river flood event with a return period of once in 100 years over Kabul, Afghanistan. The hydrological data used for modelling the intensity of floods is derived from observations over the period 1958-2001 (44 years). The hazard intensity is measured as water depth, in meters. These information cover all mandatory fields, and few optional fields.</p>
+<p><img alt="Screenshot" src="img/hzd_fl_kabul.jpg"/></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard type</td>
+<td>Flood</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Analysis type</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Calculation method</td>
+<td>Simulated</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Geographic area</td>
+<td>Kabul</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Frequency type</td>
+<td>Return Period</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurrence probability</td>
+<td>100 years</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (start)</td>
+<td>1958</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (end)</td>
+<td>2001</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (span)</td>
+<td>44 years</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Hazard process</td>
+<td>River flood</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit of measure</td>
+<td>Water depth (m)</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h3 id="earthquake-hazard-maps-for-afghanistan">Earthquake hazard maps for Afghanistan</h3>
+<p>Schema attributes for earthquake hazard map related to occurrence probability of an event with return period of  once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability start from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).</p>
+<p><img alt="Screenshot" src="img/hzd_eq_afg.jpg"/></p>
+<table class="table">
+<thead>
+<tr>
+<th align="center"><strong>Required</strong></th>
+<th scope="col"><strong>Attribute</strong></th>
+<th scope="col"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">*</td>
+<td>Hazard type</td>
+<td>Earthquake</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Analysis type</td>
+<td>Probabilistic</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Calculation method</td>
+<td>Simulated</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Frequency type</td>
+<td>Return Period</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurrence probability</td>
+<td>1000 years</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (start)</td>
+<td>800</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (end)</td>
+<td>2001</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>Occurence time (span)</td>
+<td>1200 years</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Hazard process</td>
+<td>Ground motion</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Unit of measure</td>
+<td>PGA (g)</td>
+</tr>
+</tbody>
+</table>
+<p><br/><hr/></p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="datamodel.html" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="exposure.html" title="Exposure">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</hr></footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="datamodel.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="exposure.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>

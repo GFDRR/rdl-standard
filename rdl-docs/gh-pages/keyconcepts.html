@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/keyconcepts.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Key concepts - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Key concepts";
+        var mkdocs_page_input_path = "keyconcepts.md";
+        var mkdocs_page_url = "/keyconcepts.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="keyconcepts.html">Key concepts</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#disaster-risk">Disaster risk</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#disaster-risk-management">Disaster risk management</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#disaster-risk-assessment">Disaster risk assessment</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#disaster-risk-information-risk-data">Disaster risk information (risk data)</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hazard">Hazard</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exposure">Exposure</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vulnerability">Vulnerability</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cat-model">Cat model</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-of-risk-data">Examples of risk data</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li><li>Key concepts</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/keyconcepts.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<!-- https://hackmd.io/VGiOi2NmQDS2Eu9jgUGNwQ -->
+<h1 id="key-concepts">Key concepts</h1>
+<p>In this section, you will find definition of key concepts behind the RDLS including what is a disaster, how to reduce disaster risk through disaster disaster risk management and disaster risk assessment and what are the different types of risk data needed.</p>
+<p>Main definitions are taken from the <a href="https://www.undrr.org/terminology">UNDRR Terminology</a>. </p>
+<h2 id="disaster-risk">Disaster risk</h2>
+<p>Disaster risk is the potential loss of life, injury, or destroyed or damaged assets which could occur to a system, society or a community in a specific period of time, determined probabilistically as a function of hazard, exposure, vulnerability and coping capacity.</p>
+<p>Disaster risk comprises different types of potential impacts and losses (direct and indirect, tangible and intangible) which are sometimes difficult to quantify. Nevertheless, with knowledge of the prevailing hazards, the patterns of population and socio-economic development and their tendency to suffer impacts, disaster risks can be assessed and mapped, at least in broad terms.</p>
+<p>Source: <a href="https://www.undrr.org/terminology/disaster-risk">Disaster Risk, UNDRR Terminology</a></p>
+<h2 id="disaster-risk-management">Disaster risk management</h2>
+<p>Disaster risk management is the application of disaster risk reduction policies and strategies to prevent new disaster risk, reduce existing disaster risk and manage residual risk, contributing to the strengthening of resilience and reduction of disaster losses.</p>
+<p>Source: <a href="https://www.undrr.org/terminology/disaster-risk-management">Disaster Risk Management, UNDRR Terminology</a></p>
+<h2 id="disaster-risk-assessment">Disaster risk assessment</h2>
+<p>A qualitative or quantitative approach to determine the nature and extent of disaster risk by analysing potential hazards and evaluating existing conditions of exposure and vulnerability that together could harm people, property, services, livelihoods and the environment on which they depend.</p>
+<p>Source: <a href="https://www.undrr.org/terminology/disaster-risk-assessment">Disaster Risk Assessment, UNDRR Terminology</a></p>
+<h2 id="disaster-risk-information-risk-data">Disaster risk information (risk data)</h2>
+<p>Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets.</p>
+<p>Disaster risk information also includes the results of disaster risk assessments often expressed in terms of potential losses or impacts.</p>
+<p>Source: <a href="https://www.undrr.org/terminology/disaster-risk-information">Disaster Risk Information, UNDRR Terminology</a></p>
+<!--![Screenshot](img/risk_assessment.png)
+(adapted from "[Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)")-->
+<h2 id="hazard">Hazard</h2>
+<p>An hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. An hazardous event is the manifestation of a hazard in a particular place during a particular period of time.</p>
+<p>Hazards can have natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (geological, geophysical and hydrometeorological).</p>
+<p>Source: Source: <a href="https://www.undrr.org/terminology/hazard">Hazard, UNDRR Terminology</a></p>
+<h2 id="exposure">Exposure</h2>
+<p>The situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas. Measures of exposure can include the number of people or types of assets in an area. These can be combined with the specific vulnerability and capacity of the exposed elements to any particular hazard to estimate the quantitative risks associated with that hazard in the area of interest</p>
+<p>Source: <a href="https://www.undrr.org/terminology/exposure">Exposure, UNDRR Terminology</a></p>
+<h2 id="vulnerability">Vulnerability</h2>
+<p>Vulnerability are the conditions determined by physical, social, economic and environmental factors or processes which increase the susceptibility of an individual, a community, assets or systems to the impacts of hazards. The inverse of vulnerability is defined coping capacity, which is the combination of all the strengths, attributes and resources available within an organization, community or society to manage and reduce disaster risks and strengthen resilience.</p>
+<p>Source: <a href="https://www.undrr.org/terminology/vulnerability">Vulnerability, UNDRR Terminology</a></p>
+<h2 id="cat-model">Cat model</h2>
+<p>Catastrophe risk models (cat models) are common tools used to assess natural disaster risk. The models typically have four components: hazard, exposure, vulnerability and loss.</p>
+<p>A subset of a catastrophe risk model is an impact model, which is essentially a risk model that can only be used deterministically. The impact model uses hypothetical or historical events to simulate “what-if” scenarios that are often used as an aid for disaster planning and management. An example of an impact modeling tool is InaSAFE.</p>
+<p>Source: <a href="https://www.gfdrr.org/sites/default/files/solving-the-puzzle-report.pdf">GFDRR, Solving the Puzzle, 2016</a></p>
+<h2 id="examples-of-risk-data">Examples of risk data</h2>
+<p>The four components of risk assessment are showcased below for an assessment of flood risk over tangible asset in the urban area of Kabul (Afghanistan).</p>
+<table class="table"><tr>
+<td align="center" bgcolor="#0b3860" width="50%"><b><font color="#fff">Hazard: map of flood water depth</font></b></td>
+<td align="center" bgcolor="#0b3860" width="50%"><b><font color="#fff">Exposure: buildings footprints and population</font></b></td></tr>
+<tr><td><img src="img/sample_hzd.jpg" width="100%"/></td><td><img src="img/sample_exp.jpg" width="100%"/></td></tr>
+<tr>
+<td align="center" bgcolor="#0b3860" width="50%"><b><font color="#fff">Vulnerability: depth-damage function</font></b></td>
+<td align="center" bgcolor="#0b3860" width="50%"><b><font color="#fff">Impacts and losses: USD costs of replacement</font></b></td></tr>
+<tr><td><img src="img/sample_vln.jpg" width="100%"/></td><td><img src="img/sample_lss.jpg" width="100%"/></td></tr>
+</table>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="index.html" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="standards.html" title="Core standards">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="index.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="standards.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+</body>
+</html>

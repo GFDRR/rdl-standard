@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="http://docs.riskdatalibrary.org/ged4all.html" rel="canonical"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Ged4all - Risk Data Library Standard</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Ged4all";
+        var mkdocs_page_input_path = "ged4all.md";
+        var mkdocs_page_url = "/ged4all.html";
+      </script>
+<script defer="" src="js/jquery-3.6.0.min.js"></script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="index.html"> Risk Data Library Standard
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="keyconcepts.html">Key concepts</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standards.html">Core standards</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="taxonomy.html">Taxonomies</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Data model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datamodel.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hazard.html">Hazard</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exposure.html">Exposure</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vulnerability.html">Vulnerability</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="loss.html">Loss</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Implementation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implementation.html">RDL adoption</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local.html">Local</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jkan.html">JKAN catalogue</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postgres.html">PostGRESQL DB</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">Deploy RDL</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-preparation.html">Prepare data</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-import.html">Publish data</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">History</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="index.html">Risk Data Library Standard</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a alt="Docs" class="icon icon-home" href="index.html"></a> »</li><li>Ged4all</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/GFDRR/rdl-docs/tree/main/docs/ged4all.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h2 id="ged4all-exposure-taxonomy">GED4all exposure taxonomy</h2>
+<p>We encourage the use of GED4all taxonomy, described in full <a href="https://wiki.openstreetmap.org/wiki/GED4ALL">here</a>.<br/>
+In order to summarise all the asset information into a single alphanumeric string, a tool will be provided, similar to the <a href="https://platform.openquake.org/taxtweb/">'taxtweb'</a> tool available from GEM dedicated to <em>buildings</em> taxonomy.</p>
+<p>The taxonomy covers four main categories:</p>
+<ul>
+<li><a href="#buildings">Buildings</a></li>
+<li><a href="#lifelines">Lifelines</a></li>
+<li><a href="#crops-livestock-and-forestry">Crops, Livestock and Forestry</a></li>
+<li><a href="#socio-economic-indicators">Socio-Economic indicators</a></li>
+</ul>
+<h3 id="buildings">Buildings</h3>
+<p>The buildings taxonomy is based on GEM openquake taxonomy, with some semplifications. The taxonomy string is built as sequence of attributes separeted by slash:</p>
+<p><code>MATERIAL/HEIGHT/DATE/OCCUPANCY/SHAPE/…</code></p>
+<p>Missing attributes can be skipped from the string, e.g.</p>
+<p>2-floors detached residential dwelling, reinforced concrete structure: <code>CR/H:2/RES1</code> </p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material of the Lateral Load-Resisting System (LLRS)</td>
+<td align="center">--</td>
+<td>Unknown material</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">C</td>
+<td>Concrete, unknown reinforcement</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CU</td>
+<td>Concrete, unreinforced *</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CR</td>
+<td>Concrete, reinforced</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">SRC</td>
+<td>Concrete, composite with steel section</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">S</td>
+<td>Steel</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ME</td>
+<td>Metal (except steel)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">M</td>
+<td>Masonry, unknown reinforcement</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MUR</td>
+<td>Masonry, unreinforced</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MCF</td>
+<td>Masonry, confined</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MR</td>
+<td>Masonry, reinforced</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">E</td>
+<td>Earth, unknown reinforcement</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EU</td>
+<td>Earth, unreinforced</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ER</td>
+<td>Earth, reinforced</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">W</td>
+<td>Wood</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX</td>
+<td>Mixed materials (hybrid or composite)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INF</td>
+<td>Informal materials</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MATO</td>
+<td>Other material</td>
+</tr>
+<tr>
+<td>Height</td>
+<td align="center">--</td>
+<td>Number of storeys unknown</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">H:n</td>
+<td>n is the exact number of storeys above ground</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HBET:a-b</td>
+<td>a-b is the range of number of storeys above ground (a=upper bound, and b= lower bound). a-b, range of number of storeys above</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HAPP:n</td>
+<td>HAPP:n, approximate number of storeys above ground.</td>
+</tr>
+<tr>
+<td>Date of Construction or Retrofit</td>
+<td align="center">--</td>
+<td>Year unknown</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">Y :n</td>
+<td>n is the exact date of construction or retrofit</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">YBET:a-b</td>
+<td>a nd b are the upper and lower bound for the date of construction or retrofit</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">YPRE:n</td>
+<td>n is the latest possible date of construction or retrofit</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">YAPP:n</td>
+<td>n is the approximate date of construction or retrofit</td>
+</tr>
+<tr>
+<td>Occupancy</td>
+<td align="center">--</td>
+<td>Unknown occupancy type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES</td>
+<td>Residential, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES1</td>
+<td>Residential, Single dwelling</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2</td>
+<td>Residential, Multi-unit</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2A</td>
+<td>Residential, 2 Units (duplex)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2B</td>
+<td>Residential, 3-4 Units</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2C</td>
+<td>Residential, 5-9 Units</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2D</td>
+<td>Residential, 10-19 Units</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2E</td>
+<td>Residential, 20-49 Units</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES2F</td>
+<td>Residential, 50+ Units</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES3</td>
+<td>Residential, Temporary lodging</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES4</td>
+<td>Residential, Institutional housing</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RES5</td>
+<td>Residential, Mobile home</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM</td>
+<td>Commercial and public, Unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM1</td>
+<td>Commercial and public, Retail trade</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM2</td>
+<td>Commercial and public, Wholesale trade and storage (warehouse)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM3</td>
+<td>Commercial and public, Offices, professional/technical services</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM4</td>
+<td>Commercial and public, Hospital/medical clinic</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM5</td>
+<td>Commercial and public, Entertainment</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM6</td>
+<td>Commercial and public, Public building</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM7</td>
+<td>Commercial and public, Covered parking garage</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM8</td>
+<td>Commercial and public, Bus station</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM9</td>
+<td>Commercial and public, Railway station</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM10</td>
+<td>Commercial and public, Airport</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COM11</td>
+<td>Commercial and public, Recreation and leisure</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX</td>
+<td>Mixed, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX1</td>
+<td>Mixed use, Mostly residential and commercial</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX2</td>
+<td>Mixed use, Mostly commercial and residential</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX3</td>
+<td>Mixed use, Mostly commercial and industrial</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX4</td>
+<td>Mixed use, Mostly residential and industrial</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX5</td>
+<td>Mixed use, Mostly industrial and commercial</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MIX6</td>
+<td>Mixed use, Mostly industrial and residential</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">IND</td>
+<td>Industrial, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">IND1</td>
+<td>Industrial, Heavy industrial</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">IND2</td>
+<td>Industrial, Light industrial</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AGR</td>
+<td>Agriculture, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AGR1</td>
+<td>Agriculture, Produce storage</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AGR2</td>
+<td>Agriculture, Animal shelter</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AGR3</td>
+<td>Agriculture, Agricultural processing</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ASS</td>
+<td>Assembly, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ASS1</td>
+<td>Assembly, Religious gathering</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ASS2</td>
+<td>Assembly, Arena</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ASS3</td>
+<td>Assembly, Cinema or concert hall</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ASS4</td>
+<td>Assembly, Other gatherings</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GOV</td>
+<td>Government, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GOV1</td>
+<td>Government, general services</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GOV2</td>
+<td>Government, emergency response</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDU</td>
+<td>Education, unknown type</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDU1</td>
+<td>Education, Pre-school facility</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDU2</td>
+<td>Education, School</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDU3</td>
+<td>Education, College/university, offices and/or classrooms</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDU4</td>
+<td>Education, College/university, research facilities and/or labs</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">OCO</td>
+<td>Other occupancy type</td>
+</tr>
+<tr>
+<td>Ground floor hydrodynamics</td>
+<td align="center">--</td>
+<td>Ground floor hydrodynamics unknown</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GFO</td>
+<td>Ground floor plan fully open (no walls)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GFH</td>
+<td>Ground floor plan partially open (i.e. with at least 50% of walls).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GFM</td>
+<td>Not open, many doors and/or windows (i.e. more than 20% of wall surface area).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GFN</td>
+<td>Not open, few doors and/or windows (i.e. less than 20% of wall surface area)</td>
+</tr>
+<tr>
+<td>Roof Shape</td>
+<td align="center">--</td>
+<td>Unknown roof shape</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH1</td>
+<td>Flat</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH2</td>
+<td>Pitched with gable ends</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH3</td>
+<td>Pitched and hipped</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH4</td>
+<td>Pitched with dormers</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH5</td>
+<td>Monopitch</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH6</td>
+<td>Sawtooth</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH7</td>
+<td>Curved</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH8</td>
+<td>Complex regular</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSH9</td>
+<td>Complex irregular</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RSHO</td>
+<td>Roof shape, other</td>
+</tr>
+<tr>
+<td>Floor</td>
+<td align="center">--</td>
+<td>Floor material, unknown</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FN</td>
+<td>No elevated or suspended floor material (single-storey building)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FM</td>
+<td>Masonry</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FE</td>
+<td>Earthen</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FC</td>
+<td>Concrete</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FME</td>
+<td>Metal</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FW</td>
+<td>Wood</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FO</td>
+<td>Floor material, other</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h3 id="lifelines">Lifelines</h3>
+<p>The <strong>lifelines</strong> taxonomy includes all infrastructures commonly found in populated areas, such as:</p>
+<ul>
+<li><a href="#roads-and-railways">Roads and railways</a></li>
+<li><a href="#pipelines">Pipelines</a></li>
+<li><a href="#energy-generation-and-power-grid">Energy generation and power grid</a></li>
+<li><a href="#potable-water-and-wastewater-systems">Potable water and wastewater system</a></li>
+<li><a href="#communication-systems">Communication systems</a></li>
+</ul>
+<p>Three main sources of information have been used for the definition of this taxonomy: FP7 EU Project <a href="http://www.vce.at/SYNER-G">Syner-G</a>, HAZUS11 recommendations, and the OpenStreetMap (OSM) classification system.</p>
+<h4 id="roads-and-railways">Roads and railways</h4>
+<p>This taxonomy is strongly based on the classification system adopted by OpenStreetMap, since OSM is undoubtedly the largest and most complete source of open information concerning the location of roads and railways.
+The taxonomy string is simply <code>TYPE+CATEGORY</code>, e.g.</p>
+<p>Secondary road: <code>RDN+SE</code></p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Road   network</td>
+<td align="center">RDN+MO</td>
+<td>Motorway: restricted access major divided highway (i.e. freeway), normally with 2 or   more running lanes plus emergency hard shoulder</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+TR</td>
+<td>Trunk:   the most important roads in a country's system that aren't motorways (not necessarily be a divided highway)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+PR</td>
+<td>Primary:   the next most important roads in a country's system (often link larger towns)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+SE</td>
+<td>Secondary:   the next most important roads in a country's system (often link towns)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+TE</td>
+<td>Tertiary:   the next most important roads in a country's system (often link smaller towns and villages)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+UN</td>
+<td>Unclassified:   the least  important through roads in a country's system (often link villages and hamlets)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+RE</td>
+<td>Residential:   roads which serve as an access to housing, without function of connecting settlements. Often lined with housing.</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN+SR</td>
+<td>Service:   access roads to, or within an industrial estate, camp site, business park, car park etc.</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RDN</td>
+<td>Unknown:   no  information concerning road typology</td>
+</tr>
+<tr>
+<td>Railway network</td>
+<td align="center">RLW+LR</td>
+<td>Light rail: a higher-standard tram system, normally in its own right-of-way. Often reaches a considerable length (tens of kilometer)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RLW+MR</td>
+<td>Monorail:   a single-rail railway</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RLW+RL</td>
+<td>Rail:   full sized passenger or freight trains in the standard gauge for the country or state</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RLW+SW</td>
+<td>Subway:   a city passenger underground rail service running mostly grade separated</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RLW+TR</td>
+<td>Tram:   one or two carriage rail vehicles, usually sharing motor road.</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">RLW</td>
+<td>Unknown:   no additional information concerning rail typology.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="pipelines">Pipelines</h4>
+<p>The taxonomy presented herein has been developed using the classification experience developed in Syner-G and STREST (Crowley et al., 2016).
+The taxonomy string is simply <code>PPL/CONTENT/POSITION/MATERIAL/JOINT_TYPE/SOIL_TYPE/DIAMETER</code>, e.g.</p>
+<p>Large elevated pipe for potable water: <code>CPW/PEL/DLG</code></p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content</td>
+<td align="center">CGS</td>
+<td>Gas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COL</td>
+<td>Oil</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CPW</td>
+<td>Potable water</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CWW</td>
+<td>Wastewater</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">COT</td>
+<td>Other content</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>Position</td>
+<td align="center">PBU</td>
+<td>Buried</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">PEL</td>
+<td>Elevated</td>
+</tr>
+<tr>
+<td>Material</td>
+<td align="center">MPC</td>
+<td>Polyvinyl   chloride</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MPE</td>
+<td>Polyethylene</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MCI</td>
+<td>Cast   iron</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MDI</td>
+<td>Ductile   iron</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MWS</td>
+<td>Welded   steel</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MRM</td>
+<td>Reinforced   plastic mortar</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MRM</td>
+<td>Resin   transfer moulding</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MAC</td>
+<td>Asbestos-cement</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MC</td>
+<td>Concrete</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MCL</td>
+<td>Clay</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MO</td>
+<td>Other   material</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MUB</td>
+<td>Unknown, brittle</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">MUD</td>
+<td>Unknown, ductile</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown material</td>
+</tr>
+<tr>
+<td>Joint type</td>
+<td align="center">JAW</td>
+<td>Arc   welded</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JGW</td>
+<td>Gas   welded</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JCE</td>
+<td>Cemented</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JFW</td>
+<td>Fillet weld</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JBS</td>
+<td>Bell and spigot (caulked)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JRI</td>
+<td>Riveted</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JMR</td>
+<td>Mechanical restrained</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JSC</td>
+<td>Screwed</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JRU</td>
+<td>Rubber   gasket</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JSG</td>
+<td>Unknown, segmented</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JCO</td>
+<td>Unknown, continuous</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">JO</td>
+<td>Other joint</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown joint</td>
+</tr>
+<tr>
+<td>Soil type</td>
+<td align="center">SCO</td>
+<td>Corrosive</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">SNC</td>
+<td>Non corrosive</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown soil type</td>
+</tr>
+<tr>
+<td>Diameter</td>
+<td align="center">DSM</td>
+<td>Small   (&lt; 40 cm)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">DLG</td>
+<td>Large (≥ 40 cm)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown diameter</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="energy-generation-and-power-grid">Energy generation and power grid</h4>
+<p>We follow the taxonomy adopted by HAZUS, which allows capturing the capacity (e.g. voltage) of the elements. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and  whether the elements have been designed according to a particular code. The taxonomy for component of the power grid can thus be presented in the following manner: <code>PWG/ENERGYSOURCE/COMPONENT/ANCHORAGE/CODE PROVISIONS</code>, e.g.</p>
+<p>Electric ditribution line through pylones: <code>PWG/SSM/ANC</code></p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy   Source</td>
+<td align="center">OIL</td>
+<td>Oil</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GEO</td>
+<td>Geothermal</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">NUC</td>
+<td>Nuclear</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HYD</td>
+<td>Hydroelectric</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">WND</td>
+<td>Wind</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">SOL</td>
+<td>Solar</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">TDL</td>
+<td>Tidal   wave</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GAS</td>
+<td>Gas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">BIO</td>
+<td>Biomass</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">O</td>
+<td>Other</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>Power Capacity</td>
+<td align="center">PC:</td>
+<td>Value (integer)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown power capacity</td>
+</tr>
+<tr>
+<td>Power grid</td>
+<td align="center">SSL</td>
+<td>Low Voltage   (&lt;115 KV) Substation</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">SSM</td>
+<td>Medium   Voltage (115-500 KV) Substation</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">SSH</td>
+<td>High   Voltage (&gt;500 KV) Substation</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">DTC</td>
+<td>Distribution   circuit</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">TMT</td>
+<td>Transmission   tower</td>
+</tr>
+<tr>
+<td>Grid anchorage</td>
+<td align="center">ANC</td>
+<td>Anchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AUN</td>
+<td>Unanchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown   anchorage</td>
+</tr>
+<tr>
+<td>Code   provisions</td>
+<td align="center">CDN</td>
+<td>No code (non-engineered)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDL</td>
+<td>Low   code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDM</td>
+<td>Moderate code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDH</td>
+<td>High code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">C99</td>
+<td>Code provisions unknown</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="potable-water-and-wastewater-systems">Potable water and wastewater systems</h4>
+<p>Potable water systems are comprised by water treatment plants, storage tanks, pipelines and pumping stations, while wastewater systems are composed by wasterwater treatment plants, lifting stations and
+pipelines. Our classification is based on the HAZUS guidelines.</p>
+<p>The alphanumeric taxonomy strings are:<br/>
+<code>PWR/COMPONENT/ANCHORAGE/CODE PROVISIONS</code> for potable water<br/>
+<code>WWR/COMPONENT/ANCHORAGE/CODE PROVISIONS</code> for wasterwater</p>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Potable water</strong></td>
+<td align="center">PWR</td>
+<td></td>
+</tr>
+<tr>
+<td>Component</td>
+<td align="center">PWS</td>
+<td>Small potable   water treatment plant (&lt;50 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">PWM</td>
+<td>Medium potable water treatment plant (50-200 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">PWL</td>
+<td>Large potable water treatment plant (&gt;200 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">PPS</td>
+<td>Small pumping plant (&lt;10 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">PPM</td>
+<td>Medium pumping plant (10-50 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">PPL</td>
+<td>Large pumping plant (&gt;50 MGD)</td>
+</tr>
+<tr>
+<td>Anchorage</td>
+<td align="center">ANC</td>
+<td>Anchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AUN</td>
+<td>Unanchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown   anchorage</td>
+</tr>
+<tr>
+<td>Code   provisions</td>
+<td align="center">CDN</td>
+<td>No   code (non-engineered)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDL</td>
+<td>Low   code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDM</td>
+<td>Moderate   code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDH</td>
+<td>High   code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Code   provisions unknown</td>
+</tr>
+<tr>
+<td><strong>Wastewater</strong></td>
+<td align="center">WWR</td>
+<td></td>
+</tr>
+<tr>
+<td>Component</td>
+<td align="center">WWS</td>
+<td>Small wastewater treatment plant (&lt;50 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">WWM</td>
+<td>Medium wastewater treatment plant (50-200 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">WWL</td>
+<td>Large wastewater treatment plant (&gt;200 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LSS</td>
+<td>Small lift station (&lt;10 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LSM</td>
+<td>Medium lift station (10-50 MGD)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LSL</td>
+<td>Large lift station (&gt;50 MGD)</td>
+</tr>
+<tr>
+<td>Anchorage</td>
+<td align="center">ANC</td>
+<td>Anchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AUN</td>
+<td>Unanchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown anchorage</td>
+</tr>
+<tr>
+<td>Code provisions</td>
+<td align="center">CDN</td>
+<td>No   code (non-engineered)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDL</td>
+<td>Low code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDM</td>
+<td>Moderate code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDH</td>
+<td>High code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Code provisions unknown</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="communication-systems">Communication systems</h4>
+<p>A communication system is comprised by offices dedicated to the reception and dissimination of information (e.g. telephones offices, call centers, TV stations, radio station, telecomunication stations), supporting transmitter towers and distribution circuits.  The components have been classified based on the classification system proposed by HAZUS. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and whether the elements have been designed according to a particular code.
+<br/>The taxonomy string for the components of a communication system is:
+<br/><code>COM/COMPONENT/ANCHORAGE/CODE</code><br/></p>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td align="center">TRD</td>
+<td>AM or FM radio transmitters</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">TTV</td>
+<td>TV stations or transmitters</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">TWE</td>
+<td>Weather stations or transmitters</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">TTT</td>
+<td>Telecommunication transmitters</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">TOT</td>
+<td>Other stations or transmitters</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">DTC</td>
+<td>Distribution circuit</td>
+</tr>
+<tr>
+<td>Anchorage</td>
+<td align="center">ANC</td>
+<td>Anchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">AUN</td>
+<td>Unanchored</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Unknown anchorage</td>
+</tr>
+<tr>
+<td>Code provisions</td>
+<td align="center">CDN</td>
+<td>No code (non-engineered)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDL</td>
+<td>Low code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDM</td>
+<td>Moderate code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CDH</td>
+<td>High code</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">--</td>
+<td>Code provisions unknown</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h3 id="crops-livestock-and-forestry">Crops, Livestock and Forestry</h3>
+<p>The taxonomy for crops, livestock and forestry was defined based on existing classification systems supported by the Food and Agriculture Organization (FAO). For crops, the classification system in the 2000 agricultural census programme was adopted. This system comprises a wide range of attributes such as growing cycle (temporary/permanent), crop species, crop variety, season, land type, amongst others. The taxonomy proposed herein uses the first and second categorization levels proposed by FAO, as well as the growing cycle (e.g. permanent or temporary). A simple alphanumeric code is attributed to each class of crop.</p>
+<h4 id="crops">Crops</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cereals</td>
+<td align="center">CRP1+1</td>
+<td>Wheat</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+2</td>
+<td>Maize</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+3</td>
+<td>Rice</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+4</td>
+<td>Sorghum</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+5</td>
+<td>Barley</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+6</td>
+<td>Rye</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+7</td>
+<td>Oats</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+8</td>
+<td>Millets</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP1+9</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Vegetables   and melons</td>
+<td align="center">CRP2+1</td>
+<td>Leafy   or stem vegetables</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP2+2</td>
+<td>Fruit-bearing vegetables</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP2+3</td>
+<td>Root, bulb, or tuberous vegetables</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP2+4</td>
+<td>Mushrooms and truffles</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP2+5</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Fruits   and nuts</td>
+<td align="center">CRP3+1</td>
+<td>Tropical and subtropical fruits</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP3+2</td>
+<td>Citrus fruits</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP3+3</td>
+<td>Grapes</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP3+5</td>
+<td>Berries</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP3+6</td>
+<td>Pome fruits and stone fruits</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP3+7</td>
+<td>Nuts</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP3+8</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Oilseed   crops</td>
+<td align="center">CRP4+1</td>
+<td>Soya beans</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP4+2</td>
+<td>Groundnuts</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP4+3</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Root/tuber   crops with high starch or inulin content</td>
+<td align="center">CRP5+1</td>
+<td>Potatoes</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP5+2</td>
+<td>Sweet potatoes</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP5+3</td>
+<td>Cassava Yams</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP5+4</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Beverage   and spice crops</td>
+<td align="center">CRP6+1</td>
+<td>Beverage   crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP6+2</td>
+<td>Spice crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP6+3</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Leguminous crops</td>
+<td align="center">CRP7+1</td>
+<td>Beans</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+2</td>
+<td>Broad beans</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+3</td>
+<td>Chick peas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+4</td>
+<td>Cow peas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+5</td>
+<td>Lentils</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+6</td>
+<td>Lupins</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+7</td>
+<td>Peas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+8</td>
+<td>Pigeon peas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+9</td>
+<td>Leguminous crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP7+10</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Sugar crops</td>
+<td align="center">CRP8+1</td>
+<td>Sugar   beet</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP8+2</td>
+<td>Sugar cane</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP8+3</td>
+<td>Sweet sorghum</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP8+4</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Other crops</td>
+<td align="center">CRP9+1</td>
+<td>Grasses and other fodder crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP9+2</td>
+<td>Fibre crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP9+3</td>
+<td>Medicinal, aromatic, pesticidal, or similar crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP9+4</td>
+<td>Rubber</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP9+5</td>
+<td>Flower crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP9+6</td>
+<td>Tobacco</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">CRP9+7</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Unknown   crop</td>
+<td align="center">CRP</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="livestock">Livestock</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large ruminants</td>
+<td align="center">LVS1+1</td>
+<td>Cattle</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS1+2</td>
+<td>Buffaloes</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS1+3</td>
+<td>Yaks</td>
+</tr>
+<tr>
+<td>Small ruminants</td>
+<td align="center">LVS2+1</td>
+<td>Sheep</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS2+2</td>
+<td>Goats</td>
+</tr>
+<tr>
+<td>Pigs or swines</td>
+<td align="center">LVS3</td>
+<td></td>
+</tr>
+<tr>
+<td>Equines</td>
+<td align="center">LVS4+1</td>
+<td>Horses</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS4+2</td>
+<td>Mules and hinnies</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS4+3</td>
+<td>Asses</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS4+4</td>
+<td>Other (e.g. zebras)</td>
+</tr>
+<tr>
+<td>Camels and camelids</td>
+<td align="center">LVS5+1</td>
+<td>Camels</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS5+2</td>
+<td>Llamas and alpacas</td>
+</tr>
+<tr>
+<td>Poultry</td>
+<td align="center">LVS6+1</td>
+<td>Chickens</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS6+2</td>
+<td>Ducks</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS6+3</td>
+<td>Geese</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS6+4</td>
+<td>Turkeys</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS6+5</td>
+<td>Guinea fowls</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS6+6</td>
+<td>Pigeons</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS6+7</td>
+<td>Other</td>
+</tr>
+<tr>
+<td>Other animals</td>
+<td align="center">LVS7+1</td>
+<td>Deer, elk, reindeer</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS7+2</td>
+<td>Fur-bearing animals such as foxes and minks</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS7+3</td>
+<td>Dogs and cats</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS7+4</td>
+<td>Rabbits and hares</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS7+5</td>
+<td>Other (e.g. emus, ostriches, elephants)</td>
+</tr>
+<tr>
+<td>Insects</td>
+<td align="center">LVS8+1</td>
+<td>Bees</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS8+2</td>
+<td>Silkworms</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">LVS8+3</td>
+<td>Other worms or insects</td>
+</tr>
+<tr>
+<td>Unknown livestock</td>
+<td align="center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="forestry">Forestry</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Closed forest</td>
+<td align="center">FRT1+1</td>
+<td>Mainly evergreen forest - the canopy is never without green foliage, but individual trees may shed their leaves (e.g. Sumatra, Atrato Valley (Colombia), Atlantic slopes of Costa Rica, Amazon Basin).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT1+2</td>
+<td>Mainly deciduous forest - majority of trees shed their foliage simultaneously in connection to unfavourable season (e.g. North and South America, Southern slopes of the Himalayas and Europe)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT1+3</td>
+<td>Extremely xeromorphic forest - dense stands of trees, composed by species such as bottle or tuft rees with succulent leaves (e.g. thorn forest in Southwestern North America and Southwestern Africa)</td>
+</tr>
+<tr>
+<td>Woodland</td>
+<td align="center">FRT2+1</td>
+<td>Mainly evergreen woodland - the canopy is never without green foliage, but individual trees may shed their leaves (e.g. Mediterranean Basin).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT2+2</td>
+<td>Mainly deciduous woodland - majority of trees shed their foliage simultaneously in connection to unfavourable season (e.g. Southern California and American Southeast, Mediterranean Basin)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT2+3</td>
+<td>Extremely xeromorphic woodland - dense stands of trees, composed by species such as bottle or tuft rees with succulent leaves (e.g. Southwestern North America and Southwestern Africa)</td>
+</tr>
+<tr>
+<td>Scrub</td>
+<td align="center">FRT3+1</td>
+<td>Mainly evergreen scrub - the canopy is never without green foliage, but individual species may shed their leaves (e.g. Mediterranean dwarf palm shrubland, Chaparral shrubland in California or Hawaiian tree fern thicket).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT3+2</td>
+<td>Mainly deciduous scrub - majority of scrub shed their foliage simultaneously in connection to unfavourable season (e.g. peat mosses in Scotland)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT3+3</td>
+<td>Extremely xeromorphic (subdesert) shrubland - very open stands of shrubs, often composed by vegetation with green branches without leaves, some of them with thorns (e.g. mulga scrub in Australia).</td>
+</tr>
+<tr>
+<td>Dwarf-scrub and related communities</td>
+<td align="center">FRT4+1</td>
+<td>Mainly evergreen dwarf-scrub - mostly dense dwarf scrub evergreen dominating the landscape (e.g. East Mediterranean mountains).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT4+2</td>
+<td>Mainly deciduous scrub - majority of vegetation shed their foliage simultaneously in connection to unfavourable season (e.g. Sierra Nevada in California )</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT4+3</td>
+<td>Extremely xeromorphic dwarf-shrubland - more or less open formations consisting of dwarf-shrubs or succulent species (e.g. Australia).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT4+4</td>
+<td>Tundra - slowly growing, low formations, consisting mainly of dwarf-shrubs beyond the subpolar tree line (e.g. Alaska, Northern Canada, Greenland, Norway, Finland and Siberia).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT4+5</td>
+<td>Mossy bog formations with dwarf-shrub - peat accumulations formed mainly by mosses which generally cover the surface as well (e.g. Western  Siberian Lowlands in Russia).</td>
+</tr>
+<tr>
+<td>Herbaceous vegetation</td>
+<td align="center">FRT5+1</td>
+<td>Tall graminoid vegetation - Mostly composed by tall grasslands with heights of over 2 m. Forbs can be presented but their coverage is less than 50% (e.g. Northeast Bolivia, African savannah and upper Nile Valley).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT5+2</td>
+<td>Medium tall grassland - Mostly composed by grasslands with heights between 0.5 and 2 m. Forbs can be presented but their coverage is less than 50% (e.g. Sahel region in Africa, Eastern Kansas, glasslands in New Zealand)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT5+3</td>
+<td>Short grassland - Mostly composed by grasslands with heights below 0.5 m. Forbs can be presented but their coverage is less than 50% (e.g. alpine regions of Kenya, Colombia and Venezuela).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT5+4</td>
+<td>Forb vegetation - the plant community if mostly composed by forbs (more than 50%). (e.g. Sonoran Desert)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">FRT5+5</td>
+<td>Hydromorphic fresh-water vegetation - mostly composed by aquatic plants that are structurally supported by water, in wet or flooded regions most of the year (e.g. Amazon Basin)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h3 id="socio-economic-indicators">Socio-Economic indicators</h3>
+<p>Natural hazards are a complex phenomenon featuring large number of interactions that result into loss of lives, livelihoods and interruption of systems. The socio-economic indicators are related to the capacity of populations to prepare, respond and recover from potential damage. For example, education theme is related to awareness, which is essential for a population to avoid and cope with a disaster. The Socio-economic Indicators taxonomy aims at identifying and describing a set of variables which provide a basis for understanding and measuring resilience, social vulnerability and economic vulnerability. The taxonomy system is divided into eight main themes (economy, education, environment, government and institutional capacity, index, health, infrastructure and population), each theme is later subdivided to different levels of detail. The eight main themes in the Socio-economic Indicator Taxonomy are the following:</p>
+<ul>
+<li><a href="#population">Population</a>: defines community demographics: structure, distribution and size.</li>
+<li><a href="#economy">Economy</a>: measures the welfare and social security levels of communities</li>
+<li><a href="#education">Education</a>: provides information about invested resources and expected outcome of education, access and participation to education</li>
+<li><a href="#environment">Environment</a>: defines the underlying conditions that make an environment susceptible to damage, disaster experience and prevalence</li>
+<li><a href="#governance">Governance and institutional capacity</a>: institutional performance and regulatory efficiency, corruption control and stability of political system</li>
+<li><a href="#health">Health</a>: population health conditions and health sector capabilities</li>
+<li><a href="#index">Index</a>: range of indexes that cover different sectors, for example, the Disaster Risk Index used by the United Nation Development programme to monitor the global evolution of risk.</li>
+<li><a href="#infrastructure">Infrastructure</a>: Transportation and communication infrastructure, status and access to utility lifelines</li>
+</ul>
+<h4 id="population">Population</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Population Structure</td>
+<td align="center">POPPPSPOP</td>
+<td>Population</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSRPP</td>
+<td>Rural population</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSRUB</td>
+<td>Urbanization Rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSSRI</td>
+<td>Sex ratio</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSUPR</td>
+<td>Urban population</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSADP</td>
+<td>Age dependency ratio</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSAPD</td>
+<td>Average Population Density (areas over 400 ppl/km2)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSCAO</td>
+<td>Percentage of land area with over 400 people per km2</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSIMP</td>
+<td>Foreign Born Migrants</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSLPF</td>
+<td>Labour force participation rate - Female</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSNMR</td>
+<td>Net migration rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPPPSPGR</td>
+<td>Population growth rate</td>
+</tr>
+<tr>
+<td>Vulnerable Population</td>
+<td align="center">POPVNPSLP</td>
+<td>Slum population in urban areas</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPVNPPUF</td>
+<td>Population under 5</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPVNPPIP</td>
+<td>Percentage of the population below income poverty line</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPVNPITA</td>
+<td>International tourism arrivals</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPVNPFPP</td>
+<td>Female Population</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPVNPASE</td>
+<td>Population over 65</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">POPVNPTPP</td>
+<td>Refugees (country of origin)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="economy">Economy</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Economic Activity</td>
+<td align="center">ECOEACVLE</td>
+<td>Value lost due to electrical outages</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACBEX</td>
+<td>Budget expenditures</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACCDC</td>
+<td>Carbon Dioxide Emissions</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACCPI</td>
+<td>Consumer price index</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACEXS</td>
+<td>Exports</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACFCE</td>
+<td>Final consumption expenditure</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACFDP</td>
+<td>Foreign direct investment, net inflows</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGCE</td>
+<td>General government final consumption expenditure</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGFC</td>
+<td>Gross fixed capital formation</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGGE</td>
+<td>Greenhouse gas emissions</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGNC</td>
+<td>GDP Nominal per population</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGRB</td>
+<td>General government revenue</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGRN</td>
+<td>GDP Nominal</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGS1</td>
+<td>Gross savings</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACGUS</td>
+<td>GNI per capita</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACHEE</td>
+<td>Net Household final consumption expenditure</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACICR</td>
+<td>Implied PPP conversion rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACIDA</td>
+<td>Inflation, GDP deflator</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACIMP</td>
+<td>Imports</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACIPD</td>
+<td>Income payments (BoP)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACMEP</td>
+<td>Military expenditures</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEAC039</td>
+<td>Adjusted savings: consumption of fixed capital</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACPCM</td>
+<td>PPP conversion factor (GDP) to market exchange rate ratio</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACPEE</td>
+<td>Remittance Inflows</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACPEP</td>
+<td>Public expenditure on education</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACTIN</td>
+<td>Total investment</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACTR1</td>
+<td>International tourism receipts as a percent of total exports</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACTRA</td>
+<td>Trade</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEACTRE</td>
+<td>International tourism receipts as a percent of GDP</td>
+</tr>
+<tr>
+<td>Economic Resources</td>
+<td align="center">ECOERETRG</td>
+<td>Total reserves (includes gold)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERE040</td>
+<td>Adjusted savings: mineral depletion</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERE042</td>
+<td>Adjusted savings: energy depletion</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERE226</td>
+<td>Net ODA received per capita</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREBRE</td>
+<td>Budget revenues</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERECNT</td>
+<td>Net taxes on products</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREDEX</td>
+<td>Debt - external</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREGGD</td>
+<td>General government gross debt</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREGNS</td>
+<td>Gross national savings</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREGPC</td>
+<td>GDP at purchasing power parity per capita</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREIRP</td>
+<td>Inflation rate (consumer prices)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERELAP</td>
+<td>Land use - arable land</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERELCP</td>
+<td>Land use - permanent crops</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREMQP</td>
+<td>Money and quasi money (M2)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERENLB</td>
+<td>General government net lending/borrowing</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOEREPDP</td>
+<td>Public debt</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERERDE</td>
+<td>Research and development expenditure</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERETRV</td>
+<td>Tax revenue</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOERETTR</td>
+<td>Total tax rate</td>
+</tr>
+<tr>
+<td>Economic Composition</td>
+<td align="center">ECOECPAGR</td>
+<td>GDP composition by sector - agriculture</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPWRT</td>
+<td>Wholesale, retail trade, restaurants and hotels (ISIC G-H)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPTSC</td>
+<td>Transport, storage and communication (ISIC I)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPSER</td>
+<td>GDP - composition by sector - services</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPOTA</td>
+<td>Other Activities (ISIC J-P)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPMMU</td>
+<td>Mining, Manufacturing, Utilities (ISIC C-E)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPIND</td>
+<td>GDP composition by sector - industry</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPCON</td>
+<td>Construction (ISIC F)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOECPAHF</td>
+<td>Agriculture, hunting, forestry, fishing (ISIC A-B)</td>
+</tr>
+<tr>
+<td>Income Distribution and Poverty</td>
+<td align="center">ECOIDPLIS</td>
+<td>Income share held by lowest 20%</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPPPL</td>
+<td>Population below national poverty line</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPPOG</td>
+<td>Poverty gap at $2 a day (PPP)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPGIN</td>
+<td>GINI index</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPISF</td>
+<td>Income share held by fourth 20 %</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPISH</td>
+<td>Income share held by highest 20%</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPISS</td>
+<td>Income share held by second 20 %</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPIST</td>
+<td>Income share held by third 20 %</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOIDPPGP</td>
+<td>Poverty gap at $1.25 a day (PPP)</td>
+</tr>
+<tr>
+<td>Labour Market</td>
+<td align="center">ECOLAMLPT</td>
+<td>Labor force participation rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMRRD</td>
+<td>Researchers in R&amp;D</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMTEC</td>
+<td>Technicians in R&amp;D</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMUEP</td>
+<td>Unemployment Rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMEAT</td>
+<td>Employment in agriculture</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMEIT</td>
+<td>Employment in industry</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMEPT</td>
+<td>Ratio of youth employment to population ages 15-24</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMEST</td>
+<td>Employment in services</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMFLM</td>
+<td>Female legislators, senior officials and managers</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMLAF</td>
+<td>Labor force</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMLP1</td>
+<td>Female labor participation rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOLAMPET</td>
+<td>Employment to population ratio ages 15+</td>
+</tr>
+<tr>
+<td>Trade Economics</td>
+<td align="center">ECOTRECID</td>
+<td>Cost to import</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREMIC</td>
+<td>Merchandise imports CIF</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREISS</td>
+<td>Imports of goods and services</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTRECED</td>
+<td>Cost to export</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTRE072</td>
+<td>Tariff rate, most favored nation, weighted mean, all products percentage</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREMTR</td>
+<td>Merchandise trade</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREIGD</td>
+<td>Imports of goods and services (BoP)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREMEX</td>
+<td>Merchandise exports to developing economies within region</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREEVI</td>
+<td>Export volume index</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREEVE</td>
+<td>Export value index</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTREEEE</td>
+<td>Merchandise exports FOB</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ECOTRECPT</td>
+<td>Container port traffic (TEU: 20 foot equivalent units)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="education">Education</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Education Outcome</td>
+<td align="center">EDUEOCSAF</td>
+<td>Female population without secondary education or higher</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEEOCCT</td>
+<td>Primary School Completion Rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCEYS</td>
+<td>Expected Years of Schooling</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCLFM</td>
+<td>Ratio of young literate males to females ages 15-24</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCLFP</td>
+<td>Illiteracy - female</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCLMP</td>
+<td>Illiteracy - male</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCLTP</td>
+<td>Illiteracy</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCMYS</td>
+<td>Mean Years of Schooling</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCSAM</td>
+<td>Male population without secondary education or higher</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEOCSTJ</td>
+<td>Scientific and technical journal articles</td>
+</tr>
+<tr>
+<td>Education Access</td>
+<td align="center">EDUEACEEG</td>
+<td>Education expenditures</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACPTS</td>
+<td>Pupil-teacher ratio, secondary</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACPTP</td>
+<td>Pupil-teacher ratio, primary</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACETG</td>
+<td>Gross enrollment ratio, tertiary</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACSTG</td>
+<td>Gross enrollment ratio, secondary</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACBGP</td>
+<td>Ratio of girls to boys in primary and secondary education</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACEPG</td>
+<td>Gross enrollment ratio, primary</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">EDUEACCPT</td>
+<td>Children out of school, primary</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="environment">Environment</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disaster Prevalence</td>
+<td align="center">ENVDIPDFT</td>
+<td>Droughts, floods, extreme temperatures</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVDIPPLM</td>
+<td>Population living in areas where elevation is below 5 meters</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVDIPINP</td>
+<td>Natural disasters - Population affected</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVDIPIND</td>
+<td>Natural disasters - Number of deaths</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVDIPDRR</td>
+<td>Disaster risk reduction progress score</td>
+</tr>
+<tr>
+<td>Basic Geography</td>
+<td align="center">ENVGEOLAK</td>
+<td>Land Area</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVGEOCLK</td>
+<td>Geographic Classification</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVGEOFAP</td>
+<td>Forest area</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVGEOWAK</td>
+<td>Water Area</td>
+</tr>
+<tr>
+<td>Landuse/Landcover</td>
+<td align="center">ENVLULALP</td>
+<td>Arable land</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVLULFEC</td>
+<td>Fertilizer consumption</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVLULURP</td>
+<td>Urban pollution</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVLULPCP</td>
+<td>Permanent cropland</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">ENVLULALA</td>
+<td>Agricultural land</td>
+</tr>
+<tr>
+<td>Control of Corruption</td>
+<td align="center">GICPSCCOC</td>
+<td>Control of Corruption</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICPSCCRI</td>
+<td>Corruption Index</td>
+</tr>
+<tr>
+<td>Voice and Accountability</td>
+<td align="center">GICLRVSWP</td>
+<td>Percentage of seats held by women in national parliaments</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICLRVVOA</td>
+<td>Voice and Accountability</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICLRVVTE</td>
+<td>Voter Turnout at last parliamentary Election</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICLRVOIR</td>
+<td>Official information is available on request</td>
+</tr>
+<tr>
+<td>Rule of Law</td>
+<td align="center">GICLRVETD</td>
+<td>Equal treatment and absence of discrimination</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICLRVSLR</td>
+<td>Strength of legal rights index</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICPSCROL</td>
+<td>Rule of Law</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="governance">Governance</h4>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Political Stability</td>
+<td align="center">GICAVTCCL</td>
+<td>Civil conflict is effectively limited</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICPSCPSA</td>
+<td>Political Stability and Absence of Violence</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICAVTVRG</td>
+<td>People do not resort to violence to redress personal grievances</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICAVTLCP</td>
+<td>Losses due to theft, robbery, vandalism, and arson</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">GICAVTIHO</td>
+<td>Intentional homicides</td>
+</tr>
+<tr>
+<td>Government Effectiveness</td>
+<td align="center">GICGEFGEF</td>
+<td>Government Effectiveness</td>
+</tr>
+<tr>
+<td>Regulatory Quality</td>
+<td align="center">GICGEFREQ</td>
+<td>Regulatory Quality</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h4 id="health">Health</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health Status</td>
+<td align="center">HEAHSTFRT</td>
+<td>Total fertility rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTLRM</td>
+<td>Lifetime risk of maternal death</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTMAL</td>
+<td>Infectious and parasitic diseases: Malaria (DALYs)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTMEI</td>
+<td>One-year-olds lacking immunization against - Measles</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTTUC</td>
+<td>Infectious and parasitic diseases: Tuberculosis (DALYs)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTMRI</td>
+<td>Infant mortality rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTMUF</td>
+<td>Under 5 years mortality rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTPUP</td>
+<td>Prevalence of undernourishment</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTUNC</td>
+<td>Unmet need for contraception</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTAAP</td>
+<td>HIV/AIDS - adult prevalence rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTBAS</td>
+<td>Births attended by skilled health staff</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTBRC</td>
+<td>Crude birth rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTDII</td>
+<td>Infectious and parasitic diseases: Diarrheal diseases (DALYs)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTDPC</td>
+<td>Dietary Protein Consumption</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTDRC</td>
+<td>Crude death rate</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHSTLEX</td>
+<td>Life expectancy at birth</td>
+</tr>
+<tr>
+<td>Healthcare Resources</td>
+<td align="center">HEAHCRHBE</td>
+<td>Hospital beds</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCREHP</td>
+<td>Health expenditure, private</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCREPP</td>
+<td>Health expenditure, public</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCRERH</td>
+<td>External resources for health</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCRHAT</td>
+<td>Health expenditure, total</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCRHEC</td>
+<td>Health expenditure per capita</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCRNMW</td>
+<td>Nurses and midwives</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">HEAHCRPHY</td>
+<td>Physicians</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="index">Index</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">INXHDIGIV</td>
+<td>Inequality adjusted Human Development Index (Gender Inequality Index)</td>
+</tr>
+<tr>
+<td align="center">INXHDI012</td>
+<td>Human Development Index - 2012</td>
+</tr>
+<tr>
+<td align="center">INXXXXSFI</td>
+<td>State Fragility Index</td>
+</tr>
+<tr>
+<td align="center">INXXXXPOL</td>
+<td>Polity Index IV</td>
+</tr>
+<tr>
+<td align="center">INXXXXLSC</td>
+<td>Liner shipping connectivity index</td>
+</tr>
+<tr>
+<td align="center">INXXXXGEI</td>
+<td>Gender Equity Index</td>
+</tr>
+<tr>
+<td align="center">INXXXXGBB</td>
+<td>GEF benefits index for biodiversity</td>
+</tr>
+<tr>
+<td align="center">INXXXXEVI</td>
+<td>Environmental Vulnerability Index</td>
+</tr>
+<tr>
+<td align="center">INXXXXESI</td>
+<td>Environmental Sustainability Index</td>
+</tr>
+<tr>
+<td align="center">INXXXXDRI</td>
+<td>Disaster Risk Index</td>
+</tr>
+<tr>
+<td align="center">INXLPICQL</td>
+<td>Logistics performance index: Competence and quality of logistics services</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h4 id="infrastructure">Infrastructure</h4>
+<div class="scrollbar table-scroll">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Attribute</th>
+<th align="center">Code</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy, Water and Sanitation</td>
+<td align="center">INFEWSNGC</td>
+<td>Natural gas - consumption</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSOCB</td>
+<td>Oil - consumption</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSOPB</td>
+<td>Oil - production</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSRFC</td>
+<td>Renewable internal freshwater resources per capita</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSIWR</td>
+<td>Rural population access to improved water source</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSACE</td>
+<td>Population with access to electricity</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSECO</td>
+<td>Electricity - consumption</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSEIP</td>
+<td>Net energy imports</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSEPR</td>
+<td>Electricity - production</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSEUP</td>
+<td>Energy use (kg of oil equivalent)</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSISP</td>
+<td>Population access to improved sanitation facilities</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSISR</td>
+<td>Rural population access to improved sanitation facilities</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSISU</td>
+<td>Urban population access to improved sanitation facilities</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSIWP</td>
+<td>Population access to improved water source</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFEWSIWU</td>
+<td>Urban population access to improved water source</td>
+</tr>
+<tr>
+<td>Transport and Communication</td>
+<td align="center">INFTCOBRC</td>
+<td>Fixed broadband Internet subscribers</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCOATF</td>
+<td>Air transport, freight</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCOTLC</td>
+<td>Telephone lines</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCORDE</td>
+<td>Road density</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCOQPI</td>
+<td>Quality of port infrastructure, WEF</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCOMVC</td>
+<td>Motor vehicles</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCOMCC</td>
+<td>Mobile cellular subscriptions</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">INFTCORWG</td>
+<td>Railways, goods transported</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/><hr/></p>
+</div>
+</div><footer>
+<hr>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</hr></footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/GFDRR/rdl-docs" style="color: #fcfcfc"> GitHub</a>
+</span>
+</span>
+</div>
+<script>var base_url = '.';</script>
+<script defer="" src="js/theme_extra.js"></script>
+<script defer="" src="js/theme.js"></script>
+<script defer="" src="search/main.js"></script>
+<script defer="">
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+</body>
+</html>
