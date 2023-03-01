@@ -20,7 +20,7 @@ jobs:
           channels: conda-forge,defaults
           channel-priority: true
           activate-environment: docs_gen
-          environment-file: linux_docs_gen.yml
+          environment-file: docs/linux_docs_gen.yml
 
       - name: Deploy docs
         shell: bash -l {0}
