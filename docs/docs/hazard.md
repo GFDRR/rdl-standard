@@ -126,7 +126,7 @@ The schema specifies which type of analysis and data methodology that has genera
 
 <br><hr>
 
-##Examples
+## Examples
 
 Hazard data are most often represented by geospatial grids (raster); sometimes they are represented by points or polygons.
 
