@@ -34,5 +34,6 @@ jobs:
         run: |
           conda init bash
           conda activate docs_gen
+          cd docs
           mkdocs gh-deploy --force
 
