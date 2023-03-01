@@ -1,7 +1,7 @@
-site_name: Risk Data Library Standard
+site_name: Risk Data Library Standard - Documentation
 site_url: http://docs.riskdatalibrary.org
 use_directory_urls: false
-repo_url: https://github.com/GFDRR/rdl-docs
+repo_url: https://github.com/GFDRR/rdl-standard
 edit_uri: tree/main/docs
 
 nav:
