@@ -6,7 +6,7 @@ The **Risk Data Library Standard (RDLS)** is an open data standard to make it ea
 
 The RDLS provides a unique way to create, store, exchange and use disaster different risk information together. It is at the core of the Risk Data Library, a suite of open source tools to work with disaster and climate risk data.
 
-The RDLS has been adopted by World Bank for disaster and climate risk assessments but is intended to be used by anyone involved in generating or using disaster risk information.
+The RDLS has been developed by World Bank GFDRR for disaster and climate risk assessments but is intended to be used by anyone involved in generating or using disaster risk information.
 
 This documentation provides a technical overview of the RDLS and its different elements:
 
