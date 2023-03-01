@@ -27,4 +27,4 @@
 - Inspect the website on localhost: "mkdocs serve"
 - Build documentation on local folder /site: "mkdocs build"
 - Deploy on server: "mkdocs gh-deploy --clean" (the --clean parameter will remove the previous version)
-- The documentation is built and uploaded to branch "gh-pages" and available at https://GFDRR.github.io/rdl-docs
+- The documentation is built and uploaded to branch "gh-pages" and available at https://GFDRR.github.io/rdl-standard
