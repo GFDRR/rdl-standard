@@ -28,21 +28,21 @@ Notes
 ## Update on the Vulnerability Schema
 
 ●	TR started by providing an overview of the work done so far:
-○	Objective is to support comparison of different sets of vulnerability data and different intensity levels
-○	Once development is finished, would appreciate feedback from the SCM members
-○	Looking to increase the user base
+Objective is to support comparison of different sets of vulnerability data and different intensity levels
+Once development is finished, would appreciate feedback from the SCM members
+Looking to increase the user base
  
 ●	Series of questions
-○	MD: How it looks like? Does vulnerability covers at global level?
-○	TR: It has different functions all the way to asset level, including different types of assets such as infrastructure (residential and industrial). The fragility functions are done with standard equations, parametric and non-parametric models. It is searchable by different features. Maybe it is worth to discuss if they should push the initiative to have a more generalized function  for different global regions. 
-○	MD: It is important having vulnerability functions for other regions 
-○	TR: They need continuity in the funding to maintain the system and that people contribute  with the fragility and vulnerability functions. It could be interesting to see how it will interact with the RDL.  Using and extending GED4ALL Taxonomy
-○	PH: Suggested on having a call just to discuss the topic of extensions/updates to RDLS components and how is the ongoing maintenance of the RDLS and how that can be coordinated after looking how vulnerability looks at OASIS project; How to bridge the gap between different models; Vulnerability csv files in OASIS are tightly linked with other OASIS model implementation files (e.g. intensity and damage bins), it would be good to discuss the limits and scope of the vulnerability models and how users should use them ( Stuart might have a better idea)
-○	MD: OASIS need specific data to consume (binary files) and depend in providers data , they need a converter 
-○	PH: Data conversion is not a big deal, but choosing the right intensity bin is important and has a great impact on the result of the model. It is obscure how people will use it; It is important to leverage the knowledge the group has 
-○	TR: It would be valuable to talk more in depth about the risk modelling 
-○	PC: Let´s bring together the different functions and let’s talk on how to include TR work on the RDLS. Even look for funding together. It could be useful for World Bank members to assess other areas, there could be a funding element there.
-○	SH: Selection of vulnerability given imperfect data
+MD: How it looks like? Does vulnerability covers at global level?
+TR: It has different functions all the way to asset level, including different types of assets such as infrastructure (residential and industrial). The fragility functions are done with standard equations, parametric and non-parametric models. It is searchable by different features. Maybe it is worth to discuss if they should push the initiative to have a more generalized function  for different global regions. 
+MD: It is important having vulnerability functions for other regions 
+TR: They need continuity in the funding to maintain the system and that people contribute  with the fragility and vulnerability functions. It could be interesting to see how it will interact with the RDL.  Using and extending GED4ALL Taxonomy
+PH: Suggested on having a call just to discuss the topic of extensions/updates to RDLS components and how is the ongoing maintenance of the RDLS and how that can be coordinated after looking how vulnerability looks at OASIS project; How to bridge the gap between different models; Vulnerability csv files in OASIS are tightly linked with other OASIS model implementation files (e.g. intensity and damage bins), it would be good to discuss the limits and scope of the vulnerability models and how users should use them ( Stuart might have a better idea)
+MD: OASIS need specific data to consume (binary files) and depend in providers data , they need a converter 
+PH: Data conversion is not a big deal, but choosing the right intensity bin is important and has a great impact on the result of the model. It is obscure how people will use it; It is important to leverage the knowledge the group has 
+TR: It would be valuable to talk more in depth about the risk modelling 
+PC: Let´s bring together the different functions and let’s talk on how to include TR work on the DLS. Even look for funding together. It could be useful for World Bank members to assess other areas, there could be a funding element there.
+SH: Selection of vulnerability given imperfect data
 
 ## Update on the fellowship
 
@@ -82,3 +82,4 @@ Date: March 9
 1.	More in depth presentation of the vulnerability work undertaken by UCL
 2.	Update on Fellows recruitment 
 3.	Update from Open Data Services on technical review and priority tasks for the review and enhancement of the RDLS
+
