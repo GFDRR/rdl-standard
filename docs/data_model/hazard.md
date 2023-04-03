@@ -1,5 +1,7 @@
 # Hazard
+
 ## Schema attributes
+
 The hazard schema stores data about the intensity and occurrence probability of physical hazard phenomena such as floods, earthquakes, wildfires or others. The specific hazard process can be defined and measured with a specific intensity unit. For example, earthquake hazard may be represented as ground shaking, liquefaction or ground displacement.
 
 ```{eval-rst}
@@ -46,6 +48,7 @@ The hazard schema stores data about the intensity and occurrence probability of 
       }
 ```
 <br>
+
 The schema specifies which type of analysis and data methodology that has generated the dataset. It supports either simulated probabilistic scenarios and empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
 
 |**Required**| **Attribute** | **Description** | **Type** |
@@ -132,7 +135,7 @@ The schema specifies which type of analysis and data methodology that has genera
 
 Hazard data are most often represented by geospatial grids (raster); sometimes they are represented by points or polygons.
 
-###Flood hazard maps for Kabul
+### Flood hazard maps for Kabul
 
 Schema attributes for flood hazard map related to occurrence probability of a river flood event with a return period of once in 100 years over Kabul, Afghanistan. The hydrological data used for modelling the intensity of floods is derived from observations over the period 1958-2001 (44 years). The hazard intensity is measured as water depth, in meters. These information cover all mandatory fields, and few optional fields.
 
@@ -154,7 +157,7 @@ Schema attributes for flood hazard map related to occurrence probability of a ri
 
 <br>
 
-###Earthquake hazard maps for Afghanistan
+### Earthquake hazard maps for Afghanistan
 Schema attributes for earthquake hazard map related to occurrence probability of an event with return period of  once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability start from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).
 
 ![Screenshot](../img/hzd_eq_afg.jpg)
