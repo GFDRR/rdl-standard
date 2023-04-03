@@ -1,4 +1,5 @@
 # Exposure
+
 ## Schema attributes
 
 The exposure schema covers a wide variety of data describing structural, infrastructural and environmental asset, population, and socio-economic descriptors, each with relevant attributes for assessing risk from multiple hazards. The schema was developed based on [GEM Taxonomy 2.0](https://wiki.openstreetmap.org/wiki/GED4ALL) to accommodate the most important spatial features commonly employed in risk analysis to identify and estimate exposed value. 
@@ -42,11 +43,11 @@ Additional **tags** attributes can be associated with an asset to link any infor
 
 <hr>
 
-##Examples
+## Examples
 
 Exposure data can be stored at multiple scales, more often using vectors, namely polygons (e.g. building footprint), points (e.g. asset geolocation) and lines (e.g. transport infrastructures, lifelines), but in same case exposure estimates are aggregated at ADM level or distributed over a raster grid.
 
-###Exposure map for Kabul
+### Exposure map for Kabul
 
 Two exposure datasets are shown together in the example: building footprints polygons and population density raster at 90 m resolution.
 
