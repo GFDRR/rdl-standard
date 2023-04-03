@@ -1,5 +1,7 @@
 # Loss
+
 ## Schema attributes
+
 The loss schema enables to store information about hazard impact over exposure as a function of vulnerability. Loss datasets are directly linked to the hazard, exposure, and vulnerability datasets which were used to model losses. When no vulnerability model is applied, the potential loss is estimated as the sum of all exposed value. Losses can be expressed in form of map or in form of a curve, both sharing the same attributes and metrics.
 
 ```{eval-rst}
@@ -72,11 +74,11 @@ The main attributes of the **loss model** describe the hazard and process for wh
 
 <br>
 
-##Examples
+## Examples
 
 Losses can be rapresented in many different way: regular raster grids, points, or polygons. Often, the loss data consist of measures aggregated at the administrative unit level.
 
-###Flood loss scenarios for Afghanistan, 2050
+### Flood loss scenarios for Afghanistan, 2050
 
 Schema attributes for loss map related to future river flood hazard scenarios (2050) over all types of exposure occupancies for Afghanistan.
 
@@ -112,7 +114,7 @@ Losses can be investigated as total or for individual exposed asset and infrastr
 
 <br>
 
-###Observed losses
+### Observed losses
 
 Insert example of recorded empirical losses.
 
