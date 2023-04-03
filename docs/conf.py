@@ -136,6 +136,7 @@ html_theme = 'sphinx_rtd_theme'
 
 html_css_files = [
     'custom.css',
+    'extra.css'
 ]
 
 # Theme options are theme-specific and customize the look and feel of a theme
