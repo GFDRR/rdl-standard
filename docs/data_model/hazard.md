@@ -2,46 +2,48 @@
 ## Schema attributes
 The hazard schema stores data about the intensity and occurrence probability of physical hazard phenomena such as floods, earthquakes, wildfires or others. The specific hazard process can be defined and measured with a specific intensity unit. For example, earthquake hazard may be represented as ground shaking, liquefaction or ground displacement.
 
-```mermaid
-classDiagram
-    Event set -- Event1
-    Event set -- Event2
-    Event set: Hazard type
-    Event set: Analytical method
-    class Event1{
-      Occurrence frequency
-      Time reference
-      Hazard trigger
-    }
-    class Event2{
-      Occurrence frequency
-      Time reference
-      Hazard trigger
-    }
-    Event1 -- Footprint1
-    Event1 -- Footprint2
-    Event2 -- Footprint3
-    Event2 -- Footprint4
-    class Footprint1{
-      Hazard process
-      Intensity measure
-      Uncertainty
-    }
-    class Footprint2{
-      Hazard process
-      Intensity measure
-      Uncertainty
-    }
-    class Footprint3{
-      Hazard process
-      Intensity measure
-      Uncertainty
-    }
-    class Footprint4{
-      Hazard process
-      Intensity measure
-      Uncertainty
-    }
+```{eval-rst}
+ .. mermaid::
+
+  classDiagram
+      Event set -- Event1
+      Event set -- Event2
+      Event set: Hazard type
+      Event set: Analytical method
+      class Event1{
+        Occurrence frequency
+        Time reference
+        Hazard trigger
+      }
+      class Event2{
+        Occurrence frequency
+        Time reference
+        Hazard trigger
+      }
+      Event1 -- Footprint1
+      Event1 -- Footprint2
+      Event2 -- Footprint3
+      Event2 -- Footprint4
+      class Footprint1{
+        Hazard process
+        Intensity measure
+        Uncertainty
+      }
+      class Footprint2{
+        Hazard process
+        Intensity measure
+        Uncertainty
+      }
+      class Footprint3{
+        Hazard process
+        Intensity measure
+        Uncertainty
+      }
+      class Footprint4{
+        Hazard process
+        Intensity measure
+        Uncertainty
+      }
 ```
 <br>
 The schema specifies which type of analysis and data methodology that has generated the dataset. It supports either simulated probabilistic scenarios and empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
@@ -134,7 +136,7 @@ Hazard data are most often represented by geospatial grids (raster); sometimes t
 
 Schema attributes for flood hazard map related to occurrence probability of a river flood event with a return period of once in 100 years over Kabul, Afghanistan. The hydrological data used for modelling the intensity of floods is derived from observations over the period 1958-2001 (44 years). The hazard intensity is measured as water depth, in meters. These information cover all mandatory fields, and few optional fields.
 
-![Screenshot](img/hzd_fl_kabul.jpg)
+![Screenshot](../img/hzd_fl_kabul.jpg)
 
 |**Required**| **Attribute** | **Example** |
 |:---:| --- | --- |
@@ -155,7 +157,7 @@ Schema attributes for flood hazard map related to occurrence probability of a ri
 ###Earthquake hazard maps for Afghanistan
 Schema attributes for earthquake hazard map related to occurrence probability of an event with return period of  once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability start from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).
 
-![Screenshot](img/hzd_eq_afg.jpg)
+![Screenshot](../img/hzd_eq_afg.jpg)
 
 |**Required**| **Attribute** | **Example** |
 |:---:| --- | --- |

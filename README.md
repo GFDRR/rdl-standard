@@ -45,5 +45,3 @@ The published specifications and all working documents in this repository are pu
 a [Creative Commons Attribution-ShareAlike 4.0 (CC-BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/legalcode) licence.
 
 Visit the Creative Commons website for [official translations of the licence text](https://creativecommons.org/licenses/by-sa/4.0/legalcode#languages).
-
-

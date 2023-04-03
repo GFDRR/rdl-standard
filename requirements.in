@@ -1,0 +1,9 @@
+sphinx
+sphinx-togglebutton
+sphinxcontrib-mermaid
+sphinxcontrib-opendataservices
+sphinxcontrib-opendataservices-jsonschema
+sphinx-intl
+#transifex-client
+sphinx_rtd_theme
+myst-parser

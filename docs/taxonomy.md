@@ -101,7 +101,7 @@ DR | SPI:- | Standard Precipitation Index
 
 ### Other hazard taxonomies
 
-For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this [here](). 
+For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this here. 
 
 List of other hazard taxonomies below:
 

@@ -1,6 +1,6 @@
 # Overview of standard data model
 
-Following [key concepts](keyconcepts.md), the Risk Data Library Standard schema includes four components:
+Following [key concepts](../keyconcepts.md), the Risk Data Library Standard schema includes four components:
 
 - [**Hazard**](hazard.md): main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.
 - [**Exposure**](exposure.md): asset category, occupancy and specific taxonomy, cost type and value.
@@ -10,41 +10,43 @@ Following [key concepts](keyconcepts.md), the Risk Data Library Standard schema 
 
 The diagram below shows the core relationships between schema components, rather than listing all of their attributes.
 
-```mermaid
-classDiagram
-    Dataset -- Hazard
-    Dataset -- Exposure
-    Dataset -- Vulnerability
-    Dataset -- Loss
-    Dataset: -Project name
-    Dataset: -Coverage
-    Dataset: -Purpose
-    Dataset: -Bibliography
-    class Hazard{
-      -Type, Process
-      -Trigger
-      -Frequency
-      -Intensity unit
-      -Analytical method
-        }
-    class Exposure{
-      -Asset category
-      -Occupancy
-      -Taxonomy
-      -Cost type
-    }
-    class Vulnerability{
-      -Hazard process
-      -Exposure taxonomy
-      -Analytical  method 
-      -Applicability
-    }
-     class Loss{
-      -Hazard process
-      -Exposure taxonomy
-      -Loss frequency
-      -Loss metric
-    }          
+```{eval-rst}
+ .. mermaid::
+
+  classDiagram
+      Dataset -- Hazard
+      Dataset -- Exposure
+      Dataset -- Vulnerability
+      Dataset -- Loss
+      Dataset: -Project name
+      Dataset: -Coverage
+      Dataset: -Purpose
+      Dataset: -Bibliography
+      class Hazard{
+        -Type, Process
+        -Trigger
+        -Frequency
+        -Intensity unit
+        -Analytical method
+          }
+      class Exposure{
+        -Asset category
+        -Occupancy
+        -Taxonomy
+        -Cost type
+      }
+      class Vulnerability{
+        -Hazard process
+        -Exposure taxonomy
+        -Analytical  method 
+        -Applicability
+      }
+      class Loss{
+        -Hazard process
+        -Exposure taxonomy
+        -Loss frequency
+        -Loss metric
+      }          
 ```
 <br>
 ##Dataset general attributes
@@ -79,3 +81,14 @@ Other attributes are specific to individual resources, covering level of aggrega
 
 
 <br><hr>
+
+```{eval-rst}
+.. toctree::
+   :maxdepth: 1
+
+   hazard
+   exposure
+   vulnerability
+   loss
+
+```

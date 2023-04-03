@@ -3,22 +3,24 @@
 
 The exposure schema covers a wide variety of data describing structural, infrastructural and environmental asset, population, and socio-economic descriptors, each with relevant attributes for assessing risk from multiple hazards. The schema was developed based on [GEM Taxonomy 2.0](https://wiki.openstreetmap.org/wiki/GED4ALL) to accommodate the most important spatial features commonly employed in risk analysis to identify and estimate exposed value. 
 
-```mermaid
-classDiagram
-    Model -- Asset1
-    Model -- Asset2
-    Model: Category
-    Model: Occupancy
-    class Asset1{
-      Taxonomy code
-      Value type
-      Value unit
-    }
-    class Asset2{
-      Taxonomy code
-      Value type
-      Value unit
-    }
+```{eval-rst}
+ .. mermaid::
+
+  classDiagram
+      Model -- Asset1
+      Model -- Asset2
+      Model: Category
+      Model: Occupancy
+      class Asset1{
+        Taxonomy code
+        Value type
+        Value unit
+      }
+      class Asset2{
+        Taxonomy code
+        Value type
+        Value unit
+      }
 ```
 
 The main features of an exposure dataset are specified by the **exposure model** attributes.
@@ -48,7 +50,7 @@ Exposure data can be stored at multiple scales, more often using vectors, namely
 
 Two exposure datasets are shown together in the example: building footprints polygons and population density raster at 90 m resolution.
 
-![Exposure example](img/sample_exp.jpg)
+![Exposure example](../img/sample_exp.jpg)
 
 |**Required**| **Attribute** | **Example** |
 |:---:| --- | --- |
