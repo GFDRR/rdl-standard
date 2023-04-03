@@ -1,4 +1,6 @@
 sphinx
+sphinx-autobuild
+sphinx-design
 sphinx-togglebutton
 sphinxcontrib-mermaid
 sphinxcontrib-opendataservices
