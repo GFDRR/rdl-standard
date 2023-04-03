@@ -49,7 +49,8 @@ The diagram below shows the core relationships between schema components, rather
       }          
 ```
 <br>
-##Dataset general attributes
+ 
+## Dataset general attributes
 
 In addition to schema-specific attributes, each dataset is identified by a list of attributes based on <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms">DublinCore metadata standard</a>.
 
@@ -67,6 +68,7 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 |*| License code | Type of license | Licensing options |
 
 <br>
+
 Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
 
 | **Required** | **Attribute** | **Type** |
