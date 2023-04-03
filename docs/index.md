@@ -24,6 +24,7 @@ The RDL is a collaborative project managed by the [Global Facility for Disaster 
 ```{eval-rst}
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    keyconcepts
    standards

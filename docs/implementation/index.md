@@ -11,6 +11,7 @@ The RDL schema and standard can be adopted to risk project data in different way
 ```{eval-rst}
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    local
    jkan

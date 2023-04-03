@@ -87,6 +87,7 @@ Other attributes are specific to individual resources, covering level of aggrega
 ```{eval-rst}
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    hazard
    exposure
