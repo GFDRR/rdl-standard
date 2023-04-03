@@ -1,4 +1,4 @@
-# Overview of standard data model
+# Data model
 
 Following [key concepts](../keyconcepts.md), the Risk Data Library Standard schema includes four components:
 

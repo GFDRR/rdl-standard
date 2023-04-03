@@ -1,4 +1,4 @@
-# Adoption of RDL
+# Implementation
 
 The RDL schema and standard can be adopted to risk project data in different ways:
 
