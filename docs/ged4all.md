@@ -150,6 +150,7 @@ The taxonomy string is simply `TYPE+CATEGORY`, e.g.
 Secondary road: `RDN+SE`
 
 <div class="scrollbar table-scroll" markdown="1">
+
 | Attribute | Code | Description |
 |-|:-:|-|
 | Road   network | RDN+MO | Motorway: restricted access major divided highway (i.e. freeway), normally with 2 or   more running lanes plus emergency hard shoulder |
@@ -409,6 +410,7 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 ### Livestock
 
 <div class="scrollbar table-scroll" markdown="1">
+
 | Attribute | Code | Description |
 |-|:-:|-|
 | Large ruminants  | LVS1+1 | Cattle |
@@ -748,6 +750,7 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 ### Infrastructure
 
 <div class="scrollbar table-scroll" markdown="1">
+
 | Attribute | Code | Description |
 |-|:-:|-|
 | Energy, Water and Sanitation  | INFEWSNGC  | Natural gas - consumption |
