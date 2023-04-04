@@ -20,4 +20,5 @@ Please describe the content of the dataset in terms of:
 - Components included
 - List of folders
 - Data types and formats
+- Overall size of data
 
