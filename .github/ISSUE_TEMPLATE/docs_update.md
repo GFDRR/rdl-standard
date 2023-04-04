@@ -15,4 +15,4 @@ Please provide a short description of the reason for proposing the change.
 
 ## What is your proposed change?
 
-Please describe the change(s) you are proposing. Please provide a name and a clear definition for and new or revised attributes or relationships, along with expected values.
+Please specify the sections that are to be modified or replaced by indicating start and end of the edit in the current text.
