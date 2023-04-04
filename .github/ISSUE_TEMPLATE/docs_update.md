@@ -2,7 +2,7 @@
 name: Docs update
 about: If you are proposing changes or updates to the RDL documentation
 title: "[Documentation update]"
-labels: docs
+labels: Docs
 assignees: ''
 
 ---
