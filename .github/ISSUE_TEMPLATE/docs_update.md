@@ -1,7 +1,7 @@
 ---
-name: Change proposal
+name: Docs update
 about: If you are proposing changes or updates to the RDL documentation
-title: "[Documentation]"
+title: "[Documentation update]"
 labels: docs
 assignees: ''
 
