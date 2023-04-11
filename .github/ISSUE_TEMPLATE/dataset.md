@@ -22,3 +22,6 @@ Please describe the content of the dataset in terms of:
 - Data types and formats
 - Overall size of data
 
+## License information
+
+Please specify any information about the data licensing.
