@@ -1,32 +1,36 @@
 # Loss
+
 ## Schema attributes
+
 The loss schema enables to store information about hazard impact over exposure as a function of vulnerability. Loss datasets are directly linked to the hazard, exposure, and vulnerability datasets which were used to model losses. When no vulnerability model is applied, the potential loss is estimated as the sum of all exposed value. Losses can be expressed in form of map or in form of a curve, both sharing the same attributes and metrics.
 
-```mermaid
-classDiagram
-    Model -- Map
-    Model -- Curve
-    Model: Hazard type
-    Model: Exposure category
-    Model: Calculation method
-    Model: Link data
+```{eval-rst}
+ .. mermaid::
 
-    class Map{
-      Occurrence frequency
-      Time reference
-      Impact type
-      Loss type
-      Loss metric
-      Loss unit
-    }
-    class Curve{
-      Occurrence frequency
-      Time reference
-      Impact type
-      Loss type
-      Loss metric
-      Loss unit
-    }
+  classDiagram
+      Model -- Map
+      Model -- Curve
+      Model: Hazard type
+      Model: Exposure category
+      Model: Calculation method
+      Model: Link data
+
+      class Map{
+        Occurrence frequency
+        Time reference
+        Impact type
+        Loss type
+        Loss metric
+        Loss unit
+      }
+      class Curve{
+        Occurrence frequency
+        Time reference
+        Impact type
+        Loss type
+        Loss metric
+        Loss unit
+      }
 ```
 
 The main attributes of the **loss model** describe the hazard and process for which the loss are calculated, the method of calculation (to discern empirical events from simulated scenarios) and the category of asset on which losses insist. The schema includes the direct links to the original dataset of hazard, exposure, and vulnerability that were used to calculate the loss.
@@ -70,19 +74,19 @@ The main attributes of the **loss model** describe the hazard and process for wh
 
 <br>
 
-##Examples
+## Examples
 
 Losses can be rapresented in many different way: regular raster grids, points, or polygons. Often, the loss data consist of measures aggregated at the administrative unit level.
 
-###Flood loss scenarios for Afghanistan, 2050
+### Flood loss scenarios for Afghanistan, 2050
 
 Schema attributes for loss map related to future river flood hazard scenarios (2050) over all types of exposure occupancies for Afghanistan.
 
-![Flood losses in Afghanistan](img/lss_fl_afg.jpg)
+![Flood losses in Afghanistan](../img/lss_fl_afg.jpg)
 
 The losses are higher in the most densely built-up area of Kabul.
 
-![Flood losses in Kabul](img/lss_fl_kabul.jpg)
+![Flood losses in Kabul](../img/lss_fl_kabul.jpg)
 
 |**Required**| **Attribute** | **Example** |
 |:---:| --- | --- |
@@ -106,15 +110,13 @@ The losses are higher in the most densely built-up area of Kabul.
 
 Losses can be investigated as total or for individual exposed asset and infrastructure elements.
 
-![Road losses](img/exp_afg_roads.jpg)
+![Road losses](../img/exp_afg_roads.jpg)
 
 <br>
 
-###Observed losses
+### Observed losses
 
 Insert example of recorded empirical losses.
-
-![Screenshot](img/.jpg)
 
 |**Required**| **Attribute** | **Example** |
 |:---:| --- | --- |

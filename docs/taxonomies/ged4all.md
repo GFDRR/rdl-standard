@@ -1,4 +1,4 @@
-##GED4all exposure taxonomy
+# GED4all exposure taxonomy
 
 We encourage the use of GED4all taxonomy, described in full [here](https://wiki.openstreetmap.org/wiki/GED4ALL).<br>
 In order to summarise all the asset information into a single alphanumeric string, a tool will be provided, similar to the ['taxtweb'](https://platform.openquake.org/taxtweb/) tool available from GEM dedicated to _buildings_ taxonomy.
@@ -10,7 +10,7 @@ The taxonomy covers four main categories:
 - [Crops, Livestock and Forestry](#crops-livestock-and-forestry)
 - [Socio-Economic indicators](#socio-economic-indicators)
 
-###Buildings
+## Buildings
 The buildings taxonomy is based on GEM openquake taxonomy, with some semplifications. The taxonomy string is built as sequence of attributes separeted by slash:
 
 `MATERIAL/HEIGHT/DATE/OCCUPANCY/SHAPE/…`
@@ -131,7 +131,7 @@ Missing attributes can be skipped from the string, e.g.
 </div>
 <br/>
 
-###Lifelines
+## Lifelines
 The **lifelines** taxonomy includes all infrastructures commonly found in populated areas, such as:
 
 - [Roads and railways](#roads-and-railways)
@@ -142,7 +142,7 @@ The **lifelines** taxonomy includes all infrastructures commonly found in popula
 
 Three main sources of information have been used for the definition of this taxonomy: FP7 EU Project [Syner-G](http://www.vce.at/SYNER-G), HAZUS11 recommendations, and the OpenStreetMap (OSM) classification system.
 
-####Roads and railways
+### Roads and railways
 
 This taxonomy is strongly based on the classification system adopted by OpenStreetMap, since OSM is undoubtedly the largest and most complete source of open information concerning the location of roads and railways.
 The taxonomy string is simply `TYPE+CATEGORY`, e.g.
@@ -150,6 +150,7 @@ The taxonomy string is simply `TYPE+CATEGORY`, e.g.
 Secondary road: `RDN+SE`
 
 <div class="scrollbar table-scroll" markdown="1">
+
 | Attribute | Code | Description |
 |-|:-:|-|
 | Road   network | RDN+MO | Motorway: restricted access major divided highway (i.e. freeway), normally with 2 or   more running lanes plus emergency hard shoulder |
@@ -171,7 +172,7 @@ Secondary road: `RDN+SE`
 </div>
 <br/>
 
-####Pipelines
+### Pipelines
 
 The taxonomy presented herein has been developed using the classification experience developed in Syner-G and STREST (Crowley et al., 2016).
 The taxonomy string is simply `PPL/CONTENT/POSITION/MATERIAL/JOINT_TYPE/SOIL_TYPE/DIAMETER`, e.g.
@@ -227,7 +228,7 @@ Large elevated pipe for potable water: `CPW/PEL/DLG`
 </div>
 <br/>
 
-####Energy generation and power grid
+### Energy generation and power grid
 
 We follow the taxonomy adopted by HAZUS, which allows capturing the capacity (e.g. voltage) of the elements. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and  whether the elements have been designed according to a particular code. The taxonomy for component of the power grid can thus be presented in the following manner: `PWG/ENERGYSOURCE/COMPONENT/ANCHORAGE/CODE PROVISIONS`, e.g.
 
@@ -267,7 +268,7 @@ Electric ditribution line through pylones: `PWG/SSM/ANC`
 </div>
 <br/>
 
-####Potable water and wastewater systems
+### Potable water and wastewater systems
 
 Potable water systems are comprised by water treatment plants, storage tanks, pipelines and pumping stations, while wastewater systems are composed by wasterwater treatment plants, lifting stations and
 pipelines. Our classification is based on the HAZUS guidelines.
@@ -314,7 +315,7 @@ The alphanumeric taxonomy strings are:<br>
 </div>
 <br>
 
-####Communication systems
+### Communication systems
 
 A communication system is comprised by offices dedicated to the reception and dissimination of information (e.g. telephones offices, call centers, TV stations, radio station, telecomunication stations), supporting transmitter towers and distribution circuits.  The components have been classified based on the classification system proposed by HAZUS. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and whether the elements have been designed according to a particular code.
 <br>The taxonomy string for the components of a communication system is:
@@ -339,11 +340,11 @@ A communication system is comprised by offices dedicated to the reception and di
 
 <br>
 
-###Crops, Livestock and Forestry
+## Crops, Livestock and Forestry
 
 The taxonomy for crops, livestock and forestry was defined based on existing classification systems supported by the Food and Agriculture Organization (FAO). For crops, the classification system in the 2000 agricultural census programme was adopted. This system comprises a wide range of attributes such as growing cycle (temporary/permanent), crop species, crop variety, season, land type, amongst others. The taxonomy proposed herein uses the first and second categorization levels proposed by FAO, as well as the growing cycle (e.g. permanent or temporary). A simple alphanumeric code is attributed to each class of crop.
 
-####Crops
+### Crops
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -405,9 +406,11 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 
 </div>
 <br>
-####Livestock
+
+### Livestock
 
 <div class="scrollbar table-scroll" markdown="1">
+
 | Attribute | Code | Description |
 |-|:-:|-|
 | Large ruminants  | LVS1+1 | Cattle |
@@ -441,7 +444,8 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 
 </div>
 <br>
-####Forestry
+
+### Forestry
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -470,7 +474,7 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 </div>
 <br>
 
-###Socio-Economic indicators
+## Socio-Economic indicators
 
 Natural hazards are a complex phenomenon featuring large number of interactions that result into loss of lives, livelihoods and interruption of systems. The socio-economic indicators are related to the capacity of populations to prepare, respond and recover from potential damage. For example, education theme is related to awareness, which is essential for a population to avoid and cope with a disaster. The Socio-economic Indicators taxonomy aims at identifying and describing a set of variables which provide a basis for understanding and measuring resilience, social vulnerability and economic vulnerability. The taxonomy system is divided into eight main themes (economy, education, environment, government and institutional capacity, index, health, infrastructure and population), each theme is later subdivided to different levels of detail. The eight main themes in the Socio-economic Indicator Taxonomy are the following:
 
@@ -483,7 +487,7 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 - [Index](#index): range of indexes that cover different sectors, for example, the Disaster Risk Index used by the United Nation Development programme to monitor the global evolution of risk.
 - [Infrastructure](#infrastructure): Transportation and communication infrastructure, status and access to utility lifelines
 
-####Population 
+### Population 
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -511,7 +515,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 <br>
-####Economy
+
+### Economy
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -610,7 +615,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 <br>
-####Education
+
+### Education
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -638,7 +644,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 </div>
 
 <br>
-####Environment
+
+### Environment
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -670,7 +677,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 <br>
-####Governance  
+
+### Governance  
 
 | Attribute | Code | Description |
 |-|:-:|-|
@@ -683,7 +691,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 | Regulatory Quality  | GICGEFREQ  | Regulatory Quality |
 
 <br>
-####Health
+
+### Health
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -716,7 +725,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 <br>
-####Index
+
+### Index
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -736,9 +746,11 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 <br>
-####Infrastructure
+
+### Infrastructure
 
 <div class="scrollbar table-scroll" markdown="1">
+
 | Attribute | Code | Description |
 |-|:-:|-|
 | Energy, Water and Sanitation  | INFEWSNGC  | Natural gas - consumption |

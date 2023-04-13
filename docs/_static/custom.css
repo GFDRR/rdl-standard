@@ -1,0 +1,11 @@
+.admonition.external-link {
+  border-color: rgb(190, 93, 130);
+  background-color: rgb(190, 93, 130, 0.25);
+}
+.admonition.external-link > .admonition-title {
+  background-color: rgba(190, 93, 130, 0.5);
+  border-color: rgb(190, 93, 130);
+}
+.admonition.external-link > .admonition-title::before {
+  content: "\f0c1";
+}

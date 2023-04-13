@@ -101,7 +101,7 @@ DR | SPI:- | Standard Precipitation Index
 
 ### Other hazard taxonomies
 
-For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this [here](). 
+For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this here. 
 
 List of other hazard taxonomies below:
 
@@ -123,6 +123,15 @@ The exposure schema can accomodate different descriptions of assets using a taxo
 ### GED4all (recommended)
 
 [**GED4all**](ged4all.md) has been developed by GFDRR under the UK-DFID Challenge Fund, this open exposure database schema is meant for multi-hazard risk analysis. GED4ALL can be populated with building-level data from OpenStreetMap (OSM) following the [guidance](https://wiki.openstreetmap.org/wiki/GED4ALL) from the Humanitarian OSM Team, which collects contributions from the community on how OSM tags can be best aligned with the GED4ALL taxonomy. This is the suggested option for classification of exposure data in the RDL.
+
+```{eval-rst}
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   ged4all
+
+```
 
 ### Other exposure taxonomies
 

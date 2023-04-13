@@ -68,12 +68,19 @@ Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/fi
 
 The four components of risk assessment are showcased below for an assessment of flood risk over tangible asset in the urban area of Kabul (Afghanistan).
 
-<table><tr>
-<td align="center" width=50% bgcolor="#0b3860"><b><font color="#fff">Hazard: map of flood water depth</font></b></td>
-<td align="center" width=50% bgcolor="#0b3860"><b><font color="#fff">Exposure: buildings footprints and population</font></b></td></tr>
-<tr><td><img src="img/sample_hzd.jpg" width="100%"></td><td><img src="img/sample_exp.jpg" width="100%"></td></tr>
-<tr>
-<td align="center" width=50% bgcolor="#0b3860"><b><font color="#fff">Vulnerability: depth-damage function</font></b></td>
-<td align="center" width=50% bgcolor="#0b3860"><b><font color="#fff">Impacts and losses: USD costs of replacement</font></b></td></tr>
-<tr><td><img src="img/sample_vln.jpg" width="100%"></td><td><img src="img/sample_lss.jpg" width="100%"></td></tr>
-</table>
+````{grid} 1 1 1 2
+:gutter: 3
+
+```{grid-item-card} Hazard: map of flood water depth
+![Hazard](img/sample_hzd.jpg)
+```
+```{grid-item-card} Exposure: buildings footprints and population
+![Exposure](img/sample_exp.jpg)
+```
+```{grid-item-card} Vulnerability: depth-damage function
+![Vulnerability](img/sample_vln.jpg)
+```
+```{grid-item-card} Impacts and losses: USD costs of replacement
+![Loss](img/sample_lss.jpg)
+```
+````

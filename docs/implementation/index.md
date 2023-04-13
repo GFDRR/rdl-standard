@@ -1,4 +1,4 @@
-# Adoption of RDL
+# Implementation
 
 The RDL schema and standard can be adopted to risk project data in different ways:
 
@@ -7,3 +7,14 @@ The RDL schema and standard can be adopted to risk project data in different way
 - [**Database implementation**](postgres.md) based on *PostGRESQL* for advanced features
 
 <br><hr>
+
+```{eval-rst}
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   local
+   jkan
+   postgres
+
+```
