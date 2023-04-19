@@ -133,4 +133,21 @@ The following files are created by running a build and are not version controlle
 
 [Read the Docs](https://readthedocs.org/) builds and hosts the standard documentation site.
 
+Whenever a commit is pushed to a branch in the GitHub repository, Read the Docs automatically builds the [version](https://docs.readthedocs.io/en/stable/tutorial/index.html#versioning-documentation) associated with the branch and hosts it at https://rdl-standard.readthedocs.io/en/<branch name>.
+
+#### Configuration
+
+https://rdl-standard.readthedocs.io/en/latest redrirects to https://rdl-standard.readthedocs.io/en/main.
+
+[Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html#automation-rules) are configured to:
+
+* Activate, build and hide a new version when a commit is pushed to a new branch in the GitHub repository.
+* Delete the associated version when a branch is deleted in the GitHub repository.
+
+[Pull request builds](https://docs.readthedocs.io/en/stable/pull-requests.html) are also enabled.
+
+Other than the `main` branch, all branches are hidden from the [flyout menu](https://docs.readthedocs.io/en/stable/flyout-menu.html).
+
+#### Credentials
+
 You can find credentials for Read the Docs in the Open Data Services password database.
