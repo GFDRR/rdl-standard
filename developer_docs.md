@@ -101,11 +101,15 @@ make autobuild
 
 This section contains the following reference documentation:
 
-* [Repository structure](#repository-structure)
+* [GitHub](#github)
 * [Sphinx](#sphinx)
 * [Read the Docs](#read-the-docs)
 
-### Repository structure
+### GitHub
+
+The project repository is hosted on GitHub.
+
+#### Repository structure
 
 * `.github/`: Issue templates and GitHub Actions workflows
 * `docs/`:
@@ -124,6 +128,10 @@ The following files are created by running a build and are not version controlle
 
 * `.ve/`: Python virtual environment (if using [python3-venv](#python3-venv))
 * `docs/_build`: Built HTML documentation
+
+#### Configuration
+
+[Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are configured for the `main` and `dev` branches. The rules prevent commits being made directly by requiring [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) before commits can be merged. They also require approvals and status checks to pass before merging.
 
 ### Sphinx
 
