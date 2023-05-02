@@ -507,6 +507,10 @@
 			"type": "string",
 			"enum": ["Buildings", "Indicators", "Infrastructures", "Crops, livestock and forestry"]
 		},
+		"common_exp_occupancy": {
+			"type": "string",
+			"enum": ["TO UPDATE"]
+		},
 		"common_exp_val_type": {
 			"type": "string",
 			"enum": ["Structure", "Content", "Product", "Other"]
@@ -588,5 +592,6 @@
 			"type": "string",
 			"enum": ["TO UPDATE"]
 		}
+		
 	}
 }
