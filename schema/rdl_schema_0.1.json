@@ -369,7 +369,7 @@
 									"description": "The methodology used for the calculation of the function"
 								},
 								"approach": {
-									"$ref": "#/$defs/f_subtype",
+									"$ref": "#/$defs/vulnerability_f_subtype",
 									"description": "Type of methodological approach"
 								},
 								"f_relationship": {
@@ -579,6 +579,14 @@
 		"vulnerability_f_subtype": {
 			"type": "string",
 			"enum": ["Empirical", "Analytical", "Judgement", "Hybrid"]
+		},
+        "vulnerability_f_relationship": {
+			"type": "string",
+			"enum": ["TO Update"]
+		},
+        "vulnerability_f_math": {
+			"type": "string",
+			"enum": ["TO UPDATE"]
 		}
 	}
 }
