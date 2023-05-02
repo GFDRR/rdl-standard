@@ -256,30 +256,14 @@
 									"description": "Type of asset",
 									"$ref": "#/$defs/common_exp_category"
 								},
-								"occupancy": {
-									"description": "Destination of use of the asset",
-									"$ref": "#/$defs/common_exp_occupancy"									
-								},
-								"occupancy_time": {
-									"description": "Period of occupancy, if appliable (e.g. Population)",
-									"$ref": "#/$defs/common_occupancy_time"									
-								},
 								"taxonomy_source": {
 									"type": "string",
 									"description": "Name of taxonomy source (default is GED4ALL)",
 									"default": "GED4ALL"
 								},
-								"taxonomy_code": {
-									"type": "string",
-									"description": "Alphanumeric code for the taxonomy source (based on GED4ALL)"
-								},
 								"time_year": {
 									"type": "string",
 									"description": "General reference year to which the scenario refers to (e.g. '2050')"
-								},
-								"add_attributes": {
-									"type": "string",
-									"description": "List of key attributes included in the dataset"
 								}
 							}
 						},
@@ -356,10 +340,6 @@
 									"type": "string",
 									"description": "Source of taxonomy"									
 								},
-								"taxonomy_code": {
-									"type": "string",
-									"description": "Taxonomy code to which function applies"									
-								},
 								"impact_type": {
 									"description": "Type of impact",
 									"$ref": "#/$defs/common_impact_type"
@@ -408,46 +388,6 @@
 								"analysis_details": {
 									"description": "Description of analysis that produced the function",
 									"type": "string"
-								},
-								"par_names": {
-									"type": "string",
-									"description": "Parameters considered by the function"
-								},
-								"im_name": {
-									"type": "string",
-									"description": "Name of loss intensity measure"
-								},
-								"im_units": {
-									"type": "string",
-									"description": "Unit of loss intensity measure"
-								},
-								"n_events": {
-									"type": "integer",
-									"description": "Number of events the function has been built on"
-								},
-								"n_assets": {
-									"type": "integer",
-									"description": "Number of assets the function has been built on"
-								},
-								"is_fit_good": {
-									"type": "boolean",
-									"description": "Is the fit good overall?"
-								},
-								"is_edp_thre": {
-									"type": "boolean",
-									"description": "Is the damage scale is associated to an engineered-design parameter threshold?"
-								},
-								"is_dm_factor": {
-									"type": "boolean",
-									"description": "Is the damage scale is associated to a damage factor?"
-								},
-								"is_casualties": {
-									"type": "boolean",
-									"description": "Is the damage scale is associated to a casualties estimation?"
-								},
-								"is_downtime": {
-									"type": "boolean",
-									"description": "Is the damage scale is associated to a downtime estimation (e.g. service interruption)?"
 								}
 							}
 						}
@@ -567,11 +507,6 @@
 			"type": "string",
 			"enum": ["Buildings", "Indicators", "Infrastructures", "Crops, livestock and forestry"]
 		},
-		"common_exp_occupancy": {
-			"type": "string",
-			"enum": ["Residential", "Commercial", "Industrial", "Infrastructure", "Healthcare", "Educational",
-					 "Government", "Crop", "Livestock", "Forestry", "Mixed"]
-		},
 		"common_exp_val_type": {
 			"type": "string",
 			"enum": ["Structure", "Content", "Product", "Other"]
@@ -613,10 +548,6 @@
 		"common_license": {
 			"type": "string",
 			"enum": ["CC0-1.0", "PDDL-1.0", "CC-BY-4.0", "ODC-By-1.0", "CC-BY-SA-4.0", "ODbL-1.0"]
-		},
-		"common_occupancy_time": {
-			"type": "string",
-			"enum": ["Night","Day"]
 		},
 		"common_process_type": {
 			"type": "string",
