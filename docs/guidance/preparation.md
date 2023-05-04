@@ -70,7 +70,7 @@ For example:
          * …
    * Dataset: <project name> <hazard1> historical catalog
 ```
-  ________________
+<hr>
    
 ## Exposure data
 ### Format
@@ -120,6 +120,7 @@ For example:
       * …
          * …
 ```
+<hr>
 
 ## Vulnerability data
 ### Format
@@ -159,7 +160,7 @@ For example:
       * …
       * …
 ```
-________________
+<hr>
 
 ## Loss data
 ### Format
