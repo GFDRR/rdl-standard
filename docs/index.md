@@ -10,10 +10,10 @@ The RDLS has been developed by World Bank GFDRR for disaster and climate risk as
 
 This documentation provides a technical overview of the RDLS and its different elements:
 
-- [**Core standards**](standards.md): description of existing open data standards used in the RDLS
-- [**Taxonomy**](taxonomies/index.md): details of taxonomies adopted by the RDLS
+- [**Overview**](rdl/index.md): purpose of RDL and core standards adopted
 - [**Data model**](data_model/index.md): how to organize and link the data using the RDLS schema
-- [**Implementation**](implementation/index.md): how to apply the RDLS in your project
+- [**Taxonomy**](taxonomies/index.md): details of taxonomies adopted by the RDLS
+- [**Guidance**](guidance/index.md): how to implement the RDLS in your project
 - [**Tutorials**](tutorials/index.md): how to adopte and use RDLS for different pruposes
 - [**About**](about/index.md): other information on the roadmap, history, governance and license
 
@@ -26,12 +26,10 @@ The RDL is a collaborative project managed by the [Global Facility for Disaster 
    :maxdepth: 1
    :hidden:
 
-   keyconcepts
-   taxonomies/index
-   usecases
+   rdl/index
    data_model/index
-   implementation/index
-   tutorials/index
-   about/index
+   taxonomies/index
+   guidance/index
    glossary
+   about/index
 ```

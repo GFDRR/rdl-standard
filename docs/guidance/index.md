@@ -13,8 +13,6 @@ The RDL schema and standard can be adopted to risk project data in different way
    :maxdepth: 1
    :hidden:
 
-   local
-   jkan
-   postgres
-
+   preparation
+   formats
 ```
