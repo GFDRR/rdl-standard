@@ -28,3 +28,5 @@ NetCDF GIS format is an interface for array-oriented data for storing multi-dime
 
 - **GRIdded Binary or General Regularly-distributed Information in Binary (GRIB)**    
 GRIB was standardized by the WMO and in operation since 1985. Similar to NetCDF, GRIB files are commonly used in meteorology to store historical and forecast weather data. It’s a multidimensional file with the advantages of self-description, flexibility and expandability. There are tools to convert GRIB into rasters such as grb2grid and QGIS software.
+
+<br><hr>

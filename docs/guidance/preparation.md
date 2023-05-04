@@ -41,17 +41,14 @@ The main thematic groupings in hazard data are:
 
 ```{caution}
 In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. If required for data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts.
-```
-
 [FIGURE EXAMPLE: BORDER CLIP vs EXTENT CLIP OF GLOBAL LAYER ON A COUNTRY]
+```
 
 ### Packaging recommendation
 We recommend grouping exposure data in the following hierarchy:
 - **Hazard type**
   - *Geographic scale and location* (country; sub-national; city)
     - Year of data (current or projected)
-
-**NOTE THAT EACH PROJECT WILL HAVE ITS OWN NUANCES WHICH MAY REQUIRE AN ALTERNATIVE PACKAGING HIERARCHY**
 
 For example:
 ```
@@ -99,8 +96,6 @@ We recommend grouping exposure data in the following hierarchy:
 - **Geographic scale and location** (country; sub-national; city)
   - *Year of data* (current or projected)
     - (optional) Sector or asset type (Residential; Commercial / Population, Buildings).
-   
-**NOTE THAT EACH PROJECT WILL HAVE ITS OWN NUANCES WHICH MAY REQUIRE AN ALTERNATIVE PACKAGING HIERARCHY**
 
 For example:
 ```
@@ -145,8 +140,6 @@ Note that this hierarchy should be maintained even when packing all the data in 
 
 [EXAMPLE OF MULTIPLE IMPACT MODELS IN ONE FILE]
 
-**NOTE THAT EACH PROJECT WILL HAVE ITS OWN NUANCES WHICH MAY REQUIRE AN ALTERNATIVE PACKAGING HIERARCHY**
-
 For example:
 ```
 * Dataset: <project name> vulnerability data
@@ -184,8 +177,6 @@ We recommend grouping exposure data in the following hierarchy:
   - *Sector/asset type*
     - Year
 
-**NOTE THAT EACH PROJECT WILL HAVE ITS OWN NUANCES WHICH MAY REQUIRE AN ALTERNATIVE PACKAGING HIERARCHY**
-
 For example:
 ```
 * Dataset: <project name> loss data
@@ -199,3 +190,5 @@ For example:
    * Dataset: <project name> <hazard1> loss data 2050
    * Dataset: <project name> <hazard1> loss data 2080
 ```
+
+<br><hr>
