@@ -1,10 +1,10 @@
-# Implementation
+# Guidance
 
-The RDL schema and standard can be adopted to risk project data in different ways:
+Below is the guidance on best practices for dataset creation and distribution.
 
-- [**Structure and naming convention**](local.md) of risk data files and folders
-- [**Catalogue implementation**](jkan.md) based on open-source *JKAN* static content creator for simple file storage and download
-- [**Database implementation**](postgres.md) based on *PostGRESQL* for advanced features
+- [**Data preparation and packaging*](praparation.md) of risk data files and folders
+- [**Data formats**](formats.md) based on *PostGRESQL* for advanced features
+- [**Catalogue implementation**](cat.md) to update on online catalogues
 
 <br><hr>
 
