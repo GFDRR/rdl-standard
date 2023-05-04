@@ -27,12 +27,11 @@ The RDL is a collaborative project managed by the [Global Facility for Disaster 
    :hidden:
 
    keyconcepts
-   standards
    taxonomies/index
    usecases
    data_model/index
    implementation/index
    tutorials/index
    about/index
-
+   glossary
 ```
