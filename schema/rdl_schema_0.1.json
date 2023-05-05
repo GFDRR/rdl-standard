@@ -56,14 +56,10 @@
 							"description": "The date the disaster data as identified by it's GLIDE number was collected.",
 							"format": "date-time"
 						},
-						"model_source": {
-							"type": "string",
-							"description": "Name of source model"
-						},
-						"model_date": {
-							"type": "string",
-							"description": "Model release date",
-							"format": "date"
+						"model": {
+							"title": "Source",
+							"description": "The source model that produced the dataset.",
+							"$ref": "#/$defs/model"
 						},
 						"version": {
 							"type": [
@@ -141,7 +137,7 @@
 								"url": {
 									"type": "string",
 									"description": "The web address the dataset version can be downloaded from.",
-									"format":"uri"
+									"format": "uri"
 								},
 								"period": {
 									"type": "string",
@@ -952,6 +948,23 @@
 				"Annual Average Loss Ratio",
 				"Probable Maximal Loss"
 			]
+		},
+		"model": {
+			"type": "object",
+			"description": "The source model that produced the dataset.",
+			"properties": {
+				"title": {
+					"title": "Source model title",
+					"description": "The name of the model that the dataset originated from.",
+					"type": "string"
+				},
+				"date": {
+					"title": "Source model release date",
+					"description": "The date this dataset was published.",
+					"type": "string",
+					"format": "date-time"
+				}
+			}
 		},
 		"vulnerability_function_type": {
 			"type": "string",
