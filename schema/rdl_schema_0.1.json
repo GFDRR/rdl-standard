@@ -27,25 +27,21 @@
 					"properties": {
 						"title": {
 							"type": "string",
-							"description": "Title of the dataset"
+							"description": "The title of the dataset"
 						},
-						"abstract": {
+						"description": {
 							"type": "string",
-							"description": "Short description of the resource"
+							"description": "A short description of the dataset"
 						},
-						"component": {
+						"risk_data_type": {
 							"type": "string",
-							"description": "Univocal schema for this contribution (H, E, V or L)",
+							"description": "The type of risk data the dataset is.",
 							"enum": [
 								"Hazard",
 								"Exposure",
 								"Vulnerability",
 								"Loss"
 							]
-						},
-						"organization": {
-							"type": "string",
-							"description": "Name of organization that published the dataset"
 						},
 						"model_source": {
 							"type": "string",
@@ -57,18 +53,21 @@
 							"format": "date"
 						},
 						"version": {
-							"type": "integer",
-							"description": "Version of the dataset"
+							"type": [
+								"string",
+								"number"
+							],
+							"description": "The version of the dataset."
 						},
 						"purpose": {
 							"type": "string",
-							"description": "Purpose for what the data has been produced"
+							"description": "The purpose the dataset was produced for."
 						},
 						"project": {
 							"type": "string",
-							"description": "Project under which data has been produced"
+							"description": "The name of the project that the dataset was created as part of."
 						},
-						"notes": {
+						"details": {
 							"type": "string",
 							"description": "Additional details about the dataset"
 						},
@@ -81,63 +80,51 @@
 							"description": "URL of publication",
 							"format": "uri"
 						},
-						"geo_coverage": {
-							"$ref": "#/$defs/common_iso",
-							"description": "ISO code(s) of countries covered by the dataset, comma-separated"
-						},
-						"publish": {
-							"type": "boolean",
-							"description": "Flag to show/hide dataset from website"
+						"subnational_coverage": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							},
+							"description": "Locations covered by the data at a sub-national level, e.g. specific cities or states."
 						},
 						"license_code": {
 							"$ref": "#/$defs/common_license",
 							"description": "Type of license"
-						},
-						"maintainer": {
-							"type": "string",
-							"description": "Who added the resource"
-						},
-						"maintainer_email": {
-							"type": "string",
-							"description": "Contact email"
 						}
 					}
 				},
 				"resources": {
 					"type": "array",
+					"description": "An array of one of more resource objects each describing a version of the risk dataset.",
 					"items": {
 						"resource": {
 							"type": "object",
 							"required": [
-								"name",
+								"title",
 								"format",
-								"epsg",
 								"url"
 							],
 							"properties": {
-								"name": {
+								"title": {
 									"type": "string",
-									"description": "Name of linked resource"
-								},
-								"aggregation_type": {
-									"type": "string",
-									"description": "Level of data representation"
+									"description": "A title for this dataset."
 								},
 								"format": {
 									"type": "string",
-									"description": "Format of resource"
+									"description": "The file format of the dataset version using the file extension code."
 								},
-								"h-res": {
-									"type": "string",
-									"description": "Horizontal resolution in meters (raster data only)"
+								"horizontal_resolution": {
+									"type": "number",
+									"description": "The horizontal resolution of the dataset version given in meters. This field is only applicable to raster data."
 								},
-								"epsg": {
+								"coordinate_system": {
 									"type": "string",
-									"description": "Reference coordinate system (default: 4326)"
+									"description": "The reference co-ordinate system of the dataset version, using the EPSG codelist (https://epsg.org)."
 								},
 								"url": {
 									"type": "string",
-									"description": "URL of linked resource"
+									"description": "The web address the dataset version can be downloaded from.",
+									"format":"uri"
 								}
 							}
 						}
