@@ -29,6 +29,10 @@
 							"type": "string",
 							"description": "The title of the dataset"
 						},
+						"identifier": {
+							"type": "string",
+							"description": "An id for this dataset. This identifier must be unique within the data catalogue it is stored in, and it is recommended that an identifier is chosen with a high likelihood of being globally unique."
+						},
 						"description": {
 							"type": "string",
 							"description": "A short description of the dataset"
@@ -42,6 +46,15 @@
 								"Vulnerability",
 								"Loss"
 							]
+						},
+						"disaster_identifier": {
+							"type": "string",
+							"description": "The GLIDE number associated with this event disaster. A globally unique identification code for the observed or inferred hazard event. GLIDE numbers are available at https://www.glidenumber.net/glide/public/search/search.jsp."
+						},
+						"disaster_date": {
+							"type": "string",
+							"description": "The date the disaster data as identified by it's GLIDE number was collected.",
+							"format": "date-time"
 						},
 						"model_source": {
 							"type": "string",
@@ -109,6 +122,10 @@
 									"type": "string",
 									"description": "A title for this dataset."
 								},
+								"description": {
+									"type": "string",
+									"description": "Additional description of the dataset version not already covered by the other resource fields."
+								},
 								"format": {
 									"type": "string",
 									"description": "The file format of the dataset version using the file extension code."
@@ -125,6 +142,10 @@
 									"type": "string",
 									"description": "The web address the dataset version can be downloaded from.",
 									"format":"uri"
+								},
+								"period": {
+									"type": "string",
+									"description": "The period of time covered by this dataset version given as a year or range of years."
 								}
 							}
 						}
