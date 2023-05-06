@@ -1031,7 +1031,7 @@
 				}
 			}
 		},
-		"Organization": {
+		"parties": {
 			"type": "object",
 			"description": "The organizations, consortia and individuals involved in the creation and maintanence of the dataset.",
 			"required": [
