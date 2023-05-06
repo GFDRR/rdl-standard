@@ -90,14 +90,13 @@
 							"type": "string",
 							"description": "Additional details about the dataset"
 						},
-						"biblio_title": {
-							"type": "string",
-							"description": "Authors/year/title of publication"
-						},
-						"biblio_url": {
-							"type": "string",
-							"description": "URL of publication",
-							"format": "uri"
+						"bibliography": {
+							"title": "Bibliography",
+							"description": "An array of one of more publications that relate to or have made use of this dataset",
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/bibliography"
+							}
 						},
 						"subnational_coverage": {
 							"title": "Sub-national geographic coverage",
@@ -546,6 +545,37 @@
 		}
 	],
 	"$defs": {
+		"bibliography": {
+			"type": "object",
+			"description": "An array of one of more publications that relate to or have made use of this dataset",
+			"properties": {
+				"title": {
+					"title": "Document title",
+					"description": "The title of the document",
+					"type": "string"
+				},
+				"authors": {
+					"title": "Document authors",
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "An array of one or more authors of the document."
+				},
+				"year": {
+					"title": "Document publication year",
+					"description": "The year the document was published",
+					"type": "string",
+					"format": "date-time"
+				},
+				"url": {
+					"title": "Document url",
+					"type": "string",
+					"description": "A url for accessing the document.",
+					"format": "uri"
+				}
+			}
+		},
 		"common_aggregation_type": {
 			"type": "string",
 			"enum": [
