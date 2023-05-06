@@ -98,6 +98,14 @@
 								"$ref": "#/$defs/bibliography"
 							}
 						},
+						"parties": {
+							"title": "Parties",
+							"description": "The organizations, consortia and individuals involved in the creation and maintanence of the dataset.",
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/parties"
+							}
+						},
 						"subnational_coverage": {
 							"title": "Sub-national geographic coverage",
 							"type": "array",
@@ -1014,6 +1022,56 @@
 					"format": "date-time"
 				}
 			}
+		},
+		"Organization": {
+			"type": "object",
+			"description": "The organizations, consortia and individuals involved in the creation and maintanence of the dataset.",
+			"required": [
+				"name",
+				"id",
+				"organization"
+			],
+			"properties": {
+				"name": {
+					"title": "Name",
+					"description": "The name of the individual.",
+					"type": "string"
+				},
+				"id": {
+					"title": "Identifier",
+					"description": "A unique identifier for the organization, consortium or individual.",
+					"type": "string"
+				},
+				"role": {
+					"title": "Role",
+					"description": "The party's role(s) in the creation and/or maintanence of the dataset.",
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/role"
+					}
+				},
+				"organization": {
+					"title": "Organization",
+					"description": "The name of the organization or consortium.",
+					"type": "string"
+				},
+				"email": {
+					"title": "Email",
+					"description": "The email address of the organization, consortium or individual.",
+					"type": "string"
+				}
+			}
+		},
+		"role": {
+			"type": "string",
+			"enum": [
+				"author",
+				"point_of_contact",
+				"maintainer",
+				"funder",
+				"collaborator",
+				"team_lead"
+			]
 		},
 		"vulnerability_function_type": {
 			"type": "string",
