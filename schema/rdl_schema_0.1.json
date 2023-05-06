@@ -106,6 +106,14 @@
 								"$ref": "#/$defs/parties"
 							}
 						},
+						"countries": {
+							"title": "Countries",
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/common_iso"
+							},
+							"description": "A list of all the countries covered by the dataset."
+						},
 						"subnational_coverage": {
 							"title": "Sub-national geographic coverage",
 							"type": "array",
