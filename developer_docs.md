@@ -20,7 +20,7 @@ The preferred approach for making changes to the standard is to use a [local dev
 1. Create a branch from the `dev` branch.
 1. Make your changes.
 1. [Build the documentation](#build-the-documentation), resolve any errors and preview your changes locally.
-1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at https://rdl-standard.readthedocs.io/en/{branch name}.
+1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at [https://rdl-standard.readthedocs.io/en/{branch name}](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
   * Set the base branch to `dev`.
   * Reference the issue number in the description. 
