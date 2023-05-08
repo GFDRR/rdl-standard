@@ -6,11 +6,32 @@ This page provides [how-to guides](#how-to-guides) and [reference documentation]
 
 This section contains the following how-to guides:
 
-* [Set up your development environment](#set-up-your-development-environment)
+* [Propose changes](#propose-changes)
+* [Deploy changes](#deploy-changes)
+* [Set up a local development environment](#set-up-a-local-development-environment)
 * [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
 
-### Set up your development environment
+### Propose changes
+
+The preferred approach for making changes to the standard is to use a [local development environment](#set-up-a-local-development-environment) so that you can resolve build errors and test failures before committing your changes. Making repeated commits whilst trying to resolve issues can result in a messy commit history, which makes reviewing pull requests more complicated. Alternatively, if your change is simple, you can use the [GitHub web editor](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
+
+1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
+1. Create a branch from the `dev` branch.
+1. Make your changes.
+1. [Build the documentation](#build-the-documentation), resolve any errors and preview your changes locally.
+1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at https://rdl-standard.readthedocs.io/en/{branch name}.
+1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
+  * Set the base branch to `dev`.
+  * Reference the issue number in the description. 
+
+Once the pull request is merged, the updated documentation is available to preview at [https://rdl-standard.readthedocs.io/en/dev](https://rdl-standard.readthedocs.io/en/dev).
+
+### Deploy changes
+
+To deploy the `dev` branch to the live documentation site, [create a pull request](https://github.com/GFDRR/rdl-standard/compare) to merge the `dev` branch into the `main` branch. Once the pull request is merged, the changes are automatically deployed to the live site at [https://rdl-standard.readthedocs.io/en/](https://rdl-standard.readthedocs.io/en/).
+
+### Set up a local development environment
 
 #### Clone the repository
 
