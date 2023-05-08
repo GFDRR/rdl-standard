@@ -122,11 +122,25 @@ make autobuild
 
 This section contains the following reference documentation:
 
-* [Repository structure](#repository-structure)
+* [GitHub repository](#github-repository)
 * [Sphinx](#sphinx)
 * [Read the Docs](#read-the-docs)
 
-### Repository structure
+### GitHub repository
+
+The project repository is hosted on GitHub.
+
+#### Branches
+
+The `main` branch is used to build the 'live' version of the standard documentation.
+
+The `dev` branch is used to stage changes to the `main` branch.
+
+Feature branches branch off the `dev` branch, with work merged into the `dev` branch before finally being merged into the `main` branch.
+
+[Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are configured for the `main` and `dev` branches. The rules prevent commits being made directly by requiring [pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) before commits can be merged. They also require approvals and status checks to pass before merging.
+
+#### Directory structure
 
 * `.github/`: Issue templates and GitHub Actions workflows
 * `docs/`:
@@ -153,5 +167,22 @@ The following files are created by running a build and are not version controlle
 ### Read the Docs
 
 [Read the Docs](https://readthedocs.org/) builds and hosts the standard documentation site.
+
+Whenever a commit is pushed to a branch in the GitHub repository, Read the Docs automatically builds the [version](https://docs.readthedocs.io/en/stable/tutorial/index.html#versioning-documentation) associated with the branch and hosts it at https://rdl-standard.readthedocs.io/en/<branch name>.
+
+#### Configuration
+
+https://rdl-standard.readthedocs.io/en/latest redrirects to https://rdl-standard.readthedocs.io/en/main.
+
+[Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html#automation-rules) are configured to:
+
+* Activate, build and hide a new version when a commit is pushed to a new branch in the GitHub repository.
+* Delete the associated version when a branch is deleted in the GitHub repository.
+
+[Pull request builds](https://docs.readthedocs.io/en/stable/pull-requests.html) are also enabled.
+
+Other than the `main` branch, all branches are hidden from the [flyout menu](https://docs.readthedocs.io/en/stable/flyout-menu.html).
+
+#### Credentials
 
 You can find credentials for Read the Docs in the Open Data Services password database.
