@@ -18,18 +18,8 @@ ________________
 
 ## Hazard data
 ### Format / data types
-Hazard data includes:
-- Return period hazard maps
-- Scenario/historical event footprints
-- Hazard curves
-- (Stochastic) event set tables
-- Historical event catalogue
-- River network / cyclone track / seismic fault databases
-- Other input files including flood protection data, intensity-duration-frequency curves, ground motion relationships, etc.
-
-Generally, hazard data (footprints) takes the form of raster (geo grid) data (`GeoTIFF / COG`).
-Supporting data (hazard curves, historical catalogue) often come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
-They can also be packaged in a similar fashion.
+Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`). Less often, hazard curves and stochastic event set tables are generated. Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.<br>
+Generally, hazard data (footprints) takes the form of raster (geo grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
 
 ### Thematic grouping
 The main thematic groupings in hazard data are:
