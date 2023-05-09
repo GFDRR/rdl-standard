@@ -7,7 +7,7 @@ The collection can be accessed from the [collections page](https://datacatalog.w
 
 ## Add datasets
 Datasets can be submitted for review and publication on the Data Catalog by any World Bank Staff, ETC or STC. These people have the role of `Data depositor`.<br>
-Datasets needs to be packaged according to the [**data preparation guidelines**](guides/preparation.md).<br>
+Datasets needs to be packaged according to the [**data preparation guidelines**](preparation.md).<br>
 <br>
 Two options to upload data:
 - **Individually**: using the upload wizard
@@ -42,7 +42,7 @@ Select the option on the right: _`continue`_.
     - Hazard, Exposure, Vulnerability, Loss (depending on the component type)
     - Flood, Earthquake, Landslide, Tsunami (hazard type)
   - **Topics**: There is currently no topic for risk analytics or climate and disaster risk - leave blank
-  - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](ddh-team) with request to assign data to RDL Colelction.
+  - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](#ddh-team) with request to assign data to RDL Colelction.
   ![Screenshot](../img/rdl_ddh4.png)
 
 When all required (and optional) information has been entered, click on `Save as draft`. The dataset will appear under `My datasets` list.
