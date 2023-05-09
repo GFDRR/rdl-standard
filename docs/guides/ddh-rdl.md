@@ -11,16 +11,16 @@ Datasets needs to be packaged according to the [**data preparation guidelines**]
 <br>
 Two options to upload data:
 - **Individually**: using the upload wizard
-- **Bulk**: for large number of datasets, requires support by the [DDH team](#ddh-team)
+- **Bulk**: for large number of datasets, requires support by the [DDH team](../about/contacts.md#ddh-team)
 
-In both cases, datasets can be added to the [RDL Collection](https://datacatalog.worldbank.org/search/collections/Risk-Data-Library) only by the [RDL team](#rdl-team), after approval.
+In both cases, datasets can be added to the [RDL Collection](https://datacatalog.worldbank.org/search/collections/Risk-Data-Library) only by the [RDL team](../about/contacts.md#rdl-team), after approval.
 
 ### Individual datasets
 - Log in to the [Data Catalog](https://datacatalog.worldbank.org/int/home) (top right bar)
 - View [My datasets](https://datacatalog.worldbank.org/int/data/mydata) (top right bar)
   ![Screenshot](../img/rdl_ddh_mydata.png)
   The page shows dataset number, name, modified date, status (Published, Draft, Under review, Publishing in progress) for datasets you have uploaded or for which you are listed as a contributor
-  - Under `Action` you can `edit` or `submit for review` to the [DDH team](#ddh-team).
+  - Under `Action` you can `edit` or `submit for review` to the [DDH team](../about/contacts.md#ddh-team).
   - When status is `Published`, the dataset will be visible on the World Bank Data Catalog.
 - Click [Add data](https://datacatalog.worldbank.org/int/data/add) (top right bar)
 Select the option on the right: _`continue`_.
@@ -42,7 +42,7 @@ Select the option on the right: _`continue`_.
     - Hazard, Exposure, Vulnerability, Loss (depending on the component type)
     - Flood, Earthquake, Landslide, Tsunami (hazard type)
   - **Topics**: There is currently no topic for risk analytics or climate and disaster risk - leave blank
-  - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](#ddh-team) with request to assign data to RDL Colelction.
+  - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](../about/contacts.md#ddh-team) with request to assign data to RDL Colelction.
   ![Screenshot](../img/rdl_ddh4.png)
 
 When all required (and optional) information has been entered, click on `Save as draft`. The dataset will appear under `My datasets` list.
@@ -62,17 +62,3 @@ The workflow steps are:
   2. Use JSON metadata creation tool. This tool is standalone (not part of DDH). It exports a JSON file to be saved with the dataset.
 - Upload metadata with the dataset. Metadata will become available to download from the dataset page. This will contain the standard DDH metadata plus the RDL metadata.
 
-## Contacts
-### RDL Team
-- Mattia Amadio <[mamadio@worldbank.org](mailto:mamadio@worldbank.org)>
-- Stuart Fraser <[sfraser@worldbank.org](mailto:sfraser@worldbank.org)>
-- Pierre Chrzanowski <[pchrzanowski@worldbank.org](mailto:pchrzanowski@worldbank.org)>
-
-### DDH Team
-- Kamwoo Lee <[klee16@worldbank.org](mailto:klee16@worldbank.org)>
-- Gaurav Bhardwaj <[gbhardwaj1@worldbank.org](mailto:gbhardwaj1@worldbank.org)>
-- Rochelle O’Hagan <[rohagan@worldbank.org](mailto:rohagan@worldbank.org)> (DDH lead)
-
-DDH team is responsible for review and publication of submitted datasets, and to assign datasets to RDL collection.
-
-<hr>

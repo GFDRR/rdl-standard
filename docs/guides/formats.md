@@ -2,8 +2,8 @@
 
 Risk data can be made of spatial or non-spatial data.
 
-- **Spatial data (geodata)** can be shared in a variety of formats depending on the software used by the analyst. Over the years, [OSGEO ](https://wiki.osgeo.org/wiki/Main_Page) (Open Source Geospatial Foundation) tried to converge towards a limited number of "best" standard formats for each geospatial type. 
-
+- **Spatial data (geodata)** can be shared in a variety of formats depending on the software used by the analyst. Over the years, [OSGEO ](https://wiki.osgeo.org/wiki/Main_Page) (Open Source Geospatial Foundation) tried to converge towards a limited number of "best" standard formats for each geospatial type.
+<br><br>
 - **Non-spatial data** most often consist of table data stored as excel or csv files for greater compatibility.
 
 Below is a list of recommended and supported geodata formats.
@@ -41,6 +41,6 @@ Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where 
 
 **Excel** (`.xls`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, multiple files should come in one zipfile. Please include reference to the .xls filetype in the resource description.
 
-- **Portable Document Format** (`.pdf`) is the preferred format for reports and documentation. Add reports uncompressed whenever possible: users will commonly want to see the description for each report or document as one resource per file. Resource filetype will show as ‘PDF’.
+**Portable Document Format** (`.pdf`) is the preferred format for reports and documentation. Add reports uncompressed whenever possible: users will commonly want to see the description for each report or document as one resource per file. Resource filetype will show as ‘PDF’.
 
-<br><hr>
+<hr>

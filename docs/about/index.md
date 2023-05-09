@@ -1,11 +1,13 @@
 # About
 
+
 ```{eval-rst}
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
-   roadmap
-   history
+   contacts
+   changelog
    governance
    license
 

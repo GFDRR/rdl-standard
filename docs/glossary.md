@@ -24,11 +24,9 @@ A qualitative or quantitative approach to determine the nature and extent of dis
 
 Source: [Disaster Risk Assessment, UNDRR Terminology](https://www.undrr.org/terminology/disaster-risk-assessment)
 
-## Disaster risk information (risk data)
+## Disaster risk information (_risk data_)
 
-Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets.
-
-Disaster risk information also includes the results of disaster risk assessments often expressed in terms of potential losses or impacts.
+Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets. Disaster risk information includes all studies, information and mapping required to understand the disaster risk drivers and underlying risk factors.
 
 Source: [Disaster Risk Information, UNDRR Terminology](https://www.undrr.org/terminology/disaster-risk-information)
 
