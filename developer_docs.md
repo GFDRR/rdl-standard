@@ -98,7 +98,7 @@ Sphinx, which builds the documentation, doesn’t watch directories for changes.
 
 ```bash
 cd docs
-make autobuild
+make html
 ```
 
 ### Update requirements
