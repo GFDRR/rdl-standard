@@ -4,7 +4,7 @@ Below is the guidance on best practices for dataset creation, packaging, metadat
 
 - [**Data preparation and packaging**](preparation.md) of risk data files and folders
 - [**Data formats**](formats.md) recommended and supported formats to store and share data
-- [**Upload to the World Bank Data Catalog**](ddh-rdl.md) to store the risk data on the [Risk Data Library collection](https://datacatalog.worldbank.org/int/search/collections/rdl)
+- [**Upload to the Risk Data Library collection**](ddh-rdl.md) to store the risk data on the [World Bank Data Catalog](https://datacatalog.worldbank.org/int/search/collections/rdl)
 
 <br><hr>
 
