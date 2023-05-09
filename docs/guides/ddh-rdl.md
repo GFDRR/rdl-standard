@@ -50,7 +50,7 @@ When all required (and optional) information has been entered, click on `Save as
 ### Bulk upload
 In cases where large volumes of project data should be uploaded, DDH team can assist with bulk upload. 
 The workflow steps are:
-1. Store project data in folders on OneDrive.
+1. Login with WB credentials and store project data on the DataCatalog Sharepoint - using folders structuring
 2. Create an excel spreadsheet describing the datatype with each dataset name, URL to data and URL to prepared JSON metadata. 
 3. Describe the data structure to be achieved on DDH.
 4. DDH team will copy the data and metadata to DDH Sharepoint.

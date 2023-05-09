@@ -2,18 +2,19 @@
 
 The data structure and packaging of the output as obtained from the data analysts may not always align with the way we want users of the RiskDataLibrary to search and download data.
 
-Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search?fq=(identification%2Fcollection_code%2Fany(col:col%20eq%20%27RDL%27))&q=&start=0&sort=last_updated_date%20desc)) are provided as individual RESOURCES, which should be packed (grouped) according to two main criteria:
+Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/Risk-Data-Library) are provided as individual `RESOURCES`, which should be packed (grouped) according to three main criteria:
 
-- **GEOGRAPHY**: For example, in a regional analysis, users may want to access data for one/each country - so data should be packaged to download the dataset with coverage for each country.
+- **GEOGRAPHY**: data covering a multi-country region might be split into individual countries' datasets.
 - **THEME**: Data resources may be grouped by hazard type, sector type, etc.
+- **FORMAT**: how the data are stored. It is preferred to keep data with different formats in different resources.
 
 We also need to consider:
 - **SELF-DEPENDENCY & COMPLETNESS**: the data resource can be interpreted and used by itself.
-- **EFFICIENCY**: try to avoid creating huge datasets (>1 Gb) that would be hard to download on poor connections.
+- **SIZE-EFFICIENCY**: try to avoid creating huge datasets (>1 Gb) that would be hard to download on poor connections.
 
 Where there are many resources for a dataset, there is a temptation to include a folder structure in Data Catalog. This does not enable easy access to resources. Datasets and Resources should be set up to facilitate easy finding of the specific component of analysis, and grouping resources together in a sensible fashion, without creating problematically large download sizes.
 
-Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. However, here are a few examples:
+Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project.
 ________________
 
 ## Hazard data
@@ -66,10 +67,6 @@ In some cases, exposure comes as table (`csv`, `xls`).
 
 [EXAMPLE PIC FOR EACH FORMAT]
 
-```{note}
-Geopackage (`.gpkg`) are preferred for vector data over shapefiles (`.shp`). Conversion from .shp to g.pkg is lossless and usually size-efficient. Where shp format is maintained, they should be provided as a zip folder containing the multiple components of the shapefile dataset (.shp, .dbf, .xml, .ovr, etc.).
-Read more: (link to format page - next post)
-```
 ### Thematic grouping
 The main thematic groupings in exposure data are:
 - **Asset type / sector / construction type**: e.g. Structure, Content, Product / Residential, Commercial / Masonry, Wood
