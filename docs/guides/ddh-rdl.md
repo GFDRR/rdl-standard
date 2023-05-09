@@ -7,7 +7,7 @@ The collection can be accessed from the [collections page](https://datacatalog.w
 
 ## Add datasets
 Datasets can be submitted for review and publication on the Data Catalog by any World Bank Staff, ETC or STC. These people have the role of `Data depositor`.<br>
-Datasets needs to be packaged according to the [**data preparation guidelines**](preparation.md).<br>
+Datasets needs to be packaged according to the [**data preparation guidelines**](preparation).<br>
 <br>
 Two options to upload data:
 - **Individually**: using the upload wizard
