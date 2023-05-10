@@ -12,6 +12,11 @@ We also need to consider:
 - **SELF-DEPENDENCY & COMPLETNESS**: the data resource can be interpreted and used by itself.
 - **SIZE-EFFICIENCY**: try to avoid creating huge datasets (>1 Gb) that would be hard to download on poor connections.
 
+```{caution}
+In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. If required for data efficiency,   always consider a larger extent than needed as to avoid cross-border artefacts.
+![Screenshot](../img/raster_clip.jpg)
+```
+
 Where there are many resources for a dataset, there is a temptation to include a folder structure in Data Catalog. This does not enable easy access to resources. Datasets and Resources should be set up to facilitate easy finding of the specific component of analysis, and grouping resources together in a sensible fashion, without creating problematically large download sizes.
 
 Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project.
@@ -29,11 +34,6 @@ The main thematic groupings in hazard data are:
 
 ### Geographic grouping
 - **Scale, location and resolution**: Hazard data may be generated at global, regional, national, subnational, or urban level. High-resolution hazard data (e.g. urban level analysis) might be grouped for individual locations (city) whenever the dataset becomes too large.
-
-```{caution}
-In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. If required for data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts.
-![Screenshot](../img/raster_clip.jpg)
-```
 
 ### Packaging recommendation
 We recommend grouping exposure data in the following hierarchy:
@@ -75,9 +75,6 @@ The main thematic groupings in exposure data are:
 ### Geographic grouping
 - **Scale, location and resolution**: Exposure data may be generated at global, regional, national, subnational, or urban level. High-resolution hazard data (e.g. urban level) might be grouped for individual locations (city) whenever the dataset becomes too large.
 
-```{caution}
-In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. If required for data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts.
-```
 ### Packaging recommendation
 We recommend grouping exposure data in the following hierarchy:
 - **Geographic scale and location** (country; sub-national; city)

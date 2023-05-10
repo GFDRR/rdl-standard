@@ -1,4 +1,4 @@
-## Use cases
+# Use cases
 
 A **risk analyst** is scoping available risk data for a **disaster risk reduction project**. Searching the **RDL catalog** they can review the available data for the location of interest. They can then interrogate the data easily given the detailed and consistent **metadata** available, to make a decision on whether to directly use it in their analysis or invest in improving it.
 
