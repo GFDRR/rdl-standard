@@ -1,10 +1,3 @@
-# Overview
-
-## Purpose and rationalle
-
-The RDL project grew out of in-depth community consultation on improving access to **risk information**.
-Its overarching purpose is to support disaster resilience work by making risk data better and easier to work with.
-
 ## Use cases
 
 A **risk analyst** is scoping available risk data for a **disaster risk reduction project**. Searching the **RDL catalog** they can review the available data for the location of interest. They can then interrogate the data easily given the detailed and consistent **metadata** available, to make a decision on whether to directly use it in their analysis or invest in improving it.
@@ -22,7 +15,5 @@ A **development bank** produces public good dashboards to deliver **risk insight
 An **academic research team** needs to demonstrate the impact of a **risk analytics and urban planning project**, by making the data available for others to use. Their dataset are formatted according to the **RDL standards** and published in a data catalogue set up for the project, using the **template implementation** available through the RDL project.
 
   ***Value***: The pre-designed open-source deployable solutions can assist a research group achieve impact efficiently.
-
-<hr>
 
 <br><hr>
