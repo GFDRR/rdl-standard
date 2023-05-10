@@ -29,6 +29,11 @@ A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted
 Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where shp format is maintained, they should be provided as a zip folder containing the multiple components of the shapefile dataset (.shp, .dbf, .xml, .ovr, etc.).
 ```
 
+```{note}
+Wide geodatabase table formatting is preferred instead of long format.
+![Screenshot](../img/tab_format.png)
+```
+
 ### Raster data
 
 **Network Common Data Form (NetCDF)** (`.nc`) is a format for storing multi-dimensional, array-oriented variables. Commonly used in the scientific community for multidimensional geodata storage (e.g. climate data). Supported by ArcGIS and QGIS via toolbox conversion or extensions; most spatial processing tools require conversion into raster first.
@@ -37,9 +42,18 @@ Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where 
 
 ## Recommended non-spatial formats
 
+### Spreadsheet / tables
+
 **Comma-separated values** (`.csv`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, so the resource filetype will show as ‘CSV’. Where large or multiple files are compressed, filetype will show as ‘ZIP’ though so please include reference to the .csv filetype in the resource description.
 
 **Excel** (`.xls`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, multiple files should come in one zipfile. Please include reference to the .xls filetype in the resource description.
+
+```{note}
+Wide table formatting is preferred instead of long format.
+![Screenshot](../img/tab_format.png)
+```
+
+### Documents
 
 **Portable Document Format** (`.pdf`) is the preferred format for reports and documentation. Add reports uncompressed whenever possible: users will commonly want to see the description for each report or document as one resource per file. Resource filetype will show as ‘PDF’.
 

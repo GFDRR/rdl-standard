@@ -6,7 +6,7 @@ Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://
 
 - **GEOGRAPHY**: data covering a multi-country region might be split into individual countries' datasets.
 - **THEME**: Data resources may be grouped by hazard type, sector type, etc.
-- **FORMAT**: how the data are stored. It is preferred to keep data with different formats in different resources.
+- **FORMAT**: how the data are stored. It is preferred to keep together data in the same format, conversely split different file formats in different resources. [**Read more**](formats) about recommended and supported data formats.
 
 We also need to consider:
 - **SELF-DEPENDENCY & COMPLETNESS**: the data resource can be interpreted and used by itself.
@@ -32,7 +32,7 @@ The main thematic groupings in hazard data are:
 
 ```{caution}
 In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. If required for data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts.
-[FIGURE EXAMPLE: BORDER CLIP vs EXTENT CLIP OF GLOBAL LAYER ON A COUNTRY]
+![Screenshot](../img/raster_clip.jpg)
 ```
 
 ### Packaging recommendation
