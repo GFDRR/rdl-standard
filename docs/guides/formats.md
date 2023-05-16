@@ -14,6 +14,11 @@ Below is a list of recommended and supported geodata formats.
 
 **GeoPackage** (`.gpkg`) is an open, non-proprietary SQLite3 extended Database container. It is platform-independent and standards-based (OGC, QGIS, GDAL). Similar to ESRI geodatabase, but more responsive. It is a single-file format that can store anything from vector data and attributes, symbology, pyramids, table data as individual layers within one geopackage. It is possible to store rasters, but its supports for raster data is still limited and we don't recommend storing those as geopackage. Supports SQL and API to DB - fit for web applications, can export to PostGIS. There is no limit of attributes, attribute name size, or file size (unlike shapefile). Internal metadata specifications are under development.
 
+```{note}
+Always prefer WIDE geodatabase table formatting instead of LONG format when working in GIS environment; by duplicating vector rows, the geospatial information is also duplicated, which cause the size of the data to increase exponentially, and slows down the spatial processing.
+![Screenshot](../img/tab_format.png)
+```
+
 ### Raster data: GeoTIFF / COG (.tif)
 
 **GeoTIFF** (`.tif`) is the image standard file for GIS and satellite remote sensing applications. It can store multiple realisations as “bands”. GeoTIFFs can be accompanied by other auxiliary files (.tfw for raster geolocation, .xml for metadata, .aux for projections and others, .ovr for pyramids to improve visualisation). These should be packed together with the .tif files for sharing.
@@ -29,11 +34,6 @@ A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted
 Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where shp format is maintained, they should be provided as a zip folder containing the multiple components of the shapefile dataset (.shp, .dbf, .xml, .ovr, etc.).
 ```
 
-```{note}
-Wide geodatabase table formatting is preferred instead of long format.
-![Screenshot](../img/tab_format.png)
-```
-
 ### Raster data
 
 **Network Common Data Form (NetCDF)** (`.nc`) is a format for storing multi-dimensional, array-oriented variables. Commonly used in the scientific community for multidimensional geodata storage (e.g. climate data). Supported by ArcGIS and QGIS via toolbox conversion or extensions; most spatial processing tools require conversion into raster first.
@@ -44,7 +44,7 @@ Wide geodatabase table formatting is preferred instead of long format.
 
 ### Spreadsheet / tables
 
-**Comma-separated values** (`.csv`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, so the resource filetype will show as ‘CSV’. Where large or multiple files are compressed, filetype will show as ‘ZIP’ though so please include reference to the .csv filetype in the resource description.
+**Comma-separated values** (`.csv`) is used for table data such as vulnerability models, results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, so the resource filetype will show as ‘CSV’. Where large or multiple files are compressed, filetype will show as ‘ZIP’ though so please include reference to the .csv filetype in the resource description.
 
 **Excel** (`.xls`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, multiple files should come in one zipfile. Please include reference to the .xls filetype in the resource description.
 

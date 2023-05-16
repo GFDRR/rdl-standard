@@ -103,7 +103,16 @@ For example:
 
 ## Vulnerability data
 ### Format
-Vulnerability data are usually provided as table data (`csv`, `xls`) containing the impact model function and parameters.
+Vulnerability data are usually provided as table data (`csv`, `xls`) or json containing the impact model function and parameters.
+
+```{figure} https://gfdrr.github.io/CCDR-tools/_images/vln_fl_bu.png
+---
+align: center
+width: 70%
+---
+Example of vulnerability functions for floods (depth-damage curve) as table data.
+```
+
 Often, vulnerability models are proprietary data and only shared as pictures; this has low reusability and should be avoided. Always try to obtain a mathematical description for this component.
 
 ### Thematic grouping
@@ -120,7 +129,7 @@ We recommend to group exposure data in the following hierarchy:
   - *Geographic* (unless global function, one dataset per country)
     - **Asset type / sector / construction type**: e.g. Structure, Content, Product / Residential, Commercial / Masonry, Wood
 
-Note that this hierarchy should be maintained even when packing all the data in one file, e.g. multiple sheetx of an excel file.
+Note that this hierarchy should be maintained even when packing all the data in one file, e.g. multiple sheets of an excel file.
 
 [EXAMPLE OF MULTIPLE IMPACT MODELS IN ONE FILE]
 
