@@ -1,6 +1,6 @@
 # RDL collection
 
-The [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/Risk-Data-Library) sits within the [World Bank Data Catalog](https://datacatalog.worldbank.org) and is meant to store standard risk data.
+The [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) sits within the [World Bank Data Catalog](https://datacatalog.worldbank.org) and is meant to store standard risk data.
 The collection can be accessed from the [collections page](https://datacatalog.worldbank.org/search/collections/) or used as a filter on the left bar to search for data within the collection.
 
 ![Screenshot](../img/rdl_collection.png)
@@ -13,7 +13,7 @@ Two options to upload data:
 - **Individually**: using the upload wizard
 - **Bulk**: for large number of datasets, requires support by the [DDH team](../about/contacts.md#ddh-team)
 
-In both cases, datasets can be added to the [RDL Collection](https://datacatalog.worldbank.org/search/collections/Risk-Data-Library) only by the [RDL team](../about/contacts.md#rdl-team), after approval.
+In both cases, datasets can be added to the [RDL Collection](https://datacatalog.worldbank.org/search/collections/rdl) only by the [RDL team](../about/contacts.md#rdl-team), after approval.
 
 ### Individual datasets
 - Log in to the [Data Catalog](https://datacatalog.worldbank.org/int/home) (top right bar)
