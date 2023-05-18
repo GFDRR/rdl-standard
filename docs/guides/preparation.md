@@ -65,7 +65,7 @@ The main thematic groupings in hazard data are:
 We recommend grouping hazard data using the following hierarchy:
 - **Hazard type**
   - *Geographic scale and location*
-    - Reference period
+    - *Reference period*
 
 For example:
 ```
@@ -115,8 +115,8 @@ The main thematic groupings in exposure data are:
 We recommend grouping exposure data using the following hierarchy:
 - **Geographic scale and location**
   - **Exposure category**
-    - *Year*
-      - (optional) Sub-type
+    - **Year**
+      - (optional) *Sub-type*
 
 For example:
 ```
@@ -221,7 +221,8 @@ Strategy depends on the data format and size:
 In either case, we recommend grouping exposure data using the following hierarchy:
 - **Hazard type**
   - *Country*
-    - *Exposure category / Sub-type*
+    - **Exposure category**
+      - *Sub-type*
       - Year or period
 
 For example:
