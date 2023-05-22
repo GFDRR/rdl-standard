@@ -137,6 +137,26 @@ If this check fails, run the following command to fix markdown formatting:
 mdformat docs
 ```
 
+#### tests
+
+If this check fails, review the output to identify which test failed:
+
+##### test_json.py::test_empty
+
+Review the warnings to identify the empty JSON files and remove the files.
+
+##### test_json.py::test_indent
+
+Run the following command to indent JSON files:
+
+```bash
+ocdskit indent -r .
+```
+
+##### test_json.py::test_invalid_json
+
+Review the warnings to identify the invalid JSON files and correct the errors.
+
 ## Reference
 
 This section contains the following reference documentation:

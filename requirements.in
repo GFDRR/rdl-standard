@@ -10,3 +10,6 @@ sphinx-intl
 sphinx_rtd_theme
 myst-parser
 mdformat-myst
+pytest
+jscc
+ocdskit
