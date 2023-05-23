@@ -101,7 +101,7 @@ DR | SPI:- | Standard Precipitation Index
 
 ### Other hazard taxonomies
 
-For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this here. 
+For a mapping between RDLS Hazard Taxonomy and other existing hazard taxonomies, please see this here.
 
 List of other hazard taxonomies below:
 
@@ -115,8 +115,7 @@ List of other hazard taxonomies below:
 
 - [**Munich-RE**](https://www.cred.be/downloadFile.php?file=sites/default/files/DisCatClass_264.pdf) covers 27 natural hazards 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).
 
-
-## Exposure taxonomy 
+## Exposure taxonomy
 
 The exposure schema can accomodate different descriptions of assets using a taxonomy which describes their characteristics (e.g. building occupancy, construction, age, height, etc. or road surface type).
 

@@ -11,6 +11,7 @@ This section contains the following how-to guides:
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
+* [Resolve check failures](#resolve-check-failures)
 
 ### Propose changes
 
@@ -117,6 +118,16 @@ make autobuild
     pip-sync requirements.txt
     ```
 5. Commit your changes.
+
+### Resolve check failures
+
+#### mdformat
+
+If this check fails, run the following command to fix markdown formatting:
+
+```bash
+mdformat docs
+```
 
 ## Reference
 
