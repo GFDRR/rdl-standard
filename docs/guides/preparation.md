@@ -2,7 +2,7 @@
 
 The data structure and packaging of the output as obtained from the data analysts may not always align with the way we want users of the **Risk Data Library** to search and download data.
 
-Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/Risk-Data-Library) are provided as individual `RESOURCES`, which should be packed (grouped) according to three main criteria:
+Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) are provided as individual `RESOURCES`, which should be packed (grouped) according to three main criteria:
 
 - **GEOGRAPHY**: data covering a multi-country region might be split into individual countries' datasets.
 - **THEME**: Data resources may be grouped by hazard type, sector type, etc.
