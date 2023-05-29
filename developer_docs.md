@@ -102,6 +102,14 @@ cd docs
 make autobuild
 ```
 
+Alternatively, build the documentation and view it using a local web server:
+
+```bash
+cd docs
+make html
+python -m http.server --directory _build/html
+```
+
 ### Update requirements
 
 1. Install `pip-tools`.
