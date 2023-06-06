@@ -22,18 +22,21 @@ Structuring risk data well when it is generated and before it is delivered to a 
 ```
 <country>_<project_name>
  ├── Hazard
- │   ├── <Hazard1> (example subfolders: hazard catalog, base data, hazard maps)
+ │   ├── <Hazard1> 	(example subfolders: hazard catalog, base data, hazard maps)
  │   └── <Hazard2>
  ├── Exposure
- │   ├── <Exposure1> (e.g., Residential buildings; Example subfolders: current exposure, projected exposure)
- │   └── <Exposure2> (e.g., Transport infrastructure)
+ │   ├── <Exposure1> 	(e.g., Residential buildings; Example subfolders: current exposure, projected exposure)
+ │   └── <Exposure2>	(e.g., Transport infrastructure)
  ├── Vulnerability
- │   └── <Seismic vulnerability>
- │   └── <Flood vulnerability>
+ │   └── <Hazard1> X <Exposure1>
+ │   └── <Hazard1> X <Exposure2>
+ │   └── <Hazard2> X <Exposure1>
+ │   └── <Hazard2> X <Exposure2>
  └── Loss
- │   ├── <Hazard1> (subfolders for each sector loss, current and projected)
- │   └── <Hazard2>
-
+ │   ├── <Hazard1> X <Exposure1>	(subfolders for each sector loss; current and projected)
+ │   └── <Hazard1> X <Exposure2>
+ │   └── <Hazard2> X <Exposure1>
+ │   └── <Hazard2> X <Exposure2>
 ```
 
 ```{caution}
@@ -43,7 +46,7 @@ Where there are many resources for a dataset, there is a temptation to include a
 
 ## Hazard data
 ### Format / data types
-Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`), hazard curves and stochastic event set tables (which can become very large). Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.<br>
+Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`). In some cases, hazard curves and stochastic event set tables are provided. Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.<br>
 
 Generally, hazard data (footprints) takes the form of raster (geo grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
 
@@ -78,9 +81,9 @@ For example:
      ├── <Hazard1>
      │  ├── <Country1>
      │  │  ├── <Historical>
-     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Historical>.zip > [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
+     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Historical>.zip -> [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
      │  │  ├── <2050>
-     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<2050>.zip > [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
+     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<2050>.zip -> [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
      │  │  └── <2080>
      │  │     └── <...>
      │  └── <Country2>
@@ -92,10 +95,9 @@ For example:
    
 ## Exposure data
 ### Format
-Exposure are typically large datasets describes the location, characteristics and value of individual assets or an aggegrated number of assets/population per grid cell. Each point or cell usually has many attributes associated with it.
+Exposure dataset typically describe the location, characteristics and value of individual assets or an aggegrated number of assets/population per grid cell. Each point or cell usually has many attributes associated with it.
 
-Exposure geospatial data can take the form of vector (`gpkg`, `shp`), or raster (`GeoTIFF / COG`).
-In some cases, exposure comes as table (`csv`, `xls`).
+Exposure geospatial data can take the form of vector (`gpkg`, `shp`), or raster (`GeoTIFF / COG`). In some cases, exposure comes as table (`csv`, `xls`).
 
 ```{figure} ../img/exp_formats.jpg
 ---
@@ -120,9 +122,9 @@ The main thematic groupings in exposure data are:
 ### Packaging recommendation
 We recommend grouping exposure data using the following hierarchy:
 - **Geographic scale and location**
-  - **Exposure category** (optional) *Sub-type*
+  - **Exposure category**
     - **Year**
-
+      - *Sub-type* (optional) 
 
 For example:
 ```
@@ -131,9 +133,9 @@ For example:
     ├── <Country1>
     │  ├── <Exposure_categoryl>
     │  │  ├── <2020>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>_<2020>.zip > [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>_<2020>.zip -> [subtype1.tif; subtype2.tif; subtype3.tif]
     │  │  └── <2050>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category1>_<2050>.zip > [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category1>_<2050>.zip -> [subtype1.tif; subtype2.tif; subtype3.tif]
     │  ├── <Exposure_category2>
     │  │  └── <...>
     └── <Country2>
@@ -235,7 +237,7 @@ For example:
 <project_name>
  └── Loss
     ├── <Hazard1>
-    │  ├── <Country> (skip if global function)
+    │  ├── <Country> 	(skip if global function)
     │  │  ├── <Exposure_category1>
     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx > [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
     │  │  └── <Exposure_category2>
