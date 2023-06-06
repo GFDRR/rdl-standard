@@ -8,6 +8,8 @@ The Risk Data Library Standard schema covers [**general dataset attributes**](ge
 - [**Loss**](loss): modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
 </ul>
 
+For definitions of these terms, please see the [Glossary](https://rdl-standard.readthedocs.io/en/docs.mat/glossary.html)
+
 The diagram below shows the core relationships between schema components, and their core attributes.
 
 ```{eval-rst}
