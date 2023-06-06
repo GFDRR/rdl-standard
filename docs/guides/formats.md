@@ -21,7 +21,7 @@ Always prefer WIDE geodatabase table formatting instead of LONG format when work
 
 ### Raster data: GeoTIFF / COG (.tif)
 
-**GeoTIFF** (`.tif`) is the image standard file for GIS and satellite remote sensing applications. It can store multiple realisations as “bands”. GeoTIFFs can be accompanied by other auxiliary files (.tfw for raster geolocation, .xml for metadata, .aux for projections and others, .ovr for pyramids to improve visualisation). These should be packed together with the .tif files for sharing.
+**GeoTIFF** (`.tif`) is the image standard file for GIS and satellite remote sensing applications. It can store multiple realisations as “bands”. GeoTIFFs can be accompanied by other auxiliary files (.tfw for raster geolocation, .xml for metadata, .aux for projections and others, .ovr for pyramids to improve visualisation), compressed into a .zip file together with the .tif files for sharing.
 
 
 **A Cloud Optimized GeoTIFF (COG)** is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud. It does this by leveraging the ability of clients issuing ​[HTTP GET range requests](https://tools.ietf.org/html/rfc7233) to ask for just the parts of a file they need. This is the best option for data that needs to be hosted on a geocatalogue such as [GeoNode](https://www.geonode-gfdrrlab.org).
@@ -30,10 +30,10 @@ Always prefer WIDE geodatabase table formatting instead of LONG format when work
 
 ### Vector data
 
-**ESRI ShapeFile** (`.shp`) is a well established, de facto standard in the GIS community. Accepted by all GIS software. Format specifications are open, however it is a proprietary format (controlled by Esri). It can only contains one geometry type (point, line, polygon) per file. It is a multiple-parts file format (.shp for geometry, .dbf for table, .shx for indexining, .prj for CRS, other optional for encoding, indexes, etc.). Attribute names are limited to 10 characters, and number of attributes (ie table fields) is limited to 255. The file size is restricted to 2 GB.
+**ESRI ShapeFile** (`.shp`) is a well established, de facto standard in the GIS community. Accepted by all GIS software. Format specifications are open, however it is a proprietary format (controlled by Esri). It can only contains one geometry type (point, line, polygon) per file. It is a multiple-parts file format (.shp for geometry, .dbf for table, .shx for indexining, .prj for CRS, and other files for encoding, indexes, etc.). Attribute names are limited to 10 characters, and number of attributes (ie table fields) is limited to 255. The file size is restricted to 2 GB.
 
 ```{note}
-Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where shp format is maintained, they should be provided as a zip folder containing the multiple components of the shapefile dataset (.shp, .dbf, .xml, .ovr, etc.).
+Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where shp format is maintained, it is stongly suggested they are provided as a .zip folder containing the multiple components of the shapefile dataset (.shp, .dbf, .xml, .ovr, etc.).
 ```
 
 ### Raster data
@@ -42,13 +42,13 @@ Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where 
 
 **GRIdded Binary or General Regularly-distributed Information in Binary (GRIB)** is standardized by the WMO and in operation since 1985. Similar to NetCDF, GRIB files are commonly used in meteorology to store historical and forecast weather data. It’s a multidimensional file with the advantages of self-description, flexibility and expandability. There are tools to convert GRIB into rasters such as grb2grid and QGIS software.
 
-## Recommended non-spatial formats
+## Non-spatial formats
 
 ### Spreadsheet / tables
 
 **Comma-separated values** (`.csv`) is used for table data such as vulnerability models, results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, so the resource filetype will show as ‘CSV’. Where large or multiple files are compressed, filetype will show as ‘ZIP’ though so please include reference to the .csv filetype in the resource description.
 
-**Excel** (`.xls`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, multiple files should come in one zipfile. Please include reference to the .xls filetype in the resource description.
+**Excel** (`.xls`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, multiple files ought to be compressed into a single .zip file, with reference to the .xls filetype in the resource description.
 
 ```{note}
 Wide table formatting is preferred instead of long format.
