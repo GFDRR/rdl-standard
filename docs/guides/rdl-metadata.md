@@ -1,7 +1,7 @@
 # RDL metadata
 
 ## Adoption of the metadata schema
-Metadata should be created for each dataset so it can be found by human and machine searches, and so users can easily identify the dataset contents.
+Metadata enables datasets to be found by human and machine searches, and so users can easily identify the dataset contents. It is strongly encouraged that any risk dataset being uploaded online has metadata prepared and uploaded with it.
  
 The Risk Data Library Standard defines metadata in JSON format, but it can be translated into table (csv/excel). `WIP`
 
