@@ -21,7 +21,7 @@ An **academic research team** needs to demonstrate the impact of a **risk analyt
 
 An **insurance industry analyst or model developer** needs to **build a new catastrophe model** or **analyse a new portfolio** to insure in an emerging market, where the company has limited experience and data. They are searching for existing data to support their analysis and find some existing data created by consultants in the development sector, shared via the Risk Data Library Collection of the World Bank Data Catalog, formatted according to the **RDL standards** and available to download and use.
 
-  ***Value***: The data can be used directly or improved to assess the risk to the new portfolio, and may expedite the placement of insurance cover for vulnerable communities.
+  ***Value***: The data can be used directly or improved to assess the risk to the new portfolio, and could expedite the placement of insurance cover for vulnerable communities.
   
 
   
