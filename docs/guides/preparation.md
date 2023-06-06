@@ -81,9 +81,9 @@ For example:
      ├── <Hazard1>
      │  ├── <Country1>
      │  │  ├── <Historical>
-     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Historical>.zip -> [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
+     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Historical>.zip  ->  [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
      │  │  ├── <2050>
-     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<2050>.zip -> [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
+     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<2050>.zip  ->  [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
      │  │  └── <2080>
      │  │     └── <...>
      │  └── <Country2>
@@ -122,16 +122,9 @@ The main thematic groupings in exposure data are:
 ### Packaging recommendation
 We recommend grouping exposure data using the following hierarchy:
 - **Geographic scale and location**
-<<<<<<< HEAD
   - **Exposure category**
     - **Year**
       - *Sub-type* (optional) 
-=======
-  - **Exposure category**  
-    - *Sub-type*
-      - **Year**
-
->>>>>>> de49e38616ed3a0a2cfd84f599bb07236eb775df
 
 For example:
 ```
@@ -140,9 +133,9 @@ For example:
     ├── <Country1>
     │  ├── <Exposure_categoryl>
     │  │  ├── <2020>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>_<2020>.zip -> [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>_<2020>.zip  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     │  │  └── <2050>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category1>_<2050>.zip -> [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category1>_<2050>.zip  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     │  ├── <Exposure_category2>
     │  │  └── <...>
     └── <Country2>
@@ -199,9 +192,9 @@ For example, when grouping multiple functions into one excel file, the following
     ├── <Hazard1>
     │  ├── <Country> (skip if global function)
     │  │  ├── <Exposure_category1>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx > [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     │  │  └── <Exposure_category2>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx > [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     └── <Hazard2>
         └── <...>
            └── <...>
@@ -246,9 +239,9 @@ For example:
     ├── <Hazard1>
     │  ├── <Country> 	(skip if global function)
     │  │  ├── <Exposure_category1>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx > [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
+    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
     │  │  └── <Exposure_category2>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx > [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
+    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
     └── <Hazard2>
         └── <...>
            └── <...>
