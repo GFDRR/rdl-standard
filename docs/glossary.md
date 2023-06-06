@@ -28,7 +28,7 @@ Source: [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/ter
 
 Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets. Disaster risk information includes all studies, information and mapping required to understand the disaster risk drivers and underlying risk factors.
 
-Source: [(UNDRR Terminology (Disaster Risk Information)](https://www.undrr.org/terminology/disaster-risk-information)
+Source: [UNDRR Terminology (Disaster Risk Information)](https://www.undrr.org/terminology/disaster-risk-information)
 
 <!--![Screenshot](img/risk_assessment.png)
 (adapted from "[Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)")-->
