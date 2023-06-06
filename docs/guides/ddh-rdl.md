@@ -48,7 +48,7 @@ Select the option on the right: _`continue`_.
 When all required (and optional) information has been entered, click on `Save as draft`. The dataset will appear under `My datasets` list.
 
 ### Bulk upload
-In cases where large volumes of project data should be uploaded, DDH team can assist with bulk upload. 
+In cases where large volumes of project data need to be uploaded, DDH team can assist with bulk upload. 
 The workflow steps are:
 1. Login with WB credentials and store project data on the [DataCatalog Sharepoint](https://worldbankgroup.sharepoint.com.mcas.ms/sites/ddh2/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=pmjIeC&CT=1683747817820&OR=OWA%2DNT&CID=1c049bb0%2Db912%2D850b%2D383e%2D4dcda23ac626&RootFolder=%2Fsites%2Fddh2%2FShared%20Documents%2FRisk%20Data%20Library&FolderCTID=0x012000374C108104547647A016D80E1BFD3084) - using appropriate folders structuring (Project/Component/...)
 2. Create an excel spreadsheet describing the datatype with each dataset name, URL to data and URL to prepared JSON metadata. 
@@ -57,7 +57,7 @@ The workflow steps are:
 5. DDH team will use scripts to upload datasets; these will appear in your `My Datasets` for review and any further editing.
 
 ### Add RDL custom metadata
-- Create metadata following to Risk Data Library schema in JSON format. Metadata should be created for each dataset, and includes the description and name of resources under that dataset. Either:
+- Create metadata following to Risk Data Library schema in JSON format, including the description and name of resources under that dataset. Either:
   1. Write directly into JSON file
   2. Use JSON metadata creation tool. This tool is standalone (not part of DDH). It exports a JSON file to be saved with the dataset.
 - Upload metadata with the dataset. Once the import process is concluded, metadata will become available to download from the dataset page and as part of custom metadata shown.
