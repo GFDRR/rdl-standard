@@ -1,23 +1,23 @@
 # Data packaging
 
-The data structure and packaging of the output as obtained from the data analysts may not always align with the way we want users of the **Risk Data Library** to search and download data.
+The data structure and packaging of the output as obtained from the data analysts do not always align with the way we want users of the **Risk Data Library** to search and download data.
 
-Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) are provided as individual `RESOURCES`, which should be packed (grouped) according to three main criteria:
+Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) are provided as individual `RESOURCES`; it is encouraged to grouped these according to three main criteria:
 
 - **GEOGRAPHY**: data covering a multi-country region might be split into individual countries' datasets.
-- **THEME**: data resources may be grouped by hazard type, sector type, etc.
-Depending on the project or intended purpose of the data, one or other grouping may be preferred. 
+- **THEME**: for risk data, this includes hazard, sector or asset type.
+Depending on the project or intended purpose of the data, one or other grouping might be preferred. 
 
 We also need to consider:
-- **FORMAT**: how the data are stored. It is preferred to keep together data in the same format, conversely split different file formats in different resources. [**Read more**](formats) about recommended and supported data formats.
+- **FORMAT**: how the data are stored. It is preferred to keep together data in the same format, conversely split different file formats in different resources. [**Read more**](formats) about supported data formats.
 - **SELF-DEPENDENCY & COMPLETNESS**: the data resource can be interpreted and used by itself.
 - **SIZE-EFFICIENCY**: try to avoid creating huge datasets (>1 Gb) that would be hard to download on poor connections.
 
 ```{caution}
-In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. If required for data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts. Instead of splitting rasters, consider storing the raster in an alternative format that maybe more size-efficient (see Formats sections).
+In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. For data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts. Instead of splitting rasters, consider storing the raster in an alternative format that maybe more size-efficient (see Formats sections).
 ![Screenshot](../img/raster_clip.jpg)
 ```
-Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
+Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data can be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
 
 ```
 <country>_<project_name>
@@ -37,7 +37,7 @@ Structuring risk data well when it is generated and before it is delivered to a 
 ```
 
 ```{caution}
-Where there are many resources for a dataset, there is a temptation to include a folder structure in the online Data Catalog. This is not advised. `Datasets` should be grouped together into individual `Resources` in order to facilitate finding the specific component of analysis, and without creating problematically large file sizes.
+Where there are many resources for a dataset, it can be tempting to include a folder structure in the online Data Catalog. This is not advised and it is suggested that `datasets` be grouped together into individual `Resources` in order to facilitate finding the specific component of analysis, and without creating problematically large file sizes.
 ```
 <hr>
 
@@ -63,7 +63,7 @@ The main thematic groupings in hazard data are:
 - **Reference period**: e.g., historical, projections (2050, 2080)
 
 ### Geographic grouping
-- **Scale, location and resolution**: Hazard data may be generated at global, regional, national, subnational, or urban level. High-resolution hazard data (e.g. urban level analysis) might be grouped for individual locations (city) whenever the dataset becomes too large.
+- **Scale, location and resolution**: Hazard data can be generated at global, regional, national, subnational, or urban level. High-resolution hazard data (e.g. urban level analysis) might be grouped for individual locations (city) whenever the dataset becomes too large.
 
 ### Packaging recommendation
 We recommend grouping hazard data using the following hierarchy:
@@ -115,13 +115,14 @@ The main thematic groupings in exposure data are:
 - **Year**: reference period or year, e.g. specific year (2020), projected period (2040-2060), etc.
 
 ### Geographic grouping
-- **Scale, location and resolution**: Exposure data may be generated at global, regional, national, subnational, or urban level. High-resolution hazard data (e.g. urban level) might be grouped for individual locations (city) whenever the dataset becomes too large.
+- **Scale, location and resolution**: Exposure data can be generated at global, regional, national, subnational, or urban level. High-resolution hazard data (e.g. urban level) might be grouped for individual locations (city) whenever the dataset becomes too large.
 
 ### Packaging recommendation
 We recommend grouping exposure data using the following hierarchy:
 - **Geographic scale and location**
-  - **Exposure category** (optional) *Sub-type*
-    - **Year**
+  - **Exposure category**  
+    - *Sub-type*
+      - **Year**
 
 
 For example:
@@ -154,7 +155,7 @@ width: 70%
 Example of vulnerability functions for floods (depth-damage curve) as table data ([Download](https://publications.jrc.ec.europa.eu/repository/bitstream/JRC105688/copy_of_global_flood_depth-damage_functions__30102017.xlsx)).
 ```
 
-Often, vulnerability models are proprietary data and only shared as pictures; this has low reusability and should be avoided. Always try to obtain a mathematical description for this component.
+Often, vulnerability models are proprietary data and only shared as pictures; this has low reusability and ought to be avoided. Always try to obtain a mathematical description for this component.
 
 ### Thematic grouping
 The main thematic groupings specific to vulnerability data are:
@@ -162,7 +163,7 @@ The main thematic groupings specific to vulnerability data are:
 <br>&nbsp;&nbsp;- **Exposure type and sub-type*: e.g. Builtup (Structure, Content, Product / Residential, Commercial / Masonry, Wood)
 
 ### Geographic grouping
-Vulnerability curves may be developed for individual countries or environments within a project. Where this is the case, this grouping should be retained.
+Vulnerability curves can be developed for individual countries or environments within a project. Where this is the case, this grouping ought to be retained.
 
 ### Packaging recommendation
 We recommend to group exposure data  using the following hierarchy:
@@ -172,7 +173,7 @@ We recommend to group exposure data  using the following hierarchy:
       - **Sub-type** (e.g. sector (Residential, Commercial), construction type (Masonry, Wood), or others)
 
 ```{note}
-This hierarchy should be maintained also when packing all the data in one file (e.g. multiple csvs into one excel file), which is advised _unless specifically demanded by the data use_ (e.g. data are formatted for usage into a specific model).
+This hierarchy can be maintained also when packing all the data in one file (e.g. multiple csvs into one excel file), which is advised _unless specifically demanded by the data use_ (e.g. data are formatted for usage into a specific model).
 ```
 
 ```{figure} ../img/vln_multi-table.jpg
@@ -208,7 +209,7 @@ Loss data comes in the form of:
 
 ### Thematic grouping
 The main thematic groupings in loss data are:
-- **Hazard type**: there may also be a multi-hazard loss metric included.
+- **Hazard type**: denoting a single hazard or a multi-hazard loss metric.
   - **Asset type / sector**: e.g. Structure, Content, Product / Residential, Commercial
     - **Year or period**: e.g. historical (2020), projections (2040-2060), etc.
 
