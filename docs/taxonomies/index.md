@@ -2,7 +2,7 @@
 
 # Taxonomies
 
-The RDLS defines taxonomies for describing risk data. In this section you will find a short summary of the taxonomies recommended for the RDLS, as well as the other main taxonomies for disaster risk assessments.
+The RDLS defines taxonomies for describing risk data. In this section you will find a short summary of the taxonomies that can be used with the RDLS, as well as the other main taxonomies for disaster risk assessments.
 
 ## Hazard taxonomies
 
@@ -10,7 +10,7 @@ There are several existing taxonomies that could have been adopted to describe h
 
 This resulted in an new taxonomy to unify the existing taxonomies for the purpose of risk data classification, focusing on those hazards and processes that are more often required in disaster risk assessments while mapping and matching alternative definitions into one consistent framework.
 
-### RDLS Hazard Taxonomy (recommended)
+### RDLS Hazard Taxonomy 
 
 The **RDLS Hazard Taxonomy** classifies hazard phenomena as main hazard (8 categories) and hazard process (27 categories):
 
