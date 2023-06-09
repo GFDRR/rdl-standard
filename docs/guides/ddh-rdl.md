@@ -45,7 +45,7 @@ Select the option on the right: _`continue`_.
   - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](../about/contacts.md#ddh-team) with request to assign data to RDL Colelction.
   ![Screenshot](../img/rdl_ddh4.png)
 
-When all required (and optional) information has been entered, click on `Save as draft`. The dataset will appear under `My datasets` list.
+Once done, click on `Save as draft`. The dataset will appear under `My datasets` list.
 
 ### Bulk upload
 In cases where large volumes of project data need to be uploaded, DDH team can assist with bulk upload. 
