@@ -96,7 +96,7 @@ The schema specifies which type of analysis and data methodology that has genera
 ### Hazard types
 
 The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
-The **RDLS** classifies hazard phenomena as main hazard (8 categories) and hazard process (27 categories):
+<br>The **RDLS** classifies hazard phenomena as main hazard (8 categories) and hazard process (27 categories):
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -132,7 +132,7 @@ The **RDLS** classifies hazard phenomena as main hazard (8 categories) and hazar
 
 </div>
 <br>
-Each hazard type and associated processes can have one or more type of measure metrics, which include the unit of measure:
+Each hazard type and associated processes can have one or more type of measure metrics, which include the unit of measure:<br>
 
 <div class="scrollbar table-scroll" markdown="1">
 
