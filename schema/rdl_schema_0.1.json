@@ -4,123 +4,130 @@
 	"title": "Risk Data Library Schema",
 	"type": "object",
 	"required": [
-		"common"
+		"title",
+		"abstract",
+		"component",
+		"organization",
+		"model_source",
+		"model_date",
+		"geo_coverage",
+		"publish",
+		"license_code",
+		"resources"
 	],
 	"properties": {
-		"common": {
-			"type": "object",
-			"properties": {
-				"contribution": {
-					"type": "object",
-					"required": ["title", "abstract", "component", "organization", "model_source", "model_date",
-								 "geo_coverage", "publish", "license_code", "resources"],
-					"properties": {
-						"title": {
-							"type": "string",
-							"description": "Title of the dataset"
-						},
-						"abstract": {
-							"type": "string",
-							"description": "Short description of the resource"
-						},
-						"component": {
-							"type": "string",
-							"description": "Univocal schema for this contribution (H, E, V or L)",
-							"enum": ["Hazard", "Exposure", "Vulnerability", "Loss"]
-						},
-						"organization": {
-							"type": "string",
-							"description": "Name of organization that published the dataset"
-						},
-						"model_source": {
-							"type": "string",
-							"description": "Name of source model"
-						},
-						"model_date": {
-							"type": "string",
-							"description": "Model release date",
-							"format": "date"
-						},
-						"version": {
-							"type": "integer",
-							"description": "Version of the dataset"
-						},
-						"purpose": {
-							"type": "string",
-							"description": "Purpose for what the data has been produced"
-						},
-						"project": {
-							"type": "string",
-							"description": "Project under which data has been produced"
-						},
-						"notes": {
-							"type": "string",
-							"description": "Additional details about the dataset"
-						},
-						"biblio_title": {
-							"type": "string",
-							"description": "Authors/year/title of publication"
-						},
-						"biblio_url": {
-							"type": "string",
-							"description": "URL of publication",
-							"format": "uri"
-						},
-						"geo_coverage": {
-							"$ref": "#/definitions/common_iso",
-							"description": "ISO code(s) of countries covered by the dataset, comma-separated"
-						},
-						"publish": {
-							"type": "boolean",
-							"description": "Flag to show/hide dataset from website"
-						},
-						"license_code": {
-							"$ref": "#/definitions/common_license",
-							"description": "Type of license"
-						},
-						"maintainer": {
-							"type": "string",
-							"description": "Who added the resource"
-						},
-						"maintainer_email": {
-							"type": "string",
-							"description": "Contact email"
-						}
-					}
-				},
-				"resources": {
-					"type": "array",
-					"items": {
-						"resource": {
-							"type": "object",
-							"required": ["name", "format", "epsg", "url"],
-							"properties": {
-								"name": {
-									"type": "string",
-									"description": "Name of linked resource"
-								},
-								"aggregation_type": {
-									"type": "string",
-									"description": "Level of data representation"
-								},
-								"format": {
-									"type": "string",
-									"description": "Format of resource"
-								},
-								"h-res": {
-									"type": "string",
-									"description": "Horizontal resolution in meters (raster data only)"
-								},
-								"epsg": {
-									"type": "string",
-									"description": "Reference coordinate system (default: 4326)"
-								},
-								"url": {
-									"type": "string",
-									"description": "URL of linked resource"
-								}
-							}
-						}
+		"title": {
+			"type": "string",
+			"description": "Title of the dataset"
+		},
+		"abstract": {
+			"type": "string",
+			"description": "Short description of the resource"
+		},
+		"component": {
+			"type": "string",
+			"description": "Univocal schema for this contribution (H, E, V or L)",
+			"enum": [
+				"Hazard",
+				"Exposure",
+				"Vulnerability",
+				"Loss"
+			]
+		},
+		"organization": {
+			"type": "string",
+			"description": "Name of organization that published the dataset"
+		},
+		"model_source": {
+			"type": "string",
+			"description": "Name of source model"
+		},
+		"model_date": {
+			"type": "string",
+			"description": "Model release date",
+			"format": "date"
+		},
+		"version": {
+			"type": "integer",
+			"description": "Version of the dataset"
+		},
+		"purpose": {
+			"type": "string",
+			"description": "Purpose for what the data has been produced"
+		},
+		"project": {
+			"type": "string",
+			"description": "Project under which data has been produced"
+		},
+		"notes": {
+			"type": "string",
+			"description": "Additional details about the dataset"
+		},
+		"biblio_title": {
+			"type": "string",
+			"description": "Authors/year/title of publication"
+		},
+		"biblio_url": {
+			"type": "string",
+			"description": "URL of publication",
+			"format": "uri"
+		},
+		"geo_coverage": {
+			"$ref": "#/definitions/common_iso",
+			"description": "ISO code(s) of countries covered by the dataset, comma-separated"
+		},
+		"publish": {
+			"type": "boolean",
+			"description": "Flag to show/hide dataset from website"
+		},
+		"license_code": {
+			"$ref": "#/definitions/common_license",
+			"description": "Type of license"
+		},
+		"maintainer": {
+			"type": "string",
+			"description": "Who added the resource"
+		},
+		"maintainer_email": {
+			"type": "string",
+			"description": "Contact email"
+		}
+	},
+	"resources": {
+		"type": "array",
+		"items": {
+			"resource": {
+				"type": "object",
+				"required": [
+					"name",
+					"format",
+					"epsg",
+					"url"
+				],
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Name of linked resource"
+					},
+					"aggregation_type": {
+						"type": "string",
+						"description": "Level of data representation"
+					},
+					"format": {
+						"type": "string",
+						"description": "Format of resource"
+					},
+					"h-res": {
+						"type": "string",
+						"description": "Horizontal resolution in meters (raster data only)"
+					},
+					"epsg": {
+						"type": "string",
+						"description": "Reference coordinate system (default: 4326)"
+					},
+					"url": {
+						"type": "string",
+						"description": "URL of linked resource"
 					}
 				}
 			}
@@ -130,14 +137,21 @@
 		{
 			"type": "object",
 			"title": "hazard",
-			"properties": {	
+			"properties": {
 				"hazard": {
 					"type": "object",
-					"required": ["event_set", "event", "footprint_set"],
+					"required": [
+						"event_set",
+						"event",
+						"footprint_set"
+					],
 					"properties": {
 						"event_set": {
 							"type": "object",
-							"required": ["hazard_type", "analysis_type"],
+							"required": [
+								"hazard_type",
+								"analysis_type"
+							],
 							"properties": {
 								"hazard_type": {
 									"$ref": "#/definitions/common_hazard_type",
@@ -176,7 +190,10 @@
 						},
 						"event": {
 							"type": "object",
-							"required": ["calculation_method","frequency_type"],
+							"required": [
+								"calculation_method",
+								"frequency_type"
+							],
 							"properties": {
 								"calculation_method": {
 									"$ref": "#/definitions/common_calc_method",
@@ -234,7 +251,6 @@
 									"description": "Comments about the uncertainty of data"
 								}
 							}
-							
 						}
 					}
 				}
@@ -246,11 +262,17 @@
 			"properties": {
 				"exposure": {
 					"type": "object",
-					"required": ["model", "value"],
+					"required": [
+						"model",
+						"value"
+					],
 					"properties": {
 						"model": {
 							"type": "object",
-							"required": ["category", "occupancy"],
+							"required": [
+								"category",
+								"occupancy"
+							],
 							"properties": {
 								"category": {
 									"description": "Type of asset",
@@ -258,11 +280,11 @@
 								},
 								"occupancy": {
 									"description": "Destination of use of the asset",
-									"$ref": "#/definitions/common_exp_occupancy"									
+									"$ref": "#/definitions/common_exp_occupancy"
 								},
 								"occupancy_time": {
 									"description": "Period of occupancy, if appliable (e.g. Population)",
-									"$ref": "#/definitions/common_occupancy_time"									
+									"$ref": "#/definitions/common_occupancy_time"
 								},
 								"taxonomy_source": {
 									"type": "string",
@@ -317,12 +339,10 @@
 								"hazard_type_secondary": {
 									"description": "Secondary hazard involved",
 									"$ref": "#/definitions/common_hazard_type"
-									
 								},
 								"process_type_primary": {
 									"description": "Primary process involved",
 									"$ref": "#/definitions/common_process_type"
-									
 								},
 								"process_type_secondary": {
 									"description": "Secondary process involved",
@@ -354,11 +374,11 @@
 								},
 								"taxonomy_source": {
 									"type": "string",
-									"description": "Source of taxonomy"									
+									"description": "Source of taxonomy"
 								},
 								"taxonomy_code": {
 									"type": "string",
-									"description": "Taxonomy code to which function applies"									
+									"description": "Taxonomy code to which function applies"
 								},
 								"impact_type": {
 									"description": "Type of impact",
@@ -550,104 +570,461 @@
 		}
 	],
 	"definitions": {
-		
 		"common_aggregation_type": {
 			"type": "string",
-			"enum": ["Individual items", "Aggregated to grid", "Aggregated to boundaries", "N/A"]
+			"enum": [
+				"Individual items",
+				"Aggregated to grid",
+				"Aggregated to boundaries",
+				"N/A"
+			]
 		},
 		"common_analysis_type": {
 			"type": "string",
-			"enum": ["Deterministic","Probabilistic"]
+			"enum": [
+				"Deterministic",
+				"Probabilistic"
+			]
 		},
 		"common_calc_method": {
 			"type": "string",
-			"enum": ["Inferred","Simulated","Observed"]
+			"enum": [
+				"Inferred",
+				"Simulated",
+				"Observed"
+			]
 		},
 		"common_exp_category": {
 			"type": "string",
-			"enum": ["Buildings", "Indicators", "Infrastructures", "Crops, livestock and forestry"]
+			"enum": [
+				"Buildings",
+				"Indicators",
+				"Infrastructures",
+				"Crops, livestock and forestry"
+			]
 		},
 		"common_exp_occupancy": {
 			"type": "string",
-			"enum": ["Residential", "Commercial", "Industrial", "Infrastructure", "Healthcare", "Educational",
-					 "Government", "Crop", "Livestock", "Forestry", "Mixed"]
+			"enum": [
+				"Residential",
+				"Commercial",
+				"Industrial",
+				"Infrastructure",
+				"Healthcare",
+				"Educational",
+				"Government",
+				"Crop",
+				"Livestock",
+				"Forestry",
+				"Mixed"
+			]
 		},
 		"common_exp_val_type": {
 			"type": "string",
-			"enum": ["Structure", "Content", "Product", "Other"]
+			"enum": [
+				"Structure",
+				"Content",
+				"Product",
+				"Other"
+			]
 		},
 		"common_frequency_type": {
 			"type": "string",
-			"enum": ["Rate of Exceedence","Probability of Exceedence","Return Period"]
+			"enum": [
+				"Rate of Exceedence",
+				"Probability of Exceedence",
+				"Return Period"
+			]
 		},
 		"common_hazard_type": {
 			"type": "string",
-			"enum": ["CF","CS","DR","EQ","ET","FL","LS","MH","TS","VO","WF","WI"]
+			"enum": [
+				"CF",
+				"CS",
+				"DR",
+				"EQ",
+				"ET",
+				"FL",
+				"LS",
+				"MH",
+				"TS",
+				"VO",
+				"WF",
+				"WI"
+			]
 		},
 		"common_impact_type": {
 			"type": "string",
-			"enum": ["Direct", "Indirect", "Total"]
+			"enum": [
+				"Direct",
+				"Indirect",
+				"Total"
+			]
 		},
 		"common_iso": {
 			"type": "string",
-			"enum": ["GLB","ABW","AFG","AGO","AIA","ALB","AND","ARE","ARG","ARM","ASM","ATG","AUS",
-					"AUT","AZE","BDI","BEL","BEN","BFA","BGD","BGR","BHR","BHS","BIH","BLM","BLR",
-					"BLZ","BMU","BOL","BRA","BRB","BRN","BTN","BWA","CAF","CAN","CHE","CHL","CHN",
-					"CIV","CMR","COD","COG","COK","COL","COM","CPV","CRI","CUB","CUW","CYM","CYP",
-					"CZE","DEU","DJI","DMA","DNK","DOM","DZA","ECU","EGY","ERI","ESP","EST","ETH",
-					"FIN","FJI","FLK","FRA","FRO","FSM","GAB","GBR","GEO","GGY","GHA","GIB","GIN",
-					"GMB","GNB","GNQ","GRC","GRD","GRL","GTM","GUM","GUY","HKG","HMD","HND","HRV",
-					"HTI","HUN","IDN","IMN","IND","IRL","IRN","IRQ","ISL","ISR","ITA","JAM","JEY",
-					"JOR","JPN","KAZ","KEN","KGZ","KHM","KIR","KNA","KOR","KWT","LAO","LBN","LBR",
-					"LBY","LCA","LIE","LKA","LSO","LTU","LUX","LVA","MAC","MAF","MAR","MCO","MDA",
-					"MDG","MDV","MEX","MHL","MKD","MLI","MLT","MMR","MNE","MNG","MNP","MOZ","MRT",
-					"MSR","MUS","MWI","MYS","NAM","NCL","NER","NFK","NGA","NIC","NIU","NLD","NOR",
-					"NPL","NRU","NZL","OMN","PAK","PAN","PCN","PER","PHL","PLW","PNG","POL","PRI",
-					"PRK","PRT","PRY","PSE","PYF","QAT","ROU","RUS","RWA","SAU","SDN","SEN","SGP",
-					"SGS","SHN","SLB","SLE","SLV","SMR","SOM","SPM","SRB","SSD","STP","SUR","SVK",
-					"SVN","SWE","SWZ","SXM","SYC","SYR","TCA","TCD","TGO","THA","TJK","TKM","TLS",
-					"TON","TTO","TUN","TUR","TUV","TZA","UGA","UKR","URY","USA","UZB","VAT","VCT",
-					"VEN","VGB","VIR","VNM","VUT","WLF","WSM","XXK","YEM","ZAF","ZMB","ZWE"
+			"enum": [
+				"GLB",
+				"ABW",
+				"AFG",
+				"AGO",
+				"AIA",
+				"ALB",
+				"AND",
+				"ARE",
+				"ARG",
+				"ARM",
+				"ASM",
+				"ATG",
+				"AUS",
+				"AUT",
+				"AZE",
+				"BDI",
+				"BEL",
+				"BEN",
+				"BFA",
+				"BGD",
+				"BGR",
+				"BHR",
+				"BHS",
+				"BIH",
+				"BLM",
+				"BLR",
+				"BLZ",
+				"BMU",
+				"BOL",
+				"BRA",
+				"BRB",
+				"BRN",
+				"BTN",
+				"BWA",
+				"CAF",
+				"CAN",
+				"CHE",
+				"CHL",
+				"CHN",
+				"CIV",
+				"CMR",
+				"COD",
+				"COG",
+				"COK",
+				"COL",
+				"COM",
+				"CPV",
+				"CRI",
+				"CUB",
+				"CUW",
+				"CYM",
+				"CYP",
+				"CZE",
+				"DEU",
+				"DJI",
+				"DMA",
+				"DNK",
+				"DOM",
+				"DZA",
+				"ECU",
+				"EGY",
+				"ERI",
+				"ESP",
+				"EST",
+				"ETH",
+				"FIN",
+				"FJI",
+				"FLK",
+				"FRA",
+				"FRO",
+				"FSM",
+				"GAB",
+				"GBR",
+				"GEO",
+				"GGY",
+				"GHA",
+				"GIB",
+				"GIN",
+				"GMB",
+				"GNB",
+				"GNQ",
+				"GRC",
+				"GRD",
+				"GRL",
+				"GTM",
+				"GUM",
+				"GUY",
+				"HKG",
+				"HMD",
+				"HND",
+				"HRV",
+				"HTI",
+				"HUN",
+				"IDN",
+				"IMN",
+				"IND",
+				"IRL",
+				"IRN",
+				"IRQ",
+				"ISL",
+				"ISR",
+				"ITA",
+				"JAM",
+				"JEY",
+				"JOR",
+				"JPN",
+				"KAZ",
+				"KEN",
+				"KGZ",
+				"KHM",
+				"KIR",
+				"KNA",
+				"KOR",
+				"KWT",
+				"LAO",
+				"LBN",
+				"LBR",
+				"LBY",
+				"LCA",
+				"LIE",
+				"LKA",
+				"LSO",
+				"LTU",
+				"LUX",
+				"LVA",
+				"MAC",
+				"MAF",
+				"MAR",
+				"MCO",
+				"MDA",
+				"MDG",
+				"MDV",
+				"MEX",
+				"MHL",
+				"MKD",
+				"MLI",
+				"MLT",
+				"MMR",
+				"MNE",
+				"MNG",
+				"MNP",
+				"MOZ",
+				"MRT",
+				"MSR",
+				"MUS",
+				"MWI",
+				"MYS",
+				"NAM",
+				"NCL",
+				"NER",
+				"NFK",
+				"NGA",
+				"NIC",
+				"NIU",
+				"NLD",
+				"NOR",
+				"NPL",
+				"NRU",
+				"NZL",
+				"OMN",
+				"PAK",
+				"PAN",
+				"PCN",
+				"PER",
+				"PHL",
+				"PLW",
+				"PNG",
+				"POL",
+				"PRI",
+				"PRK",
+				"PRT",
+				"PRY",
+				"PSE",
+				"PYF",
+				"QAT",
+				"ROU",
+				"RUS",
+				"RWA",
+				"SAU",
+				"SDN",
+				"SEN",
+				"SGP",
+				"SGS",
+				"SHN",
+				"SLB",
+				"SLE",
+				"SLV",
+				"SMR",
+				"SOM",
+				"SPM",
+				"SRB",
+				"SSD",
+				"STP",
+				"SUR",
+				"SVK",
+				"SVN",
+				"SWE",
+				"SWZ",
+				"SXM",
+				"SYC",
+				"SYR",
+				"TCA",
+				"TCD",
+				"TGO",
+				"THA",
+				"TJK",
+				"TKM",
+				"TLS",
+				"TON",
+				"TTO",
+				"TUN",
+				"TUR",
+				"TUV",
+				"TZA",
+				"UGA",
+				"UKR",
+				"URY",
+				"USA",
+				"UZB",
+				"VAT",
+				"VCT",
+				"VEN",
+				"VGB",
+				"VIR",
+				"VNM",
+				"VUT",
+				"WLF",
+				"WSM",
+				"XXK",
+				"YEM",
+				"ZAF",
+				"ZMB",
+				"ZWE"
 			]
-		},		
+		},
 		"common_license": {
 			"type": "string",
-			"enum": ["CC0-1.0", "PDDL-1.0", "CC-BY-4.0", "ODC-By-1.0", "CC-BY-SA-4.0", "ODbL-1.0"]
+			"enum": [
+				"CC0-1.0",
+				"PDDL-1.0",
+				"CC-BY-4.0",
+				"ODC-By-1.0",
+				"CC-BY-SA-4.0",
+				"ODbL-1.0"
+			]
 		},
 		"common_occupancy_time": {
 			"type": "string",
-			"enum": ["Night","Day"]
+			"enum": [
+				"Night",
+				"Day"
+			]
 		},
 		"common_process_type": {
 			"type": "string",
-			"enum": ["FCF","FSS","TOR","DTA","DTH","DTM","DTS","Q1R","Q2R","QGM",
-					 "QLI","ECD","EHT","FFF","FPF","LAV","LSL","TSI","VAF","VBL",
-					 "VFH","VLH","VLV","VPF","WFI","ETC","TCY"]
+			"enum": [
+				"FCF",
+				"FSS",
+				"TOR",
+				"DTA",
+				"DTH",
+				"DTM",
+				"DTS",
+				"Q1R",
+				"Q2R",
+				"QGM",
+				"QLI",
+				"ECD",
+				"EHT",
+				"FFF",
+				"FPF",
+				"LAV",
+				"LSL",
+				"TSI",
+				"VAF",
+				"VBL",
+				"VFH",
+				"VLH",
+				"VLV",
+				"VPF",
+				"WFI",
+				"ETC",
+				"TCY"
+			]
 		},
 		"im_code": {
 			"type": "string",
-			"enum": ["PG+E47:E70A:g","PGA:m/s2","PGV:m/s","AvgSa:m/s2","Sd(T1):m","Sv(T1):m/s",
-					 "PGDf:m","D:s","IA:m/s","Neq:-","EMS:-","MMI:-","CAV:m/s", "D_B:s", "fl_wd:m",
-					 "fl_wv:m/s","v_ect(3s):km/h","v_ect(1m):km/h","v_etc(10m):km/h",
-					 "PGWS_tcy:km/h","ls_fd:m","I_DF:m3/s2","v_lsl:m/s2","ls_mfd:m","SD_lsl:m","Rh_tsi:m",
-					 "d_tsi:m","MMF:m4/s2","F_drag:kN","Fr:-","v_tsi:m/s","F_QS:kN","MF:m3/s2","h_tsi:m",
-					 "Fh_tsi:m","h_vaf:m","L_vaf:kg/m2","CMI:-","PDSI:-","SPI:-"]
+			"enum": [
+				"PG+E47:E70A:g",
+				"PGA:m/s2",
+				"PGV:m/s",
+				"AvgSa:m/s2",
+				"Sd(T1):m",
+				"Sv(T1):m/s",
+				"PGDf:m",
+				"D:s",
+				"IA:m/s",
+				"Neq:-",
+				"EMS:-",
+				"MMI:-",
+				"CAV:m/s",
+				"D_B:s",
+				"fl_wd:m",
+				"fl_wv:m/s",
+				"v_ect(3s):km/h",
+				"v_ect(1m):km/h",
+				"v_etc(10m):km/h",
+				"PGWS_tcy:km/h",
+				"ls_fd:m",
+				"I_DF:m3/s2",
+				"v_lsl:m/s2",
+				"ls_mfd:m",
+				"SD_lsl:m",
+				"Rh_tsi:m",
+				"d_tsi:m",
+				"MMF:m4/s2",
+				"F_drag:kN",
+				"Fr:-",
+				"v_tsi:m/s",
+				"F_QS:kN",
+				"MF:m3/s2",
+				"h_tsi:m",
+				"Fh_tsi:m",
+				"h_vaf:m",
+				"L_vaf:kg/m2",
+				"CMI:-",
+				"PDSI:-",
+				"SPI:-"
+			]
 		},
 		"loss_loss_type": {
 			"type": "string",
-			"enum": ["Ground Up", "Insured"]
+			"enum": [
+				"Ground Up",
+				"Insured"
+			]
 		},
 		"loss_metric": {
 			"type": "string",
-			"enum": ["Annual Average Losses", "Annual Average Loss Ratio", "Probable Maximal Loss"]
+			"enum": [
+				"Annual Average Losses",
+				"Annual Average Loss Ratio",
+				"Probable Maximal Loss"
+			]
 		},
 		"vulnerability_function_type": {
 			"type": "string",
-			"enum": ["Fragility", "Vulnerability", "Damage-to-Loss"]
+			"enum": [
+				"Fragility",
+				"Vulnerability",
+				"Damage-to-Loss"
+			]
 		},
 		"vulnerability_f_subtype": {
 			"type": "string",
-			"enum": ["Empirical", "Analytical", "Judgement", "Hybrid"]
+			"enum": [
+				"Empirical",
+				"Analytical",
+				"Judgement",
+				"Hybrid"
+			]
 		}
 	}
 }
