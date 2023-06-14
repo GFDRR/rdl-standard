@@ -1,13 +1,15 @@
 # Changelog
 
-## [X.X.X] - YYYY-MM-DD
+This page lists changes to the Risk Data Library Standard.
 
-The Risk Data Library Standard adheres to [Semantic Versioning](https://semver.org/).
+## [X.X.X] - YYYY-MM-DD
 
 ### Schema
 
 ### Codelists
 
-### Documentation
+### Normative documentation
+
+### Non-normative documentation
 
 ### Other
