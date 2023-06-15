@@ -157,6 +157,10 @@ ocdskit indent -r .
 
 Review the warnings to identify the invalid JSON files and correct the errors.
 
+##### test_schema.py (all tests)
+
+Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
+
 ## Reference
 
 This section contains the following reference documentation:
