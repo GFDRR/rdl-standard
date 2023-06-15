@@ -422,7 +422,7 @@
                   "description": "The methodology used for the calculation of the function"
                 },
                 "approach": {
-                  "$ref": "#/definitions/f_subtype",
+                  "$ref": "#/definitions/vulnerability_f_subtype",
                   "description": "Type of methodological approach"
                 },
                 "f_relationship": {
@@ -1038,6 +1038,8 @@
         "Judgement",
         "Hybrid"
       ]
-    }
+    },
+    "vulnerability_f_relationship": {},
+    "vulnerability_f_math": {}
   }
 }
