@@ -68,10 +68,13 @@ livereload==2.6.3
     # via sphinx-autobuild
 markdown-it-py==2.1.0
     # via
+    #   mdformat
     #   mdit-py-plugins
     #   myst-parser
 markupsafe==2.1.1
     # via jinja2
+mdformat==0.7.16
+    # via -r requirements.in
 mdit-py-plugins==0.3.3
     # via myst-parser
 mdurl==0.1.2

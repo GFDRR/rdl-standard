@@ -1,8 +1,3 @@
 # PostGRESQL database
 
-
-
-
-
-
 <br><hr>

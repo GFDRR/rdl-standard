@@ -11,6 +11,7 @@ This section contains the following how-to guides:
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
+* [Resolve check failures](#resolve-check-failures)
 
 ### Propose changes
 
@@ -101,6 +102,14 @@ cd docs
 make autobuild
 ```
 
+Alternatively, build the documentation and view it using a local web server:
+
+```bash
+cd docs
+make html
+python -m http.server --directory _build/html
+```
+
 ### Update requirements
 
 1. Install `pip-tools`.
@@ -139,6 +148,18 @@ ocdskit indent -r .
 ##### test_json.py::test_invalid_json
 
 Review the warnings to identify the invalid JSON files and correct the errors.
+
+##### test_schema.py (all tests)
+
+Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
+
+#### mdformat
+
+If this check fails, run the following command to fix markdown formatting:
+
+```bash
+mdformat docs
+```
 
 ## Reference
 
