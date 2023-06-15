@@ -10,7 +10,7 @@ from jscc.testing.checks import (validate_array_items, validate_codelist_enum, v
 
 
 schemas = [(path, name, data) for path, name, _, data in walk_json_data(top='schema') if is_json_schema(data)]
-metaschema = http_get('http://json-schema.org/draft-04/schema').json()
+metaschema = http_get('https://json-schema.org/draft/2020-12/schema').json()
 
 
 @pytest.mark.parametrize('path,name,data', schemas)

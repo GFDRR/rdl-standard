@@ -45,7 +45,7 @@ jinja2==3.1.2
     # via
     #   myst-parser
     #   sphinx
-jscc==0.1.1
+jscc @ git+https://github.com/OpenDataServices/jscc-2020-12@40ffef2f55dff9c3c0a1fdf8cb26d06b261c168f
     # via -r requirements.in
 json-merge-patch==0.2
     # via
