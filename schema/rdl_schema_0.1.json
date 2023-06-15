@@ -91,47 +91,47 @@
 		"maintainer_email": {
 			"type": "string",
 			"description": "Contact email"
-		}
-	},
-	"resources": {
-		"type": "array",
-		"items": {
-			"resource": {
-				"type": "object",
-				"required": [
-					"name",
-					"format",
-					"epsg",
-					"url"
-				],
-				"properties": {
-					"name": {
-						"type": "string",
-						"description": "Name of linked resource"
-					},
-					"aggregation_type": {
-						"type": "string",
-						"description": "Level of data representation"
-					},
-					"format": {
-						"type": "string",
-						"description": "Format of resource"
-					},
-					"h-res": {
-						"type": "string",
-						"description": "Horizontal resolution in meters (raster data only)"
-					},
-					"epsg": {
-						"type": "string",
-						"description": "Reference coordinate system (default: 4326)"
-					},
-					"url": {
-						"type": "string",
-						"description": "URL of linked resource"
-					}
-				}
-			}
-		}
+		},
+  	"resources": {
+      "type": "array",
+      "items": {
+        "resource": {
+          "type": "object",
+          "required": [
+            "name",
+            "format",
+            "epsg",
+            "url"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of linked resource"
+            },
+            "aggregation_type": {
+              "type": "string",
+              "description": "Level of data representation"
+            },
+            "format": {
+              "type": "string",
+              "description": "Format of resource"
+            },
+            "h-res": {
+              "type": "string",
+              "description": "Horizontal resolution in meters (raster data only)"
+            },
+            "epsg": {
+              "type": "string",
+              "description": "Reference coordinate system (default: 4326)"
+            },
+            "url": {
+              "type": "string",
+              "description": "URL of linked resource"
+            }
+          }
+        }
+      }
+    }
 	},
 	"anyOf": [
 		{
