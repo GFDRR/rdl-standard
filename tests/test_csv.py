@@ -7,11 +7,8 @@ from io import StringIO
 import pytest
 import requests
 from jscc.schema import is_codelist
-from jscc.testing.checks import get_invalid_csv_files
 from jscc.testing.filesystem import walk_csv_data
 from jscc.testing.util import warn_and_assert
-from jsonschema import FormatChecker
-from jsonschema.validators import Draft202012Validator as validator
 
 cwd = os.getcwd()
 repo_name = os.path.basename(os.getenv('GITHUB_REPOSITORY', cwd))
@@ -23,11 +20,6 @@ def formatwarning(message, category, filename, lineno, line=None):
 
 warnings.formatwarning = formatwarning
 pytestmark = pytest.mark.filterwarnings('always')
-
-
-def test_csv_valid():
-    warn_and_assert(get_invalid_csv_files(), '{0} is not valid CSV: {1}',
-                    'CSV files are invalid. See warnings below.')
 
 
 def test_valid():

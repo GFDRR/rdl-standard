@@ -11,5 +11,6 @@ sphinx_rtd_theme
 myst-parser
 mdformat-myst
 pytest
-jscc @ git+https://github.com/OpenDataServices/jscc-2020-12@40ffef2f55dff9c3c0a1fdf8cb26d06b261c168f
+jscc
 ocdskit
+jsonschema

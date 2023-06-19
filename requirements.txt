@@ -45,7 +45,7 @@ jinja2==3.1.2
     # via
     #   myst-parser
     #   sphinx
-jscc @ git+https://github.com/OpenDataServices/jscc-2020-12@40ffef2f55dff9c3c0a1fdf8cb26d06b261c168f
+jscc==0.2.2
     # via -r requirements.in
 json-merge-patch==0.2
     # via
@@ -63,7 +63,7 @@ jsonref==1.0.1
     #   ocdsmerge
     #   sphinxcontrib-opendataservices-jsonschema
 jsonschema==4.17.3
-    # via jscc
+    # via -r requirements.in
 livereload==2.6.3
     # via sphinx-autobuild
 markdown-it-py==2.1.0
@@ -129,10 +129,6 @@ requests==2.28.1
     #   sphinx
 requests-cache==1.0.1
     # via ocdsextensionregistry
-rfc3339-validator==0.1.4
-    # via jscc
-rfc3986-validator==0.1.1
-    # via jscc
 ruamel-yaml==0.17.32
     # via
     #   mdformat-frontmatter
@@ -142,7 +138,6 @@ ruamel-yaml-clib==0.2.7
 six==1.16.0
     # via
     #   livereload
-    #   rfc3339-validator
     #   url-normalize
 snowballstemmer==2.2.0
     # via sphinx
