@@ -5,7 +5,7 @@
    :maxdepth: 1
 
    roadmap
-   history
+   history/index
    governance
    license
 
