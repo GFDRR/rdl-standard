@@ -123,6 +123,9 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 # keep_warnings = False
 
+# If true, Sphinx will warn about all references where the target cannot be found. Default is False. You can activate this mode temporarily using the -n command-line switch.
+nitpicky = True
+
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
