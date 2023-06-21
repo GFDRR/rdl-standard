@@ -2,7 +2,7 @@
 
 ## Schema attributes
 
-The exposure schema covers a wide variety of data describing structural, infrastructural and environmental asset, population, and socio-economic descriptors, each with relevant attributes for assessing risk from multiple hazards. The schema was developed based on [GEM Taxonomy 2.0](https://wiki.openstreetmap.org/wiki/GED4ALL) to accommodate the most important spatial features commonly employed in risk analysis to identify and estimate exposed value.
+The exposure schema covers a wide variety of data describing structural, infrastructural and environmental asset, population, and socio-economic descriptors, each with relevant attributes for assessing risk from multiple hazards. The schema was developed based on [GEM Taxonomy 2.0](https://wiki.openstreetmap.org/wiki/GED4ALL) to accommodate the most important spatial features commonly employed in risk analysis to identify and estimate exposed value. 
 
 ```{eval-rst}
  .. mermaid::
@@ -25,7 +25,7 @@ The exposure schema covers a wide variety of data describing structural, infrast
 ```
 
 The main features of an exposure dataset are specified by the **exposure model** attributes.
-Each exposure model includes one or more **assets**. Each asset could represent a single asset (e.g. one building) or a collection of assets (e.g aggregated buildings in an area).
+Each exposure model includes one or more **assets**. Each asset could represent a single asset (e.g. one building) or a collection of assets (e.g aggregated buildings in an area). 
 The exposure schema covers 4 categories and 11 occupancy types for consistent classification of assets across schema. The taxonomy source specifies the taxonomy string used to identify individual asset features within a dataset. Occupancy can be optionally assigned for night-time or day-time, e.g. to discern resident population from daily commuters.
 
 |**Required**| **Attribute** | **Description** | **Type** |
@@ -60,7 +60,7 @@ Two exposure datasets are shown together in the example: building footprints pol
 |*| Occupancy | Mixed |
 || Taxonomy | OSM |
 |*| Value type | Structure |
-|\*| Unit of measure | USD |
+|*| Unit of measure | USD |
 
 <br>
 
@@ -71,6 +71,6 @@ Two exposure datasets are shown together in the example: building footprints pol
 |*| Occupancy | Residential |
 || Period of occupancy | Night |
 |*| Value type | Other |
-|\*| Unit of measure | Count |
+|*| Unit of measure | Count |
 
 <br><hr>
