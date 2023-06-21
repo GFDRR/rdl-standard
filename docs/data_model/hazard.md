@@ -47,7 +47,6 @@ The hazard schema stores data about the intensity and occurrence probability of 
         Uncertainty
       }
 ```
-
 <br>
 
 The schema specifies which type of analysis and data methodology that has generated the dataset. It supports either simulated probabilistic scenarios and empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
@@ -56,7 +55,7 @@ The schema specifies which type of analysis and data methodology that has genera
 |:---:| --- | --- | --- |
 |*| Hazard type | Main hazard type from list of options | <ul><li>Coastal Flood<li>Convective Storm<li>Drought<li>Earthquake<li>Extreme Temperature<li>Flood<li>Landslide<li>Tsunami<li>Volcanic<li>Wildfire<li>Strong Wind<li>Multi-Hazard</ul> |
 |*| Analysis type | Type of analysis that generated the data | <ul><li>Deterministic<li>Probabilistic |
-|\*| Calculation method | The methodology used for the modelling of hazard | <ul><li>Simulated<li>Observed<li>Inferred |
+|*| Calculation method | The methodology used for the modelling of hazard | <ul><li>Simulated<li>Observed<li>Inferred |
 || Geographic area | Specific location for which the dataset has been developed | Name of location |
 
 <br>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknow or inapplicabile, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
@@ -154,12 +153,11 @@ Schema attributes for flood hazard map related to occurrence probability of a ri
 || Occurence time (end) | 2001 |
 || Occurence time (span) | 44 years |
 |*| Hazard process | River flood |
-|\*| Unit of measure | Water depth (m) |
+|*| Unit of measure | Water depth (m) |
 
 <br>
 
 ### Earthquake hazard maps for Afghanistan
-
 Schema attributes for earthquake hazard map related to occurrence probability of an event with return period of  once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability start from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).
 
 ![Screenshot](../img/hzd_eq_afg.jpg)
@@ -175,6 +173,6 @@ Schema attributes for earthquake hazard map related to occurrence probability of
 || Occurence time (end) | 2001 |
 || Occurence time (span) | 1200 years |
 |*| Hazard process | Ground motion |
-|\*| Unit of measure | PGA (g) |
+|*| Unit of measure | PGA (g) |
 
 <br><hr>

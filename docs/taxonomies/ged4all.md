@@ -11,14 +11,13 @@ The taxonomy covers four main categories:
 - [Socio-Economic indicators](#socio-economic-indicators)
 
 ## Buildings
-
 The buildings taxonomy is based on GEM openquake taxonomy, with some semplifications. The taxonomy string is built as sequence of attributes separeted by slash:
 
 `MATERIAL/HEIGHT/DATE/OCCUPANCY/SHAPE/…`
 
 Missing attributes can be skipped from the string, e.g.
 
-2-floors detached residential dwelling, reinforced concrete structure: `CR/H:2/RES1`
+2-floors detached residential dwelling, reinforced concrete structure: `CR/H:2/RES1`	
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -133,7 +132,6 @@ Missing attributes can be skipped from the string, e.g.
 <br/>
 
 ## Lifelines
-
 The **lifelines** taxonomy includes all infrastructures commonly found in populated areas, such as:
 
 - [Roads and railways](#roads-and-railways)
@@ -223,7 +221,7 @@ Large elevated pipe for potable water: `CPW/PEL/DLG`
 | Soil type | SCO  | Corrosive |
 |  | SNC  | Non corrosive |
 |  | --  | Unknown soil type |
-| Diameter | DSM  | Small   (\< 40 cm) |
+| Diameter | DSM  | Small   (< 40 cm) |
 |  | DLG  | Large (≥ 40 cm) |
 |  | --  | Unknown diameter |
 
@@ -253,7 +251,7 @@ Electric ditribution line through pylones: `PWG/SSM/ANC`
 |  | --  | Unknown |
 | Power Capacity  | PC:  | Value (integer) |
 |  | --  | Unknown power capacity |
-| Power grid | SSL  | Low Voltage   (\<115 KV) Substation |
+| Power grid | SSL  | Low Voltage   (<115 KV) Substation |
 |  | SSM  | Medium   Voltage (115-500 KV) Substation |
 |  | SSH  | High   Voltage (>500 KV) Substation |
 |  | DTC  | Distribution   circuit |
@@ -284,10 +282,10 @@ The alphanumeric taxonomy strings are:<br>
 | Attribute | Code | Description |
 |-|:-:|-|
 | **Potable water** | PWR | |
-| Component  | PWS  | Small potable   water treatment plant (\<50 MGD) |
+| Component  | PWS  | Small potable   water treatment plant (<50 MGD) |
 |  | PWM  | Medium potable water treatment plant (50-200 MGD) |
 |  | PWL  | Large potable water treatment plant (>200 MGD) |
-|  | PPS  | Small pumping plant (\<10 MGD) |
+|  | PPS  | Small pumping plant (<10 MGD) |
 |  | PPM  | Medium pumping plant (10-50 MGD) |
 |  | PPL  | Large pumping plant (>50 MGD) |
 | Anchorage  | ANC  | Anchored |
@@ -299,10 +297,10 @@ The alphanumeric taxonomy strings are:<br>
 |  | CDH  | High   code |
 |  | --  | Code   provisions unknown |
 | **Wastewater** | WWR | |
-| Component  | WWS  | Small wastewater treatment plant (\<50 MGD) |
+| Component  | WWS  | Small wastewater treatment plant (<50 MGD) |
 |  | WWM  | Medium wastewater treatment plant (50-200 MGD) |
 |  | WWL  | Large wastewater treatment plant (>200 MGD) |
-|  | LSS  | Small lift station (\<10 MGD) |
+|  | LSS  | Small lift station (<10 MGD) |
 |  | LSM  | Medium lift station (10-50 MGD) |
 |  | LSL  | Large lift station (>50 MGD) |
 | Anchorage  | ANC  | Anchored |
@@ -489,7 +487,7 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 - [Index](#index): range of indexes that cover different sectors, for example, the Disaster Risk Index used by the United Nation Development programme to monitor the global evolution of risk.
 - [Infrastructure](#infrastructure): Transportation and communication infrastructure, status and access to utility lifelines
 
-### Population
+### Population 
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -680,7 +678,7 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 </div>
 <br>
 
-### Governance
+### Governance  
 
 | Attribute | Code | Description |
 |-|:-:|-|

@@ -129,6 +129,6 @@ Insert example of recorded empirical losses.
 || Occurence time (end) | 2001 |
 || Occurence time (span) | 1200 years |
 |*| Hazard process | Ground motion |
-|\*| Unit of measure | PGA (g) |
+|*| Unit of measure | PGA (g) |
 
 <br><hr>
