@@ -13,7 +13,7 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 | | Bibliography | Author, titles and publication year of documents containing relevant information on the dataset | Authors (Year) - Title; URL |
 | | Version | Version of the dataset | Number  |
 |*| Geo coverage | ISO code(s) of countries covered | ISOa3 country code |
-|*| License code | Type of license | Licensing options |
+|\*| License code | Type of license | Licensing options |
 
 <br>
 

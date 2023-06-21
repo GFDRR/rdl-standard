@@ -2,10 +2,7 @@
 
 # Glossary of terms
 
-In this section, you will find definition of key concepts behind the RDLS including what is a disaster, how to reduce disaster risk through disaster disaster risk management and disaster risk assessment and what are the different types of risk data needed. 
-
-
-
+In this section, you will find definition of key concepts behind the RDLS including what is a disaster, how to reduce disaster risk through disaster disaster risk management and disaster risk assessment and what are the different types of risk data needed.
 
 ## Disaster risk
 
@@ -14,9 +11,6 @@ Disaster risk is the potential loss of life, injury, or destroyed or damaged ass
 Disaster risk comprises different types of potential impacts and losses (direct and indirect, tangible and intangible) which are sometimes difficult to quantify. Nevertheless, with knowledge of the prevailing hazards, the patterns of population and socio-economic development and their tendency to suffer impacts, disaster risks can be assessed and mapped, at least in broad terms.
 
 Source: [UNDRR Terminology (Disaster Risk)](https://www.undrr.org/terminology/disaster-risk)
-
-
-
 
 ## Disaster risk assessment
 
@@ -27,29 +21,17 @@ Source: [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/ter
 <!--![Screenshot](img/risk_assessment.png)
 (adapted from "[Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)")-->
 
-
-
-
-
 ## Disaster risk information (_risk data_)
 
 Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets. Disaster risk information includes all studies, information and mapping required to understand the disaster risk drivers and underlying risk factors.
 
 Source: [UNDRR Terminology (Disaster Risk Information)](https://www.undrr.org/terminology/disaster-risk-information)
 
-
-
-
-
 ## Disaster risk management
 
 Disaster risk management is the application of disaster risk reduction policies and strategies to prevent new disaster risk, reduce existing disaster risk and manage residual risk, contributing to the strengthening of resilience and reduction of disaster losses.
 
 Source: [UNDRR Terminology (Disaster Risk Management)](https://www.undrr.org/terminology/disaster-risk-management)
-
-
-
-
 
 ## Exposure
 
@@ -63,9 +45,6 @@ Source: [UNDRR Terminology (Exposure)](https://www.undrr.org/terminology/exposur
 ![Exposure](img/sample_exp.jpg)
 ```
 ````
-
-
-
 
 ## Hazard
 
@@ -82,9 +61,8 @@ Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
 ```
 ````
 
-
-
 ## Impact model
+
 An impact model (also damage model; loss model) is used to combine Hazard, Exposure and Vulnerability compoments to calculate the amount of value that is expected to be impacted (damaged or lost).
 
 Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/files/solving-the-puzzle-report.pdf)
@@ -96,9 +74,8 @@ Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/fi
 ```
 ````
 
-
-
 ## Vulnerability
+
 Vulnerability are the conditions determined by physical, social, economic and environmental factors or processes which increase the susceptibility of an individual, a community, assets or systems to the impacts of hazards. The inverse of vulnerability is defined coping capacity, which is the combination of all the strengths, attributes and resources available within an organization, community or society to manage and reduce disaster risks and strengthen resilience.
 
 Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vulnerability)
@@ -109,4 +86,3 @@ Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vu
 ![Vulnerability](img/sample_vln.jpg)
 ```
 ````
-

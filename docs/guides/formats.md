@@ -3,7 +3,7 @@
 Risk data can be made of spatial or non-spatial data.
 
 - **Spatial data (geodata)** can be shared in a variety of formats depending on the software used by the analyst. Over the years, [OSGEO ](https://wiki.osgeo.org/wiki/Main_Page) (Open Source Geospatial Foundation) tried to converge towards a limited number of "best" standard formats for each geospatial type.
-<br><br>
+  <br><br>
 - **Non-spatial data** most often consist of table data stored as excel or csv files for greater compatibility.
 
 Below is a list of recommended and supported geodata formats.
@@ -22,7 +22,6 @@ Always prefer WIDE geodatabase table formatting instead of LONG format when work
 ### Raster data: GeoTIFF / COG (.tif)
 
 **GeoTIFF** (`.tif`) is the image standard file for GIS and satellite remote sensing applications. It can store multiple realisations as “bands”. GeoTIFFs can be accompanied by other auxiliary files (.tfw for raster geolocation, .xml for metadata, .aux for projections and others, .ovr for pyramids to improve visualisation), compressed into a .zip file together with the .tif files for sharing.
-
 
 **A Cloud Optimized GeoTIFF (COG)** is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud. It does this by leveraging the ability of clients issuing ​[HTTP GET range requests](https://tools.ietf.org/html/rfc7233) to ask for just the parts of a file they need. This is the best option for data that needs to be hosted on a geocatalogue such as [GeoNode](https://www.geonode-gfdrrlab.org).
 

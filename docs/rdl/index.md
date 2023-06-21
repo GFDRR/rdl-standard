@@ -1,6 +1,6 @@
 # Overview
 
-The Risk Data Library (RDL) project grew out of in-depth community consultation on improving access to **risk information**. 
+The Risk Data Library (RDL) project grew out of in-depth community consultation on improving access to **risk information**.
 
 The RDL Standard (RDLS) is a result of the collective effort and ongoing support of internationally-recognised research insitutions and established global partnerships with combined expertise across multiple hazards and all aspects of risk assessment. The partners have a complete understanding of the challenges risk analysts face in finding, editing and exchanging data for disaster risk assessments, for various scales and contexts.
 
@@ -16,5 +16,5 @@ Its overarching purpose is to support disaster resilience work by making risk da
    use-cases
    roadmap
 ```
-<br><hr>
 
+<br><hr>
