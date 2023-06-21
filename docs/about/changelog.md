@@ -1,6 +1,15 @@
 # Changelog
 
-Summary of developments or improvements to the data model and standard.<br>
-Including pointers to key papers, reports, key decisions and a high-level changelog.
+This page lists changes to the Risk Data Library Standard.
 
-<br><hr>
+## YYYY-MM-DD
+
+### Schema
+
+### Codelists
+
+### Normative documentation
+
+### Non-normative documentation
+
+### Other
