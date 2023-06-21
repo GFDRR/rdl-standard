@@ -1,4 +1,4 @@
-## General attributes
+# General attributes
 
 In addition to schema-specific attributes, each dataset is identified by a list of attributes based on <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms">DublinCore metadata standard</a>.
 
