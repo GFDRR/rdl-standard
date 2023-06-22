@@ -4,7 +4,7 @@
 
 In this section, you will find definition of key concepts behind the RDLS including what is a disaster, how to reduce disaster risk through disaster disaster risk management and disaster risk assessment and what are the different types of risk data needed.
 
-Main definitions are taken from the [UNDRR Terminology](https://www.undrr.org/terminology).
+Main definitions are taken from the [UNDRR Terminology](https://www.undrr.org/terminology). 
 
 ## Disaster risk
 
@@ -52,7 +52,6 @@ The situation of people, infrastructure, housing, production capacities and othe
 Source: [Exposure, UNDRR Terminology](https://www.undrr.org/terminology/exposure)
 
 ## Vulnerability
-
 Vulnerability are the conditions determined by physical, social, economic and environmental factors or processes which increase the susceptibility of an individual, a community, assets or systems to the impacts of hazards. The inverse of vulnerability is defined coping capacity, which is the combination of all the strengths, attributes and resources available within an organization, community or society to manage and reduce disaster risks and strengthen resilience.
 
 Source: [Vulnerability, UNDRR Terminology](https://www.undrr.org/terminology/vulnerability)
