@@ -1,8 +1,10 @@
 # Data packaging
 
+This section describes common data formats and file types developed during a risk assessment. For each of the hazard, exposure, vulnerability and loss components, it describes possible grouping of multiple files into minimal resources associated with a dataset, which can make it easier to find and download resources of the same type.
+
 The data structure and packaging of the output as obtained from the data analysts do not always align with the way we want users of the **Risk Data Library** to search and download data.
 
-Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) are provided as individual `RESOURCES`; it is encouraged to grouped these according to three main criteria:
+Data shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) are provided as individual `RESOURCES`; it is encouraged to group these according to geography and theme:
 
 - **GEOGRAPHY**: data covering a multi-country region might be split into individual countries' datasets.
 - **THEME**: for risk data, this includes hazard, sector or asset type.
@@ -10,16 +12,16 @@ Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://
 
 We also need to consider:
 
-- **FORMAT**: how the data are stored. It is preferred to keep together data in the same format, conversely split different file formats in different resources. [Read more](formats) about supported data formats.
-- **SELF-DEPENDENCY & COMPLETENESS**: the data resource can be interpreted and used by itself.
-- **SIZE-EFFICIENCY**: try to avoid creating huge datasets (>1 Gb) that would be hard to download on poor connections.
+- **FORMAT**: how the data are stored. It is preferred to keep data in the same format in a single resource, or split different file formats into multiple resources. [Read more](formats) about common data formats for risk information.
+- **SELF-DEPENDENCY & COMPLETENESS**: the data resource should be easily interpreted and used by itself.
+- **SIZE-EFFICIENCY**: try to avoid creating large datasets (> 500MB) that would be hard to download on poor connections.
 
 ```{caution}
 In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. For data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts. Instead of splitting rasters, consider storing the raster in an alternative format that maybe more size-efficient (see Formats sections).
 ![Screenshot](../img/raster_clip.jpg)
 ```
 
-Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data can be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
+Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
 
 ```
 <country>_<project_name>
@@ -42,7 +44,7 @@ Structuring risk data well when it is generated and before it is delivered to a 
 ```
 
 ```{caution}
-Where there are many resources for a dataset, it can be tempting to include a folder structure in the online Data Catalog. This is not advised and it is suggested that `datasets` be grouped together into individual `Resources` in order to facilitate finding the specific component of analysis, and without creating problematically large file sizes.
+Where there are many resources for a dataset, it can be tempting to include a folder structure in an online data catalog. This is not advised and it is suggested that files be grouped together into individual `Resources` in order to facilitate finding the specific component of analysis, and without creating problematically large file sizes.
 ```
 
 ***
@@ -55,7 +57,7 @@ Where there are many resources for a dataset, it can be tempting to include a fo
 Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`). In some cases, hazard curves and stochastic event set tables are provided. Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.
 
 
-Generally, hazard data (footprints) takes the form of raster (geo grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
+Generally, hazard data (footprints) takes the form of raster (geospatial grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
 
 ```{figure} ../img/hzd_tc.jpg
 ---
@@ -94,9 +96,9 @@ For example:
      ├── <Hazard1>
      │  ├── <Country1>
      │  │  ├── <Historical>
-     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Historical>.zip  ->  [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
+     │  │  │  └── Resource: <project_name>_<Hazard1>_<Country1>_<Historical>.zip  ->  [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
      │  │  ├── <2050>
-     │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<2050>.zip  ->  [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
+     │  │  │  └── Resource: <project_name>_<Hazard1>_<Country1>_<2050>.zip  ->  [RP10.tif; RP25.tif; RP50.tif; RP100.tif]
      │  │  └── <2080>
      │  │     └── <...>
      │  └── <Country2>
@@ -111,7 +113,7 @@ For example:
 
 ### Format
 
-Exposure dataset typically describe the location, characteristics and value of individual assets or an aggregated number of assets/population per grid cell. Each point or cell usually has many attributes associated with it.
+Exposure data typically describe the location, characteristics and value of individual assets or an aggregated number of assets/population per grid cell. Each point or cell usually has many attributes associated with it.
 
 Exposure geospatial data can take the form of vector (`gpkg`, `shp`), or raster (`GeoTIFF / COG`). In some cases, exposure comes as table (`csv`, `xls`).
 
@@ -155,9 +157,9 @@ For example:
     ├── <Country1>
     │  ├── <Exposure_categoryl>
     │  │  ├── <2020>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>_<2020>.zip  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │  │  └── Resource: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>_<2020>.zip  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     │  │  └── <2050>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category1>_<2050>.zip  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │     └── Resource: <project_name>_<Hazard1>_<Country1>_<Exposure_category1>_<2050>.zip  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     │  ├── <Exposure_category2>
     │  │  └── <...>
     └── <Country2>
@@ -199,7 +201,7 @@ Vulnerability curves can be developed for individual countries or environments w
 We recommend to group exposure data  using the following hierarchy:
 
 - **Hazard type**
-  - *Geographic* (unless global function, one dataset per country)
+  - *Geographic* (unless global function, one resource per country)
     - **Exposure category** (Population, Built-up, ...)
       - **Sub-type** (e.g. sector (Residential, Commercial), construction type (Masonry, Wood), or others)
 
@@ -223,9 +225,9 @@ For example, when grouping multiple functions into one excel file, the following
     ├── <Hazard1>
     │  ├── <Country> (skip if global function)
     │  │  ├── <Exposure_category1>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │  │  └── Resource: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     │  │  └── <Exposure_category2>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
+    │  │     └── Resource: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]
     └── <Hazard2>
         └── <...>
            └── <...>
@@ -239,10 +241,10 @@ For example, when grouping multiple functions into one excel file, the following
 
 ### Format
 
-Loss data comes in the form of:
+Loss or impact data comes in the form of:
 
 - tabulated event losses, and loss per exceedance probability
-- Mapped return period loss / annual average loss - in vector files/choropleth maps
+- mapped return period loss / annual average loss - in vector files/choropleth maps
 - (more rarely) as granular raster or vector data with loss value attached
 
 ### Thematic grouping
@@ -260,10 +262,10 @@ Losses can also be provided per asset (e.g. individual buildings or raster footp
 
 ### Packaging recommendation
 
-Strategy depends on the data format and size:
+Depending on the data format and size:
 
-- if data consists of one or more table datasets, it is usually a good idea to group it together into one `excel` file so users can access all of the losses at once;
-- if data consists of one or more vector datasets representing national or subnational boundary levels, these can be grouped into one `geopackage` file;
+- if data consists of one or more tables, it is usually a good idea to group it together into one `excel` file so users can access all of the losses at once;
+- if data consists of one or more vector files representing national or subnational boundary levels, these can be grouped into one `geopackage` file;
 - if data consists of multiple granular spatial data, it might be packed as individual or multiple layers (depending on the size of individual layers)
 
 In either case, we recommend grouping exposure data using the following hierarchy:
@@ -282,9 +284,9 @@ For example:
     ├── <Hazard1>
     │  ├── <Country> 	(skip if global function)
     │  │  ├── <Exposure_category1>
-    │  │  │  └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
+    │  │  │  └── Resource: <project_name>_<Hazard1>_<Country1>_<Exposure_categoryl>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
     │  │  └── <Exposure_category2>
-    │  │     └── Dataset: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
+    │  │     └── Resource: <project_name>_<Hazard1>_<Country1>_<Exposure_category2>.xlsx  ->  [subtype1.tif; subtype2.tif; subtype3.tif]; [period]
     └── <Hazard2>
         └── <...>
            └── <...>
