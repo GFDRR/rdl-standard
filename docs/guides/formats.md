@@ -6,7 +6,7 @@ Risk data can be made of spatial or non-spatial data.
   <br><br>
 - **Non-spatial data** most often consist of table data stored as `.xlsx` or ``.csv` files for greater compatibility.
 
-Below is a list of recommended and supported geodata formats.
+Below is a list of recommended and common geodata formats used for risk data.
 
 ## Recommended geodata formats
 
@@ -25,7 +25,7 @@ Always prefer WIDE geodatabase table formatting instead of LONG format when work
 
 **A Cloud Optimized GeoTIFF (COG)** is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud. It does this by leveraging the ability of clients issuing ​[HTTP GET range requests](https://tools.ietf.org/html/rfc7233) to ask for just the parts of a file they need. This is the best option for data that needs to be hosted on a geocatalogue such as [GeoNode](https://www.geonode-gfdrrlab.org).
 
-## Supported geodata formats
+## Other common geodata formats
 
 ### Vector data
 
@@ -45,7 +45,7 @@ Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where 
 
 ### Spreadsheet and tables
 
-**Comma-separated values** (`.csv`) is used for table data such as vulnerability models, results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, so the resource filetype will show as ‘CSV’. Where large or multiple files are compressed, filetype will show as ‘ZIP’ though so please include reference to the `.csv` filetype in the resource description.
+**Comma-separated values** (`.csv`) is used for table data such as vulnerability models, results summary, aggregations, etc. Small files can be added uncompressed, so the resource filetype will show as ‘CSV’. Where large or multiple files are compressed, filetype will show as ‘ZIP’ though so please include reference to the `.csv` filetype in the resource description.
 
 **Excel** (`.xlsx`) is used for table data such as results summary, aggregations, etc. Deprecated for grid spatial data. Small files can be added uncompressed, multiple files ought to be compressed into a single `.zip` file, with reference to the `.xlsx` filetype in the resource description.
 

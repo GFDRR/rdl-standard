@@ -3,12 +3,12 @@
 The [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) sits within the [World Bank Data Catalog](https://datacatalog.worldbank.org) and is meant to store standard risk data.
 The collection can be accessed from the [collections page](https://datacatalog.worldbank.org/search/collections/) or used as a filter on the left bar to search for data within the collection.
 
-![Screenshot](../img/rdl_collection.png)
+![Risk Data Library Collection](../img/rdl_collection.png)
 
 ## Add datasets
 
 Datasets can be submitted for review and publication on the Data Catalog by any World Bank Staff, ETC or STC. These people have the role of `Data depositor`.<br>
-Datasets needs to be packaged according to the [**data preparation guidelines**](preparation).<br>
+Datasets needs to be packaged according to the [data preparation guidelines](preparation).<br>
 <br>
 Two options to upload data:
 
@@ -22,7 +22,7 @@ In both cases, datasets can be added to the [RDL Collection](https://datacatalog
 - Log in to the [Data Catalog](https://datacatalog.worldbank.org/int/home) (top right bar)
 
 - View [My datasets](https://datacatalog.worldbank.org/int/data/mydata) (top right bar)
-  ![Screenshot](../img/rdl_ddh_mydata.png)
+  ![World Bank Data Catalog screenshot: MyData page](../img/rdl_ddh_mydata.png)
   The page shows dataset number, name, modified date, status (Published, Draft, Under review, Publishing in progress) for datasets you have uploaded or for which you are listed as a contributor
 
   - Under `Action` you can `edit` or `submit for review` to the [DDH team](../about/contacts.md#ddh-team).
@@ -30,20 +30,20 @@ In both cases, datasets can be added to the [RDL Collection](https://datacatalog
 
 - Click [Add data](https://datacatalog.worldbank.org/int/data/add) (top right bar)
   Select the option on the right: _`continue`_.
-  ![Screenshot](../img/rdl_ddh1.png)
+  ![World Bank Data Catalog screenshot: Add data](../img/rdl_ddh1.png)
 
   1. **Essential Information**
-     ![Screenshot](../img/rdl_ddh2.png)<br><br>
+     ![World Bank Data Catalog screenshots: Add essential information](../img/rdl_ddh2.png)<br><br>
 
-  1. **Data Resources**
+  1. **Uploading data**
 
   - Upload dataset from your local storage
   - Add a resource title and description
   - When one resource has been submitted, another one can be added
-    ![Screenshot](../img/rdl_ddh3.png)<br><br>
+    ![World Bank Data Catalog screenshot: Add data files](../img/rdl_ddh3.png)<br><br>
 
-  3. **Additional information**
-     ![Screenshot](../img/rdl_ddh_add.png)
+  1. **Additional information**
+     ![World Bank Data Catalog screenshot: Adding additional information](../img/rdl_ddh_add.png)
 
   - **Tags**: These are important for being able to search the data in the catalog. Suggestions for RDLS data:
     - Climate Risk or Disaster Risk
@@ -51,7 +51,7 @@ In both cases, datasets can be added to the [RDL Collection](https://datacatalog
     - Flood, Earthquake, Landslide, Tsunami (hazard type)
   - **Topics**: There is currently no topic for risk analytics or climate and disaster risk - leave blank
   - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](../about/contacts.md#ddh-team) with request to assign data to RDL Collection.
-    ![Screenshot](../img/rdl_ddh4.png)
+    ![World Bank Data Catalog screenshot: Final steps](../img/rdl_ddh4.png)
 
 Once done, click on `Save as draft`. The dataset will appear under `My datasets` list.
 
