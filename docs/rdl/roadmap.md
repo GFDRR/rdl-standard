@@ -1,4 +1,4 @@
-# History and Roadmap
+# History and roadmap
 
 ## History (2016-2021)
 

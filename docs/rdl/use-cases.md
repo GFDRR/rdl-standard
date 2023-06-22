@@ -26,6 +26,6 @@ An **insurance industry analyst or model developer** needs to **build a new cata
 
 A **humanitarian organisation** are creating a **disaster risk financing** program to fund, ex-ante, disaster response and recovery and an **anticipatory action** program. They are relying on historical observations to assess the risk to define a suitable risk layered approach and select the correct DRF solutions, and want to improve this method by including probabilistic analysis. Using RDL tools they are able to find datasets and the results of previous risk analysis. Because the datasets are formatted according to the **RDL standards** they are able to quickly understand the contents of the data and whether it is suitable for their use.
 
-***Value***: The data can be improve existing methods in risk financing to make DRF solution more efficient and sustianable.
+***Value***: The data can be improve existing methods in risk financing to make DRF solution more efficient and sustainable.
 
 <br><hr>

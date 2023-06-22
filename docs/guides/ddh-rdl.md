@@ -50,7 +50,7 @@ In both cases, datasets can be added to the [RDL Collection](https://datacatalog
     - Hazard, Exposure, Vulnerability, Loss (depending on the component type)
     - Flood, Earthquake, Landslide, Tsunami (hazard type)
   - **Topics**: There is currently no topic for risk analytics or climate and disaster risk - leave blank
-  - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](../about/contacts.md#ddh-team) with request to assign data to RDL Colelction.
+  - **Collection**: this can only be entered by staff with those rights. Provide a list of dataset ID to [Kamwoo Lee](../about/contacts.md#ddh-team) with request to assign data to RDL Collection.
     ![Screenshot](../img/rdl_ddh4.png)
 
 Once done, click on `Save as draft`. The dataset will appear under `My datasets` list.

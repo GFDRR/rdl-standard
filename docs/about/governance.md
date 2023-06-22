@@ -1,4 +1,4 @@
-# Standard Governance
+# Standard governance
 
 This document provides an overview of the governance and processes used to develop the Risk Data Library Standard. The standard aims to define a data model, taxonomies and additional specifications to improve the discovery, management and exchange of risk data.
 
@@ -31,9 +31,9 @@ Additional documentation and source code produced by this initiative will also b
 ## Roles and responsibilities
 
 This project is currently managed by the Risk Data Library team working within the
-[**Global Facility for Disaster Risk and Reduction**](https://www.gfdrr.org/en).
+[Global Facility for Disaster Risk and Reduction](https://www.gfdrr.org/en).
 
-To guide development and adoption of the standards, in addition to open working through this github project, the team invites expert input via an Advisory Group and, as
+To guide development and adoption of the standards, in addition to open working through this GitHub project, the team invites expert input via an Advisory Group and, as
 required, specific Technical Working Groups.
 
 ### Advisory Group
@@ -55,10 +55,10 @@ The Advisory Group will meet every two months. The agenda, slides and minutes fr
 
 ### Technical Working Groups
 
-At times we may create specific Technical Working Groups that will collaborate on development of specific aspects of the RDL standard. For example to develop taxonomies, or revise file formats or schemas. These Working Groups will have a clear remit and will coordinate their work through this github.
+At times we may create specific Technical Working Groups that will collaborate on development of specific aspects of the RDL standard. For example to develop taxonomies, or revise file formats or schemas. These Working Groups will have a clear remit and will coordinate their work through this GitHub.
 Membership of these groups and participation in calls and workshops will be open to all participants. Depending on the scope of work, they may need to draw on expertise from a wider group of stakeholders.
 
-This model reflects the process of development of early versions of the standard, which involves convening a range of organisations around developing models for hazard, exposure and other typesof data. This approach will help us to drawing on expertise, and seek focused input, from across a wide range of organisations.
+This model reflects the process of development of early versions of the standard, which involves convening a range of organisations around developing models for hazard, exposure and other types of data. This approach will help us to drawing on expertise, and seek focused input, from across a wide range of organisations.
 All working documents, issue reporting and decisions made within these groups will be reviewed and communicated via this repository.
 
 <hr>
@@ -67,15 +67,15 @@ All working documents, issue reporting and decisions made within these groups wi
 
 At present our primary means of collaborating on the standard is via a set of open processes coordinated through this Github repository.
 
-- [**Discussions**](https://github.com/GFDRR/rdl-standard/discussions) for general discussion around the scope and adoption of the standard
-- [**Issues**](https://github.com/GFDRR/rdl-standard/issues) to propose and discuss changes to the standard
-- [**Project boards**](https://github.com/GFDRR/rdl-standard/projects) to provide transparency of the current progress and priorities around its development
+- [Discussions](https://github.com/GFDRR/rdl-standard/discussions) for general discussion around the scope and adoption of the standard
+- [Issues](https://github.com/GFDRR/rdl-standard/issues) to propose and discuss changes to the standard
+- [Project boards](https://github.com/GFDRR/rdl-standard/projects) to provide transparency of the current progress and priorities around its development
 
 <hr>
 
 ## Proposing and managing changes
 
-Anyone can propose changes to the specifications. The process for doing this is by [**submitting an issue**](https://github.com/GFDRR/rdl-standard/issues) using the appropriate template. The user must provide sufficient context to the proposed changes so that it can be discussed and reviewed by the [**RDL team**](contacts.md#rdl-team) and other users.
+Anyone can propose changes to the specifications. The process for doing this is by [submitting an issue](https://github.com/GFDRR/rdl-standard/issues) using the appropriate template. The user must provide sufficient context to the proposed changes so that it can be discussed and reviewed by the [RDL team](contacts.md#rdl-team) and other users.
 
 We encourage disussion and feedback, by requesting people leave comments on the issue. After leaving appropriate time for further comment, once we feel that a broad consensus has been achieved around the proposed changes, we will update the schema by releasing a new version of the specification.
 
@@ -85,7 +85,7 @@ We encourage disussion and feedback, by requesting people leave comments on the 
 
 The frequency with which we will release specifications will depend on the type and number of proposed changes.
 
-Releases of the standard will follow the [**semantic versioning**](https://semver.org/) conventions:
+Releases of the standard will follow the [semantic versioning](https://semver.org/) conventions:
 
 - Major releases will be used for major extensions to the model and/or to incorporate incompatible changes
 - Minor releases will be used for backwards compatible changes, e.g. additional of new optional attributes and relationships, or for simple clarifications and corrections

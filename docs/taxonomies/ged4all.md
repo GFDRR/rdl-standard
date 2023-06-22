@@ -12,7 +12,7 @@ The taxonomy covers four main categories:
 
 ## Buildings
 
-The buildings taxonomy is based on GEM openquake taxonomy, with some semplifications. The taxonomy string is built as sequence of attributes separeted by slash:
+The buildings taxonomy is based on GEM OpenQuake taxonomy, with some simplifications. The taxonomy string is built as sequence of attributes separated by slash:
 
 `MATERIAL/HEIGHT/DATE/OCCUPANCY/SHAPE/…`
 
@@ -48,7 +48,7 @@ Missing attributes can be skipped from the string, e.g.
 |  |  HAPP:n | HAPP:n, approximate number of storeys above ground. |
 | Date of Construction or Retrofit | -- | Year unknown |
 |  |  Y :n | n is the exact date of construction or retrofit |
-|  |  YBET:a-b | a nd b are the upper and lower bound for the date of construction or retrofit |
+|  |  YBET:a-b | a and b are the upper and lower bound for the date of construction or retrofit |
 |  |  YPRE:n | n is the latest possible date of construction or retrofit |
 |  |  YAPP:n | n is the approximate date of construction or retrofit |
 | Occupancy | -- | Unknown occupancy type |
@@ -234,7 +234,7 @@ Large elevated pipe for potable water: `CPW/PEL/DLG`
 
 We follow the taxonomy adopted by HAZUS, which allows capturing the capacity (e.g. voltage) of the elements. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and  whether the elements have been designed according to a particular code. The taxonomy for component of the power grid can thus be presented in the following manner: `PWG/ENERGYSOURCE/COMPONENT/ANCHORAGE/CODE PROVISIONS`, e.g.
 
-Electric ditribution line through pylones: `PWG/SSM/ANC`
+Electric distribution line through pylons: `PWG/SSM/ANC`
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -272,12 +272,12 @@ Electric ditribution line through pylones: `PWG/SSM/ANC`
 
 ### Potable water and wastewater systems
 
-Potable water systems are comprised by water treatment plants, storage tanks, pipelines and pumping stations, while wastewater systems are composed by wasterwater treatment plants, lifting stations and
+Potable water systems are comprised by water treatment plants, storage tanks, pipelines and pumping stations, while wastewater systems are composed by wastewater treatment plants, lifting stations and
 pipelines. Our classification is based on the HAZUS guidelines.
 
 The alphanumeric taxonomy strings are:<br>
 `PWR/COMPONENT/ANCHORAGE/CODE PROVISIONS` for potable water<br>
-`WWR/COMPONENT/ANCHORAGE/CODE PROVISIONS` for wasterwater
+`WWR/COMPONENT/ANCHORAGE/CODE PROVISIONS` for wastewater
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -319,7 +319,7 @@ The alphanumeric taxonomy strings are:<br>
 
 ### Communication systems
 
-A communication system is comprised by offices dedicated to the reception and dissimination of information (e.g. telephones offices, call centers, TV stations, radio station, telecomunication stations), supporting transmitter towers and distribution circuits.  The components have been classified based on the classification system proposed by HAZUS. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and whether the elements have been designed according to a particular code.
+A communication system is comprised by offices dedicated to the reception and dissemination of information (e.g. telephones offices, call centers, TV stations, radio station, telecommunication stations), supporting transmitter towers and distribution circuits.  The components have been classified based on the classification system proposed by HAZUS. For the purposes of assessing damage due to natural disasters, it is also relevant to identify the presence of anchorage and whether the elements have been designed according to a particular code.
 <br>The taxonomy string for the components of a communication system is:
 <br>`COM/COMPONENT/ANCHORAGE/CODE`<br>
 
@@ -458,7 +458,7 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 |  | FRT1+3 | Extremely xeromorphic forest - dense stands of trees, composed by species such as bottle or tuft rees with succulent leaves (e.g. thorn forest in Southwestern North America and Southwestern Africa) |
 | Woodland | FRT2+1 | Mainly evergreen woodland - the canopy is never without green foliage, but individual trees may shed their leaves (e.g. Mediterranean Basin). |
 |  | FRT2+2 | Mainly deciduous woodland - majority of trees shed their foliage simultaneously in connection to unfavourable season (e.g. Southern California and American Southeast, Mediterranean Basin) |
-|  | FRT2+3 | Extremely xeromorphic woodland - dense stands of trees, composed by species such as bottle or tuft rees with succulent leaves (e.g. Southwestern North America and Southwestern Africa) |
+|  | FRT2+3 | Extremely xeromorphic woodland - dense stands of trees, composed by species such as bottle or tuft trees with succulent leaves (e.g. Southwestern North America and Southwestern Africa) |
 | Scrub | FRT3+1 | Mainly evergreen scrub - the canopy is never without green foliage, but individual species may shed their leaves (e.g. Mediterranean dwarf palm shrubland, Chaparral shrubland in California or Hawaiian tree fern thicket). |
 |  | FRT3+2 | Mainly deciduous scrub - majority of scrub shed their foliage simultaneously in connection to unfavourable season (e.g. peat mosses in Scotland) |
 |  | FRT3+3 | Extremely xeromorphic (subdesert) shrubland - very open stands of shrubs, often composed by vegetation with green branches without leaves, some of them with thorns (e.g. mulga scrub in Australia). |
@@ -637,10 +637,10 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 | Education Access  | EDUEACEEG  | Education expenditures |
 |  | EDUEACPTS  | Pupil-teacher ratio, secondary |
 |  | EDUEACPTP  | Pupil-teacher ratio, primary |
-|  | EDUEACETG  | Gross enrollment ratio, tertiary |
-|  | EDUEACSTG  | Gross enrollment ratio, secondary |
+|  | EDUEACETG  | Gross enrolment ratio, tertiary |
+|  | EDUEACSTG  | Gross enrolment ratio, secondary |
 |  | EDUEACBGP  | Ratio of girls to boys in primary and secondary education |
-|  | EDUEACEPG  | Gross enrollment ratio, primary |
+|  | EDUEACEPG  | Gross enrolment ratio, primary |
 |  | EDUEACCPT  | Children out of school, primary |
 
 </div>

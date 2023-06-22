@@ -59,7 +59,7 @@ The schema specifies which type of analysis and data methodology that has genera
 |\*| Calculation method | The methodology used for the modelling of hazard | <ul><li>Simulated<li>Observed<li>Inferred |
 || Geographic area | Specific location for which the dataset has been developed | Name of location |
 
-<br>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknow or inapplicabile, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
+<br>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
@@ -68,15 +68,15 @@ The schema specifies which type of analysis and data methodology that has genera
 || Time span | The duration of the modelled period | Number |
 || Time year | One reference year to univocally identify the scenario | Date (year) |
 
-<br>When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occurr again: RP 100 indicates that that event has a probability of once in 100 years. This attirbute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of eartquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).
+<br>When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of earthquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
-|| Frequency type | The frequency of occurrence of the present event | <ul><li>Rate of Exceedence<li>Probability of Exceedence<li>Return Period</ul> |
+|| Frequency type | The frequency of occurrence of the present event | <ul><li>Rate of Exceedance<li>Probability of Exceedance<li>Return Period</ul> |
 || Occurrence probability | For probabilistic scenario, the occurrence probability is expressed according to frequency type | Text |
-|| Occurence time (start) | Start date of the period used to infer the occurrence probability | Date (year) |
-|| Occurence time (end) | End date of the period used to specify the occurrence probability | Date (year) |
-|| Occurence time (span) | The duration of the period used to specify the occurrence probability | Number of years |
+|| Occurrence time (start) | Start date of the period used to infer the occurrence probability | Date (year) |
+|| Occurrence time (end) | End date of the period used to specify the occurrence probability | Date (year) |
+|| Occurrence time (span) | The duration of the period used to specify the occurrence probability | Number of years |
 
 <br>The schema distinguish between the hazard and process represented and the hazard and process identified as the cause, or concause for the manifestation of the represented hazard. For example, a dataset represent landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.
 
@@ -202,9 +202,9 @@ Schema attributes for flood hazard map related to occurrence probability of a ri
 || Geographic area | Kabul |
 || Frequency type | Return Period |
 || Occurrence probability | 100 years |
-|| Occurence time (start) | 1958 |
-|| Occurence time (end) | 2001 |
-|| Occurence time (span) | 44 years |
+|| Occurrence time (start) | 1958 |
+|| Occurrence time (end) | 2001 |
+|| Occurrence time (span) | 44 years |
 |*| Hazard process | River flood |
 |\*| Unit of measure | Water depth (m) |
 
@@ -223,9 +223,9 @@ Schema attributes for earthquake hazard map related to occurrence probability of
 |*| Calculation method | Simulated |
 || Frequency type | Return Period |
 || Occurrence probability | 1000 years |
-|| Occurence time (start) | 800 |
-|| Occurence time (end) | 2001 |
-|| Occurence time (span) | 1200 years |
+|| Occurrence time (start) | 800 |
+|| Occurrence time (end) | 2001 |
+|| Occurrence time (span) | 1200 years |
 |*| Hazard process | Ground motion |
 |\*| Unit of measure | PGA (g) |
 

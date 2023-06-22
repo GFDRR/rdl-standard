@@ -1,4 +1,4 @@
-# Core Standards
+# Core standards
 
 RDLS has been built based on existing open data standards.
 

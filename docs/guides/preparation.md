@@ -10,8 +10,8 @@ Datasets shared in risk catalogues (e.g. [Risk Data Library Collection](https://
 
 We also need to consider:
 
-- **FORMAT**: how the data are stored. It is preferred to keep together data in the same format, conversely split different file formats in different resources. [**Read more**](formats) about supported data formats.
-- **SELF-DEPENDENCY & COMPLETNESS**: the data resource can be interpreted and used by itself.
+- **FORMAT**: how the data are stored. It is preferred to keep together data in the same format, conversely split different file formats in different resources. [Read more](formats) about supported data formats.
+- **SELF-DEPENDENCY & COMPLETENESS**: the data resource can be interpreted and used by itself.
 - **SIZE-EFFICIENCY**: try to avoid creating huge datasets (>1 Gb) that would be hard to download on poor connections.
 
 ```{caution}
@@ -109,7 +109,7 @@ For example:
 
 ### Format
 
-Exposure dataset typically describe the location, characteristics and value of individual assets or an aggegrated number of assets/population per grid cell. Each point or cell usually has many attributes associated with it.
+Exposure dataset typically describe the location, characteristics and value of individual assets or an aggregated number of assets/population per grid cell. Each point or cell usually has many attributes associated with it.
 
 Exposure geospatial data can take the form of vector (`gpkg`, `shp`), or raster (`GeoTIFF / COG`). In some cases, exposure comes as table (`csv`, `xls`).
 

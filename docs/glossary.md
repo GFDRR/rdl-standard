@@ -21,7 +21,7 @@ Source: [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/ter
 <!--![Screenshot](img/risk_assessment.png)
 (adapted from "[Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)")-->
 
-## Disaster risk information (_risk data_)
+## Disaster risk information (risk data)
 
 Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets. Disaster risk information includes all studies, information and mapping required to understand the disaster risk drivers and underlying risk factors.
 
@@ -39,40 +39,33 @@ The situation of people, infrastructure, housing, production capacities and othe
 
 Source: [UNDRR Terminology (Exposure)](https://www.undrr.org/terminology/exposure)
 
-````{grid} auto
-:gutter: 3
-```{grid-item-card} Exposure: buildings footprints and population
+```{card} Exposure: buildings footprints and population
 ![Exposure](img/sample_exp.jpg)
-```
-````
+
 
 ## Hazard
 
-An hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. An hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
+A hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. An hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
 
 Hazards can have natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (geological, geophysical and hydrometeorological).
 
 Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
 
-````{grid} auto
-:gutter: 3
-```{grid-item-card} Hazard: map of flood water depth
+```{card} Hazard: map of flood water depth
 ![Hazard](img/sample_hzd.jpg)
-```
-````
+
+
 
 ## Impact model
 
-An impact model (also damage model; loss model) is used to combine Hazard, Exposure and Vulnerability compoments to calculate the amount of value that is expected to be impacted (damaged or lost).
+An impact model (also damage model; loss model) is used to combine Hazard, Exposure and Vulnerability components to calculate the amount of value that is expected to be impacted (damaged or lost).
 
 Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/files/solving-the-puzzle-report.pdf)
 
-````{grid} auto
-:gutter: 3
-```{grid-item-card} Impacts and losses: USD costs of replacement
+```{card} Impacts and losses: USD costs of replacement
 ![Loss](img/sample_lss.jpg)
-```
-````
+
+
 
 ## Vulnerability
 
@@ -80,9 +73,5 @@ Vulnerability are the conditions determined by physical, social, economic and en
 
 Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vulnerability)
 
-````{grid} auto
-:gutter: 3
-```{grid-item-card} Vulnerability: depth-damage function
+```{card} Vulnerability: depth-damage function
 ![Vulnerability](img/sample_vln.jpg)
-```
-````

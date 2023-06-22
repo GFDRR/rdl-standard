@@ -38,8 +38,8 @@ The exposure schema covers 4 categories and 11 occupancy types for consistent cl
 |*| Value type | Element to which value refers | <ul><li>Structure<li>Content<li>Product<li>Other</ul> |
 |*| Value unit | Unit to measure exposed value | Unit code |
 
-<br>Within one exposure model (e.g. one geospatial layer) there can be one or more **cost type** associated with damage to assets. For example, the cost of the building structure by square meter and the cost of the contents of a single building. The attributes are named accordingly within the datase, e.g. "Cost_structure" and "Cost_content".
-Additional **tags** attributes can be associated with an asset to link any information not envised in the exposure schema.
+<br>Within one exposure model (e.g. one geospatial layer) there can be one or more **cost type** associated with damage to assets. For example, the cost of the building structure by square meter and the cost of the contents of a single building. The attributes are named accordingly within the data, e.g. "Cost_structure" and "Cost_content".
+Additional **tags** attributes can be associated with an asset to link any information not specified in the exposure standard.
 
 <hr>
 
