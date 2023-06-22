@@ -47,7 +47,8 @@ The main attributes of the **loss model** describe the hazard and process for wh
 | | Exposure link | Exposure dataset that was used to calculate loss | URL |
 | | Vulnerability link | Vulnerability dataset that was used to calculate loss | URL |
 
-<br>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
+
+When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
@@ -56,14 +57,17 @@ The main attributes of the **loss model** describe the hazard and process for wh
 || Time span | The duration of the modelled period | Number |
 || Time year | One reference year to univocally identify the scenario | Date (year) |
 
-<br>When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100).
+
+When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100).
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
 || Frequency type | The frequency of occurrence of the present event | <ul><li>Rate of Exceedance<li>Probability of Exceedance<li>Return Period</ul> |
 || Occurrence probability | For probabilistic scenario, the occurrence probability is expressed according to frequency type | Text |
 
-<br>Additional attributes are specific to loss, describing the type of impact, the type of loss, the loss metric and the unit used to measure it.
+
+
+Additional attributes are specific to loss, describing the type of impact, the type of loss, the loss metric and the unit used to measure it.
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
@@ -72,7 +76,9 @@ The main attributes of the **loss model** describe the hazard and process for wh
 |*| Metric | Type of loss metric | <ul><li>Average Annual Losses<li>Annual Average Loss Ratio<li>Probable Maximal Loss |
 |*| Unit | Cost unit of measure | Unit code |
 
-<br>
+
+
+
 
 ## Examples
 
@@ -106,13 +112,16 @@ The losses are higher in the most densely built-up area of Kabul.
 |*| Metric | Average Annual Losses |
 |*| Unit | USD |
 
-<br>
+
+
+***
+
 
 Losses can be investigated as total or for individual exposed asset and infrastructure elements.
 
-![Road losses](../img/exp_afg_roads.jpg)
+![Example of data showing exposed roads in Afghanistan](../img/exp_afg_roads.jpg)
 
-<br>
+***
 
 ### Observed losses
 
@@ -131,4 +140,5 @@ Insert example of recorded empirical losses.
 |*| Hazard process | Ground motion |
 |\*| Unit of measure | PGA (g) |
 
-<br><hr>
+
+

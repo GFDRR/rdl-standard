@@ -7,9 +7,13 @@ The collection can be accessed from the [collections page](https://datacatalog.w
 
 ## Add datasets
 
-Datasets can be submitted for review and publication on the Data Catalog by any World Bank Staff, ETC or STC. These people have the role of `Data depositor`.<br>
-Datasets needs to be packaged according to the [data preparation guidelines](preparation).<br>
-<br>
+Datasets can be submitted for review and publication on the Data Catalog by any World Bank Staff, ETC or STC. These people have the role of `Data depositor`.
+
+
+Datasets needs to be packaged according to the [data preparation guidelines](preparation).
+
+
+
 Two options to upload data:
 
 - **Individually**: using the upload wizard
@@ -33,14 +37,16 @@ In both cases, datasets can be added to the [RDL Collection](https://datacatalog
   ![World Bank Data Catalog screenshot: Add data](../img/rdl_ddh1.png)
 
   1. **Essential Information**
-     ![World Bank Data Catalog screenshots: Add essential information](../img/rdl_ddh2.png)<br><br>
+     ![World Bank Data Catalog screenshots: Add essential information](../img/rdl_ddh2.png)
+     
 
   1. **Uploading data**
 
   - Upload dataset from your local storage
   - Add a resource title and description
   - When one resource has been submitted, another one can be added
-    ![World Bank Data Catalog screenshot: Add data files](../img/rdl_ddh3.png)<br><br>
+    ![World Bank Data Catalog screenshot: Add data files](../img/rdl_ddh3.png)
+    
 
   1. **Additional information**
      ![World Bank Data Catalog screenshot: Adding additional information](../img/rdl_ddh_add.png)
@@ -81,4 +87,4 @@ width: 98%
 Example (work in progress) of the RDL metadata visualization within the World Bank Data Catalog (RDL collection).
 ```
 
-<br><hr>
+

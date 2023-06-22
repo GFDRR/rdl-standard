@@ -15,7 +15,9 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 |*| Geo coverage | ISO code(s) of countries covered | ISOa3 country code |
 |\*| License code | Type of license | Licensing options |
 
-<br>
+
+
+
 
 Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
 
@@ -29,4 +31,4 @@ Other attributes are specific to individual resources, covering level of aggrega
 | | Format | ext |
 | | Download Url | url |
 
-<br><hr>
+

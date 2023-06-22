@@ -130,7 +130,10 @@ Missing attributes can be skipped from the string, e.g.
 |  |  FO | Floor material, other |
 
 </div>
-<br/>
+
+
+***
+
 
 ## Lifelines
 
@@ -172,7 +175,8 @@ Secondary road: `RDN+SE`
 |  | RLW | Unknown:   no additional information concerning rail typology. |
 
 </div>
-<br/>
+
+
 
 ### Pipelines
 
@@ -228,7 +232,8 @@ Large elevated pipe for potable water: `CPW/PEL/DLG`
 |  | --  | Unknown diameter |
 
 </div>
-<br/>
+
+
 
 ### Energy generation and power grid
 
@@ -268,7 +273,8 @@ Electric distribution line through pylons: `PWG/SSM/ANC`
 |  | C99  | Code provisions unknown |
 
 </div>
-<br/>
+
+
 
 ### Potable water and wastewater systems
 
@@ -315,7 +321,8 @@ The alphanumeric taxonomy strings are:<br>
 |  | --  | Code provisions unknown |
 
 </div>
-<br>
+
+
 
 ### Communication systems
 
@@ -340,7 +347,9 @@ A communication system is comprised by offices dedicated to the reception and di
 |  | CDH  | High code |
 |  | --  | Code provisions unknown |
 
-<br>
+
+***
+
 
 ## Crops, Livestock and Forestry
 
@@ -407,7 +416,8 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 | Unknown   crop | CRP |   |
 
 </div>
-<br>
+
+
 
 ### Livestock
 
@@ -445,7 +455,8 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 | Unknown livestock |  |  |
 
 </div>
-<br>
+
+
 
 ### Forestry
 
@@ -474,7 +485,10 @@ The taxonomy for crops, livestock and forestry was defined based on existing cla
 |  | FRT5+5 | Hydromorphic fresh-water vegetation - mostly composed by aquatic plants that are structurally supported by water, in wet or flooded regions most of the year (e.g. Amazon Basin) |
 
 </div>
-<br>
+
+
+***
+
 
 ## Socio-Economic indicators
 
@@ -516,7 +530,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 |  | POPVNPTPP  | Refugees (country of origin) |
 
 </div>
-<br>
+
+
 
 ### Economy
 
@@ -616,7 +631,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 |  | ECOTRECPT  | Container port traffic (TEU: 20 foot equivalent units) |
 
 </div>
-<br>
+
+
 
 ### Education
 
@@ -645,7 +661,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 
-<br>
+
+
 
 ### Environment
 
@@ -678,7 +695,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 |  | GICPSCROL  | Rule of Law |
 
 </div>
-<br>
+
+
 
 ### Governance
 
@@ -692,7 +710,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 | Government Effectiveness  | GICGEFGEF  | Government Effectiveness |
 | Regulatory Quality  | GICGEFREQ  | Regulatory Quality |
 
-<br>
+
+
 
 ### Health
 
@@ -726,7 +745,8 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 |  | HEAHCRPHY  | Physicians |
 
 </div>
-<br>
+
+
 
 ### Index
 
@@ -747,7 +767,7 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 | INXLPICQL  | Logistics performance index: Competence and quality of logistics services |
 
 </div>
-<br>
+
 
 ### Infrastructure
 
@@ -781,4 +801,4 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 
 </div>
 
-<br><hr>
+

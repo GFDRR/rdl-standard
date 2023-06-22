@@ -45,13 +45,15 @@ Structuring risk data well when it is generated and before it is delivered to a 
 Where there are many resources for a dataset, it can be tempting to include a folder structure in the online Data Catalog. This is not advised and it is suggested that `datasets` be grouped together into individual `Resources` in order to facilitate finding the specific component of analysis, and without creating problematically large file sizes.
 ```
 
-<hr>
+***
+
 
 ## Hazard data
 
 ### Format / data types
 
-Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`). In some cases, hazard curves and stochastic event set tables are provided. Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.<br>
+Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`). In some cases, hazard curves and stochastic event set tables are provided. Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.
+
 
 Generally, hazard data (footprints) takes the form of raster (geo grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
 
@@ -103,7 +105,7 @@ For example:
         └── <...>
 ```
 
-<hr>
+***
 
 ## Exposure data
 
@@ -163,7 +165,8 @@ For example:
            └── <...>
 ```
 
-<hr>
+***
+
 
 ## Vulnerability data
 
@@ -184,8 +187,8 @@ Often, vulnerability models are proprietary data and only shared as pictures; th
 ### Thematic grouping
 
 The main thematic groupings specific to vulnerability data are:
-<br>  - **Hazard type**: e.g. Flood damage function; Earthquake fragility curves.
-<br>  - \**Exposure type and sub-type*: e.g. Builtup (Structure, Content, Product / Residential, Commercial / Masonry, Wood)
+- **Hazard type**: e.g. Flood damage function; Earthquake fragility curves.
+- **Exposure type and sub-type*: e.g. Builtup (Structure, Content, Product / Residential, Commercial / Masonry, Wood)
 
 ### Geographic grouping
 
@@ -228,7 +231,9 @@ For example, when grouping multiple functions into one excel file, the following
            └── <...>
 ```
 
-<hr>
+
+***
+
 
 ## Loss data
 
@@ -285,4 +290,4 @@ For example:
            └── <...>
 ```
 
-<br><hr>
+

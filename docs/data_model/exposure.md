@@ -41,7 +41,10 @@ The exposure schema covers 4 categories and 11 occupancy types for consistent cl
 <br>Within one exposure model (e.g. one geospatial layer) there can be one or more **cost type** associated with damage to assets. For example, the cost of the building structure by square meter and the cost of the contents of a single building. The attributes are named accordingly within the data, e.g. "Cost_structure" and "Cost_content".
 Additional **tags** attributes can be associated with an asset to link any information not specified in the exposure standard.
 
-<hr>
+
+***
+
+
 
 ## Examples
 
@@ -62,7 +65,9 @@ Two exposure datasets are shown together in the example: building footprints pol
 |*| Value type | Structure |
 |\*| Unit of measure | USD |
 
-<br>
+
+
+
 
 |**Required**| **Attribute** | **Example** |
 |:---:| --- | --- |
@@ -73,4 +78,5 @@ Two exposure datasets are shown together in the example: building footprints pol
 |*| Value type | Other |
 |\*| Unit of measure | Count |
 
-<br><hr>
+
+***

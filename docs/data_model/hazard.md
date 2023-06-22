@@ -48,7 +48,8 @@ The hazard schema stores data about the intensity and occurrence probability of 
       }
 ```
 
-<br>
+***
+
 
 The schema specifies which type of analysis and data methodology that has generated the dataset. It supports either simulated probabilistic scenarios and empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
 
@@ -59,7 +60,9 @@ The schema specifies which type of analysis and data methodology that has genera
 |\*| Calculation method | The methodology used for the modelling of hazard | <ul><li>Simulated<li>Observed<li>Inferred |
 || Geographic area | Specific location for which the dataset has been developed | Name of location |
 
-<br>When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
+
+
+When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
@@ -68,7 +71,9 @@ The schema specifies which type of analysis and data methodology that has genera
 || Time span | The duration of the modelled period | Number |
 || Time year | One reference year to univocally identify the scenario | Date (year) |
 
-<br>When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of earthquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).
+
+
+When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of earthquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
@@ -78,14 +83,20 @@ The schema specifies which type of analysis and data methodology that has genera
 || Occurrence time (end) | End date of the period used to specify the occurrence probability | Date (year) |
 || Occurrence time (span) | The duration of the period used to specify the occurrence probability | Number of years |
 
-<br>The schema distinguish between the hazard and process represented and the hazard and process identified as the cause, or concause for the manifestation of the represented hazard. For example, a dataset represent landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.
+
+
+The schema distinguish between the hazard and process represented and the hazard and process identified as the cause, or concause for the manifestation of the represented hazard. For example, a dataset represent landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.
+
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
 || Trigger hazard type | The hazard type that has triggered the event (if any) | Hazard type |
 || Trigger process type |  The process type that triggered the event (if any) | Process type |
 
-<br>The hazard dataset could include one or more footprints for the same event, where each is one possible realisation (i.e. one footprint could represent minimum, another footprint the average and another one the maximum). The event uncertainty can be represented explicitly, through the inclusion of multiple footprints per event.
+
+
+The hazard dataset could include one or more footprints for the same event, where each is one possible realisation (i.e. one footprint could represent minimum, another footprint the average and another one the maximum). The event uncertainty can be represented explicitly, through the inclusion of multiple footprints per event.
+
 
 |**Required**| **Attribute** | **Description** | **Type** |
 |:---:| --- | --- | --- |
@@ -97,7 +108,9 @@ The schema specifies which type of analysis and data methodology that has genera
 ### Hazard types
 
 The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
-<br>The **RDLS** classifies hazard phenomena as main hazard (8 categories) and hazard process (27 categories):
+
+
+The **RDLS** classifies hazard phenomena as main hazard (8 categories) and hazard process (27 categories):
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -132,8 +145,13 @@ The RDLS offers a classification of hazards that are more often required in disa
 | Strong Wind | Tropical cyclone |
 
 </div>
-<br>
-Each hazard type and associated processes can have one or more type of measure metrics, which include the unit of measure:<br>
+
+
+***
+
+
+Each hazard type and associated processes can have one or more type of measure metrics, which include the unit of measure:
+
 
 <div class="scrollbar table-scroll" markdown="1">
 
@@ -182,7 +200,10 @@ DR | SPI:- | Standard Precipitation Index
 
 </div>
 
-<br><hr>
+
+***
+
+
 
 ## Examples
 
@@ -208,7 +229,9 @@ Schema attributes for flood hazard map related to occurrence probability of a ri
 |*| Hazard process | River flood |
 |\*| Unit of measure | Water depth (m) |
 
-<br>
+
+
+
 
 ### Earthquake hazard maps for Afghanistan
 
@@ -229,4 +252,4 @@ Schema attributes for earthquake hazard map related to occurrence probability of
 |*| Hazard process | Ground motion |
 |\*| Unit of measure | PGA (g) |
 
-<br><hr>
+

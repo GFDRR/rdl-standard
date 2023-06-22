@@ -3,7 +3,8 @@
 Risk data can be made of spatial or non-spatial data.
 
 - **Spatial data (geodata)** can be shared in a variety of formats depending on the software used by the analyst. Over the years, [OSGEO ](https://wiki.osgeo.org/wiki/Main_Page) (Open Source Geospatial Foundation) tried to converge towards a limited number of "best" standard formats for each geospatial type.
-  <br><br>
+
+
 - **Non-spatial data** most often consist of table data stored as `.xlsx` or ``.csv` files for greater compatibility.
 
 Below is a list of recommended and common geodata formats used for risk data.
@@ -58,4 +59,6 @@ Wide table formatting is preferred instead of long format.
 
 **Portable Document Format** (`.pdf`) is the preferred format for reports and documentation. Add reports uncompressed whenever possible: users will commonly want to see the description for each report or document as one resource per file. Resource filetype will show as ‘PDF’.
 
-<hr>
+
+
+
