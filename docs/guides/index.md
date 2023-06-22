@@ -15,5 +15,5 @@ Below is the guidance on best practices for dataset creation, packaging, metadat
 
    preparation
    formats
-   ddh-rdl
+
 ```
