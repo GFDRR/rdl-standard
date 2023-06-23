@@ -11,7 +11,7 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Codelists
 
-- [#101](https://github.com/GFDRR/rdl-standard/pull/101) - update and rename cost_type.csv
+- [#101](https://github.com/GFDRR/rdl-standard/pull/101) - update and rename cost_type.csv, create exposure_category.csv
 
 ### Normative documentation
 
