@@ -30,64 +30,64 @@ Additional documentation and source code produced by this initiative will also b
 
 ## Roles and responsibilities
 
-This project is currently managed by the Risk Data Library team working within the 
+This project is currently managed by the Risk Data Library team working within the
 [Global Facility for Disaster Risk and Reduction](https://www.gfdrr.org/en).
 
-To guide development and adoption of the standards, in addition to open working through this github project, the team invites expert input via an Advisory Group and, as 
+To guide development and adoption of the standards, in addition to open working through this github project, the team invites expert input via an Advisory Group and, as
 required, specific Technical Working Groups.
 
 ### Advisory Group
 
-The RDL Advisory Group consists of experts in risk data management and analysis from 
+The RDL Advisory Group consists of experts in risk data management and analysis from
 the humanitarian sector, insurance industry and other related domains.
 
 The Advisory Group will help to:
 
-1. ensure the development of the standard is informed by the needs of a broad selection 
-of stakeholders across a range of domains
-2. steer the development of the RDL standards, providing expert review on priorities, activities and major technical decisions.
-3. ensure that our work aligns with other relevant initiatives, to avoid 
-duplication of work and to build momentum around adoption of common standards
-4. identify opportunities for joint projects that can demonstrate the value of adopting the 
-RDL standards
-5. disseminate the impacts and outputs of the RDL project to other stakeholders
+1. ensure the development of the standard is informed by the needs of a broad selection
+   of stakeholders across a range of domains
+1. steer the development of the RDL standards, providing expert review on priorities, activities and major technical decisions.
+1. ensure that our work aligns with other relevant initiatives, to avoid
+   duplication of work and to build momentum around adoption of common standards
+1. identify opportunities for joint projects that can demonstrate the value of adopting the
+   RDL standards
+1. disseminate the impacts and outputs of the RDL project to other stakeholders
 
-Participation in the Advisory Group is by invitation only. The initial membership will 
-consist of representatives from organisations who have contributed to the early 
+Participation in the Advisory Group is by invitation only. The initial membership will
+consist of representatives from organisations who have contributed to the early
 development of the standard.
 
-Membership will be regularly reviewed. Please contact the team to discuss participation if 
+Membership will be regularly reviewed. Please contact the team to discuss participation if
 you believe that you, or your organisation, are able to contribute.
 
-The Advisory Group will meet every two months. The agenda, slides and minutes from these 
+The Advisory Group will meet every two months. The agenda, slides and minutes from these
 meetings will be publicly shared via this Github forum.
 
 ### Technical Working Groups
 
-At times we may create specific Technical Working Groups that will collaborate on 
-development of specific aspects of the RDL standard. For example to develop taxonomies, 
+At times we may create specific Technical Working Groups that will collaborate on
+development of specific aspects of the RDL standard. For example to develop taxonomies,
 or revise file formats or schemas.
 
-These Working Groups will have a clear remit and will coordinate their work through this 
-github. 
+These Working Groups will have a clear remit and will coordinate their work through this
+github.
 
-Membership of these groups and participation in calls and workshops will be open to 
-all participants. Depending on the scope of work, they may need to draw on expertise from a wider 
-group of stakeholders. 
+Membership of these groups and participation in calls and workshops will be open to
+all participants. Depending on the scope of work, they may need to draw on expertise from a wider
+group of stakeholders.
 
-This model reflects the process of development of early versions of the standard, which involves 
+This model reflects the process of development of early versions of the standard, which involves
 convening a range of organisations around developing models for hazard, exposure and other types
-of data. This approach will help us to drawing on expertise, and seek focused input, from 
+of data. This approach will help us to drawing on expertise, and seek focused input, from
 across a wide range of organisations.
 
-All working documents, issue reporting and decisions made within these groups will be 
+All working documents, issue reporting and decisions made within these groups will be
 reviewed and communicated via this repository.
 
 <hr>
 
 ## How we collaborate
 
-At present our primary means of collaborating on the standard is via a set of open processes 
+At present our primary means of collaborating on the standard is via a set of open processes
 coordinated through this Github repository.
 
 We will use the:
@@ -100,7 +100,7 @@ We will use the:
 
 ## Managing and proposing changes
 
-Anyone can propose changes to the specifications. 
+Anyone can propose changes to the specifications.
 
 The process for doing this is by [submitting an issue](https://github.com/GFDRR/rdl-standard/issues) using the appropriate template.
 We ask that you provide sufficient context to the proposed changes so that it can be discussed and reviewed by others.
