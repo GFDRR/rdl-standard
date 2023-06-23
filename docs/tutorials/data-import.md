@@ -4,9 +4,4 @@
 
 ## PostGRESQL
 
-
-
-
-
-
 <br><hr>

@@ -6,6 +6,7 @@ Following [key concepts](../keyconcepts.md), the Risk Data Library Standard sche
 - [**Exposure**](exposure.md): asset category, occupancy and specific taxonomy, cost type and value.
 - [**Vulnerability**](vulnerability.md): model that links hazard intensity and exposure classification to measure of impact over the total exposed value.
 - [**Loss**](loss.md): modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
+
 </ul>
 
 The diagram below shows the core relationships between schema components, rather than listing all of their attributes.
@@ -48,8 +49,9 @@ The diagram below shows the core relationships between schema components, rather
         -Loss metric
       }          
 ```
+
 <br>
- 
+
 ## Dataset general attributes
 
 In addition to schema-specific attributes, each dataset is identified by a list of attributes based on <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms">DublinCore metadata standard</a>.
@@ -65,7 +67,7 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 | | Bibliography | Author, titles and publication year of documents containing relevant information on the dataset | Authors (Year) - Title; URL |
 | | Version | Version of the dataset | Number  |
 |*| Geo coverage | ISO code(s) of countries covered | ISOa3 country code |
-|*| License code | Type of license | Licensing options |
+|\*| License code | Type of license | Licensing options |
 
 <br>
 
@@ -80,7 +82,6 @@ Other attributes are specific to individual resources, covering level of aggrega
 | | Horizontal resolution | n unit |
 | | Format | ext |
 | | Download Url | url |
-
 
 <br><hr>
 
