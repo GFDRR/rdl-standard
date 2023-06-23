@@ -5,8 +5,7 @@
 	"type": "object",
 	"required": [
 		"title",
-		"abstract",
-		"component",
+		"risk_data_type",
 		"organization",
 		"model_source",
 		"model_date",
@@ -17,16 +16,19 @@
 	],
 	"properties": {
 		"title": {
+			"title": "Dataset title",
 			"type": "string",
-			"description": "Title of the dataset"
+			"description": "The title of the dataset."
 		},
-		"abstract": {
+		"description": {
+			"title": "Description",
 			"type": "string",
-			"description": "Short description of the resource"
+			"description": "A short description of the dataset."
 		},
-		"component": {
+		"risk_data_type": {
+			"title": "Risk data type",
 			"type": "string",
-			"description": "Univocal schema for this contribution (H, E, V or L)",
+			"description": "The datasets risk data type.",
 			"enum": [
 				"Hazard",
 				"Exposure",
@@ -48,20 +50,24 @@
 			"format": "date"
 		},
 		"version": {
+			"title": "Dataset version",
 			"type": "integer",
-			"description": "Version of the dataset"
+			"description": "The version of the dataset."
 		},
 		"purpose": {
+			"title": "Dataset purpose",
 			"type": "string",
-			"description": "Purpose for what the data has been produced"
+			"description": "The purpose the dataset was produced for."
 		},
 		"project": {
+			"title": "Project title",
 			"type": "string",
-			"description": "Project under which data has been produced"
+			"description": "The name of the project that the dataset was created as part of."
 		},
-		"notes": {
+		"details": {
+			"title": "Additional details",
 			"type": "string",
-			"description": "Additional details about the dataset"
+			"description": "Additional details about the dataset."
 		},
 		"biblio_title": {
 			"type": "string",
@@ -73,15 +79,11 @@
 			"format": "uri"
 		},
 		"geo_coverage": {
-			"$ref": "#/definitions/common_iso",
+			"$ref": "#/$defs/common_iso",
 			"description": "ISO code(s) of countries covered by the dataset, comma-separated"
 		},
-		"publish": {
-			"type": "boolean",
-			"description": "Flag to show/hide dataset from website"
-		},
 		"license_code": {
-			"$ref": "#/definitions/common_license",
+			"$ref": "#/$defs/common_license",
 			"description": "Type of license"
 		},
 		"maintainer": {
@@ -154,11 +156,11 @@
 							],
 							"properties": {
 								"hazard_type": {
-									"$ref": "#/definitions/common_hazard_type",
+									"$ref": "#/$defs/common_hazard_type",
 									"description": "Type of hazard modelled"
 								},
 								"analysis_type": {
-									"$ref": "#/definitions/common_analysis_type",
+									"$ref": "#/$defs/common_analysis_type",
 									"description": "Type of analysis, probabilistic or deterministic"
 								},
 								"geo_area": {
@@ -196,11 +198,11 @@
 							],
 							"properties": {
 								"calculation_method": {
-									"$ref": "#/definitions/common_calc_method",
+									"$ref": "#/$defs/common_calc_method",
 									"description": "The methodology used for the calculation of this event"
 								},
 								"frequency_type": {
-									"$ref": "#/definitions/common_frequency_type",
+									"$ref": "#/$defs/common_frequency_type",
 									"description": "Frequency representation type"
 								},
 								"return_period": {
@@ -222,11 +224,11 @@
 									"description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability"
 								},
 								"trigger_hazard_type": {
-									"$ref": "#/definitions/common_hazard_type",
+									"$ref": "#/$defs/common_hazard_type",
 									"description": "Hazard type that triggered the event"
 								},
 								"trigger_process_type": {
-									"$ref": "#/definitions/common_process_type",
+									"$ref": "#/$defs/common_process_type",
 									"description": "Process type that triggered the event"
 								},
 								"description": {
@@ -239,11 +241,11 @@
 							"type": "object",
 							"properties": {
 								"process_type": {
-									"$ref": "#/definitions/common_process_type",
+									"$ref": "#/$defs/common_process_type",
 									"description": "Type of hazard process modelled"
 								},
 								"imt": {
-									"$ref": "#/definitions/im_code",
+									"$ref": "#/$defs/im_code",
 									"description": "Hazard intensity measure unit"
 								},
 								"data_uncertainty": {
@@ -276,15 +278,15 @@
 							"properties": {
 								"category": {
 									"description": "Type of asset",
-									"$ref": "#/definitions/common_exp_category"
+									"$ref": "#/$defs/common_exp_category"
 								},
 								"occupancy": {
 									"description": "Destination of use of the asset",
-									"$ref": "#/definitions/common_exp_occupancy"
+									"$ref": "#/$defs/common_exp_occupancy"
 								},
 								"occupancy_time": {
 									"description": "Period of occupancy, if appliable (e.g. Population)",
-									"$ref": "#/definitions/common_occupancy_time"
+									"$ref": "#/$defs/common_occupancy_time"
 								},
 								"taxonomy_source": {
 									"type": "string",
@@ -310,7 +312,7 @@
 							"properties": {
 								"val_type": {
 									"description": "Type of asset value",
-									"$ref": "#/definitions/common_exp_val_type"
+									"$ref": "#/$defs/common_exp_val_type"
 								},
 								"val_unit": {
 									"type": "string",
@@ -334,39 +336,39 @@
 							"properties": {
 								"hazard_type_primary": {
 									"description": "Primary hazard involved",
-									"$ref": "#/definitions/common_hazard_type"
+									"$ref": "#/$defs/common_hazard_type"
 								},
 								"hazard_type_secondary": {
 									"description": "Secondary hazard involved",
-									"$ref": "#/definitions/common_hazard_type"
+									"$ref": "#/$defs/common_hazard_type"
 								},
 								"process_type_primary": {
 									"description": "Primary process involved",
-									"$ref": "#/definitions/common_process_type"
+									"$ref": "#/$defs/common_process_type"
 								},
 								"process_type_secondary": {
 									"description": "Secondary process involved",
-									"$ref": "#/definitions/common_process_type"
+									"$ref": "#/$defs/common_process_type"
 								},
 								"frequency_type": {
 									"description": "Frequency representation type",
-									"$ref": "#/definitions/common_frequency_type"
+									"$ref": "#/$defs/common_frequency_type"
 								},
 								"imt": {
 									"description": "Hazard intensity measure unit",
-									"$ref": "#/definitions/im_code"
+									"$ref": "#/$defs/im_code"
 								},
 								"category": {
 									"description": "Type of asset",
-									"$ref": "#/definitions/common_exp_category"
+									"$ref": "#/$defs/common_exp_category"
 								},
 								"occupancy": {
 									"description": "Type of occupancy to which function applies",
-									"$ref": "#/definitions/common_exp_occupancy"
+									"$ref": "#/$defs/common_exp_occupancy"
 								},
 								"val_type": {
 									"description": "Type of asset value",
-									"$ref": "#/definitions/common_exp_val_type"
+									"$ref": "#/$defs/common_exp_val_type"
 								},
 								"val_unit": {
 									"type": "string",
@@ -382,15 +384,15 @@
 								},
 								"impact_type": {
 									"description": "Type of impact",
-									"$ref": "#/definitions/common_impact_type"
+									"$ref": "#/$defs/common_impact_type"
 								},
 								"scale_applicability": {
 									"description": "Administrative level of application",
-									"$ref": "#/definitions/common_aggregation_type"
+									"$ref": "#/$defs/common_aggregation_type"
 								},
 								"country_tranferability": {
 									"description": "ISOa3 list of countries in which the model could be applied",
-									"$ref": "#/definitions/common_iso"
+									"$ref": "#/$defs/common_iso"
 								},
 								"local_applicability": {
 									"type": "string",
@@ -401,23 +403,23 @@
 									"description": "Details about applicability to different areas"
 								},
 								"function_type": {
-									"$ref": "#/definitions/vulnerability_function_type",
+									"$ref": "#/$defs/vulnerability_function_type",
 									"description": "Type of function"
 								},
 								"calculation_method": {
-									"$ref": "#/definitions/common_calc_method",
+									"$ref": "#/$defs/common_calc_method",
 									"description": "The methodology used for the calculation of the function"
 								},
 								"approach": {
-									"$ref": "#/definitions/f_subtype",
+									"$ref": "#/$defs/f_subtype",
 									"description": "Type of methodological approach"
 								},
 								"f_relationship": {
-									"$ref": "#/definitions/vulnerability_f_relationship",
+									"$ref": "#/$defs/vulnerability_f_relationship",
 									"description": "Type of relationship: Mathematical or Discrete"
 								},
 								"f_math": {
-									"$ref": "#/definitions/vulnerability_f_math",
+									"$ref": "#/$defs/vulnerability_f_math",
 									"description": "Parametric or bespoke"
 								}
 							}
@@ -486,11 +488,11 @@
 							"type": "object",
 							"properties": {
 								"hazard_type": {
-									"$ref": "#/definitions/common_hazard_type",
+									"$ref": "#/$defs/common_hazard_type",
 									"description": "Type of hazard modelled"
 								},
 								"process_type": {
-									"$ref": "#/definitions/common_process_type",
+									"$ref": "#/$defs/common_process_type",
 									"description": "Type of hazard process modelled"
 								},
 								"time_start": {
@@ -508,27 +510,27 @@
 									"description": "General reference year to which the scenario refers to (e.g. '2050')"
 								},
 								"occupancy": {
-									"$ref": "#/definitions/common_exp_occupancy",
+									"$ref": "#/$defs/common_exp_occupancy",
 									"description": "Destination of use of the asset"
 								},
 								"category": {
-									"$ref": "#/definitions/common_exp_category",
+									"$ref": "#/$defs/common_exp_category",
 									"description": "Exposure category"
 								},
 								"val_type": {
-									"$ref": "#/definitions/common_exp_val_type",
+									"$ref": "#/$defs/common_exp_val_type",
 									"description": "Element on which loss insist"
 								},
 								"impact": {
-									"$ref": "#/definitions/common_impact_type",
+									"$ref": "#/$defs/common_impact_type",
 									"description": "Type of impact"
 								},
 								"loss_type": {
-									"$ref": "#/definitions/loss_loss_type",
+									"$ref": "#/$defs/loss_loss_type",
 									"description": "Type of loss"
 								},
 								"frequency": {
-									"$ref": "#/definitions/common_frequency_type",
+									"$ref": "#/$defs/common_frequency_type",
 									"description": "Frequency representation type"
 								},
 								"return_period": {
@@ -536,11 +538,11 @@
 									"description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)"
 								},
 								"calculation_method": {
-									"$ref": "#/definitions/common_calc_method",
+									"$ref": "#/$defs/common_calc_method",
 									"description": "The methodology used for the calculation of this event"
 								},
 								"metric": {
-									"$ref": "#/definitions/loss_metric",
+									"$ref": "#/$defs/loss_metric",
 									"description": "Type of loss metric"
 								},
 								"val_unit": {
@@ -569,7 +571,7 @@
 			}
 		}
 	],
-	"definitions": {
+	"$defs": {
 		"common_aggregation_type": {
 			"type": "string",
 			"enum": [
