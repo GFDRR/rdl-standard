@@ -7,6 +7,7 @@ This page lists changes to the Risk Data Library Standard.
 ### Schema
 
 - [#93](https://github.com/GFDRR/rdl-standard/pull/93) - Remove nesting in top-level object.
+- [#100](https://github.com/GFDRR/rdl-standard/pull/100) - Update field names, titles and descriptions not covered in other issues.
 
 ### Codelists
 
