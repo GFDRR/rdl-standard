@@ -56,7 +56,6 @@ Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
 ![Hazard](img/sample_hzd.jpg)
 ```
 
-
 ## Impact model
 
 An impact model (also damage model; loss model) is used to combine Hazard, Exposure and Vulnerability components to calculate the amount of value that is expected to be impacted (damaged or lost).
@@ -66,7 +65,6 @@ Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/fi
 ```{card} Impacts and losses: USD costs of replacement
 ![Loss](img/sample_lss.jpg)
 ```
-
 
 ## Vulnerability
 
