@@ -1,7 +1,5 @@
 # History and roadmap
 
-
-
 ## History (2016-2021)
 
 The Risk Data Library project is led by the Global Facility for Disaster Reduction and Recovery ([GFDRR](https://www.gfdrr.org/en)), under its [Digital Earth](https://www.gfdrr.org/en/digitalearthpartnership) Thematic Area.
@@ -32,8 +30,6 @@ In 2020 the existing schema, still focussed on a database format for storing dat
 
 Through 2021, GFDRR worked with open data standards specialists to explore modifying the database schema into an open standard. At the same time, a new lightweight data catalog, using the JKAN standard, was developed as a pilot for an open data catalog.
 
-
-
 ## Roadmap (2022 onwards)
 
 In 2022, GFDRR obtained grant funding from the [Swiss Re Foundation](https://www.swissrefoundation.org/) to further develop the Risk Data Library Standard, as an open standard.
@@ -42,5 +38,3 @@ In 2022, GFDRR obtained grant funding from the [Swiss Re Foundation](https://www
 - GFDRR established the Disaster and Climate Risk Fellowship program, in which The Digital Earth team at GFDRR is recruiting fellows from vulnerable countries to support World Bank disaster and climate risk data projects and contribute to the adoption of the new Risk Data Library Standard. The fellowship program offers a 6-month placement for climate and disaster risk professionals from selected climate-vulnerable countries to work with the Risk Data Library Standard to access, create and communicate climate risk knowledge with their communities. The selected countries are: Bangladesh, Democratic Republic of the Congo, India, Indonesia, Philippines, and South Africa.
 - GFDRR collaborated with the [Open Data Services Co-operative](https://opendataservices.coop/) to establish the JSON standard and improve documentation and sustainability of RDLS using open standards best practice.
 - GFDRR and Swiss Re Foundation established a new steering committee for the period of the grant funding, to oversee development of the standard and outcomes of the fellowship program. The steering committee comprises members of the original development teams, and data users from the insurance industry and curators of other open data standards.
-
-

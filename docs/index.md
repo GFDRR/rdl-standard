@@ -18,10 +18,6 @@ This documentation provides a technical overview of the RDLS and its different e
 - [Guides](guides/index.md): how to implement the RDLS in your project
 - [About](about/index.md): other information on the roadmap, history, governance and license
 
-
-
-
-
 The RDL is a collaborative project managed by the [Global Facility for Disaster Reduction and Recovery (GFDRR)](https://www.gfdrr.org/) of the World Bank Group.
 
 ```{eval-rst}

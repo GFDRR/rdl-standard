@@ -46,18 +46,20 @@ Example: The string `CR/HEX:1/YEX:1981/RES+RES1` describes a residential single 
 [OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs), or \[online\]https://oasislmf.github.io/OpenDataStandards/index.html.
 
 Example: In the Open Exposure Data (OED) Standard and other insurance industry models, asset characteristics are separated into individual columns. This record describes a building classified as general residential, single storey, constructed from adobe masonry, with an unknown year of construction:
+
 | OccupancyCode | ConstructionCode | NumberOfStoreys | YearBuilt |
-| -------------- | -------------- | -------------- | -------------- |
-| 1050 | 5101 | 1 | 0 |
+| ------------- | ---------------- | --------------- | --------- |
+| 1050          | 5101             | 1               | 0         |
 
 ### CEDE
 
 [CEDE (Catastrophe Exposure Data Exchange)](https://docs.air-worldwide.com/Database/CEDE/10.0/webframe.html#topic1.html), is the exposure database format used by Touchstone®, AIR's comprehensive risk management platform that was first released in early 2013. It is publicly available and used widely in the insurance industry to describe asset characteristics and values for catastrophe modelling. CEDE uses a database format and allows users to apply different occupancy and construction schemes and codesets to their data, and add additional fields describing year of construction, number of storeys, etc. The most common taxonomy used in CEDE is [AIRConstruction](https://docs.air-worldwide.com/Database/CEDE/10.0/webframe.html#topic32.html) and [AIROccupancy](https://docs.air-worldwide.com/Database/CEDE/10.0/webframe.html#topic33.html). These codes are also available in the [OED Open Exposure Data Spec](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs) as OED was based on and builds on CEDE.
 
 Example: In CEDE data asset characteristics are separated into individual columns. This record describes a building classified as general residential, single storey, constructed from adobe masonry, with an unknown year of construction:
-| OccupancyCode | ConstructionCode | NumberOfStoreys | YearBuilt
-| -------------- | -------------- | -------------- | -------------- |
-| 301 | 112 | 1 | 0 |
+
+| OccupancyCode | ConstructionCode | NumberOfStoreys | YearBuilt |
+| ------------- | ---------------- | --------------- | --------- |
+| 301           | 112              | 1               | 0         |
 
 ## Vulnerability taxonomies
 

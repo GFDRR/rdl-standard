@@ -34,4 +34,3 @@ Details about the development are reported [here](https://riskdatalibrary.org/re
 
 In 2019 GEM and UCL EPICentre developed a first-of-its-kind standard for loss information.
 Details about the development are reported [here](https://riskdatalibrary.org/resources).
-

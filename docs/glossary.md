@@ -18,7 +18,7 @@ A qualitative or quantitative approach to determine the nature and extent of dis
 
 Source: [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/terminology/disaster-risk-assessment)
 
-```{card} Risk assessment framework, adapted from [Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682) 
+````{card} Risk assessment framework, adapted from [Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)
 ![Risk assessment framework, adapted from Understanding risk in an evolving world, World Bank, 2014](img/risk_assessment.png)
 
 
@@ -76,3 +76,4 @@ Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vu
 
 ```{card} Vulnerability: depth-damage function
 ![Vulnerability](img/sample_vln.jpg)
+````

@@ -47,15 +47,13 @@ Structuring risk data well when it is generated and before it is delivered to a 
 Where there are many resources for a dataset, it can be tempting to include a folder structure in an online data catalog. This is not advised and it is suggested that files be grouped together into individual `Resources` in order to facilitate finding the specific component of analysis, and without creating problematically large file sizes.
 ```
 
-***
-
+______________________________________________________________________
 
 ## Hazard data
 
 ### Format / data types
 
 Hazard data typically include hazard maps representing one or more historical events, or simulated probabilistic scenarios (`event footprints`). In some cases, hazard curves and stochastic event set tables are provided. Additional data could include intensity-duration-frequency curves, ground motion relationships, or hazard-defence measures.
-
 
 Generally, hazard data (footprints) takes the form of raster (geospatial grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
 
@@ -107,7 +105,7 @@ For example:
         └── <...>
 ```
 
-***
+______________________________________________________________________
 
 ## Exposure data
 
@@ -167,8 +165,7 @@ For example:
            └── <...>
 ```
 
-***
-
+______________________________________________________________________
 
 ## Vulnerability data
 
@@ -189,8 +186,9 @@ Often, vulnerability models are proprietary data and only shared as pictures; th
 ### Thematic grouping
 
 The main thematic groupings specific to vulnerability data are:
+
 - **Hazard type**: e.g. Flood damage function; Earthquake fragility curves.
-- **Exposure type and sub-type*: e.g. Builtup (Structure, Content, Product / Residential, Commercial / Masonry, Wood)
+- **Exposure type and sub-type**: e.g. Builtup (Structure, Content, Product / Residential, Commercial / Masonry, Wood)
 
 ### Geographic grouping
 
@@ -233,9 +231,7 @@ For example, when grouping multiple functions into one excel file, the following
            └── <...>
 ```
 
-
-***
-
+______________________________________________________________________
 
 ## Loss data
 
@@ -291,5 +287,3 @@ For example:
         └── <...>
            └── <...>
 ```
-
-
