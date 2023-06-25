@@ -18,9 +18,9 @@ A qualitative or quantitative approach to determine the nature and extent of dis
 
 Source: [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/terminology/disaster-risk-assessment)
 
-````{card} Risk assessment framework, adapted from [Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)
+```{card} Risk assessment framework, adapted from [Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)
 ![Risk assessment framework, adapted from Understanding risk in an evolving world, World Bank, 2014](img/risk_assessment.png)
-
+```
 
 ## Disaster risk information (risk data)
 
@@ -42,7 +42,7 @@ Source: [UNDRR Terminology (Exposure)](https://www.undrr.org/terminology/exposur
 
 ```{card} Exposure: buildings footprints and population
 ![Exposure: buildings footprints and population](img/sample_exp.jpg)
-
+```
 
 ## Hazard
 
@@ -54,7 +54,7 @@ Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
 
 ```{card} Hazard: map of flood water depth
 ![Hazard](img/sample_hzd.jpg)
-
+```
 
 
 ## Impact model
@@ -65,7 +65,7 @@ Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/fi
 
 ```{card} Impacts and losses: USD costs of replacement
 ![Loss](img/sample_lss.jpg)
-
+```
 
 
 ## Vulnerability
@@ -76,4 +76,4 @@ Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vu
 
 ```{card} Vulnerability: depth-damage function
 ![Vulnerability](img/sample_vln.jpg)
-````
+```

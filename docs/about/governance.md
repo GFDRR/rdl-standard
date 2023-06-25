@@ -75,7 +75,7 @@ ______________________________________________________________________
 
 ## Proposing and managing changes
 
-Anyone can propose changes to the specifications. The process for doing this is by [submitting an issue](https://github.com/GFDRR/rdl-standard/issues) using the appropriate template. The user must provide sufficient context to the proposed changes so that it can be discussed and reviewed by the [RDL team](contacts.md#rdl-team) and other users.
+Anyone can propose changes to the specifications. The process for doing this is by [submitting an issue](https://github.com/GFDRR/rdl-standard/issues) using the appropriate template. The user must provide sufficient context to the proposed changes so that it can be discussed and reviewed by the [RDL team](contacts.md#risk-data-library-team) and other users.
 
 We encourage disussion and feedback, by requesting people leave comments on the issue. After leaving appropriate time for further comment, once we feel that a broad consensus has been achieved around the proposed changes, we will update the schema by releasing a new version of the specification.
 
@@ -91,5 +91,3 @@ Releases of the standard will follow the [semantic versioning](https://semver.or
 - Minor releases will be used for backwards compatible changes, e.g. additional of new optional attributes and relationships, or for simple clarifications and corrections
 
 To support gradual migration to the latest specification, we will maintain historical versions of the specifications in named folders in this repository.
-
-______________________________________________________________________

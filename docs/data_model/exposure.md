@@ -70,5 +70,3 @@ Two exposure datasets are shown together in the example: building footprints pol
 |              | Period of occupancy | Night       |
 |      \*      | Value type          | Other       |
 |      \*      | Unit of measure     | Count       |
-
-______________________________________________________________________
