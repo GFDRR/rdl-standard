@@ -1,3 +1,0 @@
-# PostGRESQL database
-
-<br><hr>

@@ -74,9 +74,21 @@ markdown-it-py==2.1.0
 markupsafe==2.1.1
     # via jinja2
 mdformat==0.7.16
+    # via
+    #   mdformat-frontmatter
+    #   mdformat-myst
+    #   mdformat-tables
+mdformat-frontmatter==2.0.1
+    # via mdformat-myst
+mdformat-myst==0.1.5
     # via -r requirements.in
+mdformat-tables==0.4.1
+    # via mdformat-myst
 mdit-py-plugins==0.3.3
-    # via myst-parser
+    # via
+    #   mdformat-frontmatter
+    #   mdformat-myst
+    #   myst-parser
 mdurl==0.1.2
     # via markdown-it-py
 myst-parser==0.18.1

@@ -19,7 +19,7 @@ The preferred approach for making changes to the standard is to use a [local dev
 
 1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
 1. Create a branch from the `dev` branch.
-1. Make your changes.
+1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#). 
 1. [Build the documentation](#build-the-documentation), resolve any errors and preview your changes locally.
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at [https://rdl-standard.readthedocs.io/en/{branch name}](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):

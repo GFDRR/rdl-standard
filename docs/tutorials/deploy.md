@@ -1,3 +1,0 @@
-# Deploy
-
-<br><hr>
