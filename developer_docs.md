@@ -129,34 +129,6 @@ python -m http.server --directory _build/html
 
 ### Resolve check failures
 
-#### tests
-
-If this check fails, review the output to identify which test failed:
-
-##### test_json.py::test_empty
-
-Review the warnings to identify the empty JSON files and remove the files.
-
-##### test_json.py::test_indent
-
-Run the following command to indent JSON files:
-
-```bash
-ocdskit indent -r .
-```
-
-##### test_json.py::test_invalid_json
-
-Review the warnings to identify the invalid JSON files and correct the errors.
-
-##### test_schema.py (all tests)
-
-Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
-
-#### test_csv.py
-
-Review the warnings to identify and correct the errors.
-
 #### mdformat
 
 If this check fails, run the following command to fix markdown formatting:

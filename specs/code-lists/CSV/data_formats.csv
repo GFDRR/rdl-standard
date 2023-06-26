@@ -1,11 +1,11 @@
-Code,Label,Definition
-api,api,Application Programming Interface
-csv,csv,Comma Separated Values
-json,json,JavaScript Object Notation
-geojson,geojson,Geographic JavaScript Object Notation
-shp,shapefile,ESRI Shapefile
-gpkg,geopackage,GeoPackage
-geotiff,geotiff,GeoTiff
-md,markdown,Markdown
-pdf,pdf,Portable Document Format
-website,website,External website
+Code, Label, Definition
+api, api, Application Programming Interface
+csv, csv, Comma Separated Values
+json, json, JavaScript Object Notation
+geojson, geojson, Geographic JavaScript Object Notation
+shp, shapefile, ESRI Shapefile
+gpkg, geopackage, GeoPackage
+geotiff, geotiff, GeoTiff
+md, markdown, Markdown
+pdf, pdf, Portable Document Format
+website, website, External website
