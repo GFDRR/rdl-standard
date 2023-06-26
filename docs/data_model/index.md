@@ -2,7 +2,8 @@
 
 The Risk Data Library Standard schema covers [general dataset attributes](general) and four specific components:
 
-<<<<<<< HEAD
+\<\<\<\<\<\<\< HEAD
+
 - [**Hazard**](hazard.md): main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.
 - [**Exposure**](exposure.md): asset category, occupancy and specific taxonomy, cost type and value.
 - [**Vulnerability**](vulnerability.md): model that links hazard intensity and exposure classification to measure of impact over the total exposed value.
