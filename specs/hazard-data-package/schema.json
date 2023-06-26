@@ -44,239 +44,242 @@
       "description": "A description of the dataset"
     },
     "licenses": {
-       "title": "licenses",
-       "description": "The license(s) under which this package is published.",
-       "type": "array",
-       "minItems": 1,
-       "items": {
-         "title": "License",
-         "description": "A license for this descriptor.",
-         "type": "object",
-         "properties": {
-           "name": {
-             "title": "name",
-             "description": "MUST be an Open Definition license identifier, see http://licenses.opendefinition.org/",
-             "type": "string"
-           },
-           "path": {
-             "title": "path",
-             "description": "A fully qualified URL, or a POSIX file path..",
-             "type": "string"
-           }
-         },
-         "required": [ "name", "path"]
-       }
-     },
+      "title": "licenses",
+      "description": "The license(s) under which this package is published.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "License",
+        "description": "A license for this descriptor.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "name",
+            "description": "MUST be an Open Definition license identifier, see http://licenses.opendefinition.org/",
+            "type": "string"
+          },
+          "path": {
+            "title": "path",
+            "description": "A fully qualified URL, or a POSIX file path..",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "path"
+        ]
+      }
+    },
     "spatial": {
-       "title": "spatial",
-       "description": "spatial coverage of the datasets",
-       "minItems": 1,
-       "items": {
-         "type": "string"
-       }
-     },
+      "title": "spatial",
+      "description": "spatial coverage of the datasets",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
     "eventset": {
-       "title": "eventset",
-       "description": "An Event Set descriptor, that describes the circumstances in which a hazard occurs",
-       "type": "object",
-       "properties": {
-         "hazard_type": {
-           "title": "hazard_type",
-           "description": "Identifies the type of hazard. Valid values are defined by the RDL Hazard Type Code list",
-           "type": "string"
-         },
-         "analysis_type": {
-           "title": "analysis_type",
-           "description": "Identifies the type of analysis used to generate the Footprints. Valid values are defined by the RDL Analysis Type Code List",
-           "type": "string"
-         },
-         "id": {
-           "title": "id",
-           "description": "A globally unique identifier for the package, e.g. a UUID",
-           "type": "string"
-         },
-         "spatial": {
-            "title": "spatial",
-            "description": "spatial coverage of the datasets",
-            "minItems": 1,
-            "items": {
-              "type": "string"
+      "title": "eventset",
+      "description": "An Event Set descriptor, that describes the circumstances in which a hazard occurs",
+      "type": "object",
+      "properties": {
+        "hazard_type": {
+          "title": "hazard_type",
+          "description": "Identifies the type of hazard. Valid values are defined by the RDL Hazard Type Code list",
+          "type": "string"
+        },
+        "analysis_type": {
+          "title": "analysis_type",
+          "description": "Identifies the type of analysis used to generate the Footprints. Valid values are defined by the RDL Analysis Type Code List",
+          "type": "string"
+        },
+        "id": {
+          "title": "id",
+          "description": "A globally unique identifier for the package, e.g. a UUID",
+          "type": "string"
+        },
+        "spatial": {
+          "title": "spatial",
+          "description": "spatial coverage of the datasets",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "start_date": {
+          "title": "start date",
+          "description": "The datetime at which the modelled scenarios start",
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_date": {
+          "title": "end date",
+          "description": "The datetime at which the modelled scenarios end",
+          "type": "string",
+          "format": "date-time"
+        },
+        "year": {
+          "title": "year",
+          "description": "The reference year to which the modelled scenario refers",
+          "type": "string"
+        },
+        "time_span": {
+          "title": "time span",
+          "description": "The extent of the time period covered by the events included in the current scenario hazard analysis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hazard_type",
+        "process_type"
+      ]
+    },
+    "events": {
+      "title": "events",
+      "description": "A list of Event descriptors",
+      "minItems": 1,
+      "items": {
+        "title": "Event",
+        "description": "An event",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "id",
+            "description": "A globally unique identifier for the package, e.g. a UUID",
+            "type": "string"
+          },
+          "calculation_method": {
+            "title": "calculation method",
+            "description": "A description of how this Event was generated, e.g. observed or simulated. Valid values are defined by the RDL Calculation Method Code List",
+            "type": "string"
+          },
+          "frequency": {
+            "title": "frequency",
+            "description": "",
+            "type": "string"
+          },
+          "description": {
+            "title": "description",
+            "type": "string",
+            "description": "A description of the dataset"
+          },
+          "return_period": {
+            "title": "return period",
+            "type": "string",
+            "description": "The probability of the event occuring expressed as an array of return periods ('10', '100', '1000') or as a single String specifying a range (10-1000)"
+          },
+          "occurence": {
+            "title": "occurence",
+            "type": "object",
+            "description": "",
+            "properties": {
+              "start_date": {
+                "title": "start date",
+                "description": "The datetime at which the modelled scenarios start",
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_date": {
+                "title": "end date",
+                "description": "The datetime at which the modelled scenarios end",
+                "type": "string",
+                "format": "date-time"
+              }
             }
           },
-         "start_date": {
-           "title": "start date",
-           "description": "The datetime at which the modelled scenarios start",
-           "type": "string",
-           "format": "date-time"
-         },
-         "end_date": {
-           "title": "end date",
-           "description": "The datetime at which the modelled scenarios end",
-           "type": "string",
-           "format": "date-time"
-         },
-         "year": {
-           "title": "year",
-           "description": "The reference year to which the modelled scenario refers",
-           "type": "string"
-         },
-         "time_span": {
-           "title": "time span",
-           "description": "The extent of the time period covered by the events included in the current scenario hazard analysis",
-           "type": "string"
-         }
-       },
-       "required": [
-         "hazard_type",
-         "process_type"
-       ]
-     },
-    "events": {
-       "title": "events",
-       "description": "A list of Event descriptors",
-       "minItems": 1,
-       "items": {
-         "title": "Event",
-         "description": "An event",
-         "type": "object",
-         "properties": {
-           "id": {
-             "title": "id",
-             "description": "A globally unique identifier for the package, e.g. a UUID",
-             "type": "string"
-           },
-           "calculation_method": {
-             "title": "calculation method",
-             "description": "A description of how this Event was generated, e.g. observed or simulated. Valid values are defined by the RDL Calculation Method Code List",
-             "type": "string"
-           },
-           "frequency": {
-             "title": "frequency",
-             "description": "",
-             "type": "string"
-           },
-           "description": {
-             "title": "description",
-             "type": "string",
-             "description": "A description of the dataset"
-           },
-           "return_period": {
-             "title": "return period",
-             "type": "string",
-             "description": "The probability of the event occuring expressed as an array of return periods ('10', '100', '1000') or as a single String specifying a range (10-1000)"
-           },
-           "occurence": {
-             "title": "occurence",
-             "type": "object",
-             "description": "",
-             "properties": {
-               "start_date": {
-                 "title": "start date",
-                 "description": "The datetime at which the modelled scenarios start",
-                 "type": "string",
-                 "format": "date-time"
-               },
-               "end_date": {
-                 "title": "end date",
-                 "description": "The datetime at which the modelled scenarios end",
-                 "type": "string",
-                 "format": "date-time"
-               }
-             }
-           },
-           "trigger": {
-             "title": "trigger",
-             "type": "object",
-             "description": "",
-             "properties": {
-               "hazard_type": {
-                 "title": "hazard_type",
-                 "description": "Identifies the type of hazard. Valid values are defined by the RDL Hazard Type Code list",
-                 "type": "string"
-               },
-               "process_type": {
-                 "title": "process_type",
-                 "description": "Identifies the type of analysis used to generate the Footprints. Valid values are defined by the RDL Process Type Code List",
-                 "type": "string"
-               },
-               "event": {
-                 "title": "event",
-                 "description": "Associates this event with another event. The value should match the value of an id attribute of in the event array.",
-                 "type": "string"
-               }
-             }
-           }
-         },
-         "required": [
-           "id",
-           "calculation_method",
-           "frequency"
-         ]
-       }
-     },
-    "resources": {
-        "title": "footprints",
-        "description": "A list of the Hazard Data Package Resources contained in the package. ",
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "title": "Footprint",
-          "description": "Data Resource.",
-          "type": "object",
-          "required": [
-            "name",
-            "path"
-          ],
-          "properties": {
-            "name": {
-              "title": "name",
-              "description": "An identifier string. Lower case characters with `.`, `_`, `-` and `/` are allowed.",
-              "type": "string",
-              "pattern": "^([-a-z0-9._/])+$"
-            },
-            "path": {
-              "title": "path",
-              "description": "Provides the file system path, or a remote URL, that provides a location for the resource",
-              "type": "string"
-            },
-            "mediatype": {
-              "title": "media type",
-              "description": "The media type of this resource. Can be any valid media type listed with [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml).",
-              "type": "string",
-              "pattern": "^(.+)/(.+)$"
-            },
-            "process_type": {
-              "title": "process_type",
-              "description": "The type of hazard process modelled. Valid values for the process_type property are defined by the RDL Process Type Code List",
-              "type": "string"
-            },
-            "imt": {
-              "title": "imt",
-              "description": "The intensity measure. Valid values are described in the RDL Intensity Measure code list",
-              "type": "string"
-            },
-            "event": {
-              "title": "event",
-              "description": "Associates this resource with an event. The value should match the value of an id attribute of in the event array.",
-              "type": "string"
-            },
-            "title": {
-              "title": "title",
-              "description": "A human-readable title.",
-              "type": "string"
-            },
-            "epsg": {
-              "title": "epsg",
-              "description": "Describes the spatial reference used in the data.",
-              "type": "string"
-            },
-            "data_uncertainty": {
-              "title": "data_uncertainty",
-              "description": "Comments about the uncertainty of the data",
-              "type": "string"
+          "trigger": {
+            "title": "trigger",
+            "type": "object",
+            "description": "",
+            "properties": {
+              "hazard_type": {
+                "title": "hazard_type",
+                "description": "Identifies the type of hazard. Valid values are defined by the RDL Hazard Type Code list",
+                "type": "string"
+              },
+              "process_type": {
+                "title": "process_type",
+                "description": "Identifies the type of analysis used to generate the Footprints. Valid values are defined by the RDL Process Type Code List",
+                "type": "string"
+              },
+              "event": {
+                "title": "event",
+                "description": "Associates this event with another event. The value should match the value of an id attribute of in the event array.",
+                "type": "string"
+              }
             }
+          }
+        },
+        "required": [
+          "id",
+          "calculation_method",
+          "frequency"
+        ]
+      }
+    },
+    "resources": {
+      "title": "footprints",
+      "description": "A list of the Hazard Data Package Resources contained in the package. ",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Footprint",
+        "description": "Data Resource.",
+        "type": "object",
+        "required": [
+          "name",
+          "path"
+        ],
+        "properties": {
+          "name": {
+            "title": "name",
+            "description": "An identifier string. Lower case characters with `.`, `_`, `-` and `/` are allowed.",
+            "type": "string",
+            "pattern": "^([-a-z0-9._/])+$"
+          },
+          "path": {
+            "title": "path",
+            "description": "Provides the file system path, or a remote URL, that provides a location for the resource",
+            "type": "string"
+          },
+          "mediatype": {
+            "title": "media type",
+            "description": "The media type of this resource. Can be any valid media type listed with [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml).",
+            "type": "string",
+            "pattern": "^(.+)/(.+)$"
+          },
+          "process_type": {
+            "title": "process_type",
+            "description": "The type of hazard process modelled. Valid values for the process_type property are defined by the RDL Process Type Code List",
+            "type": "string"
+          },
+          "imt": {
+            "title": "imt",
+            "description": "The intensity measure. Valid values are described in the RDL Intensity Measure code list",
+            "type": "string"
+          },
+          "event": {
+            "title": "event",
+            "description": "Associates this resource with an event. The value should match the value of an id attribute of in the event array.",
+            "type": "string"
+          },
+          "title": {
+            "title": "title",
+            "description": "A human-readable title.",
+            "type": "string"
+          },
+          "epsg": {
+            "title": "epsg",
+            "description": "Describes the spatial reference used in the data.",
+            "type": "string"
+          },
+          "data_uncertainty": {
+            "title": "data_uncertainty",
+            "description": "Comments about the uncertainty of the data",
+            "type": "string"
           }
         }
       }
+    }
   }
 }
