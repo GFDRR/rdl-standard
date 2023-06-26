@@ -10,7 +10,7 @@
 		"organization",
 		"model_source",
 		"model_date",
-		"geo_coverage",
+		"spatial",
 		"publish",
 		"license_code",
 		"resources"
@@ -72,16 +72,17 @@
 			"description": "URL of publication",
 			"format": "uri"
 		},
-		"geo_coverage": {
-			"$ref": "#/definitions/common_iso",
-			"description": "ISO code(s) of countries covered by the dataset, comma-separated"
+		"spatial": {
+			"title": "Spatial coverage",
+			"description": "The geographical area covered by the dataset.",
+			"$ref": "#/$defs/Spatial"
 		},
 		"publish": {
 			"type": "boolean",
 			"description": "Flag to show/hide dataset from website"
 		},
 		"license_code": {
-			"$ref": "#/definitions/common_license",
+			"$ref": "#/$defs/common_license",
 			"description": "Type of license"
 		},
 		"maintainer": {
@@ -154,11 +155,11 @@
 							],
 							"properties": {
 								"hazard_type": {
-									"$ref": "#/definitions/common_hazard_type",
+									"$ref": "#/$defs/common_hazard_type",
 									"description": "Type of hazard modelled"
 								},
 								"analysis_type": {
-									"$ref": "#/definitions/common_analysis_type",
+									"$ref": "#/$defs/common_analysis_type",
 									"description": "Type of analysis, probabilistic or deterministic"
 								},
 								"geo_area": {
@@ -196,11 +197,11 @@
 							],
 							"properties": {
 								"calculation_method": {
-									"$ref": "#/definitions/common_calc_method",
+									"$ref": "#/$defs/common_calc_method",
 									"description": "The methodology used for the calculation of this event"
 								},
 								"frequency_type": {
-									"$ref": "#/definitions/common_frequency_type",
+									"$ref": "#/$defs/common_frequency_type",
 									"description": "Frequency representation type"
 								},
 								"return_period": {
@@ -222,11 +223,11 @@
 									"description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability"
 								},
 								"trigger_hazard_type": {
-									"$ref": "#/definitions/common_hazard_type",
+									"$ref": "#/$defs/common_hazard_type",
 									"description": "Hazard type that triggered the event"
 								},
 								"trigger_process_type": {
-									"$ref": "#/definitions/common_process_type",
+									"$ref": "#/$defs/common_process_type",
 									"description": "Process type that triggered the event"
 								},
 								"description": {
@@ -239,11 +240,11 @@
 							"type": "object",
 							"properties": {
 								"process_type": {
-									"$ref": "#/definitions/common_process_type",
+									"$ref": "#/$defs/common_process_type",
 									"description": "Type of hazard process modelled"
 								},
 								"imt": {
-									"$ref": "#/definitions/im_code",
+									"$ref": "#/$defs/im_code",
 									"description": "Hazard intensity measure unit"
 								},
 								"data_uncertainty": {
@@ -276,15 +277,15 @@
 							"properties": {
 								"category": {
 									"description": "Type of asset",
-									"$ref": "#/definitions/common_exp_category"
+									"$ref": "#/$defs/common_exp_category"
 								},
 								"occupancy": {
 									"description": "Destination of use of the asset",
-									"$ref": "#/definitions/common_exp_occupancy"
+									"$ref": "#/$defs/common_exp_occupancy"
 								},
 								"occupancy_time": {
 									"description": "Period of occupancy, if appliable (e.g. Population)",
-									"$ref": "#/definitions/common_occupancy_time"
+									"$ref": "#/$defs/common_occupancy_time"
 								},
 								"taxonomy_source": {
 									"type": "string",
@@ -310,7 +311,7 @@
 							"properties": {
 								"val_type": {
 									"description": "Type of asset value",
-									"$ref": "#/definitions/common_exp_val_type"
+									"$ref": "#/$defs/common_exp_val_type"
 								},
 								"val_unit": {
 									"type": "string",
@@ -334,39 +335,39 @@
 							"properties": {
 								"hazard_type_primary": {
 									"description": "Primary hazard involved",
-									"$ref": "#/definitions/common_hazard_type"
+									"$ref": "#/$defs/common_hazard_type"
 								},
 								"hazard_type_secondary": {
 									"description": "Secondary hazard involved",
-									"$ref": "#/definitions/common_hazard_type"
+									"$ref": "#/$defs/common_hazard_type"
 								},
 								"process_type_primary": {
 									"description": "Primary process involved",
-									"$ref": "#/definitions/common_process_type"
+									"$ref": "#/$defs/common_process_type"
 								},
 								"process_type_secondary": {
 									"description": "Secondary process involved",
-									"$ref": "#/definitions/common_process_type"
+									"$ref": "#/$defs/common_process_type"
 								},
 								"frequency_type": {
 									"description": "Frequency representation type",
-									"$ref": "#/definitions/common_frequency_type"
+									"$ref": "#/$defs/common_frequency_type"
 								},
 								"imt": {
 									"description": "Hazard intensity measure unit",
-									"$ref": "#/definitions/im_code"
+									"$ref": "#/$defs/im_code"
 								},
 								"category": {
 									"description": "Type of asset",
-									"$ref": "#/definitions/common_exp_category"
+									"$ref": "#/$defs/common_exp_category"
 								},
 								"occupancy": {
 									"description": "Type of occupancy to which function applies",
-									"$ref": "#/definitions/common_exp_occupancy"
+									"$ref": "#/$defs/common_exp_occupancy"
 								},
 								"val_type": {
 									"description": "Type of asset value",
-									"$ref": "#/definitions/common_exp_val_type"
+									"$ref": "#/$defs/common_exp_val_type"
 								},
 								"val_unit": {
 									"type": "string",
@@ -382,15 +383,15 @@
 								},
 								"impact_type": {
 									"description": "Type of impact",
-									"$ref": "#/definitions/common_impact_type"
+									"$ref": "#/$defs/common_impact_type"
 								},
 								"scale_applicability": {
 									"description": "Administrative level of application",
-									"$ref": "#/definitions/common_aggregation_type"
+									"$ref": "#/$defs/common_aggregation_type"
 								},
 								"country_tranferability": {
 									"description": "ISOa3 list of countries in which the model could be applied",
-									"$ref": "#/definitions/common_iso"
+									"$ref": "#/$defs/common_iso"
 								},
 								"local_applicability": {
 									"type": "string",
@@ -401,23 +402,23 @@
 									"description": "Details about applicability to different areas"
 								},
 								"function_type": {
-									"$ref": "#/definitions/vulnerability_function_type",
+									"$ref": "#/$defs/vulnerability_function_type",
 									"description": "Type of function"
 								},
 								"calculation_method": {
-									"$ref": "#/definitions/common_calc_method",
+									"$ref": "#/$defs/common_calc_method",
 									"description": "The methodology used for the calculation of the function"
 								},
 								"approach": {
-									"$ref": "#/definitions/f_subtype",
+									"$ref": "#/$defs/f_subtype",
 									"description": "Type of methodological approach"
 								},
 								"f_relationship": {
-									"$ref": "#/definitions/vulnerability_f_relationship",
+									"$ref": "#/$defs/vulnerability_f_relationship",
 									"description": "Type of relationship: Mathematical or Discrete"
 								},
 								"f_math": {
-									"$ref": "#/definitions/vulnerability_f_math",
+									"$ref": "#/$defs/vulnerability_f_math",
 									"description": "Parametric or bespoke"
 								}
 							}
@@ -486,11 +487,11 @@
 							"type": "object",
 							"properties": {
 								"hazard_type": {
-									"$ref": "#/definitions/common_hazard_type",
+									"$ref": "#/$defs/common_hazard_type",
 									"description": "Type of hazard modelled"
 								},
 								"process_type": {
-									"$ref": "#/definitions/common_process_type",
+									"$ref": "#/$defs/common_process_type",
 									"description": "Type of hazard process modelled"
 								},
 								"time_start": {
@@ -508,27 +509,27 @@
 									"description": "General reference year to which the scenario refers to (e.g. '2050')"
 								},
 								"occupancy": {
-									"$ref": "#/definitions/common_exp_occupancy",
+									"$ref": "#/$defs/common_exp_occupancy",
 									"description": "Destination of use of the asset"
 								},
 								"category": {
-									"$ref": "#/definitions/common_exp_category",
+									"$ref": "#/$defs/common_exp_category",
 									"description": "Exposure category"
 								},
 								"val_type": {
-									"$ref": "#/definitions/common_exp_val_type",
+									"$ref": "#/$defs/common_exp_val_type",
 									"description": "Element on which loss insist"
 								},
 								"impact": {
-									"$ref": "#/definitions/common_impact_type",
+									"$ref": "#/$defs/common_impact_type",
 									"description": "Type of impact"
 								},
 								"loss_type": {
-									"$ref": "#/definitions/loss_loss_type",
+									"$ref": "#/$defs/loss_loss_type",
 									"description": "Type of loss"
 								},
 								"frequency": {
-									"$ref": "#/definitions/common_frequency_type",
+									"$ref": "#/$defs/common_frequency_type",
 									"description": "Frequency representation type"
 								},
 								"return_period": {
@@ -536,11 +537,11 @@
 									"description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)"
 								},
 								"calculation_method": {
-									"$ref": "#/definitions/common_calc_method",
+									"$ref": "#/$defs/common_calc_method",
 									"description": "The methodology used for the calculation of this event"
 								},
 								"metric": {
-									"$ref": "#/definitions/loss_metric",
+									"$ref": "#/$defs/loss_metric",
 									"description": "Type of loss metric"
 								},
 								"val_unit": {
@@ -569,7 +570,7 @@
 			}
 		}
 	],
-	"definitions": {
+	"$defs": {
 		"common_aggregation_type": {
 			"type": "string",
 			"enum": [
@@ -659,244 +660,6 @@
 				"Direct",
 				"Indirect",
 				"Total"
-			]
-		},
-		"common_iso": {
-			"type": "string",
-			"enum": [
-				"GLB",
-				"ABW",
-				"AFG",
-				"AGO",
-				"AIA",
-				"ALB",
-				"AND",
-				"ARE",
-				"ARG",
-				"ARM",
-				"ASM",
-				"ATG",
-				"AUS",
-				"AUT",
-				"AZE",
-				"BDI",
-				"BEL",
-				"BEN",
-				"BFA",
-				"BGD",
-				"BGR",
-				"BHR",
-				"BHS",
-				"BIH",
-				"BLM",
-				"BLR",
-				"BLZ",
-				"BMU",
-				"BOL",
-				"BRA",
-				"BRB",
-				"BRN",
-				"BTN",
-				"BWA",
-				"CAF",
-				"CAN",
-				"CHE",
-				"CHL",
-				"CHN",
-				"CIV",
-				"CMR",
-				"COD",
-				"COG",
-				"COK",
-				"COL",
-				"COM",
-				"CPV",
-				"CRI",
-				"CUB",
-				"CUW",
-				"CYM",
-				"CYP",
-				"CZE",
-				"DEU",
-				"DJI",
-				"DMA",
-				"DNK",
-				"DOM",
-				"DZA",
-				"ECU",
-				"EGY",
-				"ERI",
-				"ESP",
-				"EST",
-				"ETH",
-				"FIN",
-				"FJI",
-				"FLK",
-				"FRA",
-				"FRO",
-				"FSM",
-				"GAB",
-				"GBR",
-				"GEO",
-				"GGY",
-				"GHA",
-				"GIB",
-				"GIN",
-				"GMB",
-				"GNB",
-				"GNQ",
-				"GRC",
-				"GRD",
-				"GRL",
-				"GTM",
-				"GUM",
-				"GUY",
-				"HKG",
-				"HMD",
-				"HND",
-				"HRV",
-				"HTI",
-				"HUN",
-				"IDN",
-				"IMN",
-				"IND",
-				"IRL",
-				"IRN",
-				"IRQ",
-				"ISL",
-				"ISR",
-				"ITA",
-				"JAM",
-				"JEY",
-				"JOR",
-				"JPN",
-				"KAZ",
-				"KEN",
-				"KGZ",
-				"KHM",
-				"KIR",
-				"KNA",
-				"KOR",
-				"KWT",
-				"LAO",
-				"LBN",
-				"LBR",
-				"LBY",
-				"LCA",
-				"LIE",
-				"LKA",
-				"LSO",
-				"LTU",
-				"LUX",
-				"LVA",
-				"MAC",
-				"MAF",
-				"MAR",
-				"MCO",
-				"MDA",
-				"MDG",
-				"MDV",
-				"MEX",
-				"MHL",
-				"MKD",
-				"MLI",
-				"MLT",
-				"MMR",
-				"MNE",
-				"MNG",
-				"MNP",
-				"MOZ",
-				"MRT",
-				"MSR",
-				"MUS",
-				"MWI",
-				"MYS",
-				"NAM",
-				"NCL",
-				"NER",
-				"NFK",
-				"NGA",
-				"NIC",
-				"NIU",
-				"NLD",
-				"NOR",
-				"NPL",
-				"NRU",
-				"NZL",
-				"OMN",
-				"PAK",
-				"PAN",
-				"PCN",
-				"PER",
-				"PHL",
-				"PLW",
-				"PNG",
-				"POL",
-				"PRI",
-				"PRK",
-				"PRT",
-				"PRY",
-				"PSE",
-				"PYF",
-				"QAT",
-				"ROU",
-				"RUS",
-				"RWA",
-				"SAU",
-				"SDN",
-				"SEN",
-				"SGP",
-				"SGS",
-				"SHN",
-				"SLB",
-				"SLE",
-				"SLV",
-				"SMR",
-				"SOM",
-				"SPM",
-				"SRB",
-				"SSD",
-				"STP",
-				"SUR",
-				"SVK",
-				"SVN",
-				"SWE",
-				"SWZ",
-				"SXM",
-				"SYC",
-				"SYR",
-				"TCA",
-				"TCD",
-				"TGO",
-				"THA",
-				"TJK",
-				"TKM",
-				"TLS",
-				"TON",
-				"TTO",
-				"TUN",
-				"TUR",
-				"TUV",
-				"TZA",
-				"UGA",
-				"UKR",
-				"URY",
-				"USA",
-				"UZB",
-				"VAT",
-				"VCT",
-				"VEN",
-				"VGB",
-				"VIR",
-				"VNM",
-				"VUT",
-				"WLF",
-				"WSM",
-				"XXK",
-				"YEM",
-				"ZAF",
-				"ZMB",
-				"ZWE"
 			]
 		},
 		"common_license": {
@@ -1025,6 +788,104 @@
 				"Judgement",
 				"Hybrid"
 			]
+		},
+		"Spatial": {
+			"title": "Spatial coverage",
+			"type": "object",
+			"description": "Information about the spatial coverage of the dataset.",
+			"properties": {
+				"countries": {
+					"title": "Countries",
+					"type": "array",
+					"description": "The countries covered by the geographical area, from the open country codelist (ISO 3166-1).",
+					"items": {
+						"type": "string"
+					},
+					"minItems": 1
+				},
+				"gazetteerEntries": {
+					"title": "Gazetteer entries",
+					"type": "array",
+					"description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe subnational coverage. Use of is recommended.",
+					"items": {
+            "$ref": "#/$defs/Gazetteer_entry"
+          },
+          "uniqueItems": true,
+					"minItems": 1
+				},
+				"bbox": {
+					"title": "Bounding box",
+					"type": "array",
+					"description": "A geographic bounding box delimiting the geographical area.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 1
+				},
+				"geometry": {
+					"title": "Geometry",
+					"description": "A set of coordinates denoting the vertices of the geographical area.",
+					"$ref": "#/$defs/Geometry"
+				},
+				"centroid": {
+					"title": "Centroid",
+					"type": "array",
+					"description": "The coordinates of the centre of the geographical area.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 1
+				}
+			}
+		},
+		"Gazetteer_entry": {
+			"title": "Gazetteer entry",
+			"type": "object",
+			"description": "Entry from geographical indices or directories describing the geographical area.",
+			"properties": {
+				"id": {
+					"title": "Identifier",
+					"type": "string",
+					"description": "An identifier drawn from the gazetteer identified in `.scheme`."
+				},
+				"scheme": {
+					"title": "Scheme",
+					"type": "string",
+					"description": "The gazetteer from which the entry is drawn, from the open location_ gazetteers codelist."
+				},
+				"description": {
+					"title": "Description",
+					"type": "string",
+					"description": "A description for the gazetteer entry."
+				},
+				"uri": {
+					"title": "Uniform resource locator",
+					"type": "string",
+					"description": "A URI for the gazetteer entry.",
+					"format": "iri"
+				}
+			}
+		},
+		"Geometry": {
+			"title": "Geometry",
+			"type": "object",
+			"description": "A set of coordinates denoting the vertices of the geographical area.",
+			"properties": {
+				"type": {
+					"title": "Type",
+					"type": "string",
+					"description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed geometry_type codelist."
+				},
+				"coordinates": {
+					"title": "Coordinates",
+					"type": "array",
+					"description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 1
+				}
+			}
 		}
 	}
 }
