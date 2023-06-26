@@ -14,7 +14,7 @@ This documentation provides a technical overview of the RDLS and its different e
 - [**Taxonomy**](taxonomies/index.md): details of taxonomies adopted by the RDLS
 - [**Data model**](data_model/index.md): how to organize and link the data using the RDLS schema
 - [**Implementation**](implementation/index.md): how to apply the RDLS in your project
-- [**Tutorials**](tutorials/index.md): how to adopte and use RDLS for different pruposes
+- [**Tutorials**](tutorials/index.md): how to adopt and use RDLS for different pruposes
 - [**About**](about/index.md): other information on the roadmap, history, governance and license
 
 <br/>
