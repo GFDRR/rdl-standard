@@ -10,39 +10,33 @@
       "path": "https://licenses.opendefinition.org/licenses/CC-BY-SA-4.0.json"
     }
   ],
-  "spatial": [
-    "..."
-  ],
+  "spatial": [ "..." ],
   "eventset": {
     "hazard_type": "...",
     "analysis_type": "...",
     "id": "...",
-    "spatial": [
-      "..."
-    ],
+    "spatial": [ "..." ],
     "start_date": "2021-04-01T20:20:39+00:00",
     "end_date": "2021-04-01T20:20:39+00:00",
     "year": "...",
     "time_span": "..."
   },
-  "events": [
-    {
-      "id": "...",
-      "calculation_method": "...",
-      "frequency": "...",
-      "description": "",
-      "return_period": "...",
-      "occurrence": {
-        "start_date": "2021-04-01T20:20:39+00:00",
-        "end_date": "2021-04-01T20:20:39+00:00"
-      },
-      "trigger": {
-        "hazard_type": "...",
-        "process_type": "...",
-        "event": "..."
-      }
+  "events": [{
+    "id": "...",
+    "calculation_method": "...",
+    "frequency": "...",
+    "description": "",
+    "return_period": "...",
+    "occurrence": {
+      "start_date": "2021-04-01T20:20:39+00:00",
+      "end_date": "2021-04-01T20:20:39+00:00"
+    },
+    "trigger": {
+      "hazard_type": "...",
+      "process_type": "...",
+      "event": "..."
     }
-  ],
+  }],
   "resources": [
     {
       "name": "fp1.tif",
