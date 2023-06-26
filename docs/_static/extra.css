@@ -39,6 +39,9 @@ display: block;
 h1, h2, h3 {
   color: #0b3860;
 }
+h2, h3 {
+  margin-top: 25px;
+}
 
 ul {
 line-height: 1.7em!important;
