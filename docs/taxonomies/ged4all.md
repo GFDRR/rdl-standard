@@ -670,14 +670,6 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 |                          | GICPSCROL | Rule of Law                                                  |
 
 </div>
-<<<<<<< HEAD
-<br>
-
-### Governance
-
-\=======
-
-> > > > > > > dev
 
 ### Governance
 
