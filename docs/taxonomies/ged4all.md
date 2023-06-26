@@ -674,8 +674,10 @@ Natural hazards are a complex phenomenon featuring large number of interactions 
 <br>
 
 ### Governance
-=======
->>>>>>> dev
+
+\=======
+
+> > > > > > > dev
 
 ### Governance
 
