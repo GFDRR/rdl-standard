@@ -1,3 +1,4 @@
 .ve
 *.swp
 *~
+tests/__pycache__

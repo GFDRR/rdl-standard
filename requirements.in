@@ -9,4 +9,8 @@ sphinx-intl
 #transifex-client
 sphinx_rtd_theme
 myst-parser
-mdformat-myst
+pytest
+jscc
+ocdskit
+mdformat
+jsonschema
