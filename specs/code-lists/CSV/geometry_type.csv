@@ -1,4 +1,4 @@
-Code,Label,Description,Source
+Code,Title,Description,Source
 Point,Point,The 'coordinates' member is a single position.,https://tools.ietf.org/html/rfc7946#section-3.1
 MultiPoint,MultiPoint,The 'coordinates' member is an array of positions.,https://tools.ietf.org/html/rfc7946#section-3.1
 LineString,LineString,The 'coordinates' member is an array of two or more positions.,https://tools.ietf.org/html/rfc7946#section-3.1

@@ -1,4 +1,4 @@
-Category,Code,Label,Description,Source,URI Pattern
+Category,Code,Title,Description,Source,URI Pattern
 Subnational,ISO 3166-2,ISO Country Subdivision Codes,ISO codes for identifying the principal subdivisions (e.g. provinces or states) of all countries coded in ISO 3166-1.,https://www.iso.org/standard/72483.html,
 Subnational,NUTS,EU Nomenclature of Territorial Units for Statistics,The Nomenclature of Territorial Units for Statistics (NUTS) was established by Eurostat in order to provide a single uniform breakdown of territorial units for the production of regional statistics for the European Union.,https://ec.europa.eu/eurostat/web/nuts/linked-open-data,http://data.europa.eu/nuts/code/
 National,ISO 3166-1 alpha-2,ISO Country Codes,ISO 2-Digit Country Codes,https://www.iso.org/iso-3166-country-codes.html
