@@ -792,21 +792,23 @@
 		"Spatial": {
 			"title": "Spatial coverage",
 			"type": "object",
-			"description": "Information about the spatial coverage of the dataset.",
+			"description": "The geographical area covered by the dataset.",
 			"properties": {
 				"countries": {
 					"title": "Countries",
 					"type": "array",
-					"description": "The countries covered by the geographical area, from the open country codelist (ISO 3166-1).",
+					"description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/dev/data_model/codelists.html#country).",
 					"items": {
-						"type": "string"
+						"type": "string",
+						"codelist": "country.csv",
+						"openCodelist": false
 					},
 					"minItems": 1
 				},
 				"gazetteerEntries": {
 					"title": "Gazetteer entries",
 					"type": "array",
-					"description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe subnational coverage. Use of is recommended.",
+					"description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe subnational coverage. Use of ISO 3166-2 is recommended.",
 					"items": {
             "$ref": "#/$defs/Gazetteer_entry"
           },
@@ -820,7 +822,8 @@
 					"items": {
 						"type": "number"
 					},
-					"minItems": 1
+					"minItems": 4,
+					"maxItems": 4
 				},
 				"geometry": {
 					"title": "Geometry",
@@ -834,14 +837,15 @@
 					"items": {
 						"type": "number"
 					},
-					"minItems": 1
+					"minItems": 2,
+					"maxItems": 2
 				}
 			}
 		},
 		"Gazetteer_entry": {
 			"title": "Gazetteer entry",
 			"type": "object",
-			"description": "Entry from geographical indices or directories describing the geographical area.",
+			"description": "An entry from a geographical index or directory describing a geographical area.",
 			"properties": {
 				"id": {
 					"title": "Identifier",
@@ -851,7 +855,7 @@
 				"scheme": {
 					"title": "Scheme",
 					"type": "string",
-					"description": "The gazetteer from which the entry is drawn, from the open location_ gazetteers codelist."
+					"description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://rdl-standard.readthedocs.io/en/dev/data_model/codelists.html#location_gazetteers)."
 				},
 				"description": {
 					"title": "Description",
@@ -881,7 +885,10 @@
 					"type": "array",
 					"description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
 					"items": {
-						"type": "number"
+						"type": [
+						  "number",
+						  "array"
+						]
 					},
 					"minItems": 1
 				}
