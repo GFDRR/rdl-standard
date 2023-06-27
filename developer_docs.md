@@ -171,6 +171,7 @@ This section contains the following reference documentation:
 * [GitHub repository](#github-repository)
 * [Sphinx](#sphinx)
 * [Read the Docs](#read-the-docs)
+* [manage.py](#managepy)
 
 ### GitHub repository
 
@@ -232,3 +233,7 @@ Other than the `main` branch, all branches are hidden from the [flyout menu](htt
 #### Credentials
 
 You can find credentials for Read the Docs in the Open Data Services password database.
+
+### manage.py
+
+The standard repository includes a command-line utility for administrative tasks. For information on the available commands, run `./manage.py --help`.
