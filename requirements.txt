@@ -6,10 +6,17 @@
 #
 alabaster==0.7.12
     # via sphinx
+attrs==23.1.0
+    # via
+    #   cattrs
+    #   jsonschema
+    #   requests-cache
 babel==2.11.0
     # via
     #   sphinx
     #   sphinx-intl
+cattrs==22.2.0
+    # via requests-cache
 certifi==2022.12.7
     # via requests
 charset-normalizer==2.1.0
@@ -30,18 +37,35 @@ docutils==0.17.1
     #   sphinxcontrib-opendataservices-jsonschema
 idna==3.4
     # via requests
+ijson==3.2.0.post0
+    # via ocdskit
 imagesize==1.4.1
     # via sphinx
+iniconfig==2.0.0
+    # via pytest
 jinja2==3.1.2
     # via
     #   myst-parser
     #   sphinx
+jscc==0.2.2
+    # via -r requirements.in
+json-merge-patch==0.2
+    # via
+    #   jscc
+    #   ocdsextensionregistry
 jsonpointer==2.3
     # via
     #   sphinxcontrib-opendataservices
     #   sphinxcontrib-opendataservices-jsonschema
 jsonref==1.0.1
-    # via sphinxcontrib-opendataservices-jsonschema
+    # via
+    #   jscc
+    #   ocdsextensionregistry
+    #   ocdskit
+    #   ocdsmerge
+    #   sphinxcontrib-opendataservices-jsonschema
+jsonschema==4.17.3
+    # via -r requirements.in
 livereload==2.6.3
     # via sphinx-autobuild
 markdown-it-py==2.1.0
@@ -74,10 +98,26 @@ myst-parser==0.18.1
     #   -r requirements.in
     #   sphinxcontrib-opendataservices
     #   sphinxcontrib-opendataservices-jsonschema
+ocdsextensionregistry==0.2.0
+    # via ocdskit
+ocdskit==1.1.5
+    # via -r requirements.in
+ocdsmerge==0.6.6
+    # via ocdskit
 packaging==22.0
-    # via sphinx
+    # via
+    #   pytest
+    #   sphinx
+platformdirs==3.5.1
+    # via requests-cache
+pluggy==1.0.0
+    # via pytest
 pygments==2.13.0
     # via sphinx
+pyrsistent==0.19.3
+    # via jsonschema
+pytest==7.3.1
+    # via -r requirements.in
 pytz==2022.6
     # via babel
 pyyaml==6.0
@@ -86,6 +126,13 @@ requests==2.28.1
     # via
     #   -r requirements.in
     #   sphinx
+    #   jscc
+    #   ocdsextensionregistry
+    #   ocdsmerge
+    #   requests-cache
+    #   sphinx
+requests-cache==1.0.1
+    # via ocdsextensionregistry
 ruamel-yaml==0.17.32
     # via
     #   mdformat-frontmatter
@@ -93,7 +140,9 @@ ruamel-yaml==0.17.32
 ruamel-yaml-clib==0.2.7
     # via ruamel-yaml
 six==1.16.0
-    # via livereload
+    # via
+    #   livereload
+    #   url-normalize
 snowballstemmer==2.2.0
     # via sphinx
 sphinx==5.3.0
@@ -140,8 +189,12 @@ tornado==6.2
     # via livereload
 typing-extensions==4.4.0
     # via myst-parser
+url-normalize==1.4.3
+    # via requests-cache
 urllib3==1.26.11
-    # via requests
+    # via
+    #   requests
+    #   requests-cache
 wheel==0.40.0
     # via sphinx-togglebutton
 

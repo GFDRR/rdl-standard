@@ -12,3 +12,7 @@ myst-parser
 mdformat-myst
 requests
 click
+pytest
+jscc
+ocdskit
+jsonschema
