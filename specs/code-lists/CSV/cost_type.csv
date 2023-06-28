@@ -1,5 +1,5 @@
 Code,Label,Definition
-Structure,Structure,A physical structure such as a building or piece of infrastructure.
-Content,Content,Physical contents of a structure.
-Product,Product,A product produced by a business that may or may not be physical items.
-Disruption,Disruption (Business Interruption),Disruption to the planned operations of a business.
+Structure,Structure,Costs associated with the loss of a physical structure such as a building or piece of infrastructure.
+Content,Content,Costs associated with the loss of the physical contents of a structure.
+Product,Product,Costs associated with the loss of products produced by businesses, which may or may not be physical items.
+Disruption,Disruption (Business Interruption),Costs associated with disruption to the planned operations of a business.

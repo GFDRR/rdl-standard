@@ -258,8 +258,8 @@
 		},
 		{
 			"exposure" {
-				"title": "Exposure",
-				"description": "Information about the modelled exposure (assets and population) that could be affected by the hazard.",
+				"title": "Exposure dataset metadata",
+				"description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
 				"$ref" : "#/$defs/Exposure"
 			}
 		},
@@ -574,7 +574,7 @@
 		},
 		"Category": {
 			"title": "Exposure category",
-			"description": "The category of the assets described in the dataset.",
+			"description": "The category of the exposed assets, from the closed exposure category codelist.",
 			"type": "string",
 			"enum": [
 				"Agriculture",
@@ -595,7 +595,7 @@
 			"properties": {
 				"type": {
 					"title": "Cost type",
-					"description": "The element of the asset that a cost value is being assigned to.",
+					"description": "The type of the cost, from the closed cost type codelist.",
 					"type": "string",
 					"enum": [
 						"Structure",
@@ -607,7 +607,7 @@
 				"unit": {
 					"title": "Cost unit",
 					"type": "string",
-					"description": "The unit in which the asset cost value is given."
+					"description": "The unit in which the cost is specified."
 				}
 			}
 		},
