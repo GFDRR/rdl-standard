@@ -18,11 +18,13 @@
   "properties": {
     "title": {
       "type": "string",
-      "description": "Title of the dataset"
+      "description": "Title of the dataset",
+      "minLength": 1
     },
     "abstract": {
       "type": "string",
-      "description": "Short description of the resource"
+      "description": "Short description of the resource",
+      "minLength": 1
     },
     "component": {
       "type": "string",
@@ -36,11 +38,13 @@
     },
     "organization": {
       "type": "string",
-      "description": "Name of organization that published the dataset"
+      "description": "Name of organization that published the dataset",
+      "minLength": 1
     },
     "model_source": {
       "type": "string",
-      "description": "Name of source model"
+      "description": "Name of source model",
+      "minLength": 1
     },
     "model_date": {
       "type": "string",
@@ -53,19 +57,23 @@
     },
     "purpose": {
       "type": "string",
-      "description": "Purpose for what the data has been produced"
+      "description": "Purpose for what the data has been produced",
+      "minLength": 1
     },
     "project": {
       "type": "string",
-      "description": "Project under which data has been produced"
+      "description": "Project under which data has been produced",
+      "minLength": 1
     },
     "notes": {
       "type": "string",
-      "description": "Additional details about the dataset"
+      "description": "Additional details about the dataset",
+      "minLength": 1
     },
     "biblio_title": {
       "type": "string",
-      "description": "Authors/year/title of publication"
+      "description": "Authors/year/title of publication",
+      "minLength": 1
     },
     "biblio_url": {
       "type": "string",
@@ -86,11 +94,13 @@
     },
     "maintainer": {
       "type": "string",
-      "description": "Who added the resource"
+      "description": "Who added the resource",
+      "minLength": 1
     },
     "maintainer_email": {
       "type": "string",
-      "description": "Contact email"
+      "description": "Contact email",
+      "minLength": 1
     },
     "resources": {
       "type": "array",
@@ -106,31 +116,40 @@
           "properties": {
             "name": {
               "type": "string",
-              "description": "Name of linked resource"
+              "description": "Name of linked resource",
+              "minLength": 1
             },
             "aggregation_type": {
               "type": "string",
-              "description": "Level of data representation"
+              "description": "Level of data representation",
+              "minLength": 1
             },
             "format": {
               "type": "string",
-              "description": "Format of resource"
+              "description": "Format of resource",
+              "minLength": 1
             },
             "h-res": {
               "type": "string",
-              "description": "Horizontal resolution in meters (raster data only)"
+              "description": "Horizontal resolution in meters (raster data only)",
+              "minLength": 1
             },
             "epsg": {
               "type": "string",
-              "description": "Reference coordinate system (default: 4326)"
+              "description": "Reference coordinate system (default: 4326)",
+              "minLength": 1
             },
             "url": {
               "type": "string",
-              "description": "URL of linked resource"
+              "description": "URL of linked resource",
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
   "anyOf": [
@@ -165,8 +184,11 @@
                   "type": "array",
                   "description": "The name of the geographic area covered by the hazard analysis. Comma-separated list of geographic names.",
                   "items": {
-                    "type": "string"
-                  }
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "time_start": {
                   "type": "string",
@@ -180,13 +202,16 @@
                 },
                 "time_span": {
                   "type": "string",
-                  "description": "The extent of the time period covered by the events included in the current scenario hazard analysis [ISO 8601 format]"
+                  "description": "The extent of the time period covered by the events included in the current scenario hazard analysis [ISO 8601 format]",
+                  "minLength": 1
                 },
                 "time_year": {
                   "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')"
+                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             },
             "event": {
               "type": "object",
@@ -205,7 +230,8 @@
                 },
                 "return_period": {
                   "type": "string",
-                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)"
+                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
+                  "minLength": 1
                 },
                 "occurence_time_start": {
                   "type": "string",
@@ -219,7 +245,8 @@
                 },
                 "occurence_time_span": {
                   "type": "string",
-                  "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability"
+                  "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability",
+                  "minLength": 1
                 },
                 "trigger_hazard_type": {
                   "$ref": "#/$defs/common_hazard_type",
@@ -231,9 +258,11 @@
                 },
                 "description": {
                   "type": "string",
-                  "description": "Provides additional information about this specific event"
+                  "description": "Provides additional information about this specific event",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             },
             "footprint_set": {
               "type": "object",
@@ -248,18 +277,22 @@
                 },
                 "data_uncertainty": {
                   "type": "string",
-                  "description": "Comments about the uncertainty of data"
+                  "description": "Comments about the uncertainty of data",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     {
       "exposure": {
-        "title": "Exposure",
-        "description": "Information about the modelled exposure (assets and population) that could be affected by the hazard.",
+        "title": "Exposure dataset metadata",
+        "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
         "$ref": "#/$defs/Exposure"
       }
     },
@@ -311,15 +344,18 @@
                 },
                 "val_unit": {
                   "type": "string",
-                  "description": "Unit of measure"
+                  "description": "Unit of measure",
+                  "minLength": 1
                 },
                 "taxonomy_source": {
                   "type": "string",
-                  "description": "Source of taxonomy"
+                  "description": "Source of taxonomy",
+                  "minLength": 1
                 },
                 "taxonomy_code": {
                   "type": "string",
-                  "description": "Taxonomy code to which function applies"
+                  "description": "Taxonomy code to which function applies",
+                  "minLength": 1
                 },
                 "impact_type": {
                   "description": "Type of impact",
@@ -335,11 +371,13 @@
                 },
                 "local_applicability": {
                   "type": "string",
-                  "description": "Area within a country or region to wich the model specifically applies"
+                  "description": "Area within a country or region to wich the model specifically applies",
+                  "minLength": 1
                 },
                 "transferability_notes": {
                   "type": "string",
-                  "description": "Details about applicability to different areas"
+                  "description": "Details about applicability to different areas",
+                  "minLength": 1
                 },
                 "function_type": {
                   "$ref": "#/$defs/vulnerability_function_type",
@@ -361,26 +399,31 @@
                   "$ref": "#/$defs/vulnerability_f_math",
                   "description": "Parametric or bespoke"
                 }
-              }
+              },
+              "minProperties": 1
             },
             "specifics": {
               "type": "object",
               "properties": {
                 "analysis_details": {
                   "description": "Description of analysis that produced the function",
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1
                 },
                 "par_names": {
                   "type": "string",
-                  "description": "Parameters considered by the function"
+                  "description": "Parameters considered by the function",
+                  "minLength": 1
                 },
                 "im_name": {
                   "type": "string",
-                  "description": "Name of loss intensity measure"
+                  "description": "Name of loss intensity measure",
+                  "minLength": 1
                 },
                 "im_units": {
                   "type": "string",
-                  "description": "Unit of loss intensity measure"
+                  "description": "Unit of loss intensity measure",
+                  "minLength": 1
                 },
                 "n_events": {
                   "type": "integer",
@@ -410,11 +453,14 @@
                   "type": "boolean",
                   "description": "Is the damage scale is associated to a downtime estimation (e.g. service interruption)?"
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     {
       "type": "object",
@@ -446,7 +492,8 @@
                 },
                 "time_year": {
                   "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')"
+                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
+                  "minLength": 1
                 },
                 "occupancy": {
                   "$ref": "#/$defs/common_exp_occupancy",
@@ -474,7 +521,8 @@
                 },
                 "return_period": {
                   "type": "string",
-                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)"
+                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
+                  "minLength": 1
                 },
                 "calculation_method": {
                   "$ref": "#/$defs/common_calc_method",
@@ -486,7 +534,8 @@
                 },
                 "val_unit": {
                   "type": "string",
-                  "description": "Unit of measure"
+                  "description": "Unit of measure",
+                  "minLength": 1
                 },
                 "hazard_link": {
                   "type": "string",
@@ -503,18 +552,21 @@
                   "description": "URL of source vulnerability data",
                   "format": "uri"
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     }
   ],
   "$defs": {
     "Exposure": {
       "title": "Exposure",
       "type": "object",
-      "description": "Information about the modelled exposure (assets and population) that could be affected by the hazard.",
+      "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
         "category",
         "cost",
@@ -529,13 +581,15 @@
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
           "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset."
+          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
+          "minLength": 1
         },
         "reference_period": {
           "title": "Reference period",
           "type": "string",
           "description": "A general reference period to which the modelled exposure data or exposure scenario refers.",
-          "$ref": "/$defs/Temporal"
+          "$ref": "/$defs/Temporal",
+          "minLength": 1
         },
         "cost": {
           "title": "Asset cost",
@@ -544,9 +598,11 @@
           "items": {
             "$ref": "#/$defs/Cost"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "common_aggregation_type": {
       "type": "string",
@@ -574,8 +630,10 @@
     },
     "Category": {
       "title": "Exposure category",
-      "description": "The category of the assets described in the dataset.",
+      "description": "The category of the exposed assets, from the closed exposure category codelist.",
       "type": "string",
+      "codelist": "cost_type.csv",
+      "openCodelist": false,
       "enum": [
         "Agriculture",
         "Buildings",
@@ -595,8 +653,10 @@
       "properties": {
         "type": {
           "title": "Cost type",
-          "description": "The element of the asset that a cost value is being assigned to.",
+          "description": "The type of the cost, from the closed cost type codelist.",
           "type": "string",
+          "codelist": "cost_type.csv",
+          "openCodelist": false,
           "enum": [
             "Structure",
             "Content",
@@ -607,9 +667,317 @@
         "unit": {
           "title": "Cost unit",
           "type": "string",
-          "description": "The unit in which the asset cost value is given."
+          "description": "The unit in which the cost is specified, from the closed currency codelist.",
+          "codelist": "cost_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "ADP",
+            "AED",
+            "AFA",
+            "AFN",
+            "ALK",
+            "ALL",
+            "AMD",
+            "ANG",
+            "AOA",
+            "AOK",
+            "AON",
+            "AOR",
+            "ARA",
+            "ARP",
+            "ARS",
+            "ARY",
+            "ATS",
+            "AUD",
+            "AWG",
+            "AYM",
+            "AZM",
+            "AZN",
+            "BAD",
+            "BAM",
+            "BBD",
+            "BDT",
+            "BEC",
+            "BEF",
+            "BEL",
+            "BGJ",
+            "BGK",
+            "BGL",
+            "BGN",
+            "BHD",
+            "BIF",
+            "BMD",
+            "BND",
+            "BOB",
+            "BOP",
+            "BOV",
+            "BRB",
+            "BRC",
+            "BRE",
+            "BRL",
+            "BRN",
+            "BRR",
+            "BSD",
+            "BTN",
+            "BUK",
+            "BWP",
+            "BYB",
+            "BYN",
+            "BYR",
+            "BZD",
+            "CAD",
+            "CDF",
+            "CHC",
+            "CHE",
+            "CHF",
+            "CHW",
+            "CLF",
+            "CLP",
+            "CNY",
+            "COP",
+            "COU",
+            "CRC",
+            "CSD",
+            "CSJ",
+            "CSK",
+            "CUC",
+            "CUP",
+            "CVE",
+            "CYP",
+            "CZK",
+            "DDM",
+            "DEM",
+            "DJF",
+            "DKK",
+            "DOP",
+            "DZD",
+            "ECS",
+            "ECV",
+            "EEK",
+            "EGP",
+            "ERN",
+            "ESA",
+            "ESB",
+            "ESP",
+            "ETB",
+            "EUR",
+            "FIM",
+            "FJD",
+            "FKP",
+            "FRF",
+            "GBP",
+            "GEK",
+            "GEL",
+            "GHC",
+            "GHP",
+            "GHS",
+            "GIP",
+            "GMD",
+            "GNE",
+            "GNF",
+            "GNS",
+            "GQE",
+            "GRD",
+            "GTQ",
+            "GWE",
+            "GWP",
+            "GYD",
+            "HKD",
+            "HNL",
+            "HRD",
+            "HRK",
+            "HTG",
+            "HUF",
+            "IDR",
+            "IEP",
+            "ILP",
+            "ILR",
+            "ILS",
+            "INR",
+            "IQD",
+            "IRR",
+            "ISJ",
+            "ISK",
+            "ITL",
+            "JMD",
+            "JOD",
+            "JPY",
+            "KES",
+            "KGS",
+            "KHR",
+            "KMF",
+            "KPW",
+            "KRW",
+            "KWD",
+            "KYD",
+            "KZT",
+            "LAJ",
+            "LAK",
+            "LBP",
+            "LKR",
+            "LRD",
+            "LSL",
+            "LSM",
+            "LTL",
+            "LTT",
+            "LUC",
+            "LUF",
+            "LUL",
+            "LVL",
+            "LVR",
+            "LYD",
+            "MAD",
+            "MDL",
+            "MGA",
+            "MGF",
+            "MKD",
+            "MLF",
+            "MMK",
+            "MNT",
+            "MOP",
+            "MRO",
+            "MRU",
+            "MTL",
+            "MTP",
+            "MUR",
+            "MVQ",
+            "MVR",
+            "MWK",
+            "MXN",
+            "MXP",
+            "MXV",
+            "MYR",
+            "MZE",
+            "MZM",
+            "MZN",
+            "NAD",
+            "NGN",
+            "NIC",
+            "NIO",
+            "NLG",
+            "NOK",
+            "NPR",
+            "NZD",
+            "OMR",
+            "PAB",
+            "PEH",
+            "PEI",
+            "PEN",
+            "PES",
+            "PGK",
+            "PHP",
+            "PKR",
+            "PLN",
+            "PLZ",
+            "PTE",
+            "PYG",
+            "QAR",
+            "RHD",
+            "ROK",
+            "ROL",
+            "RON",
+            "RSD",
+            "RUB",
+            "RUR",
+            "RWF",
+            "SAR",
+            "SBD",
+            "SCR",
+            "SDD",
+            "SDG",
+            "SDP",
+            "SEK",
+            "SGD",
+            "SHP",
+            "SIT",
+            "SKK",
+            "SLL",
+            "SOS",
+            "SRD",
+            "SRG",
+            "SSP",
+            "STD",
+            "STN",
+            "SUR",
+            "SVC",
+            "SYP",
+            "SZL",
+            "THB",
+            "TJR",
+            "TJS",
+            "TMM",
+            "TMT",
+            "TND",
+            "TOP",
+            "TPE",
+            "TRL",
+            "TRY",
+            "TTD",
+            "TWD",
+            "TZS",
+            "UAH",
+            "UAK",
+            "UGS",
+            "UGW",
+            "UGX",
+            "USD",
+            "USN",
+            "USS",
+            "UYI",
+            "UYN",
+            "UYP",
+            "UYU",
+            "UYW",
+            "UZS",
+            "VEB",
+            "VEF",
+            "VES",
+            "VNC",
+            "VND",
+            "VUV",
+            "WST",
+            "XAF",
+            "XAG",
+            "XAU",
+            "XBA",
+            "XBB",
+            "XBC",
+            "XBD",
+            "XCD",
+            "XDR",
+            "XEU",
+            "XFO",
+            "XFU",
+            "XOF",
+            "XPD",
+            "XPF",
+            "XPT",
+            "XRE",
+            "XSU",
+            "XTS",
+            "XUA",
+            "XXX",
+            "YDD",
+            "YER",
+            "YUD",
+            "YUM",
+            "YUN",
+            "ZAL",
+            "ZAR",
+            "ZMK",
+            "ZMW",
+            "ZRN",
+            "ZRZ",
+            "ZWC",
+            "ZWD",
+            "ZWL",
+            "ZWN",
+            "ZWR",
+            null
+          ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "common_frequency_type": {
       "type": "string",
@@ -1009,5 +1377,6 @@
         "Hybrid"
       ]
     }
-  }
+  },
+  "minProperties": 1
 }
