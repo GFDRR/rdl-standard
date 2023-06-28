@@ -28,7 +28,7 @@
 		"risk_data_type": {
 			"title": "Risk data type",
 			"type": "string",
-			"description": "The datasets risk data type.",
+			"description": "The type of risk data included in the dataset, from the closed risk data types codelist.",
 			"enum": [
 				"Hazard",
 				"Exposure",
@@ -52,17 +52,17 @@
 		"version": {
 			"title": "Dataset version",
 			"type": "integer",
-			"description": "The version of the dataset."
+			"description": "The version indicator (name or identifier) of the dataset."
 		},
 		"purpose": {
 			"title": "Dataset purpose",
 			"type": "string",
-			"description": "The purpose the dataset was produced for."
+			"description": "The purpose for which the dataset was created."
 		},
 		"project": {
 			"title": "Project title",
 			"type": "string",
-			"description": "The name of the project that the dataset was created as part of."
+			"description": "The name of the project that produced the dataset."
 		},
 		"details": {
 			"title": "Additional details",
