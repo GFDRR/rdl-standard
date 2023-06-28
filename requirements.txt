@@ -22,7 +22,9 @@ certifi==2022.12.7
 charset-normalizer==2.1.0
     # via requests
 click==8.1.3
-    # via sphinx-intl
+    # via
+    #   -r requirements.in
+    #   sphinx-intl
 colorama==0.4.6
     # via sphinx-autobuild
 docutils==0.17.1
@@ -122,6 +124,8 @@ pyyaml==6.0
     # via myst-parser
 requests==2.28.1
     # via
+    #   -r requirements.in
+    #   sphinx
     #   jscc
     #   ocdsextensionregistry
     #   ocdsmerge
