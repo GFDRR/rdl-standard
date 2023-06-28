@@ -20,6 +20,9 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import json
+import os
+from pygit2 import Repository
 
 # -- General configuration ------------------------------------------------
 
@@ -363,3 +366,55 @@ locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
 
 togglebutton_hint = ""
+
+
+def replace_substring_in_json(file_path, search_substring, replace_string, output_path=None):
+    # Read the JSON file
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+
+    # Recursively search and replace the substring in the JSON data
+    _replace_substring_in_json(data, search_substring, replace_string)
+
+    # Set output path
+    if output_path is None:
+        output_path = file_path
+
+    # Write the modified JSON data to the output file
+    with open(output_path, 'w') as file:
+        json.dump(data, file, indent=4)
+
+def _replace_substring_in_json(data, search_substring, replace_string):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if isinstance(value, str):
+                data[key] = value.replace(search_substring, replace_string)
+            else:
+                _replace_substring_in_json(value, search_substring, replace_string)
+    elif isinstance(data, list):
+        for i, item in enumerate(data):
+            if isinstance(item, str):
+                data[i] = item.replace(search_substring, replace_string)
+            else:
+                _replace_substring_in_json(item, search_substring, replace_string)
+
+def delete_file(file_path):
+    try:
+        os.remove(file_path)
+        print(f"File '{file_path}' deleted successfully.")
+    except OSError as e:
+        print(f"Error deleting file: {e}")
+
+def setup(app):
+    app.connect('build-finished', build_finished)
+    
+    # The current Git branch name
+    branch = Repository('.').head.shorthand
+    
+    # Replace {{branch}} placeholders and write processed schema to docs/_static
+    replace_substring_in_json('../schema/rdl_schema_0.1.json', '{{branch}}', branch, output_path='_static/rdl_schema_0.1.json')
+
+    
+def build_finished(app, exception):
+    # Remove processed schema from docs/_static
+    delete_file('_static/rdl_schema_0.1.json')
