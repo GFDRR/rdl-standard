@@ -1,3 +1,4 @@
 .ve
 *.swp
-*~
+.vscode
+tests/__pycache__
