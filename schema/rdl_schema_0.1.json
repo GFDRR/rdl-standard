@@ -1,102 +1,102 @@
 {
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "http://riskdatalibrary.org/schemas/rdl_schema_v0_1.json",
-	"title": "Risk Data Library Schema",
-	"type": "object",
-	"required": [
-		"title",
-		"risk_data_type",
-		"organization",
-		"model_source",
-		"model_date",
-		"geo_coverage",
-		"publish",
-		"license_code",
-		"resources"
-	],
-	"properties": {
-		"title": {
-			"title": "Dataset title",
-			"type": "string",
-			"description": "The title of the dataset."
-		},
-		"description": {
-			"title": "Description",
-			"type": "string",
-			"description": "A short description of the dataset."
-		},
-		"risk_data_type": {
-			"title": "Risk data type",
-			"type": "string",
-			"description": "The type of risk data included in the dataset, from the closed risk data types codelist.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://riskdatalibrary.org/schemas/rdl_schema_v0_1.json",
+  "title": "Risk Data Library Schema",
+  "type": "object",
+  "required": [
+    "title",
+    "risk_data_type",
+    "organization",
+    "model_source",
+    "model_date",
+    "geo_coverage",
+    "publish",
+    "license_code",
+    "resources"
+  ],
+  "properties": {
+    "title": {
+      "title": "Dataset title",
+      "type": "string",
+      "description": "The title of the dataset."
+    },
+    "description": {
+      "title": "Description",
+      "type": "string",
+      "description": "A short description of the dataset."
+    },
+    "risk_data_type": {
+      "title": "Risk data type",
+      "type": "string",
+      "description": "The type of risk data included in the dataset, from the closed risk data types codelist.",
       "codelist": "risk_data_type.csv",
       "openCodelist": false,
-			"enum": [
-				"Hazard",
-				"Exposure",
-				"Vulnerability",
-				"Loss"
-			]
-		},
-		"organization": {
-			"type": "string",
-			"description": "Name of organization that published the dataset"
-		},
-		"model_source": {
-			"type": "string",
-			"description": "Name of source model"
-		},
-		"model_date": {
-			"type": "string",
-			"description": "Model release date",
-			"format": "date"
-		},
-		"version": {
-			"title": "Dataset version",
-			"type": "integer",
-			"description": "The version indicator (name or identifier) of the dataset."
-		},
-		"purpose": {
-			"title": "Dataset purpose",
-			"type": "string",
-			"description": "The purpose for which the dataset was created."
-		},
-		"project": {
-			"title": "Project title",
-			"type": "string",
-			"description": "The name of the project that produced the dataset."
-		},
-		"details": {
-			"title": "Additional details",
-			"type": "string",
-			"description": "Additional details about the dataset."
-		},
-		"biblio_title": {
-			"type": "string",
-			"description": "Authors/year/title of publication"
-		},
-		"biblio_url": {
-			"type": "string",
-			"description": "URL of publication",
-			"format": "uri"
-		},
-		"geo_coverage": {
-			"$ref": "#/$defs/common_iso",
-			"description": "ISO code(s) of countries covered by the dataset, comma-separated"
-		},
-		"license_code": {
-			"$ref": "#/$defs/common_license",
-			"description": "Type of license"
-		},
-		"maintainer": {
-			"type": "string",
-			"description": "Who added the resource"
-		},
-		"maintainer_email": {
-			"type": "string",
-			"description": "Contact email"
-		},
-  	"resources": {
+      "enum": [
+        "Hazard",
+        "Exposure",
+        "Vulnerability",
+        "Loss"
+      ]
+    },
+    "organization": {
+      "type": "string",
+      "description": "Name of organization that published the dataset"
+    },
+    "model_source": {
+      "type": "string",
+      "description": "Name of source model"
+    },
+    "model_date": {
+      "type": "string",
+      "description": "Model release date",
+      "format": "date"
+    },
+    "version": {
+      "title": "Dataset version",
+      "type": "integer",
+      "description": "The version indicator (name or identifier) of the dataset."
+    },
+    "purpose": {
+      "title": "Dataset purpose",
+      "type": "string",
+      "description": "The purpose for which the dataset was created."
+    },
+    "project": {
+      "title": "Project title",
+      "type": "string",
+      "description": "The name of the project that produced the dataset."
+    },
+    "details": {
+      "title": "Additional details",
+      "type": "string",
+      "description": "Additional details about the dataset."
+    },
+    "biblio_title": {
+      "type": "string",
+      "description": "Authors/year/title of publication"
+    },
+    "biblio_url": {
+      "type": "string",
+      "description": "URL of publication",
+      "format": "uri"
+    },
+    "geo_coverage": {
+      "$ref": "#/$defs/common_iso",
+      "description": "ISO code(s) of countries covered by the dataset, comma-separated"
+    },
+    "license_code": {
+      "$ref": "#/$defs/common_license",
+      "description": "Type of license"
+    },
+    "maintainer": {
+      "type": "string",
+      "description": "Who added the resource"
+    },
+    "maintainer_email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "resources": {
       "type": "array",
       "items": {
         "resource": {
