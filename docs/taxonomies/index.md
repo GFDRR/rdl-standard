@@ -51,6 +51,16 @@ Example: In the Open Exposure Data (OED) Standard and other insurance industry m
 | ------------- | ---------------- | --------------- | --------- |
 | 1050          | 5101             | 1               | 0         |
 
+
+
+### GLOSI: Global Library for Schools Infrastructure
+
+The World Bank Global Program for Safer Schools (GPSS) developed the GLOSI taxonomy to provide a systematic classification system for school buildings. GLOSI classifies school buildings based on 12 parameters [(interactive guide)](https://gpss.worldbank.org/index.php/en/node/571) that govern the building’s structural performance, supported by [research](https://www.sciencedirect.com/science/article/pii/S2212420923000742) into school buildings specifically. There are three primary parameters (main structural system, height range, and seismic design level) and 9 secondary parameters: Diaphragm Type; Structural Irregularity; Span Length; Pier Type; Foundation Type; Seismic Pounding Risk; Effective Seismic Retrofitting; Structural Health Condition; and Non-Structural Components.
+
+School buildings are described using a '/'-separated single taxonomy string similar to GED4ALL. For example, "**RC2/MR(2)/LD**/RD/NI/SP/RO/RF/NP/OS/FC/NN" describes a mid-rise (MR(2)) school built from reinforced concrete building with a framed structure and masonry infills (RC2)   with Low Seismic Design Level (LD).
+
+
+
 ### CEDE
 
 [CEDE (Catastrophe Exposure Data Exchange)](https://docs.air-worldwide.com/Database/CEDE/10.0/webframe.html#topic1.html), is the exposure database format used by Touchstone®, AIR's comprehensive risk management platform that was first released in early 2013. It is publicly available and used widely in the insurance industry to describe asset characteristics and values for catastrophe modelling. CEDE uses a database format and allows users to apply different occupancy and construction schemes and codesets to their data, and add additional fields describing year of construction, number of storeys, etc. The most common taxonomy used in CEDE is [AIRConstruction](https://docs.air-worldwide.com/Database/CEDE/10.0/webframe.html#topic32.html) and [AIROccupancy](https://docs.air-worldwide.com/Database/CEDE/10.0/webframe.html#topic33.html). These codes are also available in the [OED Open Exposure Data Spec](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs) as OED was based on and builds on CEDE.
