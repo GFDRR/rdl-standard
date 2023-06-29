@@ -575,20 +575,22 @@
       "properties": {
         "category": {
           "title": "Exposure category",
-          "description": "The category of the assets described in the dataset.",
-          "$ref": "#/$defs/Category"
+          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+          "type": "string",
+          "codelist": "cost_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "Agriculture",
+            "Buildings",
+            "Infrastructures",
+            "Population",
+            "Natural environment"
+      ]
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
           "type": "string",
           "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
-          "minLength": 1
-        },
-        "reference_period": {
-          "title": "Reference period",
-          "type": "string",
-          "description": "A general reference period to which the modelled exposure data or exposure scenario refers.",
-          "$ref": "/$defs/Temporal",
           "minLength": 1
         },
         "cost": {
@@ -626,20 +628,6 @@
         "Inferred",
         "Simulated",
         "Observed"
-      ]
-    },
-    "Category": {
-      "title": "Exposure category",
-      "description": "The category of the exposed assets, from the closed exposure category codelist.",
-      "type": "string",
-      "codelist": "cost_type.csv",
-      "openCodelist": false,
-      "enum": [
-        "Agriculture",
-        "Buildings",
-        "Infrastructures",
-        "Population",
-        "Natural environment"
       ]
     },
     "Cost": {
