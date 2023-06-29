@@ -10,3 +10,10 @@ sphinx-intl
 sphinx_rtd_theme
 myst-parser
 mdformat-myst
+requests
+click
+pytest
+jscc
+ocdskit
+jsonschema
+pygit2

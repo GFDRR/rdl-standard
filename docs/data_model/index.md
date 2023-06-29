@@ -62,5 +62,7 @@ ______________________________________________________________________
    exposure
    vulnerability
    loss
+   codelists
+   schema
 
 ```
