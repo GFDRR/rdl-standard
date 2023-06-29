@@ -1050,8 +1050,18 @@
 				"end": {
 					"title": "End date",
 					"type": "string",
-					"description": "The date on which the period ends. This can refer to a year (YYYY), a month (YYYY-MM) or a day (YYYY-MM-DD) as appropriate for the dataset.",
-					"format": "date-time"
+					"description": "The end of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+					"oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ]
 				},
 				"duration": {
 					"title": "Duration",
