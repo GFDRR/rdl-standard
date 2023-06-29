@@ -5,8 +5,7 @@
   "type": "object",
   "required": [
     "title",
-    "abstract",
-    "component",
+    "risk_data_type",
     "organization",
     "model_source",
     "model_date",
@@ -17,16 +16,21 @@
   ],
   "properties": {
     "title": {
+      "title": "Title",
       "type": "string",
-      "description": "Title of the dataset"
+      "description": "The title of the dataset."
     },
-    "abstract": {
+    "description": {
+      "title": "Description",
       "type": "string",
-      "description": "Short description of the resource"
+      "description": "A short description of the dataset."
     },
-    "component": {
+    "risk_data_type": {
+      "title": "Risk data type",
       "type": "string",
-      "description": "Univocal schema for this contribution (H, E, V or L)",
+      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk-data-type).",
+      "codelist": "risk_data_type.csv",
+      "openCodelist": false,
       "enum": [
         "Hazard",
         "Exposure",
@@ -48,20 +52,24 @@
       "format": "date"
     },
     "version": {
+      "title": "Dataset version",
       "type": "integer",
-      "description": "Version of the dataset"
+      "description": "The version indicator (name or identifier) of the dataset."
     },
     "purpose": {
+      "title": "Dataset purpose",
       "type": "string",
-      "description": "Purpose for what the data has been produced"
+      "description": "The purpose for which the dataset was created."
     },
     "project": {
+      "title": "Project title",
       "type": "string",
-      "description": "Project under which data has been produced"
+      "description": "The name of the project that produced the dataset."
     },
-    "notes": {
+    "details": {
+      "title": "Additional details",
       "type": "string",
-      "description": "Additional details about the dataset"
+      "description": "Additional details about the dataset."
     },
     "biblio_title": {
       "type": "string",
@@ -75,10 +83,6 @@
     "geo_coverage": {
       "$ref": "#/$defs/common_iso",
       "description": "ISO code(s) of countries covered by the dataset, comma-separated"
-    },
-    "publish": {
-      "type": "boolean",
-      "description": "Flag to show/hide dataset from website"
     },
     "license_code": {
       "$ref": "#/$defs/common_license",
@@ -1056,6 +1060,8 @@
         "Judgement",
         "Hybrid"
       ]
-    }
+    },
+    "vulnerability_f_relationship": {},
+    "vulnerability_f_math": {}
   }
 }
