@@ -949,6 +949,13 @@
 					"type": "string",
 					"description": "The media type of the resource taken from the [IANA Media Types codelist](https://www.iana.org/assignments/media-types/media-types.xhtml). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'."	
 				},
+        "format": {
+          "title": "Format",
+          "type": "string",
+          "description": "A human-readable descripton of the file format of the resource, taken from the open [data formats codelist]((https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#data_formats).",
+          "codelist": "data_formats.csv",
+          "openCodelist": true
+        },
 				"spatial_resolution": {
 					"title": "Spatial resolution",
 					"type": "number",
@@ -969,7 +976,7 @@
 				"temporal": {
 					"title": "Temporal coverage",
 					"description": "The period of time covered by this resource.",
-					"$ref": "#/defs/Temporal"
+					"$ref": "#/defs/Period"
 				}
 			}
 		},
