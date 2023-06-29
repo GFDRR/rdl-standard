@@ -1026,16 +1026,26 @@
 				"Hybrid"
 			]
 		},
-		"Temporal": {
-			"title": "Temporal coverage",
+		"Period": {
+			"title": "Period",
 			"type": "object",
-			"description": "The temporal period that the dataset covers.",
+			"description": "A period of time.",
 			"properties": {
 				"start": {
-					"title": "Start date",
+					"title": "Start",
 					"type": "string",
-					"description": "The date on which the period begins. This can refer to a year (YYYY), a month (YYYY-MM) or a day (YYYY-MM-DD) as appropriate for the dataset.",
-					"format": "date-time"
+					"description": "The start of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+					"oneOf": [
+					          {
+					            "format": "date"
+					          },
+					          {
+					            "pattern": "\\d{4}$"
+					          },
+					          {
+					            "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+					          }
+					        ]
 				},
 				"end": {
 					"title": "End date",
@@ -1046,8 +1056,8 @@
 				"duration": {
 					"title": "Duration",
 					"type": "string",
-					"description": "The total number of time periods covered using ISO 8601 duration format, e.g. 50 years is given as 'P50Y'.",
-					"format": "date-time"
+					"description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
+					"format": "duration"
 				},
 				"year": {
 					"title": "Reference year",
