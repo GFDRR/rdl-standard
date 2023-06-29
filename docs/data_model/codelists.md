@@ -20,3 +20,19 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 ## Open codelists
 
 ## Closed codelists
+
+### risk_data_type
+
+This codelist is referenced by the following properties:
+
+- [`risk_data_type`](rdl_schema_0.1.json,,risk_data_type)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/risk_data_type.csv
+---
+```
