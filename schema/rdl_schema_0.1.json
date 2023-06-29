@@ -391,7 +391,7 @@
                 },
                 "country_tranferability": {
                   "description": "ISOa3 list of countries in which the model could be applied",
-                  "$ref": "#/$defs/common_iso"
+                  "$ref": "#/$defs/Location"
                 },
                 "local_applicability": {
                   "type": "string",
@@ -1097,6 +1097,9 @@
       "title": "Gazetteer entry",
       "type": "object",
       "description": "An entry from a geographical index or directory describing a geographical area.",
+      "required": [
+        "id"
+      ],
       "properties": {
         "id": {
           "title": "Identifier",
