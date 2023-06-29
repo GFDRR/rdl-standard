@@ -1,17 +1,19 @@
-Code,Label
-PGA_g,Peak ground acceleration in g
-PGA_gal,Peak ground acceleration in Gal (1 Gal equal to 0.01 m/s2)
-PGA_m/s2,Peak ground acceleration in m/s2 (meters per second squared)
-PGV_m/s,Peak ground velocity in m/s
-AvgSa_m/s2,Average spectral acceleration
+ as either a decimal or percentage; in m/s2 (1 g = 9.81 m/s2); or in multiples of Gal, where 1 Gal is equal to 0.01 m/s2 (1 g = 981 Gal).
+
+Code,Label,Description
+PGA_g,Peak ground acceleration in g,"Peak ground acceleration expressed as a fraction (decimal or percentage) of g - the standard acceleration due to Earth's gravity, equivalent to g-force (1 g = 9.81 m/s2). Peak acceleration is the largest *increase* in velocity recorded at a particular location during an earthquake."
+PGA_gal,Peak ground acceleration in Gal,"Peak ground acceleration expressed in multiple of Gal, where 1 Gal is equal to 0.01 m/s2 (1 g = 981 Gal). Peak acceleration is the largest *increase* in velocity recorded at a particular location during an earthquake."
+PGA_m/s2,Peak ground acceleration in m/s^2,"Peak ground acceleration expressed in meters per second squared (1 g = 9.81 m/s2). Peak acceleration is the largest *increase* in velocity recorded at a particular location during an earthquake."
+PGV_m/s,Peak ground velocity in m/s,"Peak ground velocity (the greatest speed of ground shaking recorded at a particular location during an earthquake) measured in meters per second."
+AvgSa_m/s2,Average spectral acceleration in m/s^2,"The geometric mean of spectral acceleration values in meters per second squared, over a range of periods (a ground motion intensity measure used for structural response prediction)."
 Sd(T1)_m,Spectral displacement
 Sv(T1)_m/s,Spectral velocity
-PGDf_m,Permanent ground deformation
+PGDf_m,Permanent ground deformation,"Displacement of the ground surface due to the movement of a fault, measured in meters."
 D_s,Significant duration
-IA_m/s,Arias intensity (IÎ±) or (IA) or (Ia)
+IA_m/s,Arias intensity (IÎ±) or (IA) or (Ia),Arias intensity (IA): a measure of the strength of ground motion
 Neq_-,Effective number of cycles
-EMS_-,European macroseismic scale
-MMI_-,Modified Mercalli Intensity
+EMS_-,European macroseismic scale,"European macroseismic scale (EMS) is a dimensionless scale of seismic intensity. EMS-98 intensity denotes how strongly an earthquake affects a specific place, with 12 classes I (Not felt) to XII (Completely devastating)."
+MMI_-,Modified Mercalli Intensity,"Modified Mercalli Intensity (MMI) is a dimensionless scale of seismic intensity. MMI intensity denotes how strongly an earthquake affects a specific place, with 10 classes I (Not felt) to X (Extreme)."
 CAV_m/s,Cumulative absolute velocity
 D_B_s,Bracketed duration
 fl_we,Flood water extent
@@ -26,22 +28,29 @@ I_DF_m3/s2,Debris-flow intensity index
 v_lsl_m/s2,Landslide flow velocity
 ls_mfd_m,Maximum foundation displacement
 SD_lsl_m,Landslide displacement
-Rh_tsi_m,Tsunami wave runup height
-d_tsi_m,Tsunami inundation depth
+Rh_tsi_m,Tsunami wave runup height (m),"Elevation reached by water measured relative to a stated datum such as mean sea level, mean low water, sea level at the time of the tsunami."
+d_tsi_m,Tsunami inundation depth (m),"Inundation depth or flow depth indicates the depth of the water from a tsunami, measured on shore in different locations.
+h_tsi_m,Tsunami wave height
+v_tsi_m/s,Tsunami velocity
+Fh_tsi_m,Tsunami Horizontal Force
+MF_m3/s2,Momentum flux
 MMF_m4/s2,Modified momentum flux
 F_drag_kN,Drag force
 Fr_-,Froude number
-v_tsi_m/s,Tsunami velocity
 F_QS_kN,Quasi-steady force
-MF_m3/s2,Momentum flux
-h_tsi_m,Tsunami wave height
-Fh_tsi_m,Tsunami Horizontal Force
-h_vaf_m,Ash fall thickness
-L_vaf_kg/m2,Ash loading
-ASI,Agricultural Stress Index
-CMI,Crop Moisture Index
-PDSI,Palmer Drought Severity Index
-SPI,Standard Precipitation Index
-WBGT_c,Wet Bulb Globe Temperature in Celsius
-FWI,Fire Weather Index
-MHI,Multi-Hazard Index
+h_vaf_mm,Accumulated ashfall thickness (mm),"Accumulated depth or thickness of ash following a volcanic eruption. Accumulated thickness can related to severity of impacts, e.g., https://volcanoes.usgs.gov/volcanic_ash/conditions_after_ash.html."
+L_vaf_kg/m2,Ash loading,"The load of accumulated volcanic ash measured in kilograms per square meter, generally on a building roof."
+ASI_%,Agricultural Stress Index,"The Agricultural Stress Index (ASI) is a quick-look indicator that facilitates the early identification of cropped land with a high likelihood of water stress (drought). The Index is based on the integration of the Vegetation Health Index (VHI) in two dimensions that are critical in the assessment of a drought event in agriculture: temporal and spatial. Source: FAO Seasonal Global Indicators."
+DI_-,Drought Intensity,"Agricultural droughts are classified by their intensity and are categorized into four classes: Extreme, Severe, Moderate or Mild. The intensity of the drought is calculated through the Weighted Mean Vegetation Health Index aggregated per GAUL 2 region. Source: FAO Seasonal Global Indicators."
+WMVHI_-,Weighted Mean Vegetation Health Index,"The Weighted Mean Vegetation Health Index (Weighted Mean VHI) allows the user to assess the severity of the drought from the start of the growing season, examining the vegetation health and the influence of temperature on plant conditions. Source: FAO Seasonal Global Indicators."
+NDVI_-,Normalized Difference Vegetation Index,"The Normalized Difference Vegetation Index (NDVI) measures the “greenness” of ground cover and is used as a proxy to indicate the density and health of vegetation. NDVI values range from +1 to -1, with high positive values corresponding to dense and healthy vegetation, and low and/or negative NDVI values indicating poor vegetation conditions or sparse vegetative cover. The NDVI anomaly indicates the variation of the current dekad to the long-term average. Source: FAO Global Indicators."
+VCI_-,Vegetation Condition Index,"The Vegetation Condition Index (VCI; 0-1) evaluates the current vegetation health in comparison to the historical trends. The VCI relates current dekadal Normalized Difference Vegetation Index (NDVI) to its long-term minimum and maximum, normalized by the historical range of NDVI values for the same dekad. The VCI was designed to separate the weather-related component of the NDVI from the ecological element. Source: FAO Global Indicators."
+VHI_-,Vegetation Health Index,"The Vegetation Health Index (VHI; 0-1) illustrates the severity of drought based on the vegetation health and the influence of temperature on plant conditions. The VHI is a composite index and the elementary indicator used to compute the ASI. It combines both the Vegetation Condition Index (VCI) and the Temperature Condition Index (TCI). Source: FAO Global Indicators."
+CMI_-,Crop Moisture Index,"The CMI (Eight classes from "Severely Dry" to "Excessively Wet") gives the short-term or current status of purely agricultural drought or moisture surplus and can change rapidly from week to week. The CMI indicate general conditions and not local variations caused by isolated rain. Source: https://www.drought.gov/data-maps-tools/crop-moisture-index-cmi"
+PDSI_-,Palmer Drought Severity Index,"The Palmer Drought Severity Index (PDSI) uses readily available temperature and precipitation data to estimate relative dryness. It is a standardized index that generally spans -10 (dry) to +10 (wet). Source: https://climatedataguide.ucar.edu/climate-data/palmer-drought-severity-index-pdsi"
+SPI_-,Standard Precipitation Index,"The Standardized Precipitation Index (SPI) is a widely used index to characterize meteorological drought on a range of timescales. On short timescales, the SPI is closely related to soil moisture, while at longer timescales, the SPI can be related to groundwater and reservoir storage. Source: https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-index-spi"
+SPEI_-,Standard Precipitation Evapotranspiration Index,"The Standardized Precipitation Evapotranspiration Index (SPEI) is an extension of the widely used Standardized Precipitation Index (SPI). The SPEI is designed to take into account both precipitation and potential evapotranspiration (PET) in determining drought. Source: https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-evapotranspiration-index-spei."
+WBGT_c,Wet Bulb Globe Temperature in Celsius,"The WetBulb Globe Temperature (WBGT) is a measure of the heat stress in direct sunlight, which takes into account: temperature, humidity, wind speed, sun angle and cloud cover (solar radiation). This differs from the heat index, which takes into consideration temperature and humidity and is calculated for shady areas. Source: https://www.weather.gov/tsa/wbgt."
+FWI_-,Fire Weather Index,"The Fire Weather Index (FWI) is a meteorologically based dimensionless index used worldwide to estimate fire danger. It consists of different components that account for the effects of fuel moisture and wind on fire behaviour and spread. The higher the FWI is, the more favourable the meteorological conditions to trigger a wildfire."
+MHI_-,Multi-Hazard Index
+
