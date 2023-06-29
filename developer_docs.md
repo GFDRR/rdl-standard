@@ -1,6 +1,10 @@
 # Developer documentation
 
-This page provides [how-to guides](#how-to-guides) and [reference documentation](#reference) for developers of the Risk Data Library Standard.
+This page provides the following documentation for developers of the Risk Data Library Standard:
+
+* [How-to guides](#how-to-guides)
+* [Style guides](#style-guides)
+* [Reference documentation](#reference)
 
 ## How-to guides
 
@@ -19,7 +23,8 @@ The preferred approach for making changes to the standard is to use a [local dev
 
 1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
 1. Create a branch from the `dev` branch.
-1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#). 
+1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
+1. Run `./manage.py pre-commit`.
 1. [Build the documentation](#build-the-documentation), resolve any errors and preview your changes locally.
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at [https://rdl-standard.readthedocs.io/en/{branch name}](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
@@ -136,6 +141,51 @@ If this check fails, run the following command to fix markdown formatting:
 ```bash
 mdformat docs
 ```
+#### tests
+
+If this check fails, review the output to identify which test failed:
+
+##### test_json.py::test_empty
+
+Review the warnings to identify the empty JSON files and remove the files.
+
+##### test_json.py::test_indent
+
+Run the following command to indent JSON files:
+
+```bash
+ocdskit indent -r .
+```
+
+##### test_json.py::test_invalid_json
+
+Review the warnings to identify the invalid JSON files and correct the errors.
+
+##### test_schema.py (all tests)
+
+Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
+
+## Style guides
+
+### Changelog style guide
+
+* Use the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
+* Begin each entry with a link to the pull request for the change.
+
+#### Normative content
+
+Changelog entries should be descriptive:
+
+* Bad entry: Update schema.
+* Good entry: Make `name` required.
+
+If changes are made to files under the `schema` directory, it is assumed that corresponding changes were made to files under the `docs` directory. Do not add an entry under the "Documentation" heading if the changes directly correspond to entries under the "Codelists" and/or "Schema" headings.
+
+For changes to schema and codelists, preserve schema/codelist ordering when adding new changelog entries. Otherwise, to reduce merge conflicts, add new changelog entries to the end of the relevant bullet list.
+
+#### Non-normative content
+
+Changelog entries should be descriptive. Do not add an entry like "Improve primer." Instead, simply add the PR number to the "Primer" list item.
 
 ## Reference
 
@@ -144,6 +194,7 @@ This section contains the following reference documentation:
 * [GitHub repository](#github-repository)
 * [Sphinx](#sphinx)
 * [Read the Docs](#read-the-docs)
+* [manage.py](#managepy)
 
 ### GitHub repository
 
@@ -205,3 +256,7 @@ Other than the `main` branch, all branches are hidden from the [flyout menu](htt
 #### Credentials
 
 You can find credentials for Read the Docs in the Open Data Services password database.
+
+### manage.py
+
+The standard repository includes a command-line utility for administrative tasks. For information on the available commands, run `./manage.py --help`.
