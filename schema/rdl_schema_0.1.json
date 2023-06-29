@@ -602,7 +602,6 @@
           "items": {
             "$ref": "#/$defs/Cost"
           },
-          "uniqueItems": true,
           "minItems": 1
         }
       },
