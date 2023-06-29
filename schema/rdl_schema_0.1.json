@@ -414,7 +414,6 @@
                   "description": "Type of methodological approach"
                 },
                 "f_relationship": {
-                  "$ref": "#/$defs/vulnerability_f_relationship",
                   "description": "Type of relationship: Mathematical or Discrete"
                 },
                 "f_math": {
