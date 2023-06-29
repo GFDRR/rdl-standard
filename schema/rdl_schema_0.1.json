@@ -16,7 +16,7 @@
   ],
   "properties": {
     "title": {
-      "title": "Dataset title",
+      "title": "Title",
       "type": "string",
       "description": "The title of the dataset."
     },
