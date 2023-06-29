@@ -1039,7 +1039,7 @@
         "temporal": {
           "title": "Temporal coverage",
           "description": "The period of time covered by this resource.",
-          "$ref": "#/defs/Period"
+          "$ref": "#/$defs/Period"
         }
       },
       "minProperties": 1
@@ -1120,6 +1120,54 @@
         "Judgement",
         "Hybrid"
       ]
+    },
+    "Period": {
+      "title": "Period",
+      "type": "object",
+      "description": "A period of time.",
+      "properties": {
+        "start": {
+          "title": "Start",
+          "type": "string",
+          "description": "The start of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+          "oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ],
+          "minLength": 1
+        },
+        "end": {
+          "title": "End date",
+          "type": "string",
+          "description": "The end of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+          "oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ],
+          "minLength": 1
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "string",
+          "description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
+          "format": "duration"
+        }
+      },
+      "minProperties": 1
     },
     "vulnerability_f_relationship": {},
     "vulnerability_f_math": {}
