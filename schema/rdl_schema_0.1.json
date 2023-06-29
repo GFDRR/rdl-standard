@@ -571,8 +571,7 @@
       "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
         "category",
-        "cost",
-        "reference_period"
+        "cost"
       ],
       "properties": {
         "category": {
