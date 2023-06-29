@@ -1068,11 +1068,6 @@
 					"type": "string",
 					"description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
 					"format": "duration"
-				},
-				"year": {
-					"title": "Reference year",
-					"type": "integer",
-					"description": "A general reference year to which the modelled scenario(s) refers (e.g. '2050')"
 				}
 			},
 			"minProperties": 1
