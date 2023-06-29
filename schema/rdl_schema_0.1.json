@@ -1101,7 +1101,7 @@
 				"id": {
 					"title": "Identifier",
 					"type": "string",
-					"description": "An identifier drawn from the gazetteer identified in `.scheme`.",
+					"description": "An identifier drawn from the gazetteer identified in `.scheme`."
 				},
 				"scheme": {
 					"title": "Scheme",
