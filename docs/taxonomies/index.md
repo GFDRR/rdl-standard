@@ -51,15 +51,11 @@ Example: In the Open Exposure Data (OED) Standard and other insurance industry m
 | ------------- | ---------------- | --------------- | --------- |
 | 1050          | 5101             | 1               | 0         |
 
-
-
 ### GLOSI: Global Library for Schools Infrastructure
 
 The World Bank Global Program for Safer Schools (GPSS) developed the GLOSI taxonomy to provide a systematic classification system for school buildings. GLOSI classifies school buildings based on 12 parameters [(interactive guide)](https://gpss.worldbank.org/index.php/en/node/571) that govern the building’s structural performance, supported by [research](https://www.sciencedirect.com/science/article/pii/S2212420923000742) into school buildings specifically. There are three primary parameters (main structural system, height range, and seismic design level) and 9 secondary parameters: Diaphragm Type; Structural Irregularity; Span Length; Pier Type; Foundation Type; Seismic Pounding Risk; Effective Seismic Retrofitting; Structural Health Condition; and Non-Structural Components.
 
 School buildings are described using a '/'-separated single taxonomy string similar to GED4ALL. For example, "**RC2/MR(2)/LD**/RD/NI/SP/RO/RF/NP/OS/FC/NN" describes a mid-rise (MR(2)) school built from reinforced concrete building with a framed structure and masonry infills (RC2)   with Low Seismic Design Level (LD).
-
-
 
 ### CEDE
 
