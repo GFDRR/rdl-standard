@@ -28,7 +28,7 @@
     "risk_data_type": {
       "title": "Risk data type",
       "type": "string",
-      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{branch}}/data_model/codelists/#risk-data-type).",
+      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk-data-type).",
       "codelist": "risk_data_type.csv",
       "openCodelist": false,
       "enum": [

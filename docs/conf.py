@@ -96,7 +96,7 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', '_readthedocs', 'Thumbs.db', '.DS_Store']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -380,9 +380,14 @@ def replace_substring_in_json(file_path, search_substring, replace_string, outpu
     if output_path is None:
         output_path = file_path
 
+    # Create the directory if it does not exist
+    output_dir = os.path.dirname(output_path)
+    os.makedirs(output_dir, exist_ok=True)    
+
     # Write the modified JSON data to the output file
     with open(output_path, 'w') as file:
         json.dump(data, file, indent=4)
+
 
 def _replace_substring_in_json(data, search_substring, replace_string):
     if isinstance(data, dict):
@@ -398,23 +403,20 @@ def _replace_substring_in_json(data, search_substring, replace_string):
             else:
                 _replace_substring_in_json(item, search_substring, replace_string)
 
-def delete_file(file_path):
-    try:
-        os.remove(file_path)
-        print(f"File '{file_path}' deleted successfully.")
-    except OSError as e:
-        print(f"Error deleting file: {e}")
 
 def setup(app):
-    app.connect('build-finished', build_finished)
-    
-    # The current Git branch name
-    branch = Repository('.').head.shorthand
-    
-    # Replace {{branch}} placeholders and write processed schema to docs/_static
-    replace_substring_in_json('../schema/rdl_schema_0.1.json', '{{branch}}', branch, output_path='_static/rdl_schema_0.1.json')
+    # Connect handlers to events
+    app.connect('env-before-read-docs', env_before_read_docs)
 
-    
-def build_finished(app, exception):
-    # Remove processed schema from docs/_static
-    delete_file('_static/rdl_schema_0.1.json')
+
+def env_before_read_docs(app, env, docnames):
+    rtd_version = os.getenv('READTHEDOCS_VERSION')
+
+    # Process schema and write to _readthedocs/html
+    if rtd_version is not None:
+        # Replace {{version}} placeholders
+        replace_substring_in_json('../schema/rdl_schema_0.1.json', '{{version}}', rtd_version, output_path='_readthedocs/html/rdl_schema_0.1.json')
+    else:
+        # Don't replace {{version}} placeholders
+        replace_substring_in_json('../schema/rdl_schema_0.1.json', 'https://rdl-standard.readthedocs.io/en/{{version}}', 'https://rdl-standard.readthedocs.io/en/{{version}}', output_path='_readthedocs/html/rdl_schema_0.1.json')
+     

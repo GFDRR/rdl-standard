@@ -112,7 +112,7 @@ Alternatively, build the documentation and view it using a local web server:
 ```bash
 cd docs
 make html
-python -m http.server --directory _build/html
+python -m http.server --directory _readthedocs/html
 ```
 
 ### Update requirements
@@ -228,7 +228,7 @@ Feature branches branch off the `dev` branch, with work merged into the `dev` br
 The following files are created by running a build and are not version controlled:
 
 * `.ve/`: Python virtual environment (if using [python3-venv](#python3-venv))
-* `docs/_build`: Built HTML documentation
+* `docs/_readthedocs`: Built HTML documentation
 
 ### Sphinx
 
@@ -236,7 +236,7 @@ The following files are created by running a build and are not version controlle
 
 #### Configuration
 
-The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{branch}}` placeholders `schema/rdl_schema_0.1.json` and copies the processed schema to `docs/_static` for inclusion in the built documentation.
+The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdl_schema_0.1.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
 
 ### Read the Docs
 
