@@ -75,7 +75,7 @@
 		"spatial": {
 			"title": "Spatial coverage",
 			"description": "The geographical area covered by the dataset.",
-			"$ref": "#/$defs/Spatial"
+			"$ref": "#/$defs/Location"
 		},
 		"publish": {
 			"type": "boolean",
@@ -789,10 +789,10 @@
 				"Hybrid"
 			]
 		},
-		"Spatial": {
-			"title": "Spatial coverage",
+		"Location": {
+			"title": "Location",
 			"type": "object",
-			"description": "The geographical area covered by the dataset.",
+			"description": "A geographical area.",
 			"properties": {
 				"countries": {
 					"title": "Countries",
