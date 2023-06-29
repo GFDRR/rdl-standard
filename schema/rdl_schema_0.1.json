@@ -797,7 +797,7 @@
 				"countries": {
 					"title": "Countries",
 					"type": "array",
-					"description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/dev/data_model/codelists.html#country).",
+					"description": "The countries covered by the geographical area, from the closed [country codelist](rdl_schema_0.1.jsonhttps://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#country).",
 					"items": {
 						"type": "string",
 						"codelist": "country.csv",
@@ -1106,7 +1106,7 @@
 				"scheme": {
 					"title": "Scheme",
 					"type": "string",
-					"description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://rdl-standard.readthedocs.io/en/dev/data_model/codelists.html#location_gazetteers).",
+					"description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](rdl_schema_0.1.jsonhttps://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#location_gazetteers).",
 					"codelist": "location_gazetteers.csv",
 					"openCodelist": true
 				},
@@ -1131,7 +1131,7 @@
 				"type": {
 					"title": "Type",
 					"type": "string",
-					"description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist]((https://rdl-standard.readthedocs.io/en/dev/data_model/codelists.html#geometry_type).",
+					"description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist]((rdl_schema_0.1.jsonhttps://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#geometry_type).",
 					"codelist": "location_gazetteers.csv",
 					"openCodelist": false,
 					"enum": [
