@@ -5,6 +5,7 @@
   "type": "object",
   "required": [
     "title",
+    "abstract",
     "risk_data_type",
     "organization",
     "model_source",
@@ -18,13 +19,13 @@
     "title": {
       "title": "Title",
       "type": "string",
-      "description": "Title of the dataset",
+      "description": "The title of the dataset.",
       "minLength": 1
     },
     "description": {
       "title": "Description",
       "type": "string",
-      "description": "Short description of the resource",
+      "description": "A short description of the dataset.",
       "minLength": 1
     },
     "risk_data_type": {
@@ -63,18 +64,20 @@
     "purpose": {
       "title": "Dataset purpose",
       "type": "string",
-      "description": "Purpose for which the data has been produced",
+      "description": "The purpose for which the dataset was created.",
       "minLength": 1
     },
     "project": {
       "title": "Project title",
       "type": "string",
-      "description": "The name of the project that produced the dataset."
+      "description": "The name of the project that produced the dataset.",
+      "minLength": 1
     },
     "details": {
       "title": "Additional details",
       "type": "string",
-      "description": "Additional details about the dataset."
+      "description": "Additional details about the dataset.",
+      "minLength": 1
     },
     "biblio_title": {
       "type": "string",
@@ -601,7 +604,8 @@
           "items": {
             "$ref": "#/$defs/Cost"
           },
-          "minItems": 1
+          "minItems": 1,
+          "uniqueItems": true
         }
       },
       "minProperties": 1
@@ -1364,7 +1368,57 @@
         "Judgement",
         "Hybrid"
       ]
-    }
+    },
+    "Period": {
+      "title": "Period",
+      "type": "object",
+      "description": "A period of time.",
+      "properties": {
+        "start": {
+          "title": "Start",
+          "type": "string",
+          "description": "The start of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+          "oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ],
+          "minLength": 1
+        },
+        "end": {
+          "title": "End date",
+          "type": "string",
+          "description": "The end of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+          "oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ],
+          "minLength": 1
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "string",
+          "description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
+          "format": "duration"
+        }
+      },
+      "minProperties": 1
+    },
+    "vulnerability_f_relationship": {},
+    "vulnerability_f_math": {}
   },
   "minProperties": 1
 }
