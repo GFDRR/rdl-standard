@@ -21,6 +21,67 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Closed codelists
 
+### cost_type
+
+This codelist is referenced by the following properties:
+
+- [`Cost/type`](rdl_schema_0.1.json,/$defs/Cost,type)
+- [`Cost/unit`](rdl_schema_0.1.json,/$defs/Cost,unit)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/cost_type.csv
+---
+```
+
+### currency
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/currency.csv
+---
+```
+
+### exposure_category
+
+This codelist is referenced by the following properties:
+
+- [`Exposure/category`](rdl_schema_0.1.json,/$defs/Exposure,category)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/exposure_category.csv
+---
+```
+
+### function_approach
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/function_approach.csv
+---
+```
+
 ### risk_data_type
 
 This codelist is referenced by the following properties:

@@ -337,7 +337,7 @@
                 },
                 "category": {
                   "description": "Type of asset",
-                  "$ref": "#/$defs/common_exp_category"
+                  "$ref": "#/$defs/exposure_category"
                 },
                 "occupancy": {
                   "description": "Type of occupancy to which function applies",
@@ -505,7 +505,7 @@
                   "description": "Destination of use of the asset"
                 },
                 "category": {
-                  "$ref": "#/$defs/common_exp_category",
+                  "$ref": "#/$defs/exposure_category",
                   "description": "Exposure category"
                 },
                 "val_type": {
