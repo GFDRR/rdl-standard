@@ -18,7 +18,7 @@ fl_wd:m,Flood water depth (m),"The depth of flood waters measured relative to th
 fl_wv:m/s,Flood flow velocity (m/s),The rate at which flood waters move. Highly correlated to structural damage to infrastructures. Expressed in meters per second (m/s).
 v_ect(3s):km/h,3-sec at 10m sustained wind speed (kph),"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
 v_ect(1m):km/h,1-min at 10m sustained wind speed (kph),"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
-v_etc(10m):km/h,10-min sustained wind speed (kph),The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph). 
+v_etc(10m):km/h,10-min sustained wind speed (kph),The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph).
 PGWS_tcy:km/h,Peak gust wind speed,The peak gust wind speed in the open terrain. Expressed in meters per second (m/s).
 ls_fd:m,Landslide flow depth,The depth of the landslide flow. Expressed in meters (m).
 I_DF:m3/s2,Debris-flow intensity index,A landslide intensity index proposed by Jakob et al. (2012). Expressed in meters cubed per second squared (m^3/s^2).
