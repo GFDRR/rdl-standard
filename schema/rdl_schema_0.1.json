@@ -10,7 +10,6 @@
     "model_source",
     "model_date",
     "geo_coverage",
-    "publish",
     "license_code",
     "resources"
   ],
@@ -78,15 +77,15 @@
       "description": "Additional details about the dataset.",
       "minLength": 1
     },
-    "biblio_title": {
-      "type": "string",
-      "description": "Authors/year/title of publication",
-      "minLength": 1
-    },
-    "biblio_url": {
-      "type": "string",
-      "description": "URL of publication",
-      "format": "uri"
+    "referenced_by": {
+      "title": "Referenced by",
+      "type": "array",
+      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Related_resource"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "geo_coverage": {
       "$ref": "#/$defs/common_iso",
@@ -1042,6 +1041,54 @@
           "title": "Temporal coverage",
           "description": "The period of time covered by this resource.",
           "$ref": "#/$defs/Period"
+        }
+      },
+      "minProperties": 1
+    },
+    "Related_resource": {
+      "title": "Related resource",
+      "type": "object",
+      "description": "A related resource, such as a publication, that references, cites, or otherwise points to a dataset.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the related resource."
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "The name or title of the resource."
+        },
+        "authorNames": {
+          "title": "Author names",
+          "type": "array",
+          "description": "The names of the authors of the resource.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "datePublished": {
+          "title": "Publication date",
+          "type": "string",
+          "description": "The date that the resource was first published.",
+          "format": "date"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "The uniform resource locator for the resource, e.g. the web address at which the resource can be accessed.",
+          "format": "iri"
+        },
+        "doi": {
+          "title": "Digital object identifier",
+          "type": "string",
+          "description": "The digital object identifier for the resource.",
+          "format": "iri"
         }
       },
       "minProperties": 1
