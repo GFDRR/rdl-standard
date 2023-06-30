@@ -788,6 +788,8 @@
         "Hybrid"
       ]
     },
+    "vulnerability_f_relationship": {},
+    "vulnerability_f_math": {},
     "Location": {
       "title": "Location",
       "type": "object",
