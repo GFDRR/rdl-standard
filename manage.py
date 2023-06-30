@@ -153,8 +153,11 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
     else:
       continue
     
-    url += ','.join(ref)
-    markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
+    markdown.append(f"- `{'/'.join(ref)}`\n")
+
+# To be updated with URL once structure of schema reference page is decided
+#    url += ','.join(ref)
+#    markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
 
   markdown.extend([
     "\nThis codelist has the following codes:\n\n"
