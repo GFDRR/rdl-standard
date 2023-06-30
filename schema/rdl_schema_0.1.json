@@ -1274,8 +1274,7 @@
           "minItems": 1
         }
       }
-    }
-  },
+    },
     "vulnerability_f_math": {}
   },
   "minProperties": 1
