@@ -116,12 +116,11 @@
     "attributions": {
       "title": "Attributions",
       "type": "array",
-      "description": "Entities involved in the creation of the dataset.",
+      "description": "Information about entities involved in the creation of the dataset.",
       "items": {
         "$ref": "#/$defs/Attribution"
       },
-      "uniqueItems": true,
-      "minItems": 1
+      "uniqueItems": true
     },
     "resources": {
       "title": "Resources",
@@ -1232,7 +1231,7 @@
         "role": {
           "title": "Role",
           "type": "string",
-          "description": "The entity's role in the creation of the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk-data-type).",
+          "description": "The entity's role in the creation of the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#roles).",
           "codelist": "roles.csv",
           "openCodelist": false,
           "minLength": 1
