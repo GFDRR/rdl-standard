@@ -50,4 +50,3 @@ SPEI:,Standard Precipitation Evapotranspiration Index,"An extension of the Stand
 WBGT:c,Wet Bulb Globe Temperature in Celsius,"A measure of the heat stress in direct sunlight, which takes into account: temperature, humidity, wind speed, sun angle and cloud cover (solar radiation). Expressed in degrees celsius (c)."
 FWI:,Fire Weather Index,"A meteorologically based dimensionless index used worldwide to estimate fire danger. It consists of different components that account for the effects of fuel moisture and wind on fire behaviour and spread. The higher the FWI is, the more favourable the meteorological conditions to trigger a wildfire."
 MHI:,Multi-Hazard Index,An index describing the prevalence of multiple hazards.
-
