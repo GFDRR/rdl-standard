@@ -19,7 +19,66 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Open codelists
 
+### location_gazetteers
+
+This codelist is referenced by the following properties:
+
+- [`Gazetteer_entry/scheme`](rdl_schema_0.1.json,/$defs/Gazetteer_entry,scheme)
+- [`Geometry/type`](rdl_schema_0.1.json,/$defs/Geometry,type)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/location_gazetteers.csv
+---
+```
+
 ## Closed codelists
+
+### country
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/country.csv
+---
+```
+
+### function_approach
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/function_approach.csv
+---
+```
+
+### geometry_type
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/geometry_type.csv
+---
+```
 
 ### risk_data_type
 
