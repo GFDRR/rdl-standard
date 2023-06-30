@@ -6,11 +6,12 @@
   "required": [
     "title",
     "risk_data_type",
-    "organization",
+    "publisher",
+    "contact_point",
+    "creator",
     "model_source",
     "model_date",
     "geo_coverage",
-    "publish",
     "license_code",
     "resources"
   ],
@@ -40,10 +41,12 @@
         "Loss"
       ]
     },
-    "organization": {
-      "type": "string",
-      "description": "Name of organization that published the dataset",
-      "minLength": 1
+    "publisher": {
+      "title": "Publisher",
+      "type": "object",
+      "description": "The entity responsible for making the dataset available.",
+      "$ref": "#/$defs/Entity",
+      "minProperties": 2
     },
     "model_source": {
       "type": "string",
@@ -96,15 +99,29 @@
       "$ref": "#/$defs/common_license",
       "description": "Type of license"
     },
-    "maintainer": {
-      "type": "string",
-      "description": "Who added the resource",
-      "minLength": 1
+    "contact_point": {
+      "title": "Contact point",
+      "type": "object",
+      "description": "Contact information for the maintainer of the dataset.",
+      "$ref": "#/$defs/Entity",
+      "minProperties": 2
     },
-    "maintainer_email": {
-      "type": "string",
-      "description": "Contact email",
-      "minLength": 1
+    "creator": {
+      "title": "Dataset creator",
+      "type": "object",
+      "description": "The entity responsible for producing the dataset.",
+      "$ref": "#/$defs/Entity",
+      "minProperties": 2
+    },
+    "attributions": {
+      "title": "Attributions",
+      "type": "array",
+      "description": "Entities involved in the creation of the dataset.",
+      "items": {
+        "$ref": "#/$defs/Attribution"
+      },
+      "uniqueItems": true,
+      "minItems": 1
     },
     "resources": {
       "title": "Resources",
@@ -1172,7 +1189,57 @@
       "minProperties": 1
     },
     "vulnerability_f_relationship": {},
-    "vulnerability_f_math": {}
+    "vulnerability_f_math": {},
+    "Entity": {
+      "title": "Entity",
+      "type": "object",
+      "description": "A person, organization or group.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "A name for the entity.",
+          "minLength": 1
+        },
+        "email": {
+          "title": "Email address",
+          "type": "string",
+          "description": "An email address for the entity.",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "A URL associated with the entity.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
+    },
+    "Attribution": {
+      "title": "Attribution",
+      "type": "object",
+      "description": "An attribution made to the creation of a dataset.",
+      "properties": {
+        "entity": {
+          "title": "Entity",
+          "description": "A person, organization or group responsible for the contribution.",
+          "$ref": "#/$defs/Entity"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string",
+          "description": "The entity's role in the creation of the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk-data-type).",
+          "codelist": "roles.csv",
+          "openCodelist": false,
+          "minLength": 1
+        }
+      },
+      "minProperties": 1
+    }
   },
   "minProperties": 1
 }

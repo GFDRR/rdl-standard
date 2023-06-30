@@ -51,6 +51,22 @@ file: ../../codelists/open/media_type.csv
 ---
 ```
 
+### roles
+
+This codelist is referenced by the following properties:
+
+- `Attribution/role`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/roles.csv
+---
+```
+
 ## Closed codelists
 
 ### function_approach

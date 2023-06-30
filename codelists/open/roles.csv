@@ -1,0 +1,22 @@
+Code,Title,Description
+world_bank_team_lead,World Bank team lead,The entity who lead the project that created and/or used the dataset in a World bank project.
+resource_provider,Resource provider,An entity that supplies the resource.
+custodian,Custodian,An entity that accepts accountability and responsibility for the resource and ensures appropriate care and maintenance of the resource.
+owner,Owner,An entity that owns the resource.
+user,User,An entity who uses the resource.
+distributor,Distributor,An entity who distributes the resource.
+originator,Originator,An entity who created the resource.
+point_of_contact,Point of contact,An entity who can be contacted for acquiring knowledge about or acquisition of the resource.
+principal_investigator,Principal investigator,A key entity responsible for gathering information and conducting research.
+processor,Processor,An entity who has processed the data in a manner such that the resource has been modified.
+publisher,Publisher,The entity who published the resource.
+author,Author,An entity who authored the resource.
+sponsor,Sponsor,An entity who speaks for the resource.
+co_author,Co-author,An entity who jointly authors the resource.
+collaborator,Collaborator,An entity who assists with the generation of the resource other than the principal investigator.
+editor,Editor,An entity who reviewed or modified the resource to improve the content.
+mediator,Mediator,A class of entity that mediates access to the resource and for whom the resource is intended or useful.
+rights_holder,Rights holder, An entity owning or managing rights over the resource.
+contributor,Contributor,An entity contributing to the resource.
+funder,Funder,An entity providing monetary support for the resource.
+stakeholder,Stakeholder,An entity who has an interest in the resource or the use of the resource.
