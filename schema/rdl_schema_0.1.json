@@ -1223,6 +1223,11 @@
       "type": "object",
       "description": "An attribution made to the creation of a dataset.",
       "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the contribution."
+        },
         "entity": {
           "title": "Entity",
           "description": "A person, organization or group responsible for the contribution.",
