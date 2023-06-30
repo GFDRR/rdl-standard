@@ -978,7 +978,7 @@
     "Resource": {
       "title": "Resource",
       "type": "object",
-      "description": "An individual file or other form of data. Resources can be fully informationally equivalent, such as CSV and JSON serializations of the same data. Resources can also have different levels of fidelity, such as a CSV file and a graphical representation of the data within the file. Resources can also differ in other aspects, such as the temporal coverage of each resources.",
+      "description": "An individual file or other form of data. Resources can be fully informationally equivalent, such as CSV and JSON serializations of the same data. Resources can also have different levels of fidelity, such as a CSV file and a graphical representation of the data within the file. Resources can also differ in other aspects, such as the temporal coverage of each resource.",
       "required": [
         "id",
         "title",

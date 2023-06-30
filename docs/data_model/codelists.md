@@ -53,6 +53,20 @@ file: ../../codelists/open/media_type.csv
 
 ## Closed codelists
 
+### function_approach
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/function_approach.csv
+---
+```
+
 ### risk_data_type
 
 This codelist is referenced by the following properties:
