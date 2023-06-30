@@ -11,7 +11,7 @@
     "model_date",
     "geo_coverage",
     "publish",
-    "license_code",
+    "license",
     "resources"
   ],
   "properties": {
@@ -92,9 +92,12 @@
       "$ref": "#/$defs/common_iso",
       "description": "ISO code(s) of countries covered by the dataset, comma-separated"
     },
-    "license_code": {
-      "$ref": "#/$defs/common_license",
-      "description": "Type of license"
+    "license": {
+      "title": "License",
+      "type": "string",
+      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "codelist": "license.csv",
+      "openCodelist": true
     },
     "maintainer": {
       "type": "string",

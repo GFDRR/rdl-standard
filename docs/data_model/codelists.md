@@ -35,6 +35,22 @@ file: ../../codelists/open/data_formats.csv
 ---
 ```
 
+### license
+
+This codelist is referenced by the following properties:
+
+- `license`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/license.csv
+---
+```
+
 ### media_type
 
 This codelist is referenced by the following properties:
