@@ -13,6 +13,8 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Codelists
 
+- [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
+
 ### Normative documentation
 
 ### Non-normative documentation
