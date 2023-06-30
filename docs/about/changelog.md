@@ -13,6 +13,8 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Codelists
 
+- [#114](https://github.com/GFDRR/rdl-standard/pull/114) - Add descriptions and change pattern of codes to metric:unit.
+
 ### Normative documentation
 
 ### Non-normative documentation
