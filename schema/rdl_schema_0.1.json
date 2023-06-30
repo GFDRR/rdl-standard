@@ -928,17 +928,6 @@
         "ZWE"
       ]
     },
-    "common_license": {
-      "type": "string",
-      "enum": [
-        "CC0-1.0",
-        "PDDL-1.0",
-        "CC-BY-4.0",
-        "ODC-By-1.0",
-        "CC-BY-SA-4.0",
-        "ODbL-1.0"
-      ]
-    },
     "common_occupancy_time": {
       "type": "string",
       "enum": [
