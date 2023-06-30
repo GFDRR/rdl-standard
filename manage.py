@@ -3,6 +3,7 @@ import click
 import csv
 import glob
 import json
+import logging
 import os
 import requests
 import shutil
@@ -153,8 +154,11 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
     else:
       continue
     
-    url += ','.join(ref)
-    markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
+    markdown.append(f"- `{'/'.join(ref)}`\n")
+
+# To be updated with URL once structure of schema reference page is decided
+#    url += ','.join(ref)
+#    markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
 
   markdown.extend([
     "\nThis codelist has the following codes:\n\n"
@@ -247,6 +251,60 @@ def pre_commit():
 
     # Run mdformat
     subprocess.run(['mdformat', 'docs'])
+
+@cli.command()
+def update_media_type():
+    """
+    Update media_type.csv from IANA.
+
+    Ignores deprecated and obsolete media types.
+    """
+    # https://www.iana.org/assignments/media-types/media-types.xhtml
+
+    # See "Registries included below".
+    registries = [
+        'application',
+        'audio',
+        'font',
+        'image',
+        'message',
+        'model',
+        'multipart',
+        'text',
+        'video',
+    ]
+
+    with csv_dump('codelists/open/media_type.csv', ['Code', 'Title']) as writer:
+        for registry in registries:
+            # See "Available Formats" under each heading.
+            reader = csv_load(f'https://www.iana.org/assignments/media-types/{registry}.csv')
+            for row in reader:
+                if ' ' in row['Name']:
+                    name, message = row['Name'].split(' ', 1)
+                else:
+                    name, message = row['Name'], None
+                code = f"{registry}/{name}"
+                template = row['Template']
+                # All messages are expected to be about deprecation and obsoletion.
+                if message:
+                    logging.warning('%s: %s', message, code)
+                # "x-emf" has "image/emf" in its "Template" value (but it is deprecated).
+                elif template and template != code:
+                    raise Exception(f"expected {code}, got {template}")
+                else:
+                    writer.writerow([code, name])
+
+        writer.writerow(['offline/print', 'print'])
+
+
+@cli.command()
+@click.pass_context
+def update_codelists(ctx):
+    """
+    Update external codelists
+    """
+    ctx.invoke(update_media_type)
+
 
 if __name__ == '__main__':
     cli()
