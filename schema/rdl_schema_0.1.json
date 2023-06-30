@@ -336,8 +336,18 @@
                   "$ref": "#/$defs/im_code"
                 },
                 "category": {
-                  "description": "Type of asset",
-                  "$ref": "#/$defs/exposure_category"
+                  "title": "Exposure category",
+                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+                  "type": "string",
+                  "codelist": "exposure_category.csv",
+                  "openCodelist": false,
+                  "enum": [
+                    "Agriculture",
+                    "Buildings",
+                    "Infrastructures",
+                    "Population",
+                    "Natural environment"
+                  ]
                 },
                 "occupancy": {
                   "description": "Type of occupancy to which function applies",
@@ -505,8 +515,18 @@
                   "description": "Destination of use of the asset"
                 },
                 "category": {
-                  "$ref": "#/$defs/exposure_category",
-                  "description": "Exposure category"
+                  "title": "Exposure category",
+                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+                  "type": "string",
+                  "codelist": "exposure_category.csv",
+                  "openCodelist": false,
+                  "enum": [
+                    "Agriculture",
+                    "Buildings",
+                    "Infrastructures",
+                    "Population",
+                    "Natural environment"
+                  ]
                 },
                 "val_type": {
                   "$ref": "#/$defs/common_exp_val_type",
