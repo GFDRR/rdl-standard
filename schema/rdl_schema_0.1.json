@@ -393,7 +393,7 @@
                   "description": "The methodology used for the calculation of the function"
                 },
                 "approach": {
-                  "$ref": "#/$defs/f_subtype",
+                  "$ref": "#/$defs/vulnerability_f_subtype",
                   "description": "Type of methodological approach"
                 },
                 "f_relationship": {
@@ -581,7 +581,7 @@
           "title": "Exposure category",
           "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
           "type": "string",
-          "codelist": "cost_type.csv",
+          "codelist": "exposure_category.csv",
           "openCodelist": false,
           "enum": [
             "Agriculture",
