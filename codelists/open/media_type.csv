@@ -783,6 +783,7 @@ application/vnd.FloGraphIt,vnd.FloGraphIt
 application/vnd.fluxtime.clip,vnd.fluxtime.clip
 application/vnd.font-fontforge-sfd,vnd.font-fontforge-sfd
 application/vnd.framemaker,vnd.framemaker
+application/vnd.freelog.comic,vnd.freelog.comic
 application/vnd.fsc.weblaunch,vnd.fsc.weblaunch
 application/vnd.fujifilm.fb.docuworks,vnd.fujifilm.fb.docuworks
 application/vnd.fujifilm.fb.docuworks.binder,vnd.fujifilm.fb.docuworks.binder
@@ -894,6 +895,7 @@ application/vnd.intertrust.digibox,vnd.intertrust.digibox
 application/vnd.intertrust.nncp,vnd.intertrust.nncp
 application/vnd.intu.qbo,vnd.intu.qbo
 application/vnd.intu.qfx,vnd.intu.qfx
+application/vnd.ipfs.ipns-record,vnd.ipfs.ipns-record
 application/vnd.ipld.car,vnd.ipld.car
 application/vnd.ipld.dag-cbor,vnd.ipld.dag-cbor
 application/vnd.ipld.dag-json,vnd.ipld.dag-json
@@ -1282,6 +1284,7 @@ application/vnd.preminet,vnd.preminet
 application/vnd.previewsystems.box,vnd.previewsystems.box
 application/vnd.proteus.magazine,vnd.proteus.magazine
 application/vnd.psfs,vnd.psfs
+application/vnd.pt.mundusmundi,vnd.pt.mundusmundi
 application/vnd.publishare-delta-tree,vnd.publishare-delta-tree
 application/vnd.pvi.ptid1,vnd.pvi.ptid1
 application/vnd.pwg-multiplexed,vnd.pwg-multiplexed
@@ -1519,6 +1522,7 @@ application/xmpp+xml,xmpp+xml
 application/xop+xml,xop+xml
 application/xslt+xml,xslt+xml
 application/xv+xml,xv+xml
+application/yaml,yaml
 application/yang,yang
 application/yang-data+cbor,yang-data+cbor
 application/yang-data+json,yang-data+json
@@ -1713,6 +1717,7 @@ image/heif-sequence,heif-sequence
 image/hej2k,hej2k
 image/hsj2,hsj2
 image/ief,ief
+image/j2c,j2c
 image/jls,jls
 image/jp2,jp2
 image/jpeg,jpeg
