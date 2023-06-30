@@ -16,7 +16,7 @@ co_author,Co-author,An entity who jointly authors the resource.
 collaborator,Collaborator,An entity who assists with the generation of the resource other than the principal investigator.
 editor,Editor,An entity who reviewed or modified the resource to improve the content.
 mediator,Mediator,A class of entity that mediates access to the resource and for whom the resource is intended or useful.
-rights_holder,Rights holder, An entity owning or managing rights over the resource.
+rights_holder,Rights holder,An entity owning or managing rights over the resource.
 contributor,Contributor,An entity contributing to the resource.
 funder,Funder,An entity providing monetary support for the resource.
 stakeholder,Stakeholder,An entity who has an interest in the resource or the use of the resource.
