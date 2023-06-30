@@ -5,8 +5,6 @@
   "type": "object",
   "required": [
     "title",
-    "abstract",
-    "component",
     "risk_data_type",
     "organization",
     "model_source",
@@ -110,50 +108,11 @@
       "minLength": 1
     },
     "resources": {
+      "title": "Resources",
       "type": "array",
+      "description": "Information about the resources included in the dataset.",
       "items": {
-        "resource": {
-          "type": "object",
-          "required": [
-            "name",
-            "format",
-            "epsg",
-            "url"
-          ],
-          "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of linked resource",
-              "minLength": 1
-            },
-            "aggregation_type": {
-              "type": "string",
-              "description": "Level of data representation",
-              "minLength": 1
-            },
-            "format": {
-              "type": "string",
-              "description": "Format of resource",
-              "minLength": 1
-            },
-            "h-res": {
-              "type": "string",
-              "description": "Horizontal resolution in meters (raster data only)",
-              "minLength": 1
-            },
-            "epsg": {
-              "type": "string",
-              "description": "Reference coordinate system (default: 4326)",
-              "minLength": 1
-            },
-            "url": {
-              "type": "string",
-              "description": "URL of linked resource",
-              "minLength": 1
-            }
-          },
-          "minProperties": 1
-        }
+        "$ref": "#/$defs/Resource"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -777,6 +736,77 @@
         "ETC",
         "TCY"
       ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "description": "An individual file or other form of data. Resources can be fully informationally equivalent, such as CSV and JSON serializations of the same data. Resources can also have different levels of fidelity, such as a CSV file and a graphical representation of the data within the file. Resources can also differ in other aspects, such as the temporal coverage of each resource.",
+      "required": [
+        "id",
+        "title",
+        "description",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "title": "Resource identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this resource.",
+          "minLength": 1
+        },
+        "title": {
+          "title": "Resource title",
+          "type": "string",
+          "description": "A title for this resource.",
+          "minLength": 1
+        },
+        "description": {
+          "title": "Resource description",
+          "type": "string",
+          "description": "A description for this resource.",
+          "minLength": 1
+        },
+        "media_type": {
+          "title": "Media type",
+          "type": "string",
+          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "codelist": "media_type.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "format": {
+          "title": "Format",
+          "type": "string",
+          "description": "A human-readable descripton of the file format of the resource, taken from the open [data formats codelist]((https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#data_formats).",
+          "codelist": "data_formats.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "spatial_resolution": {
+          "title": "Spatial resolution",
+          "type": "number",
+          "description": "The minimum spatial separation resolvable in the resource, measured in meters.",
+          "exclusiveMinimum": 0
+        },
+        "coordinate_system": {
+          "title": "Reference coordinate system",
+          "type": "string",
+          "description": "The reference co-ordinate system of the dataset version, using the [EPSG codelist](https://epsg.org).",
+          "minLength": 1
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "description": "The web address the dataset version can be downloaded from.",
+          "format": "iri"
+        },
+        "temporal": {
+          "title": "Temporal coverage",
+          "description": "The period of time covered by this resource.",
+          "$ref": "#/$defs/Period"
+        }
+      },
+      "minProperties": 1
     },
     "im_code": {
       "type": "string",
