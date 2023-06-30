@@ -421,7 +421,7 @@
                   "description": "The methodology used for the calculation of the function"
                 },
                 "approach": {
-                  "$ref": "#/$defs/f_subtype",
+                  "$ref": "#/$defs/vulnerability_f_subtype",
                   "description": "Type of methodological approach"
                 },
                 "f_relationship": {
@@ -1007,7 +1007,9 @@
         "media_type": {
           "title": "Media type",
           "type": "string",
-          "description": "The media type of the resource taken from the [IANA Media Types codelist](https://www.iana.org/assignments/media-types/media-types.xhtml). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "codelist": "media_type.csv",
+          "openCodelist": true,
           "minLength": 1
         },
         "format": {
