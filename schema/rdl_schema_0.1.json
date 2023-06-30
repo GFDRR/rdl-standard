@@ -1222,6 +1222,11 @@
       "title": "Attribution",
       "type": "object",
       "description": "An attribution made to the creation of a dataset.",
+      "required": [
+        "id",
+        "entity",
+        "role"
+      ],
       "properties": {
         "id": {
           "title": "Identifier",
@@ -1241,8 +1246,7 @@
           "openCodelist": false,
           "minLength": 1
         }
-      },
-      "minProperties": 1
+      }
     }
   },
   "minProperties": 1
