@@ -349,10 +349,6 @@
                     "Natural environment"
                   ]
                 },
-                "occupancy": {
-                  "description": "Type of occupancy to which function applies",
-                  "$ref": "#/$defs/common_exp_occupancy"
-                },
                 "val_type": {
                   "description": "Type of asset value",
                   "$ref": "#/$defs/common_exp_val_type"
@@ -509,10 +505,6 @@
                   "type": "string",
                   "description": "General reference year to which the scenario refers to (e.g. '2050')",
                   "minLength": 1
-                },
-                "occupancy": {
-                  "$ref": "#/$defs/common_exp_occupancy",
-                  "description": "Destination of use of the asset"
                 },
                 "category": {
                   "title": "Exposure category",
