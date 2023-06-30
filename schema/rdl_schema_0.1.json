@@ -120,6 +120,7 @@
       "items": {
         "$ref": "#/$defs/Attribution"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "resources": {
