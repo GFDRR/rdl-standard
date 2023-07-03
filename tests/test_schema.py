@@ -22,6 +22,12 @@ from jsonschema.validators import Draft202012Validator
 schemas = [(path, name, data) for path, name, _, data in walk_json_data(top='schema') if is_json_schema(data)]
 metaschema = http_get('https://json-schema.org/draft/2020-12/schema').json()
 
+validate_array_items_kwargs = {
+    'allow_invalid': {
+        '/$defs/Geometry/properties/coordinates/items',  # recursion
+    },
+}
+
 @pytest.mark.parametrize('path,name,data', schemas)
 def test_schema_valid(path, name, data):
     validate_json_schema(path, name, data, metaschema)
@@ -37,7 +43,7 @@ def validate_json_schema(path, name, data, schema):
     errors = 0
 
     errors += validate_schema(path, data, validator)
-    errors += validate_array_items(path, data)
+    errors += validate_array_items(path, data, **validate_array_items_kwargs)
     errors += validate_items_type(path, data)
 
     # Codelist fields are not yet implemented

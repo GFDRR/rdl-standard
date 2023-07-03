@@ -16,3 +16,4 @@ pytest
 jscc
 ocdskit
 jsonschema
+pygit2
