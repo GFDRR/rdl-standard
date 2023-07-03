@@ -31,7 +31,6 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/location_gazetteers.csv
 file: ../../codelists/open/data_formats.csv
 ---
 ```
@@ -40,8 +39,8 @@ file: ../../codelists/open/data_formats.csv
 
 This codelist is referenced by the following properties:
 
-- [`Gazetteer_entry/scheme`](rdl_schema_0.1.json,/$defs/Gazetteer_entry,scheme)
-- [`Geometry/type`](rdl_schema_0.1.json,/$defs/Geometry,type)
+- `Gazetteer_entry/scheme`
+- `Geometry/type`
 
 This codelist has the following codes:
 
@@ -50,7 +49,6 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/open/location_gazetteers.csv
-file: ../../codelists/open/data_formats.csv
 ---
 ```
 
