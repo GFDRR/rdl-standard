@@ -818,21 +818,25 @@
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "A locally unique identifier for the related resource."
+          "description": "A locally unique identifier for the related resource.",
+          "minLength": 1
         },
         "name": {
           "title": "Name",
           "type": "string",
-          "description": "The name or title of the resource."
+          "description": "The name or title of the resource.",
+          "minLength": 1
         },
         "authorNames": {
           "title": "Author names",
           "type": "array",
           "description": "The names of the authors of the resource.",
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
-          "minItems": 1
+          "minItems": 1,
+          "uniqueItems": true
         },
         "datePublished": {
           "title": "Publication date",
