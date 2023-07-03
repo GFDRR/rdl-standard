@@ -988,7 +988,12 @@
         "id",
         "entity",
         "role"
-         "description": "A locally unique identifier for the contribution."
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the contribution."
         },
         "entity": {
           "title": "Entity",
