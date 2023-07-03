@@ -1279,7 +1279,7 @@
         "type": {
           "title": "Type",
           "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist]((rdl_schema_0.1.jsonhttps://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#geometry_type).",
+          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#geometry_type).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": false,
           "enum": [
