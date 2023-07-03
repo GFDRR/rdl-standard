@@ -312,7 +312,7 @@
                 },
                 "val_type": {
                   "description": "Type of asset value",
-                  "$ref": "#/$defs/common_exp_val_type"
+                  "$ref": "#/$defs/Cost"
                 },
                 "val_unit": {
                   "type": "string",
@@ -481,7 +481,7 @@
                   ]
                 },
                 "val_type": {
-                  "$ref": "#/$defs/common_exp_val_type",
+                  "$ref": "#/$defs/Cost",
                   "description": "Element on which loss insist"
                 },
                 "impact": {
@@ -611,10 +611,16 @@
       "type": "object",
       "description": "The costs associated with specific elements of assets detailed in the dataset.",
       "required": [
+        "id",
         "type",
         "unit"
       ],
       "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this cost."
+        },
         "type": {
           "title": "Cost type",
           "description": "The type of the cost, from the closed [cost type codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#cost_type).",
