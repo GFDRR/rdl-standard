@@ -19,6 +19,55 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Open codelists
 
+### data_formats
+
+This codelist is referenced by the following properties:
+
+- `Resource/format`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/data_formats.csv
+---
+```
+
+### location_gazetteers
+
+This codelist is referenced by the following properties:
+
+- `Gazetteer_entry/scheme`
+- `Geometry/type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/location_gazetteers.csv
+---
+```
+
+### media_type
+
+This codelist is referenced by the following properties:
+
+- `Resource/media_type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/media_type.csv
+---
+```
+
 ## Closed codelists
 
 ### cost_type
@@ -52,6 +101,20 @@ file: ../../codelists/closed/currency.csv
 ---
 ```
 
+### country
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/country.csv
+---
+```
+
 ### exposure_category
 
 This codelist is referenced by the following properties:
@@ -78,7 +141,22 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
+
 file: ../../codelists/closed/function_approach.csv
+---
+```
+
+### geometry_type
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/geometry_type.csv
 ---
 ```
 
@@ -86,7 +164,7 @@ file: ../../codelists/closed/function_approach.csv
 
 This codelist is referenced by the following properties:
 
-- [`risk_data_type`](rdl_schema_0.1.json,,risk_data_type)
+- `risk_data_type`
 
 This codelist has the following codes:
 

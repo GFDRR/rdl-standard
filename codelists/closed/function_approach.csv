@@ -1,0 +1,5 @@
+Code,Title,Definition
+analytical,Analytical,Data or function generated using numerical or computational models to simulate the response of a structure under increasing hazard intensities.
+empirical,Empirical survey,Data or function generated through regression analysis of historical loss data.
+hybrid,Hybrid,Data or function generated using data gathered from the international literature.
+judgement,Judgement,Data or function generated through the elicitation of expert opinion (heuristic).
