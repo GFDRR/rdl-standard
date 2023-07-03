@@ -57,7 +57,6 @@ ______________________________________________________________________
    :maxdepth: 1
    :hidden:
 
-   general
    hazard
    exposure
    vulnerability

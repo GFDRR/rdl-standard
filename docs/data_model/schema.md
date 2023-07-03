@@ -20,7 +20,19 @@ Click on schema elements to expand the tree, or use the '+' icon to expand all e
 
 ### Dataset
 
+In addition to schema-specific attributes, each dataset is identified by a list of attributes based on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms). Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
+
 ```{jsonschema} ../../schema/rdl_schema_0.1.json
+:addtargets:
+```
+
+### Resource
+
+Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
+
+```{jsonschema} ../../schema/rdl_schema_0.1.json
+:pointer: /$defs/Resource
+:collapse: 
 :addtargets:
 ```
 
