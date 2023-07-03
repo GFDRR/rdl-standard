@@ -35,6 +35,23 @@ file: ../../codelists/open/data_formats.csv
 ---
 ```
 
+### location_gazetteers
+
+This codelist is referenced by the following properties:
+
+- `Gazetteer_entry/scheme`
+- `Geometry/type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/location_gazetteers.csv
+---
+```
+
 ### media_type
 
 This codelist is referenced by the following properties:
@@ -53,6 +70,20 @@ file: ../../codelists/open/media_type.csv
 
 ## Closed codelists
 
+### country
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/country.csv
+---
+```
+
 ### function_approach
 
 This codelist is referenced by the following properties:
@@ -64,6 +95,20 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/closed/function_approach.csv
+---
+```
+
+### geometry_type
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/geometry_type.csv
 ---
 ```
 
