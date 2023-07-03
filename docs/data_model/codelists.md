@@ -112,11 +112,28 @@ file: ../../codelists/closed/geometry_type.csv
 ---
 ```
 
+### resource_type
+
+This codelist is referenced by the following properties:
+
+- `Source/type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/resource_type.csv
+---
+```
+
 ### risk_data_type
 
 This codelist is referenced by the following properties:
 
 - `risk_data_type`
+- `Source/component`
 
 This codelist has the following codes:
 
