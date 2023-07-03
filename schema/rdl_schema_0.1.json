@@ -1372,8 +1372,8 @@
         "type": {
           "title": "type",
           "type": "string",
-          "description": "The nature of the related resource, from the closed [resource type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#resource_type).",
-          "codelist": "resource_type.csv",
+          "description": "The nature of the related resource, from the closed [resource type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#source_type).",
+          "codelist": "source_type.csv",
           "openCodelist": false,
           "enum": [
             "dataset",
