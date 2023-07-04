@@ -6,11 +6,13 @@
   "required": [
     "title",
     "risk_data_type",
-    "organization",
+    "publisher",
+    "contact_point",
+    "creator",
     "model_source",
     "model_date",
     "spatial",
-    "license_code",
+    "license",
     "resources"
   ],
   "properties": {
@@ -39,10 +41,11 @@
         "Loss"
       ]
     },
-    "organization": {
-      "type": "string",
-      "description": "Name of organization that published the dataset",
-      "minLength": 1
+    "publisher": {
+      "title": "Publisher",
+      "type": "object",
+      "description": "The entity responsible for making the dataset available.",
+      "$ref": "#/$defs/Entity"
     },
     "model_source": {
       "type": "string",
@@ -77,34 +80,49 @@
       "description": "Additional details about the dataset.",
       "minLength": 1
     },
-    "biblio_title": {
-      "type": "string",
-      "description": "Authors/year/title of publication",
-      "minLength": 1
-    },
-    "biblio_url": {
-      "type": "string",
-      "description": "URL of publication",
-      "format": "uri"
+    "referenced_by": {
+      "title": "Referenced by",
+      "type": "array",
+      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Related_resource"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "spatial": {
       "title": "Spatial coverage",
       "description": "The geographical area covered by the dataset.",
       "$ref": "#/$defs/Location"
     },
-    "license_code": {
-      "$ref": "#/$defs/common_license",
-      "description": "Type of license"
-    },
-    "maintainer": {
+    "license": {
+      "title": "License",
       "type": "string",
-      "description": "Who added the resource",
-      "minLength": 1
+      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "codelist": "license.csv",
+      "openCodelist": true
     },
-    "maintainer_email": {
-      "type": "string",
-      "description": "Contact email",
-      "minLength": 1
+    "contact_point": {
+      "title": "Contact point",
+      "type": "object",
+      "description": "Contact information for the maintainer of the dataset.",
+      "$ref": "#/$defs/Entity"
+    },
+    "creator": {
+      "title": "Creator",
+      "type": "object",
+      "description": "The entity responsible for producing the dataset.",
+      "$ref": "#/$defs/Entity"
+    },
+    "attributions": {
+      "title": "Attributions",
+      "type": "array",
+      "description": "Information about entities and their roles in relation to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Attribution"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "resources": {
       "title": "Resources",
@@ -521,17 +539,6 @@
         "Total"
       ]
     },
-    "common_license": {
-      "type": "string",
-      "enum": [
-        "CC0-1.0",
-        "PDDL-1.0",
-        "CC-BY-4.0",
-        "ODC-By-1.0",
-        "CC-BY-SA-4.0",
-        "ODbL-1.0"
-      ]
-    },
     "common_occupancy_time": {
       "type": "string",
       "enum": [
@@ -638,6 +645,57 @@
           "title": "Temporal coverage",
           "description": "The period of time covered by this resource.",
           "$ref": "#/$defs/Period"
+        }
+      },
+      "minProperties": 1
+    },
+    "Related_resource": {
+      "title": "Related resource",
+      "type": "object",
+      "description": "A related resource, such as a publication, that references, cites, or otherwise points to a dataset.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the related resource.",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "The name or title of the resource.",
+          "minLength": 1
+        },
+        "authorNames": {
+          "title": "Author names",
+          "type": "array",
+          "description": "The names of the authors of the resource.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "datePublished": {
+          "title": "Publication date",
+          "type": "string",
+          "description": "The date that the resource was first published.",
+          "format": "date"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "The uniform resource locator for the resource, e.g. the web address at which the resource can be accessed.",
+          "format": "iri"
+        },
+        "doi": {
+          "title": "Digital object identifier",
+          "type": "string",
+          "description": "The digital object identifier for the resource."
         }
       },
       "minProperties": 1
@@ -751,6 +809,65 @@
       "minProperties": 1
     },
     "vulnerability_f_relationship": {},
+    "Entity": {
+      "title": "Entity",
+      "type": "object",
+      "description": "A person, organization or group.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "A name for the entity.",
+          "minLength": 1
+        },
+        "email": {
+          "title": "Email address",
+          "type": "string",
+          "description": "An email address for the entity.",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "A URL associated with the entity.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
+    },
+    "Attribution": {
+      "title": "Attribution",
+      "type": "object",
+      "description": "A qualified relation between an entity and a dataset.",
+      "required": [
+        "id",
+        "entity",
+        "role"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the attribution."
+        },
+        "entity": {
+          "title": "Entity",
+          "description": "An entity with a role in relation to the dataset.",
+          "$ref": "#/$defs/Entity"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string",
+          "description": "The entity's role in relation to the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#roles).",
+          "codelist": "roles.csv",
+          "openCodelist": true,
+          "minLength": 1
+        }
+      }
+    },
     "Location": {
       "title": "Location",
       "type": "object",
