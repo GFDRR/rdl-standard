@@ -5,28 +5,35 @@
   "type": "object",
   "required": [
     "title",
-    "abstract",
-    "component",
-    "organization",
+    "risk_data_type",
+    "publisher",
+    "contact_point",
+    "creator",
     "model_source",
     "model_date",
-    "geo_coverage",
-    "publish",
-    "license_code",
+    "spatial",
+    "license",
     "resources"
   ],
   "properties": {
     "title": {
+      "title": "Title",
       "type": "string",
-      "description": "Title of the dataset"
+      "description": "The title of the dataset.",
+      "minLength": 1
     },
-    "abstract": {
+    "description": {
+      "title": "Description",
       "type": "string",
-      "description": "Short description of the resource"
+      "description": "A short description of the dataset.",
+      "minLength": 1
     },
-    "component": {
+    "risk_data_type": {
+      "title": "Risk data type",
       "type": "string",
-      "description": "Univocal schema for this contribution (H, E, V or L)",
+      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk-data-type).",
+      "codelist": "risk_data_type.csv",
+      "openCodelist": false,
       "enum": [
         "Hazard",
         "Exposure",
@@ -34,13 +41,16 @@
         "Loss"
       ]
     },
-    "organization": {
-      "type": "string",
-      "description": "Name of organization that published the dataset"
+    "publisher": {
+      "title": "Publisher",
+      "type": "object",
+      "description": "The entity responsible for making the dataset available.",
+      "$ref": "#/$defs/Entity"
     },
     "model_source": {
       "type": "string",
-      "description": "Name of source model"
+      "description": "Name of source model",
+      "minLength": 1
     },
     "model_date": {
       "type": "string",
@@ -48,89 +58,81 @@
       "format": "date"
     },
     "version": {
+      "title": "Dataset version",
       "type": "integer",
-      "description": "Version of the dataset"
+      "description": "The version indicator (name or identifier) of the dataset."
     },
     "purpose": {
+      "title": "Dataset purpose",
       "type": "string",
-      "description": "Purpose for what the data has been produced"
+      "description": "The purpose for which the dataset was created.",
+      "minLength": 1
     },
     "project": {
+      "title": "Project title",
       "type": "string",
-      "description": "Project under which data has been produced"
+      "description": "The name of the project that produced the dataset.",
+      "minLength": 1
     },
-    "notes": {
+    "details": {
+      "title": "Additional details",
       "type": "string",
-      "description": "Additional details about the dataset"
+      "description": "Additional details about the dataset.",
+      "minLength": 1
     },
-    "biblio_title": {
+    "referenced_by": {
+      "title": "Referenced by",
+      "type": "array",
+      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Related_resource"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "spatial": {
+      "title": "Spatial coverage",
+      "description": "The geographical area covered by the dataset.",
+      "$ref": "#/$defs/Location"
+    },
+    "license": {
+      "title": "License",
       "type": "string",
-      "description": "Authors/year/title of publication"
+      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "codelist": "license.csv",
+      "openCodelist": true
     },
-    "biblio_url": {
-      "type": "string",
-      "description": "URL of publication",
-      "format": "uri"
+    "contact_point": {
+      "title": "Contact point",
+      "type": "object",
+      "description": "Contact information for the maintainer of the dataset.",
+      "$ref": "#/$defs/Entity"
     },
-    "geo_coverage": {
-      "$ref": "#/$defs/common_iso",
-      "description": "ISO code(s) of countries covered by the dataset, comma-separated"
+    "creator": {
+      "title": "Creator",
+      "type": "object",
+      "description": "The entity responsible for producing the dataset.",
+      "$ref": "#/$defs/Entity"
     },
-    "publish": {
-      "type": "boolean",
-      "description": "Flag to show/hide dataset from website"
-    },
-    "license_code": {
-      "$ref": "#/$defs/common_license",
-      "description": "Type of license"
-    },
-    "maintainer": {
-      "type": "string",
-      "description": "Who added the resource"
-    },
-    "maintainer_email": {
-      "type": "string",
-      "description": "Contact email"
+    "attributions": {
+      "title": "Attributions",
+      "type": "array",
+      "description": "Information about entities and their roles in relation to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Attribution"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "resources": {
+      "title": "Resources",
       "type": "array",
+      "description": "Information about the resources included in the dataset.",
       "items": {
-        "resource": {
-          "type": "object",
-          "required": [
-            "name",
-            "format",
-            "epsg",
-            "url"
-          ],
-          "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of linked resource"
-            },
-            "aggregation_type": {
-              "type": "string",
-              "description": "Level of data representation"
-            },
-            "format": {
-              "type": "string",
-              "description": "Format of resource"
-            },
-            "h-res": {
-              "type": "string",
-              "description": "Horizontal resolution in meters (raster data only)"
-            },
-            "epsg": {
-              "type": "string",
-              "description": "Reference coordinate system (default: 4326)"
-            },
-            "url": {
-              "type": "string",
-              "description": "URL of linked resource"
-            }
-          }
-        }
-      }
+        "$ref": "#/$defs/Resource"
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
   "anyOf": [
@@ -165,8 +167,11 @@
                   "type": "array",
                   "description": "The name of the geographic area covered by the hazard analysis. Comma-separated list of geographic names.",
                   "items": {
-                    "type": "string"
-                  }
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "time_start": {
                   "type": "string",
@@ -180,13 +185,16 @@
                 },
                 "time_span": {
                   "type": "string",
-                  "description": "The extent of the time period covered by the events included in the current scenario hazard analysis [ISO 8601 format]"
+                  "description": "The extent of the time period covered by the events included in the current scenario hazard analysis [ISO 8601 format]",
+                  "minLength": 1
                 },
                 "time_year": {
                   "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')"
+                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             },
             "event": {
               "type": "object",
@@ -205,7 +213,8 @@
                 },
                 "return_period": {
                   "type": "string",
-                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)"
+                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
+                  "minLength": 1
                 },
                 "occurence_time_start": {
                   "type": "string",
@@ -219,7 +228,8 @@
                 },
                 "occurence_time_span": {
                   "type": "string",
-                  "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability"
+                  "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability",
+                  "minLength": 1
                 },
                 "trigger_hazard_type": {
                   "$ref": "#/$defs/common_hazard_type",
@@ -231,9 +241,11 @@
                 },
                 "description": {
                   "type": "string",
-                  "description": "Provides additional information about this specific event"
+                  "description": "Provides additional information about this specific event",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             },
             "footprint_set": {
               "type": "object",
@@ -248,13 +260,17 @@
                 },
                 "data_uncertainty": {
                   "type": "string",
-                  "description": "Comments about the uncertainty of data"
+                  "description": "Comments about the uncertainty of data",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     {
       "type": "object",
@@ -289,21 +305,26 @@
                 "taxonomy_source": {
                   "type": "string",
                   "description": "Name of taxonomy source (default is GED4ALL)",
-                  "default": "GED4ALL"
+                  "default": "GED4ALL",
+                  "minLength": 1
                 },
                 "taxonomy_code": {
                   "type": "string",
-                  "description": "Alphanumeric code for the taxonomy source (based on GED4ALL)"
+                  "description": "Alphanumeric code for the taxonomy source (based on GED4ALL)",
+                  "minLength": 1
                 },
                 "time_year": {
                   "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')"
+                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
+                  "minLength": 1
                 },
                 "add_attributes": {
                   "type": "string",
-                  "description": "List of key attributes included in the dataset"
+                  "description": "List of key attributes included in the dataset",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             },
             "value": {
               "type": "object",
@@ -314,13 +335,17 @@
                 },
                 "val_unit": {
                   "type": "string",
-                  "description": "Unit of measure"
+                  "description": "Unit of measure",
+                  "minLength": 1
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     {
       "type": "object",
@@ -370,15 +395,18 @@
                 },
                 "val_unit": {
                   "type": "string",
-                  "description": "Unit of measure"
+                  "description": "Unit of measure",
+                  "minLength": 1
                 },
                 "taxonomy_source": {
                   "type": "string",
-                  "description": "Source of taxonomy"
+                  "description": "Source of taxonomy",
+                  "minLength": 1
                 },
                 "taxonomy_code": {
                   "type": "string",
-                  "description": "Taxonomy code to which function applies"
+                  "description": "Taxonomy code to which function applies",
+                  "minLength": 1
                 },
                 "impact_type": {
                   "description": "Type of impact",
@@ -390,15 +418,17 @@
                 },
                 "country_tranferability": {
                   "description": "ISOa3 list of countries in which the model could be applied",
-                  "$ref": "#/$defs/common_iso"
+                  "$ref": "#/$defs/Location"
                 },
                 "local_applicability": {
                   "type": "string",
-                  "description": "Area within a country or region to wich the model specifically applies"
+                  "description": "Area within a country or region to wich the model specifically applies",
+                  "minLength": 1
                 },
                 "transferability_notes": {
                   "type": "string",
-                  "description": "Details about applicability to different areas"
+                  "description": "Details about applicability to different areas",
+                  "minLength": 1
                 },
                 "function_type": {
                   "$ref": "#/$defs/vulnerability_function_type",
@@ -413,33 +443,37 @@
                   "description": "Type of methodological approach"
                 },
                 "f_relationship": {
-                  "$ref": "#/$defs/vulnerability_f_relationship",
                   "description": "Type of relationship: Mathematical or Discrete"
                 },
                 "f_math": {
                   "$ref": "#/$defs/vulnerability_f_math",
                   "description": "Parametric or bespoke"
                 }
-              }
+              },
+              "minProperties": 1
             },
             "specifics": {
               "type": "object",
               "properties": {
                 "analysis_details": {
                   "description": "Description of analysis that produced the function",
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1
                 },
                 "par_names": {
                   "type": "string",
-                  "description": "Parameters considered by the function"
+                  "description": "Parameters considered by the function",
+                  "minLength": 1
                 },
                 "im_name": {
                   "type": "string",
-                  "description": "Name of loss intensity measure"
+                  "description": "Name of loss intensity measure",
+                  "minLength": 1
                 },
                 "im_units": {
                   "type": "string",
-                  "description": "Unit of loss intensity measure"
+                  "description": "Unit of loss intensity measure",
+                  "minLength": 1
                 },
                 "n_events": {
                   "type": "integer",
@@ -469,11 +503,14 @@
                   "type": "boolean",
                   "description": "Is the damage scale is associated to a downtime estimation (e.g. service interruption)?"
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     {
       "type": "object",
@@ -505,7 +542,8 @@
                 },
                 "time_year": {
                   "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')"
+                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
+                  "minLength": 1
                 },
                 "occupancy": {
                   "$ref": "#/$defs/common_exp_occupancy",
@@ -533,7 +571,8 @@
                 },
                 "return_period": {
                   "type": "string",
-                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)"
+                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
+                  "minLength": 1
                 },
                 "calculation_method": {
                   "$ref": "#/$defs/common_calc_method",
@@ -545,7 +584,8 @@
                 },
                 "val_unit": {
                   "type": "string",
-                  "description": "Unit of measure"
+                  "description": "Unit of measure",
+                  "minLength": 1
                 },
                 "hazard_link": {
                   "type": "string",
@@ -562,11 +602,14 @@
                   "description": "URL of source vulnerability data",
                   "format": "uri"
                 }
-              }
+              },
+              "minProperties": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     }
   ],
   "$defs": {
@@ -661,255 +704,6 @@
         "Total"
       ]
     },
-    "common_iso": {
-      "type": "string",
-      "enum": [
-        "GLB",
-        "ABW",
-        "AFG",
-        "AGO",
-        "AIA",
-        "ALB",
-        "AND",
-        "ARE",
-        "ARG",
-        "ARM",
-        "ASM",
-        "ATG",
-        "AUS",
-        "AUT",
-        "AZE",
-        "BDI",
-        "BEL",
-        "BEN",
-        "BFA",
-        "BGD",
-        "BGR",
-        "BHR",
-        "BHS",
-        "BIH",
-        "BLM",
-        "BLR",
-        "BLZ",
-        "BMU",
-        "BOL",
-        "BRA",
-        "BRB",
-        "BRN",
-        "BTN",
-        "BWA",
-        "CAF",
-        "CAN",
-        "CHE",
-        "CHL",
-        "CHN",
-        "CIV",
-        "CMR",
-        "COD",
-        "COG",
-        "COK",
-        "COL",
-        "COM",
-        "CPV",
-        "CRI",
-        "CUB",
-        "CUW",
-        "CYM",
-        "CYP",
-        "CZE",
-        "DEU",
-        "DJI",
-        "DMA",
-        "DNK",
-        "DOM",
-        "DZA",
-        "ECU",
-        "EGY",
-        "ERI",
-        "ESP",
-        "EST",
-        "ETH",
-        "FIN",
-        "FJI",
-        "FLK",
-        "FRA",
-        "FRO",
-        "FSM",
-        "GAB",
-        "GBR",
-        "GEO",
-        "GGY",
-        "GHA",
-        "GIB",
-        "GIN",
-        "GMB",
-        "GNB",
-        "GNQ",
-        "GRC",
-        "GRD",
-        "GRL",
-        "GTM",
-        "GUM",
-        "GUY",
-        "HKG",
-        "HMD",
-        "HND",
-        "HRV",
-        "HTI",
-        "HUN",
-        "IDN",
-        "IMN",
-        "IND",
-        "IRL",
-        "IRN",
-        "IRQ",
-        "ISL",
-        "ISR",
-        "ITA",
-        "JAM",
-        "JEY",
-        "JOR",
-        "JPN",
-        "KAZ",
-        "KEN",
-        "KGZ",
-        "KHM",
-        "KIR",
-        "KNA",
-        "KOR",
-        "KWT",
-        "LAO",
-        "LBN",
-        "LBR",
-        "LBY",
-        "LCA",
-        "LIE",
-        "LKA",
-        "LSO",
-        "LTU",
-        "LUX",
-        "LVA",
-        "MAC",
-        "MAF",
-        "MAR",
-        "MCO",
-        "MDA",
-        "MDG",
-        "MDV",
-        "MEX",
-        "MHL",
-        "MKD",
-        "MLI",
-        "MLT",
-        "MMR",
-        "MNE",
-        "MNG",
-        "MNP",
-        "MOZ",
-        "MRT",
-        "MSR",
-        "MUS",
-        "MWI",
-        "MYS",
-        "NAM",
-        "NCL",
-        "NER",
-        "NFK",
-        "NGA",
-        "NIC",
-        "NIU",
-        "NLD",
-        "NOR",
-        "NPL",
-        "NRU",
-        "NZL",
-        "OMN",
-        "PAK",
-        "PAN",
-        "PCN",
-        "PER",
-        "PHL",
-        "PLW",
-        "PNG",
-        "POL",
-        "PRI",
-        "PRK",
-        "PRT",
-        "PRY",
-        "PSE",
-        "PYF",
-        "QAT",
-        "ROU",
-        "RUS",
-        "RWA",
-        "SAU",
-        "SDN",
-        "SEN",
-        "SGP",
-        "SGS",
-        "SHN",
-        "SLB",
-        "SLE",
-        "SLV",
-        "SMR",
-        "SOM",
-        "SPM",
-        "SRB",
-        "SSD",
-        "STP",
-        "SUR",
-        "SVK",
-        "SVN",
-        "SWE",
-        "SWZ",
-        "SXM",
-        "SYC",
-        "SYR",
-        "TCA",
-        "TCD",
-        "TGO",
-        "THA",
-        "TJK",
-        "TKM",
-        "TLS",
-        "TON",
-        "TTO",
-        "TUN",
-        "TUR",
-        "TUV",
-        "TZA",
-        "UGA",
-        "UKR",
-        "URY",
-        "USA",
-        "UZB",
-        "VAT",
-        "VCT",
-        "VEN",
-        "VGB",
-        "VIR",
-        "VNM",
-        "VUT",
-        "WLF",
-        "WSM",
-        "XXK",
-        "YEM",
-        "ZAF",
-        "ZMB",
-        "ZWE"
-      ]
-    },
-    "common_license": {
-      "type": "string",
-      "enum": [
-        "CC0-1.0",
-        "PDDL-1.0",
-        "CC-BY-4.0",
-        "ODC-By-1.0",
-        "CC-BY-SA-4.0",
-        "ODbL-1.0"
-      ]
-    },
     "common_occupancy_time": {
       "type": "string",
       "enum": [
@@ -948,6 +742,128 @@
         "ETC",
         "TCY"
       ]
+    },
+    "Resource": {
+      "title": "Resource",
+      "type": "object",
+      "description": "An individual file or other form of data. Resources can be fully informationally equivalent, such as CSV and JSON serializations of the same data. Resources can also have different levels of fidelity, such as a CSV file and a graphical representation of the data within the file. Resources can also differ in other aspects, such as the temporal coverage of each resource.",
+      "required": [
+        "id",
+        "title",
+        "description",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "title": "Resource identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this resource.",
+          "minLength": 1
+        },
+        "title": {
+          "title": "Resource title",
+          "type": "string",
+          "description": "A title for this resource.",
+          "minLength": 1
+        },
+        "description": {
+          "title": "Resource description",
+          "type": "string",
+          "description": "A description for this resource.",
+          "minLength": 1
+        },
+        "media_type": {
+          "title": "Media type",
+          "type": "string",
+          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "codelist": "media_type.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "format": {
+          "title": "Format",
+          "type": "string",
+          "description": "A human-readable descripton of the file format of the resource, taken from the open [data formats codelist]((https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#data_formats).",
+          "codelist": "data_formats.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "spatial_resolution": {
+          "title": "Spatial resolution",
+          "type": "number",
+          "description": "The minimum spatial separation resolvable in the resource, measured in meters.",
+          "exclusiveMinimum": 0
+        },
+        "coordinate_system": {
+          "title": "Reference coordinate system",
+          "type": "string",
+          "description": "The reference co-ordinate system of the dataset version, using the [EPSG codelist](https://epsg.org).",
+          "minLength": 1
+        },
+        "url": {
+          "title": "Url",
+          "type": "string",
+          "description": "The web address the dataset version can be downloaded from.",
+          "format": "iri"
+        },
+        "temporal": {
+          "title": "Temporal coverage",
+          "description": "The period of time covered by this resource.",
+          "$ref": "#/$defs/Period"
+        }
+      },
+      "minProperties": 1
+    },
+    "Related_resource": {
+      "title": "Related resource",
+      "type": "object",
+      "description": "A related resource, such as a publication, that references, cites, or otherwise points to a dataset.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the related resource.",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "The name or title of the resource.",
+          "minLength": 1
+        },
+        "authorNames": {
+          "title": "Author names",
+          "type": "array",
+          "description": "The names of the authors of the resource.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "datePublished": {
+          "title": "Publication date",
+          "type": "string",
+          "description": "The date that the resource was first published.",
+          "format": "date"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "The uniform resource locator for the resource, e.g. the web address at which the resource can be accessed.",
+          "format": "iri"
+        },
+        "doi": {
+          "title": "Digital object identifier",
+          "type": "string",
+          "description": "The digital object identifier for the resource."
+        }
+      },
+      "minProperties": 1
     },
     "im_code": {
       "type": "string",
@@ -1026,7 +942,486 @@
         "Hybrid"
       ]
     },
+    "Period": {
+      "title": "Period",
+      "type": "object",
+      "description": "A period of time.",
+      "properties": {
+        "start": {
+          "title": "Start",
+          "type": "string",
+          "description": "The start of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+          "oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ],
+          "minLength": 1
+        },
+        "end": {
+          "title": "End date",
+          "type": "string",
+          "description": "The end of the period. A date (YYYY-MM-DD) is recommended. However, year-months (YYYY-MM) and years (YYYY) are supported.",
+          "oneOf": [
+            {
+              "format": "date"
+            },
+            {
+              "pattern": "\\d{4}$"
+            },
+            {
+              "pattern": "\\d{4}-(0[1-9]|1[0-2])$"
+            }
+          ],
+          "minLength": 1
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "string",
+          "description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
+          "format": "duration"
+        }
+      },
+      "minProperties": 1
+    },
     "vulnerability_f_relationship": {},
+    "Entity": {
+      "title": "Entity",
+      "type": "object",
+      "description": "A person, organization or group.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "A name for the entity.",
+          "minLength": 1
+        },
+        "email": {
+          "title": "Email address",
+          "type": "string",
+          "description": "An email address for the entity.",
+          "format": "email"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "A URL associated with the entity.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
+    },
+    "Attribution": {
+      "title": "Attribution",
+      "type": "object",
+      "description": "A qualified relation between an entity and a dataset.",
+      "required": [
+        "id",
+        "entity",
+        "role"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the attribution."
+        },
+        "entity": {
+          "title": "Entity",
+          "description": "An entity with a role in relation to the dataset.",
+          "$ref": "#/$defs/Entity"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string",
+          "description": "The entity's role in relation to the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#roles).",
+          "codelist": "roles.csv",
+          "openCodelist": true,
+          "minLength": 1
+        }
+      }
+    },
+    "Location": {
+      "title": "Location",
+      "type": "object",
+      "description": "A geographical area.",
+      "properties": {
+        "countries": {
+          "title": "Countries",
+          "type": "array",
+          "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#country).",
+          "items": {
+            "type": "string",
+            "codelist": "country.csv",
+            "openCodelist": false,
+            "enum": [
+              "AFG",
+              "ALB",
+              "DZA",
+              "ASM",
+              "AND",
+              "AGO",
+              "AIA",
+              "ATA",
+              "ATG",
+              "ARG",
+              "ARM",
+              "ABW",
+              "AUS",
+              "AUT",
+              "AZE",
+              "BHS",
+              "BHR",
+              "BGD",
+              "BRB",
+              "BLR",
+              "BEL",
+              "BLZ",
+              "BEN",
+              "BMU",
+              "BTN",
+              "BOL",
+              "BES",
+              "BIH",
+              "BWA",
+              "BVT",
+              "BRA",
+              "IOT",
+              "BRN",
+              "BGR",
+              "BFA",
+              "BDI",
+              "CPV",
+              "KHM",
+              "CMR",
+              "CAN",
+              "CYM",
+              "CAF",
+              "TCD",
+              "CHL",
+              "CHN",
+              "CXR",
+              "CCK",
+              "COL",
+              "COM",
+              "COD",
+              "COG",
+              "COK",
+              "CRI",
+              "HRV",
+              "CUB",
+              "CUW",
+              "CYP",
+              "CZE",
+              "CIV",
+              "DNK",
+              "DJI",
+              "DMA",
+              "DOM",
+              "ECU",
+              "EGY",
+              "SLV",
+              "GNQ",
+              "ERI",
+              "EST",
+              "SWZ",
+              "ETH",
+              "FLK",
+              "FRO",
+              "FJI",
+              "FIN",
+              "FRA",
+              "GUF",
+              "PYF",
+              "ATF",
+              "GAB",
+              "GMB",
+              "GEO",
+              "DEU",
+              "GHA",
+              "GIB",
+              "GRC",
+              "GRL",
+              "GRD",
+              "GLP",
+              "GUM",
+              "GTM",
+              "GGY",
+              "GIN",
+              "GNB",
+              "GUY",
+              "HTI",
+              "HMD",
+              "VAT",
+              "HND",
+              "HKG",
+              "HUN",
+              "ISL",
+              "IND",
+              "IDN",
+              "IRN",
+              "IRQ",
+              "IRL",
+              "IMN",
+              "ISR",
+              "ITA",
+              "JAM",
+              "JPN",
+              "JEY",
+              "JOR",
+              "KAZ",
+              "KEN",
+              "KIR",
+              "PRK",
+              "KOR",
+              "KWT",
+              "KGZ",
+              "LAO",
+              "LVA",
+              "LBN",
+              "LSO",
+              "LBR",
+              "LBY",
+              "LIE",
+              "LTU",
+              "LUX",
+              "MAC",
+              "MDG",
+              "MWI",
+              "MYS",
+              "MDV",
+              "MLI",
+              "MLT",
+              "MHL",
+              "MTQ",
+              "MRT",
+              "MUS",
+              "MYT",
+              "MEX",
+              "FSM",
+              "MDA",
+              "MCO",
+              "MNG",
+              "MNE",
+              "MSR",
+              "MAR",
+              "MOZ",
+              "MMR",
+              "NAM",
+              "NRU",
+              "NPL",
+              "NLD",
+              "NCL",
+              "NZL",
+              "NIC",
+              "NER",
+              "NGA",
+              "NIU",
+              "NFK",
+              "MNP",
+              "NOR",
+              "OMN",
+              "PAK",
+              "PLW",
+              "PSE",
+              "PAN",
+              "PNG",
+              "PRY",
+              "PER",
+              "PHL",
+              "PCN",
+              "POL",
+              "PRT",
+              "PRI",
+              "QAT",
+              "MKD",
+              "ROU",
+              "RUS",
+              "RWA",
+              "REU",
+              "BLM",
+              "SHN",
+              "KNA",
+              "LCA",
+              "MAF",
+              "SPM",
+              "VCT",
+              "WSM",
+              "SMR",
+              "STP",
+              "SAU",
+              "SEN",
+              "SRB",
+              "SYC",
+              "SLE",
+              "SGP",
+              "SXM",
+              "SVK",
+              "SVN",
+              "SLB",
+              "SOM",
+              "ZAF",
+              "SGS",
+              "SSD",
+              "ESP",
+              "LKA",
+              "SDN",
+              "SUR",
+              "SJM",
+              "SWE",
+              "CHE",
+              "SYR",
+              "TWN",
+              "TJK",
+              "TZA",
+              "THA",
+              "TLS",
+              "TGO",
+              "TKL",
+              "TON",
+              "TTO",
+              "TUN",
+              "TUR",
+              "TKM",
+              "TCA",
+              "TUV",
+              "UGA",
+              "UKR",
+              "ARE",
+              "GBR",
+              "UMI",
+              "USA",
+              "URY",
+              "UZB",
+              "VUT",
+              "VEN",
+              "VNM",
+              "VGB",
+              "VIR",
+              "WLF",
+              "ESH",
+              "YEM",
+              "ZMB",
+              "ZWE",
+              "ALA"
+            ]
+          },
+          "minItems": 1
+        },
+        "gazetteerEntries": {
+          "title": "Gazetteer entries",
+          "type": "array",
+          "description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe subnational coverage. Use of ISO 3166-2 is recommended.",
+          "items": {
+            "$ref": "#/$defs/Gazetteer_entry"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "bbox": {
+          "title": "Bounding box",
+          "type": "array",
+          "description": "A geographic bounding box delimiting the geographical area.",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "geometry": {
+          "title": "Geometry",
+          "description": "A set of coordinates denoting the vertices of the geographical area.",
+          "$ref": "#/$defs/Geometry"
+        },
+        "centroid": {
+          "title": "Centroid",
+          "type": "array",
+          "description": "The coordinates of the centre of the geographical area.",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "Gazetteer_entry": {
+      "title": "Gazetteer entry",
+      "type": "object",
+      "description": "An entry from a geographical index or directory describing a geographical area.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "An identifier drawn from the gazetteer identified in `.scheme`."
+        },
+        "scheme": {
+          "title": "Scheme",
+          "type": "string",
+          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist]https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#location_gazetteers).",
+          "codelist": "location_gazetteers.csv",
+          "openCodelist": true
+        },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "description": "A description for the gazetteer entry."
+        },
+        "uri": {
+          "title": "Uniform resource locator",
+          "type": "string",
+          "description": "A URI for the gazetteer entry.",
+          "format": "iri"
+        }
+      }
+    },
+    "Geometry": {
+      "title": "Geometry",
+      "type": "object",
+      "description": "A set of coordinates denoting the vertices of the geographical area.",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string",
+          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#geometry_type).",
+          "codelist": "location_gazetteers.csv",
+          "openCodelist": false,
+          "enum": [
+            "Point",
+            "Multipoint",
+            "LineString",
+            "MultiLineString",
+            "Polygon",
+            "MultiPolygon"
+          ]
+        },
+        "coordinates": {
+          "title": "Coordinates",
+          "type": "array",
+          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
+          "items": {
+            "type": [
+              "number",
+              "array"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
     "vulnerability_f_math": {}
-  }
+  },
+  "minProperties": 1
 }

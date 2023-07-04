@@ -19,4 +19,159 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Open codelists
 
+### IMT
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/IMT.csv
+---
+```
+
+### data_formats
+
+This codelist is referenced by the following properties:
+
+- `Resource/format`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/data_formats.csv
+---
+```
+
+### license
+
+This codelist is referenced by the following properties:
+
+- `license`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/license.csv
+---
+```
+
+### location_gazetteers
+
+This codelist is referenced by the following properties:
+
+- `Gazetteer_entry/scheme`
+- `Geometry/type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/location_gazetteers.csv
+---
+```
+
+### media_type
+
+This codelist is referenced by the following properties:
+
+- `Resource/media_type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/media_type.csv
+---
+```
+
+### roles
+
+The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml) with the addition of 'world_bank_team_lead' and the omission of codes covered by the `creator`, `contact_point` and `publisher` fields.
+
+This codelist is referenced by the following properties:
+
+- `Attribution/role`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/roles.csv
+---
+```
+
 ## Closed codelists
+
+### country
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/country.csv
+---
+```
+
+### function_approach
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/function_approach.csv
+---
+```
+
+### geometry_type
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/geometry_type.csv
+---
+```
+
+### risk_data_type
+
+This codelist is referenced by the following properties:
+
+- `risk_data_type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/risk_data_type.csv
+---
+```
