@@ -242,6 +242,48 @@ Additional **tags** attributes can be associated with an asset to link any infor
 
 ### Vulnerability
 
+The vulnerability schema includes physical fragility and vulnerability relationships in relation to specific hazards or for multi-hazard (combination of individual hazards). A wide range of model types and parameters can describe vulnerability, for this reason there are many possible variables accounted by the Vulnerability schema. But only a part of them will be required to describe one specific model.
+The schema distinguishes key information describing the vulnerability model, including:
+
+- function type (i.e fragility, vulnerability, damage-to-loss)
+- countries the function was developed for, measured in terms of to geographic relevance
+- development approach (empirical, analytical, judgement, hybrid, code-based)
+- mathematical model used (including exponential, cumulative lognormal/normal)
+- the intensity measure and asset type the function relates to
+- loss parameter / engineering demand parameter values
+
+```{eval-rst}
+ .. mermaid::
+
+  classDiagram
+      Model -- Specifics
+      Model -- Additional
+      Model: Hazard type
+      Model: Exposure taxonomy
+      Model: Calculation method
+      class Specifics{
+        Parameters
+        Damage states
+        Intensity measure
+      }
+      class Additional{
+        Validation
+        Error
+        Fitness
+      }
+```
+
+The **model** attributes specify which hazard types and exposure categories the vulnerability relationship applies to.
+Other attributes describe the function type and the analytical approach adopted, and add notes on the model applicability in terms of location and scale.
+
+The **specifics** attributes add more optional details.
+
+The **additional** attributes cover more specific information that helps to understand the analysis which generated the function.
+
+`````{tab-set}
+
+````{tab-item} Schema
+
 ```{jsonschema} ../../schema/rdl_schema_0.1.json
 ---
 pointer: /anyOf/2/properties/vulnerability
@@ -249,6 +291,10 @@ collapse:
 addtargets:
 ---
 ```
+
+````
+
+`````
 
 ### Loss
 

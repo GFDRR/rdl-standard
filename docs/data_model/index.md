@@ -57,7 +57,6 @@ ______________________________________________________________________
    :maxdepth: 1
    :hidden:
 
-   vulnerability
    loss
    codelists
    schema
