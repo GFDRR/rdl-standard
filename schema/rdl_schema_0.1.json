@@ -853,8 +853,7 @@
         "doi": {
           "title": "Digital object identifier",
           "type": "string",
-          "description": "The digital object identifier for the resource.",
-          "format": "iri"
+          "description": "The digital object identifier for the resource."
         }
       },
       "minProperties": 1
