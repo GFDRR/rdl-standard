@@ -199,10 +199,17 @@
             "event": {
               "type": "object",
               "required": [
+                "id",
                 "calculation_method",
                 "frequency_type"
               ],
               "properties": {
+                "id": {
+                  "title": "Event identifier",
+                  "type": "string",
+                  "description": "The unique identifier for this event within the event_set.",
+                  "minLength": 1
+                },
                 "calculation_method": {
                   "title": "Model calculation method",
                   "type": "string",
