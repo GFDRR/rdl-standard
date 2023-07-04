@@ -151,10 +151,17 @@
             "event_set": {
               "type": "object",
               "required": [
+                "id",
                 "hazard_type",
                 "analysis_type"
               ],
               "properties": {
+                "id": {
+                  "title": "Event set identifier",
+                  "type": "string",
+                  "description": "The unique identifier for this event set.",
+                  "minLength": 1
+                },
                 "hazard_type": {
                   "$ref": "#/$defs/common_hazard_type",
                   "description": "Type of hazard modelled"
