@@ -371,7 +371,7 @@ def cli():
 
 @cli.command()
 def pre_commit():
-    """Update codelist reference documentation and run mdformat
+    """Update reference documentation and format Markdown files
     """
 
     # Load schema
