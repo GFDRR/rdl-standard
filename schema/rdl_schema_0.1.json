@@ -204,8 +204,11 @@
               ],
               "properties": {
                 "calculation_method": {
-                  "$ref": "#/$defs/common_calc_method",
-                  "description": "The methodology used for the calculation of this event"
+                  "title": "Model calculation method",
+                  "type": "string",
+                  "description": "The methodology used for the calculation of the event in the modelled scenario(s).",
+                  "codelist": "data_calculation_type.csv",
+                  "openCodelist": false
                 },
                 "frequency_type": {
                   "$ref": "#/$defs/common_frequency_type",
