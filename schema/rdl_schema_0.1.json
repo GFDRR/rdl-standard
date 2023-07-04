@@ -180,6 +180,10 @@
                   "minItems": 1,
                   "uniqueItems": true
                 },
+                "process_type": {
+                  "$ref": "#/$defs/common_process_type",
+                  "description": "Type of hazard process modelled"
+                },
                 "time_start": {
                   "type": "string",
                   "description": "The time at which the modelled scenario(s) starts [ISO 8601 format]",
@@ -272,10 +276,6 @@
                   "type": "string",
                   "description": "The unique identifier for this footprint",
                   "minLength": 1
-                },
-                "process_type": {
-                  "$ref": "#/$defs/common_process_type",
-                  "description": "Type of hazard process modelled"
                 },
                 "imt": {
                   "$ref": "#/$defs/im_code",
