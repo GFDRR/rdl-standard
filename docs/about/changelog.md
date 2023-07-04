@@ -16,6 +16,7 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Codelists
 
+- [#114](https://github.com/GFDRR/rdl-standard/pull/114) - Add descriptions and change pattern of codes to metric:unit.
 - [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
 
