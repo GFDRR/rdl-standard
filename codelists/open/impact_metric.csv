@@ -1,3 +1,11 @@
-Code,Title,Definition
-absolute,Absolute,"Impact expressed in absolute terms such as currency, number of people or assets, kilometers, square kilometers, or time."
-relative,Relative,"Impact expressed in relative terms such as a percentage, or proportion of a total"
+Code,Title
+damage ratio,Damage ratio
+mean damage ratio,Mean damage ratio
+probability of exceeding damage limit state,Probability of exceeding damage limit state
+loss ratio,Loss ratio
+total loss,total loss
+number of casualties(fatalities),Number of casualties (fatalities)
+casualty(fatality) ratio,Casulalty (fatality) ratio
+annual average loss,Annual average loss
+downtime,Downtime
+damage index,Damage index
