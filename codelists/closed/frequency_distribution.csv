@@ -1,0 +1,4 @@
+Code,Title,Definition
+poisson,Poisson,Data modelled using poisson distribution. 
+negative,Negative,Data modelled using negative distribution. 
+userDefined,User defined,Data modelled using a user defined distribution. 
