@@ -1,15 +1,12 @@
 Code,Title,Description
-world_bank_team_lead,World Bank team lead,The entity who lead the project that created and/or used the dataset in a World bank project.
+world_bank_team_lead,World Bank team lead,The lead of the World Bank project that created and/or used the dataset. Also known as the Task Team Leader (TTL).
 resource_provider,Resource provider,An entity that supplies the resource.
 custodian,Custodian,An entity that accepts accountability and responsibility for the resource and ensures appropriate care and maintenance of the resource.
 owner,Owner,An entity that owns the resource.
 user,User,An entity who uses the resource.
 distributor,Distributor,An entity who distributes the resource.
-originator,Originator,An entity who created the resource.
-point_of_contact,Point of contact,An entity who can be contacted for acquiring knowledge about or acquisition of the resource.
 principal_investigator,Principal investigator,A key entity responsible for gathering information and conducting research.
 processor,Processor,An entity who has processed the data in a manner such that the resource has been modified.
-publisher,Publisher,The entity who published the resource.
 author,Author,An entity who authored the resource.
 sponsor,Sponsor,An entity who speaks for the resource.
 co_author,Co-author,An entity who jointly authors the resource.

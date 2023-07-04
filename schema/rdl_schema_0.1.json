@@ -45,8 +45,7 @@
       "title": "Publisher",
       "type": "object",
       "description": "The entity responsible for making the dataset available.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 2
+      "$ref": "#/$defs/Entity"
     },
     "model_source": {
       "type": "string",
@@ -104,20 +103,18 @@
       "title": "Contact point",
       "type": "object",
       "description": "Contact information for the maintainer of the dataset.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 2
+      "$ref": "#/$defs/Entity"
     },
     "creator": {
-      "title": "Dataset creator",
+      "title": "Creator",
       "type": "object",
       "description": "The entity responsible for producing the dataset.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 2
+      "$ref": "#/$defs/Entity"
     },
     "attributions": {
       "title": "Attributions",
       "type": "array",
-      "description": "Information about entities involved in the creation of the dataset.",
+      "description": "Information about entities and their roles in relation to the dataset.",
       "items": {
         "$ref": "#/$defs/Attribution"
       },
@@ -983,7 +980,7 @@
     "Attribution": {
       "title": "Attribution",
       "type": "object",
-      "description": "An attribution made to the creation of a dataset.",
+      "description": "A qualified relation between an entity and a dataset.",
       "required": [
         "id",
         "entity",
@@ -993,19 +990,19 @@
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "A locally unique identifier for the contribution."
+          "description": "A locally unique identifier for the attribution."
         },
         "entity": {
           "title": "Entity",
-          "description": "A person, organization or group responsible for the contribution.",
+          "description": "An entity with a role in relation to the dataset.",
           "$ref": "#/$defs/Entity"
         },
         "role": {
           "title": "Role",
           "type": "string",
-          "description": "The entity's role in the creation of the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#roles).",
+          "description": "The entity's role in relation to the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#roles).",
           "codelist": "roles.csv",
-          "openCodelist": false,
+          "openCodelist": true,
           "minLength": 1
         }
       }
