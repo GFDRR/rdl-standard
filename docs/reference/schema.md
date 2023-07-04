@@ -13,7 +13,7 @@ This page presents the schema in tables with additional information in paragraph
 The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#resource) and four risk-specific components:
 
 - [Hazard](#hazard): main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.
-- [Exposure](#exposure): asset category, occupancy and specific taxonomy, cost type and value.
+- [Exposure](#exposure): asset category, specific taxonomy, cost type and value.
 - [Vulnerability](#vulnerability): model that links hazard intensity and exposure classification to measure of impact over the total exposed value.
 - [Loss](#loss): modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
 
@@ -51,7 +51,7 @@ The diagram below shows the core relationships between schema components, and th
       class Vulnerability{
         -Hazard process
         -Exposure taxonomy
-        -Analytical  method 
+        -Analytical method 
         -Applicability
       }
       class Loss{
@@ -133,13 +133,13 @@ The hazard schema stores data about the intensity and occurrence probability of 
       }
 ```
 
-The hazard schema specifies which type of analysis and data methodology that has generated the dataset. It supports either simulated probabilistic scenarios and empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
+The hazard schema specifies which type of analysis and data methodology has generated the dataset. It supports either simulated probabilistic scenarios or empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
 
-When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
+When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 2009-10-01 (time start) to 2009-10-03 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
 
 When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of earthquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).
 
-The schema distinguish between the hazard and process represented and the hazard and process identified as the cause, or concause for the manifestation of the represented hazard. For example, a dataset represent landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.
+The schema distinguishes between the hazard and process represented, and the hazard and process identified as the cause, or con-cause for the manifestation of the represented hazard. For example, a dataset representing a landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.
 
 The hazard dataset could include one or more footprints for the same event, where each is one possible realisation (i.e. one footprint could represent minimum, another footprint the average and another one the maximum). The event uncertainty can be represented explicitly, through the inclusion of multiple footprints per event.
 
@@ -163,7 +163,7 @@ Hazard data are most often represented by geospatial grids (raster); sometimes t
 
 **Flood hazard maps for Kabul**
 
-Schema attributes for flood hazard map related to occurrence probability of a river flood event with a return period of once in 100 years over Kabul, Afghanistan. The hydrological data used for modelling the intensity of floods is derived from observations over the period 1958-2001 (44 years). The hazard intensity is measured as water depth, in meters. These information cover all mandatory fields, and few optional fields.
+Schema attributes for flood hazard map related to the occurrence probability of a river flood event with a return period of once in 100 years over Kabul, Afghanistan. The hydrological data used for modelling the intensity of floods is derived from observations over the period 1958-2001 (44 years). The hazard intensity is measured as water depth, in meters. These information cover all mandatory fields, and a few optional fields.
 
 ![Screenshot](../img/hzd_fl_kabul.jpg)
 
@@ -183,7 +183,7 @@ Schema attributes for flood hazard map related to occurrence probability of a ri
 
 **Earthquake hazard maps for Afghanistan**
 
-Schema attributes for earthquake hazard map related to occurrence probability of an event with return period of  once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability start from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).
+Schema attributes for an earthquake hazard map related to an occurrence probability of an event with return period of once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability starts from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).
 
 ![Screenshot](../img/hzd_eq_afg.jpg)
 
