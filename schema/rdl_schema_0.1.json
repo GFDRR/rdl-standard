@@ -203,6 +203,11 @@
                   "type": "string",
                   "description": "General reference year to which the scenario refers to (e.g. '2050')",
                   "minLength": 1
+                },
+                "temporal": {
+                  "title": "Temporal coverage",
+                  "description": "The period of time covered by this event set.",
+                  "$ref": "#/$defs/Period"
                 }
               },
               "minProperties": 1
