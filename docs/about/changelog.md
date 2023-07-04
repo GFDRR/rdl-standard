@@ -16,9 +16,12 @@ This page lists changes to the Risk Data Library Standard.
   - Add `Source` definition.
   - Update field descriptions in `Resource` definition.
   - Add validation keywords to `Location`, `Gazetteer_entry` and `Geometry` definitions.
+- [#116](https://github.com/GFDRR/rdl-standard/pull/116) - Replace `biblio_title` and `biblio_url` with `Related_resource` definition.
+- [#115](https://github.com/GFDRR/rdl-standard/pull/115) - Add `Entity` and `Attribution` objects, update entity related field names and descriptions.
 
 ### Codelists
 
+- [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
 
 ### Normative documentation
