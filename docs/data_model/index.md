@@ -57,7 +57,6 @@ ______________________________________________________________________
    :maxdepth: 1
    :hidden:
 
-   exposure
    vulnerability
    loss
    codelists
