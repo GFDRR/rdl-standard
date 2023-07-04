@@ -4,7 +4,7 @@ The schema provides the authoritative definition of the structure of Risk Data L
 
 For this version of RDLS, the canonical URL of the schema is \[\]\](). Use the canonical URL to make sure that your software, documentation or other resources refer to the specific version of the schema with which they were tested.
 
-This page presents the schema in an [interactive browser](#browser) and in [reference tables](#reference-tables) with additional information in paragraphs. You can also download the canonical version of the schema as [JSON Schema](../../schema/rdl_schema_0.1.json) or download it as a CSV spreadsheet \[TODO\].
+This page presents the schema in an [interactive browser](#browser) and in [reference tables](#reference-tables) with additional information in paragraphs. You can also download the canonical version of the schema as [JSON Schema](../../docs/_readthedocs/html/rdl_schema_0.1.json) or download it as a CSV spreadsheet \[TODO\].
 
 ```{note}
    If any conflicts are found between the text on this page and the text within the schema, the text within the schema takes precedence.
@@ -22,7 +22,7 @@ Click on schema elements to expand the tree, or use the '+' icon to expand all e
 
 In addition to schema-specific attributes, each dataset is identified by a list of attributes based on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms). Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 addtargets:
 ---
@@ -32,7 +32,7 @@ addtargets:
 
 Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Resource
 collapse:
@@ -94,7 +94,7 @@ The hazard schema stores data about the intensity and occurrence probability of 
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/0/properties/hazard
 collapse:
@@ -190,7 +190,7 @@ The exposure schema covers a wide variety of data describing structural, infrast
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/1/properties/exposure
 collapse:
@@ -284,7 +284,7 @@ The **additional** attributes cover more specific information that helps to unde
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/2/properties/vulnerability
 collapse:
@@ -298,7 +298,50 @@ addtargets:
 
 ### Loss
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+The loss schema enables to store information about hazard impact over exposure as a function of vulnerability. Loss datasets are directly linked to the hazard, exposure, and vulnerability datasets which were used to model losses. When no vulnerability model is applied, the potential loss is estimated as the sum of all exposed value. Losses can be expressed in form of map or in form of a curve, both sharing the same attributes and metrics.
+
+```{eval-rst}
+ .. mermaid::
+
+  classDiagram
+      Model -- Map
+      Model -- Curve
+      Model: Hazard type
+      Model: Exposure category
+      Model: Calculation method
+      Model: Link data
+
+      class Map{
+        Occurrence frequency
+        Time reference
+        Impact type
+        Loss type
+        Loss metric
+        Loss unit
+      }
+      class Curve{
+        Occurrence frequency
+        Time reference
+        Impact type
+        Loss type
+        Loss metric
+        Loss unit
+      }
+```
+
+The main attributes of the **loss model** describe the hazard and process for which the loss are calculated, the method of calculation (to discern empirical events from simulated scenarios) and the category of asset on which losses insist. The schema includes the direct links to the original dataset of hazard, exposure, and vulnerability that were used to calculate the loss.
+
+When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
+
+When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100).
+
+Additional attributes are specific to loss, describing the type of impact, the type of loss, the loss metric and the unit used to measure it.
+
+`````{tab-set}
+
+````{tab-item} Schema
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/3/properties/loss
 collapse:
@@ -306,11 +349,77 @@ addtargets:
 ---
 ```
 
+````
+
+````{tab-item} Examples
+
+Losses can be represented in many different way: regular raster grids, points, or polygons. Often, the loss data consist of measures aggregated at the administrative unit level.
+
+**Flood loss scenarios for Afghanistan, 2050**
+
+Schema attributes for loss map related to future river flood hazard scenarios (2050) over all types of exposure occupancies for Afghanistan.
+
+![Flood losses in Afghanistan](../img/lss_fl_afg.jpg)
+
+The losses are higher in the most densely built-up area of Kabul.
+
+![Flood losses in Kabul](../img/lss_fl_kabul.jpg)
+
+| **Required** | **Attribute**          | **Example**                                                             |
+| :----------: | ---------------------- | ----------------------------------------------------------------------- |
+|      \*      | Hazard type            | Flood                                                                   |
+|              | Hazard process         | River flood                                                             |
+|      \*      | Exposure occupancy     | Mixed                                                                   |
+|      \*      | Exposure category      | Buildings                                                               |
+|      \*      | Value type             | Structure                                                               |
+|              | Hazard link            | [Dataset](http://jkan.riskdatalibrary.org/datasets/hzd-afg-fl-baseline) |
+|              | Exposure link          |                                                                         |
+|              | Vulnerability link     |                                                                         |
+|              | Time year              | 2050                                                                    |
+|              | Frequency type         | Return Period                                                           |
+|              | Occurrence probability | RP 5-1000 years                                                         |
+|      \*      | Impact                 | Direct                                                                  |
+|      \*      | Loss type              | Ground up                                                               |
+|      \*      | Metric                 | Average Annual Losses                                                   |
+|      \*      | Unit                   | USD                                                                     |
+
+______________________________________________________________________
+
+Losses can be investigated as total or for individual exposed asset and infrastructure elements.
+
+![Example of data showing exposed roads in Afghanistan](../img/exp_afg_roads.jpg)
+
+______________________________________________________________________
+
+**Observed losses**
+
+Insert example of recorded empirical losses.
+
+| **Required** | **Attribute**           | **Example**   |
+| :----------: | ----------------------- | ------------- |
+|      \*      | Hazard type             | Earthquake    |
+|      \*      | Analysis type           | Probabilistic |
+|      \*      | Calculation method      | Simulated     |
+|              | Frequency type          | Return Period |
+|              | Occurrence probability  | 1000 years    |
+|              | Occurrence time (start) | 800           |
+|              | Occurrence time (end)   | 2001          |
+|              | Occurrence time (span)  | 1200 years    |
+|      \*      | Hazard process          | Ground motion |
+|      \*      | Unit of measure         | PGA (g)       |
+
+
+````
+
+`````
+
+
+
 ### Sub-schemas
 
 #### common_aggregation_type
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/common_aggregation_type
 collapse:
