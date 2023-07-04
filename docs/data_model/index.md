@@ -1,54 +1,12 @@
 # Data model
 
-The Risk Data Library Standard [schema](schema.md) covers [general dataset attributes](schema.md#dataset) and four specific components:
-
-- [Hazard](schema.md#hazard): main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.
-- [Exposure](schema.md#exposure): asset category, occupancy and specific taxonomy, cost type and value.
-- [Vulnerability](schema.md#vulnerability): model that links hazard intensity and exposure classification to measure of impact over the total exposed value.
-- [Loss](schema.md#loss): modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
-
-For definitions of these terms, please see the [Glossary](https://rdl-standard.readthedocs.io/en/docs.mat/glossary.html)
-
-The diagram below shows the core relationships between schema components, and their core attributes.
-
-```{eval-rst}
- .. mermaid::
-
-  classDiagram
-      Dataset -- Hazard
-      Dataset -- Exposure
-      Dataset -- Vulnerability
-      Dataset -- Loss
-      Dataset: -Project name
-      Dataset: -Coverage
-      Dataset: -Purpose
-      Dataset: -Bibliography
-      class Hazard{
-        -Type, Process
-        -Trigger
-        -Frequency
-        -Intensity unit
-        -Analytical method
-          }
-      class Exposure{
-        -Asset category
-        -Occupancy
-        -Taxonomy
-        -Cost type
-      }
-      class Vulnerability{
-        -Hazard process
-        -Exposure taxonomy
-        -Analytical  method 
-        -Applicability
-      }
-      class Loss{
-        -Hazard process
-        -Exposure taxonomy
-        -Loss frequency
-        -Loss metric
-      }          
+```{note}
+   Throughout the reference documentation, the key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" are to be interpreted as described in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119).
 ```
+
+The [schema reference](schema.md) is the canonical reference for the structure of the Risk Data Library Standard (RDLS) data model, the meaning of each field, and the rules that must be followed to publish RDLS data. You can also [view the schema in an interactive browser](browser.md).
+
+The [codelist reference](codelists.md) is the canonical reference for the meaning of the codes used to limit and standardise the possible values of fields in RDLS data.
 
 ______________________________________________________________________
 
@@ -57,7 +15,9 @@ ______________________________________________________________________
    :maxdepth: 1
    :hidden:
 
-   codelists
    schema
+   browser
+   codelists
+   
 
 ```
