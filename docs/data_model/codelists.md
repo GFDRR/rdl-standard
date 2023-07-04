@@ -112,6 +112,40 @@ file: ../../codelists/closed/geometry_type.csv
 ---
 ```
 
+### hazard_type
+
+The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
+
+The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/hazard_type.csv
+---
+```
+
+### process_type
+
+The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type).
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/process_type.csv
+---
+```
+
 ### risk_data_type
 
 This codelist is referenced by the following properties:
