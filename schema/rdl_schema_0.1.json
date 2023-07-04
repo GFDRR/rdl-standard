@@ -221,6 +221,11 @@
                   "description": "The unique identifier for this event within the event_set.",
                   "minLength": 1
                 },
+                "disaster_identifier": {
+                  "title": "Disaster identifier",
+                  "type": "string",
+                  "description": "The GLIDE number associated with this event disaster. A globally unique identification code for the observed or inferred hazard event. GLIDE numbers are available at [glidenumber.net](https://www.glidenumber.net/glide/public/search/search.jsp)."
+                },
                 "calculation_method": {
                   "title": "Model calculation method",
                   "type": "string",
