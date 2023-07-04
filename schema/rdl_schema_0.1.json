@@ -11,7 +11,7 @@
     "model_date",
     "spatial",
     "publish",
-    "license_code",
+    "license",
     "resources"
   ],
   "properties": {
@@ -93,9 +93,12 @@
       "description": "The geographical area covered by the dataset.",
       "$ref": "#/$defs/Location"
     },
-    "license_code": {
-      "$ref": "#/$defs/common_license",
-      "description": "Type of license"
+    "license": {
+      "title": "License",
+      "type": "string",
+      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "codelist": "license.csv",
+      "openCodelist": true
     },
     "maintainer": {
       "type": "string",
@@ -685,17 +688,6 @@
         "Direct",
         "Indirect",
         "Total"
-      ]
-    },
-    "common_license": {
-      "type": "string",
-      "enum": [
-        "CC0-1.0",
-        "PDDL-1.0",
-        "CC-BY-4.0",
-        "ODC-By-1.0",
-        "CC-BY-SA-4.0",
-        "ODbL-1.0"
       ]
     },
     "common_occupancy_time": {
