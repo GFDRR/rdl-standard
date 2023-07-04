@@ -126,7 +126,7 @@
     "sources": {
       "title": "Sources",
       "type": "array",
-      "description": "Related resources that serve as sources of information or predictions that contribute to the creation of the dataset.",
+      "description": "Sources of information or predictions that contribute to the creation of the dataset.",
       "items": {
         "$ref": "#/$defs/Source"
       },
@@ -823,14 +823,9 @@
         },
         "temporal_resolution": {
           "title": "Temporal resolution",
-          "type": "array",
-          "description": "The unit(s) of time covered by this resource, given in ISO 8604 durations.",
-          "items": {
-            "type": "string",
-            "format": "duration"
-          },
-          "minItems": 1,
-          "uniqueItems": true
+          "type": "string",
+          "description": "The minimum period of time resolvable in this resource, in ISO8601 duration format.",
+          "format": "duration"
         }
       },
       "minProperties": 1
@@ -1247,8 +1242,7 @@
             "type": "number"
           },
           "minItems": 4,
-          "maxItems": 4,
-          "uniqueItems": true
+          "maxItems": 4
         },
         "geometry": {
           "title": "Geometry",
@@ -1263,8 +1257,7 @@
             "type": "number"
           },
           "minItems": 2,
-          "maxItems": 2,
-          "uniqueItems": true
+          "maxItems": 2
         }
       },
       "minProperties": 1
@@ -1346,7 +1339,7 @@
     "Source": {
       "title": "Source",
       "type": "object",
-      "description": "A resource that serves as a source of information or predictions that contribute to the creation of a dataset.",
+      "description": "A source of information or predictions that contribute to the creation of a dataset.",
       "required": [
         "id"
       ],
@@ -1354,25 +1347,25 @@
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "A locally unique identifier for the related resource.",
+          "description": "A locally unique identifier for the source.",
           "minLength": 1
         },
         "name": {
           "title": "Name",
           "type": "string",
-          "description": "The name or title of the resource.",
+          "description": "The name or title of the source.",
           "minLength": 1
         },
         "url": {
           "title": "URL",
           "type": "string",
-          "description": "The uniform resource locator for the resource, e.g. the web address at which the resource can be accessed.",
+          "description": "The uniform resource locator for the source, e.g. the web address at which the source can be accessed.",
           "format": "iri"
         },
         "type": {
           "title": "type",
           "type": "string",
-          "description": "The nature of the related resource, from the closed [resource type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#source_type).",
+          "description": "The nature of the source, from the closed [source type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#source_type).",
           "codelist": "source_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1383,7 +1376,7 @@
         "component": {
           "title": "Component",
           "type": "string",
-          "description": "The risk data component the related resource has been used in, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk_data_type).",
+          "description": "The risk data component the source has been used in, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk_data_type).",
           "codelist": "risk_data_type.csv",
           "openCodelist": false,
           "enum": [
