@@ -16,7 +16,7 @@ from pathlib import Path
 
 basedir = Path(__file__).resolve().parent
 codelistdir = basedir / 'codelists'
-referencedir = basedir / 'docs' / 'data_model'
+referencedir = basedir / 'docs' / 'reference'
 schemadir = basedir / 'schema'
 
 
@@ -173,7 +173,7 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
 
 
 def update_codelist_docs(schema):
-  """Update docs/data_model/codelists.md"""
+  """Update docs/reference/codelists.md"""
 
   if '$defs' in schema:
      defs_path = '$defs'

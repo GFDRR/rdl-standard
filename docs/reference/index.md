@@ -1,4 +1,4 @@
-# Data model
+# Reference
 
 ```{note}
    Throughout the reference documentation, the key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" are to be interpreted as described in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119).
