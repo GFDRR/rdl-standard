@@ -284,79 +284,11 @@
       "minProperties": 1
     },
     {
-      "type": "object",
-      "title": "exposure",
-      "properties": {
-        "exposure": {
-          "type": "object",
-          "required": [
-            "model",
-            "value"
-          ],
-          "properties": {
-            "model": {
-              "type": "object",
-              "required": [
-                "category",
-                "occupancy"
-              ],
-              "properties": {
-                "category": {
-                  "description": "Type of asset",
-                  "$ref": "#/$defs/common_exp_category"
-                },
-                "occupancy": {
-                  "description": "Destination of use of the asset",
-                  "$ref": "#/$defs/common_exp_occupancy"
-                },
-                "occupancy_time": {
-                  "description": "Period of occupancy, if appliable (e.g. Population)",
-                  "$ref": "#/$defs/common_occupancy_time"
-                },
-                "taxonomy_source": {
-                  "type": "string",
-                  "description": "Name of taxonomy source (default is GED4ALL)",
-                  "default": "GED4ALL",
-                  "minLength": 1
-                },
-                "taxonomy_code": {
-                  "type": "string",
-                  "description": "Alphanumeric code for the taxonomy source (based on GED4ALL)",
-                  "minLength": 1
-                },
-                "time_year": {
-                  "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
-                  "minLength": 1
-                },
-                "add_attributes": {
-                  "type": "string",
-                  "description": "List of key attributes included in the dataset",
-                  "minLength": 1
-                }
-              },
-              "minProperties": 1
-            },
-            "value": {
-              "type": "object",
-              "properties": {
-                "val_type": {
-                  "description": "Type of asset value",
-                  "$ref": "#/$defs/common_exp_val_type"
-                },
-                "val_unit": {
-                  "type": "string",
-                  "description": "Unit of measure",
-                  "minLength": 1
-                }
-              },
-              "minProperties": 1
-            }
-          },
-          "minProperties": 1
-        }
-      },
-      "minProperties": 1
+      "exposure": {
+        "title": "Exposure dataset metadata",
+        "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
+        "$ref": "#/$defs/Exposure"
+      }
     },
     {
       "type": "object",
@@ -393,16 +325,22 @@
                   "$ref": "#/$defs/im_code"
                 },
                 "category": {
-                  "description": "Type of asset",
-                  "$ref": "#/$defs/common_exp_category"
-                },
-                "occupancy": {
-                  "description": "Type of occupancy to which function applies",
-                  "$ref": "#/$defs/common_exp_occupancy"
+                  "title": "Exposure category",
+                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+                  "type": "string",
+                  "codelist": "exposure_category.csv",
+                  "openCodelist": false,
+                  "enum": [
+                    "Agriculture",
+                    "Buildings",
+                    "Infrastructures",
+                    "Population",
+                    "Natural environment"
+                  ]
                 },
                 "val_type": {
                   "description": "Type of asset value",
-                  "$ref": "#/$defs/common_exp_val_type"
+                  "$ref": "#/$defs/Cost"
                 },
                 "val_unit": {
                   "type": "string",
@@ -556,16 +494,22 @@
                   "description": "General reference year to which the scenario refers to (e.g. '2050')",
                   "minLength": 1
                 },
-                "occupancy": {
-                  "$ref": "#/$defs/common_exp_occupancy",
-                  "description": "Destination of use of the asset"
-                },
                 "category": {
-                  "$ref": "#/$defs/common_exp_category",
-                  "description": "Exposure category"
+                  "title": "Exposure category",
+                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+                  "type": "string",
+                  "codelist": "exposure_category.csv",
+                  "openCodelist": false,
+                  "enum": [
+                    "Agriculture",
+                    "Buildings",
+                    "Infrastructures",
+                    "Population",
+                    "Natural environment"
+                  ]
                 },
                 "val_type": {
-                  "$ref": "#/$defs/common_exp_val_type",
+                  "$ref": "#/$defs/Cost",
                   "description": "Element on which loss insist"
                 },
                 "impact": {
@@ -624,6 +568,48 @@
     }
   ],
   "$defs": {
+    "Exposure": {
+      "title": "Exposure",
+      "type": "object",
+      "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
+      "required": [
+        "category",
+        "cost"
+      ],
+      "properties": {
+        "category": {
+          "title": "Exposure category",
+          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+          "type": "string",
+          "codelist": "exposure_category.csv",
+          "openCodelist": false,
+          "enum": [
+            "Agriculture",
+            "Buildings",
+            "Infrastructures",
+            "Population",
+            "Natural environment"
+          ]
+        },
+        "taxonomy": {
+          "title": "Exposure taxonomy scheme",
+          "type": "string",
+          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
+          "minLength": 1
+        },
+        "cost": {
+          "title": "Asset cost",
+          "type": "array",
+          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
+          "items": {
+            "$ref": "#/$defs/Cost"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "minProperties": 1
+    },
     "common_aggregation_type": {
       "type": "string",
       "enum": [
@@ -648,39 +634,348 @@
         "Observed"
       ]
     },
-    "common_exp_category": {
-      "type": "string",
-      "enum": [
-        "Buildings",
-        "Indicators",
-        "Infrastructures",
-        "Crops, livestock and forestry"
-      ]
-    },
-    "common_exp_occupancy": {
-      "type": "string",
-      "enum": [
-        "Residential",
-        "Commercial",
-        "Industrial",
-        "Infrastructure",
-        "Healthcare",
-        "Educational",
-        "Government",
-        "Crop",
-        "Livestock",
-        "Forestry",
-        "Mixed"
-      ]
-    },
-    "common_exp_val_type": {
-      "type": "string",
-      "enum": [
-        "Structure",
-        "Content",
-        "Product",
-        "Other"
-      ]
+    "Cost": {
+      "title": "Asset cost",
+      "type": "object",
+      "description": "The costs associated with specific elements of assets detailed in the dataset.",
+      "required": [
+        "id",
+        "type",
+        "unit"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this cost."
+        },
+        "type": {
+          "title": "Cost type",
+          "description": "The type of the cost, from the closed [cost type codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#cost_type).",
+          "type": "string",
+          "codelist": "cost_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "Structure",
+            "Content",
+            "Product",
+            "Disruption (Business Interruption)"
+          ]
+        },
+        "unit": {
+          "title": "Cost unit",
+          "type": "string",
+          "description": "The unit in which the cost is specified, from the closed [currency codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#currency).",
+          "codelist": "cost_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "ADP",
+            "AED",
+            "AFA",
+            "AFN",
+            "ALK",
+            "ALL",
+            "AMD",
+            "ANG",
+            "AOA",
+            "AOK",
+            "AON",
+            "AOR",
+            "ARA",
+            "ARP",
+            "ARS",
+            "ARY",
+            "ATS",
+            "AUD",
+            "AWG",
+            "AYM",
+            "AZM",
+            "AZN",
+            "BAD",
+            "BAM",
+            "BBD",
+            "BDT",
+            "BEC",
+            "BEF",
+            "BEL",
+            "BGJ",
+            "BGK",
+            "BGL",
+            "BGN",
+            "BHD",
+            "BIF",
+            "BMD",
+            "BND",
+            "BOB",
+            "BOP",
+            "BOV",
+            "BRB",
+            "BRC",
+            "BRE",
+            "BRL",
+            "BRN",
+            "BRR",
+            "BSD",
+            "BTN",
+            "BUK",
+            "BWP",
+            "BYB",
+            "BYN",
+            "BYR",
+            "BZD",
+            "CAD",
+            "CDF",
+            "CHC",
+            "CHE",
+            "CHF",
+            "CHW",
+            "CLF",
+            "CLP",
+            "CNY",
+            "COP",
+            "COU",
+            "CRC",
+            "CSD",
+            "CSJ",
+            "CSK",
+            "CUC",
+            "CUP",
+            "CVE",
+            "CYP",
+            "CZK",
+            "DDM",
+            "DEM",
+            "DJF",
+            "DKK",
+            "DOP",
+            "DZD",
+            "ECS",
+            "ECV",
+            "EEK",
+            "EGP",
+            "ERN",
+            "ESA",
+            "ESB",
+            "ESP",
+            "ETB",
+            "EUR",
+            "FIM",
+            "FJD",
+            "FKP",
+            "FRF",
+            "GBP",
+            "GEK",
+            "GEL",
+            "GHC",
+            "GHP",
+            "GHS",
+            "GIP",
+            "GMD",
+            "GNE",
+            "GNF",
+            "GNS",
+            "GQE",
+            "GRD",
+            "GTQ",
+            "GWE",
+            "GWP",
+            "GYD",
+            "HKD",
+            "HNL",
+            "HRD",
+            "HRK",
+            "HTG",
+            "HUF",
+            "IDR",
+            "IEP",
+            "ILP",
+            "ILR",
+            "ILS",
+            "INR",
+            "IQD",
+            "IRR",
+            "ISJ",
+            "ISK",
+            "ITL",
+            "JMD",
+            "JOD",
+            "JPY",
+            "KES",
+            "KGS",
+            "KHR",
+            "KMF",
+            "KPW",
+            "KRW",
+            "KWD",
+            "KYD",
+            "KZT",
+            "LAJ",
+            "LAK",
+            "LBP",
+            "LKR",
+            "LRD",
+            "LSL",
+            "LSM",
+            "LTL",
+            "LTT",
+            "LUC",
+            "LUF",
+            "LUL",
+            "LVL",
+            "LVR",
+            "LYD",
+            "MAD",
+            "MDL",
+            "MGA",
+            "MGF",
+            "MKD",
+            "MLF",
+            "MMK",
+            "MNT",
+            "MOP",
+            "MRO",
+            "MRU",
+            "MTL",
+            "MTP",
+            "MUR",
+            "MVQ",
+            "MVR",
+            "MWK",
+            "MXN",
+            "MXP",
+            "MXV",
+            "MYR",
+            "MZE",
+            "MZM",
+            "MZN",
+            "NAD",
+            "NGN",
+            "NIC",
+            "NIO",
+            "NLG",
+            "NOK",
+            "NPR",
+            "NZD",
+            "OMR",
+            "PAB",
+            "PEH",
+            "PEI",
+            "PEN",
+            "PES",
+            "PGK",
+            "PHP",
+            "PKR",
+            "PLN",
+            "PLZ",
+            "PTE",
+            "PYG",
+            "QAR",
+            "RHD",
+            "ROK",
+            "ROL",
+            "RON",
+            "RSD",
+            "RUB",
+            "RUR",
+            "RWF",
+            "SAR",
+            "SBD",
+            "SCR",
+            "SDD",
+            "SDG",
+            "SDP",
+            "SEK",
+            "SGD",
+            "SHP",
+            "SIT",
+            "SKK",
+            "SLL",
+            "SOS",
+            "SRD",
+            "SRG",
+            "SSP",
+            "STD",
+            "STN",
+            "SUR",
+            "SVC",
+            "SYP",
+            "SZL",
+            "THB",
+            "TJR",
+            "TJS",
+            "TMM",
+            "TMT",
+            "TND",
+            "TOP",
+            "TPE",
+            "TRL",
+            "TRY",
+            "TTD",
+            "TWD",
+            "TZS",
+            "UAH",
+            "UAK",
+            "UGS",
+            "UGW",
+            "UGX",
+            "USD",
+            "USN",
+            "USS",
+            "UYI",
+            "UYN",
+            "UYP",
+            "UYU",
+            "UYW",
+            "UZS",
+            "VEB",
+            "VEF",
+            "VES",
+            "VNC",
+            "VND",
+            "VUV",
+            "WST",
+            "XAF",
+            "XAG",
+            "XAU",
+            "XBA",
+            "XBB",
+            "XBC",
+            "XBD",
+            "XCD",
+            "XDR",
+            "XEU",
+            "XFO",
+            "XFU",
+            "XOF",
+            "XPD",
+            "XPF",
+            "XPT",
+            "XRE",
+            "XSU",
+            "XTS",
+            "XUA",
+            "XXX",
+            "YDD",
+            "YER",
+            "YUD",
+            "YUM",
+            "YUN",
+            "ZAL",
+            "ZAR",
+            "ZMK",
+            "ZMW",
+            "ZRN",
+            "ZRZ",
+            "ZWC",
+            "ZWD",
+            "ZWL",
+            "ZWN",
+            "ZWR",
+            null
+          ]
+        }
+      },
+      "minProperties": 1
     },
     "common_frequency_type": {
       "type": "string",

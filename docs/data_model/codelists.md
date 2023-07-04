@@ -19,6 +19,20 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Open codelists
 
+### IMT
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/IMT.csv
+---
+```
+
 ### data_formats
 
 This codelist is referenced by the following properties:
@@ -104,6 +118,23 @@ file: ../../codelists/open/roles.csv
 
 ## Closed codelists
 
+### cost_type
+
+This codelist is referenced by the following properties:
+
+- `Cost/type`
+- `Cost/unit`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/cost_type.csv
+---
+```
+
 ### country
 
 This codelist is referenced by the following properties:
@@ -115,6 +146,36 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/closed/country.csv
+---
+```
+
+### currency
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/currency.csv
+---
+```
+
+### exposure_category
+
+This codelist is referenced by the following properties:
+
+- `Exposure/category`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/exposure_category.csv
 ---
 ```
 
