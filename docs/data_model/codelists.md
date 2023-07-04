@@ -118,6 +118,20 @@ file: ../../codelists/closed/country.csv
 ---
 ```
 
+### frequency_distribution
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/frequency_distribution.csv
+---
+```
+
 ### function_approach
 
 This codelist is referenced by the following properties:
