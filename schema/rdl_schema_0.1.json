@@ -439,15 +439,6 @@
     }
   ],
   "$defs": {
-    "common_aggregation_type": {
-      "type": "string",
-      "enum": [
-        "Individual items",
-        "Aggregated to grid",
-        "Aggregated to boundaries",
-        "N/A"
-      ]
-    },
     "common_analysis_type": {
       "type": "string",
       "enum": [
