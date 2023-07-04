@@ -19,7 +19,7 @@ The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#re
 
 For definitions of these terms, please see the [Glossary](../glossary.md).
 
-For fields that reference a sub-schema, a link is provided to a table with details of the sub-schema. To see how the fields and sub-schemas fit together, consult the [schema browser](browser.md).
+For fields that reference [sub-schemas](#sub-schemas), a link is provided to a table with details of the sub-schema. To see how the fields and sub-schemas fit together, consult the [schema browser](browser.md).
 
 The diagram below shows the core relationships between schema components, and their core attributes.
 
@@ -457,12 +457,98 @@ Insert example of recorded empirical losses.
 
 ## Sub-schemas
 
-### common_aggregation_type
+### Period
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+`Period` is defined as:
+
+```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
 ---
-pointer: /$defs/common_aggregation_type
-collapse:
+jsonpointer: /$defs/Period/description
+---
+```
+
+This component is referenced by the following properties:
+
+- [`Resource/temporal`](rdl_schema_0.1.json,/$defs/Resource,temporal)
+
+Each `Period` has the following fields:
+
+```{jsonschema} ../../schema/rdl_schema_0.1.json
+---
+pointer: /$defs/Period
+collapse: start,end,duration
+addtargets:
+---
+```
+
+### Location
+
+`Location` is defined as:
+
+```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Location/description
+---
+```
+
+This component is referenced by the following properties:
+
+- [`spatial`](rdl_schema_0.1.json,,spatial)
+
+Each `Location` has the following fields:
+
+```{jsonschema} ../../schema/rdl_schema_0.1.json
+---
+pointer: /$defs/Location
+collapse: countries,gazetteerEntries,bbox,geometry,centroid
+addtargets:
+---
+```
+
+### Gazetteer_entry
+
+`Gazetteer_entry` is defined as:
+
+```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Gazetteer_entry/description
+---
+```
+
+This component is referenced by the following properties:
+
+- [`Location/gazetteerEntries`](rdl_schema_0.1.json,/$defs/Location,gazetteerEntries)
+
+Each `Gazetteer_entry` has the following fields:
+
+```{jsonschema} ../../schema/rdl_schema_0.1.json
+---
+pointer: /$defs/Gazetteer_entry
+collapse: id,scheme,description,uri
+addtargets:
+---
+```
+
+### Geometry
+
+`Geometry` is defined as:
+
+```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Geometry/description
+---
+```
+
+This component is referenced by the following properties:
+
+- [`Location/geometry`](rdl_schema_0.1.json,/$defs/Location,geometry)
+
+Each `Geometry` has the following fields:
+
+```{jsonschema} ../../schema/rdl_schema_0.1.json
+---
+pointer: /$defs/Geometry
+collapse: type,coordinates
 addtargets:
 ---
 ```
