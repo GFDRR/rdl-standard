@@ -267,6 +267,12 @@
             "footprint_set": {
               "type": "object",
               "properties": {
+                "id": {
+                  "title": "Footprint identifier",
+                  "type": "string",
+                  "description": "The unique identifier for this footprint",
+                  "minLength": 1
+                },
                 "process_type": {
                   "$ref": "#/$defs/common_process_type",
                   "description": "Type of hazard process modelled"
