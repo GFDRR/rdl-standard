@@ -100,7 +100,8 @@
       "type": "string",
       "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
       "codelist": "license.csv",
-      "openCodelist": true
+      "openCodelist": true,
+      "minLength": 1
     },
     "contact_point": {
       "title": "Contact point",
@@ -284,8 +285,7 @@
         "title": "Vulnerability dataset metadata",
         "type": "object",
         "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
-        "$ref": "#/$defs/Vulnerability",
-        "minProperties": 1
+        "$ref": "#/$defs/Vulnerability"
       }
     },
     {
@@ -474,7 +474,8 @@
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "A locally unique identifier for this cost."
+          "description": "A locally unique identifier for this cost.",
+          "minLength": 1
         },
         "type": {
           "title": "Cost type",
@@ -801,8 +802,7 @@
             null
           ]
         }
-      },
-      "minProperties": 1
+      }
     },
     "common_frequency_type": {
       "type": "string",
@@ -944,8 +944,7 @@
           "description": "The period of time covered by this resource.",
           "$ref": "#/$defs/Period"
         }
-      },
-      "minProperties": 1
+      }
     },
     "Related_resource": {
       "title": "Related resource",
@@ -993,10 +992,10 @@
         "doi": {
           "title": "Digital object identifier",
           "type": "string",
-          "description": "The digital object identifier for the resource."
+          "description": "The digital object identifier for the resource.",
+          "minLength": 1
         }
-      },
-      "minProperties": 1
+      }
     },
     "im_code": {
       "type": "string",
@@ -1101,7 +1100,8 @@
           "title": "Duration",
           "type": "string",
           "description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
-          "format": "duration"
+          "format": "duration",
+          "minLength": 1
         }
       },
       "minProperties": 1
@@ -1149,7 +1149,8 @@
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "A locally unique identifier for the attribution."
+          "description": "A locally unique identifier for the attribution.",
+          "minLength": 1
         },
         "entity": {
           "title": "Entity",
@@ -1164,7 +1165,8 @@
           "openCodelist": true,
           "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Location": {
       "title": "Location",
@@ -1452,8 +1454,7 @@
             "type": "number"
           },
           "minItems": 4,
-          "maxItems": 4,
-          "uniqueItems": true
+          "maxItems": 4
         },
         "geometry": {
           "title": "Geometry",
@@ -1468,8 +1469,7 @@
             "type": "number"
           },
           "minItems": 2,
-          "maxItems": 2,
-          "uniqueItems": true
+          "maxItems": 2
         },
         "scale": {
           "title": "Spatial scale",
@@ -1741,8 +1741,7 @@
           "title": "Vulnerability impact",
           "type": "object",
           "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact",
-          "minProperties": 1
+          "$ref": "#/$defs/Impact"
         },
         "spatial": {
           "title": "Vulnerability spatial details",
@@ -1761,29 +1760,25 @@
               "title": "Vulnerability function",
               "type": "object",
               "description": "The vulnerability function used to calculate the impact of the hazard.",
-              "$ref": "#/$defs/Vulnerability_function",
-              "minProperties": 1
+              "$ref": "#/$defs/Vulnerability_function"
             },
             "fragility": {
               "title": "Fragility function",
               "type": "object",
               "description": "The fragility function used to calculate the impact of the hazard.",
-              "$ref": "#/$defs/Fragility_function",
-              "minProperties": 1
+              "$ref": "#/$defs/Fragility_function"
             },
             "damage_to_loss": {
               "title": "Damage-to-loss function",
               "type": "object",
               "description": "The damage-to-loss function (or damage-to-loss model) used to calculate the impact of the hazard in conjunction with a fragility function.",
-              "$ref": "#/$defs/Damage_to_loss_function",
-              "minProperties": 1
+              "$ref": "#/$defs/Damage_to_loss_function"
             },
             "engineering_demand": {
               "title": "Engineering demand function",
               "type": "object",
               "description": "The engineering damand function used to calculate the impact of the hazard.",
-              "$ref": "#/$defs/Engineering_demand_function",
-              "minProperties": 1
+              "$ref": "#/$defs/Engineering_demand_function"
             }
           },
           "minProperties": 1
@@ -1798,8 +1793,7 @@
           "title": "Socio-economic index category",
           "type": "object",
           "description": "The category used to classify the socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Se_category",
-          "minProperties": 1
+          "$ref": "#/$defs/Se_category"
         }
       },
       "minProperties": 1
@@ -1880,11 +1874,11 @@
           "type": "array",
           "description": "The names of the damage states listed in a Damage Scale or used in a Fragility function, taken from the open [damage states names codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_states_names).",
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "codelist": "damage_states_names.csv",
           "openCodelist": true,
-          "minLength": 1,
           "minItems": 1,
           "uniqueItems": true
         }
@@ -1934,11 +1928,11 @@
           "type": "array",
           "description": "The names of the damage states listed in a Damage Scale or used in a Fragility function, taken from the open [damage states names codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_states_names).",
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "codelist": "damage_states_name.csv",
           "openCodelist": true,
-          "minLength": 1,
           "minItems": 1,
           "uniqueItems": true
         }
