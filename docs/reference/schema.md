@@ -68,6 +68,7 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
+collapse: spatial,resources
 addtargets:
 ---
 ```
@@ -79,7 +80,7 @@ Other attributes are specific to individual resources, covering level of aggrega
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Resource
-collapse:
+collapse: temporal
 addtargets:
 ---
 ```
@@ -329,7 +330,7 @@ The **additional** attributes cover more specific information that helps to unde
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/2/properties/vulnerability
-collapse:
+collapse: model/country_tranferability
 addtargets:
 ---
 ```
@@ -461,19 +462,15 @@ Insert example of recorded empirical losses.
 
 `Period` is defined as:
 
-```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 jsonpointer: /$defs/Period/description
 ---
 ```
 
-This component is referenced by the following properties:
-
-- [`Resource/temporal`](rdl_schema_0.1.json,/$defs/Resource,temporal)
-
 Each `Period` has the following fields:
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Period
 collapse: start,end,duration
@@ -485,19 +482,15 @@ addtargets:
 
 `Location` is defined as:
 
-```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 jsonpointer: /$defs/Location/description
 ---
 ```
 
-This component is referenced by the following properties:
-
-- [`spatial`](rdl_schema_0.1.json,,spatial)
-
 Each `Location` has the following fields:
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Location
 collapse: countries,gazetteerEntries,bbox,geometry,centroid
@@ -509,19 +502,15 @@ addtargets:
 
 `Gazetteer_entry` is defined as:
 
-```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 jsonpointer: /$defs/Gazetteer_entry/description
 ---
 ```
 
-This component is referenced by the following properties:
-
-- [`Location/gazetteerEntries`](rdl_schema_0.1.json,/$defs/Location,gazetteerEntries)
-
 Each `Gazetteer_entry` has the following fields:
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Gazetteer_entry
 collapse: id,scheme,description,uri
@@ -533,19 +522,15 @@ addtargets:
 
 `Geometry` is defined as:
 
-```{jsoninclude-quote} ../../schema/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 jsonpointer: /$defs/Geometry/description
 ---
 ```
 
-This component is referenced by the following properties:
-
-- [`Location/geometry`](rdl_schema_0.1.json,/$defs/Location,geometry)
-
 Each `Geometry` has the following fields:
 
-```{jsonschema} ../../schema/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Geometry
 collapse: type,coordinates

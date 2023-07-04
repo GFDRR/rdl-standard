@@ -21,10 +21,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ### data_formats
 
-This codelist is referenced by the following properties:
-
-- `Resource/format`
-
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -37,11 +33,6 @@ file: ../../codelists/open/data_formats.csv
 
 ### location_gazetteers
 
-This codelist is referenced by the following properties:
-
-- `Gazetteer_entry/scheme`
-- `Geometry/type`
-
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -53,10 +44,6 @@ file: ../../codelists/open/location_gazetteers.csv
 ```
 
 ### media_type
-
-This codelist is referenced by the following properties:
-
-- `Resource/media_type`
 
 This codelist has the following codes:
 
@@ -72,8 +59,6 @@ file: ../../codelists/open/media_type.csv
 
 ### country
 
-This codelist is referenced by the following properties:
-
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -86,8 +71,6 @@ file: ../../codelists/closed/country.csv
 
 ### function_approach
 
-This codelist is referenced by the following properties:
-
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -99,8 +82,6 @@ file: ../../codelists/closed/function_approach.csv
 ```
 
 ### geometry_type
-
-This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
@@ -118,8 +99,6 @@ The RDLS offers a classification of hazards that are more often required in disa
 
 The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
 
-This codelist is referenced by the following properties:
-
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -134,8 +113,6 @@ file: ../../codelists/closed/hazard_type.csv
 
 The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type).
 
-This codelist is referenced by the following properties:
-
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -147,10 +124,6 @@ file: ../../codelists/closed/process_type.csv
 ```
 
 ### risk_data_type
-
-This codelist is referenced by the following properties:
-
-- `risk_data_type`
 
 This codelist has the following codes:
 
