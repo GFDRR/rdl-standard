@@ -18,11 +18,14 @@ This page lists changes to the Risk Data Library Standard.
 ### Codelists
 
 - [#101](https://github.com/GFDRR/rdl-standard/pull/101) - update and rename cost_type.csv, create exposure_category.csv
+- [#114](https://github.com/GFDRR/rdl-standard/pull/114) - 'IMT.csv' add descriptions and change pattern of codes to metric:unit.
 - [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
 
 ### Normative documentation
 
 ### Non-normative documentation
+
+- [#111 ](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
 
 ### Other

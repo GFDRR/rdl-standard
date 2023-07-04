@@ -19,6 +19,20 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Open codelists
 
+### IMT
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/IMT.csv
+---
+```
+
 ### data_formats
 
 This codelist is referenced by the following properties:
