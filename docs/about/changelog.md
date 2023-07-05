@@ -24,6 +24,12 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Normative documentation
 
+- [#120](https://github.com/GFDRR/rdl-standard/pull/120):
+  - Rename data model documentation to reference documentation.
+  - Use jsonschema Sphinx directive to generate schema reference tables from schema.
+  - Restructure reference documentation.
+  - Update `manage.py pre-commmit` to generate sub-schema reference.
+
 ### Non-normative documentation
 
 - [#111 ](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
