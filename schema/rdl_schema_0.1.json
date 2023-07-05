@@ -163,8 +163,11 @@
                   "minLength": 1
                 },
                 "hazard_type": {
-                  "$ref": "#/$defs/common_hazard_type",
-                  "description": "Type of hazard modelled"
+                  "title": "Hazard type",
+                  "type": "string",
+                  "description": "The main type of hazard phenomena in the modelled scenario(s).",
+                  "codelist": "hazard_type.csv",
+                  "openCodelist": true
                 },
                 "analysis_type": {
                   "$ref": "#/$defs/common_analysis_type",
