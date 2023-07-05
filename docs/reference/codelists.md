@@ -164,6 +164,18 @@ file: ../../codelists/closed/exposure_category.csv
 ---
 ```
 
+### frequency_distribution
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/frequency_distribution.csv
+---
+```
+
 ### function_approach
 
 This codelist has the following codes:
@@ -227,5 +239,17 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/closed/risk_data_type.csv
+---
+```
+
+### seasonality
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/seasonality.csv
 ---
 ```

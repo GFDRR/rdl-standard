@@ -308,8 +308,8 @@ def update_schema_docs(schema):
   for defn, definition in schema["$defs"].items():
       definition["content"] = definition.get("content", [])
       
-      # Omit Resource definition and string definitions, which will be moved to CSV codelists
-      if defn != 'Resource' and definition.get('type') == 'object':
+      # Omit Resource and Exposure definitions and string definitions, which will be moved to CSV codelists
+      if defn not in ['Resource', 'Exposure'] and definition.get('type') == 'object':
 
         # Add heading
         definition["content"].insert(0, f"### {defn}\n")
