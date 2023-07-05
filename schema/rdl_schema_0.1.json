@@ -197,6 +197,11 @@
                   "codelist": "data_calculation_type.csv",
                   "openCodelist": false
                 },
+                "number_events": {
+                  "title": "Number of events",
+                  "type": "number",
+                  "description": "The number of events contained in the event set. You should only use this field when details of individual events are not included in the RDLS metadata."
+                },
                 "geo_area": {
                   "type": "array",
                   "description": "The name of the geographic area covered by the hazard analysis. Comma-separated list of geographic names.",
