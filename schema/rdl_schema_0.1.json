@@ -170,6 +170,13 @@
                   "$ref": "#/$defs/common_analysis_type",
                   "description": "Type of analysis, probabilistic or deterministic"
                 },
+                "frequency_distribution": {
+                  "title": "Frequency distribution",
+                  "type": "string",
+                  "description": "The frequency distribution assumed for the occurrence of events over a multi-year timeline.",
+                  "codelist": "frequency_distribution.csv",
+                  "openCodelist": false
+                },
                 "geo_area": {
                   "type": "array",
                   "description": "The name of the geographic area covered by the hazard analysis. Comma-separated list of geographic names.",
