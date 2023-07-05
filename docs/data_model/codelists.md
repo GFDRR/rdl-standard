@@ -175,3 +175,17 @@ widths: auto
 file: ../../codelists/closed/risk_data_type.csv
 ---
 ```
+
+### seasonality
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/seasonality.csv
+---
+```
