@@ -167,11 +167,14 @@
                   "type": "string",
                   "description": "The main type of hazard phenomena in the modelled scenario(s).",
                   "codelist": "hazard_type.csv",
-                  "openCodelist": true
+                  "openCodelist": false
                 },
                 "analysis_type": {
-                  "$ref": "#/$defs/common_analysis_type",
-                  "description": "Type of analysis, probabilistic or deterministic"
+                  "title": "Analysis type",
+                  "type": "string",
+                  "description": "The type of analysis used by the hazard model: probabilistic (multiple potential events characterised by different intensity and occurrence frequency); deterministic (frequency-independent representation, such as mean, median or max); empirical (obtained from real event observations).",
+                  "codelist": "analysis_type.csv",
+                  "openCodelist": false
                 },
                 "frequency_distribution": {
                   "title": "Frequency distribution",
@@ -593,13 +596,6 @@
         "Aggregated to grid",
         "Aggregated to boundaries",
         "N/A"
-      ]
-    },
-    "common_analysis_type": {
-      "type": "string",
-      "enum": [
-        "Deterministic",
-        "Probabilistic"
       ]
     },
     "common_calc_method": {
