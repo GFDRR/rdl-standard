@@ -208,93 +208,16 @@
                   "title": "Temporal coverage",
                   "description": "The period of time covered by this event set.",
                   "$ref": "#/$defs/Period"
-                }
-              },
-              "minProperties": 1
-            },
-            "event": {
-              "type": "object",
-              "required": [
-                "id",
-                "calculation_method",
-                "frequency_type"
-              ],
-              "properties": {
-                "id": {
-                  "title": "Event identifier",
-                  "type": "string",
-                  "description": "The unique identifier for this event within the event_set.",
-                  "minLength": 1
                 },
-                "disaster_identifier": {
-                  "title": "Disaster identifier",
-                  "type": "string",
-                  "description": "The GLIDE number associated with this event disaster. A globally unique identification code for the observed or inferred hazard event. GLIDE numbers are available at [glidenumber.net](https://www.glidenumber.net/glide/public/search/search.jsp)."
-                },
-                "calculation_method": {
-                  "title": "Model calculation method",
-                  "type": "string",
-                  "description": "The methodology used for the calculation of the event in the modelled scenario(s).",
-                  "codelist": "data_calculation_type.csv",
-                  "openCodelist": false
-                },
-                "frequency_type": {
-                  "$ref": "#/$defs/common_frequency_type",
-                  "description": "Frequency representation type"
-                },
-                "return_period": {
-                  "type": "string",
-                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
-                  "minLength": 1
-                },
-                "occurence_time_start": {
-                  "type": "string",
-                  "description": "The start date (and possibly time) of the time period used to specify either the frequency or the occurrence_probability [ISO 8601 format]",
-                  "format": "date-time"
-                },
-                "occurence_time_end": {
-                  "type": "string",
-                  "description": "The end date (and possibly time) of the time period used to specify either the frequency or the occurrence_probability [ISO 8601 format]",
-                  "format": "date-time"
-                },
-                "occurence_time_span": {
-                  "type": "string",
-                  "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability",
-                  "minLength": 1
-                },
-                "trigger_hazard_type": {
-                  "$ref": "#/$defs/common_hazard_type",
-                  "description": "Hazard type that triggered the event"
-                },
-                "trigger_process_type": {
-                  "$ref": "#/$defs/common_process_type",
-                  "description": "Process type that triggered the event"
-                },
-                "description": {
-                  "type": "string",
-                  "description": "Provides additional information about this specific event",
-                  "minLength": 1
-                }
-              },
-              "minProperties": 1
-            },
-            "footprint_set": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "title": "Footprint identifier",
-                  "type": "string",
-                  "description": "The unique identifier for this footprint",
-                  "minLength": 1
-                },
-                "imt": {
-                  "$ref": "#/$defs/im_code",
-                  "description": "Hazard intensity measure unit"
-                },
-                "data_uncertainty": {
-                  "type": "string",
-                  "description": "Comments about the uncertainty of data",
-                  "minLength": 1
+                "events": {
+                  "title": "Events",
+                  "description": "The events in this event set.",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/Event"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
                 }
               },
               "minProperties": 1
@@ -1403,7 +1326,111 @@
         }
       }
     },
-    "vulnerability_f_math": {}
+    "vulnerability_f_math": {},
+    "Event": {
+      "title": "Event",
+      "Description": "A hazard event.",
+      "type": "object",
+      "required": [
+        "id",
+        "calculation_method",
+        "frequency_type"
+      ],
+      "properties": {
+        "id": {
+          "title": "Event identifier",
+          "type": "string",
+          "description": "The unique identifier for this event within the event_set.",
+          "minLength": 1
+        },
+        "disaster_identifier": {
+          "title": "Disaster identifier",
+          "type": "string",
+          "description": "The GLIDE number associated with this event disaster. A globally unique identification code for the observed or inferred hazard event. GLIDE numbers are available at [glidenumber.net](https://www.glidenumber.net/glide/public/search/search.jsp)."
+        },
+        "calculation_method": {
+          "title": "Model calculation method",
+          "type": "string",
+          "description": "The methodology used for the calculation of the event in the modelled scenario(s).",
+          "codelist": "data_calculation_type.csv",
+          "openCodelist": false
+        },
+        "frequency_type": {
+          "$ref": "#/$defs/common_frequency_type",
+          "description": "Frequency representation type"
+        },
+        "return_period": {
+          "type": "string",
+          "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
+          "minLength": 1
+        },
+        "occurence_time_start": {
+          "type": "string",
+          "description": "The start date (and possibly time) of the time period used to specify either the frequency or the occurrence_probability [ISO 8601 format]",
+          "format": "date-time"
+        },
+        "occurence_time_end": {
+          "type": "string",
+          "description": "The end date (and possibly time) of the time period used to specify either the frequency or the occurrence_probability [ISO 8601 format]",
+          "format": "date-time"
+        },
+        "occurence_time_span": {
+          "type": "string",
+          "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability",
+          "minLength": 1
+        },
+        "trigger_hazard_type": {
+          "$ref": "#/$defs/common_hazard_type",
+          "description": "Hazard type that triggered the event"
+        },
+        "trigger_process_type": {
+          "$ref": "#/$defs/common_process_type",
+          "description": "Process type that triggered the event"
+        },
+        "description": {
+          "type": "string",
+          "description": "Provides additional information about this specific event",
+          "minLength": 1
+        },
+        "footprints": {
+          "title": "Footprints",
+          "description": "The footprints for this event.",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Footprint"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "minProperties": 1
+    },
+    "Footprint": {
+      "title": "Footprint",
+      "description": "A possible realisation of the spatial extent of a hazard event.",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Footprint identifier",
+          "type": "string",
+          "description": "The unique identifier for this footprint",
+          "minLength": 1
+        },
+        "imt": {
+          "$ref": "#/$defs/im_code",
+          "description": "Hazard intensity measure unit"
+        },
+        "data_uncertainty": {
+          "type": "string",
+          "description": "Comments about the uncertainty of data",
+          "minLength": 1
+        }
+      },
+      "minProperties": 1
+    }
   },
   "minProperties": 1
 }

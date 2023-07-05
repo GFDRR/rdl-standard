@@ -12,6 +12,8 @@ This page lists changes to the Risk Data Library Standard.
 - [#104](https://github.com/GFDRR/rdl-standard/pull/104) - Add `Period` object.
 - [#100](https://github.com/GFDRR/rdl-standard/pull/100) - Update field names, titles and descriptions not covered in other issues.
 - [#115](https://github.com/GFDRR/rdl-standard/pull/115) - Add `Entity` and `Attribution` objects, update entity related field names and descriptions.
+- [#121](https://github.com/GFDRR/rdl-standard/pull/121):
+  - Nest footprints within events and events within event sets.
 
 ### Codelists
 
