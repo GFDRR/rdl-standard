@@ -98,7 +98,7 @@
     "license": {
       "title": "License",
       "type": "string",
-      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
       "codelist": "license.csv",
       "openCodelist": true
     },
@@ -305,7 +305,7 @@
                 },
                 "category": {
                   "title": "Exposure category",
-                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
                   "type": "string",
                   "codelist": "exposure_category.csv",
                   "openCodelist": false,
@@ -475,7 +475,7 @@
                 },
                 "category": {
                   "title": "Exposure category",
-                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
                   "type": "string",
                   "codelist": "exposure_category.csv",
                   "openCodelist": false,
@@ -558,7 +558,7 @@
       "properties": {
         "category": {
           "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#exposure_category).",
+          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
           "type": "string",
           "codelist": "exposure_category.csv",
           "openCodelist": false,
@@ -623,7 +623,7 @@
         },
         "type": {
           "title": "Cost type",
-          "description": "The type of the cost, from the closed [cost type codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#cost_type).",
+          "description": "The type of the cost, from the closed [cost type codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#cost_type).",
           "type": "string",
           "codelist": "cost_type.csv",
           "openCodelist": false,
@@ -637,7 +637,7 @@
         "unit": {
           "title": "Cost unit",
           "type": "string",
-          "description": "The unit in which the cost is specified, from the closed [currency codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#currency).",
+          "description": "The unit in which the cost is specified, from the closed [currency codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#currency).",
           "codelist": "cost_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1321,7 +1321,7 @@
         "role": {
           "title": "Role",
           "type": "string",
-          "description": "The entity's role in relation to the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#roles).",
+          "description": "The entity's role in relation to the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#roles).",
           "codelist": "roles.csv",
           "openCodelist": true,
           "minLength": 1
