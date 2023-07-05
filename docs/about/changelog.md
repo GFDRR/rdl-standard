@@ -14,11 +14,17 @@ This page lists changes to the Risk Data Library Standard.
 - [#115](https://github.com/GFDRR/rdl-standard/pull/115) - Add `Entity` and `Attribution` objects, update entity related field names and descriptions.
 - [#121](https://github.com/GFDRR/rdl-standard/pull/121):
   - Nest footprints within events and events within event sets.
+  - Update `calculation_method`
+  - Add fields `event_set.id`, `event.id`, `footprint_set.id`, `event_set.disaster_identifier`, `event_set.frequency_distribution`, `event_set.seasonality`, `event_set.calculation_method` and `event_set.number_events`
+  - Update field `event_set.hazard_type` and `event_set.analysis_type` to use related codelists
+  - Update `process_type` from `footprint_set` to `event` and `event_set`
+  - Add `temporal` object to `event_set`
 
 ### Codelists
 
 - [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
+- [#121](https://github.com/GFDRR/rdl-standard/pull/121) - Create 'frequency_distribution.csv' and 'seasonality.csv'
 
 ### Normative documentation
 
