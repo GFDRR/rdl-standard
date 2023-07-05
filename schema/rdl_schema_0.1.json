@@ -1384,6 +1384,10 @@
           "$ref": "#/$defs/common_frequency_type",
           "description": "Frequency representation type"
         },
+        "process_type": {
+          "$ref": "#/$defs/common_process_type",
+          "description": "Type of hazard process modelled"
+        },
         "return_period": {
           "type": "string",
           "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
