@@ -190,6 +190,13 @@
                   "codelist": "seasonality.csv",
                   "openCodelist": false
                 },
+                "calculation_method": {
+                  "title": "Calculation Method",
+                  "type": "string",
+                  "description": "The methodology used for the calculation of the event in the modelled scenario(s).",
+                  "codelist": "data_calculation_type.csv",
+                  "openCodelist": false
+                },
                 "geo_area": {
                   "type": "array",
                   "description": "The name of the geographic area covered by the hazard analysis. Comma-separated list of geographic names.",
