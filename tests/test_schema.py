@@ -46,8 +46,7 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_array_items(path, data, **validate_array_items_kwargs)
     errors += validate_items_type(path, data)
 
-    # Codelist fields are not yet implemented
-    # errors += validate_codelist_enum(path, data)
+    errors += validate_codelist_enum(path, data)
     
     errors += validate_merge_properties(path, data)
     errors += validate_ref(path, data)
