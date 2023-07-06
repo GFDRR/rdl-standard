@@ -59,36 +59,6 @@ file: ../../codelists/open/damage_scale_name.csv
 ---
 ```
 
-### damage_scale_names
-
-This codelist is referenced by the following properties:
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../codelists/open/damage_scale_names.csv
----
-```
-
-### damage_states_names
-
-This codelist is referenced by the following properties:
-
-- `Fragility_function/damage_states_names`
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../codelists/open/damage_states_names.csv
----
-```
-
 ### data_formats
 
 This codelist has the following codes:
@@ -386,9 +356,6 @@ This codelist is referenced by the following properties:
 - `Fragility_function/relationship`
 - `Damage_to_loss_function/relationship`
 - `Engineering_demand_function/relationship`
-  \=======
-
-### risk_data_type
 
 This codelist has the following codes:
 
