@@ -1,5 +1,5 @@
 UNDRRHazardCategory,Code,Title,Description
-Meteorological and hydrological,CF,Coastal Flood,"Indundation of water from the sea into coastal areas, coastal flooding is most frequently the result of storm surges and high winds coinciding with high tides."
+Meteorological and hydrological,coastal_flood,Coastal Flood,"Inundation of water from the sea into coastal areas, coastal flooding is most frequently the result of storm surges and high winds coinciding with high tides."
 Meteorological and hydrological,convective_storm,Convective Storm,"Convective storms or thunderstorms, are severe local storms formed through the process of convection, whereby heat and moisture are transported vertically in the atmosphere. They are associated with thunder, lightning, heavy rain, hail, strong winds and sudden temperature changes. They can occur all year round but are most common during summer (RMETS, 2020)."
 Meteorological and hydrological,DR,Drought,"A drought is a period of abnormally dry weather characterised by a prolonged deficiency of precipitation below a certain threshold over a large area and a period longer than a month (WMO, 2020)."
 Meteorological and hydrological,ET,Extreme Temperature,"Temperature extremes including extreme heat and cold, referred to as heat waves and cold waves."
