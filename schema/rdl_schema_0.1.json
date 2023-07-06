@@ -142,7 +142,7 @@
     "temporal_resolution": {
       "title": "Temporal resolution",
       "type": "string",
-      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format. This field must be used if the temporal resolution of all the resources in the dataset are the same. If they are not this field must not be used and `resource.temporal_resolution` used instead.",
+      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
       "format": "duration"
     }
   },
