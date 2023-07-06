@@ -458,6 +458,66 @@ Insert example of recorded empirical losses.
 
 ## Sub-schemas
 
+### Exposure
+
+`Exposure` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Exposure/description
+---
+```
+
+Each `Exposure` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Exposure
+collapse: category,taxonomy,cost
+addtargets:
+---
+```
+
+### Cost
+
+`Cost` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Cost/description
+---
+```
+
+Each `Cost` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Cost
+collapse: id,type,unit
+addtargets:
+---
+```
+
+### Related_resource
+
+`Related_resource` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Related_resource/description
+---
+```
+
+Each `Related_resource` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Related_resource
+collapse: id,name,authorNames,datePublished,url,doi
+addtargets:
+---
+```
+
 ### Period
 
 `Period` is defined as:
@@ -474,6 +534,46 @@ Each `Period` has the following fields:
 ---
 pointer: /$defs/Period
 collapse: start,end,duration
+addtargets:
+---
+```
+
+### Entity
+
+`Entity` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Entity/description
+---
+```
+
+Each `Entity` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Entity
+collapse: name,email,url
+addtargets:
+---
+```
+
+### Attribution
+
+`Attribution` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Attribution/description
+---
+```
+
+Each `Attribution` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Attribution
+collapse: id,entity,role
 addtargets:
 ---
 ```
@@ -534,6 +634,26 @@ Each `Geometry` has the following fields:
 ---
 pointer: /$defs/Geometry
 collapse: type,coordinates
+addtargets:
+---
+```
+
+### Source
+
+`Source` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Source/description
+---
+```
+
+Each `Source` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Source
+collapse: id,name,url,type,component
 addtargets:
 ---
 ```
