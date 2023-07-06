@@ -425,11 +425,11 @@
           "codelist": "exposure_category.csv",
           "openCodelist": false,
           "enum": [
-            "Agriculture",
-            "Buildings",
-            "Infrastructures",
-            "Population",
-            "Natural environment"
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment"
           ]
         },
         "taxonomy": {
