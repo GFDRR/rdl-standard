@@ -159,46 +159,79 @@
                 "id": {
                   "title": "Event set identifier",
                   "type": "string",
-                  "description": "The unique identifier for this event set.",
+                  "description": "A locally unique identifier for this event set.",
                   "minLength": 1
                 },
                 "hazard_type": {
                   "title": "Hazard type",
                   "type": "string",
-                  "description": "The main type of hazard phenomena in the modelled scenario(s).",
+                  "description": "The main type of hazard phenomena in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
                   "codelist": "hazard_type.csv",
-                  "openCodelist": false
+                  "openCodelist": false,
+                  "enum": [
+                    "CF",
+                    "CS",
+                    "DR",
+                    "EQ",
+                    "ET",
+                    "FL",
+                    "LS",
+                    "MH",
+                    "TS",
+                    "VO",
+                    "WF",
+                    "WI"
+                  ]
                 },
                 "analysis_type": {
                   "title": "Analysis type",
                   "type": "string",
-                  "description": "The type of analysis used by the hazard model: probabilistic (multiple potential events characterised by different intensity and occurrence frequency); deterministic (frequency-independent representation, such as mean, median or max); empirical (obtained from real event observations).",
+                  "description": "The type of analysis used by the hazard model, from the closed [analysis type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#analysis_type).",
                   "codelist": "analysis_type.csv",
-                  "openCodelist": false
+                  "openCodelist": false,
+                  "enum": [
+                    "deterministic",
+                    "empirical",
+                    "probabilistic"
+                  ]
                 },
                 "frequency_distribution": {
                   "title": "Frequency distribution",
                   "type": "string",
-                  "description": "The frequency distribution assumed for the occurrence of events over a multi-year timeline.",
+                  "description": "The frequency distribution assumed for the occurrence of events over a multi-year timeline, from the [frequency distribution codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#frequency_distribution).",
                   "codelist": "frequency_distribution.csv",
-                  "openCodelist": false
+                  "openCodelist": false,
+                  "enum": [
+                    "poison",
+                    "negativeBinomial",
+                    "userDefined"
+                  ]
                 },
                 "seasonality": {
                   "title": "Seasonality distribution",
                   "type": "string",
-                  "description": "The seasonality distribution assumed for the occurrence of events across a calendar year.",
+                  "description": "The seasonality distribution assumed for the occurrence of events across a calendar year, from the [seasonality distribution codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#seasonality_distribution)",
                   "codelist": "seasonality.csv",
-                  "openCodelist": false
+                  "openCodelist": false,
+                  "enum": [
+                    "uniform",
+                    "userDefined"
+                  ]
                 },
                 "calculation_method": {
                   "title": "Calculation Method",
                   "type": "string",
-                  "description": "The methodology used for the calculation of the event in the modelled scenario(s).",
+                  "description": "The methodology used for the calculation of the event in the modelled scenario(s), taken from the closed [data calculation type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#data_calculation_type).",
+                  "enum": [
+                    "inferred",
+                    "observed",
+                    "simulated"
+                  ],
                   "codelist": "data_calculation_type.csv",
                   "openCodelist": false
                 },
-                "number_events": {
-                  "title": "Number of events",
+                "event_count": {
+                  "title": "Event count",
                   "type": "number",
                   "description": "The number of events contained in the event set. You should only use this field when details of individual events are not included in the RDLS metadata."
                 },
@@ -1713,13 +1746,13 @@
         "id": {
           "title": "Event identifier",
           "type": "string",
-          "description": "The unique identifier for this event within the event_set.",
+          "description": "A locally unique identifier for this event.",
           "minLength": 1
         },
         "disaster_identifier": {
           "title": "Disaster identifier",
           "type": "string",
-          "description": "The GLIDE number associated with this event disaster. A globally unique identification code for the observed or inferred hazard event. GLIDE numbers are available at [glidenumber.net](https://www.glidenumber.net/glide/public/search/search.jsp)."
+          "description": "The GLIDE number associated with this disaster event. A globally unique identifier for the event, assigned by [GLIDE](https://www.glidenumber.net/glide/public/search/search.jsp)."
         },
         "calculation_method": {
           "title": "Model calculation method",
@@ -1793,7 +1826,7 @@
         "id": {
           "title": "Footprint identifier",
           "type": "string",
-          "description": "The unique identifier for this footprint",
+          "description": "A locally unique identifier for this footprint",
           "minLength": 1
         },
         "imt": {
