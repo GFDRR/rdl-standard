@@ -1,3 +1,3 @@
-Code,Title,Source
-GED4ALL,GED4ALL,https://wiki.openstreetmap.org/wiki/GED4ALL
-Mover,Mover,https://www.gfdrr.org/en/publication/mover
+Code,Title,Definition,Source,Category
+GED4ALL,GED4ALL,The 'Global Exposure Database for Multi-Hazard Risk Analysis' schema.,"https://wiki.openstreetmap.org/wiki/GED4ALL#Socio-Economic",Socio-economic index
+Mover,Mover,The 'Multi-Hazard Open Vulnerability Platform for Evaluating Risk' indicators for categorizing vulnerability.,"https://www.gfdrr.org/en/publication/mover",Socio-economic index
