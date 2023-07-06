@@ -73,18 +73,6 @@ file: ../../codelists/open/damage_scale_names.csv
 ---
 ```
 
-### damage_states_name
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../codelists/open/damage_states_name.csv
----
-```
-
 ### damage_states_names
 
 This codelist is referenced by the following properties:

@@ -694,7 +694,7 @@ Each `Fragility_function` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Fragility_function
-collapse: approach,relationship,damage_scale_name,damage_state_names
+collapse: approach,relationship,damage_scale_name,damage_states_names
 addtargets:
 ---
 ```
@@ -714,7 +714,7 @@ Each `Damage_to_loss_function` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Damage_to_loss_function
-collapse: approach,relationship,damage_scale_name,damage_states_name
+collapse: approach,relationship,damage_scale_name,damage_states_names
 addtargets:
 ---
 ```
