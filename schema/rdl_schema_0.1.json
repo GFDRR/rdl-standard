@@ -450,15 +450,6 @@
       },
       "minProperties": 1
     },
-    "common_aggregation_type": {
-      "type": "string",
-      "enum": [
-        "Individual items",
-        "Aggregated to grid",
-        "Aggregated to boundaries",
-        "N/A"
-      ]
-    },
     "common_analysis_type": {
       "type": "string",
       "enum": [
@@ -1124,7 +1115,6 @@
       },
       "minProperties": 1
     },
-    "vulnerability_f_relationship": {},
     "Entity": {
       "title": "Entity",
       "type": "object",
@@ -1597,18 +1587,17 @@
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
-            "CF",
-            "CS",
-            "DR",
-            "EQ",
-            "ET",
-            "FL",
-            "LS",
-            "MH",
-            "TS",
-            "VO",
-            "WF",
-            "WI"
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
           ]
         },
         "hazard_secondary": {
@@ -1618,18 +1607,17 @@
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
-            "CF",
-            "CS",
-            "DR",
-            "EQ",
-            "ET",
-            "FL",
-            "LS",
-            "MH",
-            "TS",
-            "VO",
-            "WF",
-            "WI"
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
           ]
         },
         "hazard_process_primary": {
@@ -1769,7 +1757,7 @@
           ]
         },
         "functions": {
-          "title": "Functions",
+          "title": "Impact functions",
           "type": "object",
           "description": "Details of the functions used to calculate the vulnerability dataset.",
           "properties": {
@@ -1794,7 +1782,7 @@
             "engineering_demand": {
               "title": "Engineering demand function",
               "type": "object",
-              "description": "The engineering damand function used to calculate the impact of the hazard.",
+              "description": "The engineering demand function used to calculate the impact of the hazard.",
               "$ref": "#/$defs/Engineering_demand_function"
             }
           },
@@ -1821,29 +1809,16 @@
       "description": "Details of a vulnerability function used to calculate the impact of the hazard.",
       "properties": {
         "approach": {
-          "title": "Impact function approach",
+          "title": "Vulnerability function approach",
           "type": "string",
-          "description": "The approach the impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#function_approach).",
-          "enum": [
-            "analytical",
-            "empirical",
-            "hybrid",
-            "judgement"
-          ],
-          "codelist": "function_approach.csv",
-          "openCodelist": false
+          "description": "The approach the vulnerability function is based upon.",
+          "$ref": "#/$defs/Approach"
         },
         "relationship": {
-          "title": "Impact relationship type",
+          "title": "Vulnerability impact relationship type",
           "type": "string",
-          "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
-          "enum": [
-            "discrete",
-            "math_bespoke",
-            "math_parametric"
-          ],
-          "codelist": "relationship_type.csv",
-          "openCodelist": false
+          "description": "The type of function relationships used to calculate the vulnerability impact values.",
+          "$ref": "#/$defs/Relationship"
         }
       },
       "minProperties": 1
@@ -1854,48 +1829,30 @@
       "description": "Details of a fragility function used to calculate the impact of the hazard.",
       "properties": {
         "approach": {
-          "title": "Impact function approach",
+          "title": "Fragility function approach",
           "type": "string",
-          "description": "The approach the impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#function_approach).",
-          "enum": [
-            "analytical",
-            "empirical",
-            "hybrid",
-            "judgement"
-          ],
-          "codelist": "function_approach.csv",
-          "openCodelist": false
+          "description": "The approach the fragility function is based upon.",
+          "$ref": "#/$defs/Approach"
         },
         "relationship": {
-          "title": "Impact relationship type",
+          "title": "Fragility impact relationship type",
           "type": "string",
-          "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
-          "enum": [
-            "discrete",
-            "math_bespoke",
-            "math_parametric"
-          ],
-          "codelist": "relationship_type.csv",
-          "openCodelist": false
+          "description": "The type of function relationships used to calculate the impact values.",
+          "$ref": "#/$defs/Relationship"
         },
         "damage_scale_name": {
           "title": "Damage scale name",
           "type": "string",
-          "description": "The name of the damage scale used in the damage-to-loss function or fragility function, taken from the open [damage scale name codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_scale_name).",
-          "codelist": "damage_scale_name.csv",
-          "openCodelist": true,
-          "minLength": 1
+          "description": "The name of the damage scale used in the fragility function.",
+          "$ref": "#/$defs/Damage_scale_name"
         },
         "damage_state_names": {
           "title": "Damage state names",
           "type": "array",
-          "description": "The names of the damage states listed in a Damage Scale or used in a Fragility function, taken from the open [damage states names codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_states_names).",
+          "description": "The names of the damage states listed in the fragility function.",
           "items": {
-            "type": "string",
-            "minLength": 1
+            "$ref": "#/$defs/Damage_states_name"
           },
-          "codelist": "damage_states_names.csv",
-          "openCodelist": true,
           "minItems": 1,
           "uniqueItems": true
         }
@@ -1908,48 +1865,30 @@
       "description": "Details of a damage-to-loss function (or damage-to-loss model) used to calculate the impact of the hazard in conjunction with a fragility function.",
       "properties": {
         "approach": {
-          "title": "Impact function approach",
+          "title": "Damage-to-loss function approach",
           "type": "string",
-          "description": "The approach the impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#function_approach).",
-          "enum": [
-            "analytical",
-            "empirical",
-            "hybrid",
-            "judgement"
-          ],
-          "codelist": "function_approach.csv",
-          "openCodelist": false
+          "description": "The approach the damage-to-loss impact function is based upon.",
+          "$ref": "#/$defs/Approach"
         },
         "relationship": {
-          "title": "Impact relationship type",
+          "title": "Damage-to-loss impact relationship type",
           "type": "string",
-          "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
-          "enum": [
-            "discrete",
-            "math_bespoke",
-            "math_parametric"
-          ],
-          "codelist": "relationship_type.csv",
-          "openCodelist": false
+          "description": "The type of function relationships used to calculate the damage-to-loss impact values.",
+          "$ref": "#/$defs/Relationship"
         },
         "damage_scale_name": {
           "title": "Damage scale name",
           "type": "string",
-          "description": "The name of the damage scale used in the damage-to-loss function or fragility function, taken from the open [damage scale name codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_scale_name).",
-          "codelist": "damage_scale_name.csv",
-          "openCodelist": true,
-          "minLength": 1
+          "description": "The name of the damage scale used in the damage-to-loss function.",
+          "$ref": "#/$defs/Damage_scale_name"
         },
-        "damage_states_names": {
+        "damage_states_name": {
           "title": "Damage states names",
           "type": "array",
-          "description": "The names of the damage states listed in a Damage Scale or used in a Fragility function, taken from the open [damage states names codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_states_names).",
+          "description": "The names of the damage states listed in a damage scale.",
           "items": {
-            "type": "string",
-            "minLength": 1
+            "$ref": "#/$defs/Damage_states_name"
           },
-          "codelist": "damage_states_name.csv",
-          "openCodelist": true,
           "minItems": 1,
           "uniqueItems": true
         }
@@ -1970,35 +1909,65 @@
           "minLength": 1
         },
         "approach": {
-          "title": "Impact function approach",
+          "title": "Engineering demand impact function approach",
           "type": "string",
-          "description": "The approach the impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#function_approach).",
-          "enum": [
-            "analytical",
-            "empirical",
-            "hybrid",
-            "judgement"
-          ],
-          "codelist": "function_approach.csv",
-          "openCodelist": false
+          "description": "The approach the engineering demand impact function is based upon.",
+          "$ref": "#/$defs/Approach"
         },
         "relationship": {
-          "title": "Impact relationship type",
+          "title": "Engineering demand impact relationship type",
           "type": "string",
-          "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
-          "enum": [
-            "discrete",
-            "math_bespoke",
-            "math_parametric"
-          ],
-          "codelist": "relationship_type.csv",
-          "openCodelist": false
+          "description": "The type of function relationships used to calculate the engineering impact values.",
+          "$ref": "#/$defs/Relationship"
         }
       },
       "minProperties": 1
     },
+    "Approach": {
+      "title": "Impact function approach",
+      "type": "string",
+      "description": "The approach the impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#function_approach).",
+      "enum": [
+        "analytical",
+        "empirical",
+        "hybrid",
+        "judgement"
+      ],
+      "codelist": "function_approach.csv",
+      "openCodelist": false,
+      "minLength": 1
+    },
+    "Relationship": {
+      "title": "Impact relationship type",
+      "type": "string",
+      "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
+      "enum": [
+        "discrete",
+        "math_bespoke",
+        "math_parametric"
+      ],
+      "codelist": "relationship_type.csv",
+      "openCodelist": false,
+      "minLength": 1
+    },
+    "Damage_scale_name": {
+      "title": "Damage scale name",
+      "type": "string",
+      "description": "The name of the damage scale used in the damage-to-loss function or fragility function, taken from the open [damage scale name codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_scale_name).",
+      "codelist": "damage_scale_name.csv",
+      "openCodelist": true,
+      "minLength": 1
+    },
+    "Damage_states_name": {
+      "title": "Damage state names",
+      "type": "string",
+      "description": "The name of the damage states listed in a damage scale or used in a fragility function, taken from the open [damage states name codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_states_name).",
+      "codelist": "damage_states_name.csv",
+      "openCodelist": true,
+      "minLength": 1
+    },
     "Impact": {
-      "title": "Vulnerability impact",
+      "title": "Impact",
       "type": "object",
       "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
       "properties": {
@@ -2052,7 +2021,7 @@
       "properties": {
         "scheme": {
           "title": "Scheme",
-          "description": "The scheme or codelist from which the classification code is taken, using the open [classificationScheme](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#classification-scheme) codelist.",
+          "description": "The scheme or codelist from which the classification code is taken, using the open [classification_scheme](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#classification_scheme) codelist.",
           "type": "string",
           "codelist": "classificationScheme.csv",
           "openCodelist": true

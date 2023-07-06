@@ -35,6 +35,30 @@ file: ../../codelists/open/IMT.csv
 ---
 ```
 
+### classification_scheme
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/classification_scheme.csv
+---
+```
+
+### damage_scale_name
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/damage_scale_name.csv
+---
+```
+
 ### damage_scale_names
 
 This codelist is referenced by the following properties:
@@ -46,6 +70,18 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/open/damage_scale_names.csv
+---
+```
+
+### damage_states_name
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/damage_states_name.csv
 ---
 ```
 
@@ -279,7 +315,7 @@ file: ../../codelists/closed/exposure_category.csv
 
 ### function_approach
 
-<<<<<<< HEAD:docs/data_model/codelists.md
+\<\<\<\<\<\<\< HEAD:docs/data_model/codelists.md
 This codelist is referenced by the following properties:
 
 - `Vulnerability_function/approach`
@@ -287,8 +323,10 @@ This codelist is referenced by the following properties:
 - `Damage_to_loss_function/approach`
 - `Engineering_demand_function/approach`
 
-=======
->>>>>>> dev:docs/reference/codelists.md
+\=======
+
+> > > > > > > dev:docs/reference/codelists.md
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -311,37 +349,39 @@ file: ../../codelists/closed/geometry_type.csv
 ---
 ```
 
-<<<<<<< HEAD:docs/data_model/codelists.md
-### hazard_process_type
-
-This codelist is referenced by the following properties:
-
-- `Vulnerability/hazard_process_primary`
-- `Vulnerability/hazard_process_secondary`
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../codelists/closed/hazard_process_type.csv
----
-```
-
 ### hazard_type
 
 This codelist is referenced by the following properties:
 
 - `Vulnerability/hazard_primary`
 - `Vulnerability/hazard_secondary`
-=======
+  \=======
+
 ### hazard_type
 
 The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
 
 The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
->>>>>>> dev:docs/reference/codelists.md
+
+> > > > > > > dev:docs/reference/codelists.md
+
+The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
+
+The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
+
+> > > > > > > dev:docs/reference/codelists.md
+
+The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
+
+The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
+
+> > > > > > > dev:docs/reference/codelists.md
+
+The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework.
+
+The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
+
+> > > > > > > dev:docs/reference/codelists.md
 
 This codelist has the following codes:
 
@@ -353,7 +393,6 @@ file: ../../codelists/closed/hazard_type.csv
 ---
 ```
 
-<<<<<<< HEAD:docs/data_model/codelists.md
 ### impact_type
 
 This codelist is referenced by the following properties:
@@ -370,6 +409,26 @@ file: ../../codelists/closed/impact_type.csv
 ---
 ```
 
+### process_type
+
+The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type).
+
+> > > > > > > dev:docs/reference/codelists.md
+
+The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type).
+
+> > > > > > > dev:docs/reference/codelists.md
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/process_type.csv
+---
+```
+
 ### relationship_type
 
 This codelist is referenced by the following properties:
@@ -378,11 +437,13 @@ This codelist is referenced by the following properties:
 - `Fragility_function/relationship`
 - `Damage_to_loss_function/relationship`
 - `Engineering_demand_function/relationship`
-=======
+  \=======
+
 ### process_type
 
 The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type).
->>>>>>> dev:docs/reference/codelists.md
+
+> > > > > > > dev:docs/reference/codelists.md
 
 This codelist has the following codes:
 
@@ -390,11 +451,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-<<<<<<< HEAD:docs/data_model/codelists.md
 file: ../../codelists/closed/relationship_type.csv
-=======
-file: ../../codelists/closed/process_type.csv
->>>>>>> dev:docs/reference/codelists.md
 ---
 ```
 
