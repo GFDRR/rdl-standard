@@ -285,12 +285,10 @@
       "minProperties": 1
     },
     {
-      "properties": {
-        "exposure": {
-          "title": "Exposure dataset metadata",
-          "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
-          "$ref": "#/$defs/Exposure"
-        }
+      "exposure": {
+        "title": "Exposure dataset metadata",
+        "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
+        "$ref": "#/$defs/Exposure"
       }
     },
     {

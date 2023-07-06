@@ -408,6 +408,18 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
+file: ../../codelists/closed/relationship_type.csv
+---
+```
+
+### risk_data_type
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
 file: ../../codelists/closed/risk_data_type.csv
 ---
 ```
