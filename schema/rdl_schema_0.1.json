@@ -1873,8 +1873,8 @@
           "$ref": "#/$defs/Period"
         },
         "minProperties": 1
-        }
-      },
+      }
+    },
     "Probabilistic": {
       "title": "Probabilistic frequency",
       "type": "object",
@@ -1897,8 +1897,8 @@
           "$ref": "#/$defs/Probability"
         },
         "minProperties": 1
-        }
-      },
+      }
+    },
     "Probability": {
       "title": "probability",
       "type": "object",
@@ -1915,11 +1915,11 @@
         "probability_span": {
           "title": "Probability span",
           "type": "number",
-          "description": "The duration (in years) used to specify the probability." 
+          "description": "The duration (in years) used to specify the probability."
         },
         "minProperties": 1
-        }
-      },
+      }
+    },
     "Footprint": {
       "title": "Footprint",
       "description": "A possible realisation of the spatial extent of a hazard event.",
