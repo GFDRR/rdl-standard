@@ -16,7 +16,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#115](https://github.com/GFDRR/rdl-standard/pull/115) - Add `Entity` and `Attribution` objects, update entity related field names and descriptions.
 - [#121](https://github.com/GFDRR/rdl-standard/pull/121):
   - Nest footprints within events and events within event sets.
-  - Update `calculation_method`
+  - Update `calculation_method`.
   - Add fields:
     - `event_set.id`
     - `event.id`
@@ -27,8 +27,9 @@ This page lists changes to the Risk Data Library Standard.
     - `event_set.calculation_method`
     - `event_set.number_events`
     - `event_set.temporal`
-  - Add codelists for `event_set.hazard_type` and `event_set.analysis_type`
-  - Move `process_type` from `footprint_set` to `event` and `event_set`
+  - Add codelists for `event_set.hazard_type` and `event_set.analysis_type`.
+  - Move `process_type` from `footprint_set` to `event` and `event_set`.
+  - Create `Occurrence` object.
 
 ### Codelists
 

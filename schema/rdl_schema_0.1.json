@@ -235,6 +235,11 @@
                   "type": "number",
                   "description": "The number of events contained in the event set. You should only use this field when details of individual events are not included in the RDLS metadata."
                 },
+                "occurrence_range": {
+                  "title": "Occurrence range",
+                  "type": "string",
+                  "description": "A summary of the probabilistic occurrence scenarios that are included in the event_set. This field must only be used if event_set.analysis_type = 'probabilistic'"
+                },
                 "spatial": {
                   "title": "Spatial coverage",
                   "description": "The geographical area covered by the the hazard analysis.",
@@ -1818,20 +1823,11 @@
           "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
           "minLength": 1
         },
-        "occurence_time_start": {
-          "type": "string",
-          "description": "The start date (and possibly time) of the time period used to specify either the frequency or the occurrence_probability [ISO 8601 format]",
-          "format": "date-time"
-        },
-        "occurence_time_end": {
-          "type": "string",
-          "description": "The end date (and possibly time) of the time period used to specify either the frequency or the occurrence_probability [ISO 8601 format]",
-          "format": "date-time"
-        },
-        "occurence_time_span": {
-          "type": "string",
-          "description": "The duration (years) of the period used to specify either the frequency or the occurrence_probability",
-          "minLength": 1
+        "occurrence": {
+          "title": "Occurrence",
+          "type": "object",
+          "description": "The occurrence of the event.",
+          "$ref": "#/$defs/Occurrence"
         },
         "trigger_hazard_type": {
           "$ref": "#/$defs/common_hazard_type",
@@ -1859,6 +1855,71 @@
       },
       "minProperties": 1
     },
+    "Occurrence": {
+      "title": "Occurrence",
+      "type": "object",
+      "description": "The occurrence of the event.",
+      "properties": {
+        "probabilistic": {
+          "title": "Probabilistic frequency",
+          "type": "object",
+          "description": "The frequency for the hazard scenario (event). Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when probability is used, span must be specified. This object must only be used if event_set.analysis_type = 'probabilistic'",
+          "$ref": "#/$defs/Probabilistic"
+        },
+        "empirical": {
+          "title": "Empirical",
+          "type": "object",
+          "description": "The time period over which the observed event took place. This field must only be used if event_set.analysis_type = 'empirical'",
+          "$ref": "#/$defs/Period"
+        },
+        "minProperties": 1
+        }
+      },
+    "Probabilistic": {
+      "title": "Probabilistic frequency",
+      "type": "object",
+      "description": "The frequency for the hazard scenario (event). Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when probability is used, span must be specified. This object must only be used if event_set.analysis_type = 'probabilistic'",
+      "properties": {
+        "return_period": {
+          "title": "Return period",
+          "description": "The event return period (or recurrence interval); the estimated average time between events. Expressed as the denominator of '1/n', e.g. '10' for a 1-in-10 year return period etc.",
+          "type": "number"
+        },
+        "event_rate": {
+          "title": "Event rate",
+          "type": "number",
+          "description": "The average number of occurrences of the event within a given year. This is the reciprocal of the return period, related by event_set.frequency_distribution."
+        },
+        "probability": {
+          "title": "Probability",
+          "type": "object",
+          "description": "The occurrence probability of the modelled event.",
+          "$ref": "#/$defs/Probability"
+        },
+        "minProperties": 1
+        }
+      },
+    "Probability": {
+      "title": "probability",
+      "type": "object",
+      "description": "The occurrence probability of the modelled event.",
+      "required": [
+        "span"
+      ],
+      "properties": {
+        "probability_value": {
+          "title": "Probability value",
+          "type": "number",
+          "description": "The value of the occurrence probability expressed as a float - for example 0.1 = 10% probability. Requires event.occurrence.span to define the period in which the probability applies."
+        },
+        "probability_span": {
+          "title": "Probability span",
+          "type": "number",
+          "description": "The duration (in years) used to specify the probability." 
+        },
+        "minProperties": 1
+        }
+      },
     "Footprint": {
       "title": "Footprint",
       "description": "A possible realisation of the spatial extent of a hazard event.",
