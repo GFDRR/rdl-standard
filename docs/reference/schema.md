@@ -330,7 +330,7 @@ The **additional** attributes cover more specific information that helps to unde
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/2/properties/vulnerability
-collapse: model/country_tranferability
+collapse:
 addtargets:
 ---
 ```
