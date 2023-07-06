@@ -2051,11 +2051,11 @@
         "uri": {
           "title": "URI",
           "description": "A URI to uniquely identify the classification code.",
-          "type": "string"
+          "type": "string",
           "format": "iri"
         }
       }
-    },
+    }
   },
   "minProperties": 1
 }
