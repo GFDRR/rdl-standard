@@ -1871,9 +1871,9 @@
           "type": "object",
           "description": "The time period over which the observed event took place. This field must only be used if event_set.analysis_type = 'empirical'",
           "$ref": "#/$defs/Period"
-        },
-        "minProperties": 1
-      }
+        }
+      },
+      "minProperties": 1
     },
     "Probabilistic": {
       "title": "Probabilistic frequency",
@@ -1895,9 +1895,9 @@
           "type": "object",
           "description": "The occurrence probability of the modelled event.",
           "$ref": "#/$defs/Probability"
-        },
-        "minProperties": 1
-      }
+        }
+      },
+      "minProperties": 1
     },
     "Probability": {
       "title": "probability",
@@ -1916,9 +1916,9 @@
           "title": "Probability span",
           "type": "number",
           "description": "The duration (in years) used to specify the probability."
-        },
-        "minProperties": 1
-      }
+        }
+      },
+      "minProperties": 1
     },
     "Footprint": {
       "title": "Footprint",
