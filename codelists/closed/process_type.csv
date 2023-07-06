@@ -1,4 +1,4 @@
-Code,Title,Description
+Code,Title,Definition
 coastal_flood,Coastal Flood,"Most frequently the result of storm surges and high winds coinciding with high tides. The surge itself is the result of the raising of sea levels due to low atmospheric pressure. In particular configurations, such as major estuaries or confined sea areas, the piling up of water is amplified by a combination of the shallowing of the seabed and retarding of return flow (WMO, 2011)."
 storm_surge,Storm Surge,"Reflects the difference between the actual water level under the influence of a meteorological disturbance (storm tide) and the level which would have occurred in the absence of the meteorological disturbance (i.e., astronomical tide) (WMO, 2008, 2011, 2017)."
 tornado,Tornado,"A rotating column of air, extending from the base of a cumuliform cloud, and often visible as a condensation funnel in contact with the ground, and/or attendant circulating dust or debris cloud at the ground (WMO, 2017)."
@@ -7,7 +7,7 @@ hydrological_drought,Hydrological Drought,Occurs when low water supply becomes e
 meteorological_drought,Meteorological Drought,Occurs when dry weather patterns dominate an area. It is defined usually on the basis of the degree of dryness and the duration of the dry period.
 socioeconomic_drought,Socio-economic Drought,"Relates the supply and demand of some economic goods with elements of meteorological, hydrological, and agricultural drought. It also occurs when the demand for an economic good exceeds supply as a result of a weather-related shortfall in water supply."
 primary_rupture,Primary Rupture,"Earthquake surface ruptures and fissures are localised ground displacements that develop during and immediately after an earthquake. Surface ruptures represent the upward continuation of fault slip at depth, while fissures are smaller displacements, or more distributed deformation in and around the rupture area."
-secondary_rupture,Secondary Rupture
+secondary_rupture,Secondary Rupture,TBA
 ground_motion,Ground Motion,Earthquake ground shaking is the movement of the Earth's surface produced by seismic waves that are generated when an earthquake occurs.
 liquefaction,Liquefaction,"Soil liquefaction occurs when soil is transformed from a solid to a liquid state as a result of increased pore pressure and reduced effective stress. It is typically caused by rapid loading of the soil during earthquake shaking (AGI, 2017)."
 extreme_cold,Extreme cold,"A period of marked and unusual cold weather characterised by a sharp and significant drop in air temperatures near the surface (maximum, minimum and daily average) over a large area and persisting below certain thresholds for at least two consecutive days during the cold season (WMO, 2020)."
