@@ -1,5 +1,5 @@
 Code,Title,Definition
-global,global,"Applicable at the global scale, due to being developed using global data"
-regional,regional,"Applicable at the regional (multi-country) scale, developed using regional scale data"
-national,national,"Applicable at the national scale, developed using national data"
-sub-national,sub-national,"Applicable at the subnational scale, developed using subnational data"
+global,Global,"The entire world."
+regional,Regional,"A supranational region, e.g. Africa."
+national,National,"A country."
+sub-national,Sub-national,"A sub-national administrative division."

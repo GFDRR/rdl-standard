@@ -1100,8 +1100,7 @@
           "title": "Duration",
           "type": "string",
           "description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
-          "format": "duration",
-          "minLength": 1
+          "format": "duration"
         }
       },
       "minProperties": 1
@@ -1474,7 +1473,7 @@
         "scale": {
           "title": "Spatial scale",
           "type": "string",
-          "description": "The administrative spatial scale the modelled scenario(s) applies to, from the closed [spatial scale codelist]https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#spatial_scale).",
+          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist]https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#spatial_scale).",
           "codelist": "spatial_scale.csv",
           "openCodelist": false,
           "enum": [
@@ -1560,7 +1559,6 @@
       },
       "minProperties": 1
     },
-    "vulnerability_f_math": {},
     "Vulnerability": {
       "title": "vulnerability",
       "type": "object",
@@ -1714,11 +1712,11 @@
           "codelist": "exposure_category.csv",
           "openCodelist": false,
           "enum": [
-            "Agriculture",
-            "Buildings",
-            "Infrastructures",
-            "Population",
-            "Natural environment"
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment"
           ]
         },
         "cost": {
@@ -1744,19 +1742,19 @@
           "$ref": "#/$defs/Impact"
         },
         "spatial": {
-          "title": "Vulnerability spatial details",
-          "description": "Spatial details of the dataset. `.scale` must be provided, other properties of `Location` can be included if they are different from those already detailed in the top level `spatial` object.",
+          "title": "Spatial coverage",
+          "description": "The geographical area to which the vulnerability function used in the modelled scenarios applies. `.scale` must be provided. Other fields may be provided if the spatial coverage of the vulnerability function differs from the coverage specified in the dataset-level `spatial` field.",
           "$ref": "#/$defs/Location",
           "required": [
             "scale"
           ]
         },
         "functions": {
-          "title": "Vulnerability functions",
+          "title": "Functions",
           "type": "object",
           "description": "Details of the functions used to calculate the vulnerability dataset.",
           "properties": {
-            "vulnerability_function": {
+            "vulnerability": {
               "title": "Vulnerability function",
               "type": "object",
               "description": "The vulnerability function used to calculate the impact of the hazard.",
@@ -1792,8 +1790,8 @@
         "se_category": {
           "title": "Socio-economic index category",
           "type": "object",
-          "description": "The category used to classify the socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Se_category"
+          "description": "The socio-economic category vulnerable to the hazard.",
+          "$ref": "#/$defs/Classification"
         }
       },
       "minProperties": 1
@@ -1821,9 +1819,9 @@
           "type": "string",
           "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
           "enum": [
-            "discrete values",
-            "mathematical function (bespoke)",
-            "mathematical function (parametric)"
+            "discrete",
+            "math_bespoke",
+            "math_parametric"
           ],
           "codelist": "relationship_type.csv",
           "openCodelist": false
@@ -1854,9 +1852,9 @@
           "type": "string",
           "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
           "enum": [
-            "discrete values",
-            "mathematical function (bespoke)",
-            "mathematical function (parametric)"
+            "discrete",
+            "math_bespoke",
+            "math_parametric"
           ],
           "codelist": "relationship_type.csv",
           "openCodelist": false
@@ -1869,8 +1867,8 @@
           "openCodelist": true,
           "minLength": 1
         },
-        "damage_states_names": {
-          "title": "Damage states names",
+        "damage_state_names": {
+          "title": "Damage state names",
           "type": "array",
           "description": "The names of the damage states listed in a Damage Scale or used in a Fragility function, taken from the open [damage states names codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#damage_states_names).",
           "items": {
@@ -1908,9 +1906,9 @@
           "type": "string",
           "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
           "enum": [
-            "discrete values",
-            "mathematical function (bespoke)",
-            "mathematical function (parametric)"
+            "discrete",
+            "math_bespoke",
+            "math_parametric"
           ],
           "codelist": "relationship_type.csv",
           "openCodelist": false
@@ -1942,12 +1940,12 @@
     "Engineering_demand_function": {
       "title": "Engineering demand function",
       "type": "object",
-      "description": "Details of an engineering damand function used to calculate the impact of the hazard, taken from the open [engineering demand parameter codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#engineering_demand_parameter).",
+      "description": "Details of an engineering demand function used to calculate the impact of the hazard.",
       "properties": {
         "parameter": {
           "title": "Engineering demand parameter",
           "type": "string",
-          "description": "The name of the engineering demand parameter",
+          "description": "The name of the engineering demand parameter, taken from the open [engineering demand parameter codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#engineering_demand_parameter).",
           "codelist": "engineering_demand_parameter.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1970,9 +1968,9 @@
           "type": "string",
           "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#relationship_type).",
           "enum": [
-            "discrete values",
-            "mathematical function (bespoke)",
-            "mathematical function (parametric)"
+            "discrete",
+            "math_bespoke",
+            "math_parametric"
           ],
           "codelist": "relationship_type.csv",
           "openCodelist": false
@@ -2028,26 +2026,36 @@
       },
       "minProperties": 1
     },
-    "Se_category": {
-      "title": "Socio-economic index category",
+    "Classification": {
+      "title": "Classification",
+      "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
       "type": "object",
-      "description": "The category used to classify the socio-economic category vulnerable to the hazard.",
       "properties": {
-        "description": {
-          "title": "Socio-economic index description",
-          "type": "string",
-          "description": "The name or title of the socio-economic index category.",
-          "minLength": 1
-        },
         "scheme": {
           "title": "Scheme",
+          "description": "The scheme or codelist from which the classification code is taken, using the open [classificationScheme](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#classification-scheme) codelist.",
           "type": "string",
-          "description": "The name of the schema the socio-economic index category is taken from. Use of either [GED4ALL](https://wiki.openstreetmap.org/wiki/GED4ALL#Socio-Economic) or [Mover](https://www.gfdrr.org/en/publication/mover) is recommended.",
-          "minLength": 1
+          "codelist": "classificationScheme.csv",
+          "openCodelist": true
+        },
+        "id": {
+          "title": "ID",
+          "description": "The classification code taken from the scheme.",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A textual description or title for the classification code.",
+          "type": "string"
+        },
+        "uri": {
+          "title": "URI",
+          "description": "A URI to uniquely identify the classification code.",
+          "type": "string"
+          "format": "iri"
         }
-      },
-      "minProperties": 1
-    }
+      }
+    },
   },
   "minProperties": 1
 }

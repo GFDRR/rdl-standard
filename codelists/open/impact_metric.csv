@@ -1,11 +1,11 @@
 Code,Title
-damage ratio,Damage ratio
-mean damage ratio,Mean damage ratio
-probability of exceeding damage limit state,Probability of exceeding damage limit state
-loss ratio,Loss ratio
-total loss,total loss
-number of casualties(fatalities),Number of casualties (fatalities)
-casualty(fatality) ratio,Casulalty (fatality) ratio
-annual average loss,Annual average loss
-downtime,Downtime
-damage index,Damage index
+damage_ratio,Damage ratio
+mean_damage_ratio,Mean damage ratio
+damage_limit_state_exceedence_probability,Damage limit state exceedance probability
+loss_ratio,Loss ratio
+loss_sum,total loss
+casuality_count,Number of casualties (fatalities)
+casualty_ratio,Casulalty (fatality) ratio
+loss_annual_average,Annual average loss
+downtime_duration,Downtime duration
+damage_index,Damage index
