@@ -235,39 +235,46 @@
                   "type": "number",
                   "description": "The number of events contained in the event set. You should only use this field when details of individual events are not included in the RDLS metadata."
                 },
-                "geo_area": {
-                  "type": "array",
-                  "description": "The name of the geographic area covered by the hazard analysis. Comma-separated list of geographic names.",
-                  "items": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
+                "spatial": {
+                  "title": "Spatial coverage",
+                  "description": "The geographical area covered by the the hazard analysis.",
+                  "$ref": "#/$defs/Location"
                 },
                 "process_type": {
-                  "$ref": "#/$defs/common_process_type",
-                  "description": "Type of hazard process modelled"
-                },
-                "time_start": {
+                  "title": "Process type",
                   "type": "string",
-                  "description": "The time at which the modelled scenario(s) starts [ISO 8601 format]",
-                  "format": "date"
-                },
-                "time_end": {
-                  "type": "string",
-                  "description": "The time at which the modelled scenario(s) ends [ISO 8601 format]",
-                  "format": "date"
-                },
-                "time_span": {
-                  "type": "string",
-                  "description": "The extent of the time period covered by the events included in the current scenario hazard analysis [ISO 8601 format]",
-                  "minLength": 1
-                },
-                "time_year": {
-                  "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
-                  "minLength": 1
+                  "description": "Type of hazard process modelled, from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#hazard_process_type).",
+                  "codelist": "hazard_process_type.csv",
+                  "openCodelist": false,
+                  "enum": [
+                    "FCF",
+                    "FSS",
+                    "TOR",
+                    "DTA",
+                    "DTH",
+                    "DTM",
+                    "DTS",
+                    "Q1R",
+                    "Q2R",
+                    "QGM",
+                    "QLI",
+                    "ECD",
+                    "EHT",
+                    "FFF",
+                    "FPF",
+                    "LAV",
+                    "LSL",
+                    "TSI",
+                    "VAF",
+                    "VBL",
+                    "VFH",
+                    "VLH",
+                    "VLV",
+                    "VPF",
+                    "WFI",
+                    "ETC",
+                    "TCY"
+                  ]
                 },
                 "temporal": {
                   "title": "Temporal coverage",
@@ -1757,17 +1764,54 @@
         "calculation_method": {
           "title": "Model calculation method",
           "type": "string",
-          "description": "The methodology used for the calculation of the event in the modelled scenario(s).",
+          "description": "The methodology used for the calculation of the event in the modelled scenario(s), from the closed [data calculation type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#data_calculation_type).",
           "codelist": "data_calculation_type.csv",
-          "openCodelist": false
+          "openCodelist": false,
+          "enum": [
+            "inferred",
+            "observed",
+            "simulated"
+          ]
         },
         "frequency_type": {
           "$ref": "#/$defs/common_frequency_type",
           "description": "Frequency representation type"
         },
         "process_type": {
-          "$ref": "#/$defs/common_process_type",
-          "description": "Type of hazard process modelled"
+          "title": "Process type",
+          "type": "string",
+          "description": "Type of hazard process modelled, from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists.html#hazard_process_type).",
+          "codelist": "hazard_process_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "FCF",
+            "FSS",
+            "TOR",
+            "DTA",
+            "DTH",
+            "DTM",
+            "DTS",
+            "Q1R",
+            "Q2R",
+            "QGM",
+            "QLI",
+            "ECD",
+            "EHT",
+            "FFF",
+            "FPF",
+            "LAV",
+            "LSL",
+            "TSI",
+            "VAF",
+            "VBL",
+            "VFH",
+            "VLH",
+            "VLV",
+            "VPF",
+            "WFI",
+            "ETC",
+            "TCY"
+          ]
         },
         "return_period": {
           "type": "string",
