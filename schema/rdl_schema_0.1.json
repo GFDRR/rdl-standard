@@ -132,7 +132,7 @@
     "sources": {
       "title": "Sources",
       "type": "array",
-      "description": "Sources of information or predictions that contribute to the creation of the dataset.",
+      "description": "Sources of information that contribute to the creation of the dataset.",
       "items": {
         "$ref": "#/$defs/Source"
       },
@@ -1747,7 +1747,7 @@
     "Source": {
       "title": "Source",
       "type": "object",
-      "description": "A source of information or predictions that contribute to the creation of a dataset.",
+      "description": "A source of information that contributes to the creation of a dataset.",
       "required": [
         "id"
       ],
