@@ -33,6 +33,30 @@ file: ../../codelists/open/IMT.csv
 ---
 ```
 
+### damage_scale_name
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/damage_scale_name.csv
+---
+```
+
+### damage_states_name
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/damage_states_name.csv
+---
+```
+
 ### data_formats
 
 This codelist has the following codes:
