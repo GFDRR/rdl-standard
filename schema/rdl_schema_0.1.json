@@ -4,18 +4,23 @@
   "title": "Risk Data Library Schema",
   "type": "object",
   "required": [
+    "identifier",
     "title",
     "risk_data_type",
     "publisher",
     "contact_point",
     "creator",
-    "model_source",
-    "model_date",
     "spatial",
     "license",
     "resources"
   ],
   "properties": {
+    "identifier": {
+      "title": "Identifier",
+      "type": "string",
+      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
+      "minLength": 1
+    },
     "title": {
       "title": "Title",
       "type": "string",
@@ -46,16 +51,6 @@
       "type": "object",
       "description": "The entity responsible for making the dataset available.",
       "$ref": "#/$defs/Entity"
-    },
-    "model_source": {
-      "type": "string",
-      "description": "Name of source model",
-      "minLength": 1
-    },
-    "model_date": {
-      "type": "string",
-      "description": "Model release date",
-      "format": "date"
     },
     "version": {
       "title": "Dataset version",
@@ -133,6 +128,22 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "sources": {
+      "title": "Sources",
+      "type": "array",
+      "description": "Sources of information that contribute to the creation of the dataset.",
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "temporal_resolution": {
+      "title": "Temporal resolution",
+      "type": "string",
+      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
+      "format": "duration"
     }
   },
   "anyOf": [
@@ -1088,25 +1099,31 @@
         "spatial_resolution": {
           "title": "Spatial resolution",
           "type": "number",
-          "description": "The minimum spatial separation resolvable in the resource, measured in meters.",
+          "description": "The minimum spatial separation resolvable in this resource, measured in meters.",
           "exclusiveMinimum": 0
         },
         "coordinate_system": {
           "title": "Reference coordinate system",
           "type": "string",
-          "description": "The reference co-ordinate system of the dataset version, using the [EPSG codelist](https://epsg.org).",
+          "description": "The reference co-ordinate system of this resource, using the [EPSG codelist](https://epsg.org).",
           "minLength": 1
         },
         "url": {
           "title": "Url",
           "type": "string",
-          "description": "The web address the dataset version can be downloaded from.",
+          "description": "The web address this resource can be downloaded from.",
           "format": "iri"
         },
         "temporal": {
           "title": "Temporal coverage",
           "description": "The period of time covered by this resource.",
           "$ref": "#/$defs/Period"
+        },
+        "temporal_resolution": {
+          "title": "Temporal resolution",
+          "type": "string",
+          "description": "The minimum period of time resolvable in this resource, in ISO8601 duration format.",
+          "format": "duration"
         }
       },
       "minProperties": 1
@@ -1612,7 +1629,8 @@
               "ALA"
             ]
           },
-          "minItems": 1
+          "minItems": 1,
+          "uniqueItems": true
         },
         "gazetteerEntries": {
           "title": "Gazetteer entries",
@@ -1649,7 +1667,8 @@
           "minItems": 2,
           "maxItems": 2
         }
-      }
+      },
+      "minProperties": 1
     },
     "Gazetteer_entry": {
       "title": "Gazetteer entry",
@@ -1662,19 +1681,22 @@
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "An identifier drawn from the gazetteer identified in `.scheme`."
+          "description": "An identifier drawn from the gazetteer identified in `.scheme`.",
+          "minLength": 1
         },
         "scheme": {
           "title": "Scheme",
           "type": "string",
           "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#location_gazetteers).",
           "codelist": "location_gazetteers.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minLength": 1
         },
         "description": {
           "title": "Description",
           "type": "string",
-          "description": "A description for the gazetteer entry."
+          "description": "A description for the gazetteer entry.",
+          "minLength": 1
         },
         "uri": {
           "title": "Uniform resource locator",
@@ -1682,7 +1704,8 @@
           "description": "A URI for the gazetteer entry.",
           "format": "iri"
         }
-      }
+      },
+      "minProperties": 1
     },
     "Geometry": {
       "title": "Geometry",
@@ -1712,13 +1735,68 @@
             "type": [
               "number",
               "array"
-            ]
+            ],
+            "minItems": 1
           },
           "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
-    "vulnerability_f_math": {}
+    "vulnerability_f_math": {},
+    "Source": {
+      "title": "Source",
+      "type": "object",
+      "description": "A source of information that contributes to the creation of a dataset.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the source.",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "The name or title of the source.",
+          "minLength": 1
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "The uniform resource locator for the source, e.g. the web address at which the source can be accessed.",
+          "format": "iri"
+        },
+        "type": {
+          "title": "type",
+          "type": "string",
+          "description": "The nature of the source, from the closed [source type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#source_type).",
+          "codelist": "source_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "dataset",
+            "model"
+          ]
+        },
+        "component": {
+          "title": "Component",
+          "type": "string",
+          "description": "The risk data component the source has been used in, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/data_model/codelists/#risk_data_type).",
+          "codelist": "risk_data_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "hazard",
+            "exposure",
+            "vulnerability",
+            "loss"
+          ]
+        }
+      },
+      "minProperties": 1
+    }
   },
   "minProperties": 1
 }
