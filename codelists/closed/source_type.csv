@@ -1,0 +1,3 @@
+Code,Title,Definition
+dataset,Dataset,Data representing an individual risk data component that is used as input by the model.
+model,Model,An analytical approach that combines different component's datasets into one output.
