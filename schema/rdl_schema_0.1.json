@@ -1694,7 +1694,7 @@
         "hazard_type": {
           "title": "Hazard type",
           "type": "string",
-          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#hazard_type).",
+          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1714,7 +1714,7 @@
         "hazard_process": {
           "title": "Hazard process",
           "type": "string",
-          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#hazard_process_type).",
+          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
           "codelist": "hazard_process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1752,7 +1752,7 @@
         },
         "category": {
           "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#exposure_category).",
+          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
           "type": "string",
           "codelist": "exposure_category.csv",
           "openCodelist": false,
@@ -1767,7 +1767,7 @@
         "cost": {
           "title": "Asset cost",
           "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
+          "description": "The costs associated with the loss of specific elements of assets detailed in the dataset.",
           "items": {
             "$ref": "#/$defs/Cost"
           },
@@ -1783,7 +1783,7 @@
         "type": {
           "title": "Loss type",
           "type": "string",
-          "description": "The type of loss described in the dataset, from the closed [loss type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#loss_type).",
+          "description": "The type of loss described in the dataset, from the closed [loss type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#loss_type).",
           "codelist": "loss_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1794,7 +1794,7 @@
         "approach": {
           "title": "Loss approach",
           "type": "string",
-          "description": "The approach the loss calculation function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#function_approach).",
+          "description": "The approach the loss calculation function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
           "codelist": "function_approach.csv",
           "openCodelist": false,
           "enum": [
@@ -1807,7 +1807,7 @@
         "hazard_analysis_type": {
           "title": "Event frequency type",
           "type": "string",
-          "description": "The type of occurrence frequency represented in the modelled scenario, from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#loss_type).",
+          "description": "The type of occurrence frequency represented in the modelled scenario, from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#loss_type).",
           "enum": [
             "deterministic",
             "empirical",
