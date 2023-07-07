@@ -17,3 +17,5 @@ probable_maximum_loss,Probable Maximum Loss,Estimated maximum loss occurring at 
 at_risk_value,Value at Risk,Estimated minimum loss likely to be equalled or exceeded in a given year for a given probability.,Loss
 at_risk_tail_value,Tail Value at Risk,Estimated losses at or exceeding a specified value at risk VaR (estimate of average losses given that a severity threshold has been exceeded).,Loss
 downtime_loss,Downtime (loss),Duration of downtime (business or service interruption).,Loss
+asset_loss,Number of assets,"The estimated number of structures, or length of infrastructure, damaged.",Loss
+displaced_count,Number of people displaced,The estimated number of people displaced due to physical damage and disruption.,Loss
