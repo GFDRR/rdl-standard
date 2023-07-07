@@ -463,15 +463,19 @@ Insert example of recorded empirical losses.
 `Exposure` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Exposure/description
+---
+jsonpointer: /$defs/Exposure/description
+---
 ```
 
 Each `Exposure` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Exposure
-:collapse: category,taxonomy,cost
-:addtargets:
+---
+pointer: /$defs/Exposure
+collapse: category,taxonomy,cost
+addtargets:
+---
 ```
 
 ### Cost
@@ -479,16 +483,19 @@ Each `Exposure` has the following fields:
 `Cost` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Cost/description
+---
+jsonpointer: /$defs/Cost/description
+---
 ```
-
 
 Each `Cost` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Cost
-:collapse: id,type,unit
-:addtargets:
+---
+pointer: /$defs/Cost
+collapse: id,type,unit
+addtargets:
+---
 ```
 
 ### Related_resource
@@ -496,16 +503,19 @@ Each `Cost` has the following fields:
 `Related_resource` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Related_resource/description
+---
+jsonpointer: /$defs/Related_resource/description
+---
 ```
-
 
 Each `Related_resource` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Related_resource
-:collapse: id,name,authorNames,datePublished,url,doi
-:addtargets:
+---
+pointer: /$defs/Related_resource
+collapse: id,name,authorNames,datePublished,url,doi
+addtargets:
+---
 ```
 
 ### Period
@@ -513,16 +523,19 @@ Each `Related_resource` has the following fields:
 `Period` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Period/description
+---
+jsonpointer: /$defs/Period/description
+---
 ```
-
 
 Each `Period` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Period
-:collapse: start,end,duration
-:addtargets:
+---
+pointer: /$defs/Period
+collapse: start,end,duration
+addtargets:
+---
 ```
 
 ### Entity
@@ -530,16 +543,19 @@ Each `Period` has the following fields:
 `Entity` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Entity/description
+---
+jsonpointer: /$defs/Entity/description
+---
 ```
-
 
 Each `Entity` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Entity
-:collapse: name,email,url
-:addtargets:
+---
+pointer: /$defs/Entity
+collapse: name,email,url
+addtargets:
+---
 ```
 
 ### Attribution
@@ -547,15 +563,19 @@ Each `Entity` has the following fields:
 `Attribution` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Attribution/description
+---
+jsonpointer: /$defs/Attribution/description
+---
 ```
 
 Each `Attribution` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Attribution
-:collapse: id,entity,role
-:addtargets:
+---
+pointer: /$defs/Attribution
+collapse: id,entity,role
+addtargets:
+---
 ```
 
 ### Location
@@ -563,9 +583,10 @@ Each `Attribution` has the following fields:
 `Location` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Location/description
+---
+jsonpointer: /$defs/Location/description
+---
 ```
-
 
 Each `Location` has the following fields:
 
@@ -582,16 +603,19 @@ addtargets:
 `Gazetteer_entry` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Gazetteer_entry/description
+---
+jsonpointer: /$defs/Gazetteer_entry/description
+---
 ```
-
 
 Each `Gazetteer_entry` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Gazetteer_entry
-:collapse: id,scheme,description,uri
-:addtargets:
+---
+pointer: /$defs/Gazetteer_entry
+collapse: id,scheme,description,uri
+addtargets:
+---
 ```
 
 ### Geometry
@@ -599,16 +623,19 @@ Each `Gazetteer_entry` has the following fields:
 `Geometry` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Geometry/description
+---
+jsonpointer: /$defs/Geometry/description
+---
 ```
-
 
 Each `Geometry` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Geometry
-:collapse: type,coordinates
-:addtargets:
+---
+pointer: /$defs/Geometry
+collapse: type,coordinates
+addtargets:
+---
 ```
 
 ### Vulnerability
@@ -757,16 +784,19 @@ addtargets:
 `Source` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Source/description
+---
+jsonpointer: /$defs/Source/description
+---
 ```
-
 
 Each `Source` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Source
-:collapse: id,name,url,type,component
-:addtargets:
+---
+pointer: /$defs/Source
+collapse: id,name,url,type,component
+addtargets:
+---
 ```
 
 ### Loss
@@ -774,14 +804,18 @@ Each `Source` has the following fields:
 `Loss` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:jsonpointer: /$defs/Loss/description
+---
+jsonpointer: /$defs/Loss/description
+---
 ```
-
 
 Each `Loss` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Loss
-:collapse: hazard_type,hazard_process,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
-:addtargets:
+---
+pointer: /$defs/Loss
+collapse: 
+  hazard_type,hazard_process,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
+addtargets:
+---
 ```
