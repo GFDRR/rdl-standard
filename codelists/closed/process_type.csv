@@ -1,29 +1,31 @@
-Code,Title
-FCF,Coastal Flood
-FSS,Storm Surge
-TOR,Tornado
-DTA,Agricultural Drought
-DTH,Hydrological Drought
-DTM,Meteorological Drought
-DTS,Socio-economic Drought
-Q1R,Primary Rupture
-Q2R,Secondary Rupture
-QGM,Ground Motion
-QLI,Liquefaction
-ECD,Extreme cold
-EHT,Extreme heat
-FFF,Fluvial Flood
-FPF,Pluvial Flood
-LAV,Snow Avalanche
-LSL,Landslide (general)
-TSI,Tsunami
-VAF,Ashfall
-VBL,Ballistics
-VFH,Proximal hazards
-VLH,Lahar
-VLV,Lava
-VPF,Pyroclastic Flow
-WFI,Wildfire
-ETC,Extratropical cyclone
-TCY,Tropical cyclone
-MHC,Multi-Hazard combined
+Code,Title,Definition
+coastal_flood,Coastal Flood,"Most frequently the result of storm surges and high winds coinciding with high tides. The surge itself is the result of the raising of sea levels due to low atmospheric pressure. In particular configurations, such as major estuaries or confined sea areas, the piling up of water is amplified by a combination of the shallowing of the seabed and retarding of return flow (WMO, 2011)."
+storm_surge,Storm Surge,"Reflects the difference between the actual water level under the influence of a meteorological disturbance (storm tide) and the level which would have occurred in the absence of the meteorological disturbance (i.e., astronomical tide) (WMO, 2008, 2011, 2017)."
+tornado,Tornado,"A rotating column of air, extending from the base of a cumuliform cloud, and often visible as a condensation funnel in contact with the ground, and/or attendant circulating dust or debris cloud at the ground (WMO, 2017)."
+agricultural_drought,Agricultural Drought,"Occurs when agricultural production becomes affected. It focuses on precipitation shortages, differences between actual evapotranspiration, soil water deficits, reduced groundwater and so on."
+hydrological_drought,Hydrological Drought,Occurs when low water supply becomes evident and is associated with the effects of periods of precipitation shortfalls on surface or subsurface water supply.
+meteorological_drought,Meteorological Drought,Occurs when dry weather patterns dominate an area. It is defined usually on the basis of the degree of dryness and the duration of the dry period.
+socioeconomic_drought,Socio-economic Drought,"Relates the supply and demand of some economic goods with elements of meteorological, hydrological, and agricultural drought. It also occurs when the demand for an economic good exceeds supply as a result of a weather-related shortfall in water supply."
+primary_rupture,Primary Rupture,"Earthquake surface ruptures and fissures are localised ground displacements that develop during and immediately after an earthquake. Surface ruptures represent the upward continuation of fault slip at depth, while fissures are smaller displacements, or more distributed deformation in and around the rupture area."
+secondary_rupture,Secondary Rupture,TBA
+ground_motion,Ground Motion,Earthquake ground shaking is the movement of the Earth's surface produced by seismic waves that are generated when an earthquake occurs.
+liquefaction,Liquefaction,"Soil liquefaction occurs when soil is transformed from a solid to a liquid state as a result of increased pore pressure and reduced effective stress. It is typically caused by rapid loading of the soil during earthquake shaking (AGI, 2017)."
+extreme_cold,Extreme cold,"A period of marked and unusual cold weather characterised by a sharp and significant drop in air temperatures near the surface (maximum, minimum and daily average) over a large area and persisting below certain thresholds for at least two consecutive days during the cold season (WMO, 2020)."
+extreme_heat,Extreme heat,"A marked unusual period of hot weather over a region persisting for at least two consecutive days during the hot period of the year based on local climatological conditions, with thermal conditions recorded above given thresholds (WMO, 2020)."
+fluvial_flood,Fluvial Flood,"A rise, usually brief, in the water level of a stream or water body to a peak from which the water level recedes at a slower rate (WMO, 2012)."
+pluvial_flood,Pluvial Flood,"Pluvial flood, or surface water flooding, is caused by rain remaining and ponding on the ground surface during and after rainfall events, and can also include urban flooding, which results form the capacity of urban drainage systems being exceeded."
+groundwater_flood,Groundwater Flood,"The emergence of groundwater at the ground surface away from perennial river channels or the rising of groundwater into man-made ground, under conditions where the 'normal' ranges of groundwater level and groundwater flow are exceeded (BGS, 2010)."
+snow_avalanche,Snow Avalanche,"A mass of snow and ice falling suddenly down a mountain slope and often taking with it earth, rocks and rubble of every description (WMO, 1992)."
+landslide_general,Landslide (general),"The downslope movement of soil, rock and organic materials under the effects of gravity, often triggered by seismic activity or precipitation. This general code can be used to include multiple specific types of landslide activity"
+landslide_rockslide,Rockslide,"A movement of a mass of soil or rock on an individualized failure surface (Dennis and Didier, 2019)."
+landslide_mudflow,Mudflow,"A flow of water so heavily charged with sediment and debris that the flowing mass is thick and viscous (WMO and UNESCO, 2012)."
+landslide_rockfall,Rockfall,"A fragment of rock (a block) detached by sliding, toppling, or falling, that falls along a vertical or sub-vertical cliff."
+tsunami,Tsunami,"A series of travelling waves of extremely long length and period, usually generated by disturbances associated with earthquakes occurring below or near the ocean floor, but can also be caused by landslides (subaerial and submarine), volcanic activity and meteorological conditions."
+ashfall,Ashfall,"The finest particles of tephra (less than 2 mm diameter) - tephra is a collective term for fragmented magma and old (i.e., preexisting) rocks ejected into the atmosphere from volcanic vents during an explosive eruption."
+volcano_balllistics,Ballistics,"Fragments of magma and old (i.e., pre-existing) rocks ejected during an explosive eruption."
+lahar,Lahar,"Discrete, rapid, gravity-driven, water-saturated flows containing water and solid particles of volcanic rock, sediment, ice, wood, and other debris that originate at volcanoes."
+lava,Lava,"A lava flow forms during an eruption or eruptive episode and travels away from the source vent as fluid, relatively low-viscosity molten rock."
+pyroclastic_flow,Pyroclastic Flow,"Also known as pyroclastic density currents these are hot, fast-moving mixtures of volcanic particles and gas that originate from the gravitational collapse of explosive eruption columns, lava domes or lava-flow fronts, and from explosive lateral blasts."
+wildfire,Wildfire,"An unplanned or uncontrolled fire affecting natural, cultural, industrial and residential landscapes (UNDRR adapted from FAO, 2010)."
+extratropical_cyclone,Extratropical cyclone,"A low-pressure system which develops in latitudes outside the tropics (WMO, 1992)."
+tropical_cyclone,Tropical cyclone,"A warm-core, non-frontal synoptic-scale cyclone, originating over tropical or subtropical waters, with organised deep convection and closed surface wind circulation about a well-defined centre (WMO, 2017)."
