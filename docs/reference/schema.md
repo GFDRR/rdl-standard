@@ -458,26 +458,6 @@ Insert example of recorded empirical losses.
 
 ## Sub-schemas
 
-### Exposure
-
-`Exposure` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Exposure/description
----
-```
-
-Each `Exposure` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Exposure
-collapse: category,taxonomy,cost
-addtargets:
----
-```
-
 ### Cost
 
 `Cost` is defined as:
@@ -659,6 +639,19 @@ addtargets:
 ---
 ```
 
+### Event
+
+Each `Event` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Event
+collapse: 
+  id,disaster_identifier,calculation_method,process_type,occurrence,trigger_hazard_type,trigger_process_type,description,footprints
+addtargets:
+---
+```
+
 ### Vulnerability
 
 `Vulnerability` is defined as:
@@ -676,27 +669,6 @@ Each `Vulnerability` has the following fields:
 pointer: /$defs/Vulnerability
 collapse: 
   hazard_primary,hazard_secondary,hazard_process_primary,hazard_process_secondary,hazard_analysis_type,intensity,category,cost,taxonomy,impact,spatial,functions,analysis_details,se_category
-addtargets:
----
-```
-
-### Event
-
-`Event` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Event/description
----
-```
-
-Each `Event` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Event
-collapse: 
-  id,disaster_identifier,calculation_method,process_type,occurrence,trigger_hazard_type,trigger_process_type,description,footprints
 addtargets:
 ---
 ```
@@ -741,26 +713,6 @@ addtargets:
 ---
 ```
 
-### Damage_to_loss_function
-
-`Damage_to_loss_function` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Damage_to_loss_function/description
----
-```
-
-Each `Damage_to_loss_function` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Damage_to_loss_function
-collapse: approach,relationship,damage_scale_name,damage_states_names
-addtargets:
----
-```
-
 ### Occurrence
 
 `Occurrence` is defined as:
@@ -781,22 +733,22 @@ addtargets:
 ---
 ```
 
-### Engineering_demand_function
+### Damage_to_loss_function
 
-`Engineering_demand_function` is defined as:
+`Damage_to_loss_function` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-jsonpointer: /$defs/Engineering_demand_function/description
+jsonpointer: /$defs/Damage_to_loss_function/description
 ---
 ```
 
-Each `Engineering_demand_function` has the following fields:
+Each `Damage_to_loss_function` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-pointer: /$defs/Engineering_demand_function
-collapse: parameter,approach,relationship
+pointer: /$defs/Damage_to_loss_function
+collapse: approach,relationship,damage_scale_name,damage_states_names
 addtargets:
 ---
 ```
@@ -821,22 +773,22 @@ addtargets:
 ---
 ```
 
-### Impact
+### Engineering_demand_function
 
-`Impact` is defined as:
+`Engineering_demand_function` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-jsonpointer: /$defs/Impact/description
+jsonpointer: /$defs/Engineering_demand_function/description
 ---
 ```
 
-Each `Impact` has the following fields:
+Each `Engineering_demand_function` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-pointer: /$defs/Impact
-collapse: type,metric,unit,base_data_type
+pointer: /$defs/Engineering_demand_function
+collapse: parameter,approach,relationship
 addtargets:
 ---
 ```
@@ -857,6 +809,26 @@ Each `Probability` has the following fields:
 ---
 pointer: /$defs/Probability
 collapse: value,span
+addtargets:
+---
+```
+
+### Impact
+
+`Impact` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Impact/description
+---
+```
+
+Each `Impact` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Impact
+collapse: type,metric,unit,base_data_type
 addtargets:
 ---
 ```

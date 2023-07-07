@@ -1619,7 +1619,8 @@
         "disaster_identifier": {
           "title": "Disaster identifier",
           "type": "string",
-          "description": "The GLIDE number associated with this disaster event. A globally unique identifier for the event, assigned by [GLIDE](https://www.glidenumber.net/glide/public/search/search.jsp)."
+          "description": "The GLIDE number associated with this disaster event. A globally unique identifier for the event, assigned by [GLIDE](https://www.glidenumber.net/glide/public/search/search.jsp).",
+          "minLength": 1
         },
         "calculation_method": {
           "title": "Model calculation method",
@@ -1679,21 +1680,24 @@
           "$ref": "#/$defs/Occurrence"
         },
         "trigger_hazard_type": {
+          "title": "Trigger hazard type",
           "$ref": "#/$defs/common_hazard_type",
           "description": "Hazard type that triggered the event"
         },
         "trigger_process_type": {
+          "trigger": "Trigger process type",
           "$ref": "#/$defs/common_process_type",
           "description": "Process type that triggered the event"
         },
         "description": {
+          "title": "Description",
           "type": "string",
           "description": "Provides additional information about this specific event",
           "minLength": 1
         },
         "footprints": {
           "title": "Footprints",
-          "description": "The footprints for this event.",
+          "description": "The footprints for this event showing spatial distribution of hazard intensity.",
           "type": "array",
           "items": {
             "$ref": "#/$defs/Footprint"
