@@ -618,6 +618,27 @@ addtargets:
 ---
 ```
 
+### Event_set
+
+`Event_set` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Event_set/description
+---
+```
+
+Each `Event_set` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Event_set
+collapse: 
+  id,hazard_type,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,process_type,temporal,events
+addtargets:
+---
+```
+
 ### Event
 
 Each `Event` has the following fields:
@@ -626,7 +647,7 @@ Each `Event` has the following fields:
 ---
 pointer: /$defs/Event
 collapse: 
-  id,disaster_identifier,calculation_method,frequency_type,process_type,return_period,occurrence,trigger_hazard_type,trigger_process_type,description,footprints
+  id,disaster_identifier,calculation_method,process_type,occurrence,trigger_hazard_type,trigger_process_type,description,footprints
 addtargets:
 ---
 ```
@@ -686,7 +707,7 @@ Each `Probability` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Probability
-collapse: probability_value,probability_span
+collapse: value,span
 addtargets:
 ---
 ```
@@ -706,7 +727,7 @@ Each `Footprint` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Footprint
-collapse: id,imt,data_uncertainty
+collapse: id,intensity_measure,data_uncertainty
 addtargets:
 ---
 ```
