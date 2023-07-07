@@ -682,6 +682,14 @@ addtargets:
 
 ### Event
 
+`Event` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Event/description
+---
+```
+
 Each `Event` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json

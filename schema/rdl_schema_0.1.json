@@ -324,13 +324,6 @@
       },
       "minProperties": 1
     },
-    "common_analysis_type": {
-      "type": "string",
-      "enum": [
-        "Deterministic",
-        "Probabilistic"
-      ]
-    },
     "common_calc_method": {
       "type": "string",
       "enum": [
@@ -1442,7 +1435,6 @@
       },
       "minProperties": 1
     },
-    "vulnerability_f_math": {},
     "Hazard": {
       "title": "hazard",
       "type": "array",
