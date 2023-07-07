@@ -12,8 +12,8 @@ insured_loss_value,Total insured loss,The monetary value of estimated insured lo
 loss_ratio,Loss Ratio,"Estimated loss as a proportion of total replacement cost or insured value. Impact_type denotes whether this refers to total, direct, or indirect loss.",Loss
 casualty_count,Number of casualties (fatalities),The estimated number of casualties or fatalities.,Loss
 casualty_ratio_loss,Casualty ratio (loss),Proportion of estimated casualties or fatalities in the total population.,Loss
-annual_average_loss,Annual average loss,"Expected loss over a one-year time period according to long-term averages. Impact_type denotes whether this refers to total, direct, or indirect loss.",Loss
-probable_maximum_loss,Probable Maximum Loss,Estimated maximum loss occurring at a given exceedance probability or return period.,Loss
+loss_annual_average_value,Annual average loss,"Expected loss over a one-year time period according to long-term averages. Impact_type denotes whether this refers to total, direct, or indirect loss.",Loss
+loss_probable_maximum_value,Probable Maximum Loss,Estimated maximum loss occurring at a given exceedance probability or return period.,Loss
 at_risk_value,Value at Risk,Estimated minimum loss likely to be equalled or exceeded in a given year for a given probability.,Loss
 at_risk_tail_value,Tail Value at Risk,Estimated losses at or exceeding a specified value at risk VaR (estimate of average losses given that a severity threshold has been exceeded).,Loss
 downtime_loss,Downtime (loss),Duration of downtime (business or service interruption).,Loss
