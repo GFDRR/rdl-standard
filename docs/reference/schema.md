@@ -330,7 +330,7 @@ The **additional** attributes cover more specific information that helps to unde
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/2/properties/vulnerability
-collapse: model/country_tranferability
+collapse:
 addtargets:
 ---
 ```
@@ -458,14 +458,13 @@ Insert example of recorded empirical losses.
 
 ## Sub-schemas
 
-
 ### Exposure
+
 `Exposure` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 :jsonpointer: /$defs/Exposure/description
 ```
-
 
 Each `Exposure` has the following fields:
 
@@ -476,6 +475,7 @@ Each `Exposure` has the following fields:
 ```
 
 ### Cost
+
 `Cost` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -492,6 +492,7 @@ Each `Cost` has the following fields:
 ```
 
 ### Related_resource
+
 `Related_resource` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -508,6 +509,7 @@ Each `Related_resource` has the following fields:
 ```
 
 ### Period
+
 `Period` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -524,6 +526,7 @@ Each `Period` has the following fields:
 ```
 
 ### Entity
+
 `Entity` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -540,12 +543,12 @@ Each `Entity` has the following fields:
 ```
 
 ### Attribution
+
 `Attribution` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 :jsonpointer: /$defs/Attribution/description
 ```
-
 
 Each `Attribution` has the following fields:
 
@@ -556,6 +559,7 @@ Each `Attribution` has the following fields:
 ```
 
 ### Location
+
 `Location` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -566,12 +570,15 @@ Each `Attribution` has the following fields:
 Each `Location` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
-:pointer: /$defs/Location
-:collapse: countries,gazetteerEntries,bbox,geometry,centroid
-:addtargets:
+---
+pointer: /$defs/Location
+collapse: countries,gazetteerEntries,bbox,geometry,centroid,scale
+addtargets:
+---
 ```
 
 ### Gazetteer_entry
+
 `Gazetteer_entry` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -588,6 +595,7 @@ Each `Gazetteer_entry` has the following fields:
 ```
 
 ### Geometry
+
 `Geometry` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -603,7 +611,149 @@ Each `Geometry` has the following fields:
 :addtargets:
 ```
 
+### Vulnerability
+
+`Vulnerability` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Vulnerability/description
+---
+```
+
+Each `Vulnerability` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Vulnerability
+collapse: 
+  hazard_primary,hazard_secondary,hazard_process_primary,hazard_process_secondary,hazard_analysis_type,intensity,category,cost,taxonomy,impact,spatial,functions,analysis_details,se_category
+addtargets:
+---
+```
+
+### Vulnerability_function
+
+`Vulnerability_function` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Vulnerability_function/description
+---
+```
+
+Each `Vulnerability_function` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Vulnerability_function
+collapse: approach,relationship
+addtargets:
+---
+```
+
+### Fragility_function
+
+`Fragility_function` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Fragility_function/description
+---
+```
+
+Each `Fragility_function` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Fragility_function
+collapse: approach,relationship,damage_scale_name,damage_states_names
+addtargets:
+---
+```
+
+### Damage_to_loss_function
+
+`Damage_to_loss_function` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Damage_to_loss_function/description
+---
+```
+
+Each `Damage_to_loss_function` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Damage_to_loss_function
+collapse: approach,relationship,damage_scale_name,damage_states_names
+addtargets:
+---
+```
+
+### Engineering_demand_function
+
+`Engineering_demand_function` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Engineering_demand_function/description
+---
+```
+
+Each `Engineering_demand_function` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Engineering_demand_function
+collapse: parameter,approach,relationship
+addtargets:
+---
+```
+
+### Impact
+
+`Impact` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Impact/description
+---
+```
+
+Each `Impact` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Impact
+collapse: type,metric,unit,base_data_type
+addtargets:
+---
+```
+
+### Classification
+
+`Classification` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Classification/description
+---
+```
+
+Each `Classification` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Classification
+collapse: scheme,id,description,uri
+addtargets:
+---
+```
+
 ### Source
+
 `Source` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -620,6 +770,7 @@ Each `Source` has the following fields:
 ```
 
 ### Loss
+
 `Loss` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
@@ -634,4 +785,3 @@ Each `Loss` has the following fields:
 :collapse: hazard_type,hazard_process,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
 :addtargets:
 ```
-

@@ -23,6 +23,12 @@ This page lists changes to the Risk Data Library Standard.
   - Add validation keywords to `Location`, `Gazetteer_entry` and `Geometry` definitions.
 - [#116](https://github.com/GFDRR/rdl-standard/pull/116) - Replace `biblio_title` and `biblio_url` with `Related_resource` definition.
 - [#115](https://github.com/GFDRR/rdl-standard/pull/115) - Add `Entity` and `Attribution` objects, update entity related field names and descriptions.
+- [#124](https://github.com/GFDRR/rdl-standard/pull/124):
+  - Replace `vulnerability` object with `Vulnerability` definition.
+  - Replace `function_type`, `calculation_method`, `approach`, `f_math` and `f_relationship` with `functions` object and `Vulnerability_function`, `Fragility_function`, `Damage_to_loss_function` and `Engineering_demand_function` definitions.
+  - Add `.scale` to `Spatial` object.
+  - Update field names, titles and descriptions in `Vulnerability` definition.
+  - Create `Impact` object and update associated field names, titles and descriptions.
 
 ### Codelists
 
@@ -31,6 +37,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
 - [#130](https://github.com/GFDRR/rdl-standard/pull/130) - 'hazard_type.csv', add descriptions and update codes from abbreviations to human-readable words.
+- [#134](https://github.com/GFDRR/rdl-standard/pull/134) - 'risk_data_type.csv', replace codes with lower-case versions.
 
 ### Normative documentation
 
@@ -42,6 +49,6 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Non-normative documentation
 
-- [#111 ](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
+- [#111](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
 
 ### Other

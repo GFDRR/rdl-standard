@@ -1,0 +1,7 @@
+Code,Title,Definition
+PA_dmg_index,Park-Ang damage index,"The Park-Ang damage index (Park et al., 1987) accounts for the effect of maximum deformation and cyclic loads."
+peak_floor_acc,Peak floor acceleration,The maximum acceleration at any floor within a structure during an earthquake.
+roof_drift,Roof drift ratio,The ratio of the peak lateral roof displacement to the building height.
+max_interstorey_drift_ratio,Maximum inter-storey drift ratio,The maximum interstorey drift ratio across all floors.
+interstorey_drift_ratio_i,Interstorey drift ratio for storey i,"The peak (over time) interstorey drift ratio, and is calculated as the largest difference between the lateral displacements of two adjacent floors, divided by the height of the storey."
+demand_capacity_ratio,Demand to capacity ratio,The ratio between the external actions applied to the structure (demand) over the ability of the structure to carry the imposed actions (capacity). A D/C ratio >1 indicates failure.
