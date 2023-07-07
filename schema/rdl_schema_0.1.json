@@ -1451,7 +1451,7 @@
             "$ref": "#/$defs/Event_set"
           },
           "minItems": 1,
-        " uniqueItems": true
+          " uniqueItems": true
         }
       },
       "minProperties": 1
