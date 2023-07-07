@@ -40,10 +40,10 @@
       "codelist": "risk_data_type.csv",
       "openCodelist": false,
       "enum": [
-        "Hazard",
-        "Exposure",
-        "Vulnerability",
-        "Loss"
+        "hazard",
+        "exposure",
+        "vulnerability",
+        "loss"
       ]
     },
     "publisher": {
