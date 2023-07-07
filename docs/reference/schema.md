@@ -626,7 +626,67 @@ Each `Event` has the following fields:
 ---
 pointer: /$defs/Event
 collapse: 
-  id,disaster_identifier,calculation_method,frequency_type,process_type,return_period,occurence_time_start,occurence_time_end,occurence_time_span,trigger_hazard_type,trigger_process_type,description,footprints
+  id,disaster_identifier,calculation_method,frequency_type,process_type,return_period,occurrence,trigger_hazard_type,trigger_process_type,description,footprints
+addtargets:
+---
+```
+
+### Occurrence
+
+`Occurrence` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Occurrence/description
+---
+```
+
+Each `Occurrence` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Occurrence
+collapse: probabilistic,empirical
+addtargets:
+---
+```
+
+### Probabilistic
+
+`Probabilistic` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Probabilistic/description
+---
+```
+
+Each `Probabilistic` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Probabilistic
+collapse: return_period,event_rate,probability
+addtargets:
+---
+```
+
+### Probability
+
+`Probability` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Probability/description
+---
+```
+
+Each `Probability` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Probability
+collapse: probability_value,probability_span
 addtargets:
 ---
 ```
