@@ -1437,13 +1437,24 @@
     },
     "Hazard": {
       "title": "hazard",
-      "type": "array",
+      "type": "object",
       "description": "Information about a modelled physical hazard phenomenon.",
-      "items": {
-        "$ref": "#/$defs/Event_set"
+      "required": [
+        "event_sets"
+      ],
+      "properties": {
+        "event_sets": {
+          "title": "Event sets",
+          "type": "array",
+          "description": "Information about sets of hazard events.",
+          "items": {
+            "$ref": "#/$defs/Event_set"
+          },
+          "minItems": 1,
+        " uniqueItems": true
+        }
       },
-      "minItems": 1,
-      "uniqueItems": true
+      "minProperties": 1
     },
     "Event_set": {
       "title": "Event set",
