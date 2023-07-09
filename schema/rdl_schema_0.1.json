@@ -152,8 +152,8 @@
       "properties": {
         "hazard": {
           "title": "hazard",
-          "description": "Information about a modelled physical hazard phenomenon.",
-          "$ref": "#/$defs/Hazard"
+          "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+          "$ref": "#/$defs/Hazard_metadata"
         }
       }
     },
@@ -1435,10 +1435,10 @@
       },
       "minProperties": 1
     },
-    "Hazard": {
-      "title": "hazard",
+    "Hazard_metadata": {
+      "title": "Hazard metadata",
       "type": "object",
-      "description": "Information about a modelled physical hazard phenomenon.",
+      "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "required": [
         "event_sets"
       ],

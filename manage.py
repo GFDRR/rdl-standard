@@ -309,7 +309,7 @@ def update_schema_docs(schema):
       definition["content"] = definition.get("content", [])
       
       # Omit Resource and Exposure definitions and string definitions, which will be moved to CSV codelists
-      if defn not in ['Resource', 'Exposure'] and definition.get('type') == 'object':
+      if defn not in ['Resource', 'Hazard_metadata', 'Exposure'] and definition.get('type') == 'object':
 
         # Add heading
         definition["content"].insert(0, f"### {defn}\n")
