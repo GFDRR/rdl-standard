@@ -634,7 +634,7 @@ Each `Event_set` has the following fields:
 ---
 pointer: /$defs/Event_set
 collapse: 
-  id,hazard_type,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,process_type,temporal,events
+  id,hazards,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,temporal,events
 addtargets:
 ---
 ```
@@ -647,7 +647,7 @@ Each `Event` has the following fields:
 ---
 pointer: /$defs/Event
 collapse: 
-  id,disaster_identifier,calculation_method,process_type,occurrence,trigger_hazard_type,trigger_process_type,description,footprints
+  id,disaster_identifier,calculation_method,hazard,occurrence,description,footprints
 addtargets:
 ---
 ```
@@ -889,6 +889,46 @@ Each `Source` has the following fields:
 ---
 pointer: /$defs/Source
 collapse: id,name,url,type,component
+addtargets:
+---
+```
+
+### Hazard
+
+`Hazard` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Hazard/description
+---
+```
+
+Each `Hazard` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Hazard
+collapse: id,type,processes,intensity_measure,trigger
+addtargets:
+---
+```
+
+### Trigger
+
+`Trigger` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Trigger/description
+---
+```
+
+Each `Trigger` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Trigger
+collapse: type,processes
 addtargets:
 ---
 ```
