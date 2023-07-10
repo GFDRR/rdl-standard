@@ -39,6 +39,7 @@ This page lists changes to the Risk Data Library Standard.
   - Add codelists for `event_set.hazard_type` and `event_set.analysis_type`.
   - Move `process_type` from `footprint_set` to `event` and `event_set`.
   - Create `Occurrence` object.
+  - Removes `common_calc_method`, `common_frequency_type`, `common_hazard_type`, `common_impact_type`, `common_process_type` and `im_code`.
 - [#124](https://github.com/GFDRR/rdl-standard/pull/124):
   - Replace `vulnerability` object with `Vulnerability` definition.
   - Replace `function_type`, `calculation_method`, `approach`, `f_math` and `f_relationship` with `functions` object and `Vulnerability_function`, `Fragility_function`, `Damage_to_loss_function` and `Engineering_demand_function` definitions.

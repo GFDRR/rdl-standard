@@ -182,8 +182,7 @@
           "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurence of one or more hazards.",
           "$ref": "#/$defs/Loss"
         }
-      },
-      "minProperties": 1
+      }
     }
   ],
   "$defs": {
@@ -228,14 +227,6 @@
         }
       },
       "minProperties": 1
-    },
-    "common_calc_method": {
-      "type": "string",
-      "enum": [
-        "Inferred",
-        "Simulated",
-        "Observed"
-      ]
     },
     "Cost": {
       "title": "Asset cost",
@@ -580,71 +571,6 @@
         }
       }
     },
-    "common_frequency_type": {
-      "type": "string",
-      "enum": [
-        "Rate of Exceedence",
-        "Probability of Exceedence",
-        "Return Period"
-      ]
-    },
-    "common_hazard_type": {
-      "type": "string",
-      "enum": [
-        "CF",
-        "CS",
-        "DR",
-        "EQ",
-        "ET",
-        "FL",
-        "LS",
-        "MH",
-        "TS",
-        "VO",
-        "WF",
-        "WI"
-      ]
-    },
-    "common_impact_type": {
-      "type": "string",
-      "enum": [
-        "Direct",
-        "Indirect",
-        "Total"
-      ]
-    },
-    "common_process_type": {
-      "type": "string",
-      "enum": [
-        "FCF",
-        "FSS",
-        "TOR",
-        "DTA",
-        "DTH",
-        "DTM",
-        "DTS",
-        "Q1R",
-        "Q2R",
-        "QGM",
-        "QLI",
-        "ECD",
-        "EHT",
-        "FFF",
-        "FPF",
-        "LAV",
-        "LSL",
-        "TSI",
-        "VAF",
-        "VBL",
-        "VFH",
-        "VLH",
-        "VLV",
-        "VPF",
-        "WFI",
-        "ETC",
-        "TCY"
-      ]
-    },
     "Resource": {
       "title": "Resource",
       "type": "object",
@@ -771,51 +697,6 @@
           "minLength": 1
         }
       }
-    },
-    "im_code": {
-      "type": "string",
-      "enum": [
-        "PG+E47:E70A:g",
-        "PGA:m/s2",
-        "PGV:m/s",
-        "AvgSa:m/s2",
-        "Sd(T1):m",
-        "Sv(T1):m/s",
-        "PGDf:m",
-        "D:s",
-        "IA:m/s",
-        "Neq:-",
-        "EMS:-",
-        "MMI:-",
-        "CAV:m/s",
-        "D_B:s",
-        "fl_wd:m",
-        "fl_wv:m/s",
-        "v_ect(3s):km/h",
-        "v_ect(1m):km/h",
-        "v_etc(10m):km/h",
-        "PGWS_tcy:km/h",
-        "ls_fd:m",
-        "I_DF:m3/s2",
-        "v_lsl:m/s2",
-        "ls_mfd:m",
-        "SD_lsl:m",
-        "Rh_tsi:m",
-        "d_tsi:m",
-        "MMF:m4/s2",
-        "F_drag:kN",
-        "Fr:-",
-        "v_tsi:m/s",
-        "F_QS:kN",
-        "MF:m3/s2",
-        "h_tsi:m",
-        "Fh_tsi:m",
-        "h_vaf:m",
-        "L_vaf:kg/m2",
-        "CMI:-",
-        "PDSI:-",
-        "SPI:-"
-      ]
     },
     "Period": {
       "title": "Period",
@@ -2460,7 +2341,7 @@
         "description": {
           "title": "Loss description",
           "type": "string",
-          "description": "Additional details of the dataset "
+          "description": "Additional details of the dataset."
         },
         "category": {
           "title": "Exposure category",
