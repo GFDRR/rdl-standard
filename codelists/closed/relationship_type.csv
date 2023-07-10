@@ -1,0 +1,4 @@
+Code,Title,Definition
+math_parametric,Mathematical function (parametric),"A relationship between structural parameters and expected damage, often based on probabilistic models, such as log-normal or beta distribution. They can account for uncertainties and variability in both the seismic hazard and building attributes."
+math_bespoke,Mathematical function (bespoke),"A customized or tailored mathematical function that expresses the relationship between the characteristics of a particular type of structure and its vulnerability to hazard, derived through detailed analysis of that structural type."
+discrete,Discrete values,"A function that assigns discrete damage states to specific ranges or categories of parameters, such as construction material, structural system or building age. Each range or category is associated with a probability of exceeding a particular damage state."

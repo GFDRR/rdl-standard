@@ -23,6 +23,8 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 This codelist is referenced by the following properties:
 
+- `Vulnerability/intensity`
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -30,6 +32,30 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/open/IMT.csv
+---
+```
+
+### classification_scheme
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/classification_scheme.csv
+---
+```
+
+### damage_scale_name
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/damage_scale_name.csv
 ---
 ```
 
@@ -42,6 +68,54 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/open/data_formats.csv
+---
+```
+
+### engineering_demand_parameter
+
+This codelist is referenced by the following properties:
+
+- `Engineering_demand_function/parameter`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/engineering_demand_parameter.csv
+---
+```
+
+### impact_metric
+
+This codelist is referenced by the following properties:
+
+- `Impact/metric`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/impact_metric.csv
+---
+```
+
+### impact_unit
+
+This codelist is referenced by the following properties:
+
+- `Impact/unit`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/open/impact_unit.csv
 ---
 ```
 
@@ -105,6 +179,22 @@ file: ../../codelists/open/roles.csv
 
 ## Closed codelists
 
+### analysis_type
+
+This codelist is referenced by the following properties:
+
+- `Vulnerability/hazard_analysis_type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/analysis_type.csv
+---
+```
+
 ### cost_type
 
 This codelist is referenced by the following properties:
@@ -148,11 +238,28 @@ file: ../../codelists/closed/currency.csv
 ---
 ```
 
+### data_calculation_type
+
+This codelist is referenced by the following properties:
+
+- `Impact/base_data_type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/data_calculation_type.csv
+---
+```
+
 ### exposure_category
 
 This codelist is referenced by the following properties:
 
 - `Exposure/category`
+- `Vulnerability/category`
 
 This codelist has the following codes:
 
@@ -165,6 +272,13 @@ file: ../../codelists/closed/exposure_category.csv
 ```
 
 ### function_approach
+
+This codelist is referenced by the following properties:
+
+- `Vulnerability_function/approach`
+- `Fragility_function/approach`
+- `Damage_to_loss_function/approach`
+- `Engineering_demand_function/approach`
 
 This codelist has the following codes:
 
@@ -204,9 +318,25 @@ file: ../../codelists/closed/hazard_type.csv
 ---
 ```
 
+### impact_type
+
+This codelist is referenced by the following properties:
+
+- `Impact/type`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/impact_type.csv
+---
+```
+
 ### process_type
 
-The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type).
+The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
 
 This codelist has the following codes:
 
@@ -215,6 +345,25 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/closed/process_type.csv
+---
+```
+
+### relationship_type
+
+This codelist is referenced by the following properties:
+
+- `Vulnerability_function/relationship`
+- `Fragility_function/relationship`
+- `Damage_to_loss_function/relationship`
+- `Engineering_demand_function/relationship`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/relationship_type.csv
 ---
 ```
 
@@ -243,5 +392,21 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../codelists/closed/source_type.csv
+---
+```
+
+### spatial_scale
+
+This codelist is referenced by the following properties:
+
+- `Location/scale`
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../codelists/closed/spatial_scale.csv
 ---
 ```

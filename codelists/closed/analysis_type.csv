@@ -1,0 +1,4 @@
+Code,Title,Definition
+probabilistic,Probabilistic,Simulation of a large number of synthetic events to estimate their likelihood and severity and estimate overall risk.
+deterministic,Deterministic,"Deterministic approaches analyse disaster scenarios (e.g., historical or worst-case events) to estimate their impact, but do not consider the full range of possible outcomes and do not quantify the likelihood of each impact."
+empirical,Empirical,"Analysis or data relying on observations, such as hazard intensity recorded during a post-event surveys."
