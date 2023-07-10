@@ -36,7 +36,7 @@
     "risk_data_type": {
       "title": "Risk data type",
       "type": "string",
-      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#risk-data-type).",
+      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#risk-data-type).",
       "codelist": "risk_data_type.csv",
       "openCodelist": false,
       "enum": [
@@ -176,106 +176,11 @@
       }
     },
     {
-      "type": "object",
-      "title": "loss",
       "properties": {
         "loss": {
-          "type": "object",
-          "properties": {
-            "model": {
-              "type": "object",
-              "properties": {
-                "hazard_type": {
-                  "$ref": "#/$defs/common_hazard_type",
-                  "description": "Type of hazard modelled"
-                },
-                "process_type": {
-                  "$ref": "#/$defs/common_process_type",
-                  "description": "Type of hazard process modelled"
-                },
-                "time_start": {
-                  "type": "string",
-                  "description": "The time at which the modelled scenario(s) starts [ISO 8601 format]",
-                  "format": "date"
-                },
-                "time_end": {
-                  "type": "string",
-                  "description": "The time at which the modelled scenario(s) ends [ISO 8601 format]",
-                  "format": "date"
-                },
-                "time_year": {
-                  "type": "string",
-                  "description": "General reference year to which the scenario refers to (e.g. '2050')",
-                  "minLength": 1
-                },
-                "category": {
-                  "title": "Exposure category",
-                  "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
-                  "type": "string",
-                  "codelist": "exposure_category.csv",
-                  "openCodelist": false,
-                  "enum": [
-                    "Agriculture",
-                    "Buildings",
-                    "Infrastructures",
-                    "Population",
-                    "Natural environment"
-                  ]
-                },
-                "val_type": {
-                  "$ref": "#/$defs/Cost",
-                  "description": "Element on which loss insist"
-                },
-                "impact": {
-                  "$ref": "#/$defs/common_impact_type",
-                  "description": "Type of impact"
-                },
-                "loss_type": {
-                  "$ref": "#/$defs/loss_loss_type",
-                  "description": "Type of loss"
-                },
-                "frequency": {
-                  "$ref": "#/$defs/common_frequency_type",
-                  "description": "Frequency representation type"
-                },
-                "return_period": {
-                  "type": "string",
-                  "description": "Probability of occurrence expressed as return periods list (10, 100, 1000) or range (10-1000)",
-                  "minLength": 1
-                },
-                "calculation_method": {
-                  "$ref": "#/$defs/common_calc_method",
-                  "description": "The methodology used for the calculation of this event"
-                },
-                "metric": {
-                  "$ref": "#/$defs/loss_metric",
-                  "description": "Type of loss metric"
-                },
-                "val_unit": {
-                  "type": "string",
-                  "description": "Unit of measure",
-                  "minLength": 1
-                },
-                "hazard_link": {
-                  "type": "string",
-                  "description": "URL of source hazard data",
-                  "format": "uri"
-                },
-                "exposure_link": {
-                  "type": "string",
-                  "description": "URL of source exposure data",
-                  "format": "uri"
-                },
-                "vulnerability_link": {
-                  "type": "string",
-                  "description": "URL of source vulnerability data",
-                  "format": "uri"
-                }
-              },
-              "minProperties": 1
-            }
-          },
-          "minProperties": 1
+          "title": "Loss dataset metadata",
+          "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurence of one or more hazards.",
+          "$ref": "#/$defs/Loss"
         }
       },
       "minProperties": 1
@@ -708,13 +613,6 @@
         "Total"
       ]
     },
-    "common_occupancy_time": {
-      "type": "string",
-      "enum": [
-        "Night",
-        "Day"
-      ]
-    },
     "common_process_type": {
       "type": "string",
       "enum": [
@@ -779,7 +677,7 @@
         "media_type": {
           "title": "Media type",
           "type": "string",
-          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
           "codelist": "media_type.csv",
           "openCodelist": true,
           "minLength": 1
@@ -787,7 +685,7 @@
         "format": {
           "title": "Format",
           "type": "string",
-          "description": "A human-readable descripton of the file format of the resource, taken from the open [data formats codelist]((https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#data_formats).",
+          "description": "A human-readable descripton of the file format of the resource, taken from the open [data formats codelist]((https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#data_formats).",
           "codelist": "data_formats.csv",
           "openCodelist": true,
           "minLength": 1
@@ -919,21 +817,6 @@
         "SPI:-"
       ]
     },
-    "loss_loss_type": {
-      "type": "string",
-      "enum": [
-        "Ground Up",
-        "Insured"
-      ]
-    },
-    "loss_metric": {
-      "type": "string",
-      "enum": [
-        "Annual Average Losses",
-        "Annual Average Loss Ratio",
-        "Probable Maximal Loss"
-      ]
-    },
     "Period": {
       "title": "Period",
       "type": "object",
@@ -1051,7 +934,7 @@
         "countries": {
           "title": "Countries",
           "type": "array",
-          "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#country).",
+          "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#country).",
           "items": {
             "type": "string",
             "codelist": "country.csv",
@@ -1379,7 +1262,7 @@
         "scheme": {
           "title": "Scheme",
           "type": "string",
-          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#location_gazetteers).",
+          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist]https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#location_gazetteers).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1407,7 +1290,7 @@
         "type": {
           "title": "Type",
           "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#geometry_type).",
+          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#geometry_type).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": false,
           "enum": [
@@ -2500,8 +2383,171 @@
           "minItems": 1,
           "uniqueItems": true
         }
-      }
+      },
+      "minProperties": 1
+    },
+    "Loss": {
+      "title": "Loss",
+      "type": "object",
+      "description": "Metadata that is specific to datasets that describe the losses incurred by people, infrastructure, housing, production capacities and other tangible human assets due to the occurence of one or more hazards.",
+      "required": [
+        "hazard_type",
+        "cost",
+        "hazard_id",
+        "exposure_id",
+        "vulnerability_id"
+      ],
+      "properties": {
+        "hazard_type": {
+          "title": "Hazard type",
+          "type": "string",
+          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
+          "codelist": "hazard_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
+          ]
+        },
+        "hazard_process": {
+          "title": "Hazard process",
+          "type": "string",
+          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "codelist": "hazard_process_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_balllistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone"
+          ]
+        },
+        "description": {
+          "title": "Loss description",
+          "type": "string",
+          "description": "Additional details of the dataset "
+        },
+        "category": {
+          "title": "Exposure category",
+          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
+          "type": "string",
+          "codelist": "exposure_category.csv",
+          "openCodelist": false,
+          "enum": [
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment"
+          ]
+        },
+        "cost": {
+          "title": "Asset cost",
+          "type": "array",
+          "description": "The costs associated with the loss of specific elements of assets detailed in the dataset.",
+          "items": {
+            "$ref": "#/$defs/Cost"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "impact": {
+          "title": "Loss impact",
+          "type": "object",
+          "description": "The details of the loss impact values produced in the modelled scenario(s).",
+          "$ref": "#/$defs/Impact"
+        },
+        "type": {
+          "title": "Loss type",
+          "type": "string",
+          "description": "The type of loss described in the dataset, from the closed [loss type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#loss_type).",
+          "codelist": "loss_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "ground-up",
+            "insured"
+          ]
+        },
+        "approach": {
+          "title": "Loss approach",
+          "type": "string",
+          "description": "The approach the loss calculation function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
+          "codelist": "function_approach.csv",
+          "openCodelist": false,
+          "enum": [
+            "analytical",
+            "empirical",
+            "hybrid",
+            "judgement"
+          ]
+        },
+        "hazard_analysis_type": {
+          "title": "Event frequency type",
+          "type": "string",
+          "description": "The type of occurrence frequency represented in the modelled scenario, from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#loss_type).",
+          "enum": [
+            "deterministic",
+            "empirical",
+            "probabilistic"
+          ],
+          "codelist": "analysis_type.csv",
+          "openCodelist": false
+        },
+        "hazard_id": {
+          "title": "Hazard dataset",
+          "type": "string",
+          "description": "A unique identifier for the hazard dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "exposure_id": {
+          "title": "Exposure dataset",
+          "type": "string",
+          "description": "A unique identifier for the exposure dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "vulnerability_id": {
+          "title": "Vulnerability dataset",
+          "type": "string",
+          "description": "A unique identifier for the vulnerability dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
+          "minLength": 1
+        }
+      },
+      "minProperties": 1
     }
-  },
-  "minProperties": 1
+  }
 }
