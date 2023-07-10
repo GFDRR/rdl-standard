@@ -798,3 +798,24 @@ collapse: id,name,url,type,component
 addtargets:
 ---
 ```
+
+### Loss
+
+`Loss` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Loss/description
+---
+```
+
+Each `Loss` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Loss
+collapse: 
+  hazard_type,hazard_process,description,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
+addtargets:
+---
+```
