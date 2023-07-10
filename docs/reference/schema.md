@@ -815,7 +815,7 @@ Each `Loss` has the following fields:
 ---
 pointer: /$defs/Loss
 collapse: 
-  hazard_type,hazard_process,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
+  hazard_type,hazard_process,description,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
 addtargets:
 ---
 ```

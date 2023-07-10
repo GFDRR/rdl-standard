@@ -1,7 +1,7 @@
 Code,Title,Definition
 ground_up,Ground up,Monetary amount indicating the total loss before any impact of insurance is applied.
 insured,Insured,Monetary amount of loss that is insured by private or (sub)sovereign insurance solutions.
-gross,Gross Loss,"Monetary amount indicating an insurers loss after deductibles, limits or co-insurance are applied, but before any reinsurance." 
+gross,Gross Loss,"Monetary amount indicating an insurers loss after deductibles, limits or co-insurance are applied, but before any reinsurance."
 count,Count,"A number indicating, for example, people affected, displaced, or killed, or assets exposed or damaged."
 net_precat,Net Loss Pre-Cat,Modeled loss representing the grosss loss with facultative and per-risk reinsurance applied but not catastrophe treaties.
 net_postcat,Net Loss Post-Cat,Modeled loss representing the net-pre-cat loss with catastrophe treaties applied.
