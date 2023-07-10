@@ -728,7 +728,7 @@ Each `Occurrence` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /$defs/Occurrence
-collapse: probabilistic,empirical
+collapse: probabilistic,empirical,deterministic
 addtargets:
 ---
 ```
@@ -929,6 +929,46 @@ Each `Trigger` has the following fields:
 ---
 pointer: /$defs/Trigger
 collapse: type,processes
+addtargets:
+---
+```
+
+### Empirical
+
+`Empirical` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Empirical/description
+---
+```
+
+Each `Empirical` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Empirical
+collapse: temporal,return_period
+addtargets:
+---
+```
+
+### Deterministic
+
+`Deterministic` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Deterministic/description
+---
+```
+
+Each `Deterministic` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Deterministic
+collapse: index_criteria,thresholds
 addtargets:
 ---
 ```

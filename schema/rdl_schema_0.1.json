@@ -1535,7 +1535,7 @@
         "occurrence_range": {
           "title": "Occurrence range",
           "type": "string",
-          "description": "A summary of the probabilistic occurrence scenarios that are included in the event set. This field should only be used if `event_set.analysis_type` = 'probabilistic'"
+          "description": "A summary of the probabilistic occurrence scenarios that are included in the event set. You should only use this field when `event_set.analysis_type` = 'probabilistic'"
         },
         "spatial": {
           "title": "Spatial coverage",
@@ -1768,7 +1768,7 @@
         },
         "intensity": {
           "title": "Hazard intensity measurement",
-          "description": "The metric and units the hazard intensity measurement is given in, from the open [IMT codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#IMT).",
+          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#IMT).",
           "type": "string",
           "codelist": "IMT.csv",
           "openCodelist": true,
@@ -1962,14 +1962,20 @@
         "probabilistic": {
           "title": "Probabilistic frequency",
           "type": "object",
-          "description": "How often the event is expected to occur. Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. This object must only be used if `event_set.analysis_type` = 'probabilistic'",
+          "description": "How often the event is expected to occur. Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
           "$ref": "#/$defs/Probabilistic"
         },
         "empirical": {
           "title": "Empirical",
           "type": "object",
-          "description": "The period of time over which the event occurred. This field should only be used if `event_set.analysis_type` = 'empirical'",
-          "$ref": "#/$defs/Period"
+          "description": "The period of time over which the event occurred and the associated return period (if any). You should only use this object when `event_set.analysis_type` = 'empirical'",
+          "$ref": "#/$defs/Empirical"
+        },
+        "deterministic": {
+          "title": "Deterministic frequency",
+          "type": "object",
+          "description": "The index criteria and thresholds classification used by the deterministic event set, index approaches and susceptibility data. You should only use this object when `event_set.analysis_type` = 'deterministic'.",
+          "$ref": "#/$defs/Deterministic"
         }
       },
       "minProperties": 1
@@ -2220,7 +2226,7 @@
         "intensity_measure": {
           "title": "Hazard intensity measurement",
           "type": "string",
-          "description": "The measurement unit used in the footprint, from the open [IMT codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
+          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
           "codelist": "IMT.csv",
           "openCodelist": true,
           "minLength": 1
@@ -2452,6 +2458,49 @@
         }
       },
       "minProperties": 1
+    },
+    "Empirical": {
+      "title": "Emprical",
+      "type": "object",
+      "description": "The period of time over which the event occurred and the associated return period (if any)",
+      "properties": {
+        "temporal": {
+          "title": "Temporal occurance",
+          "type": "object",
+          "description": "The period of time over which the event occurred.",
+          "$ref": "#/$defs/Period"
+        },
+        "return_period": {
+          "title": "Associated return period",
+          "type": "number",
+          "description": "Probabilistic frequency estimate associated with the empirical events in terms of hazard intensity. Expressed as the denominator of '1/n', e.g. '10' for a 1-in-10 year return period etc.",
+          "minimum": 0
+        }
+      },
+      "minProperties": 1
+    },
+    "Deterministic": {
+      "title": "Deterministic frequency",
+      "type": "object",
+      "description": "The index criteria and thresholds classification used by the deterministic event set, index approaches and susceptibility data.",
+      "properties": {
+        "index_criteria": {
+          "title": "Index criteria",
+          "type": "string",
+          "description": "Full description of the approach and criteria used to produce the index value. A deterministic hazard intensity index (ranking, score, etc) is not tied to a specific occurrence probability, rather is produced using an aggregation criteria (e.g. max, mean, median of annual values over a period; multi-criteria combination; Principal Component Analysis; else).",
+          "minLength": 1
+        },
+        "thresholds": {
+          "title": "Index thresholds",
+          "type": "array",
+          "description": "The thresholds used to classify the index value. Each threshold should be a seperate item. Where a number and description is used, e.g. 1 (low), include both parts with the descriptor in brackets.",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
     }
   },
   "minProperties": 1
