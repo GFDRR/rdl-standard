@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "http://riskdatalibrary.org/schemas/rdl_schema_v0_1.json",
-  "title": "Risk Data Library Schema",
+  "title": "Risk dataset (Risk Data Library Schema)",
+  "description": "A risk dataset described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
   "required": [
     "identifier",
@@ -1325,7 +1326,7 @@
     },
     "Event": {
       "title": "Event",
-      "Description": "A hazard event.",
+      "description": "A hazard event.",
       "type": "object",
       "required": [
         "id",
