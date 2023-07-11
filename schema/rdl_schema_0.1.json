@@ -1263,7 +1263,7 @@
           "codelist": "frequency_distribution.csv",
           "openCodelist": false,
           "enum": [
-            "poison",
+            "poisson",
             "negativeBinomial",
             "userDefined"
           ]
@@ -1389,7 +1389,7 @@
       "minProperties": 1
     },
     "Vulnerability": {
-      "title": "vulnerability",
+      "title": "Vulnerability",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
       "required": [
@@ -2257,7 +2257,7 @@
         "thresholds": {
           "title": "Index thresholds",
           "type": "array",
-          "description": "The thresholds used to classify the index value. Each threshold should be a seperate item. Where a number and description is used, e.g. 1 (low), include both parts with the descriptor in brackets.",
+          "description": "The thresholds used to classify the index value. Each threshold should be a seperate item. Where thresholds are identified by both a number and a descriptor, include the descriptor in brackets, e.g. 1 (low).",
           "items": {
             "type": "string"
           },
