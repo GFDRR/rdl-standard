@@ -154,9 +154,10 @@
   },
   "anyOf": [
     {
+      "title": "Hazard",
       "properties": {
         "hazard": {
-          "title": "hazard",
+          "title": "Hazard dataset metadata",
           "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
           "required": [
             "event_sets"
@@ -178,6 +179,7 @@
       }
     },
     {
+      "title": "Exposure",
       "properties": {
         "exposure": {
           "title": "Exposure dataset metadata",
@@ -223,6 +225,7 @@
       }
     },
     {
+      "title": "Vulnerability",
       "properties": {
         "vulnerability": {
           "title": "Vulnerability dataset metadata",
@@ -633,6 +636,7 @@
       }
     },
     {
+      "title": "Loss",
       "properties": {
         "loss": {
           "title": "Loss dataset metadata",
