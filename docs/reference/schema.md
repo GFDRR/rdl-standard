@@ -458,66 +458,6 @@ Insert example of recorded empirical losses.
 
 ## Sub-schemas
 
-### Cost
-
-`Cost` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Cost/description
----
-```
-
-Each `Cost` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Cost
-collapse: id,type,unit
-addtargets:
----
-```
-
-### Related_resource
-
-`Related_resource` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Related_resource/description
----
-```
-
-Each `Related_resource` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Related_resource
-collapse: id,name,authorNames,datePublished,url,doi
-addtargets:
----
-```
-
-### Period
-
-`Period` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Period/description
----
-```
-
-Each `Period` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Period
-collapse: start,end,duration
-addtargets:
----
-```
-
 ### Entity
 
 `Entity` is defined as:
@@ -554,6 +494,66 @@ Each `Attribution` has the following fields:
 ---
 pointer: /$defs/Attribution
 collapse: id,entity,role
+addtargets:
+---
+```
+
+### Related_resource
+
+`Related_resource` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Related_resource/description
+---
+```
+
+Each `Related_resource` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Related_resource
+collapse: id,name,authorNames,datePublished,url,doi
+addtargets:
+---
+```
+
+### Source
+
+`Source` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Source/description
+---
+```
+
+Each `Source` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Source
+collapse: id,name,url,type,component
+addtargets:
+---
+```
+
+### Period
+
+`Period` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Period/description
+---
+```
+
+Each `Period` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Period
+collapse: start,end,duration
 addtargets:
 ---
 ```
@@ -618,6 +618,46 @@ addtargets:
 ---
 ```
 
+### Hazard
+
+`Hazard` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Hazard/description
+---
+```
+
+Each `Hazard` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Hazard
+collapse: id,type,processes,intensity_measure,trigger
+addtargets:
+---
+```
+
+### Trigger
+
+`Trigger` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Trigger/description
+---
+```
+
+Each `Trigger` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Trigger
+collapse: type,processes
+addtargets:
+---
+```
+
 ### Event_set
 
 `Event_set` is defined as:
@@ -656,6 +696,46 @@ Each `Event` has the following fields:
 pointer: /$defs/Event
 collapse: 
   id,disaster_identifier,calculation_method,hazard,occurrence,description,footprints
+addtargets:
+---
+```
+
+### Footprint
+
+`Footprint` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Footprint/description
+---
+```
+
+Each `Footprint` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Footprint
+collapse: id,intensity_measure,data_uncertainty
+addtargets:
+---
+```
+
+### Cost
+
+`Cost` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Cost/description
+---
+```
+
+Each `Cost` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Cost
+collapse: id,type,unit
 addtargets:
 ---
 ```
@@ -716,86 +796,6 @@ Each `Classification` has the following fields:
 ---
 pointer: /$defs/Classification
 collapse: scheme,id,description,uri
-addtargets:
----
-```
-
-### Footprint
-
-`Footprint` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Footprint/description
----
-```
-
-Each `Footprint` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Footprint
-collapse: id,intensity_measure,data_uncertainty
-addtargets:
----
-```
-
-### Source
-
-`Source` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Source/description
----
-```
-
-Each `Source` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Source
-collapse: id,name,url,type,component
-addtargets:
----
-```
-
-### Hazard
-
-`Hazard` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Hazard/description
----
-```
-
-Each `Hazard` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Hazard
-collapse: id,type,processes,intensity_measure,trigger
-addtargets:
----
-```
-
-### Trigger
-
-`Trigger` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Trigger/description
----
-```
-
-Each `Trigger` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Trigger
-collapse: type,processes
 addtargets:
 ---
 ```
