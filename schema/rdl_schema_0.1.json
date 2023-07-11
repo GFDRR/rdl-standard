@@ -56,8 +56,9 @@
     },
     "version": {
       "title": "Dataset version",
-      "type": "integer",
-      "description": "The version indicator (name or identifier) of the dataset."
+      "type": "number",
+      "description": "The version indicator (name or identifier) of the dataset.",
+      "minimum": 0
     },
     "purpose": {
       "title": "Dataset purpose",
@@ -228,8 +229,11 @@
           "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
           "required": [
             "hazard_primary",
+            "intensity",
             "category",
             "cost",
+            "taxonomy",
+            "impact",
             "spatial",
             "functions"
           ],
@@ -810,6 +814,7 @@
         "id",
         "title",
         "description",
+        "format",
         "url"
       ],
       "properties": {
@@ -1490,7 +1495,9 @@
       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
       "required": [
-        "id"
+        "id",
+        "type",
+        "process"
       ],
       "properties": {
         "id": {
@@ -1765,7 +1772,8 @@
       "required": [
         "id",
         "calculation_method",
-        "frequency_type"
+        "hazard",
+        "occurrence"
       ],
       "properties": {
         "id": {
