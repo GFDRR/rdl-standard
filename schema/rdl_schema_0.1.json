@@ -51,7 +51,8 @@
       "title": "Publisher",
       "type": "object",
       "description": "The entity responsible for making the dataset available.",
-      "$ref": "#/$defs/Entity"
+      "$ref": "#/$defs/Entity",
+      "minProperties": 1
     },
     "version": {
       "title": "Dataset version",
@@ -103,13 +104,15 @@
       "title": "Contact point",
       "type": "object",
       "description": "Contact information for the maintainer of the dataset.",
-      "$ref": "#/$defs/Entity"
+      "$ref": "#/$defs/Entity",
+      "minProperties": 1
     },
     "creator": {
       "title": "Creator",
       "type": "object",
       "description": "The entity responsible for producing the dataset.",
-      "$ref": "#/$defs/Entity"
+      "$ref": "#/$defs/Entity",
+      "minProperties": 1
     },
     "attributions": {
       "title": "Attributions",
@@ -569,7 +572,8 @@
             "ZWR"
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "Resource": {
       "title": "Resource",
@@ -645,7 +649,8 @@
           "description": "The minimum period of time resolvable in this resource, in ISO8601 duration format.",
           "format": "duration"
         }
-      }
+      },
+      "minProperties": 1
     },
     "Related_resource": {
       "title": "Related resource",
@@ -696,7 +701,8 @@
           "description": "The digital object identifier for the resource.",
           "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Period": {
       "title": "Period",
@@ -1215,7 +1221,7 @@
             "$ref": "#/$defs/Event_set"
           },
           "minItems": 1,
-          " uniqueItems": true
+          "uniqueItems": true
         }
       },
       "minProperties": 1
@@ -1242,7 +1248,9 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/Hazard"
-          }
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "analysis_type": {
           "title": "Analysis type",
@@ -1299,7 +1307,8 @@
         "occurrence_range": {
           "title": "Occurrence range",
           "type": "string",
-          "description": "A summary of the probabilistic occurrence scenarios that are included in the event set. You should only use this field when `event_set.analysis_type` = 'probabilistic'"
+          "description": "A summary of the probabilistic occurrence scenarios that are included in the event set. You should only use this field when `event_set.analysis_type` = 'probabilistic'",
+          "minLength": 1
         },
         "spatial": {
           "title": "Spatial coverage",
@@ -1367,7 +1376,8 @@
           "title": "Occurrence",
           "type": "object",
           "description": "The frequency or likelihood of the event happening within a given timeframe.",
-          "$ref": "#/$defs/Occurrence"
+          "$ref": "#/$defs/Occurrence",
+          "minProperties": 1
         },
         "description": {
           "title": "Description",
@@ -1572,7 +1582,8 @@
           "title": "Vulnerability impact",
           "type": "object",
           "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact"
+          "$ref": "#/$defs/Impact",
+          "minProperties": 1
         },
         "spatial": {
           "title": "Spatial coverage",
@@ -1591,25 +1602,29 @@
               "title": "Vulnerability function",
               "type": "object",
               "description": "The vulnerability function used to calculate the impact of the hazard.",
-              "$ref": "#/$defs/Vulnerability_function"
+              "$ref": "#/$defs/Vulnerability_function",
+              "minProperties": 1
             },
             "fragility": {
               "title": "Fragility function",
               "type": "object",
               "description": "The fragility function used to calculate the impact of the hazard.",
-              "$ref": "#/$defs/Fragility_function"
+              "$ref": "#/$defs/Fragility_function",
+              "minProperties": 1
             },
             "damage_to_loss": {
               "title": "Damage-to-loss function",
               "type": "object",
               "description": "The damage-to-loss function (or damage-to-loss model) used to calculate the impact of the hazard in conjunction with a fragility function.",
-              "$ref": "#/$defs/Damage_to_loss_function"
+              "$ref": "#/$defs/Damage_to_loss_function",
+              "minProperties": 1
             },
             "engineering_demand": {
               "title": "Engineering demand function",
               "type": "object",
               "description": "The engineering demand function used to calculate the impact of the hazard.",
-              "$ref": "#/$defs/Engineering_demand_function"
+              "$ref": "#/$defs/Engineering_demand_function",
+              "minProperties": 1
             }
           },
           "minProperties": 1
@@ -1624,7 +1639,8 @@
           "title": "Socio-economic index category",
           "type": "object",
           "description": "The socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Classification"
+          "$ref": "#/$defs/Classification",
+          "minProperties": 1
         }
       },
       "minProperties": 1
@@ -1727,19 +1743,22 @@
           "title": "Probabilistic frequency",
           "type": "object",
           "description": "How often the event is expected to occur. Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
-          "$ref": "#/$defs/Probabilistic"
+          "$ref": "#/$defs/Probabilistic",
+          "minProperties": 1
         },
         "empirical": {
           "title": "Empirical",
           "type": "object",
           "description": "The period of time over which the event occurred and the associated return period (if any). You should only use this object when `event_set.analysis_type` = 'empirical'",
-          "$ref": "#/$defs/Empirical"
+          "$ref": "#/$defs/Empirical",
+          "minProperties": 1
         },
         "deterministic": {
           "title": "Deterministic frequency",
           "type": "object",
           "description": "The index criteria and thresholds classification used by the deterministic event set, index approaches and susceptibility data. You should only use this object when `event_set.analysis_type` = 'deterministic'.",
-          "$ref": "#/$defs/Deterministic"
+          "$ref": "#/$defs/Deterministic",
+          "minProperties": 1
         }
       },
       "minProperties": 1
@@ -1819,7 +1838,8 @@
           "title": "Probability",
           "type": "object",
           "description": "The likelihood of the event occurring in a given time period.",
-          "$ref": "#/$defs/Probability"
+          "$ref": "#/$defs/Probability",
+          "minProperties": 1
         }
       },
       "minProperties": 1
@@ -2232,7 +2252,8 @@
           "title": "Temporal occurance",
           "type": "object",
           "description": "The period of time over which the event occurred.",
-          "$ref": "#/$defs/Period"
+          "$ref": "#/$defs/Period",
+          "minProperties": 1
         },
         "return_period": {
           "title": "Associated return period",
@@ -2259,7 +2280,8 @@
           "type": "array",
           "description": "The thresholds used to classify the index value. Each threshold should be a seperate item. Where thresholds are identified by both a number and a descriptor, include the descriptor in brackets, e.g. 1 (low).",
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "minItems": 1,
           "uniqueItems": true
@@ -2341,7 +2363,8 @@
         "description": {
           "title": "Loss description",
           "type": "string",
-          "description": "Additional details of the dataset."
+          "description": "Additional details of the dataset.",
+          "minLength": 1
         },
         "category": {
           "title": "Exposure category",
@@ -2371,7 +2394,8 @@
           "title": "Loss impact",
           "type": "object",
           "description": "The details of the loss impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact"
+          "$ref": "#/$defs/Impact",
+          "minProperties": 1
         },
         "type": {
           "title": "Loss type",
@@ -2434,5 +2458,6 @@
       },
       "minProperties": 1
     }
-  }
+  },
+  "minProperties": 1
 }
