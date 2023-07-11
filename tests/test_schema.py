@@ -29,7 +29,7 @@ validate_array_items_kwargs = {
 }
 
 def validate_metadata_presence_allow_missing(pointer):
-    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf') or pointer == '/$defs'
+    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf')
 
 validate_metadata_presence_kwargs = {
     'allow_missing': validate_metadata_presence_allow_missing,
