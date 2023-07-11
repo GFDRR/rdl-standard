@@ -1443,7 +1443,7 @@
           "title": "Primary hazard process",
           "type": "string",
           "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
-          "codelist": "hazard_process_type.csv",
+          "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
             "coastal_flood",
@@ -1482,7 +1482,7 @@
           "title": "Secondary hazard process",
           "type": "string",
           "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
-          "codelist": "hazard_process_type.csv",
+          "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
             "coastal_flood",
@@ -2129,7 +2129,7 @@
               "tropical_cyclone"
             ]
           },
-          "codelist": "hazard_process_type.csv",
+          "codelist": "process_type.csv",
           "openCodelist": false,
           "minItems": 1,
           "uniqueItems": true
@@ -2214,7 +2214,7 @@
               "tropical_cyclone"
             ]
           },
-          "codelist": "hazard_process_type.csv",
+          "codelist": "process_type.csv",
           "openCodelist": false,
           "minItems": 1,
           "uniqueItems": true
@@ -2302,7 +2302,7 @@
           "title": "Hazard process",
           "type": "string",
           "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
-          "codelist": "hazard_process_type.csv",
+          "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
             "coastal_flood",
@@ -2328,7 +2328,7 @@
             "landslide_rockfall",
             "tsunami",
             "ashfall",
-            "volcano_balllistics",
+            "volcano_ballistics",
             "lahar",
             "lava",
             "pyroclastic_flow",
