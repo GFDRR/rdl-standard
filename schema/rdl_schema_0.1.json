@@ -2379,8 +2379,12 @@
           "codelist": "loss_type.csv",
           "openCodelist": false,
           "enum": [
-            "ground-up",
-            "insured"
+            "ground_up",
+            "insured",
+            "gross",
+            "count",
+            "net_precat",
+            "net_postcat"
           ]
         },
         "approach": {
