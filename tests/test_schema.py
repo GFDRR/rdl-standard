@@ -28,6 +28,13 @@ validate_array_items_kwargs = {
     },
 }
 
+def validate_metadata_presence_allow_missing(pointer):
+    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf')
+
+validate_metadata_presence_kwargs = {
+    'allow_missing': validate_metadata_presence_allow_missing,
+}
+
 @pytest.mark.parametrize('path,name,data', schemas)
 def test_schema_valid(path, name, data):
     validate_json_schema(path, name, data, metaschema)
@@ -46,15 +53,11 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_array_items(path, data, **validate_array_items_kwargs)
     errors += validate_items_type(path, data)
 
-    # Codelist fields are not yet implemented
-    # errors += validate_codelist_enum(path, data)
+    errors += validate_codelist_enum(path, data)
     
     errors += validate_merge_properties(path, data)
     errors += validate_ref(path, data)
-    
-    # Titles and descriptions are not yet added
-    # errors += validate_metadata_presence(path, data)
-    
+    errors += validate_metadata_presence(path, data, **validate_metadata_presence_kwargs)
     errors += validate_object_id(path, jsonref.replace_refs(data))
     errors += validate_null_type(path, data, no_null=True)
     

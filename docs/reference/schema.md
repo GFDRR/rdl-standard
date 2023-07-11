@@ -458,66 +458,6 @@ Insert example of recorded empirical losses.
 
 ## Sub-schemas
 
-### Cost
-
-`Cost` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Cost/description
----
-```
-
-Each `Cost` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Cost
-collapse: id,type,unit
-addtargets:
----
-```
-
-### Related_resource
-
-`Related_resource` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Related_resource/description
----
-```
-
-Each `Related_resource` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Related_resource
-collapse: id,name,authorNames,datePublished,url,doi
-addtargets:
----
-```
-
-### Period
-
-`Period` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Period/description
----
-```
-
-Each `Period` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Period
-collapse: start,end,duration
-addtargets:
----
-```
-
 ### Entity
 
 `Entity` is defined as:
@@ -554,6 +494,66 @@ Each `Attribution` has the following fields:
 ---
 pointer: /$defs/Attribution
 collapse: id,entity,role
+addtargets:
+---
+```
+
+### Related_resource
+
+`Related_resource` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Related_resource/description
+---
+```
+
+Each `Related_resource` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Related_resource
+collapse: id,name,authorNames,datePublished,url,doi
+addtargets:
+---
+```
+
+### Source
+
+`Source` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Source/description
+---
+```
+
+Each `Source` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Source
+collapse: id,name,url,type,component
+addtargets:
+---
+```
+
+### Period
+
+`Period` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Period/description
+---
+```
+
+Each `Period` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Period
+collapse: start,end,duration
 addtargets:
 ---
 ```
@@ -618,281 +618,6 @@ addtargets:
 ---
 ```
 
-### Event_set
-
-`Event_set` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Event_set/description
----
-```
-
-Each `Event_set` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Event_set
-collapse: 
-  id,hazards,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,temporal,events
-addtargets:
----
-```
-
-### Event
-
-Each `Event` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Event
-collapse: 
-  id,disaster_identifier,calculation_method,hazard,occurrence,description,footprints
-addtargets:
----
-```
-
-### Vulnerability
-
-`Vulnerability` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Vulnerability/description
----
-```
-
-Each `Vulnerability` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Vulnerability
-collapse: 
-  hazard_primary,hazard_secondary,hazard_process_primary,hazard_process_secondary,hazard_analysis_type,intensity,category,cost,taxonomy,impact,spatial,functions,analysis_details,se_category
-addtargets:
----
-```
-
-### Vulnerability_function
-
-`Vulnerability_function` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Vulnerability_function/description
----
-```
-
-Each `Vulnerability_function` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Vulnerability_function
-collapse: approach,relationship
-addtargets:
----
-```
-
-### Fragility_function
-
-`Fragility_function` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Fragility_function/description
----
-```
-
-Each `Fragility_function` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Fragility_function
-collapse: approach,relationship,damage_scale_name,damage_states_names
-addtargets:
----
-```
-
-### Occurrence
-
-`Occurrence` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Occurrence/description
----
-```
-
-Each `Occurrence` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Occurrence
-collapse: probabilistic,empirical,deterministic
-addtargets:
----
-```
-
-### Damage_to_loss_function
-
-`Damage_to_loss_function` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Damage_to_loss_function/description
----
-```
-
-Each `Damage_to_loss_function` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Damage_to_loss_function
-collapse: approach,relationship,damage_scale_name,damage_states_names
-addtargets:
----
-```
-
-### Probabilistic
-
-`Probabilistic` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Probabilistic/description
----
-```
-
-Each `Probabilistic` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Probabilistic
-collapse: return_period,event_rate,probability
-addtargets:
----
-```
-
-### Engineering_demand_function
-
-`Engineering_demand_function` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Engineering_demand_function/description
----
-```
-
-Each `Engineering_demand_function` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Engineering_demand_function
-collapse: parameter,approach,relationship
-addtargets:
----
-```
-
-### Probability
-
-`Probability` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Probability/description
----
-```
-
-Each `Probability` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Probability
-collapse: value,span
-addtargets:
----
-```
-
-### Impact
-
-`Impact` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Impact/description
----
-```
-
-Each `Impact` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Impact
-collapse: type,metric,unit,base_data_type
-addtargets:
----
-```
-
-### Classification
-
-`Classification` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Classification/description
----
-```
-
-Each `Classification` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Classification
-collapse: scheme,id,description,uri
-addtargets:
----
-```
-
-### Footprint
-
-`Footprint` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Footprint/description
----
-```
-
-Each `Footprint` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Footprint
-collapse: id,intensity_measure,data_uncertainty
-addtargets:
----
-```
-
-### Source
-
-`Source` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Source/description
----
-```
-
-Each `Source` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Source
-collapse: id,name,url,type,component
-addtargets:
----
-```
-
 ### Hazard
 
 `Hazard` is defined as:
@@ -933,63 +658,144 @@ addtargets:
 ---
 ```
 
-### Empirical
+### Event_set
 
-`Empirical` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Empirical/description
----
-```
-
-Each `Empirical` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Empirical
-collapse: temporal,return_period
-addtargets:
----
-```
-
-### Deterministic
-
-`Deterministic` is defined as:
+`Event_set` is defined as:
 
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-jsonpointer: /$defs/Deterministic/description
+jsonpointer: /$defs/Event_set/description
 ---
 ```
 
-Each `Deterministic` has the following fields:
+Each `Event_set` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-pointer: /$defs/Deterministic
-collapse: index_criteria,thresholds
-addtargets:
----
-```
-
-### Loss
-
-`Loss` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-jsonpointer: /$defs/Loss/description
----
-```
-
-Each `Loss` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
----
-pointer: /$defs/Loss
+pointer: /$defs/Event_set
 collapse: 
-  hazard_type,hazard_process,description,category,cost,impact,type,approach,hazard_analysis_type,hazard_id,exposure_id,vulnerability_id
+  id,hazards,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,temporal,events
+addtargets:
+---
+```
+
+### Event
+
+`Event` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Event/description
+---
+```
+
+Each `Event` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Event
+collapse: 
+  id,disaster_identifier,calculation_method,hazard,occurrence,description,footprints
+addtargets:
+---
+```
+
+### Footprint
+
+`Footprint` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Footprint/description
+---
+```
+
+Each `Footprint` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Footprint
+collapse: id,intensity_measure,data_uncertainty
+addtargets:
+---
+```
+
+### Cost
+
+`Cost` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Cost/description
+---
+```
+
+Each `Cost` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Cost
+collapse: id,type,unit
+addtargets:
+---
+```
+
+### Probabilistic
+
+`Probabilistic` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Probabilistic/description
+---
+```
+
+Each `Probabilistic` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Probabilistic
+collapse: return_period,event_rate,probability
+addtargets:
+---
+```
+
+### Impact
+
+`Impact` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Impact/description
+---
+```
+
+Each `Impact` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Impact
+collapse: type,metric,unit,base_data_type
+addtargets:
+---
+```
+
+### Classification
+
+`Classification` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+jsonpointer: /$defs/Classification/description
+---
+```
+
+Each `Classification` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+---
+pointer: /$defs/Classification
+collapse: scheme,id,description,uri
 addtargets:
 ---
 ```
