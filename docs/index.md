@@ -13,7 +13,7 @@ The RDLS has been developed by World Bank GFDRR for disaster and climate risk as
 This documentation provides a technical overview of the RDLS and its different elements:
 
 - [Overview](rdl/index.md): The core standards used within the RDLS, use cases and a roadmap
-- [Data model](data_model/index.md): how to organize and link the data using the RDLS schema
+- [Reference](reference/index.md): how to organize and link the data using the RDLS schema
 - [Taxonomy](taxonomies/index.md): details of taxonomies adopted by the RDLS
 - [Guides](guides/index.md): how to implement the RDLS in your project
 - [About](about/index.md): other information on the roadmap, history, governance and license
@@ -26,7 +26,7 @@ The RDL is a collaborative project managed by the [Global Facility for Disaster 
    :hidden:
 
    rdl/index
-   data_model/index
+   reference/index
    taxonomies/index
    guides/index
    glossary

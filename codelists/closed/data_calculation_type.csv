@@ -1,0 +1,4 @@
+Code,Title,Definition
+inferred,Inferred,Original data from during an event.
+observed,Observed,Post-event observation data such as post-event damage surveys.
+simulated,Simulated,Numerical simulation data.
