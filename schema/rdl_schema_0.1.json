@@ -817,8 +817,6 @@
           "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#country).",
           "items": {
             "type": "string",
-            "codelist": "country.csv",
-            "openCodelist": false,
             "enum": [
               "AFG",
               "ALB",
@@ -1071,6 +1069,8 @@
               "ALA"
             ]
           },
+          "codelist": "country.csv",
+          "openCodelist": false,
           "minItems": 1,
           "uniqueItems": true
         },
