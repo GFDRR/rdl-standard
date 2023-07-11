@@ -46,10 +46,11 @@ This page lists changes to the Risk Data Library Standard.
   - Add `.scale` to `Spatial` object.
   - Update field names, titles and descriptions in `Vulnerability` definition.
   - Create `Impact` object and update associated field names, titles and descriptions.
-    -[#132](https://github.com/GFDRR/rdl-standard/pull/132):
+ -[#132](https://github.com/GFDRR/rdl-standard/pull/132):
   - Replace `loss` object with `Loss` definition.
   - Removes `time_start`, `time_end`, `time_year` from `loss`.
   - Removes `loss_loss_type`, `loss_metric` from `$defs`.
+- [#127](https://github.com/GFDRR/rdl-standard/pull/127) - Inline `Exposure`, `Hazard_metadata`, `vulnerability`, `Vulnerability_function`, `Fragility_function`, `Occurence`, `Damage_to_loss_function`, `Engineering_demand_function`, `Probability`, `Empirical`, `Deterministic` and `Loss` and rearrange `$defs`
 
 ### Codelists
 
