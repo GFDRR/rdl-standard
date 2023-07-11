@@ -251,10 +251,10 @@
           "codelist": "cost_type.csv",
           "openCodelist": false,
           "enum": [
-            "Structure",
-            "Content",
-            "Product",
-            "Disruption (Business Interruption)"
+            "structure",
+            "content",
+            "product",
+            "disruption"
           ]
         },
         "unit": {
