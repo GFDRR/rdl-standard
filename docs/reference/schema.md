@@ -68,7 +68,8 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-collapse: publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources
+collapse: 
+  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources
 addtargets:
 ---
 ```
