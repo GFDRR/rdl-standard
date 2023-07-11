@@ -1119,7 +1119,7 @@
         "scale": {
           "title": "Spatial scale",
           "type": "string",
-          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#spatial_scale).",
+          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#spatial_scale).",
           "codelist": "spatial_scale.csv",
           "openCodelist": false,
           "enum": [
@@ -1149,7 +1149,7 @@
         "scheme": {
           "title": "Scheme",
           "type": "string",
-          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist]https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#location_gazetteers).",
+          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#location_gazetteers).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1255,7 +1255,7 @@
         "analysis_type": {
           "title": "Analysis type",
           "type": "string",
-          "description": "The type of analysis used by the hazard model, from the closed [analysis type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#analysis_type).",
+          "description": "The type of analysis used by the hazard model, from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#analysis_type).",
           "codelist": "analysis_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1358,7 +1358,7 @@
         "calculation_method": {
           "title": "Model calculation method",
           "type": "string",
-          "description": "The methodology used for the calculation of the event in the modelled scenario(s), from the closed [data calculation type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#data_calculation_type).",
+          "description": "The methodology used for the calculation of the event in the modelled scenario(s), from the closed [data calculation type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#data_calculation_type).",
           "codelist": "data_calculation_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1413,7 +1413,7 @@
         "hazard_primary": {
           "title": "Primary hazard type",
           "type": "string",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1433,7 +1433,7 @@
         "hazard_secondary": {
           "title": "Secondary hazard type",
           "type": "string",
-          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1453,7 +1453,7 @@
         "hazard_process_primary": {
           "title": "Primary hazard process",
           "type": "string",
-          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1492,7 +1492,7 @@
         "hazard_process_secondary": {
           "title": "Secondary hazard process",
           "type": "string",
-          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1531,7 +1531,7 @@
         "hazard_analysis_type": {
           "title": "Hazard analysis type",
           "type": "string",
-          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#analysis_type).",
+          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#analysis_type).",
           "codelist": "analysis_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1542,7 +1542,7 @@
         },
         "intensity": {
           "title": "Hazard intensity measurement",
-          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#IMT).",
+          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#IMT).",
           "type": "string",
           "codelist": "IMT.csv",
           "openCodelist": true,
@@ -2010,7 +2010,7 @@
         "intensity_measure": {
           "title": "Hazard intensity measurement",
           "type": "string",
-          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
+          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
           "codelist": "IMT.csv",
           "openCodelist": true,
           "minLength": 1
@@ -2304,7 +2304,7 @@
         "hazard_type": {
           "title": "Hazard type",
           "type": "string",
-          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -2324,7 +2324,7 @@
         "hazard_process": {
           "title": "Hazard process",
           "type": "string",
-          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist]https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
