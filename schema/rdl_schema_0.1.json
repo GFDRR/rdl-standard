@@ -1171,11 +1171,11 @@
           "title": "Type",
           "type": "string",
           "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#geometry_type).",
-          "codelist": "location_gazetteers.csv",
+          "codelist": "geometry_type.csv",
           "openCodelist": false,
           "enum": [
             "Point",
-            "Multipoint",
+            "MultiPoint",
             "LineString",
             "MultiLineString",
             "Polygon",
