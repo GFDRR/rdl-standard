@@ -23,6 +23,23 @@ This page lists changes to the Risk Data Library Standard.
   - Add validation keywords to `Location`, `Gazetteer_entry` and `Geometry` definitions.
 - [#116](https://github.com/GFDRR/rdl-standard/pull/116) - Replace `biblio_title` and `biblio_url` with `Related_resource` definition.
 - [#115](https://github.com/GFDRR/rdl-standard/pull/115) - Add `Entity` and `Attribution` objects, update entity related field names and descriptions.
+- [#121](https://github.com/GFDRR/rdl-standard/pull/121):
+  - Nest footprints within events and events within event sets.
+  - Update `calculation_method`.
+  - Add fields:
+    - `event_set.id`
+    - `event.id`
+    - `footprint_set.id`
+    - `event_set.disaster_identifier`
+    - `event_set.frequency_distribution`
+    - `event_set.seasonality`
+    - `event_set.calculation_method`
+    - `event_set.number_events`
+    - `event_set.temporal`
+  - Add codelists for `event_set.hazard_type` and `event_set.analysis_type`.
+  - Move `process_type` from `footprint_set` to `event` and `event_set`.
+  - Create `Occurrence` object.
+  - Removes `common_calc_method`, `common_frequency_type`, `common_hazard_type`, `common_impact_type`, `common_process_type` and `im_code`.
 - [#124](https://github.com/GFDRR/rdl-standard/pull/124):
   - Replace `vulnerability` object with `Vulnerability` definition.
   - Replace `function_type`, `calculation_method`, `approach`, `f_math` and `f_relationship` with `functions` object and `Vulnerability_function`, `Fragility_function`, `Damage_to_loss_function` and `Engineering_demand_function` definitions.
@@ -40,6 +57,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#114](https://github.com/GFDRR/rdl-standard/pull/114) - 'IMT.csv' add descriptions and change pattern of codes to metric:unit.
 - [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
+- [#121](https://github.com/GFDRR/rdl-standard/pull/121) - Create 'frequency_distribution.csv' and 'seasonality.csv'
 - [#130](https://github.com/GFDRR/rdl-standard/pull/130) - 'hazard_type.csv' add descriptions and hazard category which aligns with UNDRR Hazard taxonomy, and update codes from abbreviations to human-readable words.
 - [#134](https://github.com/GFDRR/rdl-standard/pull/134) - 'risk_data_type.csv', replace codes with lower-case versions.
 
