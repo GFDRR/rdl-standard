@@ -261,7 +261,7 @@
           "title": "Cost unit",
           "type": "string",
           "description": "The unit in which the cost is specified, from the closed [currency codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#currency).",
-          "codelist": "cost_type.csv",
+          "codelist": "currency.csv",
           "openCodelist": false,
           "enum": [
             "ADP",
@@ -565,8 +565,7 @@
             "ZWD",
             "ZWL",
             "ZWN",
-            "ZWR",
-            null
+            "ZWR"
           ]
         }
       }
