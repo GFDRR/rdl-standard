@@ -7,7 +7,7 @@
 Pierre Chrzanowski, Mattia Amadio, Andrea Garcia (GFDRR) 
 Carolina Hess (SwissRe Foundation)
 Rachel Vint, Jen Harris (Open Data Services)
-
+ 
 **SC members:** 
 -	Beat Aeberhardt, Swiss Re
 -	Paul Henshaw, GEM Foundation
