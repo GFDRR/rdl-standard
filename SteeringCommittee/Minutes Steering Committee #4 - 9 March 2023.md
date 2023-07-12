@@ -30,7 +30,8 @@ c.	Request to SC members: review/contribute potential implementations of standar
 ## Notes
 
 **Update on Fellowship program**
-○	Introduced fellows and range of experience. From masters people to experienced with ADB and others. Reasons for 2 fellows in Philippines. Isabelle assigned a project in CB working on detect exposure data, support from SwissRe Foundation, ground truth validation. 
+Introduced fellows and range of experience. From masters people to experienced with ADB and others. Reasons for 2 fellows in Philippines. Isabelle assigned a project in CB working on detect exposure data, support from SwissRe Foundation, ground truth validation.
+
 ○	Will provide summary of fellows to SC, to share profiles, and potentially set up bilateral meetings to discuss projects/relevant experience.
 ○	TR: what happens to fellows at the end of the program: encourage them to maintain a relationship beyond the project, increasing talent and exposure is a nice thing to do, and good to grow that talent and see where they can get to. PC: will be STC and meet WB staff so have a change to explore that.
 ○	NM: How can we propose to or explore opportunities with Fellows, before they start considering other opps? E.g. GRMA opportunity for work. PC: there are workshops, and we welcome presentations on the initiatives you’re working on, to do show those opportunities.
