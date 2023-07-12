@@ -1,4 +1,4 @@
-# Minutes of RDLS Fellows project Steering Committee #2
+# Minutes of RDLS Fellows project Steering Committee No.2
 
 7 DECEMBER 2022 / 09:00-10:00 EDT, 14:00-15:00 GMT / via Zoom
 
