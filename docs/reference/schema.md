@@ -68,7 +68,8 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
-collapse: spatial,resources,referenced_by,contact_point,creator,attributions
+collapse: 
+  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources
 addtargets:
 ---
 ```
@@ -330,7 +331,7 @@ The **additional** attributes cover more specific information that helps to unde
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/2/properties/vulnerability
-collapse:
+collapse: cost,impact,spatial,se_category
 addtargets:
 ---
 ```
@@ -387,7 +388,7 @@ Additional attributes are specific to loss, describing the type of impact, the t
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/3/properties/loss
-collapse:
+collapse: cost,impact
 addtargets:
 ---
 ```
