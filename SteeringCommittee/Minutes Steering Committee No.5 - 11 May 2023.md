@@ -1,4 +1,4 @@
-# Minutes of RDLS Fellows project Steering Committee #5
+# Minutes of RDLS Fellows project Steering Committee No.5
 
 11 May 2023 / 09:00-10:30 EDT, 14:00-15:30 GMT / via Teams
 
