@@ -1,4 +1,4 @@
-# Minutes of RDLS Fellows project Steering Committee #3
+# Minutes of RDLS Fellows project Steering Committee No.3
 
 12 January 2023 / 09:00-10:30 EDT, 14:00-15:00 GMT / via Teams
 
