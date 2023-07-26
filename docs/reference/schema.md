@@ -10,14 +10,14 @@ This page presents the schema in tables with additional information in paragraph
    If any conflicts are found between the text on this page and the text within the schema, the text within the schema takes precedence.
 ```
 
-The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#resource) and four risk-specific components:
+The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#resource) and four components to document data used in risk analysis:
 
-- [Hazard](#hazard): main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.
-- [Exposure](#exposure): asset category, specific taxonomy, cost type and value.
-- [Vulnerability](#vulnerability): model that links hazard intensity and exposure classification to measure of impact over the total exposed value.
-- [Loss](#loss): modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
+- [Hazard](#hazard): including the main hazard type and process, triggering hazard and process, hazard intensity units, occurrence frequency of individual events, multiple hazard footprints per event, historical and stochastic events sets, and analytical methods used.
+- [Exposure](#exposure): including asset category (including human, built environment assets and natural assets), taxonomy used to describe characteristics of assets and people, cost type, location, geometry types.
+- [Vulnerability](#vulnerability): describing vulnerability and fragility relationships and indexes, which estimate the impact on people or assets as a function of hazard intensity. This component uses attributes consistent with the hazard, exposure and loss components.
+- [Loss](#loss): modelled monetary and non-monetary damage and losses produced in a risk assessment, including the ability to link losses to the hazard, exposure, and vulnerability components used in the analysis. Allows description of common impact and risk metrics for direct and indirect impacts, and for individual historical and hypothetical events, and for large events sets in year loss tables and event loss tables.
 
-For definitions of these terms, please see the [Glossary](../glossary.md).
+For general definitions of hazard, exposure, vulnerability and loss, please see the [Glossary](../glossary.md).
 
 For fields that reference [sub-schemas](#sub-schemas), a link is provided to a table with details of the sub-schema. To see how the fields and sub-schemas fit together, consult the [schema browser](browser.md).
 
@@ -38,21 +38,18 @@ The diagram below shows the core relationships between schema components, and th
       class Hazard{
         -Type, Process
         -Trigger
-        -Frequency
-        -Intensity unit
+        -Frequency, Intensity
         -Analytical method
           }
       class Exposure{
         -Asset category
-        -Occupancy
         -Taxonomy
         -Cost type
       }
       class Vulnerability{
         -Hazard process
         -Exposure taxonomy
-        -Analytical method 
-        -Applicability
+        -Analytical method
       }
       class Loss{
         -Hazard process
