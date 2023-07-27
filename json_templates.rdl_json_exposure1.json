@@ -1,0 +1,87 @@
+{
+  "properties": {
+    "identifier": "https://datacatalog.worldbank.org/search/dataset/0064252/Central-Asia-exposure-dataset---Transport",
+    "title": "Central Asia Exposure Dataset - Transport",
+    "description": "Regional layer of transportation infrastructure in Central Asia (road, rail, bridges).",
+    "risk_data_type": "exposure",
+    "publisher": {
+        "name": "World Bank",
+        "email": "",
+        "url": "www.worldbank.org"
+        },
+    "version": 1,
+    "purpose": "Regional climate and disaster risk analysis for risk financing and risk management",
+    "project": "Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia - Regional risk assessment.",
+    "details": ""
+    "referenced_by": "",
+    "spatial": {
+      "countries": ["KGZ", "KAZ", "UZB", "TJK", "TKM"],
+      "gazetteerEntries": [],
+      "bbox": [   ],
+        "geometry": {
+          "title": "Geometry",
+          "description": "A set of coordinates denoting the vertices of the geographical area.",
+          "$ref": "#/$defs/Geometry"
+        },
+        "centroid": [],
+        "scale": "regional"
+      },
+    "license": "CC-BY-SA 4.0",
+    "contact_point": {
+        "name": "Stuart Fraser",
+        "email": "sfraser@worldbank.org",
+        "url": ""
+        },
+    "creator": {
+        "name": "Risk Engineering and Development (RED)",
+        "email": "paola.ceresa@redrisk.com",
+        "url": "redrisk.com"
+        },
+    "attributions":
+      "properties":
+        "id": "???",
+        "entity": "Stuart Fraser",
+        "role": ""
+        },
+    "Resource": [
+      {
+        "id": "DR0091647",
+        "title": "Central Asia exposure dataset - Transport - Bridges - KGZ",
+        "description": "The dataset has been developed based on transportation data collected from Openstreetmap and validated based on local data. Bridges location was derived based on spatial analysis, in particular identifying the intersection of main roads/railways and rivers. These data have been derived on a regional scale for the purpose of consistent regional (multi-country hazard and risk assessment). The folder includes one point layer containing Central Asia bridges, and one lines layer containing roads and railways of different types. Note that minor roads (e.g. residential, service) and railway types (e.g. subway) were not included in the analysis. Application of this information should on smaller scales should be done with care and taking into account the limitations of the approach.",
+        "media_type": "application/zip",
+        "format": "Zipped ESRI geospatial Shapefile",
+        "spatial_resolution": "",
+        "coordinate_system": "EPSG:4326",
+        "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064252/DR0091647/SFRARR_exposure_bridges_KGZ.zip?versionId=2023-07-05T14:02:09.6563125Z",
+        "temporal":
+          {"start": "2020",
+            "end": "2020",
+            "duration": ""
+          }
+      },
+      {
+        "id": "DR0091648",
+        "title": "Central Asia exposure dataset - Transport - Bridges - TKM",
+        "description": "The dataset has been developed based on transportation data collected from Openstreetmap and validated based on local data. Bridges location was derived based on spatial analysis, in particular identifying the intersection of main roads/railways and rivers. These data have been derived on a regional scale for the purpose of consistent regional (multi-country hazard and risk assessment). The folder includes one point layer containing Central Asia bridges, and one lines layer containing roads and railways of different types. Note that minor roads (e.g. residential, service) and railway types (e.g. subway) were not included in the analysis. Application of this information should on smaller scales should be done with care and taking into account the limitations of the approach.",
+        "media_type": "application/zip",
+        "format": "Zipped ESRI geospatial Shapefile",
+        "spatial_resolution": "",
+        "coordinate_system": "EPSG:4326",
+        "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064252/DR0091648/SFRARR_exposure_bridges_TKM.zip?versionId=2023-07-05T14:02:17.6237495Z",
+        "temporal":
+          {"start": "2020",
+            "end": "2020",
+            "duration": ""
+          }
+      }
+    ],
+    "sources": "",
+    "temporal_resolution": ""
+  },
+    "exposure": {
+      "properties": {
+        "category": "infrastructure"
+        "taxonomy": "GED4ALL",
+        "cost": "structure"
+        }
+    }
