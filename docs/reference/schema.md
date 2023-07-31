@@ -17,7 +17,6 @@ The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#re
 - [Vulnerability](#vulnerability): metadata to describe vulnerability and fragility relationships and indexes, including type of impact, type of exposure, hazard intensity measure and approach used to develop the relationship. This component uses attributes consistent with the hazard, exposure and loss components.
 - [Loss](#loss): metadata describing monetary and non-monetary damage and losses produced in a risk assessment. This includes fields to link losses to the hazard, exposure, and vulnerability components used in the analysis. The loss component enables description of common impact and risk metrics for direct and indirect impacts, for individual historical and hypothetical events, and for large events sets in year loss tables and event loss tables.
 
-
 For general definitions of hazard, exposure, vulnerability and loss, please see the [Glossary](../glossary.md).
 
 For fields that reference [sub-schemas](#sub-schemas), a link is provided to a table with details of the sub-schema. To see how the fields and sub-schemas fit together, consult the [schema browser](browser.md).
@@ -86,10 +85,9 @@ addtargets:
 
 ## Hazard
 
-The hazard component describes metadata about modeled natural hazards data including hazard intensity footprints of historical or hypothetical events, return period hazard maps, hazard or susceptibility index, and stochastic event sets. The metadata defines hazard type, physical process and intensity measures used in the dataset. Multiple hazards and processes (including cascading events) can be defined for each hazard, enabling users to describe dataset that contain, for example, earthquake ground shaking and liquefaction, and tsunami inundation triggered by the earthquake. 
+The hazard component describes metadata about modeled natural hazards data including hazard intensity footprints of historical or hypothetical events, return period hazard maps, hazard or susceptibility index, and stochastic event sets. The metadata defines hazard type, physical process and intensity measures used in the dataset. Multiple hazards and processes (including cascading events) can be defined for each hazard, enabling users to describe dataset that contain, for example, earthquake ground shaking and liquefaction, and tsunami inundation triggered by the earthquake.
 
 The hazard component uses hazard_type, process_type and intensity_measure consistent with the vulnerability and loss component’s of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
-
 
 ```{eval-rst}
  .. mermaid::
@@ -134,7 +132,6 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
         Uncertainty
       }
 ```
-
 
 `````{tab-set}
 
@@ -224,8 +221,6 @@ The exposure component uses exposure categories consistent with the vulnerabilit
       }
 ```
 
-
-
 `````{tab-set}
 
 ````{tab-item} Schema
@@ -275,10 +270,9 @@ Two exposure datasets are shown together in the example: building footprints pol
 
 ## Vulnerability
 
-The vulnerability component describes fragility, damage-to-loss and vulnerability relationships and indexes for physical damage and social vulnerability that are used in risk analysis. It contains key information including the type of function, intensity and impact metrics used, which asset types or population groups it applies to, how it was developed and for what locations. 
+The vulnerability component describes fragility, damage-to-loss and vulnerability relationships and indexes for physical damage and social vulnerability that are used in risk analysis. It contains key information including the type of function, intensity and impact metrics used, which asset types or population groups it applies to, how it was developed and for what locations.
 
 The vulnerability component uses hazard_type, process_type and intensity_measure consistent with the hazard and loss components, exposure information consistent with the exposure and loss components. Spatial reference and location information are described using existing external standards.
-
 
 ```{eval-rst}
  .. mermaid::
@@ -301,8 +295,6 @@ The vulnerability component uses hazard_type, process_type and intensity_measure
       }
 ```
 
-
-
 `````{tab-set}
 
 ````{tab-item} Schema
@@ -321,9 +313,8 @@ addtargets:
 
 ## Loss
 
-The loss component provides metadata describing data generated in risk assessments, i.e., modelled impacts and losses for single historical events or hypothetical scenarios and risk estimates from analysis of large event sets. The data can include monetary and non-monetary, and direct or indirect, impacts and losses. 
+The loss component provides metadata describing data generated in risk assessments, i.e., modelled impacts and losses for single historical events or hypothetical scenarios and risk estimates from analysis of large event sets. The data can include monetary and non-monetary, and direct or indirect, impacts and losses.
 Loss datasets can be explicitly linked to the exposure, hazard, and vulnerability datasets used in the analysis. This component uses descriptions of assets, hazards and impact types consistent with all other components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
-
 
 ```{eval-rst}
  .. mermaid::
@@ -353,8 +344,6 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
         Loss unit
       }
 ```
-
-
 
 `````{tab-set}
 
@@ -775,4 +764,3 @@ collapse: scheme,id,description,uri
 addtargets:
 ---
 ```
- 
