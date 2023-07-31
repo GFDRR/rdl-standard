@@ -151,7 +151,7 @@ The hazard dataset could include one or more footprints for the same event, wher
 ```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
 ---
 pointer: /anyOf/0/properties/hazard
-collapse: event_sets
+collapse: event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
 addtargets:
 ---
 ```
