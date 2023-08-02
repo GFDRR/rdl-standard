@@ -2,7 +2,7 @@
 
 This page lists changes to the Risk Data Library Standard.
 
-## YYYY-MM-DD
+## 0.2.0 - YYYY-MM-DD
 
 ### Schema
 
