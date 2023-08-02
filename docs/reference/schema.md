@@ -800,3 +800,23 @@ collapse: scheme,id,description,uri
 addtargets:
 ---
 ```
+
+### Link
+
+`Link` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema.json
+---
+jsonpointer: /$defs/Link/description
+---
+```
+
+Each `Link` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdl_schema.json
+---
+pointer: /$defs/Link
+collapse: href,rel
+addtargets:
+---
+```
