@@ -12,6 +12,7 @@ This section contains the following how-to guides:
 
 * [Propose changes](#propose-changes)
 * [Deploy changes](#deploy-changes)
+* [Release a new version](#release-a-new-version)
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
@@ -36,6 +37,15 @@ Once the pull request is merged, the updated documentation is available to previ
 ### Deploy changes
 
 To deploy the `dev` branch to the live documentation site, [create a pull request](https://github.com/GFDRR/rdl-standard/compare) to merge the `dev` branch into the `main` branch. Once the pull request is merged, the changes are automatically deployed to the live site at [https://rdl-standard.readthedocs.io/en/](https://rdl-standard.readthedocs.io/en/).
+
+### Release a new version
+
+* Update the MAJOR.MINOR `version` in `conf.py`.
+* Update the MAJOR.MINOR.PATCH version number in the following files:
+  * `docs/conf.py`: update `release`
+  * `docs/reference/schema.md`: update the canonical schema URL
+  * `schema/rdl_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
+* Update the version number and date in `docs/about/changelog.md`
 
 ### Set up a local development environment
 
