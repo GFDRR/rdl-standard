@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://riskdatalibrary.org/schemas/rdl_schema_v0_1.json",
+  "$id": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdl_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
   "description": "A risk dataset described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
