@@ -415,8 +415,8 @@ def env_before_read_docs(app, env, docnames):
     # Process schema and write to _readthedocs/html
     if rtd_version is not None:
         # Replace {{version}} placeholders
-        replace_substring_in_json('../schema/rdl_schema.json', '{{version}}', rtd_version, output_path='_readthedocs/html/rdl_schema.json')
+        replace_substring_in_json('../schema/rdls_schema.json', '{{version}}', rtd_version, output_path='_readthedocs/html/rdls_schema.json')
     else:
         # Don't replace {{version}} placeholders
-        replace_substring_in_json('../schema/rdl_schema.json', 'https://rdl-standard.readthedocs.io/en/{{version}}', 'https://rdl-standard.readthedocs.io/en/{{version}}', output_path='_readthedocs/html/rdl_schema.json')
+        replace_substring_in_json('../schema/rdls_schema.json', 'https://rdl-standard.readthedocs.io/en/{{version}}', 'https://rdl-standard.readthedocs.io/en/{{version}}', output_path='_readthedocs/html/rdls_schema.json')
      

@@ -44,7 +44,7 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
 * Update the MAJOR.MINOR.PATCH version number in the following files:
   * `docs/conf.py`: update `release`
   * `docs/reference/schema.md`: update the canonical schema URL
-  * `schema/rdl_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
+  * `schema/rdls_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
 * Update the version number and date in `docs/about/changelog.md`
 
 ### Set up a local development environment
@@ -246,7 +246,7 @@ The following files are created by running a build and are not version controlle
 
 #### Configuration
 
-The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdl_schema.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
+The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdls_schema.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
 
 ### Read the Docs
 
