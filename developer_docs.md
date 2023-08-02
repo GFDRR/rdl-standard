@@ -236,7 +236,7 @@ The following files are created by running a build and are not version controlle
 
 #### Configuration
 
-The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdl_schema_0.1.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
+The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdl_schema.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
 
 ### Read the Docs
 
