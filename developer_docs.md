@@ -40,12 +40,24 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
 
 ### Release a new version
 
-* Update the MAJOR.MINOR `version` in `conf.py`.
-* Update the MAJOR.MINOR.PATCH version number in the following files:
+1. Update the MAJOR.MINOR `version` in `conf.py`.
+1. Update the MAJOR.MINOR.PATCH version number in the following files:
   * `docs/conf.py`: update `release`
   * `docs/reference/schema.md`: update the canonical schema URL
   * `schema/rdls_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
-* Update the version number and date in `docs/about/changelog.md`
+1. Update the version number and date in `docs/about/changelog.md`
+
+1. Create a tag. For example:
+
+```bash
+  git tag -a 0__2__0 -m '0.2.0 release'
+```
+
+2. Push the tag:
+
+```bash
+  git push --follow-tags
+```
 
 ### Set up a local development environment
 
