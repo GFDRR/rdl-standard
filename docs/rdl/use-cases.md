@@ -1,29 +1,27 @@
 # Use cases
 
-A **risk analyst** is scoping available risk data for a **disaster risk reduction project**. Searching the **RDL catalog** they can review the available data for the location of interest. They can then interrogate the data easily given the detailed and consistent **metadata** available, to make a decision on whether to directly use it in their analysis or invest in improving it.
+This page provides some use cases for the Risk Data Library Standard, to give examples of its value to different organisations and roles connected with publishing and using risk data. 
 
-***Value***: Reduced time to find and understand existing data.
 
-______________________________________________________________________
+## Risk data publishers
 
-A **development bank** produces public good dashboards to deliver **risk insights** to client governments. The dashboard uses risk data from multiple projects to estimate the **number of assets or population** exposed to risk to assist in prioritising investments. Pulling data via the **RDL API**, many different datasets can be ingested and applied through a single workflow.
+As an academic working in seismic vulnerability research, Alessandro would like to share a new set of flood fragility functions with potential users. As well as publishing his method in a peer-reviewed journal, he creates uploads his dataset to the university's public data catalog, with RDLS metadata to describe the key attributes of the fragility data. Using the RDLS he is able to explicitly link the data back to the bibliographic reference of his published paper. By providing clear metadata, a greater number of users download his dataset, resulting in **greater impact from his research**. 
 
-***Value***: Efficient data pipelines to ingest multiple datasets with confidence in the consistency of data structure and metadata.
 
-______________________________________________________________________
+As a research assistant, Sandi has been tasked with compiling metadata for a large set of national hazard maps produced by her colleagues. They have identified the RDLS as a suitable metadata standard which provides information describing information specific to the hazard processes, not only general geographic information. However, nobody in the team is able to write JSON code. Fortunately, they are able to use the RDLS Conversion and Validation Tool together with the RDLS documentation to complete the spreadsheet template more easily, validate their entries and convert them into JSON standard, to upload their hazard maps to the data catalog.
 
-An **academic research team** needs to demonstrate the impact of a **risk analytics and urban planning project**, by making the data available for others to use. Their dataset are formatted according to the **RDL standards** and published in a data catalogue set up for the project, using the **template implementation** available through the RDL project.
 
-***Value***: The pre-designed open-source deployable solutions can assist a research group achieve impact efficiently.
+As an engineer in a geohazards risk consulting firm, Pete is in charge of delivering a package of final geospatial deliverables to their client, a multi-national development bank. Pete's team has just completed flood and earthquake risk assessments for seven Pacific Island nations. They have been asked to publish the loss data on the World Bank's Risk Data Library and a regional data catalog, and want to make sure potential users can find all the datasets relevant to each country analysis. They use the RDLS to create a metadata file and dataset for each of the seven countries, with each dataset including the hazard, exposure, vulnerability _and_ loss resources so users can find the full data package in future.
 
-______________________________________________________________________
 
-An **insurance industry analyst or model developer** needs to **build a new catastrophe model** or **analyse a new portfolio** to insure in an emerging market, where the company has limited experience and data. They are searching for existing data to support their analysis and find some existing data created by consultants in the development sector, shared via the Risk Data Library Collection of the World Bank Data Catalog, formatted according to the **RDL standards** and available to download and use.
 
-***Value***: The data can be used directly or improved to assess the risk to the new portfolio, and could expedite the placement of insurance cover for vulnerable communities.
+## Risk data users
 
-______________________________________________________________________
+As policy analyst in a humanitarian organisation, who is new to risk information, Tala is looking for a summary of what datasets are available with risk estimates in South East Asia. She executes a search for risk information and finds multiple data catalogs all using the RDLS. She is able to compile the metadata from those catalogs and produce her report on data availability and gap analysis more quickly than expected because all the datasets have consistent metadata that describes risk-specific information.
 
-A **humanitarian organisation** are creating a **disaster risk financing** program to fund, ex-ante, disaster response and recovery and an **anticipatory action** program. They are relying on historical observations to assess the risk to define a suitable risk layered approach and select the correct DRF solutions, and want to improve this method by including probabilistic analysis. Using RDL tools they are able to find datasets and the results of previous risk analysis. Because the datasets are formatted according to the **RDL standards** they are able to quickly understand the contents of the data and whether it is suitable for their use.
 
-***Value***: The data can be improve existing methods in risk financing to make DRF solution more efficient and sustainable.
+As a nature-based solution specialist, Ankit is developing a public good dashboard to assess the value of nature-based solutions in different locations. The dashboard relies on having hazard, exposure and social vulnerability information for a large number of locations around the world. While he can use global datasets, it is better to use national or subnational information where it is available. However, to be efficient the tool needs one workflow to ingest data, so he sets up the tool to use data published using metadata provided using RDLS so his tool can consistently read data from multiple sources via APIs.  
+
+
+As a catastrophe model developer in an insurance company, Samira is building a new catastrophe model for a new client in an emerging insurance market. They are searching for existing data to **validate** their estimation of hazard frequency and severity, and their modeled loss estimates. They search several data catalogs, download the data and interrogate the dataset to understand the detail of hazard intensity units and measures used. Samira comes across datasets provided with RDLS metadata and without having to download the dataset, can very easily see whether the technical approach, hazard processes and intensity measures meet here needs.
+
