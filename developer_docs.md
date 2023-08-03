@@ -98,6 +98,16 @@ pip install --upgrade pip setuptools
 pip install -r requirements.txt
 ```
 
+### Run schema tests on local machine
+
+If your system has not already done so [activate a python environment](#create-and-activate-a-python-virtual-environment), and then [install requirements](#install-requirements).
+
+Run:
+
+```bash
+pytest -rs tests
+```
+
 ### Build the documentation
 
 Sphinx, which builds the documentation, doesn’t watch directories for changes. To regenerate the documentation, start an HTML server, and refresh the browser whenever changes are made, run:
