@@ -61,6 +61,8 @@ You can use either `pyenv` or `python3-venv`:
 
 ##### pyenv
 
+(For Mac OS users.)
+
 1. Install [pyenv](https://github.com/pyenv/pyenv). The [pyenv installer](https://github.com/pyenv/pyenv-installer) is recommended.
 1. Create a virtual environment.
     ```bash
