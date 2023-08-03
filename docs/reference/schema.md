@@ -197,7 +197,7 @@ Schema attributes for an earthquake hazard map related to an occurrence probabil
 
 ## Exposure
 
-The Exposure metadata describes datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure), natural assets and population, used in risk assessment. The Exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset.
+The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset.
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
