@@ -73,5 +73,6 @@ This page lists changes to the Risk Data Library Standard.
 ### Non-normative documentation
 
 - [#111](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
+- [#171](https://github.com/GFDRR/rdl-standard/pull/171) - Updating glossary to add loss components, adjust other entries and remove images from glossary.
 
 ### Other
