@@ -1,21 +1,10 @@
-Code,Title,Source,OpenDefinitionCategory,Domain,Comments
-CC0-1.0,Creative Commons CCZero,https://creativecommons.org/publicdomain/zero/1.0/,"Content,data",Recommended conformant licenses,Dedicate to the Public Domain (all rights waived) 
-PDDL-1.0,Open Data Commons Public Domain Dedication and License,http://opendatacommons.org/licenses/pddl/1.0/,"Data",Recommended conformant licenses,Dedicate to the Public Domain (all rights waived) 
-CC-BY-4.0,Creative Commons Attribution 4.0,https://creativecommons.org/licenses/by/4.0/,"Content,data",Recommended conformant licenses,
-ODC-By-1.0,Open Data Commons Attribution License,https://opendatacommons.org/licenses/by/1-0/,"Data",Recommended conformant licenses,Attribution for data(bases) 
-CC-BY-SA-4.0,Creative Commons Attribution Share-Alike 4.0,https://creativecommons.org/licenses/by-sa/4.0/,"Content,data",Recommended conformant licenses
-ODbL-1.0,Open Data Commons Open Database License,https://opendatacommons.org/licenses/odbl/summary/,"Data",Recommended conformant licenses,Attribution-ShareAlike for data(bases) 
-missing SPDX ID,Data licence Germany – attribution – version 2.0,URL,Data,Other conformant licenses,Non-reusable. For use by Germany government licensors.
-missing SPDX ID,Data licence Germany – Zero – version 2.0,URL,Data,Other conformant licenses,Non-reusable. For use by Germany government licensors.
-missing SPDX ID,Design Science License,URL,Content,Other conformant licenses,Little used. Incompatible with any other license.
-LAL-1.2,Free Art License 1.2,URL,Content,Other conformant licenses,
-LAL-1.3,Free Art License 1.3,URL,Content,Other conformant licenses,
-GFDL-1.1,"GNU Free Documentation License 1.1",URL,Content,Other conformant licenses,Incompatible with any other license. Only conformant if used with no cover texts and no invariant sections.
-GFDL-1.2,"GNU Free Documentation License 1.2",URL,Content,Other conformant licenses,Incompatible with any other license. Only conformant if used with no cover texts and no invariant sections.
-GFDL-1.3,"GNU Free Documentation License 1.3",URL,Content,Other conformant licenses,Incompatible with any other license. Only conformant if used with no cover texts and no invariant sections.
-MirOS,MirOS License,URL,"Code,Content",Other conformant licenses,Little used.
-OGL-Canada-2.0,Open Government Licence Canada 2.0,URL,"Content, Data",Other conformant licenses,"Non-reusable. For use by the Canadian Federal government. Note version 1.0 is not approved as conformant. Note several Canadian provinces and municipalities have developed non-reusable licenses, each with differences from the federal OGL Canada. Some of these are open, as noted on a dedicated page."
-OGDL-Taiwan-1.0,Open Government Data License Taiwan 1.0,URL,Data,Other conformant licenses,"Non-reusable. For use by public sector licensors, governed by Taiwan law."
-OGL-UK-2.0,Open Government Licence United Kingdom 2.0,URL,"Content, Data",Other conformant licenses,Non-reusable. For use by UK government licensors; re-uses of OGL-UK-2.0 material may be released under CC-BY or ODC-BY.
-OGL-UK-3.0,Open Government Licence United Kingdom 3.0,URL,"Content, Data",Other conformant licenses,Non-reusable. For use by UK government licensors; re-uses of OGL-UK-3.0 material may be released under CC-BY or ODC-BY.
-O-UDA-1.0,Open Use of Data Agreement 1.0,URL,Data,Other conformant licenses,Little used.
+Code,Title,Source,OpenDefinitionCategory,Domain
+CC0-1.0,Creative Commons CCZero,https://creativecommons.org/publicdomain/zero/1.0/,"Content,data",Open Definition recommended conformant license
+CC-BY-4.0,Creative Commons Attribution 4.0,https://creativecommons.org/licenses/by/4.0/,"Content,data",Open Definition recommended conformant license
+CC-BY-SA-4.0,Creative Commons Attribution Share-Alike 4.0,https://creativecommons.org/licenses/by-sa/4.0/,"Content,data",Open Definition recommended conformant license
+CC-BY-NC-SA-4.0,Creative Commons Attribution-NonCommercial-Share-Alike 4.0,https://creativecommons.org/licenses/by-nc-sa/4.0/,"Content,data",
+CC BY-ND 4.0,Creative Commons Attribution-NoDerivatives 4.0 International,https://creativecommons.org/licenses/by-nd/4.0/,"Content,data",
+CC BY-NC-ND 4.0,Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International,https://creativecommons.org/licenses/by-nc-nd/4.0/,"Content,data",
+ODbL-1.0,Open Data Commons Open Database License,https://opendatacommons.org/licenses/odbl/summary/,"Data",Open Definition recommended conformant license
+ODC-By-1.0,Open Data Commons Attribution License,https://opendatacommons.org/licenses/by/1-0/,"Data",Open Definition recommended conformant license
+PDDL-1.0,Open Data Commons Public Domain Dedication and License,http://opendatacommons.org/licenses/pddl/1.0/,"Data",Open Definition recommended conformant license
