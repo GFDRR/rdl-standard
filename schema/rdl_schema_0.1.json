@@ -640,7 +640,7 @@
       "properties": {
         "loss": {
           "title": "Loss dataset metadata",
-          "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurence of one or more hazards.",
+          "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
           "required": [
             "hazard_type",
             "cost",
@@ -851,7 +851,7 @@
         "format": {
           "title": "Format",
           "type": "string",
-          "description": "A human-readable descripton of the file format of the resource, taken from the open [data formats codelist]((https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#data_formats).",
+          "description": "A human-readable description of the file format of the resource, taken from the open [data formats codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#data_formats).",
           "codelist": "data_formats.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1373,7 +1373,7 @@
         "gazetteerEntries": {
           "title": "Gazetteer entries",
           "type": "array",
-          "description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe subnational coverage. Use of ISO 3166-2 is recommended.",
+          "description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe sub-national coverage. Use of ISO 3166-2 is recommended.",
           "items": {
             "$ref": "#/$defs/Gazetteer_entry"
           },
@@ -1708,8 +1708,8 @@
           "openCodelist": false,
           "enum": [
             "poisson",
-            "negativeBinomial",
-            "userDefined"
+            "negative_binomial",
+            "user_defined"
           ]
         },
         "seasonality": {
@@ -1720,7 +1720,7 @@
           "openCodelist": false,
           "enum": [
             "uniform",
-            "userDefined"
+            "user_defined"
           ]
         },
         "calculation_method": {
@@ -1812,12 +1812,12 @@
         "occurrence": {
           "title": "Occurrence",
           "type": "object",
-          "description": "The frequency or likelihood of the event happening within a given timeframe.",
+          "description": "The frequency or likelihood of the event happening within a given time frame.",
           "properties": {
             "probabilistic": {
               "title": "Probabilistic frequency",
               "type": "object",
-              "description": "How often the event is expected to occur. Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
+              "description": "How often the event is expected to occur. Can be return period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
               "$ref": "#/$defs/Probabilistic",
               "minProperties": 1
             },
@@ -1827,7 +1827,7 @@
               "description": "The period of time over which the event occurred and the associated return period (if any). You should only use this object when `event_set.analysis_type` = 'empirical'",
               "properties": {
                 "temporal": {
-                  "title": "Temporal occurance",
+                  "title": "Temporal occurrence",
                   "type": "object",
                   "description": "The period of time over which the event occurred.",
                   "$ref": "#/$defs/Period",
@@ -1856,7 +1856,7 @@
                 "thresholds": {
                   "title": "Index thresholds",
                   "type": "array",
-                  "description": "The thresholds used to classify the index value. Each threshold should be a seperate item. Where thresholds are identified by both a number and a descriptor, include the descriptor in brackets, e.g. 1 (low).",
+                  "description": "The thresholds used to classify the index value. Each threshold should be a separate item. Where thresholds are identified by both a number and a descriptor, include the descriptor in brackets, e.g. 1 (low).",
                   "items": {
                     "type": "string",
                     "minLength": 1
@@ -1939,7 +1939,7 @@
         },
         "type": {
           "title": "Cost type",
-          "description": "The type of the cost, from the closed [cost type codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#cost_type).",
+          "description": "The type of the cost, from the closed [cost type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#cost_type).",
           "type": "string",
           "codelist": "cost_type.csv",
           "openCodelist": false,
@@ -1953,7 +1953,7 @@
         "unit": {
           "title": "Cost unit",
           "type": "string",
-          "description": "The unit in which the cost is specified, from the closed [currency codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#currency).",
+          "description": "The unit in which the cost is specified, from the closed [currency codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#currency).",
           "codelist": "currency.csv",
           "openCodelist": false,
           "enum": [
@@ -2267,7 +2267,7 @@
     "Probabilistic": {
       "title": "Probabilistic frequency",
       "type": "object",
-      "description": "How often the event is expected to occur. Can be Return Period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. This object must only be used if `event_set.analysis_type` = 'probabilistic'",
+      "description": "How often the event is expected to occur. Can be return period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. This object must only be used if `event_set.analysis_type` = 'probabilistic'",
       "properties": {
         "return_period": {
           "title": "Return period",
@@ -2294,7 +2294,7 @@
               "type": "number",
               "minimum": 0,
               "maximum": 1,
-              "description": "The probability of the event occurring during the time period specified in `.span`, expressed as a number between 0 and 1, e.g. 0.1 represents a 10% likelihood of the event occuring."
+              "description": "The probability of the event occurring during the time period specified in `.span`, expressed as a number between 0 and 1, e.g. 0.1 represents a 10% likelihood of the event occurring."
             },
             "span": {
               "title": "Probability span",
