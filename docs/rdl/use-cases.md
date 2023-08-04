@@ -12,7 +12,7 @@ As an engineer in a geohazards risk consulting firm, Pete is in charge of delive
 
 ## Risk data users
 
-As policy analyst in a humanitarian organisation, who is new to risk information, Tala is looking for a summary of what datasets are available with risk estimates in South East Asia. She executes a search for risk information and finds multiple data catalogs all using the RDLS. She is able to compile the metadata from those catalogs and produce her report on data availability and gap analysis more quickly than expected because all the datasets have consistent metadata that describes risk-specific information.
+As policy analyst in a humanitarian organisation, who is new to risk information, Tala is looking for a summary of what datasets are available with risk estimates for South East Asia. She executes a search for risk information and finds multiple data catalogs all using the RDLS. She is able to compile the metadata from those catalogs and produce her report on data availability and gap analysis more quickly than expected because all the datasets have consistent metadata that describes risk-specific information.
 
 As a nature-based solution specialist, Ankit is developing a public good dashboard to assess the value of nature-based solutions in different locations. The dashboard relies on having hazard, exposure and social vulnerability information for a large number of locations around the world. While he can use global datasets, it is better to use national or subnational information where it is available. However, to be efficient the tool needs one workflow to ingest data, so he sets up the tool to use data published using metadata provided using RDLS so his tool can consistently read data from multiple sources via APIs.
 
