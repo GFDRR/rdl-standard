@@ -20,21 +20,17 @@ An impact or risk model (also damage model; loss model) is used to combine hazar
 
 Source: Adapted from [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/terminology/disaster-risk-assessment)
 
-
-
 ## Disaster risk information (risk data)
 
 Comprehensive information on all dimensions of disaster risk, including hazards, exposure, vulnerability and capacity, related to persons, communities, organizations and countries and their assets. Disaster risk information includes all studies, information and mapping required to understand the disaster risk drivers and underlying risk factors.
 
 Source: [UNDRR Terminology (Disaster Risk Information)](https://www.undrr.org/terminology/disaster-risk-information)
 
-
 ## Disaster risk management
 
 Disaster risk management is the application of disaster risk reduction policies and strategies to prevent new disaster risk, reduce existing disaster risk and manage residual risk, contributing to the strengthening of resilience and reduction of disaster losses.
 
 Source: [UNDRR Terminology (Disaster Risk Management)](https://www.undrr.org/terminology/disaster-risk-management)
-
 
 ## Hazard
 
@@ -44,13 +40,11 @@ Hazards can have a natural or anthropogenic origin. Natural hazards are associat
 
 Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
 
-
 ## Exposure
 
 The situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas. Measures of exposure can include the number of people or types of assets in an area. These can be combined with the specific vulnerability and capacity of the exposed elements to any particular hazard to estimate the quantitative risks associated with that hazard in the area of interest
 
 Source: [UNDRR Terminology (Exposure)](https://www.undrr.org/terminology/exposure)
-
 
 ## Vulnerability
 
@@ -59,21 +53,22 @@ Vulnerability is the conditions determined by physical, social, economic and env
 Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vulnerability)
 
 ## Disaster Impact
+
 The effect of a disaster on people, buildings and society is generally referred to as the impact. The impact of disasters can generate losses, but also gains for some people and economies; for instance, the demand for construction materials and expertise following a disaster. It is, therefore, necessary to think of impact in terms of both gains and losses.
 
 Source: Adapted from ([UNDRR](https://www.undrr.org/terminology/disaster))
 
-
 ## Loss
-Losses are a measure of this impact in the form of damage or destruction caused by a disaster (observed or modelled). This measure may be expressed as monetary (e.g. cost of reconstruction) or non-monetary (e.g. hectares of crop loss, loss of life). Losses can be direct or indirect. 
 
-The total economic impact consists of a monetary estimate of both direct disaster loss and indirect disaster loss. _Direct disaster losses_ refer to directly quantifiable losses such as the number of people killed and the damage to buildings, infrastructure and natural resources. _Indirect disaster losses_ refer to wider and longer-term impacts arising from the direct disruptions to the flow of goods and services as a result of a disaster. This includes declines in output or revenue, increases in food prices, and other longer-term social and economic effects on education, health, productivity, the well-being of people or the macroeconomy. 
+Losses are a measure of this impact in the form of damage or destruction caused by a disaster (observed or modelled). This measure may be expressed as monetary (e.g. cost of reconstruction) or non-monetary (e.g. hectares of crop loss, loss of life). Losses can be direct or indirect.
+
+The total economic impact consists of a monetary estimate of both direct disaster loss and indirect disaster loss. _Direct disaster losses_ refer to directly quantifiable losses such as the number of people killed and the damage to buildings, infrastructure and natural resources. _Indirect disaster losses_ refer to wider and longer-term impacts arising from the direct disruptions to the flow of goods and services as a result of a disaster. This includes declines in output or revenue, increases in food prices, and other longer-term social and economic effects on education, health, productivity, the well-being of people or the macroeconomy.
 
 Source: Adapted from ([UNDRR](https://www.preventionweb.net/understanding-disaster-risk/key-concepts/direct-indirect-losses))
 and [UNDRR Terminology (Economic Loss)](https://www.undrr.org/terminology/economic-loss)
 
-
 ## People affected
+
 People who have been exposed and impacted, either directly or indirectly, by a hazardous event. Directly affected are those who have suffered injury, illness or other health effects; who were evacuated, displaced, relocated or have suffered direct damage to their livelihoods, economic, physical, social, cultural and environmental assets. Indirectly affected are people who have suffered consequences, other than or in addition to direct effects, over time, due to disruption or changes in the economy, critical infrastructure, basic services, commerce or work, or social, health and psychological consequences.
 
 Source: [UNDRR Terminology (Affected)](https://www.undrr.org/terminology/affected)
