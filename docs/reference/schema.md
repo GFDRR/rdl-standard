@@ -10,14 +10,14 @@ This page presents the schema in tables with additional information in paragraph
    If any conflicts are found between the text on this page and the text within the schema, the text within the schema takes precedence.
 ```
 
-The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#resource) and four risk-specific components:
+The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#resource) and four components to document data used in risk analysis:
 
-- [Hazard](#hazard): main hazard type, specific process, trigger of the hazard, occurrence frequency of event, intensity unit to measure the process and analytical method.
-- [Exposure](#exposure): asset category, specific taxonomy, cost type and value.
-- [Vulnerability](#vulnerability): model that links hazard intensity and exposure classification to measure of impact over the total exposed value.
-- [Loss](#loss): modelled damage and losses produced in a risk assessment as a function of hazard, exposure and vulnerability components.
+- [Hazard](#hazard): metadata to describe hazard data, including the main hazard type and process, triggering hazard and process, hazard intensity units, occurrence frequency of individual events, multiple hazard footprints per event, historical and stochastic events sets, and analytical methods used.
+- [Exposure](#exposure): metadata describing exposure data, including asset category (including human, built environment assets and natural assets), taxonomy scheme used to describe characteristics of assets and people, cost type, location and geometry types.
+- [Vulnerability](#vulnerability): metadata to describe vulnerability and fragility relationships and indexes, including type of impact, type of exposure, hazard intensity measure and approach used to develop the relationship. This component uses attributes consistent with the hazard, exposure and loss components.
+- [Loss](#loss): metadata describing monetary and non-monetary damage and losses produced in a risk assessment. This includes fields to link losses to the hazard, exposure, and vulnerability components used in the analysis. The loss component enables description of common impact and risk metrics for direct and indirect impacts, for individual historical and hypothetical events, and for large events sets in year loss tables and event loss tables.
 
-For definitions of these terms, please see the [Glossary](../glossary.md).
+For general definitions of hazard, exposure, vulnerability and loss, please see the [Glossary](../glossary.md).
 
 For fields that reference [sub-schemas](#sub-schemas), a link is provided to a table with details of the sub-schema. To see how the fields and sub-schemas fit together, consult the [schema browser](browser.md).
 
@@ -38,21 +38,18 @@ The diagram below shows the core relationships between schema components, and th
       class Hazard{
         -Type, Process
         -Trigger
-        -Frequency
-        -Intensity unit
+        -Frequency, Intensity
         -Analytical method
           }
       class Exposure{
         -Asset category
-        -Occupancy
         -Taxonomy
         -Cost type
       }
       class Vulnerability{
         -Hazard process
         -Exposure taxonomy
-        -Analytical method 
-        -Applicability
+        -Analytical method
       }
       class Loss{
         -Hazard process
@@ -88,7 +85,9 @@ addtargets:
 
 ## Hazard
 
-The hazard schema stores data about the intensity and occurrence probability of physical hazard phenomena such as floods, earthquakes, wildfires or others. The specific hazard process can be defined and measured with a specific intensity unit. For example, earthquake hazard may be represented as ground shaking, liquefaction or ground displacement.
+The hazard component describes metadata about modeled natural hazards data, including hazard intensity footprints of historical or hypothetical events, return period hazard maps, hazard or susceptibility index, and stochastic event sets. The metadata defines the hazard type, physical process and intensity measures used in the dataset. Multiple hazards and processes (including cascading events) can be defined for each hazard, enabling users to describe dataset that contain, for example, earthquake ground shaking and liquefaction, and tsunami inundation triggered by the earthquake.
+
+The hazard component uses hazard_type, process_type and intensity_measure consistent with the vulnerability and loss component’s of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
 ```{eval-rst}
  .. mermaid::
@@ -133,16 +132,6 @@ The hazard schema stores data about the intensity and occurrence probability of 
         Uncertainty
       }
 ```
-
-The hazard schema specifies which type of analysis and data methodology has generated the dataset. It supports either simulated probabilistic scenarios or empirical observations. If the dataset has been produced for a specific location, such a city, the name of the location can be included.
-
-When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 2009-10-01 (time start) to 2009-10-03 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
-
-When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100) The probability of occurrence is usually calculated on the basis of a reference period that provides observations: this period can be specified by start date, end date and time span. For example, an analysis of earthquake frequency based on seismic observations from 1934 (occurrence time start) to 2001 (occurrence time end), for a total count of 66 years (occurrence time span).
-
-The schema distinguishes between the hazard and process represented, and the hazard and process identified as the cause, or con-cause for the manifestation of the represented hazard. For example, a dataset representing a landslide hazard that is triggered by an earthquake will have Hazard type: Landslide; Trigger hazard type: Earthquake. The unit of measure refers to the represented hazard and process. A description can be added to cover additional information not included in the schema.
-
-The hazard dataset could include one or more footprints for the same event, where each is one possible realisation (i.e. one footprint could represent minimum, another footprint the average and another one the maximum). The event uncertainty can be represented explicitly, through the inclusion of multiple footprints per event.
 
 `````{tab-set}
 
@@ -208,7 +197,9 @@ Schema attributes for an earthquake hazard map related to an occurrence probabil
 
 ## Exposure
 
-The exposure schema covers a wide variety of data describing structural, infrastructural and environmental asset, population, and socio-economic descriptors, each with relevant attributes for assessing risk from multiple hazards. The schema was developed based on [GEM Taxonomy 2.0](https://wiki.openstreetmap.org/wiki/GED4ALL) to accommodate the most important spatial features commonly employed in risk analysis to identify and estimate exposed value.
+The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset.
+
+The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
 ```{eval-rst}
  .. mermaid::
@@ -229,13 +220,6 @@ The exposure schema covers a wide variety of data describing structural, infrast
         Value unit
       }
 ```
-
-The main features of an exposure dataset are specified by the **exposure model** attributes.
-Each exposure model includes one or more **assets**. Each asset could represent a single asset (e.g. one building) or a collection of assets (e.g aggregated buildings in an area).
-The exposure schema covers 4 categories and 11 occupancy types for consistent classification of assets across schema. The taxonomy source specifies the taxonomy string used to identify individual asset features within a dataset. Occupancy can be optionally assigned for night-time or day-time, e.g. to discern resident population from daily commuters.
-
-Within one exposure model (e.g. one geospatial layer) there can be one or more **cost type** associated with damage to assets. For example, the cost of the building structure by square meter and the cost of the contents of a single building. The attributes are named accordingly within the data, e.g. "Cost_structure" and "Cost_content".
-Additional **tags** attributes can be associated with an asset to link any information not specified in the exposure standard.
 
 `````{tab-set}
 
@@ -286,15 +270,9 @@ Two exposure datasets are shown together in the example: building footprints pol
 
 ## Vulnerability
 
-The vulnerability schema includes physical fragility and vulnerability relationships in relation to specific hazards or for multi-hazard (combination of individual hazards). A wide range of model types and parameters can describe vulnerability, for this reason there are many possible variables accounted by the Vulnerability schema. But only a part of them will be required to describe one specific model.
-The schema distinguishes key information describing the vulnerability model, including:
+The vulnerability component describes metadata for datasets that detail fragility, damage-to-loss and vulnerability relationships and indexes for physical damage and social vulnerability that are used in risk analysis. It contains key information including the type of function, intensity and impact metrics used, which asset types or population groups it applies to, how it was developed and for what locations.
 
-- function type (i.e fragility, vulnerability, damage-to-loss)
-- countries the function was developed for, measured in terms of to geographic relevance
-- development approach (empirical, analytical, judgement, hybrid, code-based)
-- mathematical model used (including exponential, cumulative lognormal/normal)
-- the intensity measure and asset type the function relates to
-- loss parameter / engineering demand parameter values
+The vulnerability component uses hazard_type, process_type and intensity_measure consistent with the hazard and loss components, exposure information consistent with the exposure and loss components. Spatial reference and location information are described using existing external standards.
 
 ```{eval-rst}
  .. mermaid::
@@ -317,13 +295,6 @@ The schema distinguishes key information describing the vulnerability model, inc
       }
 ```
 
-The **model** attributes specify which hazard types and exposure categories the vulnerability relationship applies to.
-Other attributes describe the function type and the analytical approach adopted, and add notes on the model applicability in terms of location and scale.
-
-The **specifics** attributes add more optional details.
-
-The **additional** attributes cover more specific information that helps to understand the analysis which generated the function.
-
 `````{tab-set}
 
 ````{tab-item} Schema
@@ -342,7 +313,8 @@ addtargets:
 
 ## Loss
 
-The loss schema enables to store information about hazard impact over exposure as a function of vulnerability. Loss datasets are directly linked to the hazard, exposure, and vulnerability datasets which were used to model losses. When no vulnerability model is applied, the potential loss is estimated as the sum of all exposed value. Losses can be expressed in form of map or in form of a curve, both sharing the same attributes and metrics.
+The loss component provides metadata describing data generated in risk assessments, i.e., modelled impacts and losses for single historical events or hypothetical scenarios and risk estimates from analysis of large event sets. The data can include monetary and non-monetary, and direct or indirect, impacts and losses.
+Loss datasets can be explicitly linked to the exposure, hazard, and vulnerability datasets used in the analysis. This component uses descriptions of assets, hazards and impact types consistent with all other components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
 ```{eval-rst}
  .. mermaid::
@@ -372,14 +344,6 @@ The loss schema enables to store information about hazard impact over exposure a
         Loss unit
       }
 ```
-
-The main attributes of the **loss model** describe the hazard and process for which the loss are calculated, the method of calculation (to discern empirical events from simulated scenarios) and the category of asset on which losses insist. The schema includes the direct links to the original dataset of hazard, exposure, and vulnerability that were used to calculate the loss.
-
-When the scenario modelled refers to a specific period of time, this can be specified in terms of dates, period span and reference year. For example, an observed flood event that occurred from 1.10.2009 (time start) to 3.10.2009 (time end), spanning over 3 days (time span). When precise time collocation is unknown or not applicable, a general reference date such as "2009" is used to identify events (time year). This is also useful to specify future scenario, e.g. time year: 2050.
-
-When instead the hazard scenario is represented in probabilistic terms, the occurrence probability (frequency distribution) of hazard can be expressed in different ways. The most common way to communicate this is the "return period", expressed as the number of years after which a given hazard intensity could occur again: RP 100 indicates that that event has a probability of once in 100 years. This attribute can indicate individual layer frequency (RP100) or a range of frequencies for a collection of layers (RP10-100).
-
-Additional attributes are specific to loss, describing the type of impact, the type of loss, the loss metric and the unit used to measure it.
 
 `````{tab-set}
 
