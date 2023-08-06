@@ -63,6 +63,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#121](https://github.com/GFDRR/rdl-standard/pull/121) - Create 'frequency_distribution.csv' and 'seasonality.csv'
 - [#130](https://github.com/GFDRR/rdl-standard/pull/130) - 'hazard_type.csv' add descriptions and hazard category which aligns with UNDRR Hazard taxonomy, and update codes from abbreviations to human-readable words.
 - [#134](https://github.com/GFDRR/rdl-standard/pull/134) - 'risk_data_type.csv', replace codes with lower-case versions.
+- [#143](https://github.com/GFDRR/rdl-standard/pull/143) - Update 'license.csv' to include Open Definition conformant licences and those listed as options on WB Data Catalog.
 - [#164](https://github.com/GFDRR/rdl-standard/pull/164) - replace camelCase codes with snake_case codes in 'frequency_distribution.csv' and 'seasonality.csv'
 
 ### Normative documentation
@@ -72,9 +73,11 @@ This page lists changes to the Risk Data Library Standard.
   - Use jsonschema Sphinx directive to generate schema reference tables from schema.
   - Restructure reference documentation.
   - Update `manage.py pre-commmit` to generate sub-schema reference.
+- [#146](https://github.com/GFDRR/rdl-standard/pull/146) - Update introduction to the RDLS reference section.
 
 ### Non-normative documentation
 
 - [#111](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
+- [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
 
 ### Other
