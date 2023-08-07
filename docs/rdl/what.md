@@ -26,7 +26,7 @@ The schema specifies a title, description and data type for each field. The sche
 
 For example, the `risk_data_type` field is defined as follows:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 include: risk_data_type
 ---
