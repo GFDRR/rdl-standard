@@ -204,7 +204,7 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 ```{eval-rst}
  .. mermaid::
 
-  classDiagramtaxonomies
+  classDiagram
       Model -- Asset1
       Model -- Asset2
       Model: Category
