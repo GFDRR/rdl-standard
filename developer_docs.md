@@ -12,6 +12,7 @@ This section contains the following how-to guides:
 
 * [Propose changes](#propose-changes)
 * [Deploy changes](#deploy-changes)
+* [Release a new version](#release-a-new-version)
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
@@ -36,6 +37,27 @@ Once the pull request is merged, the updated documentation is available to previ
 ### Deploy changes
 
 To deploy the `dev` branch to the live documentation site, [create a pull request](https://github.com/GFDRR/rdl-standard/compare) to merge the `dev` branch into the `main` branch. Once the pull request is merged, the changes are automatically deployed to the live site at [https://rdl-standard.readthedocs.io/en/](https://rdl-standard.readthedocs.io/en/).
+
+### Release a new version
+
+1. Update the MAJOR.MINOR `version` in `conf.py`.
+1. Update the MAJOR.MINOR.PATCH version number in the following files:
+  * `docs/conf.py`: update `release`
+  * `docs/reference/schema.md`: update the canonical schema URL
+  * `schema/rdls_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
+1. Update the version number and date in `docs/about/changelog.md`
+
+1. Create a tag. For example:
+
+```bash
+  git tag -a 0__2__0 -m '0.2.0 release'
+```
+
+2. Push the tag:
+
+```bash
+  git push --follow-tags
+```
 
 ### Set up a local development environment
 
@@ -236,7 +258,7 @@ The following files are created by running a build and are not version controlle
 
 #### Configuration
 
-The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdl_schema_0.1.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
+The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdls_schema.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
 
 ### Read the Docs
 
