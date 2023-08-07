@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "http://riskdatalibrary.org/schemas/rdl_schema_v0_1.json",
+  "$id": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
   "description": "A risk dataset described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
@@ -150,6 +150,34 @@
       "type": "string",
       "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
       "format": "duration"
+    },
+    "links": {
+      "title": "Links",
+      "description": "Links to related resources. The first item in the links array must be a link to the canonical JSON schema that describes the structure of the data.",
+      "type": "array",
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/Link",
+          "properties": {
+            "href": {
+              "const": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json"
+            },
+            "rel": {
+              "const": "describedby"
+            }
+          }
+        }
+      ],
+      "items": {
+        "$ref": "#/$defs/Link",
+        "properties": {
+          "rel": {
+            "pattern": "^(?!(describedby))"
+          }
+        }
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   },
   "anyOf": [
@@ -2388,6 +2416,30 @@
           "format": "iri"
         }
       },
+      "minProperties": 1
+    },
+    "Link": {
+      "title": "Link",
+      "description": "A link to a related resource.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "Link target",
+          "description": "The URL of this related resource.",
+          "format": "iri",
+          "type": "string"
+        },
+        "rel": {
+          "title": "Link relation type",
+          "description": "The relationship with this related resource, from the [IANA Link Relationship Types](https://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).  The 'describedby' code must only be used in the first item in the `links` array to link to the schema that describes the structure of the data.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "href",
+        "rel"
+      ],
       "minProperties": 1
     }
   },

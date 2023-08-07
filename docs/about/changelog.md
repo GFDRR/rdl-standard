@@ -2,7 +2,7 @@
 
 This page lists changes to the Risk Data Library Standard.
 
-## YYYY-MM-DD
+## 0.2.0 - YYYY-MM-DD
 
 ### Schema
 
@@ -50,8 +50,8 @@ This page lists changes to the Risk Data Library Standard.
   - Replace `loss` object with `Loss` definition.
   - Removes `time_start`, `time_end`, `time_year` from `loss`.
   - Removes `loss_loss_type`, `loss_metric` from `$defs`.
-- [#127](https://github.com/GFDRR/rdl-standard/pull/127) - Inline `Exposure`, `Hazard_metadata`, `vulnerability`, `Vulnerability_function`, `Fragility_function`, `Occurrence`, `Damage_to_loss_function`, `Engineering_demand_function`, `Probability`, `Empirical`, `Deterministic` and `Loss` and rearrange `$defs`
-- [#127](https://github.com/GFDRR/rdl-standard/pull/127) - Inline `Exposure`, `Hazard_metadata`, `vulnerability`, `Vulnerability_function`, `Fragility_function`, `Occurence`, `Damage_to_loss_function`, `Engineering_demand_function`, `Probability`, `Empirical`, `Deterministic` and `Loss` and rearrange `$defs`
+- [#127](https://github.com/GFDRR/rdl-standard/pull/127) - Inline `Exposure`, `Hazard_metadata`, `vulnerability`, `Vulnerability_function`, `Fragility_function`, `Occurence`, `Damage_to_loss_function`, `Engineering_demand_function`, `Probability`, `Empirical`, `Deterministic` and `Loss` and rearrange `$defs`.
+- [#168](https://github.com/GFDRR/rdl-standard/pull/168) - Add version number and `links` field.
 - [#163](https://github.com/GFDRR/rdl-standard/pull/163) - fix typos within rdl_schema_0.1.json
 
 ### Codelists
