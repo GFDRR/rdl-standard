@@ -140,7 +140,7 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /anyOf/0/properties/hazard
-collapse: event_sets
+collapse: event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
 addtargets:
 ---
 ```
