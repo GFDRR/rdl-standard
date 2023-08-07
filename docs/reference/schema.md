@@ -139,7 +139,7 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/0/properties/hazard
+pointer: /properties/hazard
 collapse: event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
 addtargets:
 ---
@@ -227,7 +227,7 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/1/properties/exposure
+pointer: /properties/exposure
 collapse: cost
 addtargets:
 ---
@@ -301,7 +301,7 @@ The vulnerability component uses hazard_type, process_type and intensity_measure
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/2/properties/vulnerability
+pointer: /properties/vulnerability
 collapse: cost,impact,spatial,se_category
 addtargets:
 ---
@@ -351,7 +351,7 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/3/properties/loss
+pointer: /properties/loss
 collapse: cost,impact
 addtargets:
 ---
