@@ -11,23 +11,23 @@ This page provides the following documentation for developers of the Risk Data L
 This section contains the following how-to guides:
 
 * [Propose changes](#propose-changes)
+* [Set up a local development environment](#set-up-a-local-development-environment)
+* [Resolve check failures](#resolve-check-failures)
+* [Build the documentation](#build-the-documentation)
 * [Deploy changes](#deploy-changes)
 * [Release a new version](#release-a-new-version)
-* [Set up a local development environment](#set-up-a-local-development-environment)
-* [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
-* [Resolve check failures](#resolve-check-failures)
 
 ### Propose changes
 
-The preferred approach for making changes to the standard is to use a [local development environment](#set-up-a-local-development-environment) so that you can resolve build errors and test failures before committing your changes. Making repeated commits whilst trying to resolve issues can result in a messy commit history, which makes reviewing pull requests more complicated. Alternatively, if your change is simple, you can use the [GitHub web editor](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
+Before completing the steps below, you first need to [set up a local development environment](#set-up-a-local-development-environment) so that you can resolve build errors and test failures before pushing your changes to GitHub. Alternatively, if your change is simple, you can use the [GitHub web editor](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files) and skip the running the pre-commit script, running the tests and building the documentation locally.
 
 1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
 1. Create a branch from the `dev` branch.
 1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
-1. Run `./manage.py pre-commit`. (This step assumes you are working within your [local development environment](#set-up-a-local-development-environment)).
-1. Run `pytest` and [resolve any errors](#resolve-check-failures). (This step assumes you are working within your [local development environment](#set-up-a-local-development-environment))
-1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation). (This step assumes you are working within your [local development environment](#set-up-a-local-development-environment)).
+1. Run the pre-commit script (`./manage.py pre-commit`) to update reference documentation and format markdown files.
+1. Run the tests (`pytest`) and [resolve any errors](#resolve-check-failures).
+1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation).
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at \[https://rdl-standard.readthedocs.io/en/{branch name}\](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
 
@@ -35,31 +35,6 @@ The preferred approach for making changes to the standard is to use a [local dev
 - Reference the issue number in the description.
 
 Once the pull request is merged, the updated documentation is available to preview at [https://rdl-standard.readthedocs.io/en/dev](https://rdl-standard.readthedocs.io/en/dev).
-
-### Deploy changes
-
-To deploy the `dev` branch to the live documentation site, [create a pull request](https://github.com/GFDRR/rdl-standard/compare) to merge the `dev` branch into the `main` branch. Once the pull request is merged, the changes are automatically deployed to the live site at [https://rdl-standard.readthedocs.io/en/](https://rdl-standard.readthedocs.io/en/).
-
-### Release a new version
-
-1. Update the MAJOR.MINOR `version` in `conf.py`.
-1. Update the MAJOR.MINOR.PATCH version number in the following files:
-  * `docs/conf.py`: update `release`
-  * `docs/reference/schema.md`: update the canonical schema URL
-  * `schema/rdls_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
-1. Update the version number and date in `docs/about/changelog.md`
-
-1. Create a tag. For example:
-
-```bash
-  git tag -a 0__2__0 -m '0.2.0 release'
-```
-
-2. Push the tag:
-
-```bash
-  git push --follow-tags
-```
 
 ### Set up a local development environment
 
@@ -81,7 +56,7 @@ git submodule update
 
 #### Create and activate a Python virtual environment
 
-The following instructions assume you have python installed on your machine.
+The following instructions assume you have [Python 3](https://www.python.org/downloads/) installed on your machine.
 
 You can use either `pyenv` or `python3-venv`:
 
@@ -103,7 +78,7 @@ You can use either `pyenv` or `python3-venv`:
 
 ##### python3-venv
 
-If you are using Python 3.3 or newer, the `venv` is included in the Python standard library and requires no additional installation.
+If you are using Python 3.3 or newer, `venv` is included in the standard Python installation.
 
 1. Install [python3-venv](https://docs.python.org/3/library/venv.html).
     a. Linux users
@@ -144,40 +119,6 @@ pip install --upgrade pip setuptools
 pip install -r requirements.txt
 ```
 
-### Build the documentation
-
-Sphinx, which builds the documentation, doesn’t watch directories for changes. To regenerate the documentation, start an HTML server, and refresh the browser whenever changes are made, run:
-
-```bash
-cd docs
-make autobuild
-```
-
-Alternatively, build the documentation and view it using a local web server:
-
-```bash
-cd docs
-make html
-python -m http.server --directory _readthedocs/html
-```
-
-### Update requirements
-
-1. Install `pip-tools`.
-   ```bash
-   pip install pip-tools
-   ```
-1. Edit `requirements.in`.
-1. Update `requirements.txt`.
-   ```bash
-   pip-compile
-   ```
-1. Install requirements.
-   ```bash
-   pip-sync requirements.txt
-   ```
-1. Commit your changes.
-
 ### Resolve check failures
 
 #### mdformat
@@ -211,6 +152,67 @@ Review the warnings to identify the invalid JSON files and correct the errors.
 ##### test_schema.py (all tests)
 
 Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
+
+### Build the documentation
+
+Sphinx, which builds the documentation, doesn’t watch directories for changes. To regenerate the documentation, start an HTML server, and refresh the browser whenever changes are made, run:
+
+```bash
+cd docs
+make autobuild
+```
+
+Alternatively, build the documentation and view it using a local web server:
+
+```bash
+cd docs
+make html
+python -m http.server --directory _readthedocs/html
+```
+
+### Deploy changes
+
+To deploy the `dev` branch to the live documentation site, [create a pull request](https://github.com/GFDRR/rdl-standard/compare) to merge the `dev` branch into the `main` branch. Once the pull request is merged, the changes are automatically deployed to the live site at [https://rdl-standard.readthedocs.io/en/](https://rdl-standard.readthedocs.io/en/).
+
+### Release a new version
+
+1. Update the MAJOR.MINOR `version` in `conf.py`.
+1. Update the MAJOR.MINOR.PATCH version number in the following files:
+  * `docs/conf.py`: update `release`
+  * `docs/reference/schema.md`: update the canonical schema URL
+  * `schema/rdls_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
+1. Update the version number and date in `docs/about/changelog.md`
+
+1. Create a tag. For example:
+
+```bash
+  git tag -a 0__2__0 -m '0.2.0 release'
+```
+
+2. Push the tag:
+
+```bash
+  git push --follow-tags
+```
+
+
+
+### Update requirements
+
+1. Install `pip-tools`.
+   ```bash
+   pip install pip-tools
+   ```
+1. Edit `requirements.in`.
+1. Update `requirements.txt`.
+   ```bash
+   pip-compile
+   ```
+1. Install requirements.
+   ```bash
+   pip-sync requirements.txt
+   ```
+1. Commit your changes.
 
 ## Style guides
 
