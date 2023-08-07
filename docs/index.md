@@ -4,7 +4,7 @@ The Risk Data Library Standard (RDLS) is an **open metadata standard** for descr
 
 The purpose of the RDLS is to enable risk reduction and resilience building by making it easier for risk data publishers to describe their datasets and for risk data users to identify datasets to use in their work. Many different organisations produce or use risk datasets, including humanitarian organisations, insurance companies, academic institutions and multi-lateral development banks.
 
-The key feature of the RDLS is the metadata standard for describing **hazard**, **exposure**, **vulnerability**, and **loss** datasets. In addition to the metadata standard, the RDLS provides guidance on packaging and formatting for risk datasets, although it does not seek to standardise risk datasets themselves.
+The key feature of the RDLS is the metadata standard for describing **hazard**, **exposure**, **vulnerability**, and **loss** datasets. In addition to the metadata standard, the RDLS provides guidance on packaging and formatting for risk datasets, although it does not seek to standardise the contents of risk datasets.
 
 The RDLS is curated by the [Global Facility for Disaster Reduction and Recovery](https://www.gfdrr.org) and is intended for use by anyone involved in publishing or using disaster risk data. It is an open standard and community contributions are welcome.
 
