@@ -29,10 +29,17 @@ validate_array_items_kwargs = {
 }
 
 def validate_metadata_presence_allow_missing(pointer):
-    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf')
+    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf') or pointer.startswith('/properties/links')
 
 validate_metadata_presence_kwargs = {
     'allow_missing': validate_metadata_presence_allow_missing,
+}
+
+def validate_object_id_allow_missing(pointer):
+    return '/properties/links' in pointer
+
+validate_object_id_kwargs = {
+    'allow_missing': validate_object_id_allow_missing
 }
 
 @pytest.mark.parametrize('path,name,data', schemas)
@@ -58,7 +65,7 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_merge_properties(path, data)
     errors += validate_ref(path, data)
     errors += validate_metadata_presence(path, data, **validate_metadata_presence_kwargs)
-    errors += validate_object_id(path, jsonref.replace_refs(data))
+    errors += validate_object_id(path, jsonref.replace_refs(data), **validate_object_id_kwargs)
     errors += validate_null_type(path, data, no_null=True)
     
     # Here, we don't add to `errors`, in order to not count these warnings as errors.
