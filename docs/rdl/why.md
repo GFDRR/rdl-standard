@@ -1,4 +1,4 @@
-# Use cases
+# Why use the RDLS?
 
 This page provides some use cases for the Risk Data Library Standard (RDLS), to give examples of its value to different organisations and roles connected with publishing and using risk data.
 
