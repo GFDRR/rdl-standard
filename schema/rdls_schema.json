@@ -2393,7 +2393,7 @@
           "title": "Scheme",
           "description": "The scheme or codelist from which the classification code is taken, using the open [classification_scheme](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#classification_scheme) codelist.",
           "type": "string",
-          "codelist": "classificationScheme.csv",
+          "codelist": "classification_scheme.csv",
           "openCodelist": true,
           "minLength": 1
         },
