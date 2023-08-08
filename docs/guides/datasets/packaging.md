@@ -1,4 +1,4 @@
-# Data packaging
+# How to package risk datasets
 
 This section describes common data formats and file types developed during a risk assessment. For each of the hazard, exposure, vulnerability and loss components, it describes possible grouping of multiple files into minimal resources associated with a dataset, which can make it easier to find and download resources of the same type.
 
@@ -18,7 +18,7 @@ We also need to consider:
 
 ```{caution}
 In general, splitting raster datasets into smaller parts is not advised, according to self-dependency and completeness criteria. For data efficiency, always consider a larger extent than needed as to avoid cross-border artefacts. Instead of splitting rasters, consider storing the raster in an alternative format that maybe more size-efficient (see Formats sections).
-![Screenshot](../img/raster_clip.jpg)
+![Screenshot](../../img/raster_clip.jpg)
 ```
 
 Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
@@ -57,7 +57,7 @@ Hazard data typically include hazard maps representing one or more historical ev
 
 Generally, hazard data (footprints) takes the form of raster (geospatial grid) data (`GeoTIFF / COG`), less often as vector data (`gpkg`, `shp`). Supporting data (hazard curves, historical catalogue) could come as tables (`csv`, `xlsx`) or vector data (`gpkg`, `shp`).
 
-```{figure} ../img/hzd_tc.jpg
+```{figure} ../../img/hzd_tc.jpg
 ---
 align: left
 width: 98%
@@ -115,7 +115,7 @@ Exposure data typically describe the location, characteristics and value of indi
 
 Exposure geospatial data can take the form of vector (`gpkg`, `shp`), or raster (`GeoTIFF / COG`). In some cases, exposure comes as table (`csv`, `xls`).
 
-```{figure} ../img/exp_formats.jpg
+```{figure} ../../img/exp_formats.jpg
 ---
 align: left
 width: 98%
@@ -207,7 +207,7 @@ We recommend to group exposure data  using the following hierarchy:
 This hierarchy can be maintained also when packing all the data in one file (e.g. multiple csvs into one excel file), which is advised _unless specifically demanded by the data use_ (e.g. data are formatted for usage into a specific model).
 ```
 
-```{figure} ../img/vln_multi-table.jpg
+```{figure} ../../img/vln_multi-table.jpg
 ---
 align: left
 width: 98%

@@ -1,12 +1,14 @@
-# Overview
+# Introduction
 
-This section provides more detail on the core standards that are used within the Risk Data Library Standard, use cases for documenting risk data with the RDLS, and a roadmap for development.
+This section provides an introduction to the Risk Data Library Standard (RDLS).
 
 ```{eval-rst}
 .. toctree::
    :maxdepth: 1
 
-   core-standards
-   use-cases
-   roadmap
+   what
+   why
+   how
+   other-standards
+
 ```

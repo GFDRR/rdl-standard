@@ -1,4 +1,4 @@
-# RDL metadata
+# How to publish RDLS metadata
 
 ## Adoption of the metadata schema
 
