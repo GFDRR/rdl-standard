@@ -411,6 +411,7 @@ def _replace_substring_in_json(data, search_substring, replace_string):
 
 def process_schema():
     rtd_version = os.getenv('READTHEDOCS_VERSION')
+    print(rtd_version)
 
     # Process schema and write to _readthedocs/html
     if rtd_version is not None:
