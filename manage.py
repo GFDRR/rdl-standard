@@ -164,7 +164,7 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
     "```{csv-table-no-translate}\n",
     ":header-rows: 1\n",
     ":widths: auto\n",
-    f":file: ../../codelists/{type}/{codelist}.csv\n",
+    f":file: ../../schema/codelists/{type}/{codelist}.csv\n",
     "```\n\n"
   ])
 
