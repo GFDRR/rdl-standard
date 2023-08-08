@@ -412,6 +412,7 @@ def _replace_substring_in_json(data, search_substring, replace_string):
 def setup(app):
     # Connect handlers to events
     app.connect('config-inited', config_inited)
+    app.connect('env-before-read-docs', env_before_read_docs)
     app.connect('build-finished', build_finished)
 
 
@@ -423,8 +424,9 @@ def config_inited(app, config):
     # Replace {{version}} placeholders
     if rtd_version is not None:
         replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
-    
-    create_directory('_readthedocs/html')
+
+
+def env_before_read_docs(app, env, docnames):
     shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
 
 
