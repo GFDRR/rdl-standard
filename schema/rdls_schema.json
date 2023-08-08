@@ -37,7 +37,7 @@
     "risk_data_type": {
       "title": "Risk data type",
       "type": "string",
-      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#risk-data-type).",
+      "description": "The type of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#risk-data-type).",
       "codelist": "risk_data_type.csv",
       "openCodelist": false,
       "enum": [
@@ -871,7 +871,7 @@
         "media_type": {
           "title": "Media type",
           "type": "string",
-          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
           "codelist": "media_type.csv",
           "openCodelist": true,
           "minLength": 1
@@ -879,7 +879,7 @@
         "format": {
           "title": "Format",
           "type": "string",
-          "description": "A human-readable description of the file format of the resource, taken from the open [data formats codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists/#data_formats).",
+          "description": "A human-readable description of the file format of the resource, taken from the open [data formats codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#data_formats).",
           "codelist": "data_formats.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1138,7 +1138,7 @@
         "countries": {
           "title": "Countries",
           "type": "array",
-          "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#country).",
+          "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#country).",
           "items": {
             "type": "string",
             "enum": [
@@ -1466,7 +1466,7 @@
         "scheme": {
           "title": "Scheme",
           "type": "string",
-          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#location_gazetteers).",
+          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#location_gazetteers).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1494,7 +1494,7 @@
         "type": {
           "title": "Type",
           "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/references/codelists.html#geometry_type).",
+          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#geometry_type).",
           "codelist": "geometry_type.csv",
           "openCodelist": false,
           "enum": [
