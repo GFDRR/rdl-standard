@@ -186,7 +186,7 @@ html_static_path = ['_static']
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
 #
-html_extra_path = ['../codelists', '../schema']
+html_extra_path = ['../schema']
 
 # If not None, a 'Last updated on:' timestamp is inserted at every page
 # bottom, using the given strftime format.
@@ -409,12 +409,7 @@ def _replace_substring_in_json(data, search_substring, replace_string):
                 _replace_substring_in_json(item, search_substring, replace_string)
 
 
-def setup(app):
-    # Connect handlers to events
-    app.connect('env-before-read-docs', env_before_read_docs)
-
-
-def env_before_read_docs(app, env, docnames):
+def process_schema():
     rtd_version = os.getenv('READTHEDOCS_VERSION')
 
     # Process schema and write to _readthedocs/html
@@ -424,4 +419,20 @@ def env_before_read_docs(app, env, docnames):
     else:
         # Don't replace {{version}} placeholders
         create_directory("_readthedocs/html/")
-        shutil.copyfile('../schema/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
+        shutil.copyfile('../schema/rdls_schema.json', '_readthedocs/html/rdls_schema.json')    
+
+
+def setup(app):
+    # Connect handlers to events
+    app.connect('env-before-read-docs', env_before_read_docs)
+    app.connect('build-finished', build_finished)
+
+
+def env_before_read_docs(app, env, docnames):
+    # Process schema before building docs so that it can be used in Sphinx directives
+    process_schema()
+
+
+def build_finished(app, exception):
+    # Process schema after building docs so that it can be downloaded from the built documentation
+    process_schema()
