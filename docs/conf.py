@@ -422,9 +422,9 @@ def config_inited(app, config):
 
     # Replace {{version}} placeholders
     if rtd_version is not None:
-        
         replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
     
+    create_directory('_readthedocs/html')
     shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
 
 
