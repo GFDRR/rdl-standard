@@ -186,7 +186,7 @@ html_static_path = ['_static']
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
 #
-# html_extra_path = []
+html_extra_path = ['../codelists', '../schema']
 
 # If not None, a 'Last updated on:' timestamp is inserted at every page
 # bottom, using the given strftime format.
@@ -425,6 +425,3 @@ def env_before_read_docs(app, env, docnames):
         # Don't replace {{version}} placeholders
         create_directory("_readthedocs/html/")
         shutil.copyfile('../schema/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
-     
-    # Copy codelists directory to _readthedocs/html
-    copy_tree('../codelists', '_readthedocs/html/codelists')
