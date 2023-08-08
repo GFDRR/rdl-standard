@@ -186,7 +186,7 @@ html_static_path = ['_static']
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
 #
-html_extra_path = ['../schema']
+html_extra_path = ['../.temp']
 
 # If not None, a 'Last updated on:' timestamp is inserted at every page
 # bottom, using the given strftime format.
@@ -409,32 +409,24 @@ def _replace_substring_in_json(data, search_substring, replace_string):
                 _replace_substring_in_json(item, search_substring, replace_string)
 
 
-def process_schema():
-    rtd_version = os.getenv('READTHEDOCS_VERSION')
-    print(f"rtd_version: {rtd_version}")
-
-    # Process schema and write to _readthedocs/html
-    if rtd_version is not None:
-        # Replace {{version}} placeholders
-        print("Replacing version placeholders")
-        replace_substring_in_json('../schema/rdls_schema.json', '{{version}}', rtd_version, output_path='_readthedocs/html/rdls_schema.json')
-    else:
-        # Don't replace {{version}} placeholders
-        create_directory("_readthedocs/html/")
-        shutil.copyfile('../schema/rdls_schema.json', '_readthedocs/html/rdls_schema.json')    
-
-
 def setup(app):
     # Connect handlers to events
-    app.connect('env-before-read-docs', env_before_read_docs)
+    app.connect('config-inited', config_inited)
     app.connect('build-finished', build_finished)
 
 
-def env_before_read_docs(app, env, docnames):
-    # Process schema before building docs so that it can be used in Sphinx directives
-    process_schema()
+def config_inited(app, config):
+    shutil.copytree('../schema', '../.temp')
+    
+    rtd_version = os.getenv('READTHEDOCS_VERSION')
+
+    # Replace {{version}} placeholders
+    if rtd_version is not None:
+        
+        replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
+    
+    shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
 
 
 def build_finished(app, exception):
-    # Process schema after building docs so that it can be downloaded from the built documentation
-    process_schema()
+    shutil.rmtree('../.temp')
