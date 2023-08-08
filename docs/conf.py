@@ -427,6 +427,7 @@ def config_inited(app, config):
 
 
 def env_before_read_docs(app, env, docnames):
+    create_directory('_readthedocs/html/')
     shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
 
 
