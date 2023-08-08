@@ -2,37 +2,160 @@
 
 This page provides the following documentation for developers of the Risk Data Library Standard:
 
-* [How-to guides](#how-to-guides)
-* [Style guides](#style-guides)
-* [Reference documentation](#reference)
+- [How-to guides](#how-to-guides)
+- [Style guides](#style-guides)
+- [Reference documentation](#reference)
 
 ## How-to guides
 
 This section contains the following how-to guides:
 
 * [Propose changes](#propose-changes)
+* [Set up a local development environment](#set-up-a-local-development-environment)
+* [Resolve check failures](#resolve-check-failures)
+* [Build the documentation](#build-the-documentation)
 * [Deploy changes](#deploy-changes)
 * [Release a new version](#release-a-new-version)
-* [Set up a local development environment](#set-up-a-local-development-environment)
-* [Build the documentation](#build-the-documentation)
 * [Update requirements](#update-requirements)
-* [Resolve check failures](#resolve-check-failures)
 
 ### Propose changes
 
-The preferred approach for making changes to the standard is to use a [local development environment](#set-up-a-local-development-environment) so that you can resolve build errors and test failures before committing your changes. Making repeated commits whilst trying to resolve issues can result in a messy commit history, which makes reviewing pull requests more complicated. Alternatively, if your change is simple, you can use the [GitHub web editor](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
+Before completing the steps below, you first need to [set up a local development environment](#set-up-a-local-development-environment) so that you can resolve build errors and test failures before pushing your changes to GitHub. Alternatively, if your change is simple, you can use the [GitHub web editor](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files) and skip the running the pre-commit script, running the tests and building the documentation locally.
 
 1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
 1. Create a branch from the `dev` branch.
 1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
-1. Run `./manage.py pre-commit`.
-1. [Build the documentation](#build-the-documentation), resolve any errors and preview your changes locally.
-1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at [https://rdl-standard.readthedocs.io/en/{branch name}](https://rdl-standard.readthedocs.io/en/{branch name}).
+1. Run the pre-commit script (`./manage.py pre-commit`) to update reference documentation and format markdown files.
+1. Run the tests (`pytest`) and [resolve any errors](#resolve-check-failures).
+1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation).
+1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at \[https://rdl-standard.readthedocs.io/en/{branch name}\](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
-  * Set the base branch to `dev`.
-  * Reference the issue number in the description. 
+
+- Set the base branch to `dev`.
+- Reference the issue number in the description.
 
 Once the pull request is merged, the updated documentation is available to preview at [https://rdl-standard.readthedocs.io/en/dev](https://rdl-standard.readthedocs.io/en/dev).
+
+### Set up a local development environment
+
+#### Clone the repository
+
+```bash
+git clone git@github.com:GFDRR/rdl-standard.git
+cd rdl-standard
+```
+
+Subsequent instructions assume that your current working directory is `rdl-standard`, unless otherwise stated.
+
+#### Install submodules
+
+```bash
+git submodule init
+git submodule update
+```
+
+#### Create and activate a Python virtual environment
+
+The following instructions assume you have [Python 3.8](https://www.python.org/downloads/) or newer installed on your machine.
+
+You can use either `pyenv` or `python3-venv`:
+
+##### pyenv
+
+1. Install [pyenv](https://github.com/pyenv/pyenv). The [pyenv installer](https://github.com/pyenv/pyenv-installer) is recommended.
+1. Create a virtual environment.
+   ```bash
+   pyenv virtualenv rdl-standard
+   ```
+1. Activate the virtual environment
+   ```bash
+   pyenv activate rdl-standard
+   ```
+1. Set the local application-specific virtual environment. Once set, navigating to the `rdl-standard` directory will automatically activate the environment.
+   ```bash
+   pyenv local rdl-standard
+   ```
+
+##### python3-venv
+
+If you are using Python 3.3 or newer, `venv` is included in the standard Python installation.
+
+1. Create a virtual environment called .ve.
+    a. Linux/MacOS users
+        ```bash
+        python3 -m venv .ve
+        ```
+    a. Windows users
+        ```bash
+        py -m venv .ve
+        ```
+1. Activate the virtual environment. You must run this command for each new terminal session.
+    a. Linux/MacOS users
+        ```bash
+        source .ve/bin/activate
+        ```
+    b. Windows users
+        ```bash
+        .\.ve\Scripts\activate
+        ```
+
+#### Install requirements
+
+```bash
+pip install --upgrade pip setuptools
+pip install -r requirements.txt
+```
+
+### Resolve check failures
+
+#### mdformat
+
+If this check fails, run the following command to fix markdown formatting:
+
+```bash
+mdformat docs
+```
+
+#### tests
+
+If this check fails, review the output to identify which test failed:
+
+##### test_json.py::test_empty
+
+Review the warnings to identify the empty JSON files and remove the files.
+
+##### test_json.py::test_indent
+
+Run the following command to indent JSON files:
+
+```bash
+ocdskit indent -r .
+```
+
+##### test_json.py::test_invalid_json
+
+Review the warnings to identify the invalid JSON files and correct the errors.
+
+##### test_schema.py (all tests)
+
+Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
+
+### Build the documentation
+
+Sphinx, which builds the documentation, doesn’t watch directories for changes. To regenerate the documentation, start an HTML server, and refresh the browser whenever changes are made, run:
+
+```bash
+cd docs
+make autobuild
+```
+
+Alternatively, build the documentation and view it using a local web server:
+
+```bash
+cd docs
+make html
+python -m http.server --directory _readthedocs/html
+```
 
 ### Deploy changes
 
@@ -59,147 +182,38 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
   git push --follow-tags
 ```
 
-### Set up a local development environment
 
-#### Clone the repository
-
-```bash
-git clone git@github.com:GFDRR/rdl-standard.git
-cd rdl-standard
-```
-
-Subsequent instructions assume that your current working directory is `rdl-standard`, unless otherwise stated.
-
-#### Install submodules
-
-```bash
-git submodule init
-git submodule update
-```
-
-#### Create and activate a Python virtual environment
-
-You can use either `pyenv` or `python3-venv`:
-
-##### pyenv
-
-1. Install [pyenv](https://github.com/pyenv/pyenv). The [pyenv installer](https://github.com/pyenv/pyenv-installer) is recommended.
-1. Create a virtual environment.
-    ```bash
-    pyenv virtualenv rdl-standard
-    ```
-1. Activate the virtual environment
-    ```bash
-    pyenv activate rdl-standard
-    ```
-1. Set the local application-specific virtual environment. Once set, navigating to the `rdl-standard` directory will automatically activate the environment.
-    ```bash
-    pyenv local rdl-standard
-    ```
-
-##### python3-venv
-
-1. Install [python3-venv](https://docs.python.org/3/library/venv.html).
-
-    ```bash
-    sudo apt-get install python3-venv
-    ```
-1. Create a virtual environment.
-    ```bash
-    python3 -m venv .ve
-    ```
-1. Activate the virtual environment. You must run this command for each new terminal session.
-    ```bash
-    source .ve/bin/activate
-    ```
-
-#### Install requirements
-
-```bash
-pip install --upgrade pip setuptools
-pip install -r requirements.txt
-```
-
-### Build the documentation
-
-Sphinx, which builds the documentation, doesn’t watch directories for changes. To regenerate the documentation, start an HTML server, and refresh the browser whenever changes are made, run:
-
-```bash
-cd docs
-make autobuild
-```
-
-Alternatively, build the documentation and view it using a local web server:
-
-```bash
-cd docs
-make html
-python -m http.server --directory _readthedocs/html
-```
 
 ### Update requirements
 
 1. Install `pip-tools`.
-    ```bash
-    pip install pip-tools
-    ```
-2. Edit `requirements.in`.
-3. Update `requirements.txt`.
-    ```bash
-    pip-compile
-    ```
-4. Install requirements.
-    ```bash
-    pip-sync requirements.txt
-    ```
-5. Commit your changes.
-
-### Resolve check failures
-
-#### mdformat
-
-If this check fails, run the following command to fix markdown formatting:
-
-```bash
-mdformat docs
-```
-#### tests
-
-If this check fails, review the output to identify which test failed:
-
-##### test_json.py::test_empty
-
-Review the warnings to identify the empty JSON files and remove the files.
-
-##### test_json.py::test_indent
-
-Run the following command to indent JSON files:
-
-```bash
-ocdskit indent -r .
-```
-
-##### test_json.py::test_invalid_json
-
-Review the warnings to identify the invalid JSON files and correct the errors.
-
-##### test_schema.py (all tests)
-
-Review the warnings to identify and correct the errors. For more information on each test, see https://jscc.readthedocs.io/en/latest/api/testing/checks.html#module-jscc.testing.checks.
+   ```bash
+   pip install pip-tools
+   ```
+1. Edit `requirements.in`.
+1. Update `requirements.txt`.
+   ```bash
+   pip-compile
+   ```
+1. Install requirements.
+   ```bash
+   pip-sync requirements.txt
+   ```
+1. Commit your changes.
 
 ## Style guides
 
 ### Changelog style guide
 
-* Use the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
-* Begin each entry with a link to the pull request for the change.
+- Use the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
+- Begin each entry with a link to the pull request for the change.
 
 #### Normative content
 
 Changelog entries should be descriptive:
 
-* Bad entry: Update schema.
-* Good entry: Make `name` required.
+- Bad entry: Update schema.
+- Good entry: Make `name` required.
 
 If changes are made to files under the `schema` directory, it is assumed that corresponding changes were made to files under the `docs` directory. Do not add an entry under the "Documentation" heading if the changes directly correspond to entries under the "Codelists" and/or "Schema" headings.
 
@@ -213,10 +227,10 @@ Changelog entries should be descriptive. Do not add an entry like "Improve prime
 
 This section contains the following reference documentation:
 
-* [GitHub repository](#github-repository)
-* [Sphinx](#sphinx)
-* [Read the Docs](#read-the-docs)
-* [manage.py](#managepy)
+- [GitHub repository](#github-repository)
+- [Sphinx](#sphinx)
+- [Read the Docs](#read-the-docs)
+- [manage.py](#managepy)
 
 ### GitHub repository
 
@@ -234,23 +248,23 @@ Feature branches branch off the `dev` branch, with work merged into the `dev` br
 
 #### Directory structure
 
-* `.github/`: Issue templates and GitHub Actions workflows
-* `docs/`:
-  * `*.md`, `*/*.md`: English documentation text
-  * `conf.py`: Sphinx configuration
-  * `_static/`: CSS and JavaScript for the documentation
-  * `_templates/`: Jinja templates for the documentation
-  * `.tx/`: Transifex configuration (not yet implemented)
-  * `img/`: Images used in the documentation
-  * `locale/`: Translations of the English documentation (not yet implemented)
-* `schema/`: schema-related files
-* `specs/`: TBD
-* `SteeringCommittee/`: Minutes of steering committee meetings
+- `.github/`: Issue templates and GitHub Actions workflows
+- `docs/`:
+  - `*.md`, `*/*.md`: English documentation text
+  - `conf.py`: Sphinx configuration
+  - `_static/`: CSS and JavaScript for the documentation
+  - `_templates/`: Jinja templates for the documentation
+  - `.tx/`: Transifex configuration (not yet implemented)
+  - `img/`: Images used in the documentation
+  - `locale/`: Translations of the English documentation (not yet implemented)
+- `schema/`: schema-related files
+- `specs/`: TBD
+- `SteeringCommittee/`: Minutes of steering committee meetings
 
 The following files are created by running a build and are not version controlled:
 
-* `.ve/`: Python virtual environment (if using [python3-venv](#python3-venv))
-* `docs/_readthedocs`: Built HTML documentation
+- `.ve/`: Python virtual environment (if using [python3-venv](#python3-venv))
+- `docs/_readthedocs`: Built HTML documentation
 
 ### Sphinx
 
@@ -272,8 +286,8 @@ https://rdl-standard.readthedocs.io/en/latest redrirects to https://rdl-standard
 
 [Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html#automation-rules) are configured to:
 
-* Activate, build and hide a new version when a commit is pushed to a new branch in the GitHub repository.
-* Delete the associated version when a branch is deleted in the GitHub repository.
+- Activate, build and hide a new version when a commit is pushed to a new branch in the GitHub repository.
+- Delete the associated version when a branch is deleted in the GitHub repository.
 
 [Pull request builds](https://docs.readthedocs.io/en/stable/pull-requests.html) are also enabled.
 
