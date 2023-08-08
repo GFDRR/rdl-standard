@@ -416,6 +416,7 @@ def process_schema():
     # Process schema and write to _readthedocs/html
     if rtd_version is not None:
         # Replace {{version}} placeholders
+        print("Replacing version placeholders")
         replace_substring_in_json('../schema/rdls_schema.json', '{{version}}', rtd_version, output_path='_readthedocs/html/rdls_schema.json')
     else:
         # Don't replace {{version}} placeholders
