@@ -22,6 +22,9 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import json
 import os
+import shutil
+
+from distutils.dir_util import copy_tree
 from pygit2 import Repository
 
 # -- General configuration ------------------------------------------------
@@ -177,7 +180,7 @@ html_css_files = [
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static', '../schema']
+html_static_path = ['_static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -368,6 +371,10 @@ gettext_compact = False     # optional.
 togglebutton_hint = ""
 
 
+def create_directory(path):
+    output_dir = os.path.dirname(path)
+    os.makedirs(output_dir, exist_ok=True)  
+
 def replace_substring_in_json(file_path, search_substring, replace_string, output_path=None):
     # Read the JSON file
     with open(file_path, 'r') as file:
@@ -381,13 +388,11 @@ def replace_substring_in_json(file_path, search_substring, replace_string, outpu
         output_path = file_path
 
     # Create the directory if it does not exist
-    output_dir = os.path.dirname(output_path)
-    os.makedirs(output_dir, exist_ok=True)    
+    create_directory(output_path)
 
     # Write the modified JSON data to the output file
     with open(output_path, 'w') as file:
         json.dump(data, file, indent=4)
-
 
 def _replace_substring_in_json(data, search_substring, replace_string):
     if isinstance(data, dict):
@@ -418,5 +423,8 @@ def env_before_read_docs(app, env, docnames):
         replace_substring_in_json('../schema/rdls_schema.json', '{{version}}', rtd_version, output_path='_readthedocs/html/rdls_schema.json')
     else:
         # Don't replace {{version}} placeholders
-        replace_substring_in_json('../schema/rdls_schema.json', 'https://rdl-standard.readthedocs.io/en/{{version}}', 'https://rdl-standard.readthedocs.io/en/{{version}}', output_path='_readthedocs/html/rdls_schema.json')
+        create_directory("_readthedocs/html/")
+        shutil.copyfile('../schema/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
      
+    # Copy codelists directory to _readthedocs/html
+    copy_tree('../codelists', '_readthedocs/html/codelists')
