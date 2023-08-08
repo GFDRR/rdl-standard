@@ -56,7 +56,7 @@ git submodule update
 
 #### Create and activate a Python virtual environment
 
-The following instructions assume you have [Python 3](https://www.python.org/downloads/) installed on your machine.
+The following instructions assume you have [Python 3.8](https://www.python.org/downloads/) or newer installed on your machine.
 
 You can use either `pyenv` or `python3-venv`:
 
@@ -80,19 +80,6 @@ You can use either `pyenv` or `python3-venv`:
 
 If you are using Python 3.3 or newer, `venv` is included in the standard Python installation.
 
-1. Install [python3-venv](https://docs.python.org/3/library/venv.html).
-    a. Linux users
-        ```bash
-        sudo apt-get install python3-venv
-        ```
-    b. MacOS users
-        ```bash
-        pip3 install venv
-        ```
-    c. Windows users
-        ```bash
-        py -m pip install venv
-        ```
 1. Create a virtual environment called .ve.
     a. Linux/MacOS users
         ```bash
@@ -109,7 +96,7 @@ If you are using Python 3.3 or newer, `venv` is included in the standard Python 
         ```
     b. Windows users
         ```bash
-        .\env\Scripts\activate
+        .\.ve\Scripts\activate
         ```
 
 #### Install requirements
