@@ -66,7 +66,7 @@ In addition to schema-specific attributes, each dataset is identified by a list 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources,links
+  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -139,7 +139,7 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/0/properties/hazard
+pointer: /properties/hazard
 collapse: event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
 addtargets:
 ---
@@ -197,7 +197,7 @@ Schema attributes for an earthquake hazard map related to an occurrence probabil
 
 ## Exposure
 
-The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset.
+The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset. For more information, see [exposure standards](../rdl/other-standards.md#exposure-standards).
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
@@ -227,7 +227,7 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/1/properties/exposure
+pointer: /properties/exposure
 collapse: cost
 addtargets:
 ---
@@ -301,7 +301,7 @@ The vulnerability component uses hazard_type, process_type and intensity_measure
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/2/properties/vulnerability
+pointer: /properties/vulnerability
 collapse: cost,impact,spatial,se_category
 addtargets:
 ---
@@ -351,7 +351,7 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/3/properties/loss
+pointer: /properties/loss
 collapse: cost,impact
 addtargets:
 ---

@@ -1,17 +1,12 @@
-# Guides
+# Guidance
 
-Below is the guidance on best practices for dataset creation, packaging, metadata creation according to the RDL schema and distribution.
-
-- [Data preparation and packaging](preparation.md) of risk data files and folders
-- [Data formats](formats.md) recommended and supported formats to store and share data
+This section provides guidance on how to publish RDLS metadata and how to publish risk datasets.
 
 ```{eval-rst}
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 2
 
-   preparation
-   formats
-   rdl-metadata
+   metadata
+   datasets/index
 
 ```

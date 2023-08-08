@@ -1,4 +1,4 @@
-# Data formats
+# How to format risk datasets
 
 Risk data can be made of spatial or non-spatial data.
 
@@ -16,7 +16,7 @@ Below is a list of recommended and common geodata formats used for risk data.
 
 ```{note}
 Always prefer WIDE geodatabase table formatting instead of LONG format when working in GIS environment; by duplicating vector rows, the geospatial information is also duplicated, which cause the size of the data to increase exponentially, and slows down the spatial processing.
-![Screenshot](../img/tab_format.png)
+![Screenshot](../../img/tab_format.png)
 ```
 
 ### Raster data: GeoTIFF / COG (`.tif`)
@@ -51,7 +51,7 @@ Conversion from `.shp` to `.gpkg` is lossless and usually size-efficient. Where 
 
 ```{note}
 Wide table formatting is preferred instead of long format.
-![Screenshot](../img/tab_format.png)
+![Screenshot](../../img/tab_format.png)
 ```
 
 ### Documents

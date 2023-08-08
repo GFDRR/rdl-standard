@@ -53,6 +53,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#127](https://github.com/GFDRR/rdl-standard/pull/127) - Inline `Exposure`, `Hazard_metadata`, `vulnerability`, `Vulnerability_function`, `Fragility_function`, `Occurence`, `Damage_to_loss_function`, `Engineering_demand_function`, `Probability`, `Empirical`, `Deterministic` and `Loss` and rearrange `$defs`.
 - [#168](https://github.com/GFDRR/rdl-standard/pull/168) - Add version number and `links` field.
 - [#163](https://github.com/GFDRR/rdl-standard/pull/163) - fix typos within rdl_schema_0.1.json
+- [#180](https://github.com/GFDRR/rdl-standard/pull/180) - Refactors schema, moves `hazard`, `exposure`, `vulnerability` and `loss` to top level and removes 'anyOf'.
 
 ### Codelists
 
@@ -81,5 +82,6 @@ This page lists changes to the Risk Data Library Standard.
 - [#111](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
 - [#174](https://github.com/GFDRR/rdl-standard/pull/174) - Add local tests guidance to developer_docs.md
 - [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
+- [#175](https://github.com/GFDRR/rdl-standard/pull/175) - Restructure documentation, rewrite landing page, add new introductory content.
 
 ### Other
