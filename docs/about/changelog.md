@@ -53,6 +53,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#127](https://github.com/GFDRR/rdl-standard/pull/127) - Inline `Exposure`, `Hazard_metadata`, `vulnerability`, `Vulnerability_function`, `Fragility_function`, `Occurence`, `Damage_to_loss_function`, `Engineering_demand_function`, `Probability`, `Empirical`, `Deterministic` and `Loss` and rearrange `$defs`.
 - [#168](https://github.com/GFDRR/rdl-standard/pull/168) - Add version number and `links` field.
 - [#163](https://github.com/GFDRR/rdl-standard/pull/163) - fix typos within rdl_schema_0.1.json
+- [#180](https://github.com/GFDRR/rdl-standard/pull/180) - Refactors schema, moves `hazard`, `exposure`, `vulnerability` and `loss` to top level and removes 'anyOf'.
 
 ### Codelists
 
