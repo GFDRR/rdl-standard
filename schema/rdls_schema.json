@@ -950,7 +950,7 @@
         "role": {
           "title": "Role",
           "type": "string",
-          "description": "The entity's role in relation to the dataset, using the open [roles codelist] (https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#roles).",
+          "description": "The entity's role in relation to the dataset, using the open [roles codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#roles).",
           "codelist": "roles.csv",
           "openCodelist": true,
           "minLength": 1
