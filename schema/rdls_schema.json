@@ -56,9 +56,8 @@
     },
     "version": {
       "title": "Dataset version",
-      "type": "number",
-      "description": "The version indicator (name or identifier) of the dataset.",
-      "minimum": 0
+      "type": "string",
+      "description": "The version indicator (name or identifier) of the dataset."
     },
     "purpose": {
       "title": "Dataset purpose",
