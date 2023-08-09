@@ -1677,7 +1677,7 @@
       "description": "Information about a set of hazard events. ",
       "required": [
         "id",
-        "hazard_type",
+        "hazards",
         "analysis_type"
       ],
       "properties": {
