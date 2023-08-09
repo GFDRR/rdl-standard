@@ -5,7 +5,7 @@
   "description": "A risk dataset described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
   "required": [
-    "identifier",
+    "id",
     "title",
     "risk_data_type",
     "publisher",
@@ -16,7 +16,7 @@
     "resources"
   ],
   "properties": {
-    "identifier": {
+    "id": {
       "title": "Identifier",
       "type": "string",
       "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
