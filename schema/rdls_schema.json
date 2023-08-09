@@ -1904,7 +1904,7 @@
       "type": "object",
       "required": [
         "id",
-        "intensity_measurement"
+        "intensity_measure"
       ],
       "properties": {
         "id": {
