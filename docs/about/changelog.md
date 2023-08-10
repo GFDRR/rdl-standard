@@ -54,6 +54,12 @@ This page lists changes to the Risk Data Library Standard.
 - [#168](https://github.com/GFDRR/rdl-standard/pull/168) - Add version number and `links` field.
 - [#163](https://github.com/GFDRR/rdl-standard/pull/163) - fix typos within rdl_schema_0.1.json
 - [#180](https://github.com/GFDRR/rdl-standard/pull/180) - Refactors schema, moves `hazard`, `exposure`, `vulnerability` and `loss` to top level and removes 'anyOf'.
+- [#181](https://github.com/GFDRR/rdl-standard/pull/181) - Various fixes:
+  - Codelist filename in `Classification.scheme`
+  - {{version}} placeholder replacement in built schema
+  - `version` type
+  - Required fields in `Event_set`, `Hazard` and `Footprint`
+  - Markdown syntax in `Attribution.role` description
 
 ### Codelists
 
