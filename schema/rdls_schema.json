@@ -1510,7 +1510,7 @@
       "required": [
         "id",
         "type",
-        "process"
+        "processes"
       ],
       "properties": {
         "id": {
