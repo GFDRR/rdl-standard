@@ -1713,7 +1713,8 @@
           "enum": [
             "poisson",
             "negative_binomial",
-            "user_defined"
+            "user_defined",
+            "generalized_extreme_value"
           ]
         },
         "seasonality": {
