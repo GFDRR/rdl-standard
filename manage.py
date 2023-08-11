@@ -15,9 +15,9 @@ from io import StringIO
 from pathlib import Path
 
 basedir = Path(__file__).resolve().parent
-codelistdir = basedir / 'codelists'
 referencedir = basedir / 'docs' / 'reference'
 schemadir = basedir / 'schema'
+codelistdir = schemadir / 'codelists'
 
 
 def read_lines(filename):
