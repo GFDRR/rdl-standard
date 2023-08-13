@@ -49,7 +49,6 @@
     },
     "publisher": {
       "title": "Publisher",
-      "type": "object",
       "description": "The entity responsible for making the dataset available.",
       "$ref": "#/$defs/Entity",
       "minProperties": 1
@@ -102,14 +101,12 @@
     },
     "contact_point": {
       "title": "Contact point",
-      "type": "object",
       "description": "Contact information for the maintainer of the dataset.",
       "$ref": "#/$defs/Entity",
       "minProperties": 1
     },
     "creator": {
       "title": "Creator",
-      "type": "object",
       "description": "The entity responsible for producing the dataset.",
       "$ref": "#/$defs/Entity",
       "minProperties": 1
@@ -382,7 +379,6 @@
         },
         "impact": {
           "title": "Vulnerability impact",
-          "type": "object",
           "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
           "$ref": "#/$defs/Impact",
           "minProperties": 1
@@ -596,7 +592,6 @@
         },
         "se_category": {
           "title": "Socio-economic index category",
-          "type": "object",
           "description": "The socio-economic category vulnerable to the hazard.",
           "$ref": "#/$defs/Classification",
           "minProperties": 1
@@ -707,7 +702,6 @@
         },
         "impact": {
           "title": "Loss impact",
-          "type": "object",
           "description": "The details of the loss impact values produced in the modelled scenario(s).",
           "$ref": "#/$defs/Impact",
           "minProperties": 1
@@ -1718,7 +1712,8 @@
           "enum": [
             "poisson",
             "negative_binomial",
-            "user_defined"
+            "user_defined",
+            "generalized_extreme_value"
           ]
         },
         "seasonality": {
@@ -1825,7 +1820,6 @@
           "properties": {
             "probabilistic": {
               "title": "Probabilistic frequency",
-              "type": "object",
               "description": "How often the event is expected to occur. Can be return period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
               "$ref": "#/$defs/Probabilistic",
               "minProperties": 1
@@ -1837,7 +1831,6 @@
               "properties": {
                 "temporal": {
                   "title": "Temporal occurrence",
-                  "type": "object",
                   "description": "The period of time over which the event occurred.",
                   "$ref": "#/$defs/Period",
                   "minProperties": 1
