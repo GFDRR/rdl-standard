@@ -1780,7 +1780,6 @@
       "required": [
         "id",
         "calculation_method",
-        "hazard",
         "occurrence"
       ],
       "properties": {
