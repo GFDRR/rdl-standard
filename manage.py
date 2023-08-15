@@ -15,9 +15,9 @@ from io import StringIO
 from pathlib import Path
 
 basedir = Path(__file__).resolve().parent
-codelistdir = basedir / 'codelists'
 referencedir = basedir / 'docs' / 'reference'
 schemadir = basedir / 'schema'
+codelistdir = schemadir / 'codelists'
 
 
 def read_lines(filename):
@@ -164,7 +164,7 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
     "```{csv-table-no-translate}\n",
     ":header-rows: 1\n",
     ":widths: auto\n",
-    f":file: ../../codelists/{type}/{codelist}.csv\n",
+    f":file: ../../schema/codelists/{type}/{codelist}.csv\n",
     "```\n\n"
   ])
 

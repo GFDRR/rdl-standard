@@ -31,7 +31,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/IMT.csv
+file: ../../schema/codelists/open/IMT.csv
 ---
 ```
 
@@ -43,7 +43,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/classification_scheme.csv
+file: ../../schema/codelists/open/classification_scheme.csv
 ---
 ```
 
@@ -55,7 +55,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/damage_scale_name.csv
+file: ../../schema/codelists/open/damage_scale_name.csv
 ---
 ```
 
@@ -67,7 +67,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/data_formats.csv
+file: ../../schema/codelists/open/data_formats.csv
 ---
 ```
 
@@ -83,7 +83,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/engineering_demand_parameter.csv
+file: ../../schema/codelists/open/engineering_demand_parameter.csv
 ---
 ```
 
@@ -99,7 +99,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/impact_metric.csv
+file: ../../schema/codelists/open/impact_metric.csv
 ---
 ```
 
@@ -115,7 +115,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/impact_unit.csv
+file: ../../schema/codelists/open/impact_unit.csv
 ---
 ```
 
@@ -131,7 +131,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/license.csv
+file: ../../schema/codelists/open/license.csv
 ---
 ```
 
@@ -143,7 +143,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/location_gazetteers.csv
+file: ../../schema/codelists/open/location_gazetteers.csv
 ---
 ```
 
@@ -155,7 +155,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/media_type.csv
+file: ../../schema/codelists/open/media_type.csv
 ---
 ```
 
@@ -173,7 +173,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/open/roles.csv
+file: ../../schema/codelists/open/roles.csv
 ---
 ```
 
@@ -191,7 +191,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/analysis_type.csv
+file: ../../schema/codelists/closed/analysis_type.csv
 ---
 ```
 
@@ -208,7 +208,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/cost_type.csv
+file: ../../schema/codelists/closed/cost_type.csv
 ---
 ```
 
@@ -220,7 +220,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/country.csv
+file: ../../schema/codelists/closed/country.csv
 ---
 ```
 
@@ -234,7 +234,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/currency.csv
+file: ../../schema/codelists/closed/currency.csv
 ---
 ```
 
@@ -250,7 +250,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/data_calculation_type.csv
+file: ../../schema/codelists/closed/data_calculation_type.csv
 ---
 ```
 
@@ -267,7 +267,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/exposure_category.csv
+file: ../../schema/codelists/closed/exposure_category.csv
 ---
 ```
 
@@ -279,7 +279,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/frequency_distribution.csv
+file: ../../schema/codelists/closed/frequency_distribution.csv
 ---
 ```
 
@@ -298,7 +298,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/function_approach.csv
+file: ../../schema/codelists/closed/function_approach.csv
 ---
 ```
 
@@ -310,7 +310,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/geometry_type.csv
+file: ../../schema/codelists/closed/geometry_type.csv
 ---
 ```
 
@@ -326,7 +326,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/hazard_type.csv
+file: ../../schema/codelists/closed/hazard_type.csv
 ---
 ```
 
@@ -342,7 +342,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/impact_type.csv
+file: ../../schema/codelists/closed/impact_type.csv
 ---
 ```
 
@@ -354,7 +354,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/loss_type.csv
+file: ../../schema/codelists/closed/loss_type.csv
 ---
 ```
 
@@ -368,7 +368,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/process_type.csv
+file: ../../schema/codelists/closed/process_type.csv
 ---
 ```
 
@@ -387,7 +387,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/relationship_type.csv
+file: ../../schema/codelists/closed/relationship_type.csv
 ---
 ```
 
@@ -399,7 +399,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/risk_data_type.csv
+file: ../../schema/codelists/closed/risk_data_type.csv
 ---
 ```
 
@@ -411,7 +411,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/seasonality.csv
+file: ../../schema/codelists/closed/seasonality.csv
 ---
 ```
 
@@ -427,7 +427,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/source_type.csv
+file: ../../schema/codelists/closed/source_type.csv
 ---
 ```
 
@@ -443,6 +443,6 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../codelists/closed/spatial_scale.csv
+file: ../../schema/codelists/closed/spatial_scale.csv
 ---
 ```
