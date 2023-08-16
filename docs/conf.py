@@ -417,7 +417,7 @@ def setup(app):
 
 
 def config_inited(app, config):
-    shutil.copytree('../schema', '../.temp')
+    shutil.copytree('../schema', '../.temp', dirs_exist_ok=True)
     
     rtd_version = os.getenv('READTHEDOCS_VERSION')
 
