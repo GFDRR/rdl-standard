@@ -233,52 +233,69 @@ def update_codelist_docs(schema):
   write_lines(referencedir / 'codelists.md', codelist_reference)
 
 
-def get_definition_references(schema, defn, parents=None, full_schema=None):
-  """
-  Recursively generate a list of JSON pointers that reference a definition in JSON schema.
+def get_definition_references(schema, defn, parents=None, full_schema=None, include_nested=True, defs_path='$defs'):
+    """
+    Recursively generate a list of JSON pointers that reference a definition in JSON schema.
 
-  :param schema: The JSON schema
-  :defn: The name of the definition
-  :parents: A list of the parents of schema
-  :full_schema: The full schema
-  """
+    :param schema: The JSON schema
+    :param defn: The name of the definition
+    :param parents: A list of the parents of schema
+    :param full_schema: The full schema
+    :param include_nested: Whether to include nested references
+    :defs_path: The path under which definitions are located in the schema
+    """
 
-  references = []
+    references = []
 
-  if parents is None:
-    parents = []
+    if parents is None:
+        parents = []
 
-  if full_schema is None:
-    full_schema = schema
+    if full_schema is None:
+        full_schema = schema
 
-  if 'properties' in schema:
-    for key, value in schema['properties'].items():
-      if value.get('type') == 'array' and '$ref' in value['items']:
-        if value['items']['$ref'] == f"#/$defs/{defn}":
-          references.append(parents + [key, '0'])
-        else:
-          references.extend(get_definition_references(full_schema['$defs'][value['items']['$ref'].split('/')[-1]], defn, parents + [key, '0'], full_schema))
-      elif '$ref' in value:
-        if value['$ref'] == f"#/$defs/{defn}":
-          references.append(parents + [key])
-        else:
-          references.extend(get_definition_references(full_schema['$defs'][value['$ref'].split('/')[-1]], defn, parents + [key], full_schema))
-      elif 'properties' in value:
-          references.extend(get_definition_references(value, defn, parents + [key], full_schema))
+    if 'properties' in schema:
+        for key, value in schema['properties'].items():
+            if value.get('type') == 'array' and '$ref' in value['items']:
+                if value['items']['$ref'] == f"#/{defs_path}/{defn}":
+                    references.append(parents + [key, '0'])
+                elif include_nested:
+                    references.extend(get_definition_references(
+                        full_schema[defs_path][value['items']['$ref'].split('/')[-1]],
+                        defn,
+                        parents + [key, '0'],
+                        full_schema, include_nested))
+            elif '$ref' in value:
+                if value['$ref'] == f"#/{defs_path}/{defn}":
+                    references.append(parents + [key])
+                elif include_nested:
+                    references.extend(get_definition_references(
+                        full_schema[defs_path][value['$ref'].split('/')[-1]],
+                        defn,
+                        parents + [key],
+                        full_schema, include_nested))
+            elif 'properties' in value:
+                references.extend(get_definition_references(value,
+                                                            defn,
+                                                            parents + [key],
+                                                            full_schema,
+                                                            include_nested))
 
-  if 'anyOf' in schema:
-     for s in schema['anyOf']:
-        references.extend(get_definition_references(s, defn, None, full_schema))
+    if defs_path in schema:
+        for key, value in schema[defs_path].items():
+            references.extend(get_definition_references(value, defn, [key], full_schema, include_nested))
 
-  if '$defs' in schema:
-    for key, value in schema['$defs'].items():
-      references.extend(get_definition_references(value, defn, [key], full_schema))
-  
-  return references
+    return references
 
 
 def update_schema_docs(schema):
   """Update schema.md"""    
+
+  if '$defs' in schema:
+     defs_path = '$defs'
+  elif 'definitions' in schema:
+     defs_path = 'definitions'
+  else:
+    raise KeyError("Schema contains neither $defs nor definitions.")
 
   # Load schema reference
   schema_reference = read_lines(referencedir / 'schema.md')
@@ -323,28 +340,25 @@ def update_schema_docs(schema):
               "```\n\n"
           ])
 
-        # # Add a list of properties that reference this definition
-        # # Needs updating to handle nested references
-        # definition["references"] = get_definition_references(schema, defn)
-        # definition["content"].append("This component is referenced by the following properties:\n")
+        # Add a list of properties that reference this definition
+        definition["references"] = get_definition_references(schema, defn, include_nested=False, defs_path=defs_path)
+        definition["content"].append("This sub-schema is referenced by the following properties:\n")
 
-        # for ref in definition["references"]:
-        #     # Remove array indices because they do not appear in the HTML anchors generated by the json schema directive
-        #     ref = [part for part in ref if part != '0']
+        for ref in definition["references"]:
+            # noqa: Remove array indices because they do not appear in the HTML anchors generated by the json schema directive
+            ref = [part for part in ref if part != '0']
 
-        #     # Ideally, these would be relative links - see https://github.com/OpenDataServices/sphinxcontrib-opendataservices/issues/43
-        #     url = 'rdls_schema.json,'
-            
-        #     # Omit nested references
-        #     if ref[0] in schema['$defs'] and len(ref) == 2:
-        #       url += '/$defs/'
-        #     elif len(ref) == 1:
-        #       url += ','
-        #     else:
-        #       continue
-      
-        #     url += ','.join(ref)
-        #     definition["content"].append(f"- [`{'/'.join(ref)}`]({url})\n")
+            url = 'rdls_schema.json,'
+
+            # Omit nested references
+            if ref[0] in schema['$defs']:
+                url += f"/$defs/{ref[0]},{'/'.join(ref[1:])}"
+            elif ref[0] in ['hazard', 'exposure', 'vulnerability', 'loss']:
+                url += f"/properties/{ref[0]},{'/'.join(ref[1:])}"
+            else:
+                url += f",{'/'.join(ref)}"
+
+            definition["content"].append(f"* [`{'/'.join(ref)}`]({url})\n")
 
         if definition.get('additionalProperties') == False:
           definition["content"].append(f"\nAdditional properties are not permitted within `{defn}` objects.\n")
@@ -354,7 +368,7 @@ def update_schema_docs(schema):
             f"\nEach `{defn}` has the following fields:\n\n", 
             "```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json\n",
             f":pointer: /$defs/{defn}\n",
-            f":collapse: {','.join(definition.get('properties',{}).keys())}\n",
+            f":collapse: {','.join([key for key, value in definition.get('properties',{}).items() if '$ref' in value])}\n",
             ":addtargets:\n",
             "```\n\n",
         ])
