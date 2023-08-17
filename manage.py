@@ -18,6 +18,7 @@ basedir = Path(__file__).resolve().parent
 referencedir = basedir / 'docs' / 'reference'
 schemadir = basedir / 'schema'
 codelistdir = schemadir / 'codelists'
+exampledir = basedir / 'examples'
 
 
 def read_lines(filename):
@@ -384,6 +385,41 @@ def pre_commit():
 
     # Load schema
     schema = json_load('rdls_schema.json')
+
+    # Update examples
+    for example_path in glob.glob(f"{exampledir}/*/*/*.json"):      
+           
+      subprocess.run([
+        "flatten-tool",
+        "flatten",
+        "-s",
+        "schema/rdls_schema.json",
+        "-f",
+        "csv",
+        "--root-list-path",
+        "datasets",
+        "-m",
+        "datasets",
+        "-o",
+        f"{'/'.join(example_path.split('/')[:-1])}",
+        "--truncation-length",
+        "50",
+        "--use-titles",
+        "--remove-empty-schema-columns",
+        example_path
+      ])
+    
+    for path in glob.glob(f"{exampledir}/*/*/*.csv"):
+      with open(path, 'r') as f:
+         # Transpose CSV files for column-wise presentation
+         rows = zip(*csv.reader(f))
+      
+      with open(path, 'w') as f:
+         writer = csv.writer(f)
+         # Remove identifiers for brevity
+         # writer.writerows([row for row in rows if row[0].split(':')[-1] != 'Identifier'])
+         # Omit titles of parent objects
+         writer.writerows([[row[0].split(':')[-1]] + list(row[1:]) for row in rows])
 
     # Update schema.md
     update_schema_docs(schema)
