@@ -406,6 +406,8 @@ def pre_commit():
         "50",
         "--use-titles",
         "--remove-empty-schema-columns",
+        "--line-terminator",
+        "LF",
         example_path
       ])
     
@@ -415,7 +417,7 @@ def pre_commit():
          rows = zip(*csv.reader(f))
       
       with open(path, 'w') as f:
-         writer = csv.writer(f)
+         writer = csv.writer(f, lineterminator="\n")
          # Remove identifiers for brevity
          # writer.writerows([row for row in rows if row[0].split(':')[-1] != 'Identifier'])
          # Omit titles of parent objects
