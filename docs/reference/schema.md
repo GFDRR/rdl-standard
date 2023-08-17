@@ -132,10 +132,7 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
         Uncertainty
       }
 ```
-
-`````{tab-set}
-
-````{tab-item} Schema
+The `hazard`` object has the following properties:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
@@ -145,51 +142,57 @@ addtargets:
 ---
 ```
 
+The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in tabular format and JSON format:
+
+`````{tab-set}
+
+````{tab-item} Figure
+
+```{figure} ../../examples/hazard/fathom/figure.png
+```
+
 ````
 
-````{tab-item} Examples
+````{tab-item} Metadata (tabular)
 
-Hazard data are most often represented by geospatial grids (raster); sometimes they are represented by points or polygons.
+In tabular format, the metadata consists of three tables. To aid comprehension, the metadata is presented column wise using field titles.
 
-**Flood hazard maps for Kabul**
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/fathom/datasets.csv
+---
 
-Schema attributes for flood hazard map related to the occurrence probability of a river flood event with a return period of once in 100 years over Kabul, Afghanistan. The hydrological data used for modelling the intensity of floods is derived from observations over the period 1958-2001 (44 years). The hazard intensity is measured as water depth, in meters. These information cover all mandatory fields, and a few optional fields.
+```
 
-![Screenshot](../img/hzd_fl_kabul.jpg)
+```{csv-table-no-translate} Event sets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/fathom/Hazard metadata_Event sets.csv
+---
 
-| **Required** | **Attribute**           | **Example**     |
-| :----------: | ----------------------- | --------------- |
-|      \*      | Hazard type             | Flood           |
-|      \*      | Analysis type           | Probabilistic   |
-|      \*      | Calculation method      | Simulated       |
-|              | Geographic area         | Kabul           |
-|              | Frequency type          | Return Period   |
-|              | Occurrence probability  | 100 years       |
-|              | Occurrence time (start) | 1958            |
-|              | Occurrence time (end)   | 2001            |
-|              | Occurrence time (span)  | 44 years        |
-|      \*      | Hazard process          | River flood     |
-|      \*      | Unit of measure         | Water depth (m) |
+```
 
-**Earthquake hazard maps for Afghanistan**
+```{csv-table-no-translate} Event set hazards
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/fathom/Hazard metadata_Event sets_Hazards.csv
+---
 
-Schema attributes for an earthquake hazard map related to an occurrence probability of an event with return period of once in 1000 years over Afghanistan. The seismic data catalogue behind the calculation of occurrence probability starts from year 800, covering a period of 1200 years. The hazard intensity is measured as Peak Ground Acceleration, expressed in (g).
+```
 
-![Screenshot](../img/hzd_eq_afg.jpg)
+````
 
-| **Required** | **Attribute**           | **Example**   |
-| :----------: | ----------------------- | ------------- |
-|      \*      | Hazard type             | Earthquake    |
-|      \*      | Analysis type           | Probabilistic |
-|      \*      | Calculation method      | Simulated     |
-|              | Frequency type          | Return Period |
-|              | Occurrence probability  | 1000 years    |
-|              | Occurrence time (start) | 800           |
-|              | Occurrence time (end)   | 2001          |
-|              | Occurrence time (span)  | 1200 years    |
-|      \*      | Hazard process          | Ground motion |
-|      \*      | Unit of measure         | PGA (g)       |
+````{tab-item} Metadata (JSON)
 
+```{eval-rst}
+.. jsoninclude:: ../../examples/hazard/fathom/example.json
+   :jsonpointer:
+   :title: Example
+```
 
 ````
 

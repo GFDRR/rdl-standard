@@ -1,0 +1,36 @@
+{
+  "datasets": [
+    {
+      "id": "1",
+      "title": "FATHOM Global flood hazard layer",
+      "description": "Probabilistic maps of flood hazard occurrence frequency by return period.",
+      "risk_data_type": "hazard",
+      "spatial": {
+        "scale": "global"
+      },
+      "license": "Commercial",
+      "hazard": {
+        "event_sets": [
+          {
+            "id": "1",
+            "analysis_type": "probabilistic",
+            "calculation_method": "simulated",
+            "event_count": 10,
+            "occurrence_range": "1/10 to 1/1000 years",
+            "hazards": [
+              {
+                "id": "1",
+                "type": "flood",
+                "processes": [
+                  "fluvial_flood",
+                  "pluvial_flood"
+                ],
+                "intensity_measure": "fl_wd:m"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
