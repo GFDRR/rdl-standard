@@ -433,12 +433,19 @@ jsonpointer: /$defs/Entity/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`publisher`](rdls_schema.json,,publisher)
+- [`contact_point`](rdls_schema.json,,contact_point)
+- [`creator`](rdls_schema.json,,creator)
+- [`Attribution/entity`](rdls_schema.json,/$defs/Attribution,entity)
+
 Each `Entity` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Entity
-collapse: name,email,url
+collapse:
 addtargets:
 ---
 ```
@@ -453,12 +460,16 @@ jsonpointer: /$defs/Attribution/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`attributions`](rdls_schema.json,,attributions)
+
 Each `Attribution` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Attribution
-collapse: id,entity,role
+collapse: entity
 addtargets:
 ---
 ```
@@ -473,12 +484,16 @@ jsonpointer: /$defs/Related_resource/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`referenced_by`](rdls_schema.json,,referenced_by)
+
 Each `Related_resource` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Related_resource
-collapse: id,name,authorNames,datePublished,url,doi
+collapse:
 addtargets:
 ---
 ```
@@ -493,12 +508,16 @@ jsonpointer: /$defs/Source/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`sources`](rdls_schema.json,,sources)
+
 Each `Source` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Source
-collapse: id,name,url,type,component
+collapse:
 addtargets:
 ---
 ```
@@ -513,12 +532,18 @@ jsonpointer: /$defs/Period/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Resource/temporal`](rdls_schema.json,/$defs/Resource,temporal)
+- [`Event_set/temporal`](rdls_schema.json,/$defs/Event_set,temporal)
+- [`Event/occurrence/empirical/temporal`](rdls_schema.json,/$defs/Event,occurrence/empirical/temporal)
+
 Each `Period` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Period
-collapse: start,end,duration
+collapse:
 addtargets:
 ---
 ```
@@ -533,12 +558,18 @@ jsonpointer: /$defs/Location/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`spatial`](rdls_schema.json,,spatial)
+- [`vulnerability/spatial`](rdls_schema.json,/properties/vulnerability,spatial)
+- [`Event_set/spatial`](rdls_schema.json,/$defs/Event_set,spatial)
+
 Each `Location` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Location
-collapse: countries,gazetteerEntries,bbox,geometry,centroid,scale
+collapse: geometry
 addtargets:
 ---
 ```
@@ -553,12 +584,16 @@ jsonpointer: /$defs/Gazetteer_entry/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Location/gazetteerEntries`](rdls_schema.json,/$defs/Location,gazetteerEntries)
+
 Each `Gazetteer_entry` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Gazetteer_entry
-collapse: id,scheme,description,uri
+collapse:
 addtargets:
 ---
 ```
@@ -573,12 +608,16 @@ jsonpointer: /$defs/Geometry/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Location/geometry`](rdls_schema.json,/$defs/Location,geometry)
+
 Each `Geometry` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Geometry
-collapse: type,coordinates
+collapse:
 addtargets:
 ---
 ```
@@ -593,12 +632,17 @@ jsonpointer: /$defs/Hazard/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event_set/hazards`](rdls_schema.json,/$defs/Event_set,hazards)
+- [`Event/hazard`](rdls_schema.json,/$defs/Event,hazard)
+
 Each `Hazard` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Hazard
-collapse: id,type,processes,intensity_measure,trigger
+collapse: trigger
 addtargets:
 ---
 ```
@@ -613,12 +657,16 @@ jsonpointer: /$defs/Trigger/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Hazard/trigger`](rdls_schema.json,/$defs/Hazard,trigger)
+
 Each `Trigger` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Trigger
-collapse: type,processes
+collapse:
 addtargets:
 ---
 ```
@@ -633,13 +681,16 @@ jsonpointer: /$defs/Event_set/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`hazard/event_sets`](rdls_schema.json,/properties/hazard,event_sets)
+
 Each `Event_set` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Event_set
-collapse: 
-  id,hazards,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,temporal,events
+collapse: spatial,temporal
 addtargets:
 ---
 ```
@@ -654,13 +705,16 @@ jsonpointer: /$defs/Event/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event_set/events`](rdls_schema.json,/$defs/Event_set,events)
+
 Each `Event` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Event
-collapse: 
-  id,disaster_identifier,calculation_method,hazard,occurrence,description,footprints
+collapse: hazard
 addtargets:
 ---
 ```
@@ -675,12 +729,16 @@ jsonpointer: /$defs/Footprint/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event/footprints`](rdls_schema.json,/$defs/Event,footprints)
+
 Each `Footprint` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Footprint
-collapse: id,intensity_measure,data_uncertainty
+collapse:
 addtargets:
 ---
 ```
@@ -695,12 +753,18 @@ jsonpointer: /$defs/Cost/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`exposure/cost`](rdls_schema.json,/properties/exposure,cost)
+- [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
+- [`loss/cost`](rdls_schema.json,/properties/loss,cost)
+
 Each `Cost` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Cost
-collapse: id,type,unit
+collapse:
 addtargets:
 ---
 ```
@@ -715,12 +779,16 @@ jsonpointer: /$defs/Probabilistic/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event/occurrence/probabilistic`](rdls_schema.json,/$defs/Event,occurrence/probabilistic)
+
 Each `Probabilistic` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Probabilistic
-collapse: return_period,event_rate,probability
+collapse:
 addtargets:
 ---
 ```
@@ -735,12 +803,17 @@ jsonpointer: /$defs/Impact/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`vulnerability/impact`](rdls_schema.json,/properties/vulnerability,impact)
+- [`loss/impact`](rdls_schema.json,/properties/loss,impact)
+
 Each `Impact` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Impact
-collapse: type,metric,unit,base_data_type
+collapse:
 addtargets:
 ---
 ```
@@ -755,12 +828,16 @@ jsonpointer: /$defs/Classification/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`vulnerability/se_category`](rdls_schema.json,/properties/vulnerability,se_category)
+
 Each `Classification` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Classification
-collapse: scheme,id,description,uri
+collapse:
 addtargets:
 ---
 ```
@@ -775,12 +852,16 @@ jsonpointer: /$defs/Link/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`links`](rdls_schema.json,,links)
+
 Each `Link` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Link
-collapse: href,rel
+collapse:
 addtargets:
 ---
 ```

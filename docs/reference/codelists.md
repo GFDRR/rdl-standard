@@ -23,7 +23,9 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 This codelist is referenced by the following properties:
 
-- `Vulnerability/intensity`
+- [`vulnerability/intensity`](rdls_schema.json,/properties/vulnerability,intensity)
+- [`Hazard/intensity_measure`](rdls_schema.json,/$defs/Hazard,intensity_measure)
+- [`Footprint/intensity_measure`](rdls_schema.json,/$defs/Footprint,intensity_measure)
 
 This codelist has the following codes:
 
@@ -37,6 +39,10 @@ file: ../../schema/codelists/open/IMT.csv
 
 ### classification_scheme
 
+This codelist is referenced by the following properties:
+
+- [`Classification/scheme`](rdls_schema.json,/$defs/Classification,scheme)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -49,6 +55,11 @@ file: ../../schema/codelists/open/classification_scheme.csv
 
 ### damage_scale_name
 
+This codelist is referenced by the following properties:
+
+- [`vulnerability/functions/fragility/damage_scale_name`](rdls_schema.json,/properties/vulnerability,functions/fragility/damage_scale_name)
+- [`vulnerability/functions/damage_to_loss/damage_scale_name`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/damage_scale_name)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -60,6 +71,10 @@ file: ../../schema/codelists/open/damage_scale_name.csv
 ```
 
 ### data_formats
+
+This codelist is referenced by the following properties:
+
+- [`Resource/format`](rdls_schema.json,/$defs/Resource,format)
 
 This codelist has the following codes:
 
@@ -75,7 +90,7 @@ file: ../../schema/codelists/open/data_formats.csv
 
 This codelist is referenced by the following properties:
 
-- `Engineering_demand_function/parameter`
+- [`vulnerability/functions/engineering_demand/parameter`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/parameter)
 
 This codelist has the following codes:
 
@@ -91,7 +106,7 @@ file: ../../schema/codelists/open/engineering_demand_parameter.csv
 
 This codelist is referenced by the following properties:
 
-- `Impact/metric`
+- [`Impact/metric`](rdls_schema.json,/$defs/Impact,metric)
 
 This codelist has the following codes:
 
@@ -107,7 +122,7 @@ file: ../../schema/codelists/open/impact_metric.csv
 
 This codelist is referenced by the following properties:
 
-- `Impact/unit`
+- [`Impact/unit`](rdls_schema.json,/$defs/Impact,unit)
 
 This codelist has the following codes:
 
@@ -123,7 +138,7 @@ file: ../../schema/codelists/open/impact_unit.csv
 
 This codelist is referenced by the following properties:
 
-- `license`
+- [`license`](rdls_schema.json,,license)
 
 This codelist has the following codes:
 
@@ -137,6 +152,10 @@ file: ../../schema/codelists/open/license.csv
 
 ### location_gazetteers
 
+This codelist is referenced by the following properties:
+
+- [`Gazetteer_entry/scheme`](rdls_schema.json,/$defs/Gazetteer_entry,scheme)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -148,6 +167,10 @@ file: ../../schema/codelists/open/location_gazetteers.csv
 ```
 
 ### media_type
+
+This codelist is referenced by the following properties:
+
+- [`Resource/media_type`](rdls_schema.json,/$defs/Resource,media_type)
 
 This codelist has the following codes:
 
@@ -165,7 +188,7 @@ The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://stand
 
 This codelist is referenced by the following properties:
 
-- `Attribution/role`
+- [`Attribution/role`](rdls_schema.json,/$defs/Attribution,role)
 
 This codelist has the following codes:
 
@@ -183,7 +206,9 @@ file: ../../schema/codelists/open/roles.csv
 
 This codelist is referenced by the following properties:
 
-- `Vulnerability/hazard_analysis_type`
+- [`vulnerability/hazard_analysis_type`](rdls_schema.json,/properties/vulnerability,hazard_analysis_type)
+- [`loss/hazard_analysis_type`](rdls_schema.json,/properties/loss,hazard_analysis_type)
+- [`Event_set/analysis_type`](rdls_schema.json,/$defs/Event_set,analysis_type)
 
 This codelist has the following codes:
 
@@ -199,8 +224,7 @@ file: ../../schema/codelists/closed/analysis_type.csv
 
 This codelist is referenced by the following properties:
 
-- `Cost/type`
-- `Cost/unit`
+- [`Cost/type`](rdls_schema.json,/$defs/Cost,type)
 
 This codelist has the following codes:
 
@@ -213,6 +237,10 @@ file: ../../schema/codelists/closed/cost_type.csv
 ```
 
 ### country
+
+This codelist is referenced by the following properties:
+
+- [`Location/countries`](rdls_schema.json,/$defs/Location,countries)
 
 This codelist has the following codes:
 
@@ -228,6 +256,8 @@ file: ../../schema/codelists/closed/country.csv
 
 This codelist is referenced by the following properties:
 
+- [`Cost/unit`](rdls_schema.json,/$defs/Cost,unit)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -242,7 +272,9 @@ file: ../../schema/codelists/closed/currency.csv
 
 This codelist is referenced by the following properties:
 
-- `Impact/base_data_type`
+- [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
+- [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
+- [`Impact/base_data_type`](rdls_schema.json,/$defs/Impact,base_data_type)
 
 This codelist has the following codes:
 
@@ -258,8 +290,9 @@ file: ../../schema/codelists/closed/data_calculation_type.csv
 
 This codelist is referenced by the following properties:
 
-- `Exposure/category`
-- `Vulnerability/category`
+- [`exposure/category`](rdls_schema.json,/properties/exposure,category)
+- [`vulnerability/category`](rdls_schema.json,/properties/vulnerability,category)
+- [`loss/category`](rdls_schema.json,/properties/loss,category)
 
 This codelist has the following codes:
 
@@ -272,6 +305,10 @@ file: ../../schema/codelists/closed/exposure_category.csv
 ```
 
 ### frequency_distribution
+
+This codelist is referenced by the following properties:
+
+- [`Event_set/frequency_distribution`](rdls_schema.json,/$defs/Event_set,frequency_distribution)
 
 This codelist has the following codes:
 
@@ -287,10 +324,11 @@ file: ../../schema/codelists/closed/frequency_distribution.csv
 
 This codelist is referenced by the following properties:
 
-- `Vulnerability_function/approach`
-- `Fragility_function/approach`
-- `Damage_to_loss_function/approach`
-- `Engineering_demand_function/approach`
+- [`vulnerability/functions/vulnerability/approach`](rdls_schema.json,/properties/vulnerability,functions/vulnerability/approach)
+- [`vulnerability/functions/fragility/approach`](rdls_schema.json,/properties/vulnerability,functions/fragility/approach)
+- [`vulnerability/functions/damage_to_loss/approach`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/approach)
+- [`vulnerability/functions/engineering_demand/approach`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/approach)
+- [`loss/approach`](rdls_schema.json,/properties/loss,approach)
 
 This codelist has the following codes:
 
@@ -303,6 +341,10 @@ file: ../../schema/codelists/closed/function_approach.csv
 ```
 
 ### geometry_type
+
+This codelist is referenced by the following properties:
+
+- [`Geometry/type`](rdls_schema.json,/$defs/Geometry,type)
 
 This codelist has the following codes:
 
@@ -320,6 +362,14 @@ The RDLS offers a classification of hazards that are more often required in disa
 
 The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
 
+This codelist is referenced by the following properties:
+
+- [`vulnerability/hazard_primary`](rdls_schema.json,/properties/vulnerability,hazard_primary)
+- [`vulnerability/hazard_secondary`](rdls_schema.json,/properties/vulnerability,hazard_secondary)
+- [`loss/hazard_type`](rdls_schema.json,/properties/loss,hazard_type)
+- [`Hazard/type`](rdls_schema.json,/$defs/Hazard,type)
+- [`Trigger/type`](rdls_schema.json,/$defs/Trigger,type)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -334,7 +384,7 @@ file: ../../schema/codelists/closed/hazard_type.csv
 
 This codelist is referenced by the following properties:
 
-- `Impact/type`
+- [`Impact/type`](rdls_schema.json,/$defs/Impact,type)
 
 This codelist has the following codes:
 
@@ -347,6 +397,10 @@ file: ../../schema/codelists/closed/impact_type.csv
 ```
 
 ### loss_type
+
+This codelist is referenced by the following properties:
+
+- [`loss/type`](rdls_schema.json,/properties/loss,type)
 
 This codelist has the following codes:
 
@@ -362,6 +416,14 @@ file: ../../schema/codelists/closed/loss_type.csv
 
 The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
 
+This codelist is referenced by the following properties:
+
+- [`vulnerability/hazard_process_primary`](rdls_schema.json,/properties/vulnerability,hazard_process_primary)
+- [`vulnerability/hazard_process_secondary`](rdls_schema.json,/properties/vulnerability,hazard_process_secondary)
+- [`loss/hazard_process`](rdls_schema.json,/properties/loss,hazard_process)
+- [`Hazard/processes`](rdls_schema.json,/$defs/Hazard,processes)
+- [`Trigger/processes`](rdls_schema.json,/$defs/Trigger,processes)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -376,10 +438,10 @@ file: ../../schema/codelists/closed/process_type.csv
 
 This codelist is referenced by the following properties:
 
-- `Vulnerability_function/relationship`
-- `Fragility_function/relationship`
-- `Damage_to_loss_function/relationship`
-- `Engineering_demand_function/relationship`
+- [`vulnerability/functions/vulnerability/relationship`](rdls_schema.json,/properties/vulnerability,functions/vulnerability/relationship)
+- [`vulnerability/functions/fragility/relationship`](rdls_schema.json,/properties/vulnerability,functions/fragility/relationship)
+- [`vulnerability/functions/damage_to_loss/relationship`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/relationship)
+- [`vulnerability/functions/engineering_demand/relationship`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/relationship)
 
 This codelist has the following codes:
 
@@ -393,6 +455,11 @@ file: ../../schema/codelists/closed/relationship_type.csv
 
 ### risk_data_type
 
+This codelist is referenced by the following properties:
+
+- [`risk_data_type`](rdls_schema.json,,risk_data_type)
+- [`Source/component`](rdls_schema.json,/$defs/Source,component)
+
 This codelist has the following codes:
 
 ```{csv-table-no-translate}
@@ -404,6 +471,10 @@ file: ../../schema/codelists/closed/risk_data_type.csv
 ```
 
 ### seasonality
+
+This codelist is referenced by the following properties:
+
+- [`Event_set/seasonality`](rdls_schema.json,/$defs/Event_set,seasonality)
 
 This codelist has the following codes:
 
@@ -419,7 +490,7 @@ file: ../../schema/codelists/closed/seasonality.csv
 
 This codelist is referenced by the following properties:
 
-- `Source/type`
+- [`Source/type`](rdls_schema.json,/$defs/Source,type)
 
 This codelist has the following codes:
 
@@ -435,7 +506,7 @@ file: ../../schema/codelists/closed/source_type.csv
 
 This codelist is referenced by the following properties:
 
-- `Location/scale`
+- [`Location/scale`](rdls_schema.json,/$defs/Location,scale)
 
 This codelist has the following codes:
 
