@@ -132,7 +132,7 @@
       "uniqueItems": true
     },
     "hazard": {
-      "title": "Hazard dataset metadata",
+      "title": "Hazard metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "required": [
@@ -153,7 +153,7 @@
       "minProperties": 1
     },
     "exposure": {
-      "title": "Exposure dataset metadata",
+      "title": "Exposure metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
@@ -195,7 +195,7 @@
       "minProperties": 1
     },
     "vulnerability": {
-      "title": "Vulnerability dataset metadata",
+      "title": "Vulnerability metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
       "required": [
@@ -600,7 +600,7 @@
       "minProperties": 1
     },
     "loss": {
-      "title": "Loss dataset metadata",
+      "title": "Loss metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
       "required": [
