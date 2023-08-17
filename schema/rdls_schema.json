@@ -17,7 +17,7 @@
   ],
   "properties": {
     "id": {
-      "title": "Identifier",
+      "title": "Dataset identifier",
       "type": "string",
       "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
       "minLength": 1
@@ -931,7 +931,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Attribution identifier",
           "type": "string",
           "description": "A locally unique identifier for the attribution.",
           "minLength": 1
@@ -961,7 +961,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Related resource identifier",
           "type": "string",
           "description": "A locally unique identifier for the related resource.",
           "minLength": 1
@@ -1013,7 +1013,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Source identifier",
           "type": "string",
           "description": "A locally unique identifier for the source.",
           "minLength": 1
@@ -1433,7 +1433,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Gazetteer entry identifier",
           "type": "string",
           "description": "An identifier drawn from the gazetteer identified in `.scheme`.",
           "minLength": 1
@@ -1508,7 +1508,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Hazard identifier",
           "description": "A local identifier for this hazard.",
           "type": "string",
           "minLength": 1
@@ -1934,7 +1934,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Cost identifier",
           "type": "string",
           "description": "A locally unique identifier for this cost.",
           "minLength": 1
@@ -2372,7 +2372,7 @@
           "minLength": 1
         },
         "id": {
-          "title": "ID",
+          "title": "Classification identifier",
           "description": "The classification code taken from the scheme.",
           "type": "string",
           "minLength": 1
