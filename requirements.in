@@ -17,4 +17,3 @@ jscc>=0.2.3
 ocdskit
 jsonschema
 pygit2
-./flatten-tool
