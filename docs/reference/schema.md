@@ -132,12 +132,14 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
         Uncertainty
       }
 ```
-The `hazard`` object has the following properties:
+
+The `hazard` object has the following properties:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/hazard
-collapse: event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
+collapse: 
+  event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
 addtargets:
 ---
 ```
