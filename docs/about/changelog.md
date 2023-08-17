@@ -84,6 +84,7 @@ This page lists changes to the Risk Data Library Standard.
   - Update `manage.py pre-commmit` to generate sub-schema reference.
 - [#169](https://github.com/GFDRR/rdl-standard/pull/169) - Uncollapse `event_sets` in `hazard` reference table.
 - [#146](https://github.com/GFDRR/rdl-standard/pull/146) - Update introduction to the RDLS reference section.
+- [#193](https://github.com/GFDRR/rdl-standard/pull/193) - Fix lists of referencing fields for subschemas and codelists.
 
 ### Non-normative documentation
 
