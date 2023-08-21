@@ -15,7 +15,7 @@ This section contains the following how-to guides:
 * [Resolve check failures](#resolve-check-failures)
 * [Build the documentation](#build-the-documentation)
 * [Deploy changes](#deploy-changes)
-* [Release a new version](#developer_docs.mdrelease-a-new-version)
+* [Release a new version](#release-a-new-version)
 * [Update requirements](#update-requirements)
 * [Add an RDLS metadata example](#add-an-rdls-metadata-example)
 
