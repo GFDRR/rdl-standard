@@ -380,46 +380,30 @@ def cli():
 
 @cli.command()
 def pre_commit():
-    """Update reference documentation and format Markdown files
+    """Update example CSV files, update reference documentation and format Markdown files.
     """
 
     # Load schema
     schema = json_load('rdls_schema.json')
 
-    # Update examples
-    for example_path in glob.glob(f"{exampledir}/*/*/*.json"):      
-           
-      subprocess.run([
-        "flatten-tool",
-        "flatten",
-        "-s",
-        "schema/rdls_schema.json",
-        "-f",
-        "csv",
-        "--root-list-path",
-        "datasets",
-        "-m",
-        "datasets",
-        "-o",
-        f"{'/'.join(example_path.split('/')[:-1])}",
-        "--truncation-length",
-        "50",
-        "--use-titles",
-        "--remove-empty-schema-columns",
-        "--line-terminator",
-        "LF",
-        example_path
-      ])
+    # Remove example CSV files
+    for path in glob.glob(f"{exampledir}/*/*/*.csv"):
+       os.remove(path)
     
+    # Generate example CSV files
+    for example_path in glob.glob(f"{exampledir}/*/*/example.json"):      
+           
+      command = f"flatten-tool flatten -s schema/rdls_schema.json -f csv --root-list-path datasets -m datasets -o {'/'.join(example_path.split('/')[:-1])} --truncation-length 50 --use-titles --remove-empty-schema-columns --line-terminator LF {example_path}"
+      
+      subprocess.run(command.split(" "))
+
     for path in glob.glob(f"{exampledir}/*/*/*.csv"):
       with open(path, 'r') as f:
-         # Transpose CSV files for column-wise presentation
+         # Transpose example CSV files for column-wise presentation
          rows = zip(*csv.reader(f))
       
       with open(path, 'w') as f:
          writer = csv.writer(f, lineterminator="\n")
-         # Remove identifiers for brevity
-         # writer.writerows([row for row in rows if row[0].split(':')[-1] != 'Identifier'])
          # Omit titles of parent objects
          writer.writerows([[row[0].split(':')[-1]] + list(row[1:]) for row in rows])
 
