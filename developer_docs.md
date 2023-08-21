@@ -15,8 +15,9 @@ This section contains the following how-to guides:
 * [Resolve check failures](#resolve-check-failures)
 * [Build the documentation](#build-the-documentation)
 * [Deploy changes](#deploy-changes)
-* [Release a new version](#release-a-new-version)
+* [Release a new version](#developer_docs.mdrelease-a-new-version)
 * [Update requirements](#update-requirements)
+* [Add an RDLS metadata example](#add-an-rdls-metadata-example)
 
 ### Propose changes
 
@@ -201,6 +202,25 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
    ```
 1. Commit your changes.
 
+
+## Add an RDLS metadata example
+
+1. Author your example RDLS metadata in JSON format. You can use either a text editor or the [RDLS spreadsheet template](https://github.com/GFDRR/rdls-spreadsheet-template/) and [Flatten Tool](https://flatten-tool.readthedocs.io/en/latest/). Your example RDLS metadata must be wrapped in an outer `datasets` array, e.g.
+
+```json
+{
+  "datasets": [
+    {
+      "id": "1",
+      "title": "My example RDLS metadata"
+    }
+  ]
+}
+```
+1. Save your example JSON file to `examples/{component}/{title}/example.json` where `{component}` is the risk data component the example relates to (hazard, exposure, loss or vulnerability) and `{title}` is the title of the example.
+1. Run `./manage.py pre-commit` to create a CSV version of the example.
+1. Add Sphinx directives to the Markdown files in `docs` to render your example in the built documentation.
+
 ## Style guides
 
 ### Changelog style guide
@@ -257,7 +277,8 @@ Feature branches branch off the `dev` branch, with work merged into the `dev` br
   - `.tx/`: Transifex configuration (not yet implemented)
   - `img/`: Images used in the documentation
   - `locale/`: Translations of the English documentation (not yet implemented)
-- `schema/`: schema-related files
+- `examples`: Example JSON files, CSV files and figures
+- `schema/`: schema- and codelist-related files
 - `specs/`: TBD
 - `SteeringCommittee/`: Minutes of steering committee meetings
 
