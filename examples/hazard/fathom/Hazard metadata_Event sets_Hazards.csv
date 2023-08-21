@@ -1,2 +1,6 @@
-Dataset identifier,Event set identifier,Hazard identifier,Hazard type,Hazard processes,Intensity measure
-1,1,1,flood,fluvial_flood;pluvial_flood,fl_wd:m
+Dataset identifier,1
+Event set identifier,1
+Hazard identifier,1
+Hazard type,flood
+Hazard processes,fluvial_flood;pluvial_flood
+Intensity measure,fl_wd:m
