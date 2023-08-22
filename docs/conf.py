@@ -40,11 +40,15 @@ extensions = ['myst_parser',
               'sphinx_design',
               'sphinxcontrib.mermaid',
               'sphinxcontrib.opendataservices',
+              'sphinxcontrib.plantuml',
               'sphinxcontrib.jsonschema',
               'sphinx_rtd_theme',
               'sphinx.ext.todo',
               'sphinx.ext.autodoc',
               'sphinx_togglebutton',]
+
+# PlantUML path
+plantuml = 'java -jar plantuml-1.2023.10.jar'
 
 # MyST heading anchors
 myst_heading_anchors = 5
