@@ -24,6 +24,33 @@ For fields that reference [sub-schemas](#sub-schemas), a link is provided to a t
 The diagram below shows the core relationships between schema components, and their core attributes.
 
 ```{eval-rst}
+.. uml::
+
+  @startjson
+  {
+    "title": "",
+    "description": "",
+    "risk_data_type": "",
+    "publisher": {
+      "name": "",
+      "email": "",
+      "url": ""
+    },
+    "version": "",
+    "purpose": "",
+    "project": "",
+    "details": "",
+    "spatial": {
+      "countries": [],
+      "bbox": []
+    },
+    "license": ""
+  }
+  @endjson
+
+```
+
+```{eval-rst}
  .. mermaid::
 
   classDiagram
