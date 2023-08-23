@@ -1,0 +1,19 @@
+{
+  "title": "",
+  "description": "",
+  "risk_data_type": "",
+  "publisher": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "version": "",
+  "purpose": "",
+  "project": "",
+  "details": "",
+  "spatial": {
+    "countries": [],
+    "bbox": []
+  },
+  "license": ""
+}

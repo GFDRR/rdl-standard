@@ -1,0 +1,18 @@
+{
+  "loss": {
+    "hazard_type": "",
+    "hazard_process": "",
+    "category": "",
+    "type": "",
+    "impact": {
+      "type": "",
+      "metric": "",
+      "unit": ""
+    },
+    "approach": "",
+    "cost": {
+      "type": "",
+      "unit": ""
+    }
+  }
+}
