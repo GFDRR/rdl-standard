@@ -1,0 +1,22 @@
+{
+  "$id": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_package_schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RDLS metadata package",
+  "description": "A container for publishing Risk Data Library Standard Metadata.",
+  "type": "object",
+  "required": [
+    "datasets"
+  ],
+  "properties": {
+    "networks": {
+      "title": "Datasets",
+      "description": "RDLS metadata describing one or more datasets.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/GFDRR/rdl-standard/dev/schema/rdls_schema.json"
+      }
+    }
+  },
+  "minProperties": 1
+}
