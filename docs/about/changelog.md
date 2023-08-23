@@ -61,6 +61,7 @@ This page lists changes to the Risk Data Library Standard.
   - Required fields in `Event_set`, `Hazard` and `Footprint`
   - Markdown syntax in `Attribution.role` description
 - [#190](https://github.com/GFDRR/rdl-standard/pull/190) - Deletes type key from properties with `$ref` components.
+- [#203](https://github.com/GFDRR/rdl-standard/pull/203) - Add package schema.
 
 ### Codelists
 
