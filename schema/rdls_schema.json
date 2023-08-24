@@ -1386,7 +1386,7 @@
         "bbox": {
           "title": "Bounding box",
           "type": "array",
-          "description": "A geographic bounding box defined by two longitudes and two latitudes delimiting the geographical area.  Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
+          "description": "A geographic bounding box defined by two longitudes and two latitudes delimiting the geographical area. Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
           "items": {
             "type": "number"
           },
@@ -1401,7 +1401,7 @@
         "centroid": {
           "title": "Centroid",
           "type": "array",
-          "description": "The coordinates of the centre of the geographical area.  Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
+          "description": "The coordinates of the centre of the geographical area. Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
           "items": {
             "type": "number"
           },
