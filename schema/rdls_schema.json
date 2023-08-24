@@ -181,12 +181,12 @@
           "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
           "minLength": 1
         },
-        "cost": {
-          "title": "Asset cost",
+        "metrics": {
+          "title": "Asset metrics",
           "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
+          "description": "The exposure metrics associated with specific elements of assets detailed in the dataset.",
           "items": {
-            "$ref": "#/$defs/Cost"
+            "$ref": "#/$defs/Metric"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -1923,6 +1923,46 @@
       },
       "minProperties": 1
     },
+    "Metric": {
+      "title": "Asset metric",
+      "type": "object",
+      "description": "The metric associated with specific elements of assets detailed in the dataset.",
+      "required": [
+        "id",
+        "type",
+        "quantity_kind"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this metric.",
+          "minLength": 1
+        },
+        "type": {
+          "title": "Metric type",
+          "description": "The type of metric, from the closed [metric type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_type).",
+          "type": "string",
+          "codelist": "metric_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "structure",
+            "content",
+            "product",
+            "disruption",
+            "population"
+          ]
+        },
+        "quantity_kind": {
+          "title": "Metric quantity kind",
+          "type": "string",
+          "description": "The kind of quantity in which the metric is specified, from the open [quantity kind codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#quantity_kind.",
+          "codelist": "quantity_kind.csv",
+          "openCodelist": true
+        }
+      },
+      "minProperties": 1
+    },
     "Cost": {
       "title": "Asset cost",
       "type": "object",
@@ -1941,15 +1981,16 @@
         },
         "type": {
           "title": "Cost type",
-          "description": "The type of the cost, from the closed [cost type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#cost_type).",
+          "description": "The type of the cost, from the closed [metric type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_type).",
           "type": "string",
-          "codelist": "cost_type.csv",
+          "codelist": "metric_type.csv",
           "openCodelist": false,
           "enum": [
             "structure",
             "content",
             "product",
-            "disruption"
+            "disruption",
+            "population"
           ]
         },
         "unit": {

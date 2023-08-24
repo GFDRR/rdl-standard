@@ -182,6 +182,22 @@ file: ../../schema/codelists/open/media_type.csv
 ---
 ```
 
+### quantity_kind
+
+This codelist is referenced by the following properties:
+
+- [`Metric/quantity_kind`](rdls_schema.json,/$defs/Metric,quantity_kind)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../schema/codelists/open/quantity_kind.csv
+---
+```
+
 ### roles
 
 The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml) with the addition of 'world_bank_team_lead' and the omission of codes covered by the `creator`, `contact_point` and `publisher` fields.
@@ -217,22 +233,6 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../schema/codelists/closed/analysis_type.csv
----
-```
-
-### cost_type
-
-This codelist is referenced by the following properties:
-
-- [`Cost/type`](rdls_schema.json,/$defs/Cost,type)
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/cost_type.csv
 ---
 ```
 
@@ -409,6 +409,23 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../schema/codelists/closed/loss_type.csv
+---
+```
+
+### metric_type
+
+This codelist is referenced by the following properties:
+
+- [`Metric/type`](rdls_schema.json,/$defs/Metric,type)
+- [`Cost/type`](rdls_schema.json,/$defs/Cost,type)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../schema/codelists/closed/metric_type.csv
 ---
 ```
 
