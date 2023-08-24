@@ -866,9 +866,10 @@
           "exclusiveMinimum": 0
         },
         "coordinate_system": {
-          "title": "Reference coordinate system",
+          "title": "Coordinate reference system",
           "type": "string",
-          "description": "The reference co-ordinate system of this resource, using the [EPSG codelist](https://epsg.org).",
+          "description": "The co-ordinate reference system of this resource, using the EPSG or ESRI codes from https://epsg.io/. Provide both the CRS authority scheme and the code separated by a colon, e.g. EPSG:4326.",
+          "pattern": "^(ESRI:|EPSG:)[0-9]+$",
           "minLength": 1
         },
         "url": {
