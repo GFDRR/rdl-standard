@@ -457,7 +457,6 @@ file: ../../schema/codelists/closed/relationship_type.csv
 
 This codelist is referenced by the following properties:
 
-- [`risk_data_type`](rdls_schema.json,,risk_data_type)
 - [`Source/component`](rdls_schema.json,/$defs/Source,component)
 
 This codelist has the following codes:
