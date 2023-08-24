@@ -40,8 +40,6 @@
       "description": "The types of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#risk-data-type).",
       "items": {
         "type": "string",
-        "codelist": "risk_data_type.csv",
-        "openCodelist": false,
         "enum": [
           "hazard",
           "exposure",
@@ -49,6 +47,8 @@
           "loss"
         ]
       },
+      "codelist": "risk_data_type.csv",
+      "openCodelist": false,
       "minItems": 1,
       "uniqueItems": true
     },
