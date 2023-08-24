@@ -88,7 +88,7 @@
     },
     "spatial": {
       "title": "Spatial coverage",
-      "description": "The geographical area covered by the dataset.",
+      "description": "The geographical area covered by the dataset. If a coordinate based definition is required the use of `bbox` is recommended over `geometry` or `centroid`.",
       "$ref": "#/$defs/Location"
     },
     "license": {
@@ -1386,7 +1386,7 @@
         "bbox": {
           "title": "Bounding box",
           "type": "array",
-          "description": "A geographic bounding box delimiting the geographical area.",
+          "description": "A geographic bounding box defined by two longitudes and two latitudes delimiting the geographical area. Coordinates must be given in decimal degrees.",
           "items": {
             "type": "number"
           },
@@ -1401,7 +1401,7 @@
         "centroid": {
           "title": "Centroid",
           "type": "array",
-          "description": "The coordinates of the centre of the geographical area.",
+          "description": "The coordinates of the centre of the geographical area given in decimal degrees.",
           "items": {
             "type": "number"
           },
@@ -1484,7 +1484,7 @@
         "coordinates": {
           "title": "Coordinates",
           "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
+          "description": "One or more GeoJSON positions in decimal degrees according to the GeoJSON geometry type defined in `.type`.",
           "items": {
             "type": [
               "number",
