@@ -64,7 +64,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#203](https://github.com/GFDRR/rdl-standard/pull/203) - Add package schema.
 - [#207](https://github.com/GFDRR/rdl-standard/pull/207):
   - update description of `spatial` to recommend use of `bbox` when coordinates based location is needed.
-  - update descriptions of `spatial`, `bbox`, `centroid` and `coordinates` to specify use of decimal degrees.
+  - update descriptions of `spatial`, `bbox`, `centroid` and `coordinates` to specify use of WGS84 and decimal degrees.
 
 ### Codelists
 
