@@ -19,7 +19,7 @@
     "id": {
       "title": "Identifier",
       "type": "string",
-      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
+      "description": "A unique identifier for the dataset. Consult the [dataset identifier guidance](https://rdl-standard.readthedocs.io/en/dev/guides/metadata/#how-to-publish-rdls-metadata) for details on assigning a unique dataset id.",
       "minLength": 1
     },
     "title": {
