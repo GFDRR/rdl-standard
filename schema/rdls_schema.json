@@ -1386,7 +1386,7 @@
         "bbox": {
           "title": "Bounding box",
           "type": "array",
-          "description": "A geographic bounding box defined by two longitudes and two latitudes delimiting the geographical area. Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
+          "description": "A geographic bounding box defined by two longitudes and two latitudes delimiting the geographical area (min Longitude, min Latitude, max Longitude, max Latitude). Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
           "items": {
             "type": "number"
           },
@@ -1484,7 +1484,7 @@
         "coordinates": {
           "title": "Coordinates",
           "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Values must be given using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.",
+          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Values must be given in pairs using the World Geodetic System 1984 (WGS 84) [WGS84] datum and longitude and latitude units of decimal degrees. E.g. (51.751944, -1.257778) for a 'point` `.type`.",
           "items": {
             "type": [
               "number",
