@@ -1,6 +1,17 @@
-Dataset identifier,1
-Title,FATHOM Global flood hazard layer
-Description,Probabilistic maps of flood hazard occurrence frequency by return period.
+Dataset identifier,FTH_example
+Title,FATHOM flood hazard maps
+Description,Probabilistic modelling of fluvial and pluvial flood hazard
 Risk data type,hazard
-Spatial scale,global
-License,Commercial
+Name,Fathom
+URL,https://www.fathom.global/
+Dataset version,2
+Additional details,"The FATHOM flood-hazard model (previously known as SSBN), is a global gridded dataset of flood hazard produced at the global scale. It provides flood water extent and depth for a range of pluvial and fluvial hazard scenarios, expressed as “return period”, which indicates the probability of occurrence (i.e. once in 5, 10, 20, 50, 75, 100, 200, 250, 500, 750 and 1000 years). The Data are at 3 arc second (approximately 90m) resolution and have a global coverage between 56°S and 60°N. Each country set includes three subsets:
+- Fluvial Undefended (FU): no flood defence accounted
+- Fluvial Defended (FD): flood defence estimated by protection standards proxied by GDP (FloProS)
+- Pluvial Undefended (PU): pluvial cumulation hazard maps, no flood defence accounted"
+Spatial scale,national
+License,commercial
+Name,Mattia Amadio
+Email address,mamadio@worldbank.org
+Name,Mattia Amadio
+Email address,mamadio@worldbank.org

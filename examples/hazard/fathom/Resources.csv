@@ -1,0 +1,8 @@
+Dataset identifier,FTH_example,FTH_example,FTH_example
+Resource identifier,1,2,3
+Resource title,Fluvial hazard - Undefended,Fluvial hazard - Defended,Pluvial hazard - Undefended
+Resource description,"Fluvial flood hazard maps (10), not accounting any flood defence","Fluvial flood hazard maps (10), accounting for flood defence (estimate)","Pluvial flood hazard maps (10), not accounting any flood defence"
+Format,geotiff,geotiff,geotiff
+Spatial resolution,90,90,90
+Reference coordinate system,4326,4326,4326
+Url,http://example.com/FTH-THA-fluvial-undefended,http://example.com/FTH-THA-fluvial-defended,http://example.com/FTH-THA-pluvial-undefended

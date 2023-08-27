@@ -1,14 +1,57 @@
 {
   "datasets": [
     {
-      "id": "1",
-      "title": "FATHOM Global flood hazard layer",
-      "description": "Probabilistic maps of flood hazard occurrence frequency by return period.",
+      "id": "FTH_example",
+      "title": "FATHOM flood hazard maps",
+      "description": "Probabilistic modelling of fluvial and pluvial flood hazard",
       "risk_data_type": "hazard",
-      "spatial": {
-        "scale": "global"
+      "publisher": {
+        "name": "Fathom",
+        "url": "https://www.fathom.global/"
       },
-      "license": "Commercial",
+      "version": "2",
+      "details": "The FATHOM flood-hazard model (previously known as SSBN), is a global gridded dataset of flood hazard produced at the global scale. It provides flood water extent and depth for a range of pluvial and fluvial hazard scenarios, expressed as “return period”, which indicates the probability of occurrence (i.e. once in 5, 10, 20, 50, 75, 100, 200, 250, 500, 750 and 1000 years). The Data are at 3 arc second (approximately 90m) resolution and have a global coverage between 56°S and 60°N. Each country set includes three subsets:\n- Fluvial Undefended (FU): no flood defence accounted\n- Fluvial Defended (FD): flood defence estimated by protection standards proxied by GDP (FloProS)\n- Pluvial Undefended (PU): pluvial cumulation hazard maps, no flood defence accounted",
+      "spatial": {
+        "scale": "national"
+      },
+      "license": "commercial",
+      "contact_point": {
+        "name": "Mattia Amadio",
+        "email": "mamadio@worldbank.org"
+      },
+      "creator": {
+        "name": "Mattia Amadio",
+        "email": "mamadio@worldbank.org"
+      },
+      "resources": [
+        {
+          "id": "1",
+          "title": "Fluvial hazard - Undefended",
+          "description": "Fluvial flood hazard maps (10), not accounting any flood defence",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "4326",
+          "url": "http://example.com/FTH-THA-fluvial-undefended"
+        },
+        {
+          "id": "2",
+          "title": "Fluvial hazard - Defended",
+          "description": "Fluvial flood hazard maps (10), accounting for flood defence (estimate)",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "4326",
+          "url": "http://example.com/FTH-THA-fluvial-defended"
+        },
+        {
+          "id": "3",
+          "title": "Pluvial hazard - Undefended",
+          "description": "Pluvial flood hazard maps (10), not accounting any flood defence",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "4326",
+          "url": "http://example.com/FTH-THA-pluvial-undefended"
+        }
+      ],
       "hazard": {
         "event_sets": [
           {
@@ -17,12 +60,22 @@
             "calculation_method": "simulated",
             "event_count": 10,
             "occurrence_range": "1/10 to 1/1000 years",
+            "spatial": {
+              "scale": "global"
+            },
             "hazards": [
               {
                 "id": "1",
                 "type": "flood",
                 "processes": [
-                  "fluvial_flood",
+                  "fluvial_flood"
+                ],
+                "intensity_measure": "fl_wd:m"
+              },
+              {
+                "id": "2",
+                "type": "flood",
+                "processes": [
                   "pluvial_flood"
                 ],
                 "intensity_measure": "fl_wd:m"
@@ -30,7 +83,13 @@
             ]
           }
         ]
-      }
+      },
+      "links": [
+        {
+          "href": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
+          "rel": "describedBy"
+        }
+      ]
     }
   ]
 }
