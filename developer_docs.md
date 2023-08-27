@@ -169,6 +169,7 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
   * `docs/conf.py`: update `release`
   * `docs/reference/schema.md`: update the canonical schema URL
   * `schema/rdls_schema.json`: update `id` and `properties/links/prefixItems/properties/href/const`
+  * `schema/rdls_package_schema.json`: update `id` and `properties/networks/items/$ref`
 1. Update the version number and date in `docs/about/changelog.md`
 
 1. Create a tag. For example:
