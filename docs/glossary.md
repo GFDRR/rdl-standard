@@ -14,7 +14,7 @@ Source: [UNDRR Terminology (Disaster Risk)](https://www.undrr.org/terminology/di
 
 ## Climate and disaster risk assessment
 
-A qualitative or quantitative approach to determine the nature and extent of climate [disaster risk](#disaster-risk) by analysing potential [hazards](#hazard) and evaluating existing conditions of [exposure](#exposure) and [vulnerability](vulnerability) that together could harm people, property, services, livelihoods and the environment on which they depend.
+A qualitative or quantitative approach to determine the nature and extent of climate and [disaster risk](#disaster-risk) by analysing potential [hazards](#hazard) and evaluating existing conditions of [exposure](#exposure) and [vulnerability](vulnerability) that together could harm people, property, services, livelihoods and the environment on which they depend.
 
 An impact or risk model (also damage model; loss model) is used to combine hazard, exposure and vulnerability components to calculate the [impact](#disaster-impact) or single or multiple events.
 
@@ -36,7 +36,7 @@ Source: [UNDRR Terminology (Disaster Risk Management)](https://www.undrr.org/ter
 
 A hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. A hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
 
-Hazards can have a natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (e.g. geological, geophysical, hydrometeorological).
+Hazards can have a natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (e.g., geological, geophysical, hydrometeorological).
 
 Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
 
@@ -60,7 +60,7 @@ Source: Adapted from ([UNDRR](https://www.undrr.org/terminology/disaster))
 
 ## Loss
 
-Losses are a measure of this impact in the form of damage or destruction caused by a disaster (observed or modelled). This measure may be expressed as monetary (e.g. cost of reconstruction) or non-monetary (e.g. hectares of crop loss, loss of life). Losses can be direct or indirect.
+Losses are a measure of this impact in the form of damage or destruction caused by a disaster (observed or modelled). This measure may be expressed as monetary (e.g., cost of reconstruction) or non-monetary (e.g., hectares of crop loss, loss of life). Losses can be direct or indirect.
 
 The total economic impact consists of a monetary estimate of both direct disaster loss and indirect disaster loss. _Direct disaster losses_ refer to directly quantifiable losses such as the number of people killed and the damage to buildings, infrastructure and natural resources. _Indirect disaster losses_ refer to wider and longer-term impacts arising from the direct disruptions to the flow of goods and services as a result of a disaster. This includes declines in output or revenue, increases in food prices, and other longer-term social and economic effects on education, health, productivity, the well-being of people or the macroeconomy.
 
