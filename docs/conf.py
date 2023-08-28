@@ -48,7 +48,8 @@ extensions = ['myst_parser',
               'sphinx_togglebutton',]
 
 # PlantUML path
-plantuml = 'java -jar plantuml-1.2023.10.jar'
+local_plantuml_path = os.path.join(os.path.dirname(__file__), "plantuml-1.2023.10.jar")
+plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 
 # MyST heading anchors
 myst_heading_anchors = 5
