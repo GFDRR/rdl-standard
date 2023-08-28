@@ -62,6 +62,9 @@ This page lists changes to the Risk Data Library Standard.
   - Markdown syntax in `Attribution.role` description
 - [#190](https://github.com/GFDRR/rdl-standard/pull/190) - Deletes type key from properties with `$ref` components.
 - [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update top-level `description`.
+- [#203](https://github.com/GFDRR/rdl-standard/pull/203) - Add package schema.
+- [#208](https://github.com/GFDRR/rdl-standard/pull/208) - Add regex pattern to `coordinate_system` and update description to mandate ESRI or EPSG codes.
+- [#205](https://github.com/GFDRR/rdl-standard/pull/205) - Convert `risk_data_type` to array.
 
 ### Codelists
 
@@ -91,6 +94,7 @@ This page lists changes to the Risk Data Library Standard.
 ### Non-normative documentation
 
 - [#111](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
+- [#171](https://github.com/GFDRR/rdl-standard/pull/171) - Updating glossary to add loss components, adjust other entries and remove images from glossary.
 - [#174](https://github.com/GFDRR/rdl-standard/pull/174) - Add local tests guidance to developer_docs.md
 - [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
 - [#175](https://github.com/GFDRR/rdl-standard/pull/175) - Restructure documentation, rewrite landing page, add new introductory content.
