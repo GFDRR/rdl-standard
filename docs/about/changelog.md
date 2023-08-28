@@ -64,6 +64,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#203](https://github.com/GFDRR/rdl-standard/pull/203) - Add package schema.
 - [#208](https://github.com/GFDRR/rdl-standard/pull/208) - Add regex pattern to `coordinate_system` and update description to mandate ESRI or EPSG codes.
 - [#205](https://github.com/GFDRR/rdl-standard/pull/205) - Convert `risk_data_type` to array.
+- [#210](https://github.com/GFDRR/rdl-standard/pull/210) - Replace `resource.`url with `.access_url` and `download_url`
 
 ### Codelists
 
