@@ -871,9 +871,10 @@
           "exclusiveMinimum": 0
         },
         "coordinate_system": {
-          "title": "Reference coordinate system",
+          "title": "Coordinate reference system",
           "type": "string",
-          "description": "The reference co-ordinate system of this resource, using the [EPSG codelist](https://epsg.org).",
+          "description": "An identifier string for the coordinate reference system (CRS) used in this resource. The CRS must be identified by a code issued by either [EPSG](https://epsg.org/) or [ESRI](https://www.esri.com/). The identifier string format is {authority}:{code}, e.g. EPSG:4326. [https://epsg.io/](https://epsg.io/) provides a searchable database of EPSG and ESRI coordinate system codes.",
+          "pattern": "^(ESRI:|EPSG:)[0-9]+$",
           "minLength": 1
         },
         "url": {
