@@ -66,6 +66,7 @@ This page lists changes to the Risk Data Library Standard.
   - Add field `metrics`
   - rename cost_type.csv to metric_type.csv
   - Add quantity_kind.csv
+- [#205](https://github.com/GFDRR/rdl-standard/pull/205) - Convert `risk_data_type` to array.
 
 ### Codelists
 
