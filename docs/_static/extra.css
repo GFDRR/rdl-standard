@@ -60,7 +60,9 @@ margin-bottom: 20px;
 margin-bottom: 20px;
 margin-right: 20px;
 }
-
+.wy-nav-content {
+  max-width: 1000px !important;
+}
 .wy-side-nav-search {
   background-color: #0b3860;
 }
