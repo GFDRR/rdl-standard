@@ -1490,6 +1490,23 @@
               "number",
               "array"
             ],
+            "items": {
+              "type": [
+                "number",
+                "array"
+              ],
+              "items": {
+                "type": [
+                  "number",
+                  "array"
+                ],
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1
+              },
+              "minItems": 1
+            },
             "minItems": 1
           },
           "minItems": 1
