@@ -2,3 +2,4 @@ Code,Title,Description
 poisson,Poisson,Data modelled using a poisson distribution.
 negative_binomial,Negative Binomial,Data modelled using a negative binomial distribution.
 user_defined,User defined,Data modelled using a user defined distribution.
+generalized_extreme_value,Generalized extreme values,Data modelled using the generalized extreme value distribution.

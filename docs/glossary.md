@@ -1,6 +1,6 @@
 <!-- https://hackmd.io/VGiOi2NmQDS2Eu9jgUGNwQ -->
 
-# Glossary of terms
+# Glossary
 
 In this section, you will find definitions of key concepts behind the Risk Data Library Standard (RDLS).
 

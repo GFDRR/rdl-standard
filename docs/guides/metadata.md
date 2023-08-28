@@ -1,4 +1,4 @@
-# RDL metadata
+# How to publish RDLS metadata
 
 ## Adoption of the metadata schema
 
@@ -8,3 +8,7 @@ The Risk Data Library Standard defines metadata in JSON format, but it can be tr
 
 - Option 1. Write directly into JSON file (templates are available at ...)
 - Option 2. Use JSON metadata creation tool. This tool is standalone (not part of DDH) AND UNDER DEVELOPMENT. It uses an xsl file containing metadata in a specified structure, and exports a JSON file to be saved with the dataset.
+
+## Validate your metadata
+
+Submit your RDLS metadata to the RDLS Data Review Tool. If your data is in JSON format, it needs to be provided in an [RDLS metadata package](../reference/package_schema.md).

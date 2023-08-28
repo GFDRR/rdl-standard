@@ -2,9 +2,9 @@
 
 The schema provides the authoritative definition of the structure of Risk Data Library Standard (RDLS) data, the meaning of each field, and the rules that must be followed to publish RDLS data. It is used to validate the structure and format of RDLS data.
 
-For this version of RDLS, the canonical URL of the schema is \[\]\](). Use the canonical URL to make sure that your software, documentation or other resources refer to the specific version of the schema with which they were tested.
+For this version of RDLS, the canonical URL of the schema is [https://raw.githubusercontent.com/GFDRR/rdl-standard/0\_\_2\_\_0/schema/rdls_schema.json](https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json). Use the canonical URL to make sure that your software, documentation or other resources refer to the specific version of the schema with which they were tested.
 
-This page presents the schema in tables with additional information in paragraphs. You can also [view the schema in an interactive browser](browser.md) or [download it as JSON Schema](../../docs/_readthedocs/html/rdl_schema_0.1.json).
+This page presents the schema in tables with additional information in paragraphs. You can also [view the schema in an interactive browser](browser.md) or [download it as JSON Schema](../../docs/_readthedocs/html/rdls_schema.json).
 
 ```{note}
    If any conflicts are found between the text on this page and the text within the schema, the text within the schema takes precedence.
@@ -63,10 +63,10 @@ The diagram below shows the core relationships between schema components, and th
 
 In addition to schema-specific attributes, each dataset is identified by a list of attributes based on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms).
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources
+  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -75,7 +75,7 @@ addtargets:
 
 Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Resource
 collapse: temporal
@@ -137,10 +137,10 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/0/properties/hazard
-collapse: event_sets
+pointer: /properties/hazard
+collapse: event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
 addtargets:
 ---
 ```
@@ -197,7 +197,7 @@ Schema attributes for an earthquake hazard map related to an occurrence probabil
 
 ## Exposure
 
-The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset.
+The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset. For more information, see [exposure standards](../rdl/other-standards.md#exposure-standards).
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
@@ -225,9 +225,9 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/1/properties/exposure
+pointer: /properties/exposure
 collapse: cost
 addtargets:
 ---
@@ -299,9 +299,9 @@ The vulnerability component uses hazard_type, process_type and intensity_measure
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/2/properties/vulnerability
+pointer: /properties/vulnerability
 collapse: cost,impact,spatial,se_category
 addtargets:
 ---
@@ -349,9 +349,9 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
 
 ````{tab-item} Schema
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
-pointer: /anyOf/3/properties/loss
+pointer: /properties/loss
 collapse: cost,impact
 addtargets:
 ---
@@ -427,18 +427,25 @@ Insert example of recorded empirical losses.
 
 `Entity` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Entity/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`publisher`](rdls_schema.json,,publisher)
+- [`contact_point`](rdls_schema.json,,contact_point)
+- [`creator`](rdls_schema.json,,creator)
+- [`Attribution/entity`](rdls_schema.json,/$defs/Attribution,entity)
+
 Each `Entity` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Entity
-collapse: name,email,url
+collapse:
 addtargets:
 ---
 ```
@@ -447,18 +454,22 @@ addtargets:
 
 `Attribution` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Attribution/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`attributions`](rdls_schema.json,,attributions)
+
 Each `Attribution` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Attribution
-collapse: id,entity,role
+collapse: entity
 addtargets:
 ---
 ```
@@ -467,18 +478,22 @@ addtargets:
 
 `Related_resource` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Related_resource/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`referenced_by`](rdls_schema.json,,referenced_by)
+
 Each `Related_resource` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Related_resource
-collapse: id,name,authorNames,datePublished,url,doi
+collapse:
 addtargets:
 ---
 ```
@@ -487,18 +502,22 @@ addtargets:
 
 `Source` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Source/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`sources`](rdls_schema.json,,sources)
+
 Each `Source` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Source
-collapse: id,name,url,type,component
+collapse:
 addtargets:
 ---
 ```
@@ -507,18 +526,24 @@ addtargets:
 
 `Period` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Period/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Resource/temporal`](rdls_schema.json,/$defs/Resource,temporal)
+- [`Event_set/temporal`](rdls_schema.json,/$defs/Event_set,temporal)
+- [`Event/occurrence/empirical/temporal`](rdls_schema.json,/$defs/Event,occurrence/empirical/temporal)
+
 Each `Period` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Period
-collapse: start,end,duration
+collapse:
 addtargets:
 ---
 ```
@@ -527,18 +552,24 @@ addtargets:
 
 `Location` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Location/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`spatial`](rdls_schema.json,,spatial)
+- [`vulnerability/spatial`](rdls_schema.json,/properties/vulnerability,spatial)
+- [`Event_set/spatial`](rdls_schema.json,/$defs/Event_set,spatial)
+
 Each `Location` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Location
-collapse: countries,gazetteerEntries,bbox,geometry,centroid,scale
+collapse: geometry
 addtargets:
 ---
 ```
@@ -547,18 +578,22 @@ addtargets:
 
 `Gazetteer_entry` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Gazetteer_entry/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Location/gazetteerEntries`](rdls_schema.json,/$defs/Location,gazetteerEntries)
+
 Each `Gazetteer_entry` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Gazetteer_entry
-collapse: id,scheme,description,uri
+collapse:
 addtargets:
 ---
 ```
@@ -567,18 +602,22 @@ addtargets:
 
 `Geometry` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Geometry/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Location/geometry`](rdls_schema.json,/$defs/Location,geometry)
+
 Each `Geometry` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Geometry
-collapse: type,coordinates
+collapse:
 addtargets:
 ---
 ```
@@ -587,18 +626,23 @@ addtargets:
 
 `Hazard` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Hazard/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event_set/hazards`](rdls_schema.json,/$defs/Event_set,hazards)
+- [`Event/hazard`](rdls_schema.json,/$defs/Event,hazard)
+
 Each `Hazard` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Hazard
-collapse: id,type,processes,intensity_measure,trigger
+collapse: trigger
 addtargets:
 ---
 ```
@@ -607,18 +651,22 @@ addtargets:
 
 `Trigger` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Trigger/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Hazard/trigger`](rdls_schema.json,/$defs/Hazard,trigger)
+
 Each `Trigger` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Trigger
-collapse: type,processes
+collapse:
 addtargets:
 ---
 ```
@@ -627,19 +675,22 @@ addtargets:
 
 `Event_set` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Event_set/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`hazard/event_sets`](rdls_schema.json,/properties/hazard,event_sets)
+
 Each `Event_set` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Event_set
-collapse: 
-  id,hazards,analysis_type,frequency_distribution,seasonality,calculation_method,event_count,occurrence_range,spatial,temporal,events
+collapse: spatial,temporal
 addtargets:
 ---
 ```
@@ -648,19 +699,22 @@ addtargets:
 
 `Event` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Event/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event_set/events`](rdls_schema.json,/$defs/Event_set,events)
+
 Each `Event` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Event
-collapse: 
-  id,disaster_identifier,calculation_method,hazard,occurrence,description,footprints
+collapse: hazard
 addtargets:
 ---
 ```
@@ -669,18 +723,22 @@ addtargets:
 
 `Footprint` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Footprint/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event/footprints`](rdls_schema.json,/$defs/Event,footprints)
+
 Each `Footprint` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Footprint
-collapse: id,intensity_measure,data_uncertainty
+collapse:
 addtargets:
 ---
 ```
@@ -689,18 +747,24 @@ addtargets:
 
 `Cost` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Cost/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`exposure/cost`](rdls_schema.json,/properties/exposure,cost)
+- [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
+- [`loss/cost`](rdls_schema.json,/properties/loss,cost)
+
 Each `Cost` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Cost
-collapse: id,type,unit
+collapse:
 addtargets:
 ---
 ```
@@ -709,18 +773,22 @@ addtargets:
 
 `Probabilistic` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Probabilistic/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`Event/occurrence/probabilistic`](rdls_schema.json,/$defs/Event,occurrence/probabilistic)
+
 Each `Probabilistic` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Probabilistic
-collapse: return_period,event_rate,probability
+collapse:
 addtargets:
 ---
 ```
@@ -729,18 +797,23 @@ addtargets:
 
 `Impact` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Impact/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`vulnerability/impact`](rdls_schema.json,/properties/vulnerability,impact)
+- [`loss/impact`](rdls_schema.json,/properties/loss,impact)
+
 Each `Impact` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Impact
-collapse: type,metric,unit,base_data_type
+collapse:
 addtargets:
 ---
 ```
@@ -749,18 +822,46 @@ addtargets:
 
 `Classification` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Classification/description
 ---
 ```
 
+This sub-schema is referenced by the following properties:
+
+- [`vulnerability/se_category`](rdls_schema.json,/properties/vulnerability,se_category)
+
 Each `Classification` has the following fields:
 
-```{jsonschema} ../../docs/_readthedocs/html/rdl_schema_0.1.json
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Classification
-collapse: scheme,id,description,uri
+collapse:
+addtargets:
+---
+```
+
+### Link
+
+`Link` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Link/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`links`](rdls_schema.json,,links)
+
+Each `Link` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Link
+collapse:
 addtargets:
 ---
 ```
