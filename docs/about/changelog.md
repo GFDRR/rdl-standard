@@ -61,6 +61,7 @@ This page lists changes to the Risk Data Library Standard.
   - Required fields in `Event_set`, `Hazard` and `Footprint`
   - Markdown syntax in `Attribution.role` description
 - [#190](https://github.com/GFDRR/rdl-standard/pull/190) - Deletes type key from properties with `$ref` components.
+- [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update top-level `description`.
 
 ### Codelists
 
@@ -85,6 +86,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#169](https://github.com/GFDRR/rdl-standard/pull/169) - Uncollapse `event_sets` in `hazard` reference table.
 - [#146](https://github.com/GFDRR/rdl-standard/pull/146) - Update introduction to the RDLS reference section.
 - [#193](https://github.com/GFDRR/rdl-standard/pull/193) - Fix lists of referencing fields for subschemas and codelists.
+- [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update diagrams, add descriptions for dataset, resource and risk components.
 
 ### Non-normative documentation
 
