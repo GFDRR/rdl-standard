@@ -13,9 +13,10 @@
 - [ ] Update the changelog ([style guide](developer_docs.md#changelog-style-guide))
 - [ ] Run `./manage.py` pre-commit
 
-If you added or removed a field:
+If you added, removed or renamed a field:
 
 - [ ] Update the `collapse` option of the jsonschema directives for dataset, resource, hazard, exposure, vulnerability and loss on `reference/schema.md`
+- [ ] Update the diagrams in `reference/schema/md`
 
 **Having trouble?**
 
