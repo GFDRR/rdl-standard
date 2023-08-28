@@ -54,7 +54,7 @@ Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vu
 
 ## Disaster Impact
 
-The effect of a disaster on people, buildings and society is generally referred to as the impact. The impact of disasters can generate losses, but also gains for some people and economies; for instance, the demand for construction materials and expertise following a disaster. It is, therefore, necessary to think of impact in terms of both gains and losses.
+The effect of a disaster on people, buildings and society is generally referred to as the impact. The impact of disasters can generate [losses](#loss), but also gains for some people and economies; for instance, the demand for construction materials and expertise following a disaster. It is, therefore, necessary to think of impact in terms of both gains and losses.
 
 Source: Adapted from ([UNDRR](https://www.undrr.org/terminology/disaster))
 
