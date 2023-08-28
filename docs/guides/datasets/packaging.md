@@ -12,7 +12,7 @@ Data shared in risk catalogues (e.g. [Risk Data Library Collection](https://data
 
 We also need to consider:
 
-- **FORMAT**: how the data are stored. It is preferred to keep data in the same format in a single resource, or split different file formats into multiple resources. [Read more](formats) about common data formats for risk information.
+- **FORMAT**: how the data are stored. It is preferred to keep data in the same format in a single resource, or split different file formats into multiple resources. [Read more](formats.md) about common data formats for risk information.
 - **SELF-DEPENDENCY & COMPLETENESS**: the data resource should be easily interpreted and used by itself.
 - **SIZE-EFFICIENCY**: try to avoid creating large datasets (> 500MB) that would be hard to download on poor connections.
 
@@ -21,7 +21,7 @@ In general, splitting raster datasets into smaller parts is not advised, accordi
 ![Screenshot](../../img/raster_clip.jpg)
 ```
 
-Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data should be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
+Structuring risk data well when it is generated and before it is delivered to a client is important to ensure data folder are intuitive to search, and make dataset upload more efficient (and it is easier to do first time than changing the structure later). Decisions on how to structure risk data need to be taken on a project-by-project basis, because there is a wide variety of how data are structured depending on the components of a project. For a country-scale analysis, we advise to follow the following structure of folders when preparing data for delivery / upload to a risk data catalog:
 
 ```
 <country>_<project_name>
@@ -80,7 +80,7 @@ The main thematic groupings in hazard data are:
 
 ### Packaging recommendation
 
-We recommend grouping hazard data using the following hierarchy:
+We encourage grouping hazard data using the following hierarchy:
 
 - **Hazard type**
   - *Geographic scale and location*
@@ -140,7 +140,7 @@ The main thematic groupings in exposure data are:
 
 ### Packaging recommendation
 
-We recommend grouping exposure data using the following hierarchy:
+We encourage grouping exposure data using the following hierarchy:
 
 - **Geographic scale and location**
   - **Exposure category**
@@ -196,7 +196,7 @@ Vulnerability curves can be developed for individual countries or environments w
 
 ### Packaging recommendation
 
-We recommend to group exposure data  using the following hierarchy:
+We encourage grouping exposure data using the following hierarchy:
 
 - **Hazard type**
   - *Geographic* (unless global function, one resource per country)
@@ -264,7 +264,7 @@ Depending on the data format and size:
 - if data consists of one or more vector files representing national or subnational boundary levels, these can be grouped into one `geopackage` file;
 - if data consists of multiple granular spatial data, it might be packed as individual or multiple layers (depending on the size of individual layers)
 
-In either case, we recommend grouping exposure data using the following hierarchy:
+In either case, we encourage grouping exposure data using the following hierarchy:
 
 - **Hazard type**
   - *Country*

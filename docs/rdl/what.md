@@ -6,7 +6,7 @@ Metadata is data that provides information about a dataset. The RDLS covers meta
 
 RDLS defines risk-specific metadata for describing four types of dataset:
 
-- **Hazard** datasets concern the processes or phenomena that may result in impacts such as loss of life, property damage and social and economic disruption. For example, the frequency and magnitude of earthquakes.
+- **Hazard** datasets concern the processes or phenomena that might result in impacts such as loss of life, property damage and social and economic disruption. For example, the frequency and magnitude of earthquakes.
 
 - **Exposure** datasets concern the situation of people, infrastructure and other tangible assets in hazard prone area. For example, the number of people living in an earthquake-affected area.
 
