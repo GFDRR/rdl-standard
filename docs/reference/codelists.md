@@ -414,12 +414,12 @@ file: ../../schema/codelists/closed/loss_type.csv
 ---
 ```
 
-### metric_type
+### metric_dimension
 
 This codelist is referenced by the following properties:
 
-- [`Metric/type`](rdls_schema.json,/$defs/Metric,type)
-- [`Cost/type`](rdls_schema.json,/$defs/Cost,type)
+- [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
+- [`Cost/dimension`](rdls_schema.json,/$defs/Cost,dimension)
 
 This codelist has the following codes:
 
@@ -427,7 +427,7 @@ This codelist has the following codes:
 ---
 header-rows: 1
 widths: auto
-file: ../../schema/codelists/closed/metric_type.csv
+file: ../../schema/codelists/closed/metric_dimension.csv
 ---
 ```
 
