@@ -2,7 +2,7 @@
 
 # Glossary of terms
 
-In this section, you will find definitions of key concepts behind the RDLS including what is a disaster, how to reduce disaster risk through disaster risk management and disaster risk assessment and what are the different types of risk data needed.
+In this section, you will find definitions of key concepts behind the Risk Data Library Standard (RDLS).
 
 ## Disaster risk
 
