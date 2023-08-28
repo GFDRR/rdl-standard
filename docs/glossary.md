@@ -16,7 +16,7 @@ Source: [UNDRR Terminology (Disaster Risk)](https://www.undrr.org/terminology/di
 
 A qualitative or quantitative approach to determine the nature and extent of climate [disaster risk](#disaster-risk) by analysing potential [hazards](#hazard) and evaluating existing conditions of [exposure](#exposure) and [vulnerability](vulnerability) that together could harm people, property, services, livelihoods and the environment on which they depend.
 
-An impact or risk model (also damage model; loss model) is used to combine hazard, exposure and vulnerability components to calculate the impact or single or multiple events.
+An impact or risk model (also damage model; loss model) is used to combine hazard, exposure and vulnerability components to calculate the [impact](#disaster-impact) or single or multiple events.
 
 Source: Adapted from [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/terminology/disaster-risk-assessment)
 
