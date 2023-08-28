@@ -1,5 +1,5 @@
-Code,Title
-area,Area
-count,Count
-currency,Currency
-length,Length
+Code,Title,Description
+area,Area,The two-dimensional size of the part of a surface.
+count,Count,A count of items.
+currency,Currency,A financial value.
+length,Length,A measure of distance.

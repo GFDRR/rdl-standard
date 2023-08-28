@@ -184,6 +184,8 @@ file: ../../schema/codelists/open/media_type.csv
 
 ### quantity_kind
 
+The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
+
 This codelist is referenced by the following properties:
 
 - [`Metric/quantity_kind`](rdls_schema.json,/$defs/Metric,quantity_kind)

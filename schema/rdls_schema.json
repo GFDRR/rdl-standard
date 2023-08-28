@@ -182,9 +182,9 @@
           "minLength": 1
         },
         "metrics": {
-          "title": "Asset metrics",
+          "title": "Exposure metrics",
           "type": "array",
-          "description": "The exposure metrics associated with specific elements of assets detailed in the dataset.",
+          "description": "The measurements used to quantify the extent to which assets are exposed.",
           "items": {
             "$ref": "#/$defs/Metric"
           },
@@ -1924,9 +1924,9 @@
       "minProperties": 1
     },
     "Metric": {
-      "title": "Asset metric",
+      "title": "Exposure metric",
       "type": "object",
-      "description": "The metric associated with specific elements of assets detailed in the dataset.",
+      "description": "A measurement used to quantify the extent to which assets are exposed.",
       "required": [
         "id",
         "type",
@@ -1939,11 +1939,11 @@
           "description": "A locally unique identifier for this metric.",
           "minLength": 1
         },
-        "type": {
-          "title": "Metric type",
-          "description": "The type of metric, from the closed [metric type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_type).",
+        "dimension": {
+          "title": "Exposure dimension",
+          "description": "The dimension by which the exposure is measured, from the closed [exposure dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_dimension).",
           "type": "string",
-          "codelist": "metric_type.csv",
+          "codelist": "exposure_dimension.csv",
           "openCodelist": false,
           "enum": [
             "structure",
@@ -1956,7 +1956,7 @@
         "quantity_kind": {
           "title": "Metric quantity kind",
           "type": "string",
-          "description": "The kind of quantity in which the metric is specified, from the open [quantity kind codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#quantity_kind.",
+          "description": "The kind of quantity by which the exposure is quantified, from the open [quantity kind codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#quantity_kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
           "codelist": "quantity_kind.csv",
           "openCodelist": true
         }
