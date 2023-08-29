@@ -75,7 +75,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#215](https://github.com/GFDRR/rdl-standard/pull/219) - Remove `.hazard_id`, `exposure_id` and `vulnerability_id` from `loss` required array.
 - [#210](https://github.com/GFDRR/rdl-standard/pull/210) - Replace `resource.`url with `.access_url` and `download_url`
 - [#218](https://github.com/GFDRR/rdl-standard/pull/218) - `Vulnerability·taxonomy` removed from required array.
-- [#220](https://github.com/GFDRR/rdl-standard/pull/220) - Reorder top level fields.
+- [#220](https://github.com/GFDRR/rdl-standard/pull/220) - Reorder top-level fields.
 
 ### Codelists
 
