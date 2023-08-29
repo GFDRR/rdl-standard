@@ -81,20 +81,16 @@
       "description": "Additional details about the dataset.",
       "minLength": 1
     },
-    "referenced_by": {
-      "title": "Referenced by",
-      "type": "array",
-      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
-      "items": {
-        "$ref": "#/$defs/Related_resource"
-      },
-      "minItems": 1,
-      "uniqueItems": true
-    },
     "spatial": {
       "title": "Spatial coverage",
       "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`.",
       "$ref": "#/$defs/Location"
+    },
+    "temporal_resolution": {
+      "title": "Temporal resolution",
+      "type": "string",
+      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
+      "format": "duration"
     },
     "license": {
       "title": "License",
@@ -122,6 +118,26 @@
       "description": "Information about entities and their roles in relation to the dataset.",
       "items": {
         "$ref": "#/$defs/Attribution"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "sources": {
+      "title": "Sources",
+      "type": "array",
+      "description": "Sources of information that contribute to the creation of the dataset.",
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "referenced_by": {
+      "title": "Referenced by",
+      "type": "array",
+      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Related_resource"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -767,22 +783,6 @@
         }
       },
       "minProperties": 1
-    },
-    "sources": {
-      "title": "Sources",
-      "type": "array",
-      "description": "Sources of information that contribute to the creation of the dataset.",
-      "items": {
-        "$ref": "#/$defs/Source"
-      },
-      "minItems": 1,
-      "uniqueItems": true
-    },
-    "temporal_resolution": {
-      "title": "Temporal resolution",
-      "type": "string",
-      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
-      "format": "duration"
     },
     "links": {
       "title": "Links",
