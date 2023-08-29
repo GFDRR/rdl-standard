@@ -1401,7 +1401,7 @@
         },
         "geometry": {
           "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area.",
+          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
           "$ref": "#/$defs/Geometry"
         },
         "centroid": {
