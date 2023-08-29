@@ -43,11 +43,11 @@
       "exposure": {
         "category": "buildings",
         "taxonomy": "GED4ALL",
-        "cost": [
+        "metrics": [
           {
-            "id": "0064254_cost1",
-            "type": "structure",
-            "unit": "USD"
+            "id": "0064254_metric1",
+            "dimension": "structure",
+            "quantity_kind": "currency"
           }
         ]
       },
