@@ -610,10 +610,7 @@
       "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
       "required": [
         "hazard_type",
-        "cost",
-        "hazard_id",
-        "exposure_id",
-        "vulnerability_id"
+        "cost"
       ],
       "properties": {
         "hazard_type": {
