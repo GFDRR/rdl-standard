@@ -40,6 +40,9 @@ The following diagram shows a subset of dataset-level fields, with required fiel
 
   @startjson
   <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
     .required {
       BackGroundColor #239ce8
     }
@@ -64,8 +67,8 @@ The following diagram shows a subset of dataset-level fields, with required fiel
     "project": "",
     "details": "",
     "spatial": {
-      "countries": [],
-      "bbox": []
+      "countries": "",
+      "bbox": ""
     },
     "license": ""
   }
@@ -119,13 +122,16 @@ The hazard component describes metadata about modeled natural hazards data, incl
 
 The hazard component uses hazard_type, process_type and intensity_measure consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-The following diagram shows a subset of hazard component fields, with required fields highlighted in blue:
+The following diagram shows a subset of hazard component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
 
 ```{eval-rst}
 .. uml::
 
   @startjson
   <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
     .required {
       BackGroundColor #239ce8
     }
@@ -146,8 +152,8 @@ The following diagram shows a subset of hazard component fields, with required f
         "seasonality": "",
         "event_count": "",
         "occurrence_range": "",
-        "spatial": {},
-        "temporal": {},
+        "spatial": "",
+        "temporal": "",
         "events": [
           {
             "disaster_identifier": "",
@@ -155,11 +161,11 @@ The following diagram shows a subset of hazard component fields, with required f
             "description": "",
             "hazard": {
               "type": "",
-              "processes": [],
+              "processes": "",
               "intensity_measure": "",
-              "trigger": {}
+              "trigger": ""
             },
-            "occurence": {},
+            "occurence": "",
             "footprints": [
               {
                 "intensity_measure": "",
@@ -241,13 +247,16 @@ The exposure component describes metadata for datasets containing information on
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-The following diagram shows a subset of exposure component fields, with required fields highlighted in blue:
+The following diagram shows a subset of exposure component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
 
 ```{eval-rst}
 .. uml::
 
   @startjson
   <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
     .required {
       BackGroundColor #239ce8
     }
@@ -327,6 +336,9 @@ The following diagram shows a subset of vulnerability component fields, with req
 
   @startjson
   <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
     .required {
       BackGroundColor #239ce8
     }
@@ -347,10 +359,10 @@ The following diagram shows a subset of vulnerability component fields, with req
       "unit": ""
     },
     "functions": {
-      "vulnerabiity": {},
-      "fragility": {},
-      "damage_to_loss": {},
-      "engineering_demand": {}
+      "vulnerabiity": "",
+      "fragility": "",
+      "damage_to_loss": "",
+      "engineering_demand": ""
     },
     "se_category": ""
   }
@@ -388,6 +400,9 @@ The following diagram shows a subset of loss component fields, with required fie
 
   @startjson
   <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
     .required {
       BackGroundColor #239ce8
     }
