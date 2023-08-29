@@ -2,25 +2,23 @@
 
 # Glossary
 
-In this section, you will find definition of key concepts behind the RDLS including what is a disaster, how to reduce disaster risk through disaster disaster risk management and disaster risk assessment and what are the different types of risk data needed.
+In this section, you will find definitions of key concepts behind the Risk Data Library Standard (RDLS).
 
 ## Disaster risk
 
-Disaster risk is the potential loss of life, injury, or destroyed or damaged assets which could occur to a system, society or a community in a specific period of time, determined probabilistically as a function of hazard, exposure, vulnerability and coping capacity.
+Disaster risk is the potential loss of life, injury, or destroyed or damaged assets which could occur to a system, society or community in a specific period of time, determined probabilistically as a function of hazard, exposure, vulnerability and coping capacity.
 
 Disaster risk comprises different types of potential impacts and losses (direct and indirect, tangible and intangible) which are sometimes difficult to quantify. Nevertheless, with knowledge of the prevailing hazards, the patterns of population and socio-economic development and their tendency to suffer impacts, disaster risks can be assessed and mapped, at least in broad terms.
 
 Source: [UNDRR Terminology (Disaster Risk)](https://www.undrr.org/terminology/disaster-risk)
 
-## Disaster risk assessment
+## Climate and disaster risk assessment
 
-A qualitative or quantitative approach to determine the nature and extent of disaster risk by analysing potential hazards and evaluating existing conditions of exposure and vulnerability that together could harm people, property, services, livelihoods and the environment on which they depend.
+A qualitative or quantitative approach to determine the nature and extent of climate and [disaster risk](#disaster-risk) by analysing potential [hazards](#hazard) and evaluating existing conditions of [exposure](#exposure) and [vulnerability](#vulnerability) that together could harm people, property, services, livelihoods and the environment on which they depend.
 
-Source: [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/terminology/disaster-risk-assessment)
+An impact or risk model (also damage model; loss model) is used to combine hazard, exposure and vulnerability components to calculate the [impact](#disaster-impact) or single or multiple events.
 
-```{card} Risk assessment framework, adapted from [Understanding risk in an evolving world, World Bank, 2014](https://openknowledge.worldbank.org/handle/10986/20682)
-![Risk assessment framework, adapted from Understanding risk in an evolving world, World Bank, 2014](img/risk_assessment.png)
-```
+Source: Adapted from [UNDRR Terminology (Disaster Risk Assessment)](https://www.undrr.org/terminology/disaster-risk-assessment)
 
 ## Disaster risk information (risk data)
 
@@ -34,44 +32,43 @@ Disaster risk management is the application of disaster risk reduction policies 
 
 Source: [UNDRR Terminology (Disaster Risk Management)](https://www.undrr.org/terminology/disaster-risk-management)
 
+## Hazard
+
+A hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. A hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
+
+Hazards can have a natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (e.g., geological, geophysical, hydrometeorological).
+
+Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
+
 ## Exposure
 
 The situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas. Measures of exposure can include the number of people or types of assets in an area. These can be combined with the specific vulnerability and capacity of the exposed elements to any particular hazard to estimate the quantitative risks associated with that hazard in the area of interest
 
 Source: [UNDRR Terminology (Exposure)](https://www.undrr.org/terminology/exposure)
 
-```{card} Exposure: buildings footprints and population
-![Exposure: buildings footprints and population](img/sample_exp.jpg)
-```
-
-## Hazard
-
-A hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. An hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
-
-Hazards can have natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (geological, geophysical and hydrometeorological).
-
-Source: [UNDRR Terminology (Hazard)](https://www.undrr.org/terminology/hazard)
-
-```{card} Hazard: map of flood water depth
-![Hazard](img/sample_hzd.jpg)
-```
-
-## Impact model
-
-An impact model (also damage model; loss model) is used to combine Hazard, Exposure and Vulnerability components to calculate the amount of value that is expected to be impacted (damaged or lost).
-
-Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/files/solving-the-puzzle-report.pdf)
-
-```{card} Impacts and losses: USD costs of replacement
-![Loss](img/sample_lss.jpg)
-```
-
 ## Vulnerability
 
-Vulnerability are the conditions determined by physical, social, economic and environmental factors or processes which increase the susceptibility of an individual, a community, assets or systems to the impacts of hazards. The inverse of vulnerability is defined coping capacity, which is the combination of all the strengths, attributes and resources available within an organization, community or society to manage and reduce disaster risks and strengthen resilience.
+Vulnerability is the conditions determined by physical, social, economic and environmental factors or processes which increase the susceptibility of an individual, a community, assets or systems to the impacts of hazards. The inverse of vulnerability is defined as coping capacity, which is the combination of all the strengths, attributes and resources available within an organization, community or society to manage and reduce disaster risks and strengthen resilience.
 
 Source: [UNDRR Terminology (Vulnerability)](https://www.undrr.org/terminology/vulnerability)
 
-```{card} Vulnerability: depth-damage function
-![Vulnerability](img/sample_vln.jpg)
-```
+## Disaster Impact
+
+The effect of a disaster on people, buildings and society is generally referred to as the impact. The impact of disasters can generate [losses](#loss), but also gains for some people and economies; for instance, the demand for construction materials and expertise following a disaster. It is, therefore, necessary to think of impact in terms of both gains and losses.
+
+Source: Adapted from ([UNDRR](https://www.undrr.org/terminology/disaster))
+
+## Loss
+
+Losses are a measure of this impact in the form of damage or destruction caused by a disaster (observed or modelled). This measure may be expressed as monetary (e.g., cost of reconstruction) or non-monetary (e.g., hectares of crop loss, loss of life). Losses can be direct or indirect.
+
+The total economic impact consists of a monetary estimate of both direct disaster loss and indirect disaster loss. _Direct disaster losses_ refer to directly quantifiable losses such as the number of people killed and the damage to buildings, infrastructure and natural resources. _Indirect disaster losses_ refer to wider and longer-term impacts arising from the direct disruptions to the flow of goods and services as a result of a disaster. This includes declines in output or revenue, increases in food prices, and other longer-term social and economic effects on education, health, productivity, the well-being of people or the macroeconomy.
+
+Source: Adapted from ([UNDRR](https://www.preventionweb.net/understanding-disaster-risk/key-concepts/direct-indirect-losses))
+and [UNDRR Terminology (Economic Loss)](https://www.undrr.org/terminology/economic-loss)
+
+## People affected
+
+People who have been exposed and impacted, either directly or indirectly, by a hazardous event. Directly affected are those who have suffered injury, illness or other health effects; who were evacuated, displaced, relocated or have suffered direct damage to their livelihoods, economic, physical, social, cultural and environmental assets. Indirectly affected are people who have suffered consequences, other than or in addition to direct effects, over time, due to disruption or changes in the economy, critical infrastructure, basic services, commerce or work, or social, health and psychological consequences.
+
+Source: [UNDRR Terminology (Affected)](https://www.undrr.org/terminology/affected)
