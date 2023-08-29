@@ -93,7 +93,7 @@
     },
     "spatial": {
       "title": "Spatial coverage",
-      "description": "The geographical area covered by the dataset.",
+      "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`.",
       "$ref": "#/$defs/Location"
     },
     "license": {
@@ -186,12 +186,12 @@
           "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
           "minLength": 1
         },
-        "cost": {
-          "title": "Asset cost",
+        "metrics": {
+          "title": "Exposure metrics",
           "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
+          "description": "The measurements used to quantify the extent to which assets are exposed.",
           "items": {
-            "$ref": "#/$defs/Cost"
+            "$ref": "#/$defs/Metric"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -1396,7 +1396,7 @@
         "bbox": {
           "title": "Bounding box",
           "type": "array",
-          "description": "A geographic bounding box delimiting the geographical area.",
+          "description": "A geographic bounding box delimiting the geographical area. This field is an array of numbers. It must contain exactly four numbers with the first two numbers being the longitude and latitude of the most southwesterly point and the second two numbers being the longitude and latitude of the most northeasterly point. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": "number"
           },
@@ -1405,13 +1405,13 @@
         },
         "geometry": {
           "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area.",
+          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
           "$ref": "#/$defs/Geometry"
         },
         "centroid": {
           "title": "Centroid",
           "type": "array",
-          "description": "The coordinates of the centre of the geographical area.",
+          "description": "The coordinates of the centre of the geographical area. This field is an array of numbers. It must contain exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": "number"
           },
@@ -1494,12 +1494,29 @@
         "coordinates": {
           "title": "Coordinates",
           "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
+          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": [
               "number",
               "array"
             ],
+            "items": {
+              "type": [
+                "number",
+                "array"
+              ],
+              "items": {
+                "type": [
+                  "number",
+                  "array"
+                ],
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1
+              },
+              "minItems": 1
+            },
             "minItems": 1
           },
           "minItems": 1
@@ -1933,10 +1950,50 @@
       },
       "minProperties": 1
     },
+    "Metric": {
+      "title": "Asset exposure metric",
+      "type": "object",
+      "description": "A measurement used to quantify the extent to which assets detailed in the dataset are exposed.",
+      "required": [
+        "id",
+        "type",
+        "quantity_kind"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this metric.",
+          "minLength": 1
+        },
+        "dimension": {
+          "title": "Metric dimension",
+          "description": "The dimension on which the asset's exposure is measured, from the closed [metric dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_dimension).",
+          "type": "string",
+          "codelist": "metric_dimension.csv",
+          "openCodelist": false,
+          "enum": [
+            "structure",
+            "content",
+            "product",
+            "disruption",
+            "population"
+          ]
+        },
+        "quantity_kind": {
+          "title": "Metric quantity kind",
+          "type": "string",
+          "description": "The kind of quantity by which the exposure is quantified, from the open [quantity kind codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#quantity_kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
+          "codelist": "quantity_kind.csv",
+          "openCodelist": true
+        }
+      },
+      "minProperties": 1
+    },
     "Cost": {
       "title": "Asset cost",
       "type": "object",
-      "description": "The costs associated with specific elements of assets detailed in the dataset.",
+      "description": "The costs associated with damage and disruption to specific elements of assets detailed in the dataset.",
       "required": [
         "id",
         "type",
@@ -1949,17 +2006,18 @@
           "description": "A locally unique identifier for this cost.",
           "minLength": 1
         },
-        "type": {
-          "title": "Cost type",
-          "description": "The type of the cost, from the closed [cost type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#cost_type).",
+        "dimension": {
+          "title": "Cost dimension",
+          "description": "The dimension of the assets that have incurred the cost, from the closed [metric dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_dimension).",
           "type": "string",
-          "codelist": "cost_type.csv",
+          "codelist": "metric_dimension.csv",
           "openCodelist": false,
           "enum": [
             "structure",
             "content",
             "product",
-            "disruption"
+            "disruption",
+            "population"
           ]
         },
         "unit": {
