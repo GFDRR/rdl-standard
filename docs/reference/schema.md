@@ -49,7 +49,7 @@ The following diagram shows a subset of dataset-level fields, with required fiel
   #highlight "publisher" <<required>>
   #highlight "publisher" / "name" <<required>>
   #highlight "spatial" <<required>>
-  #highlight "license <<required>>
+  #highlight "license" <<required>>
   {
     "title": "",
     "description": "",
