@@ -825,8 +825,7 @@
         "id",
         "title",
         "description",
-        "format",
-        "url"
+        "format"
       ],
       "properties": {
         "id": {
@@ -876,11 +875,16 @@
           "pattern": "^(ESRI:|EPSG:)[0-9]+$",
           "minLength": 1
         },
-        "url": {
-          "title": "Url",
+        "access_url": {
+          "title": "Access Url",
           "type": "string",
-          "description": "The web address this resource can be downloaded from.",
+          "description": "A web address that gives access to this resource, e.g. a webpage through which a user can request access by completing a form.",
           "format": "iri"
+        },
+        "download_url": {
+          "title": "Download Url",
+          "type": "string",
+          "description": "The web address this resource can be downloaded from in the given `.format`."
         },
         "temporal": {
           "title": "Temporal coverage",
