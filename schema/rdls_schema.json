@@ -93,7 +93,7 @@
     },
     "spatial": {
       "title": "Spatial coverage",
-      "description": "The geographical area covered by the dataset.",
+      "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`.",
       "$ref": "#/$defs/Location"
     },
     "license": {
@@ -1392,7 +1392,7 @@
         "bbox": {
           "title": "Bounding box",
           "type": "array",
-          "description": "A geographic bounding box delimiting the geographical area.",
+          "description": "A geographic bounding box delimiting the geographical area. This field is an array of numbers. It must contain exactly four numbers with the first two numbers being the longitude and latitude of the most southwesterly point and the second two numbers being the longitude and latitude of the most northeasterly point. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": "number"
           },
@@ -1401,13 +1401,13 @@
         },
         "geometry": {
           "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area.",
+          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
           "$ref": "#/$defs/Geometry"
         },
         "centroid": {
           "title": "Centroid",
           "type": "array",
-          "description": "The coordinates of the centre of the geographical area.",
+          "description": "The coordinates of the centre of the geographical area. This field is an array of numbers. It must contain exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": "number"
           },
@@ -1490,12 +1490,29 @@
         "coordinates": {
           "title": "Coordinates",
           "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
+          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": [
               "number",
               "array"
             ],
+            "items": {
+              "type": [
+                "number",
+                "array"
+              ],
+              "items": {
+                "type": [
+                  "number",
+                  "array"
+                ],
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1
+              },
+              "minItems": 1
+            },
             "minItems": 1
           },
           "minItems": 1
