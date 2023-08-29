@@ -12,10 +12,10 @@ This page presents the schema in tables with additional information in paragraph
 
 The RDLS schema covers [dataset fields](#dataset), [resource fields](#resource) and four risk-specific components to describe risk datasets:
 
-- [Hazard](#hazard-metadata): metadata to describe hazard data, including the main hazard type and process, triggering hazard and process, hazard intensity units, occurrence frequency of individual events, multiple hazard footprints per event, historical and stochastic events sets, and analytical methods used.
-- [Exposure](#exposure-metadata): metadata describing exposure data, including asset category (including human, built environment assets and natural assets), taxonomy scheme used to describe characteristics of assets and people, cost type, location and geometry types.
-- [Vulnerability](#vulnerability-metadata): metadata to describe vulnerability and fragility relationships and indexes, including type of impact, type of exposure, hazard intensity measure and approach used to develop the relationship. This component uses attributes consistent with the hazard, exposure and loss components.
-- [Loss](#loss-metadata): metadata describing monetary and non-monetary damage and losses produced in a risk assessment. This includes fields to link losses to the hazard, exposure, and vulnerability components used in the analysis. The loss component enables description of common impact and risk metrics for direct and indirect impacts, for individual historical and hypothetical events, and for large events sets in year loss tables and event loss tables.
+- [Hazard](#hazard-metadata): Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation. For example, a classification of the type of the hazard, the units in which the intensity of the hazard is measured, and the frequency at which the hazard occurs.
+- [Exposure](#exposure-metadata): Metadata that is specific to datasets that describe the location and demographic information of people, and the location, characteristics and value of assets in the built and natural environment. For example, the type of building and the cost to replace it if it suffered damage.
+- [Vulnerability](#vulnerability-metadata): Metadata that is specific to datasets that describe the vulnerability and fragility relationships and indexes used in risk analysis. This includes the type of exposure, hazard intensity and impact the relationship describes, and information on how the relationship was developed. This component uses attributes consistent with the hazard, exposure and loss components.
+- [Loss](#loss-metadata): Metadata that is specific to datasets that contain the simulated (modeled) risk and impact estimates produced in a risk assessment, including explicit links to the hazard, exposure, and vulnerability datasets used in the analysis.
 
 For general definitions of hazard, exposure, vulnerability and loss, please see the [Glossary](../glossary.md).
 
@@ -275,7 +275,7 @@ The following table lists all exposure component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/exposure
-collapse: cost
+collapse: metrics
 addtargets:
 ---
 ```
@@ -798,6 +798,30 @@ addtargets:
 ---
 ```
 
+### Metric
+
+`Metric` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Metric/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`exposure/metrics`](rdls_schema.json,/properties/exposure,metrics)
+
+Each `Metric` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Metric
+collapse:
+addtargets:
+---
+```
+
 ### Cost
 
 `Cost` is defined as:
@@ -810,7 +834,6 @@ jsonpointer: /$defs/Cost/description
 
 This sub-schema is referenced by the following properties:
 
-- [`exposure/cost`](rdls_schema.json,/properties/exposure,cost)
 - [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
 - [`loss/cost`](rdls_schema.json,/properties/loss,cost)
 

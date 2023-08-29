@@ -182,6 +182,24 @@ file: ../../schema/codelists/open/media_type.csv
 ---
 ```
 
+### quantity_kind
+
+The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
+
+This codelist is referenced by the following properties:
+
+- [`Metric/quantity_kind`](rdls_schema.json,/$defs/Metric,quantity_kind)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../schema/codelists/open/quantity_kind.csv
+---
+```
+
 ### roles
 
 The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml) with the addition of 'world_bank_team_lead' and the omission of codes covered by the `creator`, `contact_point` and `publisher` fields.
@@ -217,22 +235,6 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../schema/codelists/closed/analysis_type.csv
----
-```
-
-### cost_type
-
-This codelist is referenced by the following properties:
-
-- [`Cost/type`](rdls_schema.json,/$defs/Cost,type)
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/cost_type.csv
 ---
 ```
 
@@ -409,6 +411,23 @@ This codelist has the following codes:
 header-rows: 1
 widths: auto
 file: ../../schema/codelists/closed/loss_type.csv
+---
+```
+
+### metric_dimension
+
+This codelist is referenced by the following properties:
+
+- [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
+- [`Cost/dimension`](rdls_schema.json,/$defs/Cost,dimension)
+
+This codelist has the following codes:
+
+```{csv-table-no-translate}
+---
+header-rows: 1
+widths: auto
+file: ../../schema/codelists/closed/metric_dimension.csv
 ---
 ```
 
