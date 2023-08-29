@@ -4,7 +4,9 @@
       "id": "https://www.wri.org/data/aqueduct-floods-hazard-maps",
       "title": "Aqueduct Floods Hazard Maps",
       "description": "Aqueduct Floods is an online platform that measures riverine and coastal flood risks under both current baseline conditions and future projections in 2030, 2050, an 2080. In addition to providing hazard maps and assessing risks, Aqueduct Floods enables its users to conduct comprehensive cost-benefit analysis to evaluate the value of dike flood protection strategies.",
-      "risk_data_type": "hazard",
+      "risk_data_type": [
+        "hazard"
+      ],
       "publisher": {
         "name": "Water Resource Institute",
         "url": "https://www.wri.org"
@@ -30,7 +32,7 @@
           "description": "Collection of fluvial and pluvial hazard maps; baseline and climate scenarios",
           "format": "geotiff",
           "spatial_resolution": 1000,
-          "coordinate_system": "4326",
+          "coordinate_system": "EPSG:4326",
           "url": "http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html"
         }
       ],

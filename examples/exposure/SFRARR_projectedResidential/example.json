@@ -4,7 +4,9 @@
       "id": "https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure",
       "title": "Central-Asia-exposure-dataset---Projected-residential-exposure",
       "description": "Regional layer of residential buildings in Central Asia, projected to 2080",
-      "risk_data_type": "exposure",
+      "risk_data_type": [
+        "exposure"
+      ],
       "publisher": {
         "name": "World Bank",
         "email": "sfraser@worldbank.org",
@@ -132,7 +134,9 @@
       "id": "https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings",
       "title": "Central-Asia-exposure-dataset---Current-residential-exposure",
       "description": "Regional layer of residential buildings in Central Asia",
-      "risk_data_type": "exposure",
+      "risk_data_type": [
+        "exposure"
+      ],
       "publisher": {
         "name": "World Bank",
         "email": "sfraser@worldbank.org",
@@ -169,11 +173,11 @@
       "exposure": {
         "category": "buildings",
         "taxonomy": "GED4ALL",
-        "cost": [
+        "metrics": [
           {
-            "id": "0064251_cost1",
-            "type": "structure",
-            "unit": "USD"
+            "id": "0064251_metric1",
+            "dimension": "structure",
+            "quantity_kind": "currency"
           }
         ]
       },

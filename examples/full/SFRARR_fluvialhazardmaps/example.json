@@ -4,7 +4,9 @@
       "id": "https://datacatalog.worldbank.org/search/dataset/0064232",
       "title": "Central Asia flood hazard - fluvial flood hazard maps DEFENDED",
       "description": "Simulated fluvial flood hazard maps with the simulated effects of flood protection. ",
-      "risk_data_type": "hazard",
+      "risk_data_type": [
+        "hazard"
+      ],
       "publisher": {
         "name": "World Bank Europe and Central Asia DRM team",
         "email": "sfraser@worldbank.org"

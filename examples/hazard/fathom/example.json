@@ -4,7 +4,9 @@
       "id": "FTH_example",
       "title": "FATHOM flood hazard maps",
       "description": "Probabilistic modelling of fluvial and pluvial flood hazard",
-      "risk_data_type": "hazard",
+      "risk_data_type": [
+        "hazard"
+      ],
       "publisher": {
         "name": "Fathom",
         "url": "https://www.fathom.global/"
@@ -30,7 +32,7 @@
           "description": "Fluvial flood hazard maps (10), not accounting any flood defence",
           "format": "geotiff",
           "spatial_resolution": 90,
-          "coordinate_system": "4326",
+          "coordinate_system": "EPSG:4326",
           "url": "http://example.com/FTH-THA-fluvial-undefended"
         },
         {
@@ -39,7 +41,7 @@
           "description": "Fluvial flood hazard maps (10), accounting for flood defence (estimate)",
           "format": "geotiff",
           "spatial_resolution": 90,
-          "coordinate_system": "4326",
+          "coordinate_system": "EPSG:4326",
           "url": "http://example.com/FTH-THA-fluvial-defended"
         },
         {
@@ -48,7 +50,7 @@
           "description": "Pluvial flood hazard maps (10), not accounting any flood defence",
           "format": "geotiff",
           "spatial_resolution": 90,
-          "coordinate_system": "4326",
+          "coordinate_system": "EPSG:4326",
           "url": "http://example.com/FTH-THA-pluvial-undefended"
         }
       ],
@@ -90,6 +92,6 @@
           "rel": "describedby"
         }
       ]
-    }    
+    }
   ]
 }
