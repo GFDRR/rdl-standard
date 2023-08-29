@@ -72,6 +72,7 @@ This page lists changes to the Risk Data Library Standard.
   - update `coordinates` to allow only numbers within arrays.
 - [#208](https://github.com/GFDRR/rdl-standard/pull/208) - Add regex pattern to `coordinate_system` and update description to mandate ESRI or EPSG codes.
 - [#205](https://github.com/GFDRR/rdl-standard/pull/205) - Convert `risk_data_type` to array.
+- [#218](https://github.com/GFDRR/rdl-standard/pull/218) - `Vulnerability·taxonomy` removed from required array.
 
 ### Codelists
 
