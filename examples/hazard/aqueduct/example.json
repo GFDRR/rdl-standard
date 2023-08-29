@@ -69,7 +69,7 @@
       "links": [
         {
           "href": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
-          "rel": "describedBy"
+          "rel": "describedby"
         }
       ]
     }
