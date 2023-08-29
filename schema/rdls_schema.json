@@ -179,7 +179,7 @@
       "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
         "category",
-        "cost"
+        "metrics"
       ],
       "properties": {
         "category": {
@@ -1952,7 +1952,7 @@
       "description": "A measurement used to quantify the extent to which assets detailed in the dataset are exposed.",
       "required": [
         "id",
-        "type",
+        "dimension",
         "quantity_kind"
       ],
       "properties": {
