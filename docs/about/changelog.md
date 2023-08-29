@@ -75,10 +75,11 @@ This page lists changes to the Risk Data Library Standard.
 - [#215](https://github.com/GFDRR/rdl-standard/pull/219) - Remove `.hazard_id`, `exposure_id` and `vulnerability_id` from `loss` required array.
 - [#210](https://github.com/GFDRR/rdl-standard/pull/210) - Replace `resource.`url with `.access_url` and `download_url`
 - [#218](https://github.com/GFDRR/rdl-standard/pull/218) - `Vulnerability·taxonomy` removed from required array.
+- [#220](https://github.com/GFDRR/rdl-standard/pull/220) - Reorder top-level fields.
 
 ### Codelists
 
-- [#101](https://github.com/GFDRR/rdl-standard/pull/101) - update and rename cost_type.csv, create exposure_category.csv
+- [#101](https://github.com/GFDRR/rdl-standard/pull/101) - Update and rename `cost_type.csv` and create `exposure_category.csv`.
 - [#114](https://github.com/GFDRR/rdl-standard/pull/114) - 'IMT.csv' add descriptions and change pattern of codes to metric:unit.
 - [#117](https://github.com/GFDRR/rdl-standard/pull/117) - Create 'license.csv' codelist and replace `license_code` field with `license`.
 - [#105](https://github.com/GFDRR/rdl-standard/pull/105) - Create 'country.csv', 'location_gazetteers.csv' and 'geometry_type.csv'.
