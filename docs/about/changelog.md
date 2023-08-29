@@ -88,6 +88,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#143](https://github.com/GFDRR/rdl-standard/pull/143) - Update 'license.csv' to include Open Definition conformant licences and those listed as options on WB Data Catalog.
 - [#164](https://github.com/GFDRR/rdl-standard/pull/164) - replace camelCase codes with snake_case codes in 'frequency_distribution.csv' and 'seasonality.csv'
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
+- [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
 
 ### Normative documentation
 
