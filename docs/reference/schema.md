@@ -44,7 +44,7 @@ The diagram below shows the core relationships between schema components, and th
       class Exposure{
         -Asset category
         -Taxonomy
-        -Cost type
+        -Metric type
       }
       class Vulnerability{
         -Hazard process
@@ -211,13 +211,13 @@ The exposure component uses exposure categories consistent with the vulnerabilit
       Model: Occupancy
       class Asset1{
         Taxonomy code
-        Value type
-        Value unit
+        Metric type
+        Metric quantity kind
       }
       class Asset2{
         Taxonomy code
-        Value type
-        Value unit
+        Metric type
+        Metric quantity kind
       }
 ```
 
@@ -228,7 +228,7 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/exposure
-collapse: cost
+collapse: metrics
 addtargets:
 ---
 ```
@@ -743,6 +743,30 @@ addtargets:
 ---
 ```
 
+### Metric
+
+`Metric` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Metric/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`exposure/metrics`](rdls_schema.json,/properties/exposure,metrics)
+
+Each `Metric` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Metric
+collapse:
+addtargets:
+---
+```
+
 ### Cost
 
 `Cost` is defined as:
@@ -755,7 +779,6 @@ jsonpointer: /$defs/Cost/description
 
 This sub-schema is referenced by the following properties:
 
-- [`exposure/cost`](rdls_schema.json,/properties/exposure,cost)
 - [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
 - [`loss/cost`](rdls_schema.json,/properties/loss,cost)
 

@@ -62,6 +62,10 @@ This page lists changes to the Risk Data Library Standard.
   - Markdown syntax in `Attribution.role` description
 - [#190](https://github.com/GFDRR/rdl-standard/pull/190) - Deletes type key from properties with `$ref` components.
 - [#203](https://github.com/GFDRR/rdl-standard/pull/203) - Add package schema.
+- [#204](https://github.com/GFDRR/rdl-standard/pull/204):
+  - Add field `metrics`.
+  - rename cost_type.csv to metric_dimension.csv and update code descriptions.
+  - Add quantity_kind.csv.
 - [#207](https://github.com/GFDRR/rdl-standard/pull/207):
   - update description of `spatial` to recommend use of `bbox` when coordinates based location is needed.
   - update descriptions of `spatial`, `bbox`, `centroid` and `coordinates` to specify use of WGS84 and decimal degrees.
