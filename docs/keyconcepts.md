@@ -56,17 +56,17 @@ Vulnerability are the conditions determined by physical, social, economic and en
 
 Source: [Vulnerability, UNDRR Terminology](https://www.undrr.org/terminology/vulnerability)
 
-## Cat model
+## Risk and impact models
 
-Catastrophe risk models (cat models) are common tools used to assess natural disaster risk. The models typically have four components: hazard, exposure, vulnerability and loss.
+Disaster risk models are probabilistic simulation tools used to assess disaster risk and typically have four components: hazard, exposure, vulnerability and loss. They are most commonly used to estimate the frequency and severity of direct monetary losses to assets, and human casualties. In more limited examples they are used to estimate indirect losses such as business interruption/disruption. Risk models can be used to model single scenarios losses as well as probabilistic loss, and are designed to estimate loss over a large portfolio or collection of locations rather than to conduct detailed single-site analysis. Many risk models used in development sector projects estimate economic loss, but a catastrophe model of the sort used in the insurance industry specifically includes a financial module, which allows losses to be partitioned into uninsured and (many segments of) insured losses. An example is the Oasis Loss Modeling Framework. 
 
-A subset of a catastrophe risk model is an impact model, which is essentially a risk model that can only be used deterministically. The impact model uses hypothetical or historical events to simulate “what-if” scenarios that are often used as an aid for disaster planning and management. An example of an impact modeling tool is InaSAFE.
+An impact model is a deterministic simulation tool that uses hypothetical or historical events to simulate the potential outcomes of a “what-if” scenario, often used as an aid for disaster planning and management. An example of an impact modeling tool is InaSAFE.
 
-Source: [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/files/solving-the-puzzle-report.pdf)
+Source: Adapted from [GFDRR, Solving the Puzzle, 2016](https://www.gfdrr.org/sites/default/files/solving-the-puzzle-report.pdf)
 
 ## Examples of risk data
 
-The four components of risk assessment are showcased below for an assessment of flood risk over tangible asset in the urban area of Kabul (Afghanistan).
+The four components of risk assessment are showcased below for an assessment of flood risk over tangible assets in the urban area of Kabul (Afghanistan).
 
 ````{grid} 1 1 1 2
 :gutter: 3
