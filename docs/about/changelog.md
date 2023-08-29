@@ -89,6 +89,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#143](https://github.com/GFDRR/rdl-standard/pull/143) - Update 'license.csv' to include Open Definition conformant licences and those listed as options on WB Data Catalog.
 - [#164](https://github.com/GFDRR/rdl-standard/pull/164) - replace camelCase codes with snake_case codes in 'frequency_distribution.csv' and 'seasonality.csv'
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
+- [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
 
 ### Normative documentation
 
@@ -100,6 +101,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#169](https://github.com/GFDRR/rdl-standard/pull/169) - Uncollapse `event_sets` in `hazard` reference table.
 - [#146](https://github.com/GFDRR/rdl-standard/pull/146) - Update introduction to the RDLS reference section.
 - [#193](https://github.com/GFDRR/rdl-standard/pull/193) - Fix lists of referencing fields for subschemas and codelists.
+- [#225](https://github.com/GFDRR/rdl-standard/pull/225) - Update high level descriptions of the 4 risk data components.
 
 ### Non-normative documentation
 
@@ -108,5 +110,6 @@ This page lists changes to the Risk Data Library Standard.
 - [#174](https://github.com/GFDRR/rdl-standard/pull/174) - Add local tests guidance to developer_docs.md
 - [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
 - [#175](https://github.com/GFDRR/rdl-standard/pull/175) - Restructure documentation, rewrite landing page, add new introductory content.
+- [#224](https://github.com/GFDRR/rdl-standard/pull/224) - Update contact email addresses.
 
 ### Other
