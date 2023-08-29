@@ -66,6 +66,7 @@ This page lists changes to the Risk Data Library Standard.
   - update description of `spatial` to recommend use of `bbox` when coordinates based location is needed.
   - update descriptions of `spatial`, `bbox`, `centroid` and `coordinates` to specify use of WGS84 and decimal degrees.
   - update `coordinates` to allow only numbers within arrays.
+- [#208](https://github.com/GFDRR/rdl-standard/pull/208) - Add regex pattern to `coordinate_system` and update description to mandate ESRI or EPSG codes.
 - [#205](https://github.com/GFDRR/rdl-standard/pull/205) - Convert `risk_data_type` to array.
 
 ### Codelists
@@ -95,6 +96,7 @@ This page lists changes to the Risk Data Library Standard.
 ### Non-normative documentation
 
 - [#111](https://github.com/GFDRR/rdl-standard/pull/111) - Add Global Library for Schools Infrastructure (GLOSI) to taxonomies.
+- [#171](https://github.com/GFDRR/rdl-standard/pull/171) - Updating glossary to add loss components, adjust other entries and remove images from glossary.
 - [#174](https://github.com/GFDRR/rdl-standard/pull/174) - Add local tests guidance to developer_docs.md
 - [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
 - [#175](https://github.com/GFDRR/rdl-standard/pull/175) - Restructure documentation, rewrite landing page, add new introductory content.
