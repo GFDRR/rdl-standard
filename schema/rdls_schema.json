@@ -1992,7 +1992,7 @@
       "description": "The costs associated with damage and disruption to specific elements of assets detailed in the dataset.",
       "required": [
         "id",
-        "type",
+        "dimension",
         "unit"
       ],
       "properties": {
