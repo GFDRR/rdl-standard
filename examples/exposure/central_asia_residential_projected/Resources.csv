@@ -1,0 +1,17 @@
+Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure,https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure,https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure
+Resource identifier,0064254_res1,0064254_res2,0064254_res3
+Resource title,"Central Asia projected (2080) residential exposure - all countries, Oblast level: SSP1","Central Asia projected (2080) residential exposure - all countries, Oblast level: SSP4","Central Asia projected (2080) residential exposure - all countries, Oblast level: SSP5"
+Resource description,"Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP1
+Dataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.
+Files: RESIDENTIAL_[OBLAST]._2080_[SSP].csv","Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP4
+Dataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.
+Files: RESIDENTIAL_[OBLAST]._2080_[SSP].csv","Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP5
+Dataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.
+Files: RESIDENTIAL_[OBLAST]._2080_[SSP].csv"
+Format,csv,csv,csv
+Spatial resolution,500,500,500
+resources/0/url,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091991/P2080_SSP1.zip?versionId=2023-07-11T15:12:01.4656749Z,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091992/P2080_SSP4.zip?versionId=2023-07-11T15:12:06.1470219Z,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091993/P2080_SSP5.zip?versionId=2023-07-11T15:12:03.5145140Z
+"Temporal coverage:
+Start",2080,2080,2080
+"Temporal coverage:
+End date",2080,2080,2080
