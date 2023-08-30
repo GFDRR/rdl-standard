@@ -48,7 +48,7 @@ cd rdl-standard
 
 Subsequent instructions assume that your current working directory is `rdl-standard`, unless otherwise stated.
 
-#### Install submodules
+#### Update submodules
 
 ```bash
 git submodule init
@@ -105,6 +105,12 @@ If you are using Python 3.3 or newer, `venv` is included in the standard Python 
 ```bash
 pip install --upgrade pip setuptools
 pip install -r requirements.txt
+```
+
+Install Flatten Tool:
+
+```bash
+pip install ./flatten-tool
 ```
 
 ### Resolve check failures
