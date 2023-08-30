@@ -528,8 +528,9 @@ addtargets:
 ```
 
 ``````{dropdown} Example: Global flood depth-damage functions
-:open:
-
+---
+open:
+---
 The following example shows RDLS metadata for the [Global flood depth-damage functions](https://publications.jrc.ec.europa.eu/repository/handle/JRC105688) in tabular format and JSON format.
 
 `````{tab-set}
