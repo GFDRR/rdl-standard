@@ -1,0 +1,14 @@
+Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings
+Resource identifier,0064251_res1,0064251_res2,0064251_res3,0064251_res4,0064251_res5
+Resource title,Central Asia exposure dataset - Residential buildings - KAZ,Central Asia exposure dataset - Residential buildings - KGZ,Central Asia exposure dataset - Residential buildings - TJK,Central Asia exposure dataset - Residential buildings - TKM,Central Asia exposure dataset - Residential buildings - UZB
+Resource description,"Central Asia exposure layers – Residential buildings - KAZ
+Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp","Central Asia exposure layers – Residential buildings - KGZ
+Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp","Central Asia exposure layers – Residential buildings - TJK
+Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp","Central Asia exposure layers – Residential buildings - TKM
+Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp","Central Asia exposure layers – Residential buildings - UZB
+Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp"
+Format,csv,csv,csv,csv,csv
+Spatial resolution,500,500,500,500,500
+resources/0/url,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091660/TJK_residential_exposure.zip?versionId=2023-07-11T15:15:37.7301236Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z
+Start,2020,2020,2020,2020,2020
+End date,2020,2020,2020,2020,2020
