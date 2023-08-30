@@ -9,8 +9,9 @@ Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp","Central Asia exposur
 Files: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp"
 Format,csv,csv,csv,csv,csv
 Spatial resolution,500,500,500,500,500
-resources/0/url,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091660/TJK_residential_exposure.zip?versionId=2023-07-11T15:15:37.7301236Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z
+Download Url,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z,,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z
 "Temporal coverage:
 Start",2020,2020,2020,2020,2020
 "Temporal coverage:
 End date",2020,2020,2020,2020,2020
+resources/0/url,,,https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091660/TJK_residential_exposure.zip?versionId=2023-07-11T15:15:37.7301236Z,,

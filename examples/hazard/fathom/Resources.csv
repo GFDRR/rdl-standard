@@ -5,4 +5,4 @@ Resource description,"Fluvial flood hazard maps (10), not accounting any flood d
 Format,geotiff,geotiff,geotiff
 Spatial resolution,90,90,90
 Coordinate reference system,EPSG:4326,EPSG:4326,EPSG:4326
-resources/0/url,http://example.com/FTH-THA-fluvial-undefended,http://example.com/FTH-THA-fluvial-defended,http://example.com/FTH-THA-pluvial-undefended
+Download Url,http://example.com/FTH-THA-fluvial-undefended,http://example.com/FTH-THA-fluvial-defended,http://example.com/FTH-THA-pluvial-undefended

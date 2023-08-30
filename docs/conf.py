@@ -40,11 +40,16 @@ extensions = ['myst_parser',
               'sphinx_design',
               'sphinxcontrib.mermaid',
               'sphinxcontrib.opendataservices',
+              'sphinxcontrib.plantuml',
               'sphinxcontrib.jsonschema',
               'sphinx_rtd_theme',
               'sphinx.ext.todo',
               'sphinx.ext.autodoc',
               'sphinx_togglebutton',]
+
+# PlantUML path
+local_plantuml_path = os.path.join(os.path.dirname(__file__), "utils", "plantuml-1.2023.10.jar")
+plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 
 # MyST heading anchors
 myst_heading_anchors = 5

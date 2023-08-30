@@ -5,4 +5,4 @@ Resource description,Collection of fluvial and pluvial hazard maps; baseline and
 Format,geotiff
 Spatial resolution,1000
 Coordinate reference system,EPSG:4326
-resources/0/url,http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html
+Access Url,http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html

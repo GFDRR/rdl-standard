@@ -10,58 +10,73 @@ This page presents the schema in tables with additional information in paragraph
    If any conflicts are found between the text on this page and the text within the schema, the text within the schema takes precedence.
 ```
 
-The RDLS schema covers [dataset attributes](#dataset), [resource attributes](#resource) and four components to document data used in risk analysis:
+The RDLS schema covers [dataset fields](#dataset), [resource fields](#resource) and four risk-specific components to describe risk datasets:
 
-- [Hazard](#hazard): Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation. For example, a classification of the type of the hazard, the units in which the intensity of the hazard is measured, and the frequency at which the hazard occurs.
-- [Exposure](#exposure): Metadata that is specific to datasets that describe the location and demographic information of people, and the location, characteristics and value of assets in the built and natural environment. For example, the type of building and the cost to replace it if it suffered damage.
-- [Vulnerability](#vulnerability): Metadata that is specific to datasets that describe the vulnerability and fragility relationships and indexes used in risk analysis. This includes the type of exposure, hazard intensity and impact the relationship describes, and information on how the relationship was developed. This component uses attributes consistent with the hazard, exposure and loss components.
-- [Loss](#loss): Metadata that is specific to datasets that contain the simulated (modeled) risk and impact estimates produced in a risk assessment, including explicit links to the hazard, exposure, and vulnerability datasets used in the analysis.
+- [Hazard](#hazard-metadata): Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation. For example, a classification of the type of the hazard, the units in which the intensity of the hazard is measured, and the frequency at which the hazard occurs.
+- [Exposure](#exposure-metadata): Metadata that is specific to datasets that describe the location and demographic information of people, and the location, characteristics and value of assets in the built and natural environment. For example, the type of building and the cost to replace it if it suffered damage.
+- [Vulnerability](#vulnerability-metadata): Metadata that is specific to datasets that describe the vulnerability and fragility relationships and indexes used in risk analysis. This includes the type of exposure, hazard intensity and impact the relationship describes, and information on how the relationship was developed. This component uses attributes consistent with the hazard, exposure and loss components.
+- [Loss](#loss-metadata): Metadata that is specific to datasets that contain the simulated (modeled) risk and impact estimates produced in a risk assessment, including explicit links to the hazard, exposure, and vulnerability datasets used in the analysis.
 
 For general definitions of hazard, exposure, vulnerability and loss, please see the [Glossary](../glossary.md).
 
 For fields that reference [sub-schemas](#sub-schemas), a link is provided to a table with details of the sub-schema. To see how the fields and sub-schemas fit together, consult the [schema browser](browser.md).
 
-The diagram below shows the core relationships between schema components, and their core attributes.
-
-```{eval-rst}
- .. mermaid::
-
-  classDiagram
-      Dataset -- Hazard
-      Dataset -- Exposure
-      Dataset -- Vulnerability
-      Dataset -- Loss
-      Dataset: -Project name
-      Dataset: -Coverage
-      Dataset: -Purpose
-      Dataset: -Bibliography
-      class Hazard{
-        -Type, Process
-        -Trigger
-        -Frequency, Intensity
-        -Analytical method
-          }
-      class Exposure{
-        -Asset category
-        -Taxonomy
-        -Metric type
-      }
-      class Vulnerability{
-        -Hazard process
-        -Exposure taxonomy
-        -Analytical method
-      }
-      class Loss{
-        -Hazard process
-        -Exposure taxonomy
-        -Loss frequency
-        -Loss metric
-      }          
-```
-
 ## Dataset
 
-In addition to schema-specific attributes, each dataset is identified by a list of attributes based on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms).
+The top-level object in the RDLS schema is a risk dataset. A risk dataset is described as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /description
+---
+```
+
+The general attributes of a dataset are described by fields based on the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-3/) and the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms).
+
+The following diagram shows key dataset-level fields, with required fields highlighted in blue:
+
+```{eval-rst}
+.. uml::
+
+  @startjson
+  <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
+    .required {
+      BackGroundColor #239ce8
+    }
+  </style>
+  #highlight "title" <<required>>
+  #highlight "risk_data_type" <<required>>
+  #highlight "publisher" <<required>>
+  #highlight "publisher" / "name" <<required>>
+  #highlight "spatial" <<required>>
+  #highlight "license" <<required>>
+  {
+    "title": "",
+    "description": "",
+    "risk_data_type": "",
+    "publisher": {
+      "name": "",
+      "email": "",
+      "url": ""
+    },
+    "version": "",
+    "purpose": "",
+    "project": "",
+    "details": "",
+    "spatial": {
+      "countries": "",
+      "bbox": ""
+    },
+    "license": ""
+  }
+  @endjson
+
+```
+
+The following table lists all dataset-level fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
@@ -73,7 +88,17 @@ addtargets:
 
 ## Resource
 
-Other attributes are specific to individual resources, covering level of aggregation, resolution and format.
+A `Resource` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Resource/description
+---
+```
+
+Each dataset can have many associated resources.
+
+The following table lists all resource-level fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
@@ -83,57 +108,80 @@ addtargets:
 ---
 ```
 
-## Hazard
+## Hazard metadata
+
+The `hazard` component is described as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /properties/hazard/description
+---
+```
 
 The hazard component describes metadata about modeled natural hazards data, including hazard intensity footprints of historical or hypothetical events, return period hazard maps, hazard or susceptibility index, and stochastic event sets. The metadata defines the hazard type, physical process and intensity measures used in the dataset. Multiple hazards and processes (including cascading events) can be defined for each hazard, enabling users to describe dataset that contain, for example, earthquake ground shaking and liquefaction, and tsunami inundation triggered by the earthquake.
 
-The hazard component uses hazard_type, process_type and intensity_measure consistent with the vulnerability and loss component’s of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
+The hazard component uses hazard_type, process_type and intensity_measure consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
+
+The following diagram shows key hazard component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
 
 ```{eval-rst}
- .. mermaid::
+.. uml::
 
-  classDiagram
-      Event set -- Event1
-      Event set -- Event2
-      Event set: Hazard type
-      Event set: Analytical method
-      class Event1{
-        Occurrence frequency
-        Time reference
-        Hazard trigger
+  @startjson
+  <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
+    .required {
+      BackGroundColor #239ce8
+    }
+  </style>
+  #highlight "event_sets" <<required>>
+  #highlight "event_sets" / 0 / "analysis_type" <<required>>
+  #highlight "event_sets" / 0 / "events" / 0 / "calculation_method" <<required>>
+  #highlight "event_sets" / 0 / "events" / 0 / "hazard" <<required>>
+  #highlight "event_sets" / 0 / "events" / 0 / "hazard" / "type" <<required>>
+  #highlight "event_sets" / 0 / "events" / 0 / "hazard" / "processes" <<required>>
+  #highlight "event_sets" / 0 / "events" / 0 / "occurrence" <<required>>
+  #highlight "event_sets" / 0 / "events" / 0 / "footprints" / 0 / "intensity_measure" <<required>>
+  {
+    "event_sets": [
+      {
+        "analysis_type": "",
+        "frequency_distribution": "",
+        "seasonality": "",
+        "event_count": "",
+        "occurrence_range": "",
+        "spatial": "",
+        "temporal": "",
+        "events": [
+          {
+            "disaster_identifier": "",
+            "calculation_method": "",
+            "description": "",
+            "hazard": {
+              "type": "",
+              "processes": "",
+              "intensity_measure": "",
+              "trigger": ""
+            },
+            "occurence": "",
+            "footprints": [
+              {
+                "intensity_measure": "",
+                "data_uncertainty": ""
+              }
+            ]
+          }
+        ]
       }
-      class Event2{
-        Occurrence frequency
-        Time reference
-        Hazard trigger
-      }
-      Event1 -- Footprint1
-      Event1 -- Footprint2
-      Event2 -- Footprint3
-      Event2 -- Footprint4
-      class Footprint1{
-        Hazard process
-        Intensity measure
-        Uncertainty
-      }
-      class Footprint2{
-        Hazard process
-        Intensity measure
-        Uncertainty
-      }
-      class Footprint3{
-        Hazard process
-        Intensity measure
-        Uncertainty
-      }
-      class Footprint4{
-        Hazard process
-        Intensity measure
-        Uncertainty
-      }
+    ]
+  }
+  @endjson
+
 ```
 
-The `hazard` object has the following properties:
+The following table lists all hazard component fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
@@ -209,9 +257,8 @@ file: ../../examples/hazard/fathom/Hazard metadata_Event sets_Hazards.csv
    :title: Example
 ```
 
-````
-
 `````
+
 ``````
 
 ``````{dropdown} Example: Aqueduct Floods Hazard Maps
@@ -282,31 +329,53 @@ file: ../../examples/hazard/aqueduct/Hazard metadata_Event sets_Hazards.csv
 `````
 ``````
 
-## Exposure
+## Exposure metadata
+
+The `exposure` component is described as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /properties/exposure/description
+---
+```
 
 The exposure component describes metadata for datasets containing information on the distribution and characteristics of built environment assets (buildings and infrastructure) and natural assets and population, that are used in risk assessment. The exposure component provides codelists to describe the type of assets and costs, and the taxonomy scheme that is used to describe construction and demographic information contained in the dataset. For more information, see [exposure standards](../rdl/other-standards.md#exposure-standards).
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-```{eval-rst}
- .. mermaid::
+The following diagram shows key exposure component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
 
-  classDiagram
-      Model -- Asset1
-      Model -- Asset2
-      Model: Category
-      Model: Occupancy
-      class Asset1{
-        Taxonomy code
-        Metric type
-        Metric quantity kind
-      }
-      class Asset2{
-        Taxonomy code
-        Metric type
-        Metric quantity kind
-      }
+```{eval-rst}
+.. uml::
+
+  @startjson
+  <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
+    .required {
+      BackGroundColor #239ce8
+    }
+  </style>
+  #highlight "exposure" / "category" <<required>>
+  #highlight "exposure" / "metrics" / 0 / "quantity_kind" <<required>>
+  {
+    "exposure": {
+      "category": "",
+      "taxonomy": "",
+      "metrics": [
+        {
+          "dimension": "",
+          "quantity_kind": ""
+        }
+      ]
+    }
+  }
+  @endjson
+
 ```
+
+The following table lists all exposure component fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
@@ -323,8 +392,7 @@ The following example shows RDLS metadata for the [Central Asia projected reside
 `````{tab-set}
 
 ````{tab-item} Metadata (tabular)
-
-In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
+hazard
 
 ```{csv-table-no-translate} Datasets
 ---
@@ -398,8 +466,6 @@ file: ../../examples/exposure/central_asia_residential_projected/Exposure metada
    :jsonpointer: /datasets/0
    :title: Example
 ```
-
-````
 
 `````
 ``````
@@ -492,32 +558,62 @@ file: ../../examples/exposure/central_asia_residential_current/Exposure metadata
 `````
 ``````
 
-## Vulnerability
+## Vulnerability metadata
+
+The `vulnerability` component is described as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /properties/vulnerability/description
+---
+```
 
 The vulnerability component describes metadata for datasets that detail fragility, damage-to-loss and vulnerability relationships and indexes for physical damage and social vulnerability that are used in risk analysis. It contains key information including the type of function, intensity and impact metrics used, which asset types or population groups it applies to, how it was developed and for what locations.
 
 The vulnerability component uses hazard_type, process_type and intensity_measure consistent with the hazard and loss components, exposure information consistent with the exposure and loss components. Spatial reference and location information are described using existing external standards.
 
-```{eval-rst}
- .. mermaid::
+The following diagram shows key vulnerability component fields, with required fields highlighted in blue:
 
-  classDiagram
-      Model -- Specifics
-      Model -- Additional
-      Model: Hazard type
-      Model: Exposure taxonomy
-      Model: Calculation method
-      class Specifics{
-        Parameters
-        Damage states
-        Intensity measure
-      }
-      class Additional{
-        Validation
-        Error
-        Fitness
-      }
+```{eval-rst}
+.. uml::
+
+  @startjson
+  <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
+    .required {
+      BackGroundColor #239ce8
+    }
+  </style>
+  #highlight "hazard_primary" <<required>>
+  #highlight "intensity" <<required>>
+  #highlight "category" <<required>>
+  #highlight "impact" <<required>>
+  #highlight "functions" <<required>>
+  {
+    "hazard_primary": "",
+    "hazard_secondary": "",
+    "intensity": "",
+    "category": "",
+    "impact": {
+      "type": "",
+      "metric": "",
+      "unit": ""
+    },
+    "functions": {
+      "vulnerabiity": "",
+      "fragility": "",
+      "damage_to_loss": "",
+      "engineering_demand": ""
+    },
+    "se_category": ""
+  }
+  @endjson
+
 ```
+
+The following table lists all vulnerability component fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
@@ -605,39 +701,58 @@ file: ../../examples/vulnerability/flood_jrc/Vulnerability metadata_Asset cost.c
 `````
 ``````
 
-## Loss
+## Loss metadata
+
+The `loss` component is described as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /properties/loss/description
+---
+```
 
 The loss component provides metadata describing data generated in risk assessments, i.e., modelled impacts and losses for single historical events or hypothetical scenarios and risk estimates from analysis of large event sets. The data can include monetary and non-monetary, and direct or indirect, impacts and losses.
 Loss datasets can be explicitly linked to the exposure, hazard, and vulnerability datasets used in the analysis. This component uses descriptions of assets, hazards and impact types consistent with all other components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
+The following diagram shows key loss component fields, with required fields highlighted in blue:
+
 ```{eval-rst}
- .. mermaid::
+.. uml::
 
-  classDiagram
-      Model -- Map
-      Model -- Curve
-      Model: Hazard type
-      Model: Exposure category
-      Model: Calculation method
-      Model: Link data
+  @startjson
+  <style>
+    jsonDiagram {
+      BackGroundColor transparent
+    }
+    .required {
+      BackGroundColor #239ce8
+    }
+  </style>
+  #highlight "hazard_type" <<required>>
+  #highlight "cost" <<required>>
+  #highlight "cost" / "type" <<required>>
+  #highlight "cost" / "unit" <<required>>
+  {
+    "hazard_type": "",
+    "hazard_process": "",
+    "category": "",
+    "type": "",
+    "impact": {
+      "type": "",
+      "metric": "",
+      "unit": ""
+    },
+    "approach": "",
+    "cost": {
+      "type": "",
+      "unit": ""
+    }
+  }
+  @endjson
 
-      class Map{
-        Occurrence frequency
-        Time reference
-        Impact type
-        Loss type
-        Loss metric
-        Loss unit
-      }
-      class Curve{
-        Occurrence frequency
-        Time reference
-        Impact type
-        Loss type
-        Loss metric
-        Loss unit
-      }
 ```
+
+The following table lists all loss component fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
