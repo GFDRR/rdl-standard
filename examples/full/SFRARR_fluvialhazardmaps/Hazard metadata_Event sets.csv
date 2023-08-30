@@ -4,5 +4,7 @@ Analysis type,probabilistic
 Seasonality distribution,uniform
 Calculation Method,simulated
 Event count,10000
-Countries,KAZ;KGZ;TJK;TKM;UZB
-Spatial scale,regional
+"Spatial coverage:
+Countries",KAZ;KGZ;TJK;TKM;UZB
+"Spatial coverage:
+Spatial scale",regional

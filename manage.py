@@ -403,9 +403,16 @@ def pre_commit():
          rows = zip(*csv.reader(f))
       
       with open(path, 'w') as f:
-         writer = csv.writer(f, lineterminator="\n")
-         # Omit titles of parent objects
-         writer.writerows([[row[0].split(':')[-1]] + list(row[1:]) for row in rows])
+        writer = csv.writer(f, lineterminator="\n")
+        
+        # Omit titles of parent objects
+        parent_titles = path.split("/")[-1].split(".csv")[0].split("_")
+        for row in rows:
+          row_title = row[0]
+          for i in range(0, len(parent_titles)):
+            row_title = row_title.replace(f"{':'.join(parent_titles[0:len(parent_titles)-i])}:", "")
+          
+          writer.writerow([row_title.replace(":", ":\n")] + list(row[1:]))
 
     # Update schema.md
     update_schema_docs(schema)

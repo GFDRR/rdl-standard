@@ -4,4 +4,5 @@ Analysis type,probabilistic
 Calculation Method,simulated
 Event count,10
 Occurrence range,1/2 to 1/1000 years
-Spatial scale,global
+"Spatial coverage:
+Spatial scale",global

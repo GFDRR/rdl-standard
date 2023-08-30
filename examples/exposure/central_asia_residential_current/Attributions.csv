@@ -1,5 +1,7 @@
 Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings,https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings
 Attribution identifier,0064251_attr1,0064251_attr2
-Name,Chi-Yun Huang,"OGS, Italy"
-Email address,chuang@worldbank.org,
+"Entity:
+Name",Chi-Yun Huang,"OGS, Italy"
+"Entity:
+Email address",chuang@worldbank.org,
 Role,custodian,collaborator

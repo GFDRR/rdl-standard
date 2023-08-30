@@ -2,13 +2,19 @@ Dataset identifier,https://www.wri.org/data/aqueduct-floods-hazard-maps
 Title,Aqueduct Floods Hazard Maps
 Description,"Aqueduct Floods is an online platform that measures riverine and coastal flood risks under both current baseline conditions and future projections in 2030, 2050, an 2080. In addition to providing hazard maps and assessing risks, Aqueduct Floods enables its users to conduct comprehensive cost-benefit analysis to evaluate the value of dike flood protection strategies."
 Risk data type,hazard
-Name,Water Resource Institute
-URL,https://www.wri.org
+"Publisher:
+Name",Water Resource Institute
+"Publisher:
+URL",https://www.wri.org
 Dataset version,2020
 Project title,Aqueduct
 Additional details,"The Aqueduct flood-hazard model is a global gridded dataset of flood hazard produced at the global scale. It provides flood water extent and depth for a range of pluvial and fluvial hazard scenarios, expressed as “return period”, which indicates the probability of occurrence (i.e. once in 2, 5, 10, 20, 50, 100, 250, 500 and 1000 years). The Data are at 1 km resolution and have a global coverage."
-Spatial scale,global
-Name,Mattia Amadio
-Email address,mamadio@worldbank.org
-Name,Water Resource Institute
+"Spatial coverage:
+Spatial scale",global
+"Contact point:
+Name",Mattia Amadio
+"Contact point:
+Email address",mamadio@worldbank.org
+"Creator:
+Name",Water Resource Institute
 License,CC-BY-4.0
