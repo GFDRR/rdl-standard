@@ -107,7 +107,7 @@
           "description": "Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP1\nDataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.\nFiles: RESIDENTIAL_[OBLAST]._2080_[SSP].csv",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091991/P2080_SSP1.zip?versionId=2023-07-11T15:12:01.4656749Z",
+          "downloadurl": "https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091991/P2080_SSP1.zip?versionId=2023-07-11T15:12:01.4656749Z",
           "temporal": {
             "start": "2080",
             "end": "2080"
@@ -119,7 +119,7 @@
           "description": "Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP4\nDataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.\nFiles: RESIDENTIAL_[OBLAST]._2080_[SSP].csv",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091992/P2080_SSP4.zip?versionId=2023-07-11T15:12:06.1470219Z",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091992/P2080_SSP4.zip?versionId=2023-07-11T15:12:06.1470219Z",
           "temporal": {
             "start": "2080",
             "end": "2080"
@@ -131,7 +131,7 @@
           "description": "Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP5\nDataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.\nFiles: RESIDENTIAL_[OBLAST]._2080_[SSP].csv",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091993/P2080_SSP5.zip?versionId=2023-07-11T15:12:03.5145140Z",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091993/P2080_SSP5.zip?versionId=2023-07-11T15:12:03.5145140Z",
           "temporal": {
             "start": "2080",
             "end": "2080"

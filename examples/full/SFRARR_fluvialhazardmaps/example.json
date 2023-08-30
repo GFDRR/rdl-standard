@@ -74,7 +74,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0092000/FLU_DEF_KAZ_5-50yRP.zip?versionId=2023-07-11T15:17:06.8346489Z"
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0092000/FLU_DEF_KAZ_5-50yRP.zip?versionId=2023-07-11T15:17:06.8346489Z"
         },
         {
           "id": "0064232_res2",
@@ -84,7 +84,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0092001/FLU_DEF_KAZ_100-1000yRP.zip?versionId=2023-07-11T15:17:09.5061377Z"
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0092001/FLU_DEF_KAZ_100-1000yRP.zip?versionId=2023-07-11T15:17:09.5061377Z"
         },
         {
           "id": "0064232_res3",
@@ -94,7 +94,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091440/FLU_DEF_KGZ.zip?versionId=2023-07-11T15:16:59.0750434Z"
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091440/FLU_DEF_KGZ.zip?versionId=2023-07-11T15:16:59.0750434Z"
         },
         {
           "id": "0064232_res4",
@@ -104,7 +104,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091439/FLU_DEF_TJK.zip?versionId=2023-07-11T15:17:11.4860175Z"
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091439/FLU_DEF_TJK.zip?versionId=2023-07-11T15:17:11.4860175Z"
         },
         {
           "id": "0064232_res5",
@@ -114,7 +114,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091768/FLU_DEF_TKM.zip?versionId=2023-07-11T15:17:01.5896193Z"
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091768/FLU_DEF_TKM.zip?versionId=2023-07-11T15:17:01.5896193Z"
         },
         {
           "id": "0064232_res6",
@@ -124,7 +124,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091769/FLU_DEF_UZB.zip?versionId=2023-07-11T15:17:04.1441727Z"
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091769/FLU_DEF_UZB.zip?versionId=2023-07-11T15:17:04.1441727Z"
         }
       ],
       "hazard": {

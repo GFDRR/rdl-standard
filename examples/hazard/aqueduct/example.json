@@ -33,7 +33,7 @@
           "format": "geotiff",
           "spatial_resolution": 1000,
           "coordinate_system": "EPSG:4326",
-          "url": "http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html"
+          "access_url": "http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html"
         }
       ],
       "hazard": {

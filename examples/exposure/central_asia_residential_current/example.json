@@ -107,7 +107,7 @@
           "description": "Central Asia exposure layers – Residential buildings - KAZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z",
           "temporal": {
             "start": "2020",
             "end": "2020"
@@ -119,7 +119,7 @@
           "description": "Central Asia exposure layers – Residential buildings - KGZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z",
           "temporal": {
             "start": "2020",
             "end": "2020"
@@ -143,7 +143,7 @@
           "description": "Central Asia exposure layers – Residential buildings - TKM\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z",
           "temporal": {
             "start": "2020",
             "end": "2020"
@@ -155,7 +155,7 @@
           "description": "Central Asia exposure layers – Residential buildings - UZB\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
-          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z",
           "temporal": {
             "start": "2020",
             "end": "2020"

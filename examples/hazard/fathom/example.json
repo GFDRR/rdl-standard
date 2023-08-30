@@ -33,7 +33,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "http://example.com/FTH-THA-fluvial-undefended"
+          "download_url": "http://example.com/FTH-THA-fluvial-undefended"
         },
         {
           "id": "2",
@@ -42,7 +42,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "http://example.com/FTH-THA-fluvial-defended"
+          "download_url": "http://example.com/FTH-THA-fluvial-defended"
         },
         {
           "id": "3",
@@ -51,7 +51,7 @@
           "format": "geotiff",
           "spatial_resolution": 90,
           "coordinate_system": "EPSG:4326",
-          "url": "http://example.com/FTH-THA-pluvial-undefended"
+          "download_url": "http://example.com/FTH-THA-pluvial-undefended"
         }
       ],
       "hazard": {
