@@ -33,7 +33,7 @@ jsonpointer: /description
 
 The general attributes of a dataset are described by fields based on the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-3/) and the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms).
 
-The following diagram shows a subset of dataset-level fields, with required fields highlighted in blue:
+The following diagram shows key dataset-level fields, with required fields highlighted in blue:
 
 ```{eval-rst}
 .. uml::
@@ -122,7 +122,7 @@ The hazard component describes metadata about modeled natural hazards data, incl
 
 The hazard component uses hazard_type, process_type and intensity_measure consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-The following diagram shows a subset of hazard component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
+The following diagram shows key hazard component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
 
 ```{eval-rst}
 .. uml::
@@ -247,7 +247,7 @@ The exposure component describes metadata for datasets containing information on
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-The following diagram shows a subset of exposure component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
+The following diagram shows key exposure component fields, with required fields highlighted in blue. The ![array](../img/array.png) icon indicates that a field is an array.
 
 ```{eval-rst}
 .. uml::
@@ -329,7 +329,7 @@ The vulnerability component describes metadata for datasets that detail fragilit
 
 The vulnerability component uses hazard_type, process_type and intensity_measure consistent with the hazard and loss components, exposure information consistent with the exposure and loss components. Spatial reference and location information are described using existing external standards.
 
-The following diagram shows a subset of vulnerability component fields, with required fields highlighted in blue:
+The following diagram shows key vulnerability component fields, with required fields highlighted in blue:
 
 ```{eval-rst}
 .. uml::
@@ -393,7 +393,7 @@ jsonpointer: /properties/loss/description
 The loss component provides metadata describing data generated in risk assessments, i.e., modelled impacts and losses for single historical events or hypothetical scenarios and risk estimates from analysis of large event sets. The data can include monetary and non-monetary, and direct or indirect, impacts and losses.
 Loss datasets can be explicitly linked to the exposure, hazard, and vulnerability datasets used in the analysis. This component uses descriptions of assets, hazards and impact types consistent with all other components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-The following diagram shows a subset of loss component fields, with required fields highlighted in blue:
+The following diagram shows key loss component fields, with required fields highlighted in blue:
 
 ```{eval-rst}
 .. uml::
