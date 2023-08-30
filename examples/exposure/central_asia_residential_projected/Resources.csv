@@ -10,8 +10,9 @@ Dataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.
 Files: RESIDENTIAL_[OBLAST]._2080_[SSP].csv"
 Format,csv,csv,csv
 Spatial resolution,500,500,500
-resources/0/url,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091991/P2080_SSP1.zip?versionId=2023-07-11T15:12:01.4656749Z,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091992/P2080_SSP4.zip?versionId=2023-07-11T15:12:06.1470219Z,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091993/P2080_SSP5.zip?versionId=2023-07-11T15:12:03.5145140Z
+resources/0/downloadurl,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091991/P2080_SSP1.zip?versionId=2023-07-11T15:12:01.4656749Z,,
 "Temporal coverage:
 Start",2080,2080,2080
 "Temporal coverage:
 End date",2080,2080,2080
+Download Url,,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091992/P2080_SSP4.zip?versionId=2023-07-11T15:12:06.1470219Z,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091993/P2080_SSP5.zip?versionId=2023-07-11T15:12:03.5145140Z
