@@ -102,6 +102,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#146](https://github.com/GFDRR/rdl-standard/pull/146) - Update introduction to the RDLS reference section.
 - [#193](https://github.com/GFDRR/rdl-standard/pull/193) - Fix lists of referencing fields for subschemas and codelists.
 - [#225](https://github.com/GFDRR/rdl-standard/pull/225) - Update high level descriptions of the 4 risk data components.
+- [#196](https://github.com/GFDRR/rdl-standard/pull/196) - Add examples to schema reference documentation.
 
 ### Non-normative documentation
 
