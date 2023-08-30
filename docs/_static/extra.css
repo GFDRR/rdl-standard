@@ -75,3 +75,6 @@ svg[id^="mermaid-"] {
 .wy-table-responsive table th {
   white-space: pre;
 }
+.wy-table-responsive table td {
+  white-space: normal !important;
+}
