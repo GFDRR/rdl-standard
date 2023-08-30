@@ -72,3 +72,6 @@ svg[id^="mermaid-"] {
   width: 100%;
   max-width: 80em;
 }
+.wy-table-responsive table th {
+  white-space: pre;
+}

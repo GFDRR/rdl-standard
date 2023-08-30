@@ -8,7 +8,7 @@
     "datasets"
   ],
   "properties": {
-    "networks": {
+    "datasets": {
       "title": "Datasets",
       "description": "RDLS metadata describing one or more datasets.",
       "type": "array",

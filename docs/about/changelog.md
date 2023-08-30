@@ -62,7 +62,7 @@ This page lists changes to the Risk Data Library Standard.
   - Markdown syntax in `Attribution.role` description
 - [#190](https://github.com/GFDRR/rdl-standard/pull/190) - Deletes type key from properties with `$ref` components.
 - [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update top-level `description`.
-- [#203](https://github.com/GFDRR/rdl-standard/pull/203) - Add package schema.
+- [#203](https://github.com/GFDRR/rdl-standard/pull/203), [#228](https://github.com/GFDRR/rdl-standard/pull/228) - Add package schema.
 - [#204](https://github.com/GFDRR/rdl-standard/pull/204):
   - Add field `metrics`.
   - rename cost_type.csv to metric_dimension.csv and update code descriptions.
@@ -104,6 +104,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#193](https://github.com/GFDRR/rdl-standard/pull/193) - Fix lists of referencing fields for subschemas and codelists.
 - [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update diagrams, add descriptions for dataset, resource and risk components.
 - [#225](https://github.com/GFDRR/rdl-standard/pull/225) - Update high level descriptions of the 4 risk data components.
+- [#196](https://github.com/GFDRR/rdl-standard/pull/196) - Add examples to schema reference documentation.
 
 ### Non-normative documentation
 
