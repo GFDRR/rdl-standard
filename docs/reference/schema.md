@@ -205,7 +205,7 @@ file: ../../examples/hazard/fathom/Hazard metadata_Event sets_Hazards.csv
 
 ```{eval-rst}
 .. jsoninclude:: ../../examples/hazard/fathom/example.json
-   :jsonpointer:
+   :jsonpointer: /datasets/0
    :title: Example
 ```
 
@@ -273,7 +273,7 @@ file: ../../examples/hazard/aqueduct/Hazard metadata_Event sets_Hazards.csv
 
 ```{eval-rst}
 .. jsoninclude:: ../../examples/hazard/aqueduct/example.json
-   :jsonpointer:
+   :jsonpointer: /datasets/0
    :title: Example
 ```
 
@@ -395,7 +395,7 @@ file: ../../examples/exposure/central_asia_residential_projected/Exposure metada
 
 ```{eval-rst}
 .. jsoninclude:: ../../examples/exposure/central_asia_residential_projected/example.json
-   :jsonpointer:
+   :jsonpointer: /datasets/0
    :title: Example
 ```
 
@@ -483,7 +483,7 @@ file: ../../examples/exposure/central_asia_residential_current/Exposure metadata
 
 ```{eval-rst}
 .. jsoninclude:: ../../examples/exposure/central_asia_residential_current/example.json
-   :jsonpointer:
+   :jsonpointer: /datasets/0
    :title: Example
 ```
 
@@ -596,7 +596,7 @@ file: ../../examples/vulnerability/flood_jrc/Vulnerability metadata_Asset cost.c
 
 ```{eval-rst}
 .. jsoninclude:: ../../examples/vulnerability/flood_jrc/example.json
-   :jsonpointer:
+   :jsonpointer: /datasets/0
    :title: Example
 ```
 
