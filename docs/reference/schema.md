@@ -144,7 +144,11 @@ addtargets:
 ---
 ```
 
-The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in tabular format and JSON format:
+``````{dropdown} Example: Fathom Global Flood Map
+---
+open:
+---
+The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in tabular format and JSON format.
 
 `````{tab-set}
 
@@ -157,13 +161,22 @@ The following example shows RDLS metadata for the [Fathom Global Flood Map](http
 
 ````{tab-item} Metadata (tabular)
 
-In tabular format, the metadata consists of three tables. To aid comprehension, the metadata is presented column wise using field titles.
+In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
 
 ```{csv-table-no-translate} Datasets
 ---
 stub-columns: 1
 widths: auto
 file: ../../examples/hazard/fathom/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/fathom/Resources.csv
 ---
 
 ```
@@ -199,6 +212,75 @@ file: ../../examples/hazard/fathom/Hazard metadata_Event sets_Hazards.csv
 ````
 
 `````
+``````
+
+``````{dropdown} Example: Aqueduct Floods Hazard Maps
+
+The following example shows RDLS metadata for the [Aqueduct Floods Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) in tabular format and JSON format.
+
+`````{tab-set}
+
+````{tab-item} Figure
+
+```{figure} ../../examples/hazard/aqueduct/figure.png
+```
+
+````
+
+````{tab-item} Metadata (tabular)
+
+In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
+
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/aqueduct/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/aqueduct/Resources.csv
+---
+
+```
+
+```{csv-table-no-translate} Event sets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/aqueduct/Hazard metadata_Event sets.csv
+---
+
+```
+
+```{csv-table-no-translate} Event set hazards
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/hazard/aqueduct/Hazard metadata_Event sets_Hazards.csv
+---
+
+```
+
+````
+
+````{tab-item} Metadata (JSON)
+
+```{eval-rst}
+.. jsoninclude:: ../../examples/hazard/aqueduct/example.json
+   :jsonpointer:
+   :title: Example
+```
+
+````
+
+`````
+``````
 
 ## Exposure
 
@@ -226,10 +308,6 @@ The exposure component uses exposure categories consistent with the vulnerabilit
       }
 ```
 
-`````{tab-set}
-
-````{tab-item} Schema
-
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/exposure
@@ -238,40 +316,181 @@ addtargets:
 ---
 ```
 
+``````{dropdown} Example: Central Asia projected residential exposure dataset
+
+The following example shows RDLS metadata for the [Central Asia projected residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure) in tabular format and JSON format.
+
+`````{tab-set}
+
+````{tab-item} Metadata (tabular)
+
+In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
+
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/Resources.csv
+---
+
+```
+
+```{csv-table-no-translate} Attributions
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/Attributions.csv
+---
+
+```
+
+```{csv-table-no-translate} Referenced by
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/Referenced by.csv
+---
+
+```
+
+```{csv-table-no-translate} Sources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/Sources.csv
+---
+
+```
+
+```{csv-table-no-translate} Gazetteer entries (spatial coverage)
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/Spatial coverage_Gazetteer entries.csv
+---
+
+```
+
+```{csv-table-no-translate} Exposure metrics
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_projected/Exposure metadata_Exposure metrics.csv
+---
+
+```
+
 ````
 
-````{tab-item} Examples
+````{tab-item} Metadata (JSON)
 
-Exposure data can be stored at multiple scales, more often using vectors, namely polygons (e.g. building footprint), points (e.g. asset geolocation) and lines (e.g. transport infrastructures, lifelines), but in same case exposure estimates are aggregated at ADM level or distributed over a raster grid.
-
-**Exposure map for Kabul**
-
-Two exposure datasets are shown together in the example: building footprints polygons and population density raster at 90 m resolution.
-
-![Exposure example](../img/sample_exp.jpg)
-
-| **Required** | **Attribute**       | **Example** |
-| :----------: | ------------------- | ----------- |
-|      \*      | Geographic coverage | Afghanistan |
-|      \*      | Exposure category   | Buildings   |
-|      \*      | Occupancy           | Mixed       |
-|              | Taxonomy            | OSM         |
-|      \*      | Value type          | Structure   |
-|      \*      | Unit of measure     | USD         |
-
-| **Required** | **Attribute**       | **Example** |
-| :----------: | ------------------- | ----------- |
-|      \*      | Geographic coverage | Afghanistan |
-|      \*      | Exposure category   | Indicators  |
-|      \*      | Occupancy           | Residential |
-|              | Period of occupancy | Night       |
-|      \*      | Value type          | Other       |
-|      \*      | Unit of measure     | Count       |
-
+```{eval-rst}
+.. jsoninclude:: ../../examples/exposure/central_asia_residential_projected/example.json
+   :jsonpointer:
+   :title: Example
+```
 
 ````
 
 `````
+``````
+
+``````{dropdown} Example: Central Asia current residential exposure dataset
+
+The following example shows RDLS metadata for the [Central Asia current residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings) in tabular format and JSON format.
+
+`````{tab-set}
+
+````{tab-item} Metadata (tabular)
+
+In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
+
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/Resources.csv
+---
+
+```
+
+```{csv-table-no-translate} Attributions
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/Attributions.csv
+---
+
+```
+
+```{csv-table-no-translate} Referenced by
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/Referenced by.csv
+---
+
+```
+
+```{csv-table-no-translate} Sources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/Sources.csv
+---
+
+```
+
+```{csv-table-no-translate} Gazetteer entries (spatial coverage)
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/Spatial coverage_Gazetteer entries.csv
+---
+
+```
+
+```{csv-table-no-translate} Exposure metrics
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/exposure/central_asia_residential_current/Exposure metadata_Exposure metrics.csv
+---
+
+```
+
+````
+
+````{tab-item} Metadata (JSON)
+
+```{eval-rst}
+.. jsoninclude:: ../../examples/exposure/central_asia_residential_current/example.json
+   :jsonpointer:
+   :title: Example
+```
+
+````
+
+`````
+``````
 
 ## Vulnerability
 
@@ -300,10 +519,6 @@ The vulnerability component uses hazard_type, process_type and intensity_measure
       }
 ```
 
-`````{tab-set}
-
-````{tab-item} Schema
-
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/vulnerability
@@ -312,9 +527,82 @@ addtargets:
 ---
 ```
 
+``````{dropdown} Example: Global flood depth-damage functions
+:open:
+
+The following example shows RDLS metadata for the [Global flood depth-damage functions](https://publications.jrc.ec.europa.eu/repository/handle/JRC105688) in tabular format and JSON format.
+
+`````{tab-set}
+
+````{tab-item} Figure
+
+```{figure} ../../examples/vulnerability/flood_jrc/figure.png
+```
+````
+
+````{tab-item} Metadata (tabular)
+
+In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
+
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/vulnerability/flood_jrc/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/vulnerability/flood_jrc/Resources.csv
+---
+
+```
+
+```{csv-table-no-translate} Attributions
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/vulnerability/flood_jrc/Attributions.csv
+---
+
+```
+
+```{csv-table-no-translate} Referenced by
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/vulnerability/flood_jrc/Referenced by.csv
+---
+
+```
+
+```{csv-table-no-translate} Asset costs
+---
+stub-columns: 1
+widths: auto
+file: ../../examples/vulnerability/flood_jrc/Vulnerability metadata_Asset cost.csv
+---
+
+```
+
+````
+
+````{tab-item} Metadata (JSON)
+
+```{eval-rst}
+.. jsoninclude:: ../../examples/vulnerability/flood_jrc/example.json
+   :jsonpointer:
+   :title: Example
+```
+
 ````
 
 `````
+``````
 
 ## Loss
 
@@ -350,10 +638,6 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
       }
 ```
 
-`````{tab-set}
-
-````{tab-item} Schema
-
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/loss
@@ -361,70 +645,6 @@ collapse: cost,impact
 addtargets:
 ---
 ```
-
-````
-
-````{tab-item} Examples
-
-Losses can be represented in many different way: regular raster grids, points, or polygons. Often, the loss data consist of measures aggregated at the administrative unit level.
-
-**Flood loss scenarios for Afghanistan, 2050**
-
-Schema attributes for loss map related to future river flood hazard scenarios (2050) over all types of exposure occupancies for Afghanistan.
-
-![Flood losses in Afghanistan](../img/lss_fl_afg.jpg)
-
-The losses are higher in the most densely built-up area of Kabul.
-
-![Flood losses in Kabul](../img/lss_fl_kabul.jpg)
-
-| **Required** | **Attribute**          | **Example**                                                             |
-| :----------: | ---------------------- | ----------------------------------------------------------------------- |
-|      \*      | Hazard type            | Flood                                                                   |
-|              | Hazard process         | River flood                                                             |
-|      \*      | Exposure occupancy     | Mixed                                                                   |
-|      \*      | Exposure category      | Buildings                                                               |
-|      \*      | Value type             | Structure                                                               |
-|              | Hazard link            | [Dataset](http://jkan.riskdatalibrary.org/datasets/hzd-afg-fl-baseline) |
-|              | Exposure link          |                                                                         |
-|              | Vulnerability link     |                                                                         |
-|              | Time year              | 2050                                                                    |
-|              | Frequency type         | Return Period                                                           |
-|              | Occurrence probability | RP 5-1000 years                                                         |
-|      \*      | Impact                 | Direct                                                                  |
-|      \*      | Loss type              | Ground up                                                               |
-|      \*      | Metric                 | Average Annual Losses                                                   |
-|      \*      | Unit                   | USD                                                                     |
-
-______________________________________________________________________
-
-Losses can be investigated as total or for individual exposed asset and infrastructure elements.
-
-![Example of data showing exposed roads in Afghanistan](../img/exp_afg_roads.jpg)
-
-______________________________________________________________________
-
-**Observed losses**
-
-Insert example of recorded empirical losses.
-
-| **Required** | **Attribute**           | **Example**   |
-| :----------: | ----------------------- | ------------- |
-|      \*      | Hazard type             | Earthquake    |
-|      \*      | Analysis type           | Probabilistic |
-|      \*      | Calculation method      | Simulated     |
-|              | Frequency type          | Return Period |
-|              | Occurrence probability  | 1000 years    |
-|              | Occurrence time (start) | 800           |
-|              | Occurrence time (end)   | 2001          |
-|              | Occurrence time (span)  | 1200 years    |
-|      \*      | Hazard process          | Ground motion |
-|      \*      | Unit of measure         | PGA (g)       |
-
-
-````
-
-`````
 
 ## Sub-schemas
 
