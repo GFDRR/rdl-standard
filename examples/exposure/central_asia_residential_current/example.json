@@ -89,7 +89,7 @@
         {
           "id": "0064251_res1",
           "title": "Central Asia exposure dataset - Residential buildings - KAZ",
-          "description": "Central Asia exposure layers \u2013 Residential buildings - KAZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "description": "Central Asia exposure layers – Residential buildings - KAZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
           "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z",
@@ -101,7 +101,7 @@
         {
           "id": "0064251_res2",
           "title": "Central Asia exposure dataset - Residential buildings - KGZ",
-          "description": "Central Asia exposure layers \u2013 Residential buildings - KGZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "description": "Central Asia exposure layers – Residential buildings - KGZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
           "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z",
@@ -113,7 +113,7 @@
         {
           "id": "0064251_res3",
           "title": "Central Asia exposure dataset - Residential buildings - TJK",
-          "description": "Central Asia exposure layers \u2013 Residential buildings - TJK\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "description": "Central Asia exposure layers – Residential buildings - TJK\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
           "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091660/TJK_residential_exposure.zip?versionId=2023-07-11T15:15:37.7301236Z",
@@ -125,7 +125,7 @@
         {
           "id": "0064251_res4",
           "title": "Central Asia exposure dataset - Residential buildings - TKM",
-          "description": "Central Asia exposure layers \u2013 Residential buildings - TKM\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "description": "Central Asia exposure layers – Residential buildings - TKM\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
           "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z",
@@ -137,7 +137,7 @@
         {
           "id": "0064251_res5",
           "title": "Central Asia exposure dataset - Residential buildings - UZB",
-          "description": "Central Asia exposure layers \u2013 Residential buildings - UZB\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "description": "Central Asia exposure layers – Residential buildings - UZB\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
           "format": "csv",
           "spatial_resolution": 500,
           "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z",

@@ -68,8 +68,8 @@
       "resources": [
         {
           "id": "0064232_res1",
-          "title": "Central Asia fluvial flood hazard maps - defended \u2013 KAZ 5-50y RP",
-          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset. Due to file size, this is a partial set of data covering 1-in-5-50y return period. See dataset \u201cCentral Asia fluvial flood hazard maps - defended \u2013 KAZ 100-1000y RP\u201d for the remaining data.",
+          "title": "Central Asia fluvial flood hazard maps - defended – KAZ 5-50y RP",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset. Due to file size, this is a partial set of data covering 1-in-5-50y return period. See dataset “Central Asia fluvial flood hazard maps - defended – KAZ 100-1000y RP” for the remaining data.",
           "media_type": "image/tiff",
           "format": "geotiff",
           "spatial_resolution": 90,
@@ -78,8 +78,8 @@
         },
         {
           "id": "0064232_res2",
-          "title": "Central Asia fluvial flood hazard maps - defended \u2013 KAZ 100-1000y RP",
-          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset. Due to file size, this is a partial set of data covering 1-in-100-1000y return period. See dataset \u201cCentral Asia fluvial flood hazard maps - defended \u2013 KaZ 5-50y RP\u201d for the remaining data.",
+          "title": "Central Asia fluvial flood hazard maps - defended – KAZ 100-1000y RP",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset. Due to file size, this is a partial set of data covering 1-in-100-1000y return period. See dataset “Central Asia fluvial flood hazard maps - defended – KaZ 5-50y RP” for the remaining data.",
           "media_type": "image/tiff",
           "format": "geotiff",
           "spatial_resolution": 90,
