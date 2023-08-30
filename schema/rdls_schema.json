@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
-  "description": "A risk dataset described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
+  "description": "A collection of risk data, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
   "required": [
     "id",
@@ -17,7 +17,7 @@
   ],
   "properties": {
     "id": {
-      "title": "Identifier",
+      "title": "Dataset identifier",
       "type": "string",
       "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
       "minLength": 1
@@ -153,7 +153,7 @@
       "uniqueItems": true
     },
     "hazard": {
-      "title": "Hazard dataset metadata",
+      "title": "Hazard metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "required": [
@@ -174,7 +174,7 @@
       "minProperties": 1
     },
     "exposure": {
-      "title": "Exposure dataset metadata",
+      "title": "Exposure metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
@@ -216,7 +216,7 @@
       "minProperties": 1
     },
     "vulnerability": {
-      "title": "Vulnerability dataset metadata",
+      "title": "Vulnerability metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
       "required": [
@@ -620,7 +620,7 @@
       "minProperties": 1
     },
     "loss": {
-      "title": "Loss dataset metadata",
+      "title": "Loss metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
       "required": [
@@ -937,7 +937,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Attribution identifier",
           "type": "string",
           "description": "A locally unique identifier for the attribution.",
           "minLength": 1
@@ -967,7 +967,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Related resource identifier",
           "type": "string",
           "description": "A locally unique identifier for the related resource.",
           "minLength": 1
@@ -1019,7 +1019,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Source identifier",
           "type": "string",
           "description": "A locally unique identifier for the source.",
           "minLength": 1
@@ -1439,7 +1439,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Gazetteer entry identifier",
           "type": "string",
           "description": "An identifier drawn from the gazetteer identified in `.scheme`.",
           "minLength": 1
@@ -1531,7 +1531,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Hazard identifier",
           "description": "A local identifier for this hazard.",
           "type": "string",
           "minLength": 1
@@ -1997,7 +1997,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Cost identifier",
           "type": "string",
           "description": "A locally unique identifier for this cost.",
           "minLength": 1
@@ -2436,7 +2436,7 @@
           "minLength": 1
         },
         "id": {
-          "title": "ID",
+          "title": "Classification identifier",
           "description": "The classification code taken from the scheme.",
           "type": "string",
           "minLength": 1
