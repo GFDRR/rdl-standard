@@ -25,9 +25,24 @@
         ],
         "gazetteerEntries": [
           {
-            "id": "0064254_spatial1",
-            "scheme": "ISO 3166-1 alpha-3",
-            "description": "Central Asia: KAZ, KGZ, TJK, TKM, UZB"
+            "id": "KAZ",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "KGZ",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "TJK",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "TKM",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "UZB",
+            "scheme": "ISO 3166-1 alpha-3"
           }
         ]
       },
