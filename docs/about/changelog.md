@@ -114,5 +114,6 @@ This page lists changes to the Risk Data Library Standard.
 - [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
 - [#175](https://github.com/GFDRR/rdl-standard/pull/175) - Restructure documentation, rewrite landing page, add new introductory content.
 - [#224](https://github.com/GFDRR/rdl-standard/pull/224) - Update contact email addresses.
+- [#234](https://github.com/GFDRR/rdl-standard/pull/234) - Add guidance on inclusion of non-RDLS data in datasets.
 
 ### Other
