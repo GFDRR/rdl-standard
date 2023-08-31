@@ -156,7 +156,7 @@ The following diagram shows key hazard component fields, with required fields hi
         "temporal": "",
         "events": [
           {
-            "disaster_identifier": "",
+            "disaster_identifiers": "",
             "calculation_method": "",
             "description": "",
             "hazard": {
@@ -165,7 +165,7 @@ The following diagram shows key hazard component fields, with required fields hi
               "intensity_measure": "",
               "trigger": ""
             },
-            "occurence": "",
+            "occurrence": "",
             "footprints": [
               {
                 "intensity_measure": "",
