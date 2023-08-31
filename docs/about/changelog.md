@@ -63,7 +63,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#190](https://github.com/GFDRR/rdl-standard/pull/190) - Deletes type key from properties with `$ref` components.
 - [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update top-level `description`.
 - [#203](https://github.com/GFDRR/rdl-standard/pull/203), [#228](https://github.com/GFDRR/rdl-standard/pull/228) - Add package schema.
-- [#204](https://github.com/GFDRR/rdl-standard/pull/204):
+- [#204](https://github.com/GFDRR/rdl-standard/pull/204), [#229](https://github.com/GFDRR/rdl-standard/pull/229):
   - Add field `metrics`.
   - rename cost_type.csv to metric_dimension.csv and update code descriptions.
   - Add quantity_kind.csv.
