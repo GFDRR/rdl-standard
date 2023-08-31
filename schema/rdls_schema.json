@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
-  "description": "A risk dataset described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
+  "description": "A collection of risk data, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
   "required": [
     "id",
@@ -17,7 +17,7 @@
   ],
   "properties": {
     "id": {
-      "title": "Identifier",
+      "title": "Dataset identifier",
       "type": "string",
       "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
       "minLength": 1
@@ -81,20 +81,16 @@
       "description": "Additional details about the dataset.",
       "minLength": 1
     },
-    "referenced_by": {
-      "title": "Referenced by",
-      "type": "array",
-      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
-      "items": {
-        "$ref": "#/$defs/Related_resource"
-      },
-      "minItems": 1,
-      "uniqueItems": true
-    },
     "spatial": {
       "title": "Spatial coverage",
-      "description": "The geographical area covered by the dataset.",
+      "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`.",
       "$ref": "#/$defs/Location"
+    },
+    "temporal_resolution": {
+      "title": "Temporal resolution",
+      "type": "string",
+      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
+      "format": "duration"
     },
     "license": {
       "title": "License",
@@ -126,6 +122,26 @@
       "minItems": 1,
       "uniqueItems": true
     },
+    "sources": {
+      "title": "Sources",
+      "type": "array",
+      "description": "Sources of information that contribute to the creation of the dataset.",
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "referenced_by": {
+      "title": "Referenced by",
+      "type": "array",
+      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
+      "items": {
+        "$ref": "#/$defs/Related_resource"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
     "resources": {
       "title": "Resources",
       "type": "array",
@@ -137,7 +153,7 @@
       "uniqueItems": true
     },
     "hazard": {
-      "title": "Hazard dataset metadata",
+      "title": "Hazard metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "required": [
@@ -158,12 +174,12 @@
       "minProperties": 1
     },
     "exposure": {
-      "title": "Exposure dataset metadata",
+      "title": "Exposure metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
         "category",
-        "cost"
+        "metrics"
       ],
       "properties": {
         "category": {
@@ -186,12 +202,12 @@
           "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
           "minLength": 1
         },
-        "cost": {
-          "title": "Asset cost",
+        "metrics": {
+          "title": "Exposure metrics",
           "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
+          "description": "The measurements used to quantify the extent to which assets are exposed.",
           "items": {
-            "$ref": "#/$defs/Cost"
+            "$ref": "#/$defs/Metric"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -200,7 +216,7 @@
       "minProperties": 1
     },
     "vulnerability": {
-      "title": "Vulnerability dataset metadata",
+      "title": "Vulnerability metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
       "required": [
@@ -208,7 +224,6 @@
         "intensity",
         "category",
         "cost",
-        "taxonomy",
         "impact",
         "spatial",
         "functions"
@@ -605,15 +620,12 @@
       "minProperties": 1
     },
     "loss": {
-      "title": "Loss dataset metadata",
+      "title": "Loss metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
       "required": [
         "hazard_type",
-        "cost",
-        "hazard_id",
-        "exposure_id",
-        "vulnerability_id"
+        "cost"
       ],
       "properties": {
         "hazard_type": {
@@ -772,22 +784,6 @@
       },
       "minProperties": 1
     },
-    "sources": {
-      "title": "Sources",
-      "type": "array",
-      "description": "Sources of information that contribute to the creation of the dataset.",
-      "items": {
-        "$ref": "#/$defs/Source"
-      },
-      "minItems": 1,
-      "uniqueItems": true
-    },
-    "temporal_resolution": {
-      "title": "Temporal resolution",
-      "type": "string",
-      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
-      "format": "duration"
-    },
     "links": {
       "title": "Links",
       "description": "Links to related resources. The first item in the links array must be a link to the canonical JSON schema that describes the structure of the data.",
@@ -826,8 +822,7 @@
         "id",
         "title",
         "description",
-        "format",
-        "url"
+        "format"
       ],
       "properties": {
         "id": {
@@ -877,11 +872,16 @@
           "pattern": "^(ESRI:|EPSG:)[0-9]+$",
           "minLength": 1
         },
-        "url": {
-          "title": "Url",
+        "access_url": {
+          "title": "Access Url",
           "type": "string",
-          "description": "The web address this resource can be downloaded from.",
+          "description": "A web address that gives access to this resource, e.g. a webpage through which a user can request access by completing a form.",
           "format": "iri"
+        },
+        "download_url": {
+          "title": "Download Url",
+          "type": "string",
+          "description": "The web address this resource can be downloaded from in the given `.format`."
         },
         "temporal": {
           "title": "Temporal coverage",
@@ -937,7 +937,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Attribution identifier",
           "type": "string",
           "description": "A locally unique identifier for the attribution.",
           "minLength": 1
@@ -967,7 +967,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Related resource identifier",
           "type": "string",
           "description": "A locally unique identifier for the related resource.",
           "minLength": 1
@@ -978,7 +978,7 @@
           "description": "The name or title of the resource.",
           "minLength": 1
         },
-        "authorNames": {
+        "author_names": {
           "title": "Author names",
           "type": "array",
           "description": "The names of the authors of the resource.",
@@ -989,7 +989,7 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "datePublished": {
+        "date_published": {
           "title": "Publication date",
           "type": "string",
           "description": "The date that the resource was first published.",
@@ -1019,7 +1019,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Source identifier",
           "type": "string",
           "description": "A locally unique identifier for the source.",
           "minLength": 1
@@ -1379,7 +1379,7 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "gazetteerEntries": {
+        "gazetteer_entries": {
           "title": "Gazetteer entries",
           "type": "array",
           "description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe sub-national coverage. Use of ISO 3166-2 is recommended.",
@@ -1392,7 +1392,7 @@
         "bbox": {
           "title": "Bounding box",
           "type": "array",
-          "description": "A geographic bounding box delimiting the geographical area.",
+          "description": "A geographic bounding box delimiting the geographical area. This field is an array of numbers. It must contain exactly four numbers with the first two numbers being the longitude and latitude of the most southwesterly point and the second two numbers being the longitude and latitude of the most northeasterly point. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": "number"
           },
@@ -1401,13 +1401,13 @@
         },
         "geometry": {
           "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area.",
+          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
           "$ref": "#/$defs/Geometry"
         },
         "centroid": {
           "title": "Centroid",
           "type": "array",
-          "description": "The coordinates of the centre of the geographical area.",
+          "description": "The coordinates of the centre of the geographical area. This field is an array of numbers. It must contain exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": "number"
           },
@@ -1439,7 +1439,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Gazetteer entry identifier",
           "type": "string",
           "description": "An identifier drawn from the gazetteer identified in `.scheme`.",
           "minLength": 1
@@ -1490,12 +1490,29 @@
         "coordinates": {
           "title": "Coordinates",
           "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`.",
+          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
           "items": {
             "type": [
               "number",
               "array"
             ],
+            "items": {
+              "type": [
+                "number",
+                "array"
+              ],
+              "items": {
+                "type": [
+                  "number",
+                  "array"
+                ],
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 1
+              },
+              "minItems": 1
+            },
             "minItems": 1
           },
           "minItems": 1
@@ -1514,7 +1531,7 @@
       ],
       "properties": {
         "id": {
-          "title": "Identifier",
+          "title": "Hazard identifier",
           "description": "A local identifier for this hazard.",
           "type": "string",
           "minLength": 1
@@ -1929,33 +1946,74 @@
       },
       "minProperties": 1
     },
-    "Cost": {
-      "title": "Asset cost",
+    "Metric": {
+      "title": "Asset exposure metric",
       "type": "object",
-      "description": "The costs associated with specific elements of assets detailed in the dataset.",
+      "description": "A measurement used to quantify the extent to which assets detailed in the dataset are exposed.",
       "required": [
         "id",
-        "type",
-        "unit"
+        "dimension",
+        "quantity_kind"
       ],
       "properties": {
         "id": {
           "title": "Identifier",
           "type": "string",
-          "description": "A locally unique identifier for this cost.",
+          "description": "A locally unique identifier for this metric.",
           "minLength": 1
         },
-        "type": {
-          "title": "Cost type",
-          "description": "The type of the cost, from the closed [cost type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#cost_type).",
+        "dimension": {
+          "title": "Metric dimension",
+          "description": "The dimension on which the asset's exposure is measured, from the closed [metric dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_dimension).",
           "type": "string",
-          "codelist": "cost_type.csv",
+          "codelist": "metric_dimension.csv",
           "openCodelist": false,
           "enum": [
             "structure",
             "content",
             "product",
-            "disruption"
+            "disruption",
+            "population"
+          ]
+        },
+        "quantity_kind": {
+          "title": "Metric quantity kind",
+          "type": "string",
+          "description": "The kind of quantity by which the exposure is quantified, from the open [quantity kind codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#quantity_kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
+          "codelist": "quantity_kind.csv",
+          "openCodelist": true
+        }
+      },
+      "minProperties": 1
+    },
+    "Cost": {
+      "title": "Asset cost",
+      "type": "object",
+      "description": "The costs associated with damage and disruption to specific elements of assets detailed in the dataset.",
+      "required": [
+        "id",
+        "dimension",
+        "unit"
+      ],
+      "properties": {
+        "id": {
+          "title": "Cost identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this cost.",
+          "minLength": 1
+        },
+        "dimension": {
+          "title": "Cost dimension",
+          "description": "The dimension of the assets that have incurred the cost, from the closed [metric dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_dimension).",
+          "type": "string",
+          "codelist": "metric_dimension.csv",
+          "openCodelist": false,
+          "enum": [
+            "structure",
+            "content",
+            "product",
+            "disruption",
+            "population"
           ]
         },
         "unit": {
@@ -2378,7 +2436,7 @@
           "minLength": 1
         },
         "id": {
-          "title": "ID",
+          "title": "Classification identifier",
           "description": "The classification code taken from the scheme.",
           "type": "string",
           "minLength": 1
