@@ -1195,6 +1195,7 @@ jsonpointer: /$defs/Classification/description
 This sub-schema is referenced by the following properties:
 
 - [`vulnerability/se_category`](rdls_schema.json,/properties/vulnerability,se_category)
+- [`Event/disaster_identifiers`](rdls_schema.json,/$defs/Event,disaster_identifiers)
 
 Each `Classification` has the following fields:
 
