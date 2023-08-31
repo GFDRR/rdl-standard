@@ -978,7 +978,7 @@
           "description": "The name or title of the resource.",
           "minLength": 1
         },
-        "authorNames": {
+        "author_names": {
           "title": "Author names",
           "type": "array",
           "description": "The names of the authors of the resource.",
@@ -989,7 +989,7 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "datePublished": {
+        "date_published": {
           "title": "Publication date",
           "type": "string",
           "description": "The date that the resource was first published.",
@@ -1379,7 +1379,7 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "gazetteerEntries": {
+        "gazetteer_entries": {
           "title": "Gazetteer entries",
           "type": "array",
           "description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe sub-national coverage. Use of ISO 3166-2 is recommended.",
