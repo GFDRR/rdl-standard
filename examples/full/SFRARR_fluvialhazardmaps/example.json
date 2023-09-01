@@ -185,7 +185,6 @@
             "events": [
               {
                 "id": "0064232_EventSet1_KAZ_5",
-                "disaster_identifier": "n/a",
                 "calculation_method": "simulated",
                 "hazard": {
                   "id": "0064232_EventSet1_KAZ_5",
