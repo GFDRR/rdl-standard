@@ -142,6 +142,10 @@ RDLS makes use of an internal taxonomy for defining [hazard types](../../schema/
 
 #### UNDRR-HIP
 
+The United Nations Office for Disaster Risk Reduction and International Science Council Sendai [Hazard Definition and Classification Review Technical Report](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report) provides a common set of hazard definitions for monitoring and reviewing implementation of the Sendai Framework, Sustainable Development Goals and the Paris Agreement on Climate Change.
+
+The csv mapping file is [RDL_hazard_mapping_UNDRR-HIPS.csv](../../schema/mappings/RDL_hazard_mapping_UNDRR-HIPS.csv)
+
 ````{dropdown} Mappings
 ---
 open:
