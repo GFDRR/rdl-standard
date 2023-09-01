@@ -8,9 +8,9 @@ This page provides an overview of the process for publishing Risk Data Library S
 
 The process for publishing RDLS metadata can be divided into three phases:
 
-* [Prepare your metadata](#prepare-your-metadata)
-* [Check your metadata](#check-your-metadata)
-* [Publish your metadata](#publish-your-metadata)
+- [Prepare your metadata](#prepare-your-metadata)
+- [Check your metadata](#check-your-metadata)
+- [Publish your metadata](#publish-your-metadata)
 
 ### Prepare your metadata
 
@@ -45,11 +45,10 @@ If you don’t yet have enough real data to generate all the necessary metadata,
 
 If you can't collect enough real data for testing, then you ought to create realistic and coherent test data:
 
-* use real hazards and locations
-* use plausible dates and values
-* avoid using placeholder values
-* avoid setting multiple data elements to the same value.
-
+- use real hazards and locations
+- use plausible dates and values
+- avoid using placeholder values
+- avoid setting multiple data elements to the same value.
 
 **Action**: Upload some data to the RDLS Data Review Tool.
 
@@ -65,7 +64,7 @@ If there is an unique non-access restricted url for the resource being described
 
 #### Publish to an internal or access-restricted catalog
 
-RDLS was designed for data that would be openly published, however it is also suitable for access-restricted data catalogs such as commercial data products or internal catalogs for individual institutions. 
+RDLS was designed for data that would be openly published, however it is also suitable for access-restricted data catalogs such as commercial data products or internal catalogs for individual institutions.
 
 If the users who will have access to the catalog will have the same access rights to the datasets being described, you do not need to take any additional steps in preparing your metadata.
 
@@ -77,7 +76,7 @@ This section contains how-to guides for specific topics. To learn about the proc
 
 ### Assign a dataset identifier
 
-You need to assign a unique identifier (`id`) to each dataset for which you are publishing RDLS metadata. The preferred approach is to use a persistent HTTP URI in accordance with Data on the Web Best Practices [$8.7 Data Identifiers](https://www.w3.org/TR/dwbp/#DataIdentifiers).
+You need to assign a unique identifier (`id`) to each dataset for which you are publishing RDLS metadata. The preferred approach is to use a persistent HTTP URI in accordance with Data on the Web Best Practices [\$8.7 Data Identifiers](https://www.w3.org/TR/dwbp/#DataIdentifiers).
 
 If you are authoring RDLS metadata for a dataset that is already uniquely identified by a persistent HTTP URI, you ought to set `id` to the existing HTTP URI for the dataset.
 
@@ -98,15 +97,15 @@ Otherwise, if you cannot generate a persistent HTTP URI for a dataset, for examp
 
 If you are writing your own software or if you prefer to use the command line, several libraries and tools are available to generate universally unique identifiers (UUIDS), for example:
 
-* Golang - [google/uuid](https://pkg.go.dev/github.com/google/uuid)
-* PHP - [ramsey/uuid](https://github.com/ramsey/uuid)
-* C++ - [Boost UUID](https://www.boost.org/doc/libs/1_65_0/libs/uuid/uuid.html)
-* Linux or C - [libuuid](https://linux.die.net/man/3/libuuid)
-* Python - [uuid.py](https://docs.python.org/3/library/uuid.html)
-* Java - [java.util.UUID](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
-* C# - [System.Guid](https://docs.microsoft.com/en-us/dotnet/api/system.guid)
-* JavaScript - [Crypto.randomUUID](https://www.moreonfew.com/how-to-generate-uuid-in-javascript/)
-* R - [uuid](https://cran.r-project.org/web/packages/uuid/index.html)
+- Golang - [google/uuid](https://pkg.go.dev/github.com/google/uuid)
+- PHP - [ramsey/uuid](https://github.com/ramsey/uuid)
+- C++ - [Boost UUID](https://www.boost.org/doc/libs/1_65_0/libs/uuid/uuid.html)
+- Linux or C - [libuuid](https://linux.die.net/man/3/libuuid)
+- Python - [uuid.py](https://docs.python.org/3/library/uuid.html)
+- Java - [java.util.UUID](https://docs.oracle.com/javase/7/docs/api/java/util/UUID.html)
+- C# - [System.Guid](https://docs.microsoft.com/en-us/dotnet/api/system.guid)
+- JavaScript - [Crypto.randomUUID](https://www.moreonfew.com/how-to-generate-uuid-in-javascript/)
+- R - [uuid](https://cran.r-project.org/web/packages/uuid/index.html)
 
 If you prefer to use a graphical user interface, several web-based tools are available, for example [Online UUID Generator](https://www.uuidgenerator.net/).
 
@@ -126,14 +125,20 @@ Within your RDLS metadata, you can specify the coordinates of each resource usin
 
 If your data pipeline includes a Geographic Information System such as ArcGIS or QGIS, these tools can transform coordinates from one CRS to another. If you are writing your own software, or if you prefer to use the command line, several libraries and tools are available, for example:
 
-* [PROJ](https://proj.org/) and its associated Python interface ([PYPROJ])(https://pyproj4.github.io/pyproj/stable/) and JavaScript implementation ([PROJ4JS](http://proj4js.org/)) are generic coordinate transformation tools that transform geospatial coordinates from one coordinate reference system (CRS) to another. They include command-line applications and an application programming interface.
-* [GDAL](https://gdal.org/) is a translator library for raster and vector geospatial data formats. It also comes with a variety of useful command line utilities for data translation and processing.
-* [Apache SIS](https://sis.apache.org/) is a free software, Java language library for developing geospatial applications. SIS provides data structures for geographic features and associated metadata along with methods to manipulate those data structures.
+- [PROJ](https://proj.org/) and its associated Python interface (\[PYPROJ\])(https://pyproj4.github.io/pyproj/stable/) and JavaScript implementation ([PROJ4JS](http://proj4js.org/)) are generic coordinate transformation tools that transform geospatial coordinates from one coordinate reference system (CRS) to another. They include command-line applications and an application programming interface.
+- [GDAL](https://gdal.org/) is a translator library for raster and vector geospatial data formats. It also comes with a variety of useful command line utilities for data translation and processing.
+- [Apache SIS](https://sis.apache.org/) is a free software, Java language library for developing geospatial applications. SIS provides data structures for geographic features and associated metadata along with methods to manipulate those data structures.
 
 If you prefer to use a graphical user interface, several web-based tools are available, for example:
 
-* [MyGeodata Cloud](https://mygeodata.cloud/cs2cs/)
-* [epsg.io](https://epsg.io/transform)
+- [MyGeodata Cloud](https://mygeodata.cloud/cs2cs/)
+- [epsg.io](https://epsg.io/transform)
 
 The WSG84 CRS is equivalent to EPSG:4326 with reversed axes so, if it is not supported by your chosen transformation tool, you can instead transform your coordinates to EPSG:4326 and manually order your coordinates in longitude, latitude order.
 
+### Taxonomy mappings
+
+RDLS makes use of an internal taxonomy for defining [hazard types](../../schema/codelists/closed/hazard_type.csv) and [processes](../../schema/codelists/closed/process_type.csv). Other [hazard taxonomies](../rdl/other-standards.md#hazard-taxonomies) are available however. When preparing RDLS metadata for publication you should convert codes taken from other taxonomies using the relevant [mapping table](../../schema/mappings).
+
+1. Select the relevant mapping table e.g. [RDL_hazard_mapping_UNDRR-HIPS](../../schema/mappings/RDL_hazard_mapping_UNDRR-HIPS.csv) for conversion from the [UNDRR hazard taxonomy](https://www.undrr.org/publication/hazard-definition-and-classification-review).
+1. Identify the code you are using in the UNDRR columns, and use the equivalent code in the RDL columns as appropriate.
