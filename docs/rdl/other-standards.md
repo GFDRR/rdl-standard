@@ -14,11 +14,6 @@ In 2018 an international consortium led by the British Geological Survey develop
 In this standard, we developed a list of hazard type codes and process type codes which are used as a reference in the hazard, vulnerability and loss components of the standard, and facilitate matching of appropriate vulnerability functions to hazard data, for example.
 Details about the development are reported [here](https://riskdatalibrary.org/resources).
 
-**GLIDE disaster event identifier**:
-Since the beginning of 2004, GLobal IDEntifier numbers (GLIDE) are produced at (GLIDEnumber.net) for all new disaster events reported by partner institutions and those discovered by ADRC.
-A GLIDE number comprises two letters to identify the disaster type (e.g. EQ - earthquake); the year of the disaster; a six-digit, sequential disaster number; and the three-letter ISO code for country of occurrence. E.g., the GLIDE number for West-India Earthquake in India is: EQ-2001-000033-IND. This number is posted by the above organizations and in many other websites, on their documents relating to that particular disaster and gradually other partners will include it in whatever information they generate. As information suppliers join in this initiative, documents and data pertaining to specific events may be easily retrieved from various sources, or linked together using the unique GLIDE numbers. List of services using GLIDE: https://glidenumber.net/glide/public/links.jsp
-The RDL Standard uses a GLIDE number in the `hazard.event` object, to denote the historical event to which hazard event data relates, e.g., the simulated hazard intensity footprint of that event.
-
 ### Hazard taxonomies
 
 The RDL project performed a review of the most relevant hazard taxonomies and derived a classification focusing on those hazards and processes that are more often required in disaster risk assessments, while mapping and matching alternative definitions into one consistent framework. There are several existing taxonomies that could have been adopted to describe hazard data:

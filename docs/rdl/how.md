@@ -11,4 +11,4 @@ For step-by-step instructions on how to publish RDLS metadata, see the guidance 
 
 In addition to the metadata standard, the RDLS provides [guidance on packaging and formatting risk datasets](../guides/datasets/index.md), although it does not seek to standardise the contents of risk datasets.
 
-If you have questions about the RDLS or need help implementing it, you can contact a member of the [Risk Data Library team](../about/contacts.md#risk-data-library-team).
+If you have questions about the RDLS or need help implementing it, you can contact a member of the [Risk Data Library team](../about/contacts.md#contacts).

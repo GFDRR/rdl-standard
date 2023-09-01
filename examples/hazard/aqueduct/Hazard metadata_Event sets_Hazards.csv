@@ -1,0 +1,6 @@
+Dataset identifier,https://www.wri.org/data/aqueduct-floods-hazard-maps,https://www.wri.org/data/aqueduct-floods-hazard-maps
+Event set identifier,1,1
+Hazard identifier,1,2
+Hazard type,flood,flood
+Hazard processes,fluvial_flood,coastal_flood
+Intensity measure,fl_wd:m,fl_wd:m
