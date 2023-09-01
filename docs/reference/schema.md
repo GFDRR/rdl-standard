@@ -602,7 +602,7 @@ The following diagram shows key vulnerability component fields, with required fi
       "unit": ""
     },
     "functions": {
-      "vulnerabiity": "",
+      "vulnerability": "",
       "fragility": "",
       "damage_to_loss": "",
       "engineering_demand": ""
@@ -927,7 +927,7 @@ jsonpointer: /$defs/Gazetteer_entry/description
 
 This sub-schema is referenced by the following properties:
 
-- [`Location/gazetteerEntries`](rdls_schema.json,/$defs/Location,gazetteerEntries)
+- [`Location/gazetteer_entries`](rdls_schema.json,/$defs/Location,gazetteer_entries)
 
 Each `Gazetteer_entry` has the following fields:
 

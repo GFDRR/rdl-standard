@@ -80,6 +80,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#232](https://github.com/GFDRR/rdl-standard/pull/232)
   - Convert `disaster_identifiers` to array of `Classification` objects.
   - Add new codes to classification_scheme.csv.
+- [#233](https://github.com/GFDRR/rdl-standard/pull/233) - Rename authorNames to `author_names`, datePublished to `date_published` and gazetteerEntries to `gazetteer_entries`.
 
 ### Codelists
 
