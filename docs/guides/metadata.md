@@ -138,7 +138,7 @@ The WSG84 CRS is equivalent to EPSG:4326 with reversed axes so, if it is not sup
 
 ### Taxonomy mappings
 
-RDLS makes use of an internal taxonomy for defining [hazard types](../../schema/codelists/closed/hazard_type.csv) and [processes](../../schema/codelists/closed/process_type.csv). Other [hazard taxonomies](../rdl/other-standards.md#hazard-taxonomies) are available however. When preparing RDLS metadata for publication you should convert codes taken from other taxonomies using the relevant [mapping table](../../schema/mappings).
+RDLS makes use of an internal taxonomy for defining [hazard types](../../schema/codelists/closed/hazard_type.csv) and [processes](../../schema/codelists/closed/process_type.csv). Other [hazard taxonomies](../rdl/other-standards.md#hazard-taxonomies) are available however. When preparing RDLS metadata for publication you should convert codes taken from other taxonomies using the relevant mapping table.
 
 #### UNDRR-HIP
 
