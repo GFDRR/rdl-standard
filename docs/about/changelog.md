@@ -78,6 +78,10 @@ This page lists changes to the Risk Data Library Standard.
 - [#218](https://github.com/GFDRR/rdl-standard/pull/218) - `Vulnerability·taxonomy` removed from required array.
 - [#220](https://github.com/GFDRR/rdl-standard/pull/220) - Reorder top-level fields.
 - [#233](https://github.com/GFDRR/rdl-standard/pull/233), [#235](https://github.com/GFDRR/rdl-standard/pull/235) - Rename authorNames to `author_names`, datePublished to `date_published` and gazetteerEntries to `gazetteer_entries`.
+- [#232](https://github.com/GFDRR/rdl-standard/pull/232)
+  - Convert `disaster_identifiers` to array of `Classification` objects.
+  - Add new codes to classification_scheme.csv.
+- [#236](https://github.com/GFDRR/rdl-standard/pull/236) - Fix broken codelist reference URLs.
 
 ### Codelists
 
@@ -92,6 +96,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#164](https://github.com/GFDRR/rdl-standard/pull/164) - replace camelCase codes with snake_case codes in 'frequency_distribution.csv' and 'seasonality.csv'
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
 - [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
+- [#214](https://github.com/GFDRR/rdl-standard/pull/214) - use consistent separators in `classification_scheme.csv` codes.
 
 ### Normative documentation
 
@@ -106,6 +111,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update diagrams, add descriptions for dataset, resource and risk components.
 - [#225](https://github.com/GFDRR/rdl-standard/pull/225) - Update high level descriptions of the 4 risk data components.
 - [#196](https://github.com/GFDRR/rdl-standard/pull/196) - Add examples to schema reference documentation.
+- [#214](https://github.com/GFDRR/rdl-standard/pull/214) - Improve display of codelist reference.
 
 ### Non-normative documentation
 
