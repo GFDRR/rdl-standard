@@ -1816,7 +1816,7 @@
         "disaster_identifiers": {
           "title": "Disaster identifiers",
           "type": "array",
-          "description": "Disaster identifiers for this event.",
+          "description": "Identifiers for the disaster to which this event relates.",
           "items": {
             "$ref": "#/$defs/Classification"
           },
