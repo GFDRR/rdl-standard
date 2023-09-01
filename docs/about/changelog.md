@@ -77,10 +77,10 @@ This page lists changes to the Risk Data Library Standard.
 - [#210](https://github.com/GFDRR/rdl-standard/pull/210) - Replace `resource.`url with `.access_url` and `download_url`
 - [#218](https://github.com/GFDRR/rdl-standard/pull/218) - `Vulnerability·taxonomy` removed from required array.
 - [#220](https://github.com/GFDRR/rdl-standard/pull/220) - Reorder top-level fields.
+- [#233](https://github.com/GFDRR/rdl-standard/pull/233), [#235](https://github.com/GFDRR/rdl-standard/pull/235) - Rename authorNames to `author_names`, datePublished to `date_published` and gazetteerEntries to `gazetteer_entries`.
 - [#232](https://github.com/GFDRR/rdl-standard/pull/232)
   - Convert `disaster_identifiers` to array of `Classification` objects.
   - Add new codes to classification_scheme.csv.
-- [#233](https://github.com/GFDRR/rdl-standard/pull/233) - Rename authorNames to `author_names`, datePublished to `date_published` and gazetteerEntries to `gazetteer_entries`.
 - [#236](https://github.com/GFDRR/rdl-standard/pull/236) - Fix broken codelist reference URLs.
 
 ### Codelists
