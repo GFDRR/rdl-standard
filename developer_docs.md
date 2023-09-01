@@ -230,6 +230,18 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
 
 ## Style guides
 
+### Schema style guide
+
+#### Field descriptions
+
+##### Codelists
+
+Use the following template, noting that any `_` characters in the codelist title need to be replaced with the `-` character in the codelist URL:
+
+```
+The <semantics>, from the <open|closed> [<codelist_title> codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#codelist-title).
+```
+
 ### Changelog style guide
 
 - Use the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
