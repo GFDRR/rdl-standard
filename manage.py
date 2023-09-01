@@ -18,6 +18,7 @@ basedir = Path(__file__).resolve().parent
 referencedir = basedir / 'docs' / 'reference'
 schemadir = basedir / 'schema'
 codelistdir = schemadir / 'codelists'
+exampledir = basedir / 'examples'
 
 
 def read_lines(filename):
@@ -154,13 +155,18 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
     
     markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
 
+  newline = "\n"
+
   markdown.extend([
     "\nThis codelist has the following codes:\n\n"
+    "````{dropdown} Codes\n",
+    f"{f':open:{newline}' if len(read_lines(f'{codelistdir}/{type}/{codelist}.csv')) < 10 else ''}",
     "```{csv-table-no-translate}\n",
     ":header-rows: 1\n",
     ":widths: auto\n",
     f":file: ../../schema/codelists/{type}/{codelist}.csv\n",
-    "```\n\n"
+    "```\n",
+    "````\n\n"
   ])
 
   return markdown
@@ -379,11 +385,39 @@ def cli():
 
 @cli.command()
 def pre_commit():
-    """Update reference documentation and format Markdown files
+    """Update example CSV files, update reference documentation and format Markdown files.
     """
 
     # Load schema
     schema = json_load('rdls_schema.json')
+
+    # Remove example CSV files
+    for path in glob.glob(f"{exampledir}/*/*/*.csv"):
+       os.remove(path)
+    
+    # Generate example CSV files
+    for example_path in glob.glob(f"{exampledir}/*/*/example.json"):      
+           
+      command = f"flatten-tool flatten -s schema/rdls_schema.json -f csv --root-list-path datasets -m datasets -o {'/'.join(example_path.split('/')[:-1])} --truncation-length 50 --use-titles --remove-empty-schema-columns --line-terminator LF {example_path}"
+      
+      subprocess.run(command.split(" "))
+
+    for path in glob.glob(f"{exampledir}/*/*/*.csv"):
+      with open(path, 'r') as f:
+         # Transpose example CSV files for column-wise presentation
+         rows = zip(*csv.reader(f))
+      
+      with open(path, 'w') as f:
+        writer = csv.writer(f, lineterminator="\n")
+        
+        # Omit titles of parent objects
+        parent_titles = path.split("/")[-1].split(".csv")[0].split("_")
+        for row in rows:
+          row_title = row[0]
+          for i in range(0, len(parent_titles)):
+            row_title = row_title.replace(f"{':'.join(parent_titles[0:len(parent_titles)-i])}:", "")
+          
+          writer.writerow([row_title.replace(":", ":\n")] + list(row[1:]))
 
     # Update schema.md
     update_schema_docs(schema)

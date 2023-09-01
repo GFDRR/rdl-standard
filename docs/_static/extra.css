@@ -60,7 +60,9 @@ margin-bottom: 20px;
 margin-bottom: 20px;
 margin-right: 20px;
 }
-
+.wy-nav-content {
+  max-width: 1000px !important;
+}
 .wy-side-nav-search {
   background-color: #0b3860;
 }
@@ -71,4 +73,10 @@ margin-right: 20px;
 svg[id^="mermaid-"] {
   width: 100%;
   max-width: 80em;
+}
+.wy-table-responsive table th {
+  white-space: pre;
+}
+.wy-table-responsive table td {
+  white-space: normal !important;
 }

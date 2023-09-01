@@ -29,13 +29,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/IMT.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/IMT.csv
 ```
+````
 
 ### classification_scheme
 
@@ -45,13 +45,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/classification_scheme.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/classification_scheme.csv
 ```
+````
 
 ### damage_scale_name
 
@@ -62,13 +65,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/damage_scale_name.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/damage_scale_name.csv
 ```
+````
 
 ### data_formats
 
@@ -78,13 +81,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/data_formats.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/data_formats.csv
 ```
+````
 
 ### engineering_demand_parameter
 
@@ -94,13 +97,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/engineering_demand_parameter.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/engineering_demand_parameter.csv
 ```
+````
 
 ### impact_metric
 
@@ -110,13 +116,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/impact_metric.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/impact_metric.csv
 ```
+````
 
 ### impact_unit
 
@@ -126,13 +132,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/impact_unit.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/impact_unit.csv
 ```
+````
 
 ### license
 
@@ -142,13 +148,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/license.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/license.csv
 ```
+````
 
 ### location_gazetteers
 
@@ -158,13 +164,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/location_gazetteers.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/location_gazetteers.csv
 ```
+````
 
 ### media_type
 
@@ -174,13 +183,34 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/media_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/media_type.csv
 ```
+````
+
+### quantity_kind
+
+The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
+
+This codelist is referenced by the following properties:
+
+- [`Metric/quantity_kind`](rdls_schema.json,/$defs/Metric,quantity_kind)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/quantity_kind.csv
+```
+````
 
 ### roles
 
@@ -192,13 +222,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/open/roles.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/roles.csv
 ```
+````
 
 ## Closed codelists
 
@@ -212,29 +242,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/analysis_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/analysis_type.csv
 ```
-
-### cost_type
-
-This codelist is referenced by the following properties:
-
-- [`Cost/type`](rdls_schema.json,/$defs/Cost,type)
-
-This codelist has the following codes:
-
-```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/cost_type.csv
----
-```
+````
 
 ### country
 
@@ -244,13 +261,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/country.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/country.csv
 ```
+````
 
 ### currency
 
@@ -260,13 +277,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/currency.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/currency.csv
 ```
+````
 
 ### data_calculation_type
 
@@ -278,13 +295,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/data_calculation_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/data_calculation_type.csv
 ```
+````
 
 ### exposure_category
 
@@ -296,13 +316,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/exposure_category.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/exposure_category.csv
 ```
+````
 
 ### frequency_distribution
 
@@ -312,13 +335,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/frequency_distribution.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/frequency_distribution.csv
 ```
+````
 
 ### function_approach
 
@@ -332,13 +358,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/function_approach.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/function_approach.csv
 ```
+````
 
 ### geometry_type
 
@@ -348,13 +377,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/geometry_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/geometry_type.csv
 ```
+````
 
 ### hazard_type
 
@@ -372,13 +404,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/hazard_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/hazard_type.csv
 ```
+````
 
 ### impact_type
 
@@ -388,13 +420,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/impact_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/impact_type.csv
 ```
+````
 
 ### loss_type
 
@@ -404,13 +439,36 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/loss_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/loss_type.csv
 ```
+````
+
+### metric_dimension
+
+This codelist is referenced by the following properties:
+
+- [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
+- [`Cost/dimension`](rdls_schema.json,/$defs/Cost,dimension)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/metric_dimension.csv
+```
+````
 
 ### process_type
 
@@ -426,13 +484,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/process_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/process_type.csv
 ```
+````
 
 ### relationship_type
 
@@ -445,13 +503,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/relationship_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/relationship_type.csv
 ```
+````
 
 ### risk_data_type
 
@@ -462,13 +523,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/risk_data_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/risk_data_type.csv
 ```
+````
 
 ### seasonality
 
@@ -478,13 +542,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/seasonality.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/seasonality.csv
 ```
+````
 
 ### source_type
 
@@ -494,13 +561,16 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/source_type.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/source_type.csv
 ```
+````
 
 ### spatial_scale
 
@@ -510,10 +580,13 @@ This codelist is referenced by the following properties:
 
 This codelist has the following codes:
 
+````{dropdown} Codes
+---
+open:
+---
 ```{csv-table-no-translate}
----
-header-rows: 1
-widths: auto
-file: ../../schema/codelists/closed/spatial_scale.csv
----
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/spatial_scale.csv
 ```
+````

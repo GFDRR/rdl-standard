@@ -1,0 +1,6 @@
+Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064232
+Event set identifier,0064232_EventSet1
+Hazard identifier,0064232_EventSet1_FL
+Hazard type,flood
+Hazard processes,fluvial_flood
+Intensity measure,fl_wd:m
