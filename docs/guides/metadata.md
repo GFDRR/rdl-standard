@@ -16,13 +16,13 @@ The process for publishing RDLS metadata can be divided into three phases:
 
 You can prepare RDLS metadata in either spreadsheet format or JSON format.
 
-If you are authoring new metadata by hand or converting existing metadata from a spreadsheet, the suggested approach is to [use the RDLS spreadsheet template](#user-the-rdls-spreadsheet-template).
+If you are authoring new metadata by hand or converting existing metadata from a spreadsheet, the suggested approach is to [use the RDLS spreadsheet template](#use-the-rdls-spreadsheet-template).
 
 If you are exporting existing metadata from a data catalog or database and you have access to a software developer, the suggested approach is to [export data in JSON format](#export-data-in-json-format).
 
-If your risk datasets use terms from existing taxonomies or classifications, use the [taxonomy mappings](#taxonomy-mappings) to identify the equivalent codes in RDLS.
+If your risk datasets use terms from existing taxonomies or classifications, use the [taxonomy mappings](mappings/index.md) to identify the equivalent codes in RDLS.
 
-#### User the RDLS spreadsheet template
+#### Use the RDLS spreadsheet template
 
 The RDLS spreadsheet template is a tool to enable publishers to create RDLS metadata in Excel (.xslx) format. The spreadsheet is generated directly from the RDLS JSON schema and can be converted back into JSON format for validation and publication using tools such as the Risk Data Library metadata toolkit.
 
@@ -135,24 +135,3 @@ If you prefer to use a graphical user interface, several web-based tools are ava
 - [epsg.io](https://epsg.io/transform)
 
 The WSG84 CRS is equivalent to EPSG:4326 with reversed axes so, if it is not supported by your chosen transformation tool, you can instead transform your coordinates to EPSG:4326 and manually order your coordinates in longitude, latitude order.
-
-### Taxonomy mappings
-
-RDLS makes use of an internal taxonomy for defining [hazard types](../../schema/codelists/closed/hazard_type.csv) and [processes](../../schema/codelists/closed/process_type.csv). Other [hazard taxonomies](../rdl/other-standards.md#hazard-taxonomies) are available however. When preparing RDLS metadata for publication you should convert codes taken from other taxonomies using the relevant mapping table.
-
-#### UNDRR-HIP
-
-The United Nations Office for Disaster Risk Reduction and International Science Council Sendai [Hazard Definition and Classification Review Technical Report](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report) provides a common set of hazard definitions for monitoring and reviewing implementation of the Sendai Framework, Sustainable Development Goals and the Paris Agreement on Climate Change.
-
-The csv mapping file is [RDL_hazard_mapping_UNDRR-HIPS.csv](../../schema/mappings/RDL_hazard_mapping_UNDRR-HIPS.csv)
-
-````{dropdown} Mappings
----
-open:
----
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/mappings/RDL_hazard_mapping_UNDRR-HIPS.csv
-```
-````
