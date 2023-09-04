@@ -14,7 +14,7 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "https://docs.riskdatalibrary.org/dev/rdls_schema.json"
+        "$ref": "https://docs.riskdatalibrary.org/en/dev/rdls_schema.json"
       }
     }
   },
