@@ -239,7 +239,7 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
 Use the following template, noting that any `_` characters in the codelist title need to be replaced with the `-` character in the codelist URL:
 
 ```
-The <semantics>, from the <open|closed> [<codelist_title> codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#codelist-title).
+The <semantics>, from the <open|closed> [<codelist_title> codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#codelist-title).
 ```
 
 ### Changelog style guide

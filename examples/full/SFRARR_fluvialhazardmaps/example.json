@@ -1109,7 +1109,7 @@
       },
       "links": [
         {
-          "href": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
+          "href": "https://docs.riskdatalibrary.org/0__2__0/rdls_schema.json",
           "rel": "describedby"
         }
       ]
