@@ -82,6 +82,7 @@ This page lists changes to the Risk Data Library Standard.
   - Convert `disaster_identifiers` to array of `Classification` objects.
   - Add new codes to classification_scheme.csv.
 - [#236](https://github.com/GFDRR/rdl-standard/pull/236) - Fix broken codelist reference URLs.
+- [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Clarify purpose of `links`, add link to dataset identifier guidance in `id` description.
 - [#241](https://github.com/GFDRR/rdl-standard/pull/241) - Update schema and documentation URLs.
 
 ### Codelists
@@ -122,5 +123,6 @@ This page lists changes to the Risk Data Library Standard.
 - [#172](https://github.com/GFDRR/rdl-standard/pull/172) - Re-write use cases as user stories, for data publisher and data user roles.
 - [#175](https://github.com/GFDRR/rdl-standard/pull/175) - Restructure documentation, rewrite landing page, add new introductory content.
 - [#224](https://github.com/GFDRR/rdl-standard/pull/224) - Update contact email addresses.
+- [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Add content to `docs/guides/metadata.md`, add UNDRR-ISC HIP taxonomy mapping.
 
 ### Other

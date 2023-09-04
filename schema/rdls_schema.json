@@ -19,7 +19,7 @@
     "id": {
       "title": "Dataset identifier",
       "type": "string",
-      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
+      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended. For more information, see [how to assign a dataset identifier](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#assign-a-dataset-identifier).",
       "minLength": 1
     },
     "title": {
@@ -786,7 +786,7 @@
     },
     "links": {
       "title": "Links",
-      "description": "Links to related resources. The first item in the links array must be a link to the canonical JSON schema that describes the structure of the data.",
+      "description": "Links to related resources. The purpose of this field is to declare the version of the RDLS schema that describes the metadata. The first item in the links array must be a link to the canonical URL of the RDLS JSON schema with relation type 'describedby'. Subsequent items must conform to an IANA link relation type other than 'describedby'. To link to  sources of information that contribute to the creation of the dataset or to related resources that point to the dataset, use `sources` and `referencedBy`, respectively.",
       "type": "array",
       "prefixItems": [
         {
