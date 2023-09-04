@@ -22,7 +22,7 @@ If you are exporting existing metadata from a data catalog or database and you h
 
 If your risk datasets use terms from existing taxonomies or classifications, use the [taxonomy mappings](mappings/index.md) to identify the equivalent codes in RDLS.
 
-If you plan to describe the spatial coverage of your risk data using coordinates, you may need to [transform your coordinates to the correct coordinate reference system](#transform-coordinates-between-coordinate-reference-systems).
+If you plan to describe the spatial coverage of your risk data using coordinates, you might need to [transform your coordinates to the correct coordinate reference system](#transform-coordinates-between-coordinate-reference-systems).
 
 #### Use the RDLS spreadsheet template
 
@@ -36,7 +36,7 @@ Once you have entered your metadata using the template, the next step is to [con
 
 If you plan to export RDLS metadata from an existing system in JSON format, you first need to identify how your existing metadata 'maps' to RDLS - that is, identifying which [data elements](https://en.wikipedia.org/wiki/Data_element) within your system match which RDLS [fields](../reference/schema.md) and [codes](../reference/codelists.md). You then need to implement your mapping in code. JSON is a widely used format so most programming languages and database engines provide support for exporting data in JSON format.
 
-It is strongly suggested that you do not author RDLS metadata in JSON format 'by hand'. However, if you do choose this approach, you should use a text editor with support for JSON formatting and validation, such as [Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
+It is strongly suggested that you do not author RDLS metadata in JSON format 'by hand'. However, if you do choose this approach, you ought to use a text editor with support for JSON formatting and validation, such as [Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
 
 In either case, you need to structure and format your data according to the [RDLS schema](../reference/schema.md).
 
