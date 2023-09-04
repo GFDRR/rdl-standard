@@ -84,6 +84,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#236](https://github.com/GFDRR/rdl-standard/pull/236) - Fix broken codelist reference URLs.
 - [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Clarify purpose of `links`, add link to dataset identifier guidance in `id` description.
 - [#241](https://github.com/GFDRR/rdl-standard/pull/241) - Update schema and documentation URLs.
+- [#242](https://github.com/GFDRR/rdl-standard/pull/242) - Remove redundant `minProperties` keywords, add missing `minLength` and `uniqueItems` keywords.
 
 ### Codelists
 
