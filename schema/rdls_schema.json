@@ -55,13 +55,13 @@
     "publisher": {
       "title": "Publisher",
       "description": "The entity responsible for making the dataset available.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 1
+      "$ref": "#/$defs/Entity"
     },
     "version": {
       "title": "Dataset version",
       "type": "string",
-      "description": "The version indicator (name or identifier) of the dataset."
+      "description": "The version indicator (name or identifier) of the dataset.",
+      "minLength": 1
     },
     "purpose": {
       "title": "Dataset purpose",
@@ -103,14 +103,12 @@
     "contact_point": {
       "title": "Contact point",
       "description": "Contact information for the maintainer of the dataset.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 1
+      "$ref": "#/$defs/Entity"
     },
     "creator": {
       "title": "Creator",
       "description": "The entity responsible for producing the dataset.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 1
+      "$ref": "#/$defs/Entity"
     },
     "attributions": {
       "title": "Attributions",
@@ -400,8 +398,7 @@
         "impact": {
           "title": "Vulnerability impact",
           "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact",
-          "minProperties": 1
+          "$ref": "#/$defs/Impact"
         },
         "spatial": {
           "title": "Spatial coverage",
@@ -613,8 +610,7 @@
         "se_category": {
           "title": "Socio-economic index category",
           "description": "The socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Classification",
-          "minProperties": 1
+          "$ref": "#/$defs/Classification"
         }
       },
       "minProperties": 1
@@ -720,8 +716,7 @@
         "impact": {
           "title": "Loss impact",
           "description": "The details of the loss impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact",
-          "minProperties": 1
+          "$ref": "#/$defs/Impact"
         },
         "type": {
           "title": "Loss type",
@@ -881,7 +876,8 @@
         "download_url": {
           "title": "Download Url",
           "type": "string",
-          "description": "The web address this resource can be downloaded from in the given `.format`."
+          "description": "The web address this resource can be downloaded from in the given `.format`.",
+          "minLength": 1
         },
         "temporal": {
           "title": "Temporal coverage",
@@ -1820,7 +1816,8 @@
           "items": {
             "$ref": "#/$defs/Classification"
           },
-          "minItems": 1
+          "minItems": 1,
+          "uniqueItems": true
         },
         "calculation_method": {
           "title": "Model calculation method",
@@ -1847,8 +1844,7 @@
             "probabilistic": {
               "title": "Probabilistic frequency",
               "description": "How often the event is expected to occur. Can be return period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
-              "$ref": "#/$defs/Probabilistic",
-              "minProperties": 1
+              "$ref": "#/$defs/Probabilistic"
             },
             "empirical": {
               "title": "Empirical",
@@ -1858,8 +1854,7 @@
                 "temporal": {
                   "title": "Temporal occurrence",
                   "description": "The period of time over which the event occurred.",
-                  "$ref": "#/$defs/Period",
-                  "minProperties": 1
+                  "$ref": "#/$defs/Period"
                 },
                 "return_period": {
                   "title": "Associated return period",
@@ -1984,7 +1979,8 @@
           "type": "string",
           "description": "The kind of quantity by which the exposure is quantified, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
           "codelist": "quantity_kind.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minLength": 1
         }
       },
       "minProperties": 1
