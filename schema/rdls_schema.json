@@ -2433,13 +2433,8 @@
         },
         "cost": {
           "title": "Costs",
-          "type": "array",
           "description": "The costs associated with the losses.",
-          "items": {
-            "$ref": "#/$defs/Cost"
-          },
-          "minItems": 1,
-          "uniqueItems": true
+          "$ref": "#/$defs/Cost"
         },
         "impact": {
           "title": "Loss impact",
