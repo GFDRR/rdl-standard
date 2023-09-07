@@ -618,163 +618,17 @@
     "loss": {
       "title": "Loss metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
-      "required": [
-        "hazard_type",
-        "cost"
-      ],
+      "description": "Metadata that is specific to datasets that describe measures of impact in the form of damage or destruction caused by a disaster.",
       "properties": {
-        "hazard_type": {
-          "title": "Hazard type",
-          "type": "string",
-          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_process": {
-          "title": "Hazard process",
-          "type": "string",
-          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone"
-          ]
-        },
-        "description": {
-          "title": "Loss description",
-          "type": "string",
-          "description": "Additional details of the dataset.",
-          "minLength": 1
-        },
-        "category": {
-          "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
-          "type": "string",
-          "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment"
-          ]
-        },
-        "cost": {
-          "title": "Asset cost",
+        "losses": {
+          "title": "Losses",
           "type": "array",
-          "description": "The costs associated with the loss of specific elements of assets detailed in the dataset.",
+          "description": "Information about the losses described in the dataset.",
           "items": {
-            "$ref": "#/$defs/Cost"
+            "$ref": "#/$defs/Losses"
           },
           "minItems": 1,
           "uniqueItems": true
-        },
-        "impact": {
-          "title": "Loss impact",
-          "description": "The details of the loss impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact"
-        },
-        "type": {
-          "title": "Loss type",
-          "type": "string",
-          "description": "The type of loss described in the dataset, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
-          "codelist": "loss_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "ground_up",
-            "insured",
-            "gross",
-            "count",
-            "net_precat",
-            "net_postcat"
-          ]
-        },
-        "approach": {
-          "title": "Loss approach",
-          "type": "string",
-          "description": "The approach the loss calculation function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
-          "codelist": "function_approach.csv",
-          "openCodelist": false,
-          "enum": [
-            "analytical",
-            "empirical",
-            "hybrid",
-            "judgement"
-          ]
-        },
-        "hazard_analysis_type": {
-          "title": "Event frequency type",
-          "type": "string",
-          "description": "The type of occurrence frequency represented in the modelled scenario, from the closed [analysis_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
-          "enum": [
-            "deterministic",
-            "empirical",
-            "probabilistic"
-          ],
-          "codelist": "analysis_type.csv",
-          "openCodelist": false
-        },
-        "hazard_id": {
-          "title": "Hazard dataset",
-          "type": "string",
-          "description": "A unique identifier for the hazard dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "exposure_id": {
-          "title": "Exposure dataset",
-          "type": "string",
-          "description": "A unique identifier for the exposure dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "vulnerability_id": {
-          "title": "Vulnerability dataset",
-          "type": "string",
-          "description": "A unique identifier for the vulnerability dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
-          "minLength": 1
         }
       },
       "minProperties": 1
@@ -2480,6 +2334,172 @@
         "href",
         "rel"
       ],
+      "minProperties": 1
+    },
+    "Losses": {
+      "title": "Losses",
+      "type": "object",
+      "description": "Losses resulting from the occurrence of a hazard.",
+      "required": [
+        "id",
+        "hazard_type",
+        "cost"
+      ],
+      "properties": {
+        "id": {
+          "title": "Losses identifier",
+          "description": "A local identifier for the losses.",
+          "type": "string",
+          "minLength": 1
+        },
+        "hazard_type": {
+          "title": "Hazard type",
+          "type": "string",
+          "description": "The main type of hazard that resulted in the losses, from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
+          "codelist": "hazard_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
+          ]
+        },
+        "hazard_process": {
+          "title": "Hazard process",
+          "type": "string",
+          "description": "The main hazard process that resulted in the losses, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "codelist": "process_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_ballistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone"
+          ]
+        },
+        "description": {
+          "title": "Loss description",
+          "type": "string",
+          "description": "Additional details of the losses.",
+          "minLength": 1
+        },
+        "category": {
+          "title": "Asset category",
+          "description": "The category of the lost assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
+          "type": "string",
+          "codelist": "exposure_category.csv",
+          "openCodelist": false,
+          "enum": [
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment"
+          ]
+        },
+        "cost": {
+          "title": "Costs",
+          "description": "The costs associated with the losses.",
+          "$ref": "#/$defs/Cost"
+        },
+        "impact": {
+          "title": "Loss impact",
+          "description": "Details of the way in which the loss impact was calculated and measured.",
+          "$ref": "#/$defs/Impact"
+        },
+        "type": {
+          "title": "Loss type",
+          "type": "string",
+          "description": "The type of losses, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
+          "codelist": "loss_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "ground_up",
+            "insured",
+            "gross",
+            "count",
+            "net_precat",
+            "net_postcat"
+          ]
+        },
+        "approach": {
+          "title": "Loss approach",
+          "type": "string",
+          "description": "The approach the loss calculation function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
+          "codelist": "function_approach.csv",
+          "openCodelist": false,
+          "enum": [
+            "analytical",
+            "empirical",
+            "hybrid",
+            "judgement"
+          ]
+        },
+        "hazard_analysis_type": {
+          "title": "Event frequency type",
+          "type": "string",
+          "description": "The type of occurrence frequency represented in the losses, from the closed [analysis_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
+          "enum": [
+            "deterministic",
+            "empirical",
+            "probabilistic"
+          ],
+          "codelist": "analysis_type.csv",
+          "openCodelist": false
+        },
+        "hazard_id": {
+          "title": "Hazard dataset",
+          "type": "string",
+          "description": "A unique identifier for the hazard dataset used in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "exposure_id": {
+          "title": "Exposure dataset",
+          "type": "string",
+          "description": "A unique identifier for the exposure dataset used in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "vulnerability_id": {
+          "title": "Vulnerability dataset",
+          "type": "string",
+          "description": "A unique identifier for the vulnerability dataset used in in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        }
+      },
       "minProperties": 1
     }
   },

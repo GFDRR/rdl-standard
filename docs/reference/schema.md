@@ -714,7 +714,7 @@ jsonpointer: /properties/loss/description
 The loss component provides metadata describing data generated in risk assessments, i.e., modelled impacts and losses for single historical events or hypothetical scenarios and risk estimates from analysis of large event sets. The data can include monetary and non-monetary, and direct or indirect, impacts and losses.
 Loss datasets can be explicitly linked to the exposure, hazard, and vulnerability datasets used in the analysis. This component uses descriptions of assets, hazards and impact types consistent with all other components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
-The following diagram shows key loss component fields, with required fields highlighted in blue:
+The following diagram shows key loss component fields, with required fields highlighted in blue.  The ![array](../img/array.png) icon indicates that a field is an array.
 
 ```{eval-rst}
 .. uml::
@@ -728,25 +728,29 @@ The following diagram shows key loss component fields, with required fields high
       BackGroundColor #239ce8
     }
   </style>
-  #highlight "hazard_type" <<required>>
-  #highlight "cost" <<required>>
-  #highlight "cost" / "type" <<required>>
-  #highlight "cost" / "unit" <<required>>
+  #highlight "losses" / "0" / "hazard_type" <<required>>
+  #highlight "losses" / "0" / "cost" <<required>>
+  #highlight "losses" / "0" / "cost" / "type" <<required>>
+  #highlight "losses" / "0" / "cost" / "unit" <<required>>
   {
-    "hazard_type": "",
-    "hazard_process": "",
-    "category": "",
-    "type": "",
-    "impact": {
-      "type": "",
-      "metric": "",
-      "unit": ""
-    },
-    "approach": "",
-    "cost": {
-      "type": "",
-      "unit": ""
-    }
+    "losses": [
+      {
+        "hazard_type": "",
+        "hazard_process": "",
+        "category": "",
+        "type": "",
+        "impact": {
+          "type": "",
+          "metric": "",
+          "unit": ""
+        },
+        "approach": "",
+        "cost": {
+          "type": "",
+          "unit": ""
+        }
+      }
+    ]
   }
   @endjson
 
@@ -757,7 +761,7 @@ The following table lists all loss component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/loss
-collapse: cost,impact
+collapse: losses/0/cost,losses/0/impact
 addtargets:
 ---
 ```
@@ -1121,7 +1125,7 @@ jsonpointer: /$defs/Cost/description
 This sub-schema is referenced by the following properties:
 
 - [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
-- [`loss/cost`](rdls_schema.json,/properties/loss,cost)
+- [`Losses/cost`](rdls_schema.json,/$defs/Losses,cost)
 
 Each `Cost` has the following fields:
 
@@ -1170,7 +1174,7 @@ jsonpointer: /$defs/Impact/description
 This sub-schema is referenced by the following properties:
 
 - [`vulnerability/impact`](rdls_schema.json,/properties/vulnerability,impact)
-- [`loss/impact`](rdls_schema.json,/properties/loss,impact)
+- [`Losses/impact`](rdls_schema.json,/$defs/Losses,impact)
 
 Each `Impact` has the following fields:
 
@@ -1227,6 +1231,30 @@ Each `Link` has the following fields:
 ---
 pointer: /$defs/Link
 collapse:
+addtargets:
+---
+```
+
+### Losses
+
+`Losses` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Losses/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`loss/losses`](rdls_schema.json,/properties/loss,losses)
+
+Each `Losses` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Losses
+collapse: cost,impact
 addtargets:
 ---
 ```
