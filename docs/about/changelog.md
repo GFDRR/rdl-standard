@@ -85,6 +85,9 @@ This page lists changes to the Risk Data Library Standard.
 - [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Clarify purpose of `links`, add link to dataset identifier guidance in `id` description.
 - [#241](https://github.com/GFDRR/rdl-standard/pull/241) - Update schema and documentation URLs.
 - [#242](https://github.com/GFDRR/rdl-standard/pull/242) - Remove redundant `minProperties` keywords, add missing `minLength` and `uniqueItems` keywords.
+- [#246](https://github.com/GFDRR/rdl-standard/pull/246) - Update `loss` component:
+  - Replace `loss` object with `loss.losses` array.
+  - Replace `loss.costs` array with `loss.losses.cost` object.
 
 ### Codelists
 
