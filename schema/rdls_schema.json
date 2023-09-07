@@ -57,7 +57,7 @@
       "description": "The entity responsible for making the dataset available.",
       "$ref": "#/$defs/Entity"
     },
-    "version": {issue
+    "version": {
       "title": "Dataset version",
       "type": "string",
       "description": "The version indicator (name or identifier) of the dataset.",
