@@ -57,7 +57,7 @@
       "description": "The entity responsible for making the dataset available.",
       "$ref": "#/$defs/Entity"
     },
-    "version": {
+    "version": {issue
       "title": "Dataset version",
       "type": "string",
       "description": "The version indicator (name or identifier) of the dataset.",
@@ -230,7 +230,7 @@
         "hazard_primary": {
           "title": "Primary hazard type",
           "type": "string",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -250,7 +250,7 @@
         "hazard_secondary": {
           "title": "Secondary hazard type",
           "type": "string",
-          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -270,7 +270,7 @@
         "hazard_process_primary": {
           "title": "Primary hazard process",
           "type": "string",
-          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -309,7 +309,7 @@
         "hazard_process_secondary": {
           "title": "Secondary hazard process",
           "type": "string",
-          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -348,7 +348,7 @@
         "hazard_analysis_type": {
           "title": "Hazard analysis type",
           "type": "string",
-          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#analysis_type).",
+          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type).",
           "codelist": "analysis_type.csv",
           "openCodelist": false,
           "enum": [
@@ -359,7 +359,7 @@
         },
         "intensity": {
           "title": "Hazard intensity measurement",
-          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#IMT).",
+          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
           "type": "string",
           "codelist": "IMT.csv",
           "openCodelist": true,
@@ -969,7 +969,7 @@
         "countries": {
           "title": "Countries",
           "type": "array",
-          "description": "The countries covered by the geographical area, from the closed [country codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#country).",
+          "description": "The countries covered by the geographical area, from the closed [country codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#country).",
           "items": {
             "type": "string",
             "enum": [
@@ -1267,7 +1267,7 @@
         "scale": {
           "title": "Spatial scale",
           "type": "string",
-          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#spatial_scale).",
+          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#spatial_scale).",
           "codelist": "spatial_scale.csv",
           "openCodelist": false,
           "enum": [
@@ -1297,7 +1297,7 @@
         "scheme": {
           "title": "Scheme",
           "type": "string",
-          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#location_gazetteers).",
+          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#location_gazetteers).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1325,7 +1325,7 @@
         "type": {
           "title": "Type",
           "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#geometry_type).",
+          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
           "codelist": "geometry_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1408,7 +1408,7 @@
         },
         "processes": {
           "title": "Hazard processes",
-          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#process_type).",
+          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#process_type).",
           "type": "array",
           "items": {
             "type": "string",
@@ -1452,7 +1452,7 @@
         },
         "intensity_measure": {
           "title": "Intensity measure",
-          "description": "The metric and unit in which the intensity of this hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#IMT).",
+          "description": "The metric and unit in which the intensity of this hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
           "type": "string",
           "codelist": "IMT.csv",
           "openCodelist": true,
@@ -1493,7 +1493,7 @@
         },
         "processes": {
           "title": "Hazard processes",
-          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#process_type).",
+          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#process_type).",
           "type": "array",
           "items": {
             "type": "string",
