@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://docs.riskdatalibrary.org/0__2__0/rdls_schema.json",
+  "$id": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
   "description": "A collection of risk data, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
@@ -642,7 +642,7 @@
           "$ref": "#/$defs/Link",
           "properties": {
             "href": {
-              "const": "https://docs.riskdatalibrary.org/0__2__0/rdls_schema.json"
+              "const": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json"
             },
             "rel": {
               "const": "describedby"

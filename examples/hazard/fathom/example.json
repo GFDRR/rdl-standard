@@ -88,7 +88,7 @@
       },
       "links": [
         {
-          "href": "https://docs.riskdatalibrary.org/0__2__0/rdls_schema.json",
+          "href": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
           "rel": "describedby"
         }
       ]
