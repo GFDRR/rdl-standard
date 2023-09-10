@@ -1,0 +1,1118 @@
+{
+  "datasets": [
+    {
+      "id": "https://datacatalog.worldbank.org/search/dataset/0064232",
+      "title": "Central Asia flood hazard - fluvial flood hazard maps DEFENDED",
+      "description": "Simulated fluvial flood hazard maps with the simulated effects of flood protection. ",
+      "risk_data_type": [
+        "hazard"
+      ],
+      "publisher": {
+        "name": "World Bank Europe and Central Asia DRM team",
+        "email": "sfraser@worldbank.org"
+      },
+      "version": "2",
+      "purpose": "Developed as part of a regional probabilistic flood and earthquake risk assessment under the Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia program. (https://www.gfdrr.org/en/program/SFRARR-Central-Asia)",
+      "project": "Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia ",
+      "spatial": {
+        "countries": [
+          "KAZ",
+          "KGZ",
+          "TJK",
+          "TKM",
+          "UZB"
+        ],
+        "scale": "regional",
+        "gazetteer_entries": [
+          {
+            "id": "0064232_gaz1",
+            "scheme": "ISO 3166-1 alpha-3"
+          }
+        ]
+      },
+      "license": "CC-BY-4.0",
+      "contact_point": {
+        "name": "Stuart Fraser",
+        "email": "sfraser@worldbank.org"
+      },
+      "creator": {
+        "name": "Risk Engineering and Development"
+      },
+      "attributions": [
+        {
+          "id": "0064232_1attr",
+          "entity": {
+            "name": "World Bank",
+            "email": "chuang@worldbank.org",
+            "url": "http://www.worldbank.org"
+          },
+          "role": "custodian"
+        }
+      ],
+      "sources": [
+        {
+          "id": "0064232_1src"
+        }
+      ],
+      "referenced_by": [
+        {
+          "id": "0064232_ref1",
+          "name": "Central Asia flood hazard technical report - English version",
+          "author_names": [
+            "Risk Engineering and Development"
+          ],
+          "date_published": "2023-02-09",
+          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064084/DR0090774/Task3_FloodHazard_Report_r5_EN.pdf?versionId=2023-07-21T17:34:14.1038579Z"
+        }
+      ],
+      "resources": [
+        {
+          "id": "0064232_res1",
+          "title": "Central Asia fluvial flood hazard maps - defended – KAZ 5-50y RP",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset. Due to file size, this is a partial set of data covering 1-in-5-50y return period. See dataset “Central Asia fluvial flood hazard maps - defended – KAZ 100-1000y RP” for the remaining data.",
+          "media_type": "image/tiff",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "EPSG:4326",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0092000/FLU_DEF_KAZ_5-50yRP.zip?versionId=2023-07-11T15:17:06.8346489Z"
+        },
+        {
+          "id": "0064232_res2",
+          "title": "Central Asia fluvial flood hazard maps - defended – KAZ 100-1000y RP",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset. Due to file size, this is a partial set of data covering 1-in-100-1000y return period. See dataset “Central Asia fluvial flood hazard maps - defended – KaZ 5-50y RP” for the remaining data.",
+          "media_type": "image/tiff",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "EPSG:4326",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0092001/FLU_DEF_KAZ_100-1000yRP.zip?versionId=2023-07-11T15:17:09.5061377Z"
+        },
+        {
+          "id": "0064232_res3",
+          "title": "Central Asia fluvial flood hazard maps - defended - KGZ",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset.",
+          "media_type": "image/tiff",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "EPSG:4326",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091440/FLU_DEF_KGZ.zip?versionId=2023-07-11T15:16:59.0750434Z"
+        },
+        {
+          "id": "0064232_res4",
+          "title": "Central Asia fluvial flood hazard maps - defended - TJK",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset.",
+          "media_type": "image/tiff",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "EPSG:4326",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091439/FLU_DEF_TJK.zip?versionId=2023-07-11T15:17:11.4860175Z"
+        },
+        {
+          "id": "0064232_res5",
+          "title": "Central Asia fluvial flood hazard maps - defended - TKM",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset.",
+          "media_type": "image/tiff",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "EPSG:4326",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091768/FLU_DEF_TKM.zip?versionId=2023-07-11T15:17:01.5896193Z"
+        },
+        {
+          "id": "0064232_res6",
+          "title": "Central Asia fluvial flood hazard maps - defended - UZB",
+          "description": "Fluvial flood hazard maps for Central Asia, derived from a regional model. Filenaming: FLU_DEF_XXy_ZZZ.tif (XX= return period, ZZZ= country initials). Cell value gives maximum flood depth (m) expected for the return period of that raster dataset.",
+          "media_type": "image/tiff",
+          "format": "geotiff",
+          "spatial_resolution": 90,
+          "coordinate_system": "EPSG:4326",
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064232/DR0091769/FLU_DEF_UZB.zip?versionId=2023-07-11T15:17:04.1441727Z"
+        }
+      ],
+      "hazard": {
+        "event_sets": [
+          {
+            "id": "0064232_EventSet1",
+            "analysis_type": "probabilistic",
+            "seasonality": "uniform",
+            "calculation_method": "simulated",
+            "event_count": 10000,
+            "spatial": {
+              "countries": [
+                "KAZ",
+                "KGZ",
+                "TJK",
+                "TKM",
+                "UZB"
+              ],
+              "scale": "regional",
+              "gazetteer_entries": [
+                {
+                  "id": "KAZ",
+                  "scheme": "ISO 3166-1 alpha-3",
+                  "description": "Kazakhstan"
+                },
+                {
+                  "id": "KGZ",
+                  "scheme": "ISO 3166-1 alpha-3",
+                  "description": "Kyrgyz Republic"
+                },
+                {
+                  "id": "TJK",
+                  "scheme": "ISO 3166-1 alpha-3",
+                  "description": "Tajikistan"
+                },
+                {
+                  "id": "TKM",
+                  "scheme": "ISO 3166-1 alpha-3",
+                  "description": "Turkmenistan"
+                },
+                {
+                  "id": "UZB",
+                  "scheme": "ISO 3166-1 alpha-3",
+                  "description": "Uzbekistan"
+                }
+              ]
+            },
+            "hazards": [
+              {
+                "id": "0064232_EventSet1_FL",
+                "type": "flood",
+                "processes": [
+                  "fluvial_flood"
+                ],
+                "intensity_measure": "fl_wd:m"
+              }
+            ],
+            "events": [
+              {
+                "id": "0064232_EventSet1_KAZ_5",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_5",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 5
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_5",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_10",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_10",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 10
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_10",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_20",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_20",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 20
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_20",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_50",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_50",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 50
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_50",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_100",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_100",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 100
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_100",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_200",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_200",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 200
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_200",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_500",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_500",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 500
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_500",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KAZ_1000",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KAZ_1000",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 1000
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KAZ_1000",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_5",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_5",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 5
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_5",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_10",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_10",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 10
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_10",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_20",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_20",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 20
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_20",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_50",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_50",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 50
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_50",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_100",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_100",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 100
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_100",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_200",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_200",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 200
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_200",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_500",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_500",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 500
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_500",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_KGZ_1000",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_KGZ_1000",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 1000
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_KGZ_1000",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_5",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_5",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 5
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_5",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_10",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_10",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 10
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_10",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_20",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_20",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 20
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_20",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_50",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_50",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 50
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_50",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_100",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_100",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 100
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_100",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_200",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_200",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 200
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_200",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_500",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_500",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 500
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_500",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TJK_1000",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TJK_1000",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 1000
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TJK_1000",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_5",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_5",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 5
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_5",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_10",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_10",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 10
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_10",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_20",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_20",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 20
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_20",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_50",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_50",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 50
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_50",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_100",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_100",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 100
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_100",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_200",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_200",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 200
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_200",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_500",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_500",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 500
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_500",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_TKM_1000",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_TKM_1000",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 1000
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_TKM_1000",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_5",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_5",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 5
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_5",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_10",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_10",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 10
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_10",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_20",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_20",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 20
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_20",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_50",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_50",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 50
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_50",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_100",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_100",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 100
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_100",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_200",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_200",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 200
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_200",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_500",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_500",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 500
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_500",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              },
+              {
+                "id": "0064232_EventSet1_UZB_1000",
+                "calculation_method": "simulated",
+                "hazard": {
+                  "id": "0064232_EventSet1_UZB_1000",
+                  "type": "flood",
+                  "processes": [
+                    "fluvial_flood"
+                  ],
+                  "intensity_measure": "fl_wd:m"
+                },
+                "occurrence": {
+                  "probabilistic": {
+                    "return_period": 1000
+                  }
+                },
+                "footprints": [
+                  {
+                    "id": "0064232_EventSet1_UZB_1000",
+                    "intensity_measure": "fl_wd:m"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "links": [
+        {
+          "href": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
+          "rel": "describedby"
+        }
+      ]
+    }
+  ]
+}

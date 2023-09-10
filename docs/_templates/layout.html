@@ -1,4 +1,11 @@
 {% extends "!layout.html" %}
 
-{% set css_files = css_files + ["_static/basic.css"] %}
+{% set css_files = css_files + ["_static/custom.css", "_static/renderjson.css", "_static/jsonschema.css"] %}
+{% set script_files = script_files + ["_static/renderjson.js", "_static/json-example-format.js"] %}
 
+{% block menu %}
+{{ super() }}
+<ul class="ofds-extra-nav">
+   <li class="toctree-l1"><a class="reference external" href="https://metadata.riskdatalibrary.org/" target="_blank">{% trans %}RDLS Convertor tool{% endtrans %}</a></li>
+</ul>
+{% endblock %}

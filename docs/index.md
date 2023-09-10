@@ -1,38 +1,31 @@
-<!-- https://hackmd.io/bdFuvXOfTXWzyHS44r1VXQ?both -->
-
 # Risk Data Library Standard
 
-The **Risk Data Library Standard (RDLS)** is an open data standard to make it easier to work with disaster and climate risk data. It provides a common description of the data used and produced in risk assessments, including **hazard**, **exposure**, **vulnerability**, and **modelled loss**, or impact, data.
+The Risk Data Library Standard (RDLS) is an **open metadata standard** for describing risk datasets used in climate and disaster risk assessments.
 
-The RDLS provides a unique way to create, store, exchange and use disaster different risk information together. It is at the core of the Risk Data Library, a suite of open source tools to work with disaster and climate risk data.
+The purpose of the RDLS is to enable risk reduction and resilience building by making it easier for risk data publishers to describe their datasets and for risk data users to identify datasets to use in their work. Many different organisations produce or use risk datasets, including humanitarian organisations, insurance companies, academic institutions and multi-lateral development banks.
 
-The RDLS has been developed by World Bank GFDRR for disaster and climate risk assessments but is intended to be used by anyone involved in generating or using disaster risk information.
+The key feature of the RDLS is the metadata standard for describing **hazard**, **exposure**, **vulnerability**, and **loss** datasets. In addition to the metadata standard, the RDLS provides guidance on packaging and formatting for risk datasets, although it does not seek to standardise the contents of risk datasets.
 
-This documentation provides a technical overview of the RDLS and its different elements:
+The RDLS is curated by the [Global Facility for Disaster Reduction and Recovery](https://www.gfdrr.org) and is intended for use by anyone involved in publishing or using disaster risk data. It is an open standard and community contributions are welcome.
 
-- [**Core standards**](standards.md): description of existing open data standards used in the RDLS
-- [**Taxonomy**](taxonomies/index.md): details of taxonomies adopted by the RDLS
-- [**Data model**](data_model/index.md): how to organize and link the data using the RDLS schema
-- [**Implementation**](implementation/index.md): how to apply the RDLS in your project
-- [**Tutorials**](tutorials/index.md): how to adopte and use RDLS for different pruposes
-- [**About**](about/index.md): other information on the roadmap, history, governance and license
+The standard originated from in-depth consultations with the disaster and climate risk modeling community on improving access to risk datasets. It is the result of the collective effort and ongoing support of internationally-recognised research institutions and established global partnerships, bring together expertise in multiple hazards and all aspects of risk assessment.
 
-<br/>
+To help you use RDLS effectively, the documentation includes the following sections:
 
-The RDL is a collaborative project managed by the [Global Facility for Disaster Reduction and Recovery (GFDRR)](https://www.gfdrr.org/) of the World Bank Group.
+- An [introduction](rdl/index.md) to the RDLS
+- [Reference](reference/index.md) documentation for the metadata standard
+- [Guidance](guides/index.md) on how to publish metadata in RDLS format and how to package and format risk datasets
+- A [glossary](glossary.md) of risk terminology
+- Background information [about](about/index.md) the RDLS, including how it is governed, its history and roadmap, and who to contact for more information
 
 ```{eval-rst}
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   keyconcepts
-   standards
-   taxonomies/index
-   usecases
-   data_model/index
-   implementation/index
-   tutorials/index
+   rdl/index
+   reference/index
+   guides/index
+   glossary
    about/index
-
 ```

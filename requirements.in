@@ -5,7 +5,16 @@ sphinx-togglebutton
 sphinxcontrib-mermaid
 sphinxcontrib-opendataservices
 sphinxcontrib-opendataservices-jsonschema
+sphinxcontrib-plantuml
 sphinx-intl
 #transifex-client
 sphinx_rtd_theme
 myst-parser
+mdformat-myst
+requests
+click
+pytest
+jscc>=0.2.3
+ocdskit
+jsonschema
+pygit2

@@ -1,0 +1,5 @@
+Code,Title,Description
+hazard,Hazard,"Modeled hazard data, including scenario footprints, hazard maps and events sets."
+exposure,Exposure,"Exposure data including built assets, natural assets and population."
+vulnerability,Vulnerability,Physical and social vulnerability relationships and indexes.
+loss,Loss,Modeled risk and impact data including monetary and non-monetary impacts.

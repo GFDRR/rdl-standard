@@ -1,0 +1,173 @@
+{
+  "datasets": [
+    {
+      "id": "https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings",
+      "title": "Central-Asia-exposure-dataset---Current-residential-exposure",
+      "description": "Regional layer of residential buildings in Central Asia",
+      "risk_data_type": [
+        "exposure"
+      ],
+      "publisher": {
+        "name": "World Bank",
+        "email": "sfraser@worldbank.org",
+        "url": "http://www.worldbank.org"
+      },
+      "version": "12",
+      "purpose": "Developed as part of the regional risk assessment, under the Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia program. (https://www.gfdrr.org/en/program/SFRARR-Central-Asia)",
+      "project": "Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia ",
+      "spatial": {
+        "countries": [
+          "KAZ",
+          "KGZ",
+          "TJK",
+          "TKM",
+          "UZB"
+        ],
+        "gazetteer_entries": [
+          {
+            "id": "KAZ",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "KGZ",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "TJK",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "TKM",
+            "scheme": "ISO 3166-1 alpha-3"
+          },
+          {
+            "id": "UZB",
+            "scheme": "ISO 3166-1 alpha-3"
+          }
+        ]
+      },
+      "license": "CC-BY-4.0",
+      "contact_point": {
+        "name": "Stuart Fraser",
+        "email": "sfraser@worldbank.org"
+      },
+      "creator": {
+        "name": "Risk Engineering and Development",
+        "url": "http://www.redrisk.com "
+      },
+      "exposure": {
+        "category": "buildings",
+        "taxonomy": "GED4ALL",
+        "metrics": [
+          {
+            "id": "0064251_metric1",
+            "dimension": "structure",
+            "quantity_kind": "currency"
+          }
+        ]
+      },
+      "attributions": [
+        {
+          "id": "0064251_attr1",
+          "entity": {
+            "name": "Chi-Yun Huang",
+            "email": "chuang@worldbank.org"
+          },
+          "role": "custodian"
+        },
+        {
+          "id": "0064251_attr2",
+          "entity": {
+            "name": "OGS, Italy"
+          },
+          "role": "collaborator"
+        }
+      ],
+      "sources": [
+        {
+          "id": "0064251_src1"
+        }
+      ],
+      "referenced_by": [
+        {
+          "id": "0064251_ref1",
+          "name": "Central Asia exposure data development technical report - English version",
+          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064117/DR0091010/Task4_Exposure_Report_r6_EN.pdf?versionId=2023-07-21T17:33:32.2845222Z"
+        },
+        {
+          "id": "0064251_ref2",
+          "name": "Central Asia exposure data development technical report - Russian version",
+          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064117/DR0091011/Task4_Exposure_Report_r6_RU.pdf?versionId=2023-07-21T17:33:26.6527091Z"
+        }
+      ],
+      "resources": [
+        {
+          "id": "0064251_res1",
+          "title": "Central Asia exposure dataset - Residential buildings - KAZ",
+          "description": "Central Asia exposure layers – Residential buildings - KAZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "format": "csv",
+          "spatial_resolution": 500,
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091988/KAZ_residential_exposure.zip?versionId=2023-07-11T15:15:39.6450392Z",
+          "temporal": {
+            "start": "2020",
+            "end": "2020"
+          }
+        },
+        {
+          "id": "0064251_res2",
+          "title": "Central Asia exposure dataset - Residential buildings - KGZ",
+          "description": "Central Asia exposure layers – Residential buildings - KGZ\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "format": "csv",
+          "spatial_resolution": 500,
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091661/KGZ_residential_exposure.zip?versionId=2023-07-11T15:15:41.4460187Z",
+          "temporal": {
+            "start": "2020",
+            "end": "2020"
+          }
+        },
+        {
+          "id": "0064251_res3",
+          "title": "Central Asia exposure dataset - Residential buildings - TJK",
+          "description": "Central Asia exposure layers – Residential buildings - TJK\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "format": "csv",
+          "spatial_resolution": 500,
+          "url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091660/TJK_residential_exposure.zip?versionId=2023-07-11T15:15:37.7301236Z",
+          "temporal": {
+            "start": "2020",
+            "end": "2020"
+          }
+        },
+        {
+          "id": "0064251_res4",
+          "title": "Central Asia exposure dataset - Residential buildings - TKM",
+          "description": "Central Asia exposure layers – Residential buildings - TKM\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "format": "csv",
+          "spatial_resolution": 500,
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091659/TKM_residential_exposure.zip?versionId=2023-07-11T15:15:34.9986705Z",
+          "temporal": {
+            "start": "2020",
+            "end": "2020"
+          }
+        },
+        {
+          "id": "0064251_res5",
+          "title": "Central Asia exposure dataset - Residential buildings - UZB",
+          "description": "Central Asia exposure layers – Residential buildings - UZB\nFiles: RESIDENTIAL_[OBLAST].csv, RESIDENTIAL_[OBLAST].shp",
+          "format": "csv",
+          "spatial_resolution": 500,
+          "download_url": "https://datacatalogfiles.worldbank.org/ddh-published/0064251/DR0091989/UZB_residential_exposure.zip?versionId=2023-07-11T15:15:43.2479984Z",
+          "temporal": {
+            "start": "2020",
+            "end": "2020"
+          }
+        }
+      ],
+      "links": [
+        {
+          "href": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
+          "rel": "describedby"
+        }
+      ]
+    }
+  ]
+}
