@@ -4,8 +4,8 @@ To implement the Risk Data Library Standard (RDLS), you need to author RDLS meta
 
 You can use the following resources and tools to implement RDLS:
 
-- The RDLS spreadsheet template can be used to author RDLS metadata in spreadsheet format.
-- The RDLS metadata toolkit can be used to convert RDLS metadata from spreadsheet format to JSON format and to validate it against the RDLS schema.
+- The [RDLS spreadsheet template](https://github.com/GFDRR/rdls-spreadsheet-template/) can be used to author RDLS metadata in spreadsheet format.
+- The [RDLS Convertor](http://metadata.riskdatalibrary.org) can be used to convert RDLS metadata from spreadsheet format to JSON format and to validate it against the RDLS schema.
 
 For step-by-step instructions on how to publish RDLS metadata, see the guidance on [how to publish RDLS metadata](../guides/metadata.md).
 

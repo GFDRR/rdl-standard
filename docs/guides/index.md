@@ -1,6 +1,6 @@
 # Guidance
 
-This section provides guidance on how to publish RDLS metadata and how to publish risk datasets.
+This section provides guidance on how to publish RDLS metadata, guidance on how to publish risk datasets and mappings between existing risk taxonomies and RDLS.
 
 ```{eval-rst}
 .. toctree::
@@ -8,5 +8,6 @@ This section provides guidance on how to publish RDLS metadata and how to publis
 
    metadata
    datasets/index
+   mappings/index
 
 ```

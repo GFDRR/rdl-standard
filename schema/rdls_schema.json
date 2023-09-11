@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
+  "$id": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
   "description": "A collection of risk data, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
@@ -19,7 +19,7 @@
     "id": {
       "title": "Dataset identifier",
       "type": "string",
-      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended.",
+      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended. For more information, see [how to assign a dataset identifier](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#assign-a-dataset-identifier).",
       "minLength": 1
     },
     "title": {
@@ -37,7 +37,7 @@
     "risk_data_type": {
       "title": "Risk data type",
       "type": "array",
-      "description": "The types of risk data included in the dataset, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#risk-data-type).",
+      "description": "The types of risk data included in the dataset, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
       "items": {
         "type": "string",
         "enum": [
@@ -55,13 +55,13 @@
     "publisher": {
       "title": "Publisher",
       "description": "The entity responsible for making the dataset available.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 1
+      "$ref": "#/$defs/Entity"
     },
     "version": {
       "title": "Dataset version",
       "type": "string",
-      "description": "The version indicator (name or identifier) of the dataset."
+      "description": "The version indicator (name or identifier) of the dataset.",
+      "minLength": 1
     },
     "purpose": {
       "title": "Dataset purpose",
@@ -95,7 +95,7 @@
     "license": {
       "title": "License",
       "type": "string",
-      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
       "codelist": "license.csv",
       "openCodelist": true,
       "minLength": 1
@@ -103,14 +103,12 @@
     "contact_point": {
       "title": "Contact point",
       "description": "Contact information for the maintainer of the dataset.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 1
+      "$ref": "#/$defs/Entity"
     },
     "creator": {
       "title": "Creator",
       "description": "The entity responsible for producing the dataset.",
-      "$ref": "#/$defs/Entity",
-      "minProperties": 1
+      "$ref": "#/$defs/Entity"
     },
     "attributions": {
       "title": "Attributions",
@@ -184,7 +182,7 @@
       "properties": {
         "category": {
           "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
+          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
           "type": "string",
           "codelist": "exposure_category.csv",
           "openCodelist": false,
@@ -232,7 +230,7 @@
         "hazard_primary": {
           "title": "Primary hazard type",
           "type": "string",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -252,7 +250,7 @@
         "hazard_secondary": {
           "title": "Secondary hazard type",
           "type": "string",
-          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
+          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
@@ -272,7 +270,7 @@
         "hazard_process_primary": {
           "title": "Primary hazard process",
           "type": "string",
-          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -311,7 +309,7 @@
         "hazard_process_secondary": {
           "title": "Secondary hazard process",
           "type": "string",
-          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
@@ -350,7 +348,7 @@
         "hazard_analysis_type": {
           "title": "Hazard analysis type",
           "type": "string",
-          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#analysis_type).",
+          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type).",
           "codelist": "analysis_type.csv",
           "openCodelist": false,
           "enum": [
@@ -361,7 +359,7 @@
         },
         "intensity": {
           "title": "Hazard intensity measurement",
-          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#IMT).",
+          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
           "type": "string",
           "codelist": "IMT.csv",
           "openCodelist": true,
@@ -369,7 +367,7 @@
         },
         "category": {
           "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
+          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
           "type": "string",
           "codelist": "exposure_category.csv",
           "openCodelist": false,
@@ -400,8 +398,7 @@
         "impact": {
           "title": "Vulnerability impact",
           "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact",
-          "minProperties": 1
+          "$ref": "#/$defs/Impact"
         },
         "spatial": {
           "title": "Spatial coverage",
@@ -424,7 +421,7 @@
                 "approach": {
                   "title": "Vulnerability function approach",
                   "type": "string",
-                  "description": "The approach the vulnerability function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
+                  "description": "The approach the vulnerability function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
                   "enum": [
                     "analytical",
                     "empirical",
@@ -438,7 +435,7 @@
                 "relationship": {
                   "title": "Vulnerability impact relationship type",
                   "type": "string",
-                  "description": "The type of function relationships used to calculate the vulnerability impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#relationship_type).",
+                  "description": "The type of function relationships used to calculate the vulnerability impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
                   "enum": [
                     "discrete",
                     "math_bespoke",
@@ -459,7 +456,7 @@
                 "approach": {
                   "title": "Fragility function approach",
                   "type": "string",
-                  "description": "The approach the fragility function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
+                  "description": "The approach the fragility function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
                   "enum": [
                     "analytical",
                     "empirical",
@@ -473,7 +470,7 @@
                 "relationship": {
                   "title": "Fragility impact relationship type",
                   "type": "string",
-                  "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#relationship_type).",
+                  "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type_codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
                   "enum": [
                     "discrete",
                     "math_bespoke",
@@ -486,7 +483,7 @@
                 "damage_scale_name": {
                   "title": "Damage scale name",
                   "type": "string",
-                  "description": "The name of the damage scale used in the fragility function, taken from the open [damage scale name codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#damage_scale_name).",
+                  "description": "The name of the damage scale used in the fragility function, taken from the open [damage_scale_name codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#damage-scale-name).",
                   "codelist": "damage_scale_name.csv",
                   "openCodelist": true,
                   "minLength": 1
@@ -513,7 +510,7 @@
                 "approach": {
                   "title": "Damage-to-loss function approach",
                   "type": "string",
-                  "description": "The approach the damage-to-loss impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
+                  "description": "The approach the damage-to-loss impact function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
                   "enum": [
                     "analytical",
                     "empirical",
@@ -527,7 +524,7 @@
                 "relationship": {
                   "title": "Damage-to-loss impact relationship type",
                   "type": "string",
-                  "description": "The type of function relationships used to calculate the damage-to-loss impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#relationship_type).",
+                  "description": "The type of function relationships used to calculate the damage-to-loss impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
                   "enum": [
                     "discrete",
                     "math_bespoke",
@@ -540,7 +537,7 @@
                 "damage_scale_name": {
                   "title": "Damage scale name",
                   "type": "string",
-                  "description": "The name of the damage scale used in the damage-to-loss function, taken from the open [damage scale name codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#damage_scale_name).",
+                  "description": "The name of the damage scale used in the damage-to-loss function, taken from the open [damage_scale_name codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#damage-scale-name).",
                   "codelist": "damage_scale_name.csv",
                   "openCodelist": true,
                   "minLength": 1
@@ -567,7 +564,7 @@
                 "parameter": {
                   "title": "Engineering demand parameter",
                   "type": "string",
-                  "description": "The name of the engineering demand parameter, taken from the open [engineering demand parameter codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#engineering_demand_parameter).",
+                  "description": "The name of the engineering demand parameter, taken from the open [engineering_demand_parameter codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#engineering-demand-parameter).",
                   "codelist": "engineering_demand_parameter.csv",
                   "openCodelist": true,
                   "minLength": 1
@@ -575,7 +572,7 @@
                 "approach": {
                   "title": "Engineering demand impact function approach",
                   "type": "string",
-                  "description": "The approach the engineering demand impact function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
+                  "description": "The approach the engineering demand impact function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
                   "enum": [
                     "analytical",
                     "empirical",
@@ -589,7 +586,7 @@
                 "relationship": {
                   "title": "Engineering demand impact relationship type",
                   "type": "string",
-                  "description": "The type of function relationships used to calculate the engineering impact values, taken from the closed [relationship type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#relationship_type).",
+                  "description": "The type of function relationships used to calculate the engineering impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
                   "enum": [
                     "discrete",
                     "math_bespoke",
@@ -613,8 +610,7 @@
         "se_category": {
           "title": "Socio-economic index category",
           "description": "The socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Classification",
-          "minProperties": 1
+          "$ref": "#/$defs/Classification"
         }
       },
       "minProperties": 1
@@ -622,178 +618,31 @@
     "loss": {
       "title": "Loss metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe the losses associated with people, infrastructure, housing, production capacities and other tangible human assets due to the occurrence of one or more hazards.",
-      "required": [
-        "hazard_type",
-        "cost"
-      ],
+      "description": "Metadata that is specific to datasets that describe measures of impact in the form of damage or destruction caused by a disaster.",
       "properties": {
-        "hazard_type": {
-          "title": "Hazard type",
-          "type": "string",
-          "description": "The main type of hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_process": {
-          "title": "Hazard process",
-          "type": "string",
-          "description": "The main hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone"
-          ]
-        },
-        "description": {
-          "title": "Loss description",
-          "type": "string",
-          "description": "Additional details of the dataset.",
-          "minLength": 1
-        },
-        "category": {
-          "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure category codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#exposure_category).",
-          "type": "string",
-          "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment"
-          ]
-        },
-        "cost": {
-          "title": "Asset cost",
+        "losses": {
+          "title": "Losses",
           "type": "array",
-          "description": "The costs associated with the loss of specific elements of assets detailed in the dataset.",
+          "description": "Information about the losses described in the dataset.",
           "items": {
-            "$ref": "#/$defs/Cost"
+            "$ref": "#/$defs/Losses"
           },
           "minItems": 1,
           "uniqueItems": true
-        },
-        "impact": {
-          "title": "Loss impact",
-          "description": "The details of the loss impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact",
-          "minProperties": 1
-        },
-        "type": {
-          "title": "Loss type",
-          "type": "string",
-          "description": "The type of loss described in the dataset, from the closed [loss type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#loss_type).",
-          "codelist": "loss_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "ground_up",
-            "insured",
-            "gross",
-            "count",
-            "net_precat",
-            "net_postcat"
-          ]
-        },
-        "approach": {
-          "title": "Loss approach",
-          "type": "string",
-          "description": "The approach the loss calculation function is based upon, taken from the closed [function approach codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#function_approach).",
-          "codelist": "function_approach.csv",
-          "openCodelist": false,
-          "enum": [
-            "analytical",
-            "empirical",
-            "hybrid",
-            "judgement"
-          ]
-        },
-        "hazard_analysis_type": {
-          "title": "Event frequency type",
-          "type": "string",
-          "description": "The type of occurrence frequency represented in the modelled scenario, from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#loss_type).",
-          "enum": [
-            "deterministic",
-            "empirical",
-            "probabilistic"
-          ],
-          "codelist": "analysis_type.csv",
-          "openCodelist": false
-        },
-        "hazard_id": {
-          "title": "Hazard dataset",
-          "type": "string",
-          "description": "A unique identifier for the hazard dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "exposure_id": {
-          "title": "Exposure dataset",
-          "type": "string",
-          "description": "A unique identifier for the exposure dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "vulnerability_id": {
-          "title": "Vulnerability dataset",
-          "type": "string",
-          "description": "A unique identifier for the vulnerability dataset used in the modelled scenario(s). Use of an HTTP URI is recommended.",
-          "minLength": 1
         }
       },
       "minProperties": 1
     },
     "links": {
       "title": "Links",
-      "description": "Links to related resources. The first item in the links array must be a link to the canonical JSON schema that describes the structure of the data.",
+      "description": "Links to related resources. The purpose of this field is to declare the version of the RDLS schema that describes the metadata. The first item in the links array must be a link to the canonical URL of the RDLS JSON schema with relation type 'describedby'. Subsequent items must conform to an IANA link relation type other than 'describedby'. To link to  sources of information that contribute to the creation of the dataset or to related resources that point to the dataset, use `sources` and `referencedBy`, respectively.",
       "type": "array",
       "prefixItems": [
         {
           "$ref": "#/$defs/Link",
           "properties": {
             "href": {
-              "const": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json"
+              "const": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json"
             },
             "rel": {
               "const": "describedby"
@@ -846,7 +695,7 @@
         "media_type": {
           "title": "Media type",
           "type": "string",
-          "description": "The media type of the resource, from the open [media_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#media_type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "description": "The media type of the resource, from the open [media_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#media-type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
           "codelist": "media_type.csv",
           "openCodelist": true,
           "minLength": 1
@@ -854,7 +703,7 @@
         "format": {
           "title": "Format",
           "type": "string",
-          "description": "A human-readable description of the file format of the resource, taken from the open [data formats codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#data_formats).",
+          "description": "A human-readable description of the file format of the resource, taken from the open [data_formats codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-formats).",
           "codelist": "data_formats.csv",
           "openCodelist": true,
           "minLength": 1
@@ -881,7 +730,8 @@
         "download_url": {
           "title": "Download Url",
           "type": "string",
-          "description": "The web address this resource can be downloaded from in the given `.format`."
+          "description": "The web address this resource can be downloaded from in the given `.format`.",
+          "minLength": 1
         },
         "temporal": {
           "title": "Temporal coverage",
@@ -950,7 +800,7 @@
         "role": {
           "title": "Role",
           "type": "string",
-          "description": "The entity's role in relation to the dataset, using the open [roles codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#roles).",
+          "description": "The entity's role in relation to the dataset, using the open [roles codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#roles).",
           "codelist": "roles.csv",
           "openCodelist": true,
           "minLength": 1
@@ -978,7 +828,7 @@
           "description": "The name or title of the resource.",
           "minLength": 1
         },
-        "authorNames": {
+        "author_names": {
           "title": "Author names",
           "type": "array",
           "description": "The names of the authors of the resource.",
@@ -989,7 +839,7 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "datePublished": {
+        "date_published": {
           "title": "Publication date",
           "type": "string",
           "description": "The date that the resource was first published.",
@@ -1039,7 +889,7 @@
         "type": {
           "title": "type",
           "type": "string",
-          "description": "The nature of the source, from the closed [source type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#source_type).",
+          "description": "The nature of the source, from the closed [source_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#source-type).",
           "codelist": "source_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1050,7 +900,7 @@
         "component": {
           "title": "Component",
           "type": "string",
-          "description": "The risk data component the source has been used in, from the closed [risk data type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#risk_data_type).",
+          "description": "The risk data component the source has been used in, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
           "codelist": "risk_data_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1119,7 +969,7 @@
         "countries": {
           "title": "Countries",
           "type": "array",
-          "description": "The countries covered by the geographical area, from the closed [country codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#country).",
+          "description": "The countries covered by the geographical area, from the closed [country codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#country).",
           "items": {
             "type": "string",
             "enum": [
@@ -1379,7 +1229,7 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "gazetteerEntries": {
+        "gazetteer_entries": {
           "title": "Gazetteer entries",
           "type": "array",
           "description": "Entries from geographical indices or directories describing the geographical area. This field should be used to describe sub-national coverage. Use of ISO 3166-2 is recommended.",
@@ -1417,7 +1267,7 @@
         "scale": {
           "title": "Spatial scale",
           "type": "string",
-          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#spatial_scale).",
+          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#spatial_scale).",
           "codelist": "spatial_scale.csv",
           "openCodelist": false,
           "enum": [
@@ -1447,7 +1297,7 @@
         "scheme": {
           "title": "Scheme",
           "type": "string",
-          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#location_gazetteers).",
+          "description": "The gazetteer from which the entry is drawn, from the open [location gazetteers codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#location_gazetteers).",
           "codelist": "location_gazetteers.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1475,7 +1325,7 @@
         "type": {
           "title": "Type",
           "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#geometry_type).",
+          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
           "codelist": "geometry_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1538,7 +1388,7 @@
         },
         "type": {
           "title": "Hazard type",
-          "description": "The hazard type for this hazard, from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#hazard_type).",
+          "description": "The hazard type for this hazard, from the closed [hazard_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#hazard-type).",
           "type": "string",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
@@ -1558,7 +1408,7 @@
         },
         "processes": {
           "title": "Hazard processes",
-          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#process_type).",
+          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#process_type).",
           "type": "array",
           "items": {
             "type": "string",
@@ -1602,7 +1452,7 @@
         },
         "intensity_measure": {
           "title": "Intensity measure",
-          "description": "The metric and unit in which the intensity of this hazard is measured, from the open [intensity measure codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#IMT).",
+          "description": "The metric and unit in which the intensity of this hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
           "type": "string",
           "codelist": "IMT.csv",
           "openCodelist": true,
@@ -1623,7 +1473,7 @@
       "properties": {
         "type": {
           "title": "Hazard type",
-          "description": "The hazard type for this hazard, from the closed [hazard type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#hazard_type).",
+          "description": "The hazard type for this hazard, from the closed [hazard_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#hazard-type).",
           "type": "string",
           "codelist": "hazard_type.csv",
           "openCodelist": false,
@@ -1643,7 +1493,7 @@
         },
         "processes": {
           "title": "Hazard processes",
-          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists.html#process_type).",
+          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#process_type).",
           "type": "array",
           "items": {
             "type": "string",
@@ -1717,7 +1567,7 @@
         "analysis_type": {
           "title": "Analysis type",
           "type": "string",
-          "description": "The type of analysis used by the hazard model, from the closed [analysis type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#analysis_type).",
+          "description": "The type of analysis used by the hazard model, from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type).",
           "codelist": "analysis_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1729,7 +1579,7 @@
         "frequency_distribution": {
           "title": "Frequency distribution",
           "type": "string",
-          "description": "The frequency distribution assumed for the occurrence of events over a multi-year timeline, from the [frequency distribution codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#frequency_distribution).",
+          "description": "The frequency distribution assumed for the occurrence of events over a multi-year timeline, from the [frequency_distribution codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#frequency-distribution).",
           "codelist": "frequency_distribution.csv",
           "openCodelist": false,
           "enum": [
@@ -1742,7 +1592,7 @@
         "seasonality": {
           "title": "Seasonality distribution",
           "type": "string",
-          "description": "The seasonality distribution assumed for the occurrence of events across a calendar year, from the [seasonality distribution codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#seasonality_distribution)",
+          "description": "The seasonality distribution assumed for the occurrence of events across a calendar year, from the [seasonality_distribution codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#seasonality-distribution)",
           "codelist": "seasonality.csv",
           "openCodelist": false,
           "enum": [
@@ -1753,7 +1603,7 @@
         "calculation_method": {
           "title": "Calculation Method",
           "type": "string",
-          "description": "The methodology used for the calculation of the event set in the modelled scenario(s), taken from the closed [data calculation type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#data_calculation_type).",
+          "description": "The methodology used for the calculation of the event set in the modelled scenario(s), taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type).",
           "enum": [
             "inferred",
             "observed",
@@ -1813,16 +1663,20 @@
           "description": "A locally unique identifier for this event.",
           "minLength": 1
         },
-        "disaster_identifier": {
-          "title": "Disaster identifier",
-          "type": "string",
-          "description": "The GLIDE number associated with this disaster event. A globally unique identifier for the event, assigned by [GLIDE](https://www.glidenumber.net/glide/public/search/search.jsp).",
-          "minLength": 1
+        "disaster_identifiers": {
+          "title": "Disaster identifiers",
+          "type": "array",
+          "description": "Identifiers for the disaster to which this event relates.",
+          "items": {
+            "$ref": "#/$defs/Classification"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "calculation_method": {
           "title": "Model calculation method",
           "type": "string",
-          "description": "The methodology used for the calculation of the event in the modelled scenario(s), from the closed [data calculation type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#data_calculation_type).",
+          "description": "The methodology used for the calculation of the event in the modelled scenario(s), from the closed [data calculation type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#data_calculation_type).",
           "codelist": "data_calculation_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1844,8 +1698,7 @@
             "probabilistic": {
               "title": "Probabilistic frequency",
               "description": "How often the event is expected to occur. Can be return period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
-              "$ref": "#/$defs/Probabilistic",
-              "minProperties": 1
+              "$ref": "#/$defs/Probabilistic"
             },
             "empirical": {
               "title": "Empirical",
@@ -1855,8 +1708,7 @@
                 "temporal": {
                   "title": "Temporal occurrence",
                   "description": "The period of time over which the event occurred.",
-                  "$ref": "#/$defs/Period",
-                  "minProperties": 1
+                  "$ref": "#/$defs/Period"
                 },
                 "return_period": {
                   "title": "Associated return period",
@@ -1932,7 +1784,7 @@
         "intensity_measure": {
           "title": "Hazard intensity measurement",
           "type": "string",
-          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
+          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
           "codelist": "IMT.csv",
           "openCodelist": true,
           "minLength": 1
@@ -1964,7 +1816,7 @@
         },
         "dimension": {
           "title": "Metric dimension",
-          "description": "The dimension on which the asset's exposure is measured, from the closed [metric dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_dimension).",
+          "description": "The dimension on which the asset's exposure is measured, from the closed [metric_dimension codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#metric-dimension).",
           "type": "string",
           "codelist": "metric_dimension.csv",
           "openCodelist": false,
@@ -1979,9 +1831,10 @@
         "quantity_kind": {
           "title": "Metric quantity kind",
           "type": "string",
-          "description": "The kind of quantity by which the exposure is quantified, from the open [quantity kind codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#quantity_kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
+          "description": "The kind of quantity by which the exposure is quantified, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
           "codelist": "quantity_kind.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minLength": 1
         }
       },
       "minProperties": 1
@@ -2004,7 +1857,7 @@
         },
         "dimension": {
           "title": "Cost dimension",
-          "description": "The dimension of the assets that have incurred the cost, from the closed [metric dimension codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#metric_dimension).",
+          "description": "The dimension of the assets that have incurred the cost, from the closed [metric_dimension codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#metric-dimension).",
           "type": "string",
           "codelist": "metric_dimension.csv",
           "openCodelist": false,
@@ -2019,7 +1872,7 @@
         "unit": {
           "title": "Cost unit",
           "type": "string",
-          "description": "The unit in which the cost is specified, from the closed [currency codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#currency).",
+          "description": "The unit in which the cost is specified, from the closed [currency codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#currency).",
           "codelist": "currency.csv",
           "openCodelist": false,
           "enum": [
@@ -2382,7 +2235,7 @@
         "type": {
           "title": "Impact type",
           "type": "string",
-          "description": "The type of impact calculated, taken from the closed [impact type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#impact_type).",
+          "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type).",
           "codelist": "impact_type.csv",
           "openCodelist": false,
           "enum": [
@@ -2394,7 +2247,7 @@
         "metric": {
           "title": "Impact metric",
           "type": "string",
-          "description": "The metric used to describe the impact, taken from the open [impact metric codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#impact_metric).",
+          "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
           "codelist": "impact_metric.csv",
           "openCodelist": true,
           "minLength": 1
@@ -2402,7 +2255,7 @@
         "unit": {
           "title": "Impact unit",
           "type": "string",
-          "description": "The unit the impact value is expressed in, taken from the open [impact unit codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#impact_unit).",
+          "description": "The unit the impact value is expressed in, taken from the open [impact_unit codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-unit).",
           "codelist": "impact_unit.csv",
           "openCodelist": true,
           "minLength": 1
@@ -2410,7 +2263,7 @@
         "base_data_type": {
           "title": "Impact base data type",
           "type": "string",
-          "description": "The type of data used to calculate the impact values, taken from the closed [data calculation type codelist](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#data_calculation_type).",
+          "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type).",
           "codelist": "data_calculation_type.csv",
           "openCodelist": false,
           "enum": [
@@ -2426,10 +2279,13 @@
       "title": "Classification",
       "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
       "type": "object",
+      "required": [
+        "id"
+      ],
       "properties": {
         "scheme": {
           "title": "Scheme",
-          "description": "The scheme or codelist from which the classification code is taken, using the open [classification_scheme](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#classification_scheme) codelist.",
+          "description": "The scheme or codelist from which the classification code is taken, using the open [classification_scheme](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme) codelist.",
           "type": "string",
           "codelist": "classification_scheme.csv",
           "openCodelist": true,
@@ -2478,6 +2334,172 @@
         "href",
         "rel"
       ],
+      "minProperties": 1
+    },
+    "Losses": {
+      "title": "Losses",
+      "type": "object",
+      "description": "Losses resulting from the occurrence of a hazard.",
+      "required": [
+        "id",
+        "hazard_type",
+        "cost"
+      ],
+      "properties": {
+        "id": {
+          "title": "Losses identifier",
+          "description": "A local identifier for the losses.",
+          "type": "string",
+          "minLength": 1
+        },
+        "hazard_type": {
+          "title": "Hazard type",
+          "type": "string",
+          "description": "The main type of hazard that resulted in the losses, from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
+          "codelist": "hazard_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
+          ]
+        },
+        "hazard_process": {
+          "title": "Hazard process",
+          "type": "string",
+          "description": "The main hazard process that resulted in the losses, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "codelist": "process_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_ballistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone"
+          ]
+        },
+        "description": {
+          "title": "Loss description",
+          "type": "string",
+          "description": "Additional details of the losses.",
+          "minLength": 1
+        },
+        "category": {
+          "title": "Asset category",
+          "description": "The category of the lost assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
+          "type": "string",
+          "codelist": "exposure_category.csv",
+          "openCodelist": false,
+          "enum": [
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment"
+          ]
+        },
+        "cost": {
+          "title": "Costs",
+          "description": "The costs associated with the losses.",
+          "$ref": "#/$defs/Cost"
+        },
+        "impact": {
+          "title": "Loss impact",
+          "description": "Details of the way in which the loss impact was calculated and measured.",
+          "$ref": "#/$defs/Impact"
+        },
+        "type": {
+          "title": "Loss type",
+          "type": "string",
+          "description": "The type of losses, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
+          "codelist": "loss_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "ground_up",
+            "insured",
+            "gross",
+            "count",
+            "net_precat",
+            "net_postcat"
+          ]
+        },
+        "approach": {
+          "title": "Loss approach",
+          "type": "string",
+          "description": "The approach the loss calculation function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
+          "codelist": "function_approach.csv",
+          "openCodelist": false,
+          "enum": [
+            "analytical",
+            "empirical",
+            "hybrid",
+            "judgement"
+          ]
+        },
+        "hazard_analysis_type": {
+          "title": "Event frequency type",
+          "type": "string",
+          "description": "The type of occurrence frequency represented in the losses, from the closed [analysis_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
+          "enum": [
+            "deterministic",
+            "empirical",
+            "probabilistic"
+          ],
+          "codelist": "analysis_type.csv",
+          "openCodelist": false
+        },
+        "hazard_id": {
+          "title": "Hazard dataset",
+          "type": "string",
+          "description": "A unique identifier for the hazard dataset used in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "exposure_id": {
+          "title": "Exposure dataset",
+          "type": "string",
+          "description": "A unique identifier for the exposure dataset used in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "vulnerability_id": {
+          "title": "Vulnerability dataset",
+          "type": "string",
+          "description": "A unique identifier for the vulnerability dataset used in in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        }
+      },
       "minProperties": 1
     }
   },

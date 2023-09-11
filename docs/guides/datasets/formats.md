@@ -6,13 +6,13 @@ Risk data can be made of spatial or non-spatial data.
 
 - **Non-spatial data** most often consist of table data stored as `.xlsx` or `.csv` files for greater compatibility.
 
-Below is a list of recommended and common geodata formats used for risk data.
+Below is a list of suggested and common geodata formats used for risk data.
 
-## Recommended geodata formats
+## Suggested geodata formats
 
 ### Vector data: GeoPackage
 
-**GeoPackage** (`.gpkg`) is an open, non-proprietary SQLite3 extended Database container. It is platform-independent and standards-based (OGC, QGIS, GDAL). Similar to ESRI geodatabase, but more responsive. It is a single-file format that can store anything from vector data and attributes, symbology, pyramids, table data as individual layers within one geopackage. It is possible to store rasters, but its supports for raster data is still limited and we don't recommend storing those as geopackage. Supports SQL and API to DB - fit for web applications, can export to PostGIS. There is no limit of attributes, attribute name size, or file size (unlike shapefile, `.shp`). Internal metadata specifications are under development.
+**GeoPackage** (`.gpkg`) is an open, non-proprietary SQLite3 extended Database container. It is platform-independent and standards-based (OGC, QGIS, GDAL). Similar to ESRI geodatabase, but more responsive. It is a single-file format that can store anything from vector data and attributes, symbology, pyramids, table data as individual layers within one geopackage. It is possible to store rasters, but its supports for raster data is still limited and we don't encourage storing those as geopackage. Supports SQL and API to DB - fit for web applications, can export to PostGIS. There is no limit of attributes, attribute name size, or file size (unlike shapefile, `.shp`). Internal metadata specifications are under development.
 
 ```{note}
 Always prefer WIDE geodatabase table formatting instead of LONG format when working in GIS environment; by duplicating vector rows, the geospatial information is also duplicated, which cause the size of the data to increase exponentially, and slows down the spatial processing.

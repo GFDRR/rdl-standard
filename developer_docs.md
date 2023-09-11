@@ -65,14 +65,19 @@ You can use either `pyenv` or `python3-venv`:
 
 1. Install [pyenv](https://github.com/pyenv/pyenv). The [pyenv installer](https://github.com/pyenv/pyenv-installer) is recommended.
 1. Create a virtual environment.
+
    ```bash
    pyenv virtualenv rdl-standard
    ```
+
 1. Activate the virtual environment
+
    ```bash
    pyenv activate rdl-standard
    ```
+
 1. Set the local application-specific virtual environment. Once set, navigating to the `rdl-standard` directory will automatically activate the environment.
+
    ```bash
    pyenv local rdl-standard
    ```
@@ -83,22 +88,29 @@ If you are using Python 3.3 or newer, `venv` is included in the standard Python 
 
 1. Create a virtual environment called .ve.
     a. Linux/MacOS users
-        ```bash
-        python3 -m venv .ve
-        ```
+
+      ```bash
+      python3 -m venv .ve
+      ```
+
     a. Windows users
-        ```bash
-        py -m venv .ve
-        ```
+
+      ```bash
+      py -m venv .ve
+      ```
+
 1. Activate the virtual environment. You must run this command for each new terminal session.
     a. Linux/MacOS users
-        ```bash
-        source .ve/bin/activate
-        ```
+
+      ```bash
+      source .ve/bin/activate
+      ```
+
     b. Windows users
-        ```bash
-        .\.ve\Scripts\activate
-        ```
+
+      ```bash
+      .\.ve\Scripts\activate
+      ```
 
 #### Install requirements
 
@@ -229,6 +241,18 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
 1. Add Sphinx directives to the Markdown files in `docs` to render your example in the built documentation.
 
 ## Style guides
+
+### Schema style guide
+
+#### Field descriptions
+
+##### Codelists
+
+Use the following template, noting that any `_` characters in the codelist title need to be replaced with the `-` character in the codelist URL:
+
+```
+The <semantics>, from the <open|closed> [<codelist_title> codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#codelist-title).
+```
 
 ### Changelog style guide
 

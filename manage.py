@@ -155,13 +155,18 @@ def generate_codelist_markdown(codelist, type, references, definitions, defs_pat
     
     markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
 
+  newline = "\n"
+
   markdown.extend([
     "\nThis codelist has the following codes:\n\n"
+    "````{dropdown} Codes\n",
+    f"{f':open:{newline}' if len(read_lines(f'{codelistdir}/{type}/{codelist}.csv')) < 10 else ''}",
     "```{csv-table-no-translate}\n",
     ":header-rows: 1\n",
     ":widths: auto\n",
     f":file: ../../schema/codelists/{type}/{codelist}.csv\n",
-    "```\n\n"
+    "```\n",
+    "````\n\n"
   ])
 
   return markdown

@@ -23,7 +23,7 @@
           "TKM",
           "UZB"
         ],
-        "gazetteerEntries": [
+        "gazetteer_entries": [
           {
             "id": "KAZ",
             "scheme": "ISO 3166-1 alpha-3"
@@ -140,7 +140,7 @@
       ],
       "links": [
         {
-          "href": "https://raw.githubusercontent.com/GFDRR/rdl-standard/0__2__0/schema/rdls_schema.json",
+          "href": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
           "rel": "describedby"
         }
       ]

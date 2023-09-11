@@ -6,7 +6,7 @@ Metadata is data that provides information about a dataset. The RDLS covers meta
 
 RDLS defines risk-specific metadata for describing four types of dataset:
 
-- **Hazard** datasets concern the processes or phenomena that may result in impacts such as loss of life, property damage and social and economic disruption. For example, the frequency and magnitude of earthquakes.
+- **Hazard** datasets concern the processes or phenomena that might result in impacts such as loss of life, property damage and social and economic disruption. For example, the frequency and magnitude of earthquakes.
 
 - **Exposure** datasets concern the situation of people, infrastructure and other tangible assets in hazard prone area. For example, the number of people living in an earthquake-affected area.
 
@@ -22,7 +22,7 @@ The [RDLS schema](../reference/schema.md) defines the meaning, structure and for
 
 Metadata fields that are common to all resources are specified at the dataset level, whilst metadata fields that can vary by resource are specified at the resource level. Metadata fields that are specific to a particular type of risk data are specified at the dataset level and grouped under the relevant object: Hazard, Exposure, Vulnerability or Loss.
 
-The schema specifies a title, description and data type for each field. The schema also specifies other rules to which RDLS metadata needs to conform, such as which fields are required (mandatory) and whether fields need to conform to a particular format or range of values. Some fields refer to [codelists](../reference/codelists.md) to limit and standardise their values.
+The schema specifies a title, description and data type for each field. The schema also specifies other rules to which RDLS metadata needs to conform, such as which fields are mandatory and whether fields need to conform to a particular format or range of values. Some fields refer to [codelists](../reference/codelists.md) to limit and standardise their values.
 
 For example, the `risk_data_type` field is defined as follows:
 

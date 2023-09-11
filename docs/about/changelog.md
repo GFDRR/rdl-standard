@@ -2,7 +2,7 @@
 
 This page lists changes to the Risk Data Library Standard.
 
-## 0.2.0 - YYYY-MM-DD
+## 0.2.0 - 2023-09-08
 
 ### Schema
 
@@ -77,6 +77,17 @@ This page lists changes to the Risk Data Library Standard.
 - [#210](https://github.com/GFDRR/rdl-standard/pull/210) - Replace `resource.`url with `.access_url` and `download_url`
 - [#218](https://github.com/GFDRR/rdl-standard/pull/218) - `Vulnerability·taxonomy` removed from required array.
 - [#220](https://github.com/GFDRR/rdl-standard/pull/220) - Reorder top-level fields.
+- [#233](https://github.com/GFDRR/rdl-standard/pull/233), [#235](https://github.com/GFDRR/rdl-standard/pull/235) - Rename authorNames to `author_names`, datePublished to `date_published` and gazetteerEntries to `gazetteer_entries`.
+- [#232](https://github.com/GFDRR/rdl-standard/pull/232)
+  - Convert `disaster_identifiers` to array of `Classification` objects.
+  - Add new codes to classification_scheme.csv.
+- [#236](https://github.com/GFDRR/rdl-standard/pull/236), [#244](https://github.com/GFDRR/rdl-standard/pull/244) - Fix broken codelist reference URLs.
+- [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Clarify purpose of `links`, add link to dataset identifier guidance in `id` description.
+- [#241](https://github.com/GFDRR/rdl-standard/pull/241) - Update schema and documentation URLs.
+- [#242](https://github.com/GFDRR/rdl-standard/pull/242) - Remove redundant `minProperties` keywords, add missing `minLength` and `uniqueItems` keywords.
+- [#246](https://github.com/GFDRR/rdl-standard/pull/246) - Update `loss` component:
+  - Replace `loss` object with `loss.losses` array.
+  - Replace `loss.costs` array with `loss.losses.cost` object.
 
 ### Codelists
 
@@ -91,6 +102,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#164](https://github.com/GFDRR/rdl-standard/pull/164) - replace camelCase codes with snake_case codes in 'frequency_distribution.csv' and 'seasonality.csv'
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
 - [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
+- [#214](https://github.com/GFDRR/rdl-standard/pull/214) - use consistent separators in `classification_scheme.csv` codes.
 
 ### Normative documentation
 
@@ -105,6 +117,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#212](https://github.com/GFDRR/rdl-standard/pull/212) - Update diagrams, add descriptions for dataset, resource and risk components.
 - [#225](https://github.com/GFDRR/rdl-standard/pull/225) - Update high level descriptions of the 4 risk data components.
 - [#196](https://github.com/GFDRR/rdl-standard/pull/196) - Add examples to schema reference documentation.
+- [#214](https://github.com/GFDRR/rdl-standard/pull/214) - Improve display of codelist reference.
 
 ### Non-normative documentation
 
@@ -117,3 +130,5 @@ This page lists changes to the Risk Data Library Standard.
 - [#234](https://github.com/GFDRR/rdl-standard/pull/234) - Add guidance on inclusion of non-RDLS data in datasets.
 
 ### Other
+- [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Add content to `docs/guides/metadata.md`, add UNDRR-ISC HIP taxonomy mapping.
+- [#243](https://github.com/GFDRR/rdl-standard/pull/243) - Add link to RDLS Convertor tool in navigation menu.
