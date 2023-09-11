@@ -2,7 +2,7 @@
 
 The Risk Data Library Standard (RDLS) is an open metadata standard for describing risk datasets used in climate and disaster risk assessments.
 
-Metadata is data that provides information about a dataset. The RDLS covers metadata that can apply to any dataset, such as a dataset's title and author, and metadata that is specific to risk datasets, such as the type of hazard a dataset relates to. RDLS does not specify which fields to include within risk datasets. You ought to make sure that your risk datasets include the fields needed to fulfil their intended uses.
+Metadata is data that provides information about a dataset. The RDLS covers metadata that can apply to any dataset, such as a dataset's title and author, and metadata that is specific to risk datasets, such as the type of hazard a dataset relates to. RDLS provides general guidance on how the risk datasets should be structured, but it does not have strict rules about which methods to apply or which fields or variables to include. The user ought to make sure that risk datasets follow a logical structure and include all the information necessary to fulfil their intended uses.
 
 RDLS defines risk-specific metadata for describing four types of dataset:
 

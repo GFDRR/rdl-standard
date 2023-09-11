@@ -130,5 +130,6 @@ This page lists changes to the Risk Data Library Standard.
 - [#234](https://github.com/GFDRR/rdl-standard/pull/234) - Add guidance on inclusion of non-RDLS data in datasets.
 
 ### Other
+
 - [#239](https://github.com/GFDRR/rdl-standard/pull/239) - Add content to `docs/guides/metadata.md`, add UNDRR-ISC HIP taxonomy mapping.
 - [#243](https://github.com/GFDRR/rdl-standard/pull/243) - Add link to RDLS Convertor tool in navigation menu.
