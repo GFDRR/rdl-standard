@@ -5,6 +5,7 @@ sphinx-togglebutton
 sphinxcontrib-mermaid
 sphinxcontrib-opendataservices
 sphinxcontrib-opendataservices-jsonschema
+sphinxcontrib-plantuml
 sphinx-intl
 #transifex-client
 sphinx_rtd_theme

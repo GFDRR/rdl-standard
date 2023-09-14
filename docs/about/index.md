@@ -1,15 +1,15 @@
 # About
 
-This user guide is written to support use of the Risk Data Library Standard.
+This section provides background information on the Risk Data Library Standard (RDLS), including how it is governed, its history and roadmap, and who to contact for more information.
 
 ```{eval-rst}
 .. toctree::
    :maxdepth: 1
-   :hidden:
 
    contacts
    changelog
    governance
    license
+   roadmap
 
 ```

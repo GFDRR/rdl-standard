@@ -1,0 +1,97 @@
+UNDRR Hazard cluster,UNDRR Specific hazard,RDL Hazard type,RDL Process type
+Convective-related,Downburst,,
+Convective-related,Lightning (Electrical storm),,
+Convective-related,Thunderstorm,,
+Flood,Coastal ﬂood,Coastal Flood,Coastal Flood
+Flood,Estuarine ﬂood,Coastal Flood,Coastal Flood
+Flood,Flash ﬂood,Flood,Pluvial Flood
+Flood,Fluvial (riverine ﬂood),Flood,Fluvial Flood
+Flood,Groundwater ﬂood,Flood,Groundwater Flood
+Flood,Ice-jam ﬂood including debris,,
+Flood,Ponding ﬂood,Flood,Pluvial Flood
+Flood,Snowmelt ﬂood,,
+Flood,Surface water ﬂooding,Flood,Pluvial Flood
+Flood,Glacial lake outburst ﬂood,,
+Lithometeors,Black carbon (Brown clouds),,
+Lithometeors,Dust storm or Sandstorm,,
+Lithometeors,Fog,,
+Lithometeors,Haze,,
+Lithometeors,Polluted air,,
+Lithometeors,Sand haze,,
+Lithometeors,Smoke,,
+Marine,Ocean acidification,,
+Marine,Rogue wave,,
+Marine,Sea water intrusion,,
+Marine,Sea ice (ice bergs),,
+Marine,Ice ﬂow,,
+Marine,Seiche,,
+Marine,Storm surge,Coastal Flood,Storm Surge
+Marine,Storm tides,,
+Marine,Tsunami,Tsunami,Tsunami
+Pressure-related,Depression or cyclone,Strong Wind,Tropical cyclone
+Pressure-related,Extra-tropical cyclone,Strong Wind,Extratropical cyclone
+Pressure-related,Sub-tropical cyclone,Strong Wind,Tropical cyclone
+Precipitation-related,Acid rain,,
+Precipitation-related,Blizzard,,
+Precipitation-related,Drought,Drought,Agricultural Drought
+Precipitation-related,Hail,,
+Precipitation-related,Ice storm,,
+Precipitation-related,Snow / Ice,,
+Precipitation-related,Snow storm,,
+Temperature-related,Cold wave,Extreme Temperature,Extreme cold
+Temperature-related,Dzud,,
+Temperature-related,Freeze,Extreme Temperature,Extreme cold
+Temperature-related,Frost (hoar frost),Extreme Temperature,Extreme cold
+Temperature-related,Freezing rain,,
+Temperature-related,Glaze,,
+Temperature-related,Ground frost,,
+Temperature-related,Heatwave,Extreme Temperature,Extreme heat
+Temperature-related,Icing (including ice),,
+Temperature-related,Thaw,,
+Terrestrial,Avalanche,Landslide,Snow Avalanche
+Terrestrial,Mud ﬂow,Landslide,Mudflow
+Terrestrial,Rock slide,Landslide,Rockslide
+Wind-related,Derecho,,
+Wind-related,Gale (strong gale),,
+Wind-related,Squall,,
+Wind-related,Subtropical storm,Strong Wind,Extratropical cyclone
+Wind-related,"Tropical cyclone (cyclonic wind, storm surge)",Strong Wind,Tropical cyclone
+Wind-related,Tropical storm,Strong Wind,Tropical cyclone
+Wind-related,Tornado,Convective Storm,Tornado
+Wind-related,Wind,Strong Wind,Extratropical cyclone
+Seismogenic,Earthquake,Earthquake,
+Seismogenic,Ground shaking (earthquake),Earthquake,Ground Motion
+Seismogenic,Liquefaction (earthquake trigger),Earthquake,Liquefaction
+Seismogenic,Surface rupture/fissuring,Earthquake,Primary Rupture and Secondary rupture
+Seismogenic,"Subsidence and uplift, including shoreline change (earthquake trigger)",,
+Seismogenic,Tsunami (earthquake trigger),Tsunami,Tsunami
+Seismogenic,Landslide or debris ﬂow (earthquake trigger),Landslide,Landslide
+Seismogenic,Ground gases (earthquake trigger),,
+Volcanogenic,Lava ﬂow,Volcanic,Lava
+Volcanogenic,Ash/ Tephra fall (physical and chemical),Volcanic,Ashfall
+Volcanogenic,Ballistics (volcanic),Volcanic,Ballistics
+Volcanogenic,Pyroclastic density current,Volcanic,Pyroclastic Flow
+Volcanogenic,Debris ﬂow/Lahar/Floods,Volcanic,Lahar
+Volcanogenic,Landslide (volcanic trigger),Landslide,Landslide
+Volcanogenic,Ground shaking (volcanic earthquake),Earthquake,Ground Motion
+Volcanogenic,"Ground gases (slow release) and Volcanic gases and aerosols (CH4, CO2, H2S, SO2 etc.)",,
+Volcanogenic,Tsunami (volcanic trigger),Tsunami,Tsunami
+Volcanogenic,Lightning (volcanic trigger),,
+Volcanogenic,Urban fire (during/following volcanic eruption),,
+Volcanogenic,"Subsidence and uplift, including shoreline change (magmatic/volcanic trigger)",,
+Shallow geohazard,"Ground shaking (induced earthquake, reservoir fll, dams, cavity collapse, underground explosion, impact, hydrocarbon felds, shale exploration, etc.)",Earthquake,Ground Motion
+Shallow geohazard,Liquefaction (groundwater trigger),Flood,Liquefaction
+Shallow geohazard,Ground fissuring,,
+Shallow geohazard,"Subsidence and uplift, including shoreline change",,
+Shallow geohazard,Localized subsidence (e.g. due to swelling clays),,
+Shallow geohazard,Sinkhole,,
+Shallow geohazard,"Ground gases (CH4, Rn, etc.)",,
+Shallow geohazard,Riverbank / Coastal erosion,,
+Shallow geohazard,Sand encroachment,,
+Shallow geohazard,Aquifer recharge (systems failure/ outages),,
+Shallow geohazard,"Landslide or Debris ﬂow, including submarine landslides",Landslide,Landslide
+Shallow geohazard,Rockfall,Landslide,Rockfall
+Shallow geohazard,Landscape creep,,
+Shallow geohazard,Avalanche,Landslide,Snow Avalanche
+Shallow geohazard,Tsunami (submarine landslide trigger),Tsunami,Tsunami
+Environmental degradation (Forestry),Wildfires,Wildfire,Wildfire

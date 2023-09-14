@@ -9,3 +9,10 @@
 .admonition.external-link > .admonition-title::before {
   content: "\f0c1";
 }
+.ofds-extra-nav a.reference.external::after {
+  font-family: FontAwesome;
+  content: "\f08e";
+  vertical-align: super;
+  font-size: 60%;
+  margin: 0 0.2em;
+}

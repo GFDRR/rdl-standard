@@ -29,7 +29,7 @@ def test_valid():
     """
     errors = 0
 
-    for path, name, text, fieldnames, rows in walk_csv_data():
+    for path, name, text, fieldnames, rows in walk_csv_data(excluded=('.git', '.ve', '_static', 'build', 'fixtures', 'flatten-tool', 'docson', 'examples')):
         codelist = is_codelist(fieldnames)
         width = len(fieldnames)
         columns = []

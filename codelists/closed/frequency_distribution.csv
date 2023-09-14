@@ -1,4 +1,0 @@
-Code,Title,Description
-poisson,Poisson,Data modelled using a poisson distribution.
-negativeBinomial,Negative Binomial,Data modelled using a negative binomial distribution.
-userDefined,User defined,Data modelled using a user defined distribution.
