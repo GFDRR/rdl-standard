@@ -4,3 +4,5 @@ buildings,Buildings,"Residential, commercial, industrial and public-service buil
 infrastructure,Infrastructure,"Lifelines infrastructure, including transport, communications, energy, water."
 population,Population,People.
 natural_environment,Natural environment,"The natural environment, including forestry and other types of vegetation."
+economic_indicator,Economic Indicator,"Economic activity and growth, including measures of economic value such as Gross Domestic Product (GDP)."
+development_index,Development Index,"Social development, or social and economic development, such as the Human Development Index (HDI)."
