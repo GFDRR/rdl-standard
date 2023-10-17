@@ -880,6 +880,12 @@
           "description": "The name or title of the source.",
           "minLength": 1
         },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "description": "The details about the source dataset or model.",
+          "minLength": 1
+        },        
         "url": {
           "title": "URL",
           "type": "string",
