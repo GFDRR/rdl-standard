@@ -191,7 +191,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "taxonomy": {
@@ -376,7 +378,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "cost": {
@@ -880,6 +884,12 @@
           "description": "The name or title of the source.",
           "minLength": 1
         },
+        "description": {
+          "title": "Description",
+          "type": "string",
+          "description": "The details about the source dataset or model.",
+          "minLength": 1
+        },        
         "url": {
           "title": "URL",
           "type": "string",
@@ -1825,7 +1835,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "indicator_index_value"
           ]
         },
         "quantity_kind": {
@@ -1866,7 +1877,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "indicator_index_value"
           ]
         },
         "unit": {
@@ -2428,7 +2440,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "cost": {
