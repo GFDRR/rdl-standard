@@ -191,7 +191,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "taxonomy": {
@@ -376,7 +378,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "cost": {
@@ -1831,7 +1835,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "indicator_index_value"
           ]
         },
         "quantity_kind": {
@@ -1872,7 +1877,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "indicator_index_value"
           ]
         },
         "unit": {
@@ -2434,7 +2440,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "cost": {
