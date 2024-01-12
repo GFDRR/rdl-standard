@@ -1,97 +1,110 @@
-UNDRR Hazard cluster,UNDRR Specific hazard,RDL Hazard type,RDL Process type
-Convective-related,Downburst,,
-Convective-related,Lightning (Electrical storm),,
-Convective-related,Thunderstorm,,
-Flood,Coastal ﬂood,Coastal Flood,Coastal Flood
-Flood,Estuarine ﬂood,Coastal Flood,Coastal Flood
-Flood,Flash ﬂood,Flood,Pluvial Flood
-Flood,Fluvial (riverine ﬂood),Flood,Fluvial Flood
-Flood,Groundwater ﬂood,Flood,Groundwater Flood
-Flood,Ice-jam ﬂood including debris,,
-Flood,Ponding ﬂood,Flood,Pluvial Flood
-Flood,Snowmelt ﬂood,,
-Flood,Surface water ﬂooding,Flood,Pluvial Flood
-Flood,Glacial lake outburst ﬂood,,
-Lithometeors,Black carbon (Brown clouds),,
-Lithometeors,Dust storm or Sandstorm,,
-Lithometeors,Fog,,
-Lithometeors,Haze,,
-Lithometeors,Polluted air,,
-Lithometeors,Sand haze,,
-Lithometeors,Smoke,,
-Marine,Ocean acidification,,
-Marine,Rogue wave,,
-Marine,Sea water intrusion,,
-Marine,Sea ice (ice bergs),,
-Marine,Ice ﬂow,,
-Marine,Seiche,,
-Marine,Storm surge,Coastal Flood,Storm Surge
-Marine,Storm tides,,
-Marine,Tsunami,Tsunami,Tsunami
-Pressure-related,Depression or cyclone,Strong Wind,Tropical cyclone
-Pressure-related,Extra-tropical cyclone,Strong Wind,Extratropical cyclone
-Pressure-related,Sub-tropical cyclone,Strong Wind,Tropical cyclone
-Precipitation-related,Acid rain,,
-Precipitation-related,Blizzard,,
-Precipitation-related,Drought,Drought,Agricultural Drought
-Precipitation-related,Hail,,
-Precipitation-related,Ice storm,,
-Precipitation-related,Snow / Ice,,
-Precipitation-related,Snow storm,,
-Temperature-related,Cold wave,Extreme Temperature,Extreme cold
-Temperature-related,Dzud,,
-Temperature-related,Freeze,Extreme Temperature,Extreme cold
-Temperature-related,Frost (hoar frost),Extreme Temperature,Extreme cold
-Temperature-related,Freezing rain,,
-Temperature-related,Glaze,,
-Temperature-related,Ground frost,,
-Temperature-related,Heatwave,Extreme Temperature,Extreme heat
-Temperature-related,Icing (including ice),,
-Temperature-related,Thaw,,
-Terrestrial,Avalanche,Landslide,Snow Avalanche
-Terrestrial,Mud ﬂow,Landslide,Mudflow
-Terrestrial,Rock slide,Landslide,Rockslide
-Wind-related,Derecho,,
-Wind-related,Gale (strong gale),,
-Wind-related,Squall,,
-Wind-related,Subtropical storm,Strong Wind,Extratropical cyclone
-Wind-related,"Tropical cyclone (cyclonic wind, storm surge)",Strong Wind,Tropical cyclone
-Wind-related,Tropical storm,Strong Wind,Tropical cyclone
-Wind-related,Tornado,Convective Storm,Tornado
-Wind-related,Wind,Strong Wind,Extratropical cyclone
-Seismogenic,Earthquake,Earthquake,
-Seismogenic,Ground shaking (earthquake),Earthquake,Ground Motion
-Seismogenic,Liquefaction (earthquake trigger),Earthquake,Liquefaction
-Seismogenic,Surface rupture/fissuring,Earthquake,Primary Rupture and Secondary rupture
-Seismogenic,"Subsidence and uplift, including shoreline change (earthquake trigger)",,
-Seismogenic,Tsunami (earthquake trigger),Tsunami,Tsunami
-Seismogenic,Landslide or debris ﬂow (earthquake trigger),Landslide,Landslide
-Seismogenic,Ground gases (earthquake trigger),,
-Volcanogenic,Lava ﬂow,Volcanic,Lava
-Volcanogenic,Ash/ Tephra fall (physical and chemical),Volcanic,Ashfall
-Volcanogenic,Ballistics (volcanic),Volcanic,Ballistics
-Volcanogenic,Pyroclastic density current,Volcanic,Pyroclastic Flow
-Volcanogenic,Debris ﬂow/Lahar/Floods,Volcanic,Lahar
-Volcanogenic,Landslide (volcanic trigger),Landslide,Landslide
-Volcanogenic,Ground shaking (volcanic earthquake),Earthquake,Ground Motion
-Volcanogenic,"Ground gases (slow release) and Volcanic gases and aerosols (CH4, CO2, H2S, SO2 etc.)",,
-Volcanogenic,Tsunami (volcanic trigger),Tsunami,Tsunami
-Volcanogenic,Lightning (volcanic trigger),,
-Volcanogenic,Urban fire (during/following volcanic eruption),,
-Volcanogenic,"Subsidence and uplift, including shoreline change (magmatic/volcanic trigger)",,
-Shallow geohazard,"Ground shaking (induced earthquake, reservoir fll, dams, cavity collapse, underground explosion, impact, hydrocarbon felds, shale exploration, etc.)",Earthquake,Ground Motion
-Shallow geohazard,Liquefaction (groundwater trigger),Flood,Liquefaction
-Shallow geohazard,Ground fissuring,,
-Shallow geohazard,"Subsidence and uplift, including shoreline change",,
-Shallow geohazard,Localized subsidence (e.g. due to swelling clays),,
-Shallow geohazard,Sinkhole,,
-Shallow geohazard,"Ground gases (CH4, Rn, etc.)",,
-Shallow geohazard,Riverbank / Coastal erosion,,
-Shallow geohazard,Sand encroachment,,
-Shallow geohazard,Aquifer recharge (systems failure/ outages),,
-Shallow geohazard,"Landslide or Debris ﬂow, including submarine landslides",Landslide,Landslide
-Shallow geohazard,Rockfall,Landslide,Rockfall
-Shallow geohazard,Landscape creep,,
-Shallow geohazard,Avalanche,Landslide,Snow Avalanche
-Shallow geohazard,Tsunami (submarine landslide trigger),Tsunami,Tsunami
-Environmental degradation (Forestry),Wildfires,Wildfire,Wildfire
+Identifier, UNDRR Hazard cluster,UNDRR Specific hazard,RDL Hazard type,RDL Process type
+MH0001,Convective-related,Downburst,,
+MH0002,Convective-related,Lightning (Electrical storm),,
+MH0003,Convective-related,Thunderstorm,,
+MH0004,Flood,Coastal ﬂood,Coastal Flood,Coastal Flood
+MH0005,Flood,Estuarine ﬂood,Coastal Flood,Coastal Flood
+MH0006,Flood,Flash ﬂood,Flood,Pluvial Flood
+MH0007,Flood,Fluvial (riverine ﬂood),Flood,Fluvial Flood
+MH0008,Flood,Groundwater ﬂood,Flood,Groundwater Flood
+MH0009,Flood,Ice-jam ﬂood including debris,,
+MH0010,Flood,Ponding ﬂood,Flood,Pluvial Flood
+MH0011,Flood,Snowmelt ﬂood,,
+MH0012,Flood,Surface water ﬂooding,Flood,Pluvial Flood
+MH0013,Flood,Glacial lake outburst ﬂood,,
+MH0014,Lithometeors,Black carbon (Brown clouds),,
+MH0015,Lithometeors,Dust storm or Sandstorm,,
+MH0016,Lithometeors,Fog,,
+MH0017,Lithometeors,Haze,,
+MH0018,Lithometeors,Polluted air,,
+MH0019,Lithometeors,Sand haze,,
+MH0020,Lithometeors,Smoke,,
+MH0021,Marine,Ocean acidification,,
+MH0022,Marine,Rogue wave,,
+MH0023,Marine,Sea water intrusion,,
+MH0024,Marine,Sea ice (ice bergs),,
+MH0025,Marine,Ice ﬂow,,
+MH0026,Marine,Seiche,,
+MH0027,Marine,Storm surge,Coastal Flood,Storm Surge
+MH0028,Marine,Storm tides,,
+MH0029,Marine,Tsunami,Tsunami,Tsunami
+MH0030,Pressure-related,Depression or cyclone,Strong Wind,Tropical cyclone
+MH0031,Pressure-related,Extra-tropical cyclone,Strong Wind,Extratropical cyclone
+MH0032,Pressure-related,Sub-tropical cyclone,Strong Wind,Tropical cyclone
+MH0033,Precipitation-related,Acid rain,,
+MH0034,Precipitation-related,Blizzard,,
+MH0035,Precipitation-related,Drought,Drought,Agricultural Drought
+MH0036,Precipitation-related,Hail,,
+MH0037,Precipitation-related,Ice storm,,
+MH0038,Precipitation-related,Snow / Ice,,
+MH0039,Precipitation-related,Snow storm,,
+MH004,Temperature-related,Cold wave,Extreme Temperature,Extreme cold
+MH0041,Temperature-related,Dzud,,
+MH0042,Temperature-related,Freeze,Extreme Temperature,Extreme cold
+MH0043,Temperature-related,Frost (hoar frost),Extreme Temperature,Extreme cold
+MH0044,Temperature-related,Freezing rain,,
+MH0045,Temperature-related,Glaze,,
+MH0046,Temperature-related,Ground frost,,
+MH0047,Temperature-related,Heatwave,Extreme Temperature,Extreme heat
+MH0048,Temperature-related,Icing (including ice),,
+MH0049,Temperature-related,Thaw,,
+MH0050,Terrestrial,Avalanche,Landslide,Snow Avalanche
+MH0051,Terrestrial,Mud ﬂow,Landslide,Mudflow
+MH0052,Terrestrial,Rock slide,Landslide,Rockslide
+MH0053,Wind-related,Derecho,,
+MH0054,Wind-related,Gale (strong gale),,
+MH0055,Wind-related,Squall,,
+MH0056,Wind-related,Subtropical storm,Strong Wind,Extratropical cyclone
+MH0057,Wind-related,"Tropical cyclone (cyclonic wind, storm surge)",Strong Wind,Tropical cyclone
+MH0058,Wind-related,Tropical storm,Strong Wind,Tropical cyclone
+MH0059,Wind-related,Tornado,Convective Storm,Tornado
+MH0060,Wind-related,Wind,Strong Wind,Extratropical cyclone
+GH0001,Seismogenic,Earthquake,Earthquake,
+GH0002,Seismogenic,Ground shaking (earthquake),Earthquake,Ground Motion
+GH0003,Seismogenic,Liquefaction (earthquake trigger),Earthquake,Liquefaction
+GH0004,Seismogenic,Surface rupture/fissuring,Earthquake,Primary Rupture and Secondary rupture
+GH0005,Seismogenic,"Subsidence and uplift, including shoreline change (earthquake trigger)",,
+GH0006,Seismogenic,Tsunami (earthquake trigger),Tsunami,Tsunami
+GH0007,Seismogenic,Landslide or debris ﬂow (earthquake trigger),Landslide,Landslide
+GH0008,Seismogenic,Ground gases (earthquake trigger),,
+GH0009,Volcanogenic,Lava ﬂow,Volcanic,Lava
+GH0010,Volcanogenic,Ash/ Tephra fall (physical and chemical),Volcanic,Ashfall
+GH0011,Volcanogenic,Ballistics (volcanic),Volcanic,Ballistics
+GH0012,Volcanogenic,Pyroclastic density current,Volcanic,Pyroclastic Flow
+GH0013,Volcanogenic,Debris ﬂow/Lahar/Floods,Volcanic,Lahar
+GH0014,Volcanogenic,Landslide (volcanic trigger),Landslide,Landslide
+GH0015,Volcanogenic,Ground shaking (volcanic earthquake),Earthquake,Ground Motion
+GH0016,Volcanogenic,"Ground gases (slow release) and Volcanic gases and aerosols (CH4, CO2, H2S, SO2 etc.)",,
+GH0017,Volcanogenic,Tsunami (volcanic trigger),Tsunami,Tsunami
+GH0018,Volcanogenic,Lightning (volcanic trigger),,
+GH0019,Volcanogenic,Urban fire (during/following volcanic eruption),,
+GH0020,Volcanogenic,"Subsidence and uplift, including shoreline change (magmatic/volcanic trigger)",,
+GH0021,Shallow geohazard,"Ground shaking (induced earthquake, reservoir fll, dams, cavity collapse, underground explosion, impact, hydrocarbon felds, shale exploration, etc.)",Earthquake,Ground Motion
+GH0022,Shallow geohazard,Liquefaction (groundwater trigger),Flood,Liquefaction
+GH0023,Shallow geohazard,Ground fissuring,,
+GH0024,Shallow geohazard,"Subsidence and uplift, including shoreline change",,
+GH0025,Shallow geohazard,Localized subsidence (e.g. due to swelling clays),,
+GH0026,Shallow geohazard,Sinkhole,,
+GH0027,Shallow geohazard,"Ground gases (CH4, Rn, etc.)",,
+GH0028,Shallow geohazard,Riverbank / Coastal erosion,,
+GH0029,Shallow geohazard,Sand encroachment,,
+GH0030,Shallow geohazard,Aquifer recharge (systems failure/ outages),,
+GH0031,Shallow geohazard,Submarine landslide,Landslide,Landslide
+GH0032,Shallow geohazard,Rockfall,Landslide,Rockfall
+GH0033,Shallow geohazard,Landscape creep,,
+GH0034,Shallow geohazard,Avalanche,Landslide,Snow Avalanche
+GH0035,Shallow geohazard,Tsunami (submarine landslide trigger),Tsunami,Tsunami
+EN0002,Environmental Degradation,Air Pollution (Point Source),,
+EN0003,Environmental Degradation,Ambient (Outdoor) Air Pollution,,
+EN0013,Environmental degradation (Forestry),Wildfires,Wildfire,Wildfire
+EN0019,Environmental Degradation,Soil Erosion,,
+EN0020,Environmental Degradation,Coastal Erosion and Shoreline Change,,
+EN0023,Environmental Degradation,Sea level rise,,
+BI0001,Insect Infestation,Insect Pest Infestations,,
+BI0002,Insect Infestation,Locust,,
+BI0016,Infectious Diseases (Human and Animal),Airborne Diseases,,
+BI0033,Infectious Diseases (Human and Animal),COVID-19 (SARS-CoV-2) (Human),,
+BI0043,Infectious Diseases (Human and Animal),Pandemic Influenza (Human),,
+TL0009,Construction/ Structural Failure,Dam Failure,,
+TL0046,Flood,Drain and Sewer Flooding,,
+TL0047,Flood,Reservoir Flooding,,
