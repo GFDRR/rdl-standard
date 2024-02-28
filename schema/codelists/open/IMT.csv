@@ -15,6 +15,7 @@ MMI:-,Modified Mercalli Intensity,MMI,,"A dimensionless scale of seismic intensi
 CAV:m/s,Cumulative absolute velocity,CAV,m/s,"The relationship between absolute value of acceleration at time t, relative to total duration of the ground motion record. Expressed in meters per second (m/s)."
 D_B:s,Bracketed duration,D_B,s,The time elapsed between the first and last excursions beyond a specified threshold acceleration (typically 0.05 g or 0.1 g). Expressed in seconds (s).
 fl_wd:m,Flood water depth (m),fl_wd,m,The depth of flood waters measured relative to the normal limits of the body of water responsible. Expressed in meters (m).
+fl_wd:cm,Flood water depth (cm),fl_wd,cm,The depth of flood waters measured relative to the normal limits of the body of water responsible. Expressed in centimeters (cm).
 fl_wv:m/s,Flood flow velocity (m/s),fl_wv,m/s,The rate at which flood waters move. Expressed in meters per second (m/s).
 v_ect(3s):km/h,3-sec at 10m sustained wind speed (kph),v_ect(3s),km/h,"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
 v_ect(1m):km/h,1-min at 10m sustained wind speed (kph),v_ect(1m),km/h,"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
