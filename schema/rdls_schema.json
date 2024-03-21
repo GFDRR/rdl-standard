@@ -19,7 +19,7 @@
     "id": {
       "title": "Dataset identifier",
       "type": "string",
-      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended. For more information, see [how to assign a dataset identifier](https://rdl-standard.readthedocs.io/en/{{version}}/reference/codelists/#assign-a-dataset-identifier).",
+      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended. For more information, see [how to assign a dataset identifier](https://docs.riskdatalibrary.org/en/{{version}}/guides/metadata/#assign-a-dataset-identifier).",
       "minLength": 1
     },
     "title": {
