@@ -3,7 +3,10 @@ PGA:g,Peak ground acceleration in g,PGA,g,"The largest *increase* in velocity re
 PGA:gal,Peak ground acceleration in gal,PGA,gal,"The largest *increase* in velocity recorded at a particular location during an earthquake. Expressed in multiples of gal, where 1 gal is equal to 0.01 m/s2 (1 g = 981 gal)."
 PGA:m/s2,Peak ground acceleration in m/s^2,PGA,m/s2,The largest *increase* in velocity recorded at a particular location during an earthquake. Expressed in meters per second squared (m/s2).
 PGV:m/s,Peak ground velocity in m/s,PGV,m/s,The greatest speed of ground shaking recorded at a particular location during an earthquake. Expressed in meters per second (m/s).
-AvgSa:m/s2,Average spectral acceleration in m/s^2,AvgSa,m/s2,Rhe mean of the spectral accelerations at a set of periods that are crucial for risk assessment and loss estimation of a structure of interest. Expressed in meters per second squared (m/s2).
+PGV:cm/s,Peak ground velocity in cm/s,PGV,cm/s,The greatest speed of ground shaking recorded at a particular location during an earthquake. Expressed in centimeters per second (cm/s).
+AvgSa:m/s2,Average spectral acceleration in m/s^2,AvgSa,m/s2,The mean of the spectral accelerations at a set of periods that are crucial for risk assessment and loss estimation of a structure of interest. Expressed in meters per second squared (m/s2).
+Sa_1:m/s2,Spectral acceleration (period: 1 sec) in m/s^2,Sa_1,m/s2,The spectral acceleration at a period of 1 second. Expressed in meters per second squared (m/s2).
+Sa_03:m/s2,Spectral acceleration (period: 0.3 sec) in m/s^2,Sa_03,m/s2,The spectral acceleration at a period of 0.3 second. Expressed in meters per second squared (m/s2).
 Sd(T1):m,Spectral displacement,Sd(T1),m,"The maximum displacement experienced by a structure, as modelled by a mass on a vertical spring having the same natural period of vibration, T, as the building. Expressed in meters (m)."
 Sv(T1):m/s,Spectral velocity,Sv(T1),m/s,"The maximum velocity experienced by a structure, as modelled by a mass on a vertical spring having the same natural period of vibration, T, as the building. Expressed in meters per second (m/s)."
 PGDf:m,Permanent ground deformation,PGDf,m,The displacement of the ground surface due to the movement of a fault. Expressed in meters (m).
@@ -14,29 +17,29 @@ EMS:-,European macroseismic scale,EMS,,"A dimensionless scale of seismic intensi
 MMI:-,Modified Mercalli Intensity,MMI,,"A dimensionless scale of seismic intensity. MMI intensity denotes how strongly an earthquake affects a specific place, with 10 classes I (Not felt) to X (Extreme)."
 CAV:m/s,Cumulative absolute velocity,CAV,m/s,"The relationship between absolute value of acceleration at time t, relative to total duration of the ground motion record. Expressed in meters per second (m/s)."
 D_B:s,Bracketed duration,D_B,s,The time elapsed between the first and last excursions beyond a specified threshold acceleration (typically 0.05 g or 0.1 g). Expressed in seconds (s).
-fl_wd:m,Flood water depth (m),fl_wd,m,The depth of flood waters measured relative to the normal limits of the body of water responsible. Expressed in meters (m).
-fl_wd:cm,Flood water depth (cm),fl_wd,cm,The depth of flood waters measured relative to the normal limits of the body of water responsible. Expressed in centimeters (cm).
-fl_wv:m/s,Flood flow velocity (m/s),fl_wv,m/s,The rate at which flood waters move. Expressed in meters per second (m/s).
+wd:m,Inundation depth above ground (m),wd,m,Water depth measured relative to ground level. Expressed in meters (m).
+wd:cm,Inundation depth above ground (cm),wd,cm,Water depth measured relative to ground level. Expressed in centimeters (cm).
+wd_f:m,Inundation depth above floor (m),wd_f,m,Water depth measured relative to building floor level. Expressed in meters (m).
+wd_f:cm,Inundation depth above floor (cm),wd_f,cm,Water depth measured relative to building floor level. Expressed in centimeters (cm).
+wv:m/s,Flow velocity (m/s),wv,m/s,The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s).
 v_ect(3s):km/h,3-sec at 10m sustained wind speed (kph),v_ect(3s),km/h,"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
 v_ect(1m):km/h,1-min at 10m sustained wind speed (kph),v_ect(1m),km/h,"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
 v_etc(10m):km/h,10-min sustained wind speed (kph),v_ect(10m),km/h,The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph).
 PGWS_tcy:km/h,Peak gust wind speed,PGWS_tcy,km/h,The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph).
 ls_fd:m,Landslide flow depth,ls_fd,m,The depth of the landslide flow. Expressed in meters (m).
 I_DF:m3/s2,Debris-flow intensity index,I_DF,m3/s2,A landslide intensity index proposed by Jakob et al. (2012). Expressed in meters cubed per second squared (m3/s2).
-v_lsl:m/s2,Landslide flow velocity,v_lsl,m/s2,The impact velocity of a landslide. Expressed in meters per second squared (m/s2).
 ls_mfd:m,Maximum foundation displacement,ls_mfd,m,The maximum (absolute) foundation displacement due to landslide. Expressed in meters (m).
+rf_KE:kJ:Rockfall kinetic energy,rf_KE,kJ,The kinetic energy of a rockfall, as a function of mass, velocity or energy and fly height of blocks. Expressed in kiloJoules (kJ).
 SD_lsl:m,Landslide displacement,SD_lsl,m,The displacement associated with the slow moving landslides. Expressed in meters (m).
 Rh_tsi:m,Tsunami wave runup height (m),Rh_tsi,m,"The height reached by water measured relative to a stated datum such as mean sea level, mean low water, sea level at the time of the tsunami. Expressed in meters (m)."
-d_tsi:m,Tsunami inundation depth (m),d_tsi,m,"The depth of the water from a tsunami, measured on shore in different locations. Expressed in meters (m)."
 h_tsi:m,Tsunami wave height,h_tsi,m,"The vertical distance between the trough (lowest point) and crest (highest point) of a tsunami wave. It is a measure of the amplitude or size of the wave, indicating the magnitude of the water displacement caused by the tsunami. Expressed in meters (m)."
-v_tsi:m/s,Tsunami velocity,v_tsi,m/s,The peak tsunami velocity generally calculated from numerical simulation as the vector sum of the velocity components in the directions of the two orthogonal axes of the 2D flow calculation. Expressed in meters per second (m/s).
 Fh_tsi:m,Tsunami Horizontal Force,Fh_tsi,m,The lateral or horizontal force exerted by a tsunami. Expressed in meters (m).
 MF:m3/s2,Momentum flux,MF,m3/s2,"A vector in the direction of flow, of magnitude equal to the mass-flow per unit area. Expressed in meters cubed per seconds squared (m3/s2)."
 MMF:m4/s2,Modified momentum flux,MMF,M4/s2,"The product of momentum flux and inundation depth, considered a proxy for the overturning moment induced by the flow. Expressed in meters to the fourth per seconds squared (m4/s2)."
 F_drag:kN,Drag force,F_drag,kN,The force exerted on an object (per unit width perpendicular to the direction of flow) due to the movement of a surrounding fluid. Expressed in kilo Newtons (kN).
 Fr:-,Froude number,Fr,,A measure of flow velocity non-dimensionalized by the gravity-wave velocity.
 F_QS:kN,Quasi-steady force,F_QS,kN,Steady-state force estimation considering choked and sub-critical flow for a body of width b in a channel of width w. Expressed in kilo Newtons (kN).
-h_vaf:mm,Accumulated ashfall thickness (mm),h_vaf,mm,Accumulated depth or thickness of ash following a volcanic eruption. Expressed in meters (m).
+h_vaf:mm,Accumulated ashfall thickness (mm),h_vaf,mm,Accumulated depth or thickness of ash following a volcanic eruption. Expressed in millimeters (mm).
 L_vaf:kg/m2,Ash loading,L_vaf,kg/m2,The load of accumulated volcanic ash measured in kilograms per square meter (km/m^2).
 ASI:per,Agricultural Stress Index,ASI,per,A quick-look indicator that facilitates the early identification of cropped land with a high likelihood of water stress (drought). Expressed as a percentage (per).
 DI:-,Drought Intensity,DI,,"Agricultural droughts are classified by their intensity and are categorized into four classes: Extreme, Severe, Moderate or Mild. The intensity of the drought is calculated through the Weighted Mean Vegetation Health Index aggregated per GAUL 2 region. Source: FAO Seasonal Global Indicators."
