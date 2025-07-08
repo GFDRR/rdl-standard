@@ -906,7 +906,13 @@
           "type": "string",
           "description": "The details about the source dataset or model.",
           "minLength": 1
-        },        
+        },
+        "lineage": {
+          "title": "Lineage",
+          "type": "string",
+          "description": "Information about the processing steps, transformations, and methodology applied to the source. Common elements include processing steps (e.g., corrections, transformations, algorithms), tools or software used, date and personnel involved. For example, describes if the source dataset/model has been clipped for the geographic region, resampled to different resolution, reprojected to a different CRS, etc.",
+          "minLength": 1
+        },
         "url": {
           "title": "URL",
           "type": "string",
