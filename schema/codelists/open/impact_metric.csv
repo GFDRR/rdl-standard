@@ -24,3 +24,4 @@ disruption_loss,Disruption (loss),"Duration of disruption to businesses or servi
 asset_loss,Number of assets,"The estimated number of structures, or length of infrastructure, damaged.",Loss
 displaced_count,Number of people displaced,The estimated number of people displaced due to physical damage and disruption.,Loss
 displaced_days,Number of days that people are displaced,The estimated number of days that people are displaced due to physical damage and disruption.,Loss
+production_loss,Production Loss,The reduction or interruption in the output of goods or services.,Loss
