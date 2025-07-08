@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
-  "title": "Risk dataset (Risk Data Library Schema)",
-  "description": "A collection of risk data, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
+  "$id": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema_models.json",
+  "title": "Risk dataset (Risk Data Library Schema: Models)",
+  "description": "A collection of hazard and risk models, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
   "required": [
     "id",
     "title",
-    "risk_data_type",
+    "model_type",
     "publisher",
     "contact_point",
     "creator",
@@ -17,37 +17,39 @@
   ],
   "properties": {
     "id": {
-      "title": "Dataset identifier",
+      "title": "Model identifier",
       "type": "string",
-      "description": "A unique identifier for the dataset. Use of an HTTP URI is recommended. For more information, see [how to assign a dataset identifier](https://docs.riskdatalibrary.org/en/{{version}}/guides/metadata/#assign-a-dataset-identifier).",
+      "description": "A unique identifier for the model. Use of an HTTP URI is recommended. For more information, see [how to assign a dataset identifier](https://docs.riskdatalibrary.org/en/{{version}}/guides/metadata/#assign-a-dataset-identifier).",
       "minLength": 1
     },
     "title": {
       "title": "Title",
       "type": "string",
-      "description": "The title of the dataset.",
+      "description": "The title of the model.",
       "minLength": 1
     },
     "description": {
       "title": "Description",
       "type": "string",
-      "description": "A short description of the dataset.",
+      "description": "A short description of the model.",
       "minLength": 1
     },
-    "risk_data_type": {
-      "title": "Risk data type",
+    "model_type": {
+      "title": "Model type",
       "type": "array",
-      "description": "The types of risk data included in the dataset, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+      "description": "The types of model included in the dataset, from the closed [risk_model_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-model-type).",
       "items": {
         "type": "string",
         "enum": [
           "hazard",
           "exposure",
           "vulnerability",
-          "loss"
+          "capacity",
+          "probabilistic loss",
+          "deterministic loss"
         ]
       },
-      "codelist": "risk_data_type.csv",
+      "codelist": "risk_model_type.csv",
       "openCodelist": false,
       "minItems": 1,
       "uniqueItems": true
@@ -58,15 +60,15 @@
       "$ref": "#/$defs/Entity"
     },
     "version": {
-      "title": "Dataset version",
+      "title": "Model version",
       "type": "string",
-      "description": "The version indicator (name or identifier) of the dataset.",
+      "description": "The version indicator (name or identifier) of the model.",
       "minLength": 1
     },
     "purpose": {
-      "title": "Dataset purpose",
+      "title": "Model purpose",
       "type": "string",
-      "description": "The purpose for which the dataset was created.",
+      "description": "The purpose for which the model was created.",
       "minLength": 1
     },
     "project": {
@@ -78,42 +80,42 @@
     "details": {
       "title": "Additional details",
       "type": "string",
-      "description": "Additional details about the dataset.",
+      "description": "Additional details about the model.",
       "minLength": 1
     },
     "spatial": {
       "title": "Spatial coverage",
-      "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`.",
+      "description": "The geographical area covered by the model. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`.",
       "$ref": "#/$defs/Location"
     },
     "temporal_resolution": {
       "title": "Temporal resolution",
       "type": "string",
-      "description": "The minimum period of time resolvable in this dataset, in ISO8601 duration format.",
+      "description": "The minimum period of time resolvable in this model, in ISO8601 duration format.",
       "format": "duration"
     },
     "license": {
       "title": "License",
       "type": "string",
-      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
-      "codelist": "license.csv",
+      "description": "A legal document giving official permission to do something with the model, taken from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
+      "codelist": "model_license.csv",
       "openCodelist": true,
       "minLength": 1
     },
     "contact_point": {
       "title": "Contact point",
-      "description": "Contact information for the maintainer of the dataset.",
+      "description": "Contact information for the maintainer of the model.",
       "$ref": "#/$defs/Entity"
     },
     "creator": {
       "title": "Creator",
-      "description": "The entity responsible for producing the dataset.",
+      "description": "The entity responsible for producing the model.",
       "$ref": "#/$defs/Entity"
     },
     "attributions": {
       "title": "Attributions",
       "type": "array",
-      "description": "Information about entities and their roles in relation to the dataset.",
+      "description": "Information about entities and their roles in relation to the model.",
       "items": {
         "$ref": "#/$defs/Attribution"
       },
@@ -123,7 +125,7 @@
     "sources": {
       "title": "Sources",
       "type": "array",
-      "description": "Sources of information that contribute to the creation of the dataset.",
+      "description": "Sources of information that contribute to the creation of the model.",
       "items": {
         "$ref": "#/$defs/Source"
       },
@@ -133,7 +135,7 @@
     "referenced_by": {
       "title": "Referenced by",
       "type": "array",
-      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the dataset.",
+      "description": "Related resources, such as publications, that reference, cite, or otherwise point to the model.",
       "items": {
         "$ref": "#/$defs/Related_resource"
       },
@@ -143,9 +145,19 @@
     "resources": {
       "title": "Resources",
       "type": "array",
-      "description": "Information about the resources included in the dataset.",
+      "description": "Information about the resources included in the model; this may include datasets used in the development or operation of the model, model documentation, examples of projects or studies using the model.",
       "items": {
         "$ref": "#/$defs/Resource"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "platform": {
+      "title": "Platform",
+      "type": "array",
+      "description": "Information about the platforms on which the model can be used.",
+      "items": {
+        "$ref": "#/$defs/Platform"
       },
       "minItems": 1,
       "uniqueItems": true
@@ -153,7 +165,7 @@
     "hazard": {
       "title": "Hazard metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+      "description": "Metadata that is specific to the hazard component of the model, which executes processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "required": [
         "event_sets"
       ],
@@ -161,7 +173,7 @@
         "event_sets": {
           "title": "Event sets",
           "type": "array",
-          "description": "Information about sets of hazard events.",
+          "description": "Information about sets of hazard events applied in the model.",
           "items": {
             "$ref": "#/$defs/Event_set"
           },
@@ -174,7 +186,7 @@
     "exposure": {
       "title": "Exposure metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
+      "description": "Metadata that describes the types of exposure that can be analysed in the model; exposure is the input that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
       "required": [
         "category",
         "metrics"
@@ -183,7 +195,7 @@
         "category": {
           "title": "Exposure category",
           "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
-          "type": "string",
+          "type": "array",
           "codelist": "exposure_category.csv",
           "openCodelist": false,
           "enum": [
@@ -191,21 +203,19 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment",
-            "economic_indicator",
-            "development_index"
+            "natural_environment"
           ]
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
           "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
+          "description": "The name of the taxonomy scheme(s) used to describe asset features within the model.",
           "minLength": 1
         },
         "metrics": {
           "title": "Exposure metrics",
           "type": "array",
-          "description": "The measurements used to quantify the extent to which assets are exposed.",
+          "description": "The measurements that can be used in the model to quantify assets.",
           "items": {
             "$ref": "#/$defs/Metric"
           },
@@ -218,209 +228,20 @@
     "vulnerability": {
       "title": "Vulnerability metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
+      "description": "Metadata that is specific to the vulnerability component of the model, which applies fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
       "required": [
-        "hazard_primary",
-        "intensity",
-        "category",
-        "cost",
-        "impact",
-        "spatial",
         "functions"
       ],
       "properties": {
-        "hazard_primary": {
-          "title": "Primary hazard type",
-          "type": "string",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_secondary": {
-          "title": "Secondary hazard type",
-          "type": "string",
-          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_process_primary": {
-          "title": "Primary hazard process",
-          "type": "string",
-          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone"
-          ]
-        },
-        "hazard_process_secondary": {
-          "title": "Secondary hazard process",
-          "type": "string",
-          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone"
-          ]
-        },
-        "hazard_analysis_type": {
-          "title": "Hazard analysis type",
-          "type": "string",
-          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type).",
-          "codelist": "analysis_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "deterministic",
-            "empirical",
-            "probabilistic"
-          ]
-        },
-        "intensity": {
-          "title": "Hazard intensity measurement",
-          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
-          "type": "string",
-          "codelist": "IMT.csv",
-          "openCodelist": true,
-          "minLength": 1
-        },
-        "category": {
-          "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
-          "type": "string",
-          "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment",
-            "economic_indicator",
-            "development_index"
-          ]
-        },
-        "cost": {
-          "title": "Asset cost",
-          "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
-          "items": {
-            "$ref": "#/$defs/Cost"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "taxonomy": {
-          "title": "Exposure taxonomy scheme",
-          "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset. Use of GED4ALL is recommended.",
-          "minLength": 1
-        },
-        "impact": {
-          "title": "Vulnerability impact",
-          "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact"
-        },
-        "spatial": {
-          "title": "Spatial coverage",
-          "description": "The geographical area to which the vulnerability function used in the modelled scenarios applies. `.scale` must be provided. Other fields may be provided if the spatial coverage of the vulnerability function differs from the coverage specified in the dataset-level `spatial` field.",
-          "$ref": "#/$defs/Location",
-          "required": [
-            "scale"
-          ]
-        },
         "functions": {
           "title": "Impact functions",
           "type": "object",
-          "description": "Details of the functions used to calculate the vulnerability dataset.",
+          "description": "Details of the vulnerability and fragility functions used in the model.",
           "properties": {
-            "vulnerability": {
-              "title": "Vulnerability function",
+            "physical_vulnerability": {
+              "title": "Physical vulnerability function",
               "type": "object",
-              "description": "The vulnerability function used to calculate the impact of the hazard.",
+              "description": "A physical vulnerability function used to calculate the impact of the hazard.",
               "properties": {
                 "approach": {
                   "title": "Vulnerability function approach",
@@ -601,6 +422,64 @@
                 }
               },
               "minProperties": 1
+            },
+            "social_vulnerability": {
+              "title": "Socio-economic vulnerability function",
+              "type": "object",
+              "description": "A socio-economic vulnerability function used to calculate the impact of the hazard.",
+              "properties": {
+                "approach": {
+                  "title": "Vulnerability function approach",
+                  "type": "string",
+                  "description": "The approach the vulnerability function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
+                  "enum": [
+                    "analytical",
+                    "empirical",
+                    "hybrid",
+                    "judgement"
+                  ],
+                  "codelist": "function_approach.csv",
+                  "openCodelist": false,
+                  "minLength": 1
+                },
+                "relationship": {
+                  "title": "Vulnerability impact relationship type",
+                  "type": "string",
+                  "description": "The type of function relationships used to calculate the vulnerability impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
+                  "enum": [
+                    "discrete",
+                    "math_bespoke",
+                    "math_parametric"
+                  ],
+                  "codelist": "relationship_type.csv",
+                  "openCodelist": false,
+                  "minLength": 1
+                },
+                "se_data_source": {
+                  "title": "Socio-economic data sources",
+                  "type": "string",
+                  "description": "The socio-economic data sources used in the function.",
+                  "enum": [
+                    "household survey",
+                    "post-disaster studies",
+                    "national census",
+                    "subnational census"
+                  ],
+                  "codelist": "social_data_source.csv",
+                  "openCodelist": false
+                },
+                "se_approach": {
+                  "title": "Socio-economic approach",
+                  "type": "string",
+                  "description": "The name of the socio-economic approach / index used in the function."
+                },
+                "se_category": {
+                  "title": "Socio-economic index category",
+                  "description": "The socio-economic category vulnerable to the hazard.",
+                  "$ref": "#/$defs/Classification"
+                }
+              },
+              "minProperties": 1
             }
           },
           "minProperties": 1
@@ -610,11 +489,6 @@
           "type": "string",
           "description": "Additional details about the analysis used to produce the vulnerability function used in the modelled scenario(s).",
           "minLength": 1
-        },
-        "se_category": {
-          "title": "Socio-economic index category",
-          "description": "The socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Classification"
         }
       },
       "minProperties": 1
@@ -622,12 +496,12 @@
     "loss": {
       "title": "Loss metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe measures of impact in the form of damage or destruction caused by a disaster.",
+      "description": "Metadata that is specific to the measures of impact and risk estimated by the model.",
       "properties": {
         "losses": {
           "title": "Losses",
           "type": "array",
-          "description": "Information about the losses described in the dataset.",
+          "description": "Information about the losses that can be described in the model.",
           "items": {
             "$ref": "#/$defs/Losses"
           },
@@ -667,6 +541,47 @@
     }
   },
   "$defs": {
+    "Platform": {
+      "title": "Platform",
+      "type": "object",
+      "description": "A platform  on which the model can be run.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Platform identifier",
+          "type": "string",
+          "description": "A locally unique identifier for the platform.",
+          "minLength": 1
+        },
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "description": "The name or title of the platform.",
+          "minLength": 1
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "description": "The uniform resource locator for the platform, e.g. the web address at which the platform can be accessed.",
+          "format": "iri"
+        },
+        "type": {
+          "title": "type",
+          "type": "string",
+          "description": "The nature of the platform, from the closed [platform_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#platform-type).",
+          "codelist": "platform_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "cloud-based",
+            "local",
+            "cloud-based and local"
+          ]
+        }
+      },
+      "minProperties": 1
+    },
     "Resource": {
       "title": "Resource",
       "type": "object",
@@ -884,12 +799,6 @@
           "description": "The name or title of the source.",
           "minLength": 1
         },
-        "description": {
-          "title": "Description",
-          "type": "string",
-          "description": "The details about the source dataset or model.",
-          "minLength": 1
-        },        
         "url": {
           "title": "URL",
           "type": "string",
@@ -1622,16 +1531,15 @@
           "codelist": "data_calculation_type.csv",
           "openCodelist": false
         },
+        "year_count": {
+          "title": "Year count",
+          "type": "number",
+          "description": "The number of years simulated in the event set. You should only use this field when details of individual events are not included in the RDLS metadata."
+        },
         "event_count": {
           "title": "Event count",
           "type": "number",
           "description": "The number of events contained in the event set. You should only use this field when details of individual events are not included in the RDLS metadata."
-        },
-        "occurrence_range": {
-          "title": "Occurrence range",
-          "type": "string",
-          "description": "A summary of the probabilistic occurrence scenarios that are included in the event set. You should only use this field when `event_set.analysis_type` = 'probabilistic'",
-          "minLength": 1
         },
         "spatial": {
           "title": "Spatial coverage",
@@ -1652,6 +1560,11 @@
           },
           "minItems": 1,
           "uniqueItems": true
+        },
+        "correlation": {
+          "title": "Correlation",
+          "description": "The event correlation assumptions applied in this event set.",
+          "type": "string"
         }
       },
       "minProperties": 1
@@ -1835,8 +1748,7 @@
             "content",
             "product",
             "disruption",
-            "population",
-            "indicator_index_value"
+            "population"
           ]
         },
         "quantity_kind": {
@@ -1877,8 +1789,7 @@
             "content",
             "product",
             "disruption",
-            "population",
-            "indicator_index_value"
+            "population"
           ]
         },
         "unit": {
@@ -2354,7 +2265,6 @@
       "description": "Losses resulting from the occurrence of a hazard.",
       "required": [
         "id",
-        "hazard_type",
         "cost"
       ],
       "properties": {
@@ -2364,86 +2274,11 @@
           "type": "string",
           "minLength": 1
         },
-        "hazard_type": {
-          "title": "Hazard type",
-          "type": "string",
-          "description": "The main type of hazard that resulted in the losses, from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_process": {
-          "title": "Hazard process",
-          "type": "string",
-          "description": "The main hazard process that resulted in the losses, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone"
-          ]
-        },
         "description": {
           "title": "Loss description",
           "type": "string",
           "description": "Additional details of the losses.",
           "minLength": 1
-        },
-        "category": {
-          "title": "Asset category",
-          "description": "The category of the lost assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
-          "type": "string",
-          "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment",
-            "economic_indicator",
-            "development_index"
-          ]
         },
         "cost": {
           "title": "Costs",
@@ -2457,8 +2292,8 @@
         },
         "type": {
           "title": "Loss type",
-          "type": "string",
-          "description": "The type of losses, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type).",
+          "type": "array",
+          "description": "The type of losses possible to produce in the model, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type). This field indicates whether a financial module is present - this is required to compute anything other than group up or economic loss.",
           "codelist": "loss_type.csv",
           "openCodelist": false,
           "enum": [
@@ -2495,22 +2330,10 @@
           "codelist": "analysis_type.csv",
           "openCodelist": false
         },
-        "hazard_id": {
-          "title": "Hazard dataset",
+        "financial_module": {
+          "title": "Financial module",
           "type": "string",
-          "description": "A unique identifier for the hazard dataset used in calculating the losses. Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "exposure_id": {
-          "title": "Exposure dataset",
-          "type": "string",
-          "description": "A unique identifier for the exposure dataset used in calculating the losses. Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "vulnerability_id": {
-          "title": "Vulnerability dataset",
-          "type": "string",
-          "description": "A unique identifier for the vulnerability dataset used in in calculating the losses. Use of an HTTP URI is recommended.",
+          "description": "Name and short decription of any financial module applied in the model.",
           "minLength": 1
         }
       },
