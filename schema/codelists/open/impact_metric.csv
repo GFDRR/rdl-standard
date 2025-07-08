@@ -6,16 +6,21 @@ damage_index,Damage index,"A specified index or classification of damage levels,
 loss_ratio,Loss ratio,"The loss to an asset divided by the total replacement cost of the asset [0-n] as a function of damage state, used in damage-to-loss-models.",Vulnerability
 mean_loss_ratio,Mean Loss Ratio,"The mean loss ratio in a distribution of losses divided by the total replacement cost of the asset [0-n] as a function of damage state, used in damage-to-loss-models.",Vulnerability
 downtime_vulnerability,Downtime (vulnerability),"Duration of downtime, used in vulnerability modelling of business or service interruption.",Vulnerability
-casualty_ratio_vulnerability,Casualty ratio (vulnerability),The number of expected casualties or fatalities as a proportion of total inhabitants of and asset or population [0-1] used in casualty or mortality functions.,Vulnerability
+casualty_ratio_vulnerability,Casualty ratio (vulnerability),The number of expected casualties (injuries) as a proportion of total inhabitants of an asset or population [0-1] used in casualty functions.,Vulnerability
+fatality_ratio_vulnerability,Fatality ratio (vulnerability),The number of expected people killed as a proportion of total inhabitants of an asset or population [0-1] used in fatality or mortality functions.,Vulnerability
 economic_loss_value,Total economic loss,"The monetary value of estimated economic impact or total loss (ground up loss in insurance terminology). Impact_type denotes whether this refers to total, direct, or indirect loss.",Loss
 insured_loss_value,Total insured loss,The monetary value of estimated insured losses.,Loss
 loss_ratio,Loss Ratio,"Estimated loss as a proportion of total replacement cost or insured value. Impact_type denotes whether this refers to total, direct, or indirect loss.",Loss
 casualty_count,Number of casualties (fatalities),The estimated number of casualties or fatalities.,Loss
 casualty_ratio_loss,Casualty ratio (loss),Proportion of estimated casualties or fatalities in the total population.,Loss
+fatality_count,Number of people killed,The estimated number of people killed.,Loss
+fatality_ratio_loss,Fatality ratio (loss),Proportion of estimated people killed in the total population.,Loss
 loss_annual_average_value,Annual average loss,"Expected loss over a one-year time period according to long-term averages. Impact_type denotes whether this refers to total, direct, or indirect loss.",Loss
 loss_probable_maximum_value,Probable Maximum Loss,Estimated maximum loss occurring at a given exceedance probability or return period.,Loss
 at_risk_value,Value at Risk,Estimated minimum loss likely to be equalled or exceeded in a given year for a given probability.,Loss
 at_risk_tail_value,Tail Value at Risk,Estimated losses at or exceeding a specified value at risk VaR (estimate of average losses given that a severity threshold has been exceeded).,Loss
-downtime_loss,Downtime (loss),Duration of downtime (business or service interruption).,Loss
+disruption_days,Disruption (loss),"Duration of disruption to businesses or services, expressed as a number of days.",Loss
+disruption_loss,Disruption (loss),"Duration of disruption to businesses or services, expressed as a monetary loss.",Loss
 asset_loss,Number of assets,"The estimated number of structures, or length of infrastructure, damaged.",Loss
 displaced_count,Number of people displaced,The estimated number of people displaced due to physical damage and disruption.,Loss
+displaced_days,Number of days that people are displaced,The estimated number of days that people are displaced due to physical damage and disruption.,Loss
