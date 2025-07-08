@@ -70,11 +70,28 @@
       "minLength": 1
     },
     "project": {
-      "title": "Project title",
-      "type": "string",
-      "description": "The name of the project that produced the dataset.",
-      "minLength": 1
-    },
+      "title": "Project",
+      "type": "object",
+      "description": "Information about the project that produced the dataset.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Project name",
+          "type": "string",
+          "description": "The name of the project that produced the dataset.",
+          "minLength": 1
+        },
+        "url": {
+          "title": "Project URL",
+          "type": "string",
+          "description": "A URL associated with the project.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
+    }
     "details": {
       "title": "Additional details",
       "type": "string",
