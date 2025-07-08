@@ -3,3 +3,4 @@ area,Area,The two-dimensional size of the part of a surface.
 count,Count,A count of items.
 currency,Currency,A financial value.
 length,Length,A measure of distance.
+time,Time,A measure of time. 
