@@ -199,7 +199,7 @@
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
           "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
+          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset. Use of GED4ALL is recommended.",
           "minLength": 1
         },
         "metrics": {
