@@ -2,6 +2,35 @@
 
 This page lists changes to the Risk Data Library Standard.
 
+## 0.3.0? 0.21.0? - 2025-tbd-tbd
+
+
+### Schema
+- [#296](https://github.com/GFDRR/rdl-standard/pull/296) - Update rdls_schema.json - Correct the link to docs description of Dataset identifier.
+
+### Codelists
+- [#294](https://github.com/GFDRR/rdl-standard/pull/294) - Updates to multiple codelists:
+  - metric_dimension.csv: notation only
+  - IMT.csv:
+     - add new quake IMT - PGV:cm/s, AvgSa:m/s2, Sa_1:m/s2, Sa_03:m/s2
+     - add new rockfall IMT - rf_KE:kJ
+     - add ashfall thickness in mm (we had cm) - h_vaf:mm
+     - align flood and tsunami depth and velocity IMTs into a common IMT they can both use. Adding depth in cm, we had m only.
+  - impact_metric.csv:
+    - Added fatality_ratio_vulnerability, fatality_count, fatality_ratio_loss
+    - Added disruption_days, disruption_loss
+    - Added displaced_days
+
+### Normative documentation
+
+
+
+
+### Non-normative documentation
+
+
+
+
 ## 0.2.0 - 2023-09-08
 
 ### Schema
