@@ -6,7 +6,12 @@ This page lists changes to the Risk Data Library Standard.
 
 
 ### Schema
-- [#296](https://github.com/GFDRR/rdl-standard/pull/296) - Update rdls_schema.json - Correct the link to docs description of Dataset identifier.
+- [#268](https://github.com/GFDRR/rdl-standard/pull/268/) - Update rdls_schema.json - Correct the link to docs description of Dataset identifier.
+- [#296](https://github.com/GFDRR/rdl-standard/pull/296) - multiple changes
+  - added "economic_indicator", "development_index" in enum list ln 195/196/382/382/2444/2445
+  - added object "description", ln 887
+  - added "population", "indicator_index_value" in enum list, ln 1838/1839/1880/1881
+  - 
 
 ### Codelists
 - [#294](https://github.com/GFDRR/rdl-standard/pull/294) - Updates to multiple codelists:
@@ -20,15 +25,20 @@ This page lists changes to the Risk Data Library Standard.
     - Added fatality_ratio_vulnerability, fatality_count, fatality_ratio_loss
     - Added disruption_days, disruption_loss
     - Added displaced_days
+- [#296](https://github.com/GFDRR/rdl-standard/pull/296) - multiple file changes
+  - exposure_category.csv - added economic_indicator
+  - schema/codelists/closed/metric_dimension.csv - indicator_index_value
+  - schema/codelists/open/IMT.csv - added v_etc(10m):m/s
+  - schema/codelists/open/license.csv - added Custom and copyright licenses
+  - Deleted: specs/code-lists/CSV/occupancy.csv; specs/code-lists/CSV/frequency_type.csv; specs/code-lists/CSV/val_type.csv
 
 ### Normative documentation
-
-
-
+- [#266](https://github.com/GFDRR/rdl-standard/pull/266/) - undrr-isc-hip.csv - added UNDRR identifier for each entry
 
 ### Non-normative documentation
-
-
+- [#295](https://github.com/GFDRR/rdl-standard/pull/295/) - added steering committee notes no. 7 and no. 8
+- [#260](https://github.com/GFDRR/rdl-standard/pull/260/) - update descr of steering committee in readme
+- [#258](https://github.com/GFDRR/rdl-standard/pull/258) - renaming steering comm minutes files 
 
 
 ## 0.2.0 - 2023-09-08
