@@ -2,7 +2,7 @@
 
 This page lists changes to the Risk Data Library Standard.
 
-## 0.3.0? 0.2.1? - 2025-tbd-tbd
+## 0.3.0 - 2025-tbd-tbd
 
 
 ### Schema
