@@ -8,9 +8,7 @@
     "id",
     "title",
     "risk_data_type",
-    "publisher",
-    "contact_point",
-    "creator",
+    "attributions",
     "spatial",
     "license",
     "resources"
@@ -72,11 +70,6 @@
       "openCodelist": false,
       "minItems": 1,
       "uniqueItems": true
-    },
-    "publisher": {
-      "title": "Publisher",
-      "description": "The entity responsible for making the dataset available.",
-      "$ref": "#/$defs/Entity"
     },
     "version": {
       "title": "Dataset version",
@@ -177,25 +170,40 @@
       ],
       "minLength": 1
     },
-    "contact_point": {
-      "title": "Contact point",
-      "description": "Contact information for the maintainer of the dataset.",
-      "$ref": "#/$defs/Entity"
-    },
-    "creator": {
-      "title": "Creator",
-      "description": "The entity responsible for producing the dataset.",
-      "$ref": "#/$defs/Entity"
-    },
     "attributions": {
       "title": "Attributions",
       "type": "array",
-      "description": "Information about entities and their roles in relation to the dataset.",
+      "description": "Information about entities and their roles in relation to the dataset. Must include at least one attribution for each required role: publisher, creator, and contact_point.",
       "items": {
         "$ref": "#/$defs/Attribution"
       },
-      "minItems": 1,
-      "uniqueItems": true
+      "minItems": 3,
+      "uniqueItems": true,
+      "contains": {
+        "anyOf": [
+          {
+            "properties": {
+              "role": {
+                "const": "publisher"
+              }
+            }
+          },
+          {
+            "properties": {
+              "role": {
+                "const": "creator"
+              }
+            }
+          },
+          {
+            "properties": {
+              "role": {
+                "const": "contact_point"
+              }
+            }
+          }
+        ]
+      }
     },
     "sources": {
       "title": "Sources",
@@ -266,9 +274,11 @@
         "hazard_primary",
         "intensity",
         "category",
-        "cost",
+        "impact_type",
+        "impact_modelling",
+        "impact_metric",
+        "quantity_kind",
         "impact",
-        "spatial",
         "functions"
       ],
       "properties": {
@@ -331,15 +341,57 @@
           "openCodelist": false,
           "$ref": "#/$defs/exposure_category"
         },
-        "cost": {
-          "title": "Asset cost",
-          "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
-          "items": {
-            "$ref": "#/$defs/Cost"
-          },
-          "minItems": 1,
-          "uniqueItems": true
+        "impact_type": {
+          "title": "Impact type",
+          "type": "string",
+          "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#impact-type).",
+          "codelist": "impact_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "direct",
+            "indirect",
+            "total"
+          ]
+        },
+        "impact_modelling": {
+          "title": "Impact modelling",
+          "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#data-calculation-type).",
+          "codelist": "data_calculation_type.csv",
+          "openCodelist": false,
+          "$ref": "#/$defs/data_calculation_type"
+        },
+        "impact_metric": {
+          "title": "Impact metric",
+          "type": "string",
+          "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#impact-metric).",
+          "codelist": "impact_metric.csv",
+          "openCodelist": false,
+          "enum": [
+            "damage_ratio",
+            "mean_damage_ratio",
+            "probability",
+            "damage_index",
+            "loss_ratio",
+            "mean_loss_ratio",
+            "downtime_vulnerability",
+            "casualty_ratio_vulnerability",
+            "economic_loss_value",
+            "insured_loss_value",
+            "casualty_count",
+            "casualty_ratio_loss",
+            "loss_annual_average_value",
+            "loss_probable_maximum_value",
+            "at_risk_value",
+            "at_risk_tail_value",
+            "downtime_loss",
+            "asset_loss",
+            "displaced_count"
+          ]
+        },
+        "quantity_kind": {
+          "title": "Quantity kind",
+          "description": "The kind of quantity in which the impact value is expressed, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#quantity-kind).",
+          "$ref": "#/$defs/Metric/properties/quantity_kind"
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
@@ -360,14 +412,6 @@
           "title": "Vulnerability impact",
           "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
           "$ref": "#/$defs/Impact"
-        },
-        "spatial": {
-          "title": "Spatial coverage",
-          "description": "The geographical area to which the vulnerability function used in the modelled scenarios applies. `.scale` must be provided. Other fields may be provided if the spatial coverage of the vulnerability function differs from the coverage specified in the dataset-level `spatial` field.",
-          "$ref": "#/$defs/Location",
-          "required": [
-            "scale"
-          ]
         },
         "functions": {
           "title": "Impact functions",
@@ -856,19 +900,6 @@
           "title": "Temporal coverage",
           "description": "The period of time covered by this resource.",
           "$ref": "#/$defs/Period"
-        },
-        "temporal_resolution": {
-          "title": "Temporal resolution",
-          "type": "string",
-          "description": "The minimum period of time resolvable in this resource, in ISO8601 duration format.",
-          "format": "duration",
-          "examples": [
-            "P1Y",
-            "P6M",
-            "P1M",
-            "P1D",
-            "PT1H"
-          ]
         }
       },
       "minProperties": 1
@@ -955,12 +986,15 @@
           "codelist": "roles.csv",
           "openCodelist": false,
           "enum": [
+            "publisher",
+            "creator",
+            "contact_point",
             "world_bank_team_lead",
             "resource_provider",
             "custodian",
             "owner",
             "user",
-            "distributor", 
+            "distributor",
             "principal_investigator",
             "processor",
             "author",
@@ -1228,6 +1262,19 @@
             "P30D",
             "PT24H"
           ]
+        },
+        "temporal_resolution": {
+          "title": "Temporal resolution",
+          "type": "string",
+          "description": "The minimum period of time resolvable in this resource, in ISO8601 duration format.",
+          "format": "duration",
+          "examples": [
+            "P1Y",
+            "P6M",
+            "P1M",
+            "P1D",
+            "PT1H"
+          ]
         }
       },
       "minProperties": 1
@@ -1237,6 +1284,19 @@
       "type": "object",
       "description": "A geographical area.",
       "properties": {
+        "scale": {
+          "title": "Spatial scale",
+          "type": "string",
+          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists#spatial_scale).",
+          "codelist": "spatial_scale.csv",
+          "openCodelist": false,
+          "enum": [
+            "global",
+            "regional",
+            "national",
+            "sub-national"
+          ]
+        },
         "countries": {
           "title": "Countries",
           "type": "array",
@@ -1525,11 +1585,6 @@
             [2.2, 48.8, 2.4, 48.9]
           ]
         },
-        "geometry": {
-          "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
-          "$ref": "#/$defs/Geometry"
-        },
         "centroid": {
           "title": "Centroid",
           "type": "array",
@@ -1545,18 +1600,10 @@
             [2.3522, 48.8566]
           ]
         },
-        "scale": {
-          "title": "Spatial scale",
-          "type": "string",
-          "description": "The spatial scale of the geographical area, from the closed [spatial scale codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists#spatial_scale).",
-          "codelist": "spatial_scale.csv",
-          "openCodelist": false,
-          "enum": [
-            "global",
-            "regional", 
-            "national",
-            "sub-national"
-          ]
+        "geometry": {
+          "title": "Geometry",
+          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
+          "$ref": "#/$defs/Geometry"
         }
       },
       "minProperties": 1
@@ -1723,6 +1770,15 @@
           "codelist": "IMT.csv",
           "openCodelist": true,
           "minLength": 1,
+          "suggestions": [
+            "PGA(g)",
+            "PGV(m/s)",
+            "SA(0.3)(g)",
+            "MMI",
+            "flood_depth(m)",
+            "wind_speed(m/s)",
+            "temperature(°C)"
+          ],
           "examples": [
             "PGA(g)",
             "PGV(m/s)",
@@ -1858,11 +1914,6 @@
             "50-year time series of stochastic events",
             "Events with magnitude 6.0-8.5 and return periods 100-2500 years"
           ]
-        },
-        "spatial": {
-          "title": "Spatial coverage",
-          "description": "The geographical area covered by the the hazard analysis in this event set.",
-          "$ref": "#/$defs/Location"
         },
         "temporal": {
           "title": "Temporal coverage",
@@ -2014,69 +2065,6 @@
             "Severe flooding event affecting the lower Mekong Delta during monsoon season",
             "Category 5 super typhoon with sustained winds exceeding 250 km/h",
             "Extended drought period affecting agricultural regions over 18-month duration"
-          ]
-        },
-        "footprints": {
-          "title": "Footprints",
-          "description": "The footprints for this event showing spatial distribution of hazard intensity.",
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/Footprint"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      },
-      "minProperties": 1
-    },
-    "Footprint": {
-      "title": "Footprint",
-      "description": "Information about a single hazard event footprint showing spatial distribution of hazard intensity.",
-      "type": "object",
-      "required": [
-        "id",
-        "intensity_measure"
-      ],
-      "properties": {
-        "id": {
-          "title": "Footprint identifier",
-          "type": "string",
-          "description": "A locally unique identifier for this footprint",
-          "minLength": 1,
-          "examples": [
-            "footprint_001",
-            "pga_footprint_scenario_7",
-            "flood_depth_mekong_2011",
-            "wind_speed_haiyan_2013"
-          ]
-        },
-        "intensity_measure": {
-          "title": "Hazard intensity measurement",
-          "type": "string",
-          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
-          "codelist": "IMT.csv",
-          "openCodelist": true,
-          "minLength": 1,
-          "examples": [
-            "PGA(g)",
-            "PGV(m/s)",
-            "SA(0.3)(g)",
-            "MMI",
-            "flood_depth(m)",
-            "wind_speed(m/s)",
-            "temperature(°C)"
-          ]
-        },
-        "data_uncertainty": {
-          "title": "Data uncertainty",
-          "type": "string",
-          "description": "Details of the uncertainty of the footprint that should be taken into account when interpreting the data.",
-          "minLength": 1,
-          "examples": [
-            "Ground motion predictions have aleatory variability of ±0.3 log units",
-            "Flood depth estimates have 20-30% uncertainty due to DEM resolution limitations",
-            "Wind speed calculations include 15% uncertainty from atmospheric model resolution",
-            "Temperature projections have ±2°C uncertainty from climate model ensemble spread"
           ]
         }
       },
