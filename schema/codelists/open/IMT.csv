@@ -101,11 +101,9 @@ Vbal_MaxRng:km,Maximum Range,Vbal_MaxRng,km,"Distance from the vent that ballist
 Vbal_size:m,Ballistic Size,Vbal_size,m,"Diameter or length of individual ballistic fragments, measured in metres (m)."
 EvArea:events/km²,Event Density - Count per Unit Area,EvArea,events/km²,"Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2."
 EvYr:events/year,Event Frequency - Count per Year,EvYr,events/year,Number of events in a year
-EDDI:-,Evaporative Demand Drought Index (EDDI),EDDI,-,EDDI quantifies evaporative demand—how much water the atmosphere is "asking for" from the land surface.
+EDDI:-,Evaporative Demand Drought Index (EDDI),EDDI,-,"EDDI quantifies evaporative demand 'how much water the atmosphere is asking for from the land surface'."
 HlD:mm,Hailstone Diameter,HlD,mm,Most common metric; larger diameters indicate more severe hail.
 HlKE:J/m²,Hail Kinetic Energy,HlKE,J/m²,"Energy per unit area; used to assess potential for damage to crops, roofs, etc."
 HlMaxSz:mm,Maximum Hail Size,HlMaxSz,mm,Largest hailstone observed in a storm or region.
 HSI:-,Hail Severity Index (HSI),HSI,-,Composite index used in insurance and risk modeling.
 HlProb:%,Probability of Severe Hail,HlProb,%,"Likelihood of hail exceeding a certain size (e.g., >2 cm)."
-
-
