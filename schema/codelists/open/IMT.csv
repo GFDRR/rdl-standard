@@ -32,7 +32,7 @@ PGWS_tcy:km/h,Peak gust wind speed,PGWS_tcy,km/h,The peak gust wind speed in the
 ls_fd:m,Landslide flow depth,ls_fd,m,The depth of the landslide flow. Expressed in meters (m).
 I_DF:m3/s2,Debris-flow intensity index,I_DF,m3/s2,A landslide intensity index proposed by Jakob et al. (2012). Expressed in meters cubed per second squared (m3/s2).
 ls_mfd:m,Maximum foundation displacement,ls_mfd,m,The maximum (absolute) foundation displacement due to landslide. Expressed in meters (m).
-rf_KE:kJ:Rockfall kinetic energy,rf_KE,kJ,The kinetic energy of a rockfall, as a function of mass, velocity or energy and fly height of blocks. Expressed in kiloJoules (kJ).
+rf_KE:kJ:Rockfall kinetic energy,rf_KE,kJ,"The kinetic energy of a rockfall, as a function of mass, velocity or energy and fly height of blocks. Expressed in kiloJoules (kJ)."
 SD_lsl:m,Landslide displacement,SD_lsl,m,The displacement associated with the slow moving landslides. Expressed in meters (m).
 Rh_tsi:m,Tsunami wave runup height,Rh_tsi,m,"The height reached by water measured relative to a stated datum such as mean sea level, mean low water, sea level at the time of the tsunami. Expressed in meters (m)."
 h_tsi:m,Tsunami wave height,h_tsi,m,"The vertical distance between the trough (lowest point) and crest (highest point) of a tsunami wave. It is a measure of the amplitude or size of the wave, indicating the magnitude of the water displacement caused by the tsunami. Expressed in meters (m)."
