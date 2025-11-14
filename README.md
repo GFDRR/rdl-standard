@@ -29,6 +29,8 @@ Other more useful resources exist if you have general questions about the scope 
 of [the Risk Data Library project](http://riskdatalibrary.org/), or are looking for a more [high-level introduction to 
 the standard and its key concepts](https://docs.riskdatalibrary.org/).
 
+* **Any suggestions of data to include in the RDL Catalog or discussions about specific data sets should be directed by email to the RDLS team / take place in the associated private repository.**
+
 ## How to contribute
 
 The [Contributors guide](CONTRIBUTING.md) covers the different ways in which you can contribute to this project to 
