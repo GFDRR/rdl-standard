@@ -19,20 +19,22 @@ CAV:m/s,Cumulative absolute velocity,CAV,m/s,"The relationship between absolute 
 D_B:s,Bracketed duration,D_B,s,The time elapsed between the first and last excursions beyond a specified threshold acceleration (typically 0.05 g or 0.1 g). Expressed in seconds (s).
 wd:m,Inundation depth above ground (m),wd,m,Water depth measured relative to ground level. Expressed in meters (m).
 wd:cm,Inundation depth above ground (cm),wd,cm,Water depth measured relative to ground level. Expressed in centimeters (cm).
+wd:dm,Inundation depth above ground (dm),wd,dm,Water depth measured relative to ground level. Expressed in decimeters (dm).
 wd_f:m,Inundation depth above floor (m),wd_f,m,Water depth measured relative to building floor level. Expressed in meters (m).
 wd_f:cm,Inundation depth above floor (cm),wd_f,cm,Water depth measured relative to building floor level. Expressed in centimeters (cm).
-wv:m/s,Flow velocity (m/s),wv,m/s,The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s).
+wd_f:dm,Inundation depth above floor (dm),wd_f,dm,Water depth measured relative to building floor level. Expressed in decimeters (dm).
+wv:m/s,Flow velocity (m/s),wv,m/s,"The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s)."
 v_ect(3s):km/h,3-sec at 10m sustained wind speed (kph),v_ect(3s),km/h,"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
 v_ect(1m):km/h,1-min at 10m sustained wind speed (kph),v_ect(1m),km/h,"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
 v_etc(10m):km/h,10-min sustained wind speed (kph),v_ect(10m),km/h,The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph).
-v_etc(10m):m/s,10-min sustained wind speed in m/s,v_ect(10m),m/s,The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s).
+v_etc(10m):m/s,10-min sustained wind speed (m/s),v_ect(10m),m/s,The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s).
 PGWS_tcy:km/h,Peak gust wind speed,PGWS_tcy,km/h,The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph).
 ls_fd:m,Landslide flow depth,ls_fd,m,The depth of the landslide flow. Expressed in meters (m).
 I_DF:m3/s2,Debris-flow intensity index,I_DF,m3/s2,A landslide intensity index proposed by Jakob et al. (2012). Expressed in meters cubed per second squared (m3/s2).
 ls_mfd:m,Maximum foundation displacement,ls_mfd,m,The maximum (absolute) foundation displacement due to landslide. Expressed in meters (m).
-rf_KE:kJ:Rockfall kinetic energy,rf_KE,kJ,The kinetic energy of a rockfall, as a function of mass, velocity or energy and fly height of blocks. Expressed in kiloJoules (kJ).
+rf_KE:kJ,Rockfall kinetic energy,rf_KE,kJ,"The kinetic energy of a rockfall, as a function of mass, velocity or energy and fly height of blocks. Expressed in kiloJoules (kJ)."
 SD_lsl:m,Landslide displacement,SD_lsl,m,The displacement associated with the slow moving landslides. Expressed in meters (m).
-Rh_tsi:m,Tsunami wave runup height (m),Rh_tsi,m,"The height reached by water measured relative to a stated datum such as mean sea level, mean low water, sea level at the time of the tsunami. Expressed in meters (m)."
+Rh_tsi:m,Tsunami wave runup height,Rh_tsi,m,"The height reached by water measured relative to a stated datum such as mean sea level, mean low water, sea level at the time of the tsunami. Expressed in meters (m)."
 h_tsi:m,Tsunami wave height,h_tsi,m,"The vertical distance between the trough (lowest point) and crest (highest point) of a tsunami wave. It is a measure of the amplitude or size of the wave, indicating the magnitude of the water displacement caused by the tsunami. Expressed in meters (m)."
 Fh_tsi:m,Tsunami Horizontal Force,Fh_tsi,m,The lateral or horizontal force exerted by a tsunami. Expressed in meters (m).
 MF:m3/s2,Momentum flux,MF,m3/s2,"A vector in the direction of flow, of magnitude equal to the mass-flow per unit area. Expressed in meters cubed per seconds squared (m3/s2)."
@@ -40,7 +42,7 @@ MMF:m4/s2,Modified momentum flux,MMF,M4/s2,"The product of momentum flux and inu
 F_drag:kN,Drag force,F_drag,kN,The force exerted on an object (per unit width perpendicular to the direction of flow) due to the movement of a surrounding fluid. Expressed in kilo Newtons (kN).
 Fr:-,Froude number,Fr,,A measure of flow velocity non-dimensionalized by the gravity-wave velocity.
 F_QS:kN,Quasi-steady force,F_QS,kN,Steady-state force estimation considering choked and sub-critical flow for a body of width b in a channel of width w. Expressed in kilo Newtons (kN).
-h_vaf:mm,Accumulated ashfall thickness (mm),h_vaf,mm,Accumulated depth or thickness of ash following a volcanic eruption. Expressed in millimeters (mm).
+h_vaf:mm,Accumulated ashfall thickness,h_vaf,mm,Accumulated depth or thickness of ash following a volcanic eruption. Expressed in millimeters (mm).
 L_vaf:kg/m2,Ash loading,L_vaf,kg/m2,The load of accumulated volcanic ash measured in kilograms per square meter (km/m^2).
 ASI:per,Agricultural Stress Index,ASI,per,A quick-look indicator that facilitates the early identification of cropped land with a high likelihood of water stress (drought). Expressed as a percentage (per).
 DI:-,Drought Intensity,DI,,"Agricultural droughts are classified by their intensity and are categorized into four classes: Extreme, Severe, Moderate or Mild. The intensity of the drought is calculated through the Weighted Mean Vegetation Health Index aggregated per GAUL 2 region. Source: FAO Seasonal Global Indicators."
@@ -52,6 +54,56 @@ CMI:-,Crop Moisture Index,CMI,,The CMI (Eight classes from 'Severely Dry' to 'Ex
 PDSI:-,Palmer Drought Severity Index,PDSI,,An estimate of relative dryness. It is a standardized index that generally spans -10 (dry) to +10 (wet). Source: https://climatedataguide.ucar.edu/climate-data/palmer-drought-severity-index-pdsi.
 SPI:-,Standard Precipitation Index,SPI,,"An index to characterize meteorological drought on a range of timescales. On short timescales, the SPI is closely related to soil moisture, while at longer timescales, the SPI can be related to groundwater and reservoir storage. Source: https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-index-spi"
 SPEI:-,Standard Precipitation Evapotranspiration Index,SPEI,,An extension of the Standardized Precipitation Index (SPI). The SPEI is designed to take into account both precipitation and potential evapotranspiration (PET) in determining drought. Source: https://climatedataguide.ucar.edu/climate-data/standardized-precipitation-evapotranspiration-index-spei.
-WBGT:c,Wet Bulb Globe Temperature in Celsius,WBGT,c,"A measure of the heat stress in direct sunlight, which takes into account: temperature, humidity, wind speed, sun angle and cloud cover (solar radiation). Expressed in degrees celsius (c)."
+WBGT:C,Wet Bulb Globe Temperature,WBGT,C,"A measure of the heat stress in direct sunlight, which takes into account: temperature, humidity, wind speed, sun angle and cloud cover (solar radiation). Expressed in degrees celsius (C)."
 FWI:-,Fire Weather Index,FWI,,"A meteorologically based dimensionless index used worldwide to estimate fire danger. It consists of different components that account for the effects of fuel moisture and wind on fire behaviour and spread. The higher the FWI is, the more favourable the meteorological conditions to trigger a wildfire."
 MHI:-,Multi-Hazard Index,MHI,,An index describing the prevalence of multiple hazards.
+MSLP:mbar,Minimum Sea Level Pressure (millibar),MSLP,mbar,"Atmospheric pressure, also known as air pressure or barometric pressure, measured in HectoPascals (hPa). Can be used to represent minimum central pressure in tropical cyclones, for example."
+MSLP:hPa,Minimum Sea Level Pressure (hectoPascals),MSLP,hPa,"Atmospheric pressure, also known as air pressure or barometric pressure, measured in millibars (mbar). Can be used to represent minimum central pressure in tropical cyclones, for example."
+riskidx:-,Risk score,riskidx,-,to create.
+IP:kPa,Impact Pressure,IP,kPa,"Force exerted by avalanche on objects; used in structural and hazard analysis, in kPa (kilopascal)."
+Vol:m3,Volume,Vol,m3,"Total volume of snow involved in the avalanche; Total mass of soil, rock, or debris mobilized in the landslide."
+Rdist:m,Runout Distance,Rdist,m,"Horizontal distance the avalanche, landslide, lahar or other flow travels downslope."
+AvSize:-,Avalanche Size Class,AvSize,-,"Qualitative scale based on volume, path, and damage potential, Size 1–5."
+DP:-,Destructive Potential,DP,-,"Based on observed or expected damage to structures, vegetation, etc. Qualitative scale."
+AA:m2,Area Affected,AA,m2,Surface area impacted by the hazard. Described in square meters.
+AA:km2,Area Affected,AA,km2,Surface area impacted by the hazard. Described in square kilometers.
+BA:km2,Burned Area,BA,km2,Surface area impacted by the hazard. Described in square kilometers.
+BA:ha,Burned Area,BA,ha,Surface area impacted by the hazard. Described in square kilometers.
+PE:% of slope area,Planimetric Extent,PE,% of slope area,Proportion of a slope affected by landslides; used in intensity modeling.
+LSI:-,Landslide Susceptibility Index,LSI,-,Probability of landslide occurrence based on terrain and environmental factors.
+DMC:-,U.S. Drought Monitor Categories,DMC,-,Qualitative scale: D0 (Abnormally Dry) to D4 (Exceptional Drought).
+PNP:%,Percent of Normal Precipitation,PNP,%,Compares current precipitation to historical average.
+SMA:-,Soil Moisture Anomaly,SMA,-,Deviation from normal soil moisture levels.
+SA:%,Streamflow Percentile,SA,%,Current streamflow compared to historical records.
+DSCI:-,Drought Severity and Coverage Index (DSCI),DSCI,-,Converts categorical drought data into a continuous severity index on a scale 0–500 (experimental)
+pptn1:mm,Rainfall Intensity per hour,pptn1,mm,to create
+pptn24:mm,Rainfall Intensity per day,pptn24,mm,to create
+pptn_tot:mm,Rainfall Total,pptn_tot,mm,to create
+slr:cm,Sea Level Rise (cm),slr,cm,to create
+vei:-,Volcanic Explosivity Index (VEI),vei,-,to create
+AirTemp:C,Air Temperature (°C or °F),AirTemp,C,"Basic measure of heat, usually taken in the shade at 2 meters above ground, measured in degrees Celsius, C."
+AirTemp:F,Air Temperature (°C or °F),AirTemp,F,"Basic measure of heat, usually taken in the shade at 2 meters above ground, measured in degrees Fahrenheit, F."
+HI:-,Heat Index,HI,-,Combines air temperature and relative humidity to reflect perceived temperature.
+WBT:C,Wet Bulb Temperature (°C),WBT,C,Temperature at which sweat no longer evaporates efficiently—key for human survival.
+EHF:-,Excess Heat Factor (EHF),EHF,-,A metric used in Australia to assess heatwave severity based on recent and long-term temperature anomalies.
+AT:-,Apparent Temperature,AT,-,Perceived temperature based on humidity and wind (similar to heat index).
+HD:-,Number of Hot Days,HD,-,Days exceeding a threshold (e.g. >35°C).
+CDD:-,Cooling Degree Days (CDD),CDD,-,Measures energy demand for cooling buildings.
+EF:-,Enhanced Fujita (EF) Scale,EF,-,Classifies tornadoes from EF0 to EF5 based on estimated 3-second wind gusts and observed damage.
+PGWS_3s:mph,3-Second Peak Wind Gust (mph),PGWS_3s,mph,Direct wind speed estimate used in engineering and insurance modeling.
+TPL:m,Tornado Path Length,TPL,m,"Physical dimensions of the tornado track, used to estimate exposure and damage potential."
+TPW:m,Tornado Path Width,TPW,m,"Physical dimensions of the tornado track, used to estimate exposure and damage potential."
+TD:,Tornado Duration,TD,,"Time the tornado is on the ground, influencing cumulative damage."
+ImpactE:J,Impact Energy (J),ImpactE,J,"Energy released upon impact, depending on mass and velocity of the ballistic, measured in Joules (J)."
+ImpactE:kJ,Impact Energy (kJ),ImpactE,kJ,"Energy released upon impact, depending on mass and velocity of the ballistic, measured in Kilojoules (kJ)."
+Vbal_Lprob:%,Landing Probability,Vbal_Lprob,%,Likelihood of a ballistic landing in a given area (used in probabilistic maps).
+Vbal_MaxRng:km,Maximum Range,Vbal_MaxRng,km,"Distance from the vent that ballistics can reach, measured in kilometres (km)."
+Vbal_size:m,Ballistic Size,Vbal_size,m,"Diameter or length of individual ballistic fragments, measured in metres (m)."
+EvArea:events/km²,Event Density - Count per Unit Area,EvArea,events/km²,"Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2."
+EvYr:events/year,Event Frequency - Count per Year,EvYr,events/year,Number of events in a year
+EDDI:-,Evaporative Demand Drought Index (EDDI),EDDI,-,"EDDI quantifies evaporative demand 'how much water the atmosphere is asking for from the land surface'."
+HlD:mm,Hailstone Diameter,HlD,mm,Most common metric; larger diameters indicate more severe hail.
+HlKE:J/m²,Hail Kinetic Energy,HlKE,J/m²,"Energy per unit area; used to assess potential for damage to crops, roofs, etc."
+HlMaxSz:mm,Maximum Hail Size,HlMaxSz,mm,Largest hailstone observed in a storm or region.
+HSI:-,Hail Severity Index (HSI),HSI,-,Composite index used in insurance and risk modeling.
+HlProb:%,Probability of Severe Hail,HlProb,%,"Likelihood of hail exceeding a certain size (e.g., >2 cm)."
