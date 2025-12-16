@@ -115,7 +115,7 @@ If the coordinates in your data sources are specified in a different CRS, before
 
 If your data pipeline includes a Geographic Information System such as ArcGIS or QGIS, these tools can transform coordinates from one CRS to another. If you are writing your own software, or if you prefer to use the command line, several libraries and tools are available, for example:
 
-- [PROJ](https://proj.org/) and its associated Python interface (\[PYPROJ\])(https://pyproj4.github.io/pyproj/stable/) and JavaScript implementation ([PROJ4JS](http://proj4js.org/)) are generic coordinate transformation tools that transform geospatial coordinates from one coordinate reference system (CRS) to another. They include command-line applications and an application programming interface.
+- [PROJ](https://proj.org/) and its associated Python interface ([PYPROJ])(https://pyproj4.github.io/pyproj/stable/) and JavaScript implementation ([PROJ4JS](http://proj4js.org/)) are generic coordinate transformation tools that transform geospatial coordinates from one coordinate reference system (CRS) to another. They include command-line applications and an application programming interface.
 - [GDAL](https://gdal.org/) is a translator library for raster and vector geospatial data formats. It also comes with a variety of useful command line utilities for data translation and processing.
 - [Apache SIS](https://sis.apache.org/) is a free software, Java language library for developing geospatial applications. SIS provides data structures for geographic features and associated metadata along with methods to manipulate those data structures.
 
