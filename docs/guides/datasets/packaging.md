@@ -196,7 +196,7 @@ Vulnerability curves can be developed for individual countries or environments w
 
 ### Packaging suggestion
 
-We suggest to group exposure data  using the following hierarchy:
+We suggest to group exposure data using the following hierarchy:
 
 - **Hazard type**
   - *Geographic* (unless global function, one resource per country)
