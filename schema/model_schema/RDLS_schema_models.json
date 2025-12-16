@@ -197,17 +197,19 @@
           "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "agriculture",
+              "buildings",
+              "infrastructure",
+              "population",
+              "natural_environment",
+              "economic_indicator",
+              "development_index"
+            ]
           },
           "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment"
-          ]
+          "openCodelist": false
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
