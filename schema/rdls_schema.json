@@ -91,7 +91,7 @@
         }
       },
       "minProperties": 1
-    }
+    },
     "details": {
       "title": "Additional details",
       "type": "string",
