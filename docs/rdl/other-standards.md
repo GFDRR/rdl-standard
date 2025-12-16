@@ -46,7 +46,7 @@ Example: The string `CR/HEX:1/YEX:1981/RES+RES1` describes a residential single 
 
 ### Open Exposure Data (OED)
 
-[OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs), or [online]https://oasislmf.github.io/OpenDataStandards/index.html.
+[OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs), or [online](https://oasislmf.github.io/OpenDataStandards/index.html).
 
 Example: In the Open Exposure Data (OED) Standard and other insurance industry models, asset characteristics are separated into individual columns. This record describes a building classified as general residential, single storey, constructed from adobe masonry, with an unknown year of construction:
 

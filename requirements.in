@@ -14,7 +14,8 @@ mdformat-myst
 requests
 click
 pytest
-jscc>=0.2.3
+jscc
 ocdskit
 jsonschema
+pyyaml
 pygit2
