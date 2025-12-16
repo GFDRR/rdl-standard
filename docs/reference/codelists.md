@@ -23,10 +23,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/intensity`](rdls_schema.json,/properties/vulnerability,intensity)
-- [`Hazard/intensity_measure`](rdls_schema.json,/$defs/Hazard,intensity_measure)
-- [`Footprint/intensity_measure`](rdls_schema.json,/$defs/Footprint,intensity_measure)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -40,8 +36,6 @@ This codelist has the following codes:
 ### classification_scheme
 
 This codelist is referenced by the following properties:
-
-- [`Classification/scheme`](rdls_schema.json,/$defs/Classification,scheme)
 
 This codelist has the following codes:
 
@@ -60,8 +54,9 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/functions/fragility/damage_scale_name`](rdls_schema.json,/properties/vulnerability,functions/fragility/damage_scale_name)
-- [`vulnerability/functions/damage_to_loss/damage_scale_name`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/damage_scale_name)
+- [`FragilityFunction/damage_scale_name`](rdls_schema.json,/$defs/FragilityFunction,damage_scale_name)
+- [`DamageToLossFunction/damage_scale_name`](rdls_schema.json,/$defs/DamageToLossFunction,damage_scale_name)
+- [`EngineeringDemandFunction/damage_scale_name`](rdls_schema.json,/$defs/EngineeringDemandFunction,damage_scale_name)
 
 This codelist has the following codes:
 
@@ -77,7 +72,7 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`Resource/format`](rdls_schema.json,/$defs/Resource,format)
+- [`Resource/data_format`](rdls_schema.json,/$defs/Resource,data_format)
 
 This codelist has the following codes:
 
@@ -93,7 +88,7 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/functions/engineering_demand/parameter`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/parameter)
+- [`EngineeringDemandFunction/parameter`](rdls_schema.json,/$defs/EngineeringDemandFunction,parameter)
 
 This codelist has the following codes:
 
@@ -112,8 +107,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Impact/metric`](rdls_schema.json,/$defs/Impact,metric)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -127,8 +120,6 @@ This codelist has the following codes:
 ### impact_unit
 
 This codelist is referenced by the following properties:
-
-- [`Impact/unit`](rdls_schema.json,/$defs/Impact,unit)
 
 This codelist has the following codes:
 
@@ -145,6 +136,7 @@ This codelist has the following codes:
 This codelist is referenced by the following properties:
 
 - [`license`](rdls_schema.json,,license)
+- [`Source/license`](rdls_schema.json,/$defs/Source,license)
 
 This codelist has the following codes:
 
@@ -178,8 +170,6 @@ open:
 ### media_type
 
 This codelist is referenced by the following properties:
-
-- [`Resource/media_type`](rdls_schema.json,/$defs/Resource,media_type)
 
 This codelist has the following codes:
 
@@ -236,9 +226,13 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/hazard_analysis_type`](rdls_schema.json,/properties/vulnerability,hazard_analysis_type)
+- [`VulnerabilityCommonFields/hazard_analysis_type`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_analysis_type)
+- [`VulnerabilityFunction/hazard_analysis_type`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_analysis_type)
+- [`FragilityFunction/hazard_analysis_type`](rdls_schema.json,/$defs/FragilityFunction,hazard_analysis_type)
+- [`DamageToLossFunction/hazard_analysis_type`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_analysis_type)
+- [`EngineeringDemandFunction/hazard_analysis_type`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_analysis_type)
 - [`Event_set/analysis_type`](rdls_schema.json,/$defs/Event_set,analysis_type)
-- [`Losses/hazard_analysis_type`](rdls_schema.json,/$defs/Losses,hazard_analysis_type)
+- [`Losses/impact_and_losses/loss_frequency_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_frequency_type)
 
 This codelist has the following codes:
 
@@ -273,7 +267,7 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`Cost/unit`](rdls_schema.json,/$defs/Cost,unit)
+- [`Losses/impact_and_losses/currency`](rdls_schema.json,/$defs/Losses,impact_and_losses/currency)
 
 This codelist has the following codes:
 
@@ -289,9 +283,14 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
+- [`VulnerabilityCommonFields/impact_modelling`](rdls_schema.json,/$defs/VulnerabilityCommonFields,impact_modelling)
+- [`VulnerabilityFunction/impact_modelling`](rdls_schema.json,/$defs/VulnerabilityFunction,impact_modelling)
+- [`FragilityFunction/impact_modelling`](rdls_schema.json,/$defs/FragilityFunction,impact_modelling)
+- [`DamageToLossFunction/impact_modelling`](rdls_schema.json,/$defs/DamageToLossFunction,impact_modelling)
+- [`EngineeringDemandFunction/impact_modelling`](rdls_schema.json,/$defs/EngineeringDemandFunction,impact_modelling)
 - [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
 - [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
-- [`Impact/base_data_type`](rdls_schema.json,/$defs/Impact,base_data_type)
+- [`Losses/impact_and_losses/impact_modelling`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_modelling)
 
 This codelist has the following codes:
 
@@ -310,9 +309,13 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`exposure/category`](rdls_schema.json,/properties/exposure,category)
-- [`vulnerability/category`](rdls_schema.json,/properties/vulnerability,category)
-- [`Losses/category`](rdls_schema.json,/$defs/Losses,category)
+- [`VulnerabilityCommonFields/category`](rdls_schema.json,/$defs/VulnerabilityCommonFields,category)
+- [`VulnerabilityFunction/category`](rdls_schema.json,/$defs/VulnerabilityFunction,category)
+- [`FragilityFunction/category`](rdls_schema.json,/$defs/FragilityFunction,category)
+- [`DamageToLossFunction/category`](rdls_schema.json,/$defs/DamageToLossFunction,category)
+- [`EngineeringDemandFunction/category`](rdls_schema.json,/$defs/EngineeringDemandFunction,category)
+- [`Exposure_item/category`](rdls_schema.json,/$defs/Exposure_item,category)
+- [`Losses/asset_category`](rdls_schema.json,/$defs/Losses,asset_category)
 
 This codelist has the following codes:
 
@@ -350,11 +353,11 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/functions/vulnerability/approach`](rdls_schema.json,/properties/vulnerability,functions/vulnerability/approach)
-- [`vulnerability/functions/fragility/approach`](rdls_schema.json,/properties/vulnerability,functions/fragility/approach)
-- [`vulnerability/functions/damage_to_loss/approach`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/approach)
-- [`vulnerability/functions/engineering_demand/approach`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/approach)
-- [`Losses/approach`](rdls_schema.json,/$defs/Losses,approach)
+- [`VulnerabilityFunction/approach`](rdls_schema.json,/$defs/VulnerabilityFunction,approach)
+- [`FragilityFunction/approach`](rdls_schema.json,/$defs/FragilityFunction,approach)
+- [`DamageToLossFunction/approach`](rdls_schema.json,/$defs/DamageToLossFunction,approach)
+- [`EngineeringDemandFunction/approach`](rdls_schema.json,/$defs/EngineeringDemandFunction,approach)
+- [`Losses/impact_and_losses/loss_approach`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_approach)
 
 This codelist has the following codes:
 
@@ -396,8 +399,16 @@ The hazard_type codelist classifies hazard phenomena by the main hazard to which
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/hazard_primary`](rdls_schema.json,/properties/vulnerability,hazard_primary)
-- [`vulnerability/hazard_secondary`](rdls_schema.json,/properties/vulnerability,hazard_secondary)
+- [`VulnerabilityCommonFields/hazard_primary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_primary)
+- [`VulnerabilityCommonFields/hazard_secondary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_secondary)
+- [`VulnerabilityFunction/hazard_primary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_primary)
+- [`VulnerabilityFunction/hazard_secondary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_secondary)
+- [`FragilityFunction/hazard_primary`](rdls_schema.json,/$defs/FragilityFunction,hazard_primary)
+- [`FragilityFunction/hazard_secondary`](rdls_schema.json,/$defs/FragilityFunction,hazard_secondary)
+- [`DamageToLossFunction/hazard_primary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_primary)
+- [`DamageToLossFunction/hazard_secondary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_secondary)
+- [`EngineeringDemandFunction/hazard_primary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_primary)
+- [`EngineeringDemandFunction/hazard_secondary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_secondary)
 - [`Hazard/type`](rdls_schema.json,/$defs/Hazard,type)
 - [`Trigger/type`](rdls_schema.json,/$defs/Trigger,type)
 - [`Losses/hazard_type`](rdls_schema.json,/$defs/Losses,hazard_type)
@@ -416,7 +427,12 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`Impact/type`](rdls_schema.json,/$defs/Impact,type)
+- [`VulnerabilityCommonFields/impact_type`](rdls_schema.json,/$defs/VulnerabilityCommonFields,impact_type)
+- [`VulnerabilityFunction/impact_type`](rdls_schema.json,/$defs/VulnerabilityFunction,impact_type)
+- [`FragilityFunction/impact_type`](rdls_schema.json,/$defs/FragilityFunction,impact_type)
+- [`DamageToLossFunction/impact_type`](rdls_schema.json,/$defs/DamageToLossFunction,impact_type)
+- [`EngineeringDemandFunction/impact_type`](rdls_schema.json,/$defs/EngineeringDemandFunction,impact_type)
+- [`Losses/impact_and_losses/impact_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_type)
 
 This codelist has the following codes:
 
@@ -435,7 +451,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Losses/type`](rdls_schema.json,/$defs/Losses,type)
+- [`Losses/impact_and_losses/loss_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_type)
 
 This codelist has the following codes:
 
@@ -455,7 +471,7 @@ open:
 This codelist is referenced by the following properties:
 
 - [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
-- [`Cost/dimension`](rdls_schema.json,/$defs/Cost,dimension)
+- [`Losses/asset_dimension`](rdls_schema.json,/$defs/Losses,asset_dimension)
 
 This codelist has the following codes:
 
@@ -476,10 +492,18 @@ The process_type codelist classifies hazard phenomena by the hazard process to w
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/hazard_process_primary`](rdls_schema.json,/properties/vulnerability,hazard_process_primary)
-- [`vulnerability/hazard_process_secondary`](rdls_schema.json,/properties/vulnerability,hazard_process_secondary)
-- [`Hazard/processes`](rdls_schema.json,/$defs/Hazard,processes)
-- [`Trigger/processes`](rdls_schema.json,/$defs/Trigger,processes)
+- [`VulnerabilityCommonFields/hazard_process_primary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_process_primary)
+- [`VulnerabilityCommonFields/hazard_process_secondary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_process_secondary)
+- [`VulnerabilityFunction/hazard_process_primary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_process_primary)
+- [`VulnerabilityFunction/hazard_process_secondary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_process_secondary)
+- [`FragilityFunction/hazard_process_primary`](rdls_schema.json,/$defs/FragilityFunction,hazard_process_primary)
+- [`FragilityFunction/hazard_process_secondary`](rdls_schema.json,/$defs/FragilityFunction,hazard_process_secondary)
+- [`DamageToLossFunction/hazard_process_primary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_process_primary)
+- [`DamageToLossFunction/hazard_process_secondary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_process_secondary)
+- [`EngineeringDemandFunction/hazard_process_primary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_process_primary)
+- [`EngineeringDemandFunction/hazard_process_secondary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_process_secondary)
+- [`Hazard/hazard_process`](rdls_schema.json,/$defs/Hazard,hazard_process)
+- [`Trigger/hazard_process`](rdls_schema.json,/$defs/Trigger,hazard_process)
 - [`Losses/hazard_process`](rdls_schema.json,/$defs/Losses,hazard_process)
 
 This codelist has the following codes:
@@ -496,10 +520,10 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/functions/vulnerability/relationship`](rdls_schema.json,/properties/vulnerability,functions/vulnerability/relationship)
-- [`vulnerability/functions/fragility/relationship`](rdls_schema.json,/properties/vulnerability,functions/fragility/relationship)
-- [`vulnerability/functions/damage_to_loss/relationship`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/relationship)
-- [`vulnerability/functions/engineering_demand/relationship`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/relationship)
+- [`VulnerabilityFunction/relationship`](rdls_schema.json,/$defs/VulnerabilityFunction,relationship)
+- [`FragilityFunction/relationship`](rdls_schema.json,/$defs/FragilityFunction,relationship)
+- [`DamageToLossFunction/relationship`](rdls_schema.json,/$defs/DamageToLossFunction,relationship)
+- [`EngineeringDemandFunction/relationship`](rdls_schema.json,/$defs/EngineeringDemandFunction,relationship)
 
 This codelist has the following codes:
 
@@ -518,7 +542,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`risk_data_type`](rdls_schema.json,,risk_data_type)
+- [`risk_data_type`](rdls_schema.json,/$defs/risk_data_type,)
 - [`Source/component`](rdls_schema.json,/$defs/Source,component)
 
 This codelist has the following codes:

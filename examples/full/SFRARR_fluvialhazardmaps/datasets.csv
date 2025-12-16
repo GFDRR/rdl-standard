@@ -2,21 +2,16 @@ Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064232
 Title,Central Asia flood hazard - fluvial flood hazard maps DEFENDED
 Description,Simulated fluvial flood hazard maps with the simulated effects of flood protection. 
 Risk data type,hazard
-"Publisher:
-Name",World Bank Europe and Central Asia DRM team
-"Publisher:
-Email address",sfraser@worldbank.org
+publisher/name,World Bank Europe and Central Asia DRM team
+publisher/email,sfraser@worldbank.org
 Dataset version,2
 Dataset purpose,Developed as part of a regional probabilistic flood and earthquake risk assessment under the Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia program. (https://www.gfdrr.org/en/program/SFRARR-Central-Asia)
-Project title,Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia 
+project,Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia 
 "Spatial coverage:
 Countries",KAZ;KGZ;TJK;TKM;UZB
 "Spatial coverage:
 Spatial scale",regional
 License,CC-BY-4.0
-"Contact point:
-Name",Stuart Fraser
-"Contact point:
-Email address",sfraser@worldbank.org
-"Creator:
-Name",Risk Engineering and Development
+contact_point/name,Stuart Fraser
+contact_point/email,sfraser@worldbank.org
+creator/name,Risk Engineering and Development
