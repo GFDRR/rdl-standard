@@ -45,8 +45,8 @@
           "exposure",
           "vulnerability",
           "capacity",
-          "probabilistic loss",
-          "deterministic loss"
+          "probabilisticLoss",
+          "deterministicLoss"
         ]
       },
       "codelist": "risk_model_type.csv",
