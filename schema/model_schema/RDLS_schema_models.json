@@ -465,10 +465,10 @@
                   "type": "string",
                   "description": "The socio-economic data sources used in the function.",
                   "enum": [
-                    "household survey",
-                    "post-disaster studies",
-                    "national census",
-                    "subnational census"
+                    "household_survey",
+                    "post_disaster_studies",
+                    "national_census",
+                    "subnational_census"
                   ],
                   "codelist": "social_data_source.csv",
                   "openCodelist": false
