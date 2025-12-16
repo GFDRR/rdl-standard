@@ -579,9 +579,9 @@
           "codelist": "platform_type.csv",
           "openCodelist": false,
           "enum": [
-            "cloud-based",
+            "cloud_based",
             "local",
-            "cloud-based and local"
+            "cloud_based_and_local"
           ]
         }
       },
