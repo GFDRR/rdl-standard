@@ -2302,18 +2302,18 @@
           "type": "array",
           "description": "The type of losses possible to produce in the model, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type). This field indicates whether a financial module is present - this is required to compute anything other than group up or economic loss.",
           "items": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "ground_up",
+              "insured",
+              "gross",
+              "count",
+              "net_precat",
+              "net_postcat"
+            ]
           },
           "codelist": "loss_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "ground_up",
-            "insured",
-            "gross",
-            "count",
-            "net_precat",
-            "net_postcat"
-          ]
+          "openCodelist": false
         },
         "approach": {
           "title": "Loss approach",
