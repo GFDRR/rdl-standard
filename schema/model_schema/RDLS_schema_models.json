@@ -196,6 +196,9 @@
           "title": "Exposure category",
           "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
           "type": "array",
+          "items": {
+            "type": "string"
+          },
           "codelist": "exposure_category.csv",
           "openCodelist": false,
           "enum": [
@@ -2294,6 +2297,9 @@
           "title": "Loss type",
           "type": "array",
           "description": "The type of losses possible to produce in the model, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type). This field indicates whether a financial module is present - this is required to compute anything other than group up or economic loss.",
+          "items": {
+            "type": "string"
+          },
           "codelist": "loss_type.csv",
           "openCodelist": false,
           "enum": [
