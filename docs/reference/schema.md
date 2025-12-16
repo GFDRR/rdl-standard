@@ -81,7 +81,7 @@ The following table lists all dataset-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources,links,hazard,exposure,vulnerability,loss
+  spatial,resources,referenced_by,attributions,sources,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -187,7 +187,7 @@ The following table lists all hazard component fields:
 ---
 pointer: /properties/hazard
 collapse: 
-  event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
+  event_sets/0/hazards,event_sets/0/events
 addtargets:
 ---
 ```
@@ -380,7 +380,6 @@ The following table lists all exposure component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/exposure
-collapse: metrics
 addtargets:
 ---
 ```
@@ -444,15 +443,6 @@ file: ../../examples/exposure/central_asia_residential_projected/Sources.csv
 stub-columns: 1
 widths: auto
 file: ../../examples/exposure/central_asia_residential_projected/Spatial coverage_Gazetteer entries.csv
----
-
-```
-
-```{csv-table-no-translate} Exposure metrics
----
-stub-columns: 1
-widths: auto
-file: ../../examples/exposure/central_asia_residential_projected/Exposure metadata_Exposure metrics.csv
 ---
 
 ```
@@ -534,15 +524,6 @@ file: ../../examples/exposure/central_asia_residential_current/Spatial coverage_
 
 ```
 
-```{csv-table-no-translate} Exposure metrics
----
-stub-columns: 1
-widths: auto
-file: ../../examples/exposure/central_asia_residential_current/Exposure metadata_Exposure metrics.csv
----
-
-```
-
 ````
 
 ````{tab-item} Metadata (JSON)
@@ -618,7 +599,6 @@ The following table lists all vulnerability component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/vulnerability
-collapse: cost,impact,spatial,se_category
 addtargets:
 ---
 ```
@@ -673,15 +653,6 @@ file: ../../examples/vulnerability/flood_jrc/Attributions.csv
 stub-columns: 1
 widths: auto
 file: ../../examples/vulnerability/flood_jrc/Referenced by.csv
----
-
-```
-
-```{csv-table-no-translate} Asset costs
----
-stub-columns: 1
-widths: auto
-file: ../../examples/vulnerability/flood_jrc/Vulnerability metadata_Asset cost.csv
 ---
 
 ```
@@ -761,7 +732,6 @@ The following table lists all loss component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/loss
-collapse: losses/0/cost,losses/0/impact
 addtargets:
 ---
 ```
