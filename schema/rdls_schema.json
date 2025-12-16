@@ -14,17 +14,60 @@
     "resources"
   ],
   "hazard_process_mappings": {
-    "drought": ["agricultural_drought", "hydrological_drought", "meteorological_drought", "socioeconomic_drought"],
-    "flood": ["fluvial_flood", "pluvial_flood", "groundwater_flood", "coastal_flood"],
-    "earthquake": ["primary_rupture", "secondary_rupture", "ground_motion", "liquefaction"],
-    "extreme_temperature": ["extreme_cold", "extreme_heat"],
-    "strong_wind": ["extratropical_cyclone", "tropical_cyclone", "tornado"],
-    "wildfire": ["wildfire"],
-    "landslide": ["snow_avalanche", "landslide_general", "landslide_rockslide", "landslide_mudflow", "landslide_rockfall"],
-    "tsunami": ["tsunami"],
-    "volcanic": ["ashfall", "volcano_ballistics", "lahar", "lava", "pyroclastic_flow"],
-    "coastal_flood": ["coastal_flood", "storm_surge"],
-    "convective_storm": ["tornado"]
+    "drought": [
+      "agricultural_drought",
+      "hydrological_drought",
+      "meteorological_drought",
+      "socioeconomic_drought"
+    ],
+    "flood": [
+      "fluvial_flood",
+      "pluvial_flood",
+      "groundwater_flood",
+      "coastal_flood"
+    ],
+    "earthquake": [
+      "primary_rupture",
+      "secondary_rupture",
+      "ground_motion",
+      "liquefaction"
+    ],
+    "extreme_temperature": [
+      "extreme_cold",
+      "extreme_heat"
+    ],
+    "strong_wind": [
+      "extratropical_cyclone",
+      "tropical_cyclone",
+      "tornado"
+    ],
+    "wildfire": [
+      "wildfire"
+    ],
+    "landslide": [
+      "snow_avalanche",
+      "landslide_general",
+      "landslide_rockslide",
+      "landslide_mudflow",
+      "landslide_rockfall"
+    ],
+    "tsunami": [
+      "tsunami"
+    ],
+    "volcanic": [
+      "ashfall",
+      "volcano_ballistics",
+      "lahar",
+      "lava",
+      "pyroclastic_flow"
+    ],
+    "coastal_flood": [
+      "coastal_flood",
+      "storm_surge"
+    ],
+    "convective_storm": [
+      "tornado"
+    ]
   },
   "properties": {
     "id": {
@@ -352,10 +395,14 @@
       "minProperties": 1,
       "anyOf": [
         {
-          "required": ["functions"]
+          "required": [
+            "functions"
+          ]
         },
         {
-          "required": ["socio_economic"]
+          "required": [
+            "socio_economic"
+          ]
         }
       ]
     },
@@ -411,7 +458,7 @@
       "type": "string",
       "enum": [
         "coastal_flood",
-        "convective_storm", 
+        "convective_storm",
         "drought",
         "extreme_temperature",
         "flood",
@@ -424,7 +471,7 @@
       ]
     },
     "process_type": {
-      "type": "string", 
+      "type": "string",
       "enum": [
         "coastal_flood",
         "storm_surge",
@@ -478,7 +525,7 @@
       "type": "string",
       "enum": [
         "hazard",
-        "exposure", 
+        "exposure",
         "vulnerability",
         "loss"
       ]
@@ -487,7 +534,7 @@
       "type": "string",
       "enum": [
         "probabilistic",
-        "deterministic", 
+        "deterministic",
         "empirical"
       ]
     },
@@ -495,7 +542,7 @@
       "type": "string",
       "enum": [
         "analytical",
-        "empirical", 
+        "empirical",
         "hybrid",
         "judgement"
       ]
@@ -600,7 +647,10 @@
       "title": "Vulnerability function",
       "type": "object",
       "description": "The vulnerability function used to calculate the impact of the hazard.",
-      "required": ["approach", "relationship"],
+      "required": [
+        "approach",
+        "relationship"
+      ],
       "properties": {
         "approach": {
           "title": "Vulnerability function approach",
@@ -702,7 +752,7 @@
           "minLength": 1,
           "examples": [
             "Empirical vulnerability curves derived from post-disaster damage surveys conducted after recent earthquake events in the region."
-         ]
+          ]
         }
       }
     },
@@ -710,7 +760,10 @@
       "title": "Fragility function",
       "type": "object",
       "description": "The fragility function used to calculate the impact of the hazard.",
-      "required": ["approach", "relationship"],
+      "required": [
+        "approach",
+        "relationship"
+      ],
       "properties": {
         "approach": {
           "title": "Fragility function approach",
@@ -846,7 +899,10 @@
       "title": "Damage-to-loss function",
       "type": "object",
       "description": "The damage-to-loss function (or damage-to-loss model) used to calculate the impact of the hazard in conjunction with a fragility function.",
-      "required": ["approach", "relationship"],
+      "required": [
+        "approach",
+        "relationship"
+      ],
       "properties": {
         "approach": {
           "title": "Damage-to-loss function approach",
@@ -982,7 +1038,10 @@
       "title": "Engineering demand function",
       "type": "object",
       "description": "The engineering demand function used to calculate the impact of the hazard.",
-      "required": ["approach", "relationship"],
+      "required": [
+        "approach",
+        "relationship"
+      ],
       "properties": {
         "parameter": {
           "title": "Engineering demand parameter",
@@ -1291,7 +1350,7 @@
       "enum": [
         "structure",
         "content",
-        "product", 
+        "product",
         "disruption",
         "population",
         "index"
@@ -1345,8 +1404,16 @@
         "data_format"
       ],
       "anyOf": [
-        { "required": ["download_url"] },
-        { "required": ["access_url"] }
+        {
+          "required": [
+            "download_url"
+          ]
+        },
+        {
+          "required": [
+            "access_url"
+          ]
+        }
       ],
       "properties": {
         "id": {
@@ -1499,10 +1566,14 @@
       ],
       "anyOf": [
         {
-          "required": ["email"]
+          "required": [
+            "email"
+          ]
         },
         {
-          "required": ["url"]
+          "required": [
+            "url"
+          ]
         }
       ],
       "properties": {
@@ -1775,7 +1846,7 @@
           "openCodelist": true,
           "suggestions": [
             "CC0-1.0",
-            "CC-BY-4.0", 
+            "CC-BY-4.0",
             "CC-BY-SA-4.0",
             "CC-BY-NC-SA-4.0",
             "CC BY-ND 4.0",
@@ -1787,7 +1858,7 @@
             "Copyright"
           ],
           "minLength": 1
-        }        
+        }
       },
       "minProperties": 1
     },
@@ -2175,9 +2246,24 @@
           "minItems": 4,
           "maxItems": 4,
           "examples": [
-            [-180, -90, 180, 90],
-            [-74.0, 40.7, -73.9, 40.8],
-            [2.2, 48.8, 2.4, 48.9]
+            [
+              -180,
+              -90,
+              180,
+              90
+            ],
+            [
+              -74.0,
+              40.7,
+              -73.9,
+              40.8
+            ],
+            [
+              2.2,
+              48.8,
+              2.4,
+              48.9
+            ]
           ]
         },
         "centroid": {
@@ -2190,9 +2276,18 @@
           "minItems": 2,
           "maxItems": 2,
           "examples": [
-            [0, 0],
-            [-73.935242, 40.730610],
-            [2.3522, 48.8566]
+            [
+              0,
+              0
+            ],
+            [
+              -73.935242,
+              40.73061
+            ],
+            [
+              2.3522,
+              48.8566
+            ]
           ]
         }
       },
@@ -2228,7 +2323,7 @@
           "enum": [
             "ISO 3166-2",
             "NUTS",
-            "ISO 3166-1 alpha-2", 
+            "ISO 3166-1 alpha-2",
             "ISO 3166-1 alpha-3",
             "GEONAMES",
             "OSMN",
@@ -2275,7 +2370,7 @@
           "enum": [
             "Point",
             "MultiPoint",
-            "LineString", 
+            "LineString",
             "MultiLineString",
             "Polygon",
             "MultiPolygon"
@@ -2431,7 +2526,7 @@
           "enum": [
             "poisson",
             "negative_binomial",
-            "user_defined", 
+            "user_defined",
             "generalized_extreme_value"
           ]
         },
@@ -2659,7 +2754,7 @@
         }
       },
       "minProperties": 1
-    }, 
+    },
     "Metric": {
       "title": "Asset exposure metric",
       "type": "object",
@@ -2698,7 +2793,7 @@
           "openCodelist": true,
           "suggestions": [
             "area",
-            "count", 
+            "count",
             "monetary",
             "length",
             "time"
@@ -2966,7 +3061,308 @@
               "codelist": "currency.csv",
               "openCodelist": false,
               "enum": [
-                "ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARP", "ARS", "ARY", "ATS", "AUD", "AWG", "AYM", "AZM", "AZN", "BAD", "BAM", "BBD", "BDT", "BEC", "BEF", "BEL", "BGJ", "BGK", "BGL", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHC", "CHE", "CHF", "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CSD", "CSJ", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHP", "GHS", "GIP", "GMD", "GNE", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAJ", "LAK", "LBP", "LKR", "LRD", "LSL", "LSM", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MDL", "MGA", "MGF", "MKD", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVQ", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEH", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROK", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGW", "UGX", "USD", "USN", "USS", "UYI", "UYN", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VNC", "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWC", "ZWD", "ZWL", "ZWN", "ZWR"
+                "ADP",
+                "AED",
+                "AFA",
+                "AFN",
+                "ALK",
+                "ALL",
+                "AMD",
+                "ANG",
+                "AOA",
+                "AOK",
+                "AON",
+                "AOR",
+                "ARA",
+                "ARP",
+                "ARS",
+                "ARY",
+                "ATS",
+                "AUD",
+                "AWG",
+                "AYM",
+                "AZM",
+                "AZN",
+                "BAD",
+                "BAM",
+                "BBD",
+                "BDT",
+                "BEC",
+                "BEF",
+                "BEL",
+                "BGJ",
+                "BGK",
+                "BGL",
+                "BGN",
+                "BHD",
+                "BIF",
+                "BMD",
+                "BND",
+                "BOB",
+                "BOP",
+                "BOV",
+                "BRB",
+                "BRC",
+                "BRE",
+                "BRL",
+                "BRN",
+                "BRR",
+                "BSD",
+                "BTN",
+                "BUK",
+                "BWP",
+                "BYB",
+                "BYN",
+                "BYR",
+                "BZD",
+                "CAD",
+                "CDF",
+                "CHC",
+                "CHE",
+                "CHF",
+                "CHW",
+                "CLF",
+                "CLP",
+                "CNY",
+                "COP",
+                "COU",
+                "CRC",
+                "CSD",
+                "CSJ",
+                "CSK",
+                "CUC",
+                "CUP",
+                "CVE",
+                "CYP",
+                "CZK",
+                "DDM",
+                "DEM",
+                "DJF",
+                "DKK",
+                "DOP",
+                "DZD",
+                "ECS",
+                "ECV",
+                "EEK",
+                "EGP",
+                "ERN",
+                "ESA",
+                "ESB",
+                "ESP",
+                "ETB",
+                "EUR",
+                "FIM",
+                "FJD",
+                "FKP",
+                "FRF",
+                "GBP",
+                "GEK",
+                "GEL",
+                "GHC",
+                "GHP",
+                "GHS",
+                "GIP",
+                "GMD",
+                "GNE",
+                "GNF",
+                "GNS",
+                "GQE",
+                "GRD",
+                "GTQ",
+                "GWE",
+                "GWP",
+                "GYD",
+                "HKD",
+                "HNL",
+                "HRD",
+                "HRK",
+                "HTG",
+                "HUF",
+                "IDR",
+                "IEP",
+                "ILP",
+                "ILR",
+                "ILS",
+                "INR",
+                "IQD",
+                "IRR",
+                "ISJ",
+                "ISK",
+                "ITL",
+                "JMD",
+                "JOD",
+                "JPY",
+                "KES",
+                "KGS",
+                "KHR",
+                "KMF",
+                "KPW",
+                "KRW",
+                "KWD",
+                "KYD",
+                "KZT",
+                "LAJ",
+                "LAK",
+                "LBP",
+                "LKR",
+                "LRD",
+                "LSL",
+                "LSM",
+                "LTL",
+                "LTT",
+                "LUC",
+                "LUF",
+                "LUL",
+                "LVL",
+                "LVR",
+                "LYD",
+                "MAD",
+                "MDL",
+                "MGA",
+                "MGF",
+                "MKD",
+                "MLF",
+                "MMK",
+                "MNT",
+                "MOP",
+                "MRO",
+                "MRU",
+                "MTL",
+                "MTP",
+                "MUR",
+                "MVQ",
+                "MVR",
+                "MWK",
+                "MXN",
+                "MXP",
+                "MXV",
+                "MYR",
+                "MZE",
+                "MZM",
+                "MZN",
+                "NAD",
+                "NGN",
+                "NIC",
+                "NIO",
+                "NLG",
+                "NOK",
+                "NPR",
+                "NZD",
+                "OMR",
+                "PAB",
+                "PEH",
+                "PEI",
+                "PEN",
+                "PES",
+                "PGK",
+                "PHP",
+                "PKR",
+                "PLN",
+                "PLZ",
+                "PTE",
+                "PYG",
+                "QAR",
+                "RHD",
+                "ROK",
+                "ROL",
+                "RON",
+                "RSD",
+                "RUB",
+                "RUR",
+                "RWF",
+                "SAR",
+                "SBD",
+                "SCR",
+                "SDD",
+                "SDG",
+                "SDP",
+                "SEK",
+                "SGD",
+                "SHP",
+                "SIT",
+                "SKK",
+                "SLL",
+                "SOS",
+                "SRD",
+                "SRG",
+                "SSP",
+                "STD",
+                "STN",
+                "SUR",
+                "SVC",
+                "SYP",
+                "SZL",
+                "THB",
+                "TJR",
+                "TJS",
+                "TMM",
+                "TMT",
+                "TND",
+                "TOP",
+                "TPE",
+                "TRL",
+                "TRY",
+                "TTD",
+                "TWD",
+                "TZS",
+                "UAH",
+                "UAK",
+                "UGS",
+                "UGW",
+                "UGX",
+                "USD",
+                "USN",
+                "USS",
+                "UYI",
+                "UYN",
+                "UYP",
+                "UYU",
+                "UYW",
+                "UZS",
+                "VEB",
+                "VEF",
+                "VES",
+                "VNC",
+                "VND",
+                "VUV",
+                "WST",
+                "XAF",
+                "XAG",
+                "XAU",
+                "XBA",
+                "XBB",
+                "XBC",
+                "XBD",
+                "XCD",
+                "XDR",
+                "XEU",
+                "XFO",
+                "XFU",
+                "XOF",
+                "XPD",
+                "XPF",
+                "XPT",
+                "XRE",
+                "XSU",
+                "XTS",
+                "XUA",
+                "XXX",
+                "YDD",
+                "YER",
+                "YUD",
+                "YUM",
+                "YUN",
+                "ZAL",
+                "ZAR",
+                "ZMK",
+                "ZMW",
+                "ZRN",
+                "ZRZ",
+                "ZWC",
+                "ZWD",
+                "ZWL",
+                "ZWN",
+                "ZWR"
               ]
             },
             "loss_type": {
@@ -2977,7 +3373,7 @@
               "openCodelist": false,
               "enum": [
                 "ground_up",
-                "insured", 
+                "insured",
                 "gross",
                 "count",
                 "net_precat",
@@ -3068,212 +3464,619 @@
     }
   },
   "intensity_measure_definitions": {
-    "PGA:g": {"title": "Peak ground acceleration in g", "description": "The largest increase in velocity recorded at a particular location during an earthquake. Expressed in g-force."},
-    "PGA:gal": {"title": "Peak ground acceleration in gal", "description": "Peak ground acceleration expressed in gal (1 gal = 0.01 m/s²)."},
-    "PGA:m/s2": {"title": "Peak ground acceleration in m/s²", "description": "Peak ground acceleration expressed in meters per second squared."},
-    "PGV:m/s": {"title": "Peak ground velocity in m/s", "description": "The greatest speed of ground shaking during an earthquake."},
-    "PGV:cm/s": {"title": "Peak ground velocity in cm/s", "description": "Peak ground velocity expressed in centimeters per second."},
-    "AvgSa:m/s2": {"title": "Average spectral acceleration (m/s2)", "description": "Mean spectral acceleration at periods crucial for risk assessment."},
-    "Sa_1:m/s2": {"title": "Spectral acceleration (1 sec) (m/s2)", "description": "Spectral acceleration at 1-second period."},
-    "Sa_03:m/s2": {"title": "Spectral acceleration (0.3 sec) (m/s2)", "description": "Spectral acceleration at 0.3-second period."},
-    "Sd(T1):m": {"title": "Spectral displacement (m)", "description": "Maximum displacement of structure at fundamental period."},
-    "Sv(T1):m/s": {"title": "Spectral velocity (m/s)", "description": "Maximum velocity of structure at fundamental period."},
-    "PGDf:m": {"title": "Permanent ground deformation (m)", "description": "Displacement of ground surface due to fault movement."},
-    "D:s": {"title": "Significant duration (s)", "description": "Time interval of strong ground shaking."},
-    "D_B:s": {"title": "Bracketed duration (s)", "description": "Time between first and last threshold exceedances."},
-    "IA:m/s": {"title": "Arias intensity (m/s)", "description": "Measure of ground motion strength."},
-    "Neq:-": {"title": "Effective number of cycles", "description": "Relationship between cycle count and damage potential."},
-    "CAV:m/s": {"title": "Cumulative absolute velocity (m/s)", "description": "Integrated absolute acceleration over earthquake duration."},
-    "MMI:-": {"title": "Modified Mercalli Intensity", "description": "Seismic intensity scale from I (Not felt) to X (Extreme)."},
-    "EMS:-": {"title": "European Macroseismic Scale", "description": "Seismic intensity scale from I (Not felt) to XII (Completely devastating)."},
-    "wd:m": {"title": "Inundation depth above ground (m)", "description": "Inundation depth measured relative to ground level. Expressed in meters (m)."},
-    "wd:cm": {"title": "Inundation depth above ground (cm)", "description": "Inundation depth measured relative to ground level. Expressed in centimeters (cm)."},
-    "wd:dm": {"title": "Inundation depth above ground (dm)", "description": "Inundation depth measured relative to ground level. Expressed in decimeters (dm)."},
-    "wd_f:m": {"title": "Inundation depth above floor (m)", "description": "Inundation depth measured relative to building floor level. Expressed in meters (m)."},
-    "wd_f:cm": {"title": "Inundation depth above floor (cm)", "description": "Inundation depth measured relative to building floor level. Expressed in centimeters (cm)."},
-    "wd_f:dm": {"title": "Inundation depth above floor (dm)", "description": "Inundation depth measured relative to building floor level. Expressed in decimeters (dm)."},
-    "wv:m/s": {"title": "Flow velocity (m/s)", "description": "The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s)."},
-    "slr:cm": {"title": "Sea level rise (cm)", "description": "Long-term rise in sea level affecting coastal hazards."},
-    "pptn1:mm": {"title": "1-hour precipitation (mm)", "description": "Maximum rainfall depth in any 1-hour period."},
-    "pptn24:mm": {"title": "24-hour precipitation (mm)", "description": "Maximum rainfall depth in any 24-hour period."},
-    "pptn_tot:mm": {"title": "Total event precipitation (mm)", "description": "Total cumulative precipitation for entire event."},
-    "Rh_tsi:m": {"title": "Tsunami wave runup height (m)", "description": "Maximum elevation reached by tsunami waves on land."},
-    "h_tsi:m": {"title": "Tsunami inundation height (m)", "description": "Height of tsunami water above ground level."},
-    "Fh_tsi:m": {"title": "Tsunami horizontal force (m)", "description": "Lateral force exerted by tsunami."},
-    "F_drag:kN": {"title": "Hydrodynamic drag force (kN)", "description": "Drag force exerted by flowing water on structures."},
-    "F_QS:kN": {"title": "Quasi-static buoyant force (kN)", "description": "Buoyant force during low-velocity inundation."},
-    "MF:m3/s2": {"title": "Momentum flux (m3/s2)", "description": "Product of flow depth and velocity squared."},
-    "MMF:m4/s2": {"title": "Modified momentum flux (m4/s2)", "description": "Product of momentum flux and inundation depth."},
-    "Fr:-": {"title": "Froude number", "description": "Flow velocity non-dimensionalized by gravity-wave velocity."},
-    "sws_3s:km/h": {"title": "3-sec sustained wind speed (km/h)", "description": "The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."},
-    "sws_1m:km/h": {"title": "1-min sustained wind speed (km/h)", "description": "The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."},
-    "sws_10m:m/s": {"title": "10-min sustained wind speed (m/s)", "description": "The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s)."},
-    "sws_10m:km/h": {"title": "10-min sustained wind speed (km/h)", "description": "The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph)."},
-    "PGWS:km/h": {"title": "Peak gust wind speed (km/h)", "description": "The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph)."},
-    "PGWS:mph": {"title": "Peak gust wind speed (mph)", "description": "Direct wind speed estimate used in engineering and insurance modeling."},
-    "PGWS:m/s": {"title": "Peak gust wind speed (m/s)", "description": "The peak gust wind speed in the open terrain. Expressed in meters per second (m/s)."},
-    "MSLP:mbar": {"title": "Minimum sea level pressure (mbar)", "description": "Atmospheric pressure in millibars (tropical cyclone intensity)."},
-    "MSLP:hPa": {"title": "Minimum sea level pressure (hPa)", "description": "Atmospheric pressure in hectopascals."},
-    "EF:-": {"title": "Enhanced Fujita Scale", "description": "Tornado intensity from EF0 to EF5 based on damage."},
-    "TPL:m": {"title": "Tornado path length (m)", "description": "Distance traveled by tornado along its path."},
-    "TPW:m": {"title": "Tornado path width (m)", "description": "Maximum width of tornado damage path."},
-    "TD:": {"title": "Tornado Duration", "description": "Time duration of tornado connection to ground."},
-    "HSI:-": {"title": "Hail Severity Index", "description": "Composite hail index for insurance and risk modeling."},
-    "HlMaxSz:mm": {"title": "Maximum hail size (mm)", "description": "Largest hailstone diameter observed."},
-    "HlD:mm": {"title": "Hailstone diameter (mm)", "description": "Most common hail metric for severity assessment."},
-    "HlProb:%": {"title": "Severe hail probability (%)", "description": "Likelihood of hail exceeding certain size threshold."},
-    "HlKE:J/m2": {"title": "Hail kinetic energy (J/m2)", "description": "Energy per unit area for crop and roof damage assessment."},
-    "ImpactE:J": {"title": "Impact energy (J)", "description": "Energy released upon impact (ballistics, hail)."},
-    "ImpactE:kJ": {"title": "Impact energy (kJ)", "description": "Impact energy in kilojoules."},
-    "SPI:-": {"title": "Standard Precipitation Index", "description": "Meteorological drought index across multiple timescales."},
-    "SPEI:-": {"title": "Standard Precipitation Evapotranspiration Index", "description": "Drought index incorporating temperature effects."},
-    "PDSI:-": {"title": "Palmer Drought Severity Index", "description": "Long-term drought index spanning -10 (dry) to +10 (wet)."},
-    "CMI:-": {"title": "Crop Moisture Index", "description": "Short-term agricultural drought or moisture surplus indicator."},
-    "NDVI:-": {"title": "Normalized Difference Vegetation Index", "description": "Satellite-derived measure of vegetation health and biomass."},
-    "VCI:-": {"title": "Vegetation Condition Index", "description": "Current vegetation health vs. historical trends."},
-    "VHI:-": {"title": "Vegetation Health Index", "description": "Composite index combining VCI and temperature effects."},
-    "ASI:%": {"title": "Agricultural Stress Index (%)", "description": "Indicator for early identification of water-stressed cropland."},
-    "WMVHI:-": {"title": "Weighted Mean Vegetation Health Index", "description": "Drought severity assessment from growing season start."},
-    "DI:-": {"title": "Drought Intensity", "description": "Classification: Extreme, Severe, Moderate, or Mild."},
-    "DMC:-": {"title": "U.S. Drought Monitor Categories", "description": "Scale from D0 (Abnormally Dry) to D4 (Exceptional Drought)."},
-    "PNP:%": {"title": "Percent of Normal Precipitation (%)", "description": "Current precipitation compared to historical average."},
-    "SMA:-": {"title": "Soil Moisture Anomaly", "description": "Deviation from normal soil moisture levels."},
-    "SA:%": {"title": "Streamflow Percentile (%)", "description": "Current streamflow compared to historical records."},
-    "DSCI:-": {"title": "Drought Severity and Coverage Index", "description": "Continuous severity index on scale 0-500."},
-    "EDDI:-": {"title": "Evaporative Demand Drought Index", "description": "Quantifies atmospheric water demand from land surface."},
-    "AirTemp:C": {"title": "Air temperature (°C)", "description": "Ambient air temperature in Celsius."},
-    "AirTemp:F": {"title": "Air temperature (°F)", "description": "Ambient air temperature in Fahrenheit."},
-    "WBGT:C": {"title": "Wet Bulb Globe Temperature (C)", "description": "Heat stress index incorporating temperature, humidity, wind, and solar radiation."},
-    "WBT:C": {"title": "Wet Bulb Temperature (C)", "description": "Temperature at which sweat no longer evaporates efficiently."},
-    "HI:-": {"title": "Heat Index", "description": "Apparent temperature combining air temperature and humidity."},
-    "EHF:-": {"title": "Excess Heat Factor", "description": "Heatwave severity based on temperature anomalies."},
-    "CDD:-": {"title": "Cooling Degree Days", "description": "Measures energy demand for cooling buildings."},
-    "AT:-": {"title": "Apparent Temperature", "description": "Perceived temperature based on humidity and wind (similar to heat index)."},
-    "HD:-": {"title": "Number of Hot Days", "description": "Days exceeding a threshold (e.g. >35°C)."},
-    "ls_fd:m": {"title": "Landslide flow depth (m)", "description": "Depth of landslide flow in meters."},
-    "ls_mfd:m": {"title": "Maximum foundation displacement (m)", "description": "Maximum foundation displacement due to landslide."},
-    "SD_lsl:m": {"title": "Landslide displacement (m)", "description": "Displacement associated with slow-moving landslides."},
-    "I_DF:m3/s2": {"title": "Debris-flow intensity index (m3/s2)", "description": "Landslide intensity index (Jakob et al. 2012)."},
-    "rf_KE:kJ": {"title": "Rockfall kinetic energy (kJ)", "description": "Kinetic energy of rockfall as function of mass and velocity."},
-    "IP:kPa": {"title": "Impact Pressure (kPa)", "description": "Force exerted by avalanche on objects; used in structural and hazard analysis, in kPa (kilopascal)."},
-    "LSI:-": {"title": "Landslide Susceptibility Index", "description": "Probability based on terrain and environmental factors."},
-    "DP:-": {"title": "Destructive Potential", "description": "Classification based on observed or expected damage."},
-    "PE:% of slope area": {"title": "Planimetric Extent (% of slope area)", "description": "Proportion of a slope affected by landslides; used in intensity modeling."},
-    "Rdist:m": {"title": "Runout distance (m)", "description": "Horizontal distance traveled downslope."},
-    "Vol:m3": {"title": "Volume (m3)", "description": "Total volume of material involved."},
-    "h_vaf:mm": {"title": "Volcanic ash fall thickness (mm)", "description": "Accumulated depth of ash following eruption."},
-    "L_vaf:kg/m2": {"title": "Volcanic ash loading (kg/m2)", "description": "Load of accumulated ash per unit area."},
-    "vei:-": {"title": "Volcanic Explosivity Index", "description": "Logarithmic scale of eruption explosiveness."},
-    "Vbal_size:m": {"title": "Volcanic ballistic size (m)", "description": "Diameter of volcanic projectiles."},
-    "Vbal_Lprob:%": {"title": "Ballistic landing probability (%)", "description": "Likelihood of ballistic landing in given area."},
-    "Vbal_MaxRng:km": {"title": "Maximum ballistic range (km)", "description": "Maximum distance ballistics can reach from vent."},
-    "BA:ha": {"title": "Burned Area (ha)", "description": "Surface area impacted by the hazard. Described in square kilometers."},
-    "BA:km2": {"title": "Burned Area (km²)", "description": "Surface area impacted by the hazard. Described in square kilometers."},
-    "FWI:-": {"title": "Fire Weather Index", "description": "Meteorological fire danger index."},
-    "AA:m2": {"title": "Area Affected (m²)", "description": "Surface area impacted by the hazard. Described in square meters."},
-    "AA:km2": {"title": "Area Affected (km²)", "description": "Surface area impacted by the hazard. Described in square kilometers."},
-    "riskidx:-": {"title": "Risk score", "description": "Composite risk quantification."},
-    "MHI:-": {"title": "Multi-Hazard Index", "description": "Index describing prevalence of multiple hazards."},
-    "EvArea:events/km²": {"title": "Event Density - Count per Unit Area (events/km²)", "description": "Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2."},
-    "EvYr:events/year": {"title": "Event Frequency - Count per Year (events/year)", "description": "Number of events in a year"}
+    "PGA:g": {
+      "title": "Peak ground acceleration in g",
+      "description": "The largest increase in velocity recorded at a particular location during an earthquake. Expressed in g-force."
+    },
+    "PGA:gal": {
+      "title": "Peak ground acceleration in gal",
+      "description": "Peak ground acceleration expressed in gal (1 gal = 0.01 m/s²)."
+    },
+    "PGA:m/s2": {
+      "title": "Peak ground acceleration in m/s²",
+      "description": "Peak ground acceleration expressed in meters per second squared."
+    },
+    "PGV:m/s": {
+      "title": "Peak ground velocity in m/s",
+      "description": "The greatest speed of ground shaking during an earthquake."
+    },
+    "PGV:cm/s": {
+      "title": "Peak ground velocity in cm/s",
+      "description": "Peak ground velocity expressed in centimeters per second."
+    },
+    "AvgSa:m/s2": {
+      "title": "Average spectral acceleration (m/s2)",
+      "description": "Mean spectral acceleration at periods crucial for risk assessment."
+    },
+    "Sa_1:m/s2": {
+      "title": "Spectral acceleration (1 sec) (m/s2)",
+      "description": "Spectral acceleration at 1-second period."
+    },
+    "Sa_03:m/s2": {
+      "title": "Spectral acceleration (0.3 sec) (m/s2)",
+      "description": "Spectral acceleration at 0.3-second period."
+    },
+    "Sd(T1):m": {
+      "title": "Spectral displacement (m)",
+      "description": "Maximum displacement of structure at fundamental period."
+    },
+    "Sv(T1):m/s": {
+      "title": "Spectral velocity (m/s)",
+      "description": "Maximum velocity of structure at fundamental period."
+    },
+    "PGDf:m": {
+      "title": "Permanent ground deformation (m)",
+      "description": "Displacement of ground surface due to fault movement."
+    },
+    "D:s": {
+      "title": "Significant duration (s)",
+      "description": "Time interval of strong ground shaking."
+    },
+    "D_B:s": {
+      "title": "Bracketed duration (s)",
+      "description": "Time between first and last threshold exceedances."
+    },
+    "IA:m/s": {
+      "title": "Arias intensity (m/s)",
+      "description": "Measure of ground motion strength."
+    },
+    "Neq:-": {
+      "title": "Effective number of cycles",
+      "description": "Relationship between cycle count and damage potential."
+    },
+    "CAV:m/s": {
+      "title": "Cumulative absolute velocity (m/s)",
+      "description": "Integrated absolute acceleration over earthquake duration."
+    },
+    "MMI:-": {
+      "title": "Modified Mercalli Intensity",
+      "description": "Seismic intensity scale from I (Not felt) to X (Extreme)."
+    },
+    "EMS:-": {
+      "title": "European Macroseismic Scale",
+      "description": "Seismic intensity scale from I (Not felt) to XII (Completely devastating)."
+    },
+    "wd:m": {
+      "title": "Inundation depth above ground (m)",
+      "description": "Inundation depth measured relative to ground level. Expressed in meters (m)."
+    },
+    "wd:cm": {
+      "title": "Inundation depth above ground (cm)",
+      "description": "Inundation depth measured relative to ground level. Expressed in centimeters (cm)."
+    },
+    "wd:dm": {
+      "title": "Inundation depth above ground (dm)",
+      "description": "Inundation depth measured relative to ground level. Expressed in decimeters (dm)."
+    },
+    "wd_f:m": {
+      "title": "Inundation depth above floor (m)",
+      "description": "Inundation depth measured relative to building floor level. Expressed in meters (m)."
+    },
+    "wd_f:cm": {
+      "title": "Inundation depth above floor (cm)",
+      "description": "Inundation depth measured relative to building floor level. Expressed in centimeters (cm)."
+    },
+    "wd_f:dm": {
+      "title": "Inundation depth above floor (dm)",
+      "description": "Inundation depth measured relative to building floor level. Expressed in decimeters (dm)."
+    },
+    "wv:m/s": {
+      "title": "Flow velocity (m/s)",
+      "description": "The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s)."
+    },
+    "slr:cm": {
+      "title": "Sea level rise (cm)",
+      "description": "Long-term rise in sea level affecting coastal hazards."
+    },
+    "pptn1:mm": {
+      "title": "1-hour precipitation (mm)",
+      "description": "Maximum rainfall depth in any 1-hour period."
+    },
+    "pptn24:mm": {
+      "title": "24-hour precipitation (mm)",
+      "description": "Maximum rainfall depth in any 24-hour period."
+    },
+    "pptn_tot:mm": {
+      "title": "Total event precipitation (mm)",
+      "description": "Total cumulative precipitation for entire event."
+    },
+    "Rh_tsi:m": {
+      "title": "Tsunami wave runup height (m)",
+      "description": "Maximum elevation reached by tsunami waves on land."
+    },
+    "h_tsi:m": {
+      "title": "Tsunami inundation height (m)",
+      "description": "Height of tsunami water above ground level."
+    },
+    "Fh_tsi:m": {
+      "title": "Tsunami horizontal force (m)",
+      "description": "Lateral force exerted by tsunami."
+    },
+    "F_drag:kN": {
+      "title": "Hydrodynamic drag force (kN)",
+      "description": "Drag force exerted by flowing water on structures."
+    },
+    "F_QS:kN": {
+      "title": "Quasi-static buoyant force (kN)",
+      "description": "Buoyant force during low-velocity inundation."
+    },
+    "MF:m3/s2": {
+      "title": "Momentum flux (m3/s2)",
+      "description": "Product of flow depth and velocity squared."
+    },
+    "MMF:m4/s2": {
+      "title": "Modified momentum flux (m4/s2)",
+      "description": "Product of momentum flux and inundation depth."
+    },
+    "Fr:-": {
+      "title": "Froude number",
+      "description": "Flow velocity non-dimensionalized by gravity-wave velocity."
+    },
+    "sws_3s:km/h": {
+      "title": "3-sec sustained wind speed (km/h)",
+      "description": "The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
+    },
+    "sws_1m:km/h": {
+      "title": "1-min sustained wind speed (km/h)",
+      "description": "The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph)."
+    },
+    "sws_10m:m/s": {
+      "title": "10-min sustained wind speed (m/s)",
+      "description": "The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s)."
+    },
+    "sws_10m:km/h": {
+      "title": "10-min sustained wind speed (km/h)",
+      "description": "The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph)."
+    },
+    "PGWS:km/h": {
+      "title": "Peak gust wind speed (km/h)",
+      "description": "The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph)."
+    },
+    "PGWS:mph": {
+      "title": "Peak gust wind speed (mph)",
+      "description": "Direct wind speed estimate used in engineering and insurance modeling."
+    },
+    "PGWS:m/s": {
+      "title": "Peak gust wind speed (m/s)",
+      "description": "The peak gust wind speed in the open terrain. Expressed in meters per second (m/s)."
+    },
+    "MSLP:mbar": {
+      "title": "Minimum sea level pressure (mbar)",
+      "description": "Atmospheric pressure in millibars (tropical cyclone intensity)."
+    },
+    "MSLP:hPa": {
+      "title": "Minimum sea level pressure (hPa)",
+      "description": "Atmospheric pressure in hectopascals."
+    },
+    "EF:-": {
+      "title": "Enhanced Fujita Scale",
+      "description": "Tornado intensity from EF0 to EF5 based on damage."
+    },
+    "TPL:m": {
+      "title": "Tornado path length (m)",
+      "description": "Distance traveled by tornado along its path."
+    },
+    "TPW:m": {
+      "title": "Tornado path width (m)",
+      "description": "Maximum width of tornado damage path."
+    },
+    "TD:": {
+      "title": "Tornado Duration",
+      "description": "Time duration of tornado connection to ground."
+    },
+    "HSI:-": {
+      "title": "Hail Severity Index",
+      "description": "Composite hail index for insurance and risk modeling."
+    },
+    "HlMaxSz:mm": {
+      "title": "Maximum hail size (mm)",
+      "description": "Largest hailstone diameter observed."
+    },
+    "HlD:mm": {
+      "title": "Hailstone diameter (mm)",
+      "description": "Most common hail metric for severity assessment."
+    },
+    "HlProb:%": {
+      "title": "Severe hail probability (%)",
+      "description": "Likelihood of hail exceeding certain size threshold."
+    },
+    "HlKE:J/m2": {
+      "title": "Hail kinetic energy (J/m2)",
+      "description": "Energy per unit area for crop and roof damage assessment."
+    },
+    "ImpactE:J": {
+      "title": "Impact energy (J)",
+      "description": "Energy released upon impact (ballistics, hail)."
+    },
+    "ImpactE:kJ": {
+      "title": "Impact energy (kJ)",
+      "description": "Impact energy in kilojoules."
+    },
+    "SPI:-": {
+      "title": "Standard Precipitation Index",
+      "description": "Meteorological drought index across multiple timescales."
+    },
+    "SPEI:-": {
+      "title": "Standard Precipitation Evapotranspiration Index",
+      "description": "Drought index incorporating temperature effects."
+    },
+    "PDSI:-": {
+      "title": "Palmer Drought Severity Index",
+      "description": "Long-term drought index spanning -10 (dry) to +10 (wet)."
+    },
+    "CMI:-": {
+      "title": "Crop Moisture Index",
+      "description": "Short-term agricultural drought or moisture surplus indicator."
+    },
+    "NDVI:-": {
+      "title": "Normalized Difference Vegetation Index",
+      "description": "Satellite-derived measure of vegetation health and biomass."
+    },
+    "VCI:-": {
+      "title": "Vegetation Condition Index",
+      "description": "Current vegetation health vs. historical trends."
+    },
+    "VHI:-": {
+      "title": "Vegetation Health Index",
+      "description": "Composite index combining VCI and temperature effects."
+    },
+    "ASI:%": {
+      "title": "Agricultural Stress Index (%)",
+      "description": "Indicator for early identification of water-stressed cropland."
+    },
+    "WMVHI:-": {
+      "title": "Weighted Mean Vegetation Health Index",
+      "description": "Drought severity assessment from growing season start."
+    },
+    "DI:-": {
+      "title": "Drought Intensity",
+      "description": "Classification: Extreme, Severe, Moderate, or Mild."
+    },
+    "DMC:-": {
+      "title": "U.S. Drought Monitor Categories",
+      "description": "Scale from D0 (Abnormally Dry) to D4 (Exceptional Drought)."
+    },
+    "PNP:%": {
+      "title": "Percent of Normal Precipitation (%)",
+      "description": "Current precipitation compared to historical average."
+    },
+    "SMA:-": {
+      "title": "Soil Moisture Anomaly",
+      "description": "Deviation from normal soil moisture levels."
+    },
+    "SA:%": {
+      "title": "Streamflow Percentile (%)",
+      "description": "Current streamflow compared to historical records."
+    },
+    "DSCI:-": {
+      "title": "Drought Severity and Coverage Index",
+      "description": "Continuous severity index on scale 0-500."
+    },
+    "EDDI:-": {
+      "title": "Evaporative Demand Drought Index",
+      "description": "Quantifies atmospheric water demand from land surface."
+    },
+    "AirTemp:C": {
+      "title": "Air temperature (°C)",
+      "description": "Ambient air temperature in Celsius."
+    },
+    "AirTemp:F": {
+      "title": "Air temperature (°F)",
+      "description": "Ambient air temperature in Fahrenheit."
+    },
+    "WBGT:C": {
+      "title": "Wet Bulb Globe Temperature (C)",
+      "description": "Heat stress index incorporating temperature, humidity, wind, and solar radiation."
+    },
+    "WBT:C": {
+      "title": "Wet Bulb Temperature (C)",
+      "description": "Temperature at which sweat no longer evaporates efficiently."
+    },
+    "HI:-": {
+      "title": "Heat Index",
+      "description": "Apparent temperature combining air temperature and humidity."
+    },
+    "EHF:-": {
+      "title": "Excess Heat Factor",
+      "description": "Heatwave severity based on temperature anomalies."
+    },
+    "CDD:-": {
+      "title": "Cooling Degree Days",
+      "description": "Measures energy demand for cooling buildings."
+    },
+    "AT:-": {
+      "title": "Apparent Temperature",
+      "description": "Perceived temperature based on humidity and wind (similar to heat index)."
+    },
+    "HD:-": {
+      "title": "Number of Hot Days",
+      "description": "Days exceeding a threshold (e.g. >35°C)."
+    },
+    "ls_fd:m": {
+      "title": "Landslide flow depth (m)",
+      "description": "Depth of landslide flow in meters."
+    },
+    "ls_mfd:m": {
+      "title": "Maximum foundation displacement (m)",
+      "description": "Maximum foundation displacement due to landslide."
+    },
+    "SD_lsl:m": {
+      "title": "Landslide displacement (m)",
+      "description": "Displacement associated with slow-moving landslides."
+    },
+    "I_DF:m3/s2": {
+      "title": "Debris-flow intensity index (m3/s2)",
+      "description": "Landslide intensity index (Jakob et al. 2012)."
+    },
+    "rf_KE:kJ": {
+      "title": "Rockfall kinetic energy (kJ)",
+      "description": "Kinetic energy of rockfall as function of mass and velocity."
+    },
+    "IP:kPa": {
+      "title": "Impact Pressure (kPa)",
+      "description": "Force exerted by avalanche on objects; used in structural and hazard analysis, in kPa (kilopascal)."
+    },
+    "LSI:-": {
+      "title": "Landslide Susceptibility Index",
+      "description": "Probability based on terrain and environmental factors."
+    },
+    "DP:-": {
+      "title": "Destructive Potential",
+      "description": "Classification based on observed or expected damage."
+    },
+    "PE:% of slope area": {
+      "title": "Planimetric Extent (% of slope area)",
+      "description": "Proportion of a slope affected by landslides; used in intensity modeling."
+    },
+    "Rdist:m": {
+      "title": "Runout distance (m)",
+      "description": "Horizontal distance traveled downslope."
+    },
+    "Vol:m3": {
+      "title": "Volume (m3)",
+      "description": "Total volume of material involved."
+    },
+    "h_vaf:mm": {
+      "title": "Volcanic ash fall thickness (mm)",
+      "description": "Accumulated depth of ash following eruption."
+    },
+    "L_vaf:kg/m2": {
+      "title": "Volcanic ash loading (kg/m2)",
+      "description": "Load of accumulated ash per unit area."
+    },
+    "vei:-": {
+      "title": "Volcanic Explosivity Index",
+      "description": "Logarithmic scale of eruption explosiveness."
+    },
+    "Vbal_size:m": {
+      "title": "Volcanic ballistic size (m)",
+      "description": "Diameter of volcanic projectiles."
+    },
+    "Vbal_Lprob:%": {
+      "title": "Ballistic landing probability (%)",
+      "description": "Likelihood of ballistic landing in given area."
+    },
+    "Vbal_MaxRng:km": {
+      "title": "Maximum ballistic range (km)",
+      "description": "Maximum distance ballistics can reach from vent."
+    },
+    "BA:ha": {
+      "title": "Burned Area (ha)",
+      "description": "Surface area impacted by the hazard. Described in square kilometers."
+    },
+    "BA:km2": {
+      "title": "Burned Area (km²)",
+      "description": "Surface area impacted by the hazard. Described in square kilometers."
+    },
+    "FWI:-": {
+      "title": "Fire Weather Index",
+      "description": "Meteorological fire danger index."
+    },
+    "AA:m2": {
+      "title": "Area Affected (m²)",
+      "description": "Surface area impacted by the hazard. Described in square meters."
+    },
+    "AA:km2": {
+      "title": "Area Affected (km²)",
+      "description": "Surface area impacted by the hazard. Described in square kilometers."
+    },
+    "riskidx:-": {
+      "title": "Risk score",
+      "description": "Composite risk quantification."
+    },
+    "MHI:-": {
+      "title": "Multi-Hazard Index",
+      "description": "Index describing prevalence of multiple hazards."
+    },
+    "EvArea:events/km²": {
+      "title": "Event Density - Count per Unit Area (events/km²)",
+      "description": "Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2."
+    },
+    "EvYr:events/year": {
+      "title": "Event Frequency - Count per Year (events/year)",
+      "description": "Number of events in a year"
+    }
   },
   "intensity_measure_mappings": {
     "earthquake": [
-      "PGA:g", "PGA:gal", "PGA:m/s2",
-      "PGV:m/s", "PGV:cm/s",
-      "AvgSa:m/s2", "Sa_1:m/s2", "Sa_03:m/s2",
-      "Sd(T1):m", "Sv(T1):m/s",
+      "PGA:g",
+      "PGA:gal",
+      "PGA:m/s2",
+      "PGV:m/s",
+      "PGV:cm/s",
+      "AvgSa:m/s2",
+      "Sa_1:m/s2",
+      "Sa_03:m/s2",
+      "Sd(T1):m",
+      "Sv(T1):m/s",
       "PGDf:m",
-      "D:s", "D_B:s",
-      "IA:m/s", "Neq:-", "CAV:m/s",
-      "MMI:-", "EMS:-"
+      "D:s",
+      "D_B:s",
+      "IA:m/s",
+      "Neq:-",
+      "CAV:m/s",
+      "MMI:-",
+      "EMS:-"
     ],
     "flood": [
-      "wd:m", "wd:cm", "wd:dm",
-      "wd_f:m", "wd_f:cm", "wd_f:dm",
+      "wd:m",
+      "wd:cm",
+      "wd:dm",
+      "wd_f:m",
+      "wd_f:cm",
+      "wd_f:dm",
       "wv:m/s",
       "slr:cm",
-      "pptn1:mm", "pptn24:mm", "pptn_tot:mm",
-      "AA:m2", "AA:km2"
+      "pptn1:mm",
+      "pptn24:mm",
+      "pptn_tot:mm",
+      "AA:m2",
+      "AA:km2"
     ],
     "tsunami": [
-      "wd:m", "wd:cm", "wd:dm",
-      "wd_f:m", "wd_f:cm", "wd_f:dm",
+      "wd:m",
+      "wd:cm",
+      "wd:dm",
+      "wd_f:m",
+      "wd_f:cm",
+      "wd_f:dm",
       "wv:m/s",
-      "Rh_tsi:m", "h_tsi:m", "Fh_tsi:m",
-      "F_drag:kN", "F_QS:kN",
-      "MF:m3/s2", "MMF:m4/s2",
+      "Rh_tsi:m",
+      "h_tsi:m",
+      "Fh_tsi:m",
+      "F_drag:kN",
+      "F_QS:kN",
+      "MF:m3/s2",
+      "MMF:m4/s2",
       "Fr:-",
       "slr:cm",
-      "AA:m2", "AA:km2"
+      "AA:m2",
+      "AA:km2"
     ],
     "coastal_flood": [
-      "wd:m", "wd:cm", "wd:dm",
-      "wd_f:m", "wd_f:cm", "wd_f:dm",
+      "wd:m",
+      "wd:cm",
+      "wd:dm",
+      "wd_f:m",
+      "wd_f:cm",
+      "wd_f:dm",
       "wv:m/s",
       "slr:cm",
-      "AA:m2", "AA:km2"
+      "AA:m2",
+      "AA:km2"
     ],
     "strong_wind": [
-      "sws_3s:km/h", "sws_1m:km/h", "sws_10m:m/s", "sws_10m:km/h",
-      "PGWS:km/h", "PGWS:mph", "PGWS:m/s",
-      "MSLP:mbar", "MSLP:hPa"
+      "sws_3s:km/h",
+      "sws_1m:km/h",
+      "sws_10m:m/s",
+      "sws_10m:km/h",
+      "PGWS:km/h",
+      "PGWS:mph",
+      "PGWS:m/s",
+      "MSLP:mbar",
+      "MSLP:hPa"
     ],
     "convective_storm": [
-      "sws_3s:km/h", "sws_1m:km/h", "sws_10m:m/s", "sws_10m:km/h",
-      "PGWS:km/h", "PGWS:mph", "PGWS:m/s",
+      "sws_3s:km/h",
+      "sws_1m:km/h",
+      "sws_10m:m/s",
+      "sws_10m:km/h",
+      "PGWS:km/h",
+      "PGWS:mph",
+      "PGWS:m/s",
       "EF:-",
-      "TPL:m", "TPW:m", "TD:",
-      "HSI:-", "HlMaxSz:mm", "HlD:mm", "HlProb:%", "HlKE:J/m2",
+      "TPL:m",
+      "TPW:m",
+      "TD:",
+      "HSI:-",
+      "HlMaxSz:mm",
+      "HlD:mm",
+      "HlProb:%",
+      "HlKE:J/m2",
       "ImpactE:J",
-      "AA:m2", "AA:km2",
+      "AA:m2",
+      "AA:km2",
       "EvArea:events/km²"
     ],
     "drought": [
-      "SPI:-", "SPEI:-", "PDSI:-", "CMI:-",
-      "NDVI:-", "VCI:-", "VHI:-",
-      "ASI:%", "WMVHI:-", "DI:-",
-      "DMC:-", "PNP:%", "SMA:-", "SA:%", "DSCI:-", "EDDI:-"
+      "SPI:-",
+      "SPEI:-",
+      "PDSI:-",
+      "CMI:-",
+      "NDVI:-",
+      "VCI:-",
+      "VHI:-",
+      "ASI:%",
+      "WMVHI:-",
+      "DI:-",
+      "DMC:-",
+      "PNP:%",
+      "SMA:-",
+      "SA:%",
+      "DSCI:-",
+      "EDDI:-"
     ],
     "extreme_temperature": [
-      "AirTemp:C", "AirTemp:F",
-      "WBGT:C", "WBT:C",
-      "HI:-", "EHF:-", "CDD:-",
-      "AT:-", "HD:-"
+      "AirTemp:C",
+      "AirTemp:F",
+      "WBGT:C",
+      "WBT:C",
+      "HI:-",
+      "EHF:-",
+      "CDD:-",
+      "AT:-",
+      "HD:-"
     ],
     "landslide": [
-      "wd:m", "wd:cm", "wd:dm",
+      "wd:m",
+      "wd:cm",
+      "wd:dm",
       "ls_fd:m",
       "wv:m/s",
-      "ls_mfd:m", "SD_lsl:m",
+      "ls_mfd:m",
+      "SD_lsl:m",
       "I_DF:m3/s2",
       "rf_KE:kJ",
       "IP:kPa",
-      "LSI:-", "DP:-",
+      "LSI:-",
+      "DP:-",
       "PE:% of slope area",
-      "Rdist:m", "Vol:m3",
-      "AA:m2", "AA:km2",
+      "Rdist:m",
+      "Vol:m3",
+      "AA:m2",
+      "AA:km2",
       "EvArea:events/km²"
     ],
     "volcanic": [
-      "wd:m", "wd:cm", "wd:dm",
+      "wd:m",
+      "wd:cm",
+      "wd:dm",
       "wv:m/s",
-      "h_vaf:mm", "L_vaf:kg/m2",
+      "h_vaf:mm",
+      "L_vaf:kg/m2",
       "vei:-",
-      "ImpactE:kJ", "ImpactE:J",
-      "Vbal_size:m", "Vbal_Lprob:%", "Vbal_MaxRng:km",
+      "ImpactE:kJ",
+      "ImpactE:J",
+      "Vbal_size:m",
+      "Vbal_Lprob:%",
+      "Vbal_MaxRng:km",
       "Rdist:m",
-      "AA:m2", "AA:km2",
+      "AA:m2",
+      "AA:km2",
       "EvArea:events/km²"
     ],
     "wildfire": [
-      "BA:ha", "BA:km2",
+      "BA:ha",
+      "BA:km2",
       "FWI:-",
-      "AA:m2", "AA:km2"
+      "AA:m2",
+      "AA:km2"
     ],
     "universal": [
-      "AA:m2", "AA:km2",
-      "riskidx:-", "MHI:-",
+      "AA:m2",
+      "AA:km2",
+      "riskidx:-",
+      "MHI:-",
       "EvYr:events/year"
     ]
   },
