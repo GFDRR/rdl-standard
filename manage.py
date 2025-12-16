@@ -481,6 +481,16 @@ def update_codelists(ctx):
     """
     ctx.invoke(update_media_type)
 
+@cli.command()
+@click.argument('filename', type=click.Path(exists=True))
+def format_csv(filename):
+    with open(filename, 'r') as f:
+        reader = csv.reader(f)
+        data = list(reader)
+    
+    with open(filename, 'w') as f:
+        writer = csv.writer(f, lineterminator='\n')
+        writer.writerows(data)
 
 if __name__ == '__main__':
     cli()
