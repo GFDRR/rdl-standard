@@ -46,7 +46,7 @@ Example: The string `CR/HEX:1/YEX:1981/RES+RES1` describes a residential single 
 
 ### Open Exposure Data (OED)
 
-[OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs), or \[online\]https://oasislmf.github.io/OpenDataStandards/index.html.
+[OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs), or [online](https://oasislmf.github.io/OpenDataStandards/index.html).
 
 Example: In the Open Exposure Data (OED) Standard and other insurance industry models, asset characteristics are separated into individual columns. This record describes a building classified as general residential, single storey, constructed from adobe masonry, with an unknown year of construction:
 
@@ -58,7 +58,7 @@ Example: In the Open Exposure Data (OED) Standard and other insurance industry m
 
 The World Bank Global Program for Safer Schools (GPSS) developed the GLOSI taxonomy to provide a systematic classification system for school buildings. GLOSI classifies school buildings based on 12 parameters [(interactive guide)](https://gpss.worldbank.org/index.php/en/node/571) that govern the building’s structural performance, supported by [research](https://www.sciencedirect.com/science/article/pii/S2212420923000742) into school buildings specifically. There are three primary parameters (main structural system, height range, and seismic design level) and 9 secondary parameters: Diaphragm Type; Structural Irregularity; Span Length; Pier Type; Foundation Type; Seismic Pounding Risk; Effective Seismic Retrofitting; Structural Health Condition; and Non-Structural Components.
 
-School buildings are described using a '/'-separated single taxonomy string similar to GED4ALL. For example, "**RC2/MR(2)/LD**/RD/NI/SP/RO/RF/NP/OS/FC/NN" describes a mid-rise (MR(2)) school built from reinforced concrete building with a framed structure and masonry infills (RC2)   with Low Seismic Design Level (LD).
+School buildings are described using a '/'-separated single taxonomy string similar to GED4ALL. For example, "**RC2/MR(2)/LD**/RD/NI/SP/RO/RF/NP/OS/FC/NN" describes a mid-rise (MR(2)) school built from reinforced concrete building with a framed structure and masonry infills (RC2) with Low Seismic Design Level (LD).
 
 ### CEDE
 

@@ -34,7 +34,7 @@ Source: [UNDRR Terminology (Disaster Risk Management)](https://www.undrr.org/ter
 
 ## Hazard
 
-A hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.  Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. A hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
+A hazard is a process or phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation. Hazards may be single, sequential or combined in their origin and effects. Each hazard is characterized by its location, intensity or magnitude, frequency and probability. A hazardous event is the manifestation of a hazard in a particular place during a particular period of time.
 
 Hazards can have a natural or anthropogenic origin. Natural hazards are associated with natural processes and phenomena (e.g., geological, geophysical, hydrometeorological).
 
