@@ -4,3 +4,4 @@ content,Content,Physical contents of a structure.
 product,Product,"Products produced by businesses, which may or may not be physical items."
 disruption,Disruption (Business Interruption),Planned operations or service provision of a business or infrastructure.
 population,Population,"Injuries, fatalities, and displacements of a population."
+indicator_index_value,Indicator or index value,Value of economic indicator or development index.

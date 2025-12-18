@@ -1,0 +1,303 @@
+﻿Identifier,Hazard Type,Cluster,Specific hazard,URL_details
+BI0001,Biological,Fisheries and Aquaculture,Harmful Algal Blooms,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0001
+BI0002,Biological,Insect Infestation,Insect Pest Infestations,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0002
+BI0003,Biological,Insect Infestation,Locust,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0003
+BI0004,Biological,Invasive Species,Invasive Weeds,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0004
+BI0005,Biological,Invasive Species,Invasive Species,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0005
+BI0006,Biological,Human Animal Interaction,Snake Envenomation,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0006
+BI0007,Biological,Human Animal Interaction,Human-Wildlife Conflict,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0007
+BI0008,Biological,"CBRNE (Chemical, Biological, Radiological, Nuclear and Explosive)",Biological Agents,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0008
+BI0009,Biological,Mental Health,Suicide Cluster,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0009
+BI0010,Biological,Food Safety,Antimicrobial Resistance,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0010
+BI0011,Biological,Food Safety,Foodborne Microbial Hazards (including human enteric virus and foodborne parasite),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0011
+BI0012,Biological,Infectious Diseases (Plant),Bacterial Plant Disease,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0012
+BI0013,Biological,Infectious Diseases (Plant),Fungal Plant Disease,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0013
+BI0014,Biological,Infectious Diseases (Plant),"Viral, Mycoplasma and Viroid Plant Disease",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0014
+BI0015,Biological,Infectious Diseases (Human and Animal),Anthrax,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0015
+BI0016,Biological,Infectious Diseases (Human and Animal),Airborne Diseases,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0016
+BI0017,Biological,Infectious Diseases (Human and Animal),Blood Borne Viruses,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0017
+BI0018,Biological,Infectious Diseases (Human and Animal),Waterborne Diseases,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0018
+BI0019,Biological,Infectious Diseases (Human and Animal),Foodborne Diseases,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0019
+BI0020,Biological,Infectious Diseases (Human and Animal),Sexually Transmitted Diseases (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0020
+BI0021,Biological,Infectious Diseases (Human and Animal),Neglected Tropical Diseases (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0021
+BI0022,Biological,Infectious Diseases (Human and Animal),Vaccine-Preventable Diseases (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0022
+BI0023,Biological,Infectious Diseases (Human and Animal),Vector Borne Diseases (VBD) (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0023
+BI0024,Biological,Infectious Diseases (Human and Animal),Viral Haemorrhagic Fevers (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0024
+BI0025,Biological,Infectious Diseases (Human and Animal),Antimicrobial Resistant Microorganisms,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0025
+BI0026,Biological,Infectious Diseases (Human and Animal),Animal Diseases (Not Zoonoses),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0026
+BI0027,Biological,Infectious Diseases (Human and Animal),Zoonotic Diseases,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0027
+BI0028,Biological,Infectious Diseases (Human and Animal),Diarrhoeal Diseases (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0028
+BI0029,Biological,Infectious Diseases (Human and Animal),Prion Diseases,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0029
+BI0030,Biological,Infectious Diseases (Human and Animal),Hepatitis B (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0030
+BI0031,Biological,Infectious Diseases (Human and Animal),Hepatitis C (human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0031
+BI0032,Biological,Infectious Diseases (Human and Animal),HIV and AIDS (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0032
+BI0033,Biological,Infectious Diseases (Human and Animal),COVID-19 (SARS-CoV-2) (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0033
+BI0034,Biological,Infectious Diseases (Human and Animal),Cholera (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0034
+BI0035,Biological,Infectious Diseases (Human and Animal),Cryptosporidium (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0035
+BI0036,Biological,Infectious Diseases (Human and Animal),Paratyphoid fever (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0036
+BI0037,Biological,Infectious Diseases (Human and Animal),Typhoid Fever (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0037
+BI0038,Biological,Infectious Diseases (Human and Animal),Hepatitis A (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0038
+BI0039,Biological,Infectious Diseases (Human and Animal),Escherichia Coli (STEC) (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0039
+BI0040,Biological,Infectious Diseases (Human and Animal),Listeriosis (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0040
+BI0041,Biological,Infectious Diseases (Human and Animal),Shigellosis (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0041
+BI0042,Biological,Infectious Diseases (Human and Animal),Avian Influenza (Human and Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0042
+BI0043,Biological,Infectious Diseases (Human and Animal),Pandemic Influenza (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0043
+BI0044,Biological,Infectious Diseases (Human and Animal),Seasonal Influenza (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0044
+BI0045,Biological,Infectious Diseases (Human and Animal),Cysticercosis,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0045
+BI0046,Biological,Infectious Diseases (Human and Animal),Leptospirosis (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0046
+BI0047,Biological,Infectious Diseases (Human and Animal),Plague (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0047
+BI0048,Biological,Infectious Diseases (Human and Animal),Leprosy,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0048
+BI0049,Biological,Infectious Diseases (Human and Animal),Chikungunya,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0049
+BI0050,Biological,Infectious Diseases (Human and Animal),Zika Virus (human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0050
+BI0051,Biological,Infectious Diseases (Human and Animal),Diphtheria (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0051
+BI0052,Biological,Infectious Diseases (Human and Animal),Measles (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0052
+BI0053,Biological,Infectious Diseases (Human and Animal),Meningococcal Meningitis (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0053
+BI0054,Biological,Infectious Diseases (Human and Animal),Pertussis (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0054
+BI0055,Biological,Infectious Diseases (Human and Animal),Polio (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0055
+BI0056,Biological,Infectious Diseases (Human and Animal),Smallpox (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0056
+BI0057,Biological,Infectious Diseases (Human and Animal),Varicella and herpes zoster (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0057
+BI0058,Biological,Infectious Diseases (Human and Animal),Yellow Fever (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0058
+BI0059,Biological,Infectious Diseases (Human and Animal),Dengue (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0059
+BI0060,Biological,Infectious Diseases (Human and Animal),Malaria (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0060
+BI0061,Biological,Infectious Diseases (Human and Animal),Crimean-Congo Haemorrhagic Fever (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0061
+BI0062,Biological,Infectious Diseases (Human and Animal),Ebola (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0062
+BI0063,Biological,Infectious Diseases (Human and Animal),Lassa Fever (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0063
+BI0064,Biological,Infectious Diseases (Human and Animal),Tuberculosis (Human and Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0064
+BI0065,Biological,Infectious Diseases (Human and Animal),Middle East Respiratory Syndrome (MERS),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0065
+BI0066,Biological,Infectious Diseases (Human and Animal),Monkeypox (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0066
+BI0067,Biological,Infectious Diseases (Human and Animal),Rabies (Animal and Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0067
+BI0068,Biological,Infectious Diseases (Human and Animal),Severe Acute Respiratory Syndrome (SARS),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0068
+BI0069,Biological,Infectious Diseases (Human and Animal),Rotavirus (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0069
+BI0070,Biological,Infectious Diseases (Animal),African Swine Fever (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0070
+BI0071,Biological,Infectious Diseases (Human and Animal),Vector-borne diseases (VBD) (Animals),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0071
+BI0072,Biological,Infectious Diseases (Human and Animal),Brucellosis (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0072
+BI0073,Biological,Infectious Diseases (Animal),Classical Swine Fever (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0073
+BI0074,Biological,Infectious Diseases (Human and Animal),Contagious Bovine Pleuropneumonia (CBPP) (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0074
+BI0075,Biological,Infectious Diseases (Human and Animal),Contagious Caprine Pleuropneumonia (CCPP) (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0075
+BI0076,Biological,Infectious Diseases (Human and Animal),Foot and Mouth Disease Virus (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0076
+BI0077,Biological,Infectious Diseases (Human and Animal),Lumpy Skin Disease (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0077
+BI0078,Biological,Infectious Diseases (Human and Animal),New World Screwworm (NWS) (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0078
+BI0079,Biological,Infectious Diseases (Human and Animal),Newcastle Disease Virus (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0079
+BI0080,Biological,Infectious Diseases (Human and Animal),Peste Des Petits Ruminants (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0080
+BI0081,Biological,Infectious Diseases (Human and Animal),Q Fever,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0081
+BI0082,Biological,Infectious Diseases (Human and Animal),Rift Valley Fever (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0082
+BI0083,Biological,Infectious Diseases (Human and Animal),Trypanosomosis (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0083
+BI0084,Biological,Infectious Diseases (Human and Animal),West Nile Fever (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0084
+BI0085,Biological,Infectious Diseases (Animal),Rinderpest (Animal),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0085
+BI0086,Biological,Infectious Diseases (Human and Animal),Trypanosomiasis (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0086
+BI0087,Biological,Infectious Diseases (Aquaculture),Shrimp disease (bacterial) - Acute Hepatic,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0087
+BI0088,Biological,Infectious Diseases (Aquaculture),Oyster Disease Aquaculture,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/bi0088
+CH0001,Chemical,Gases,Ammonia,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0001
+CH0002,Chemical,Gases,Carbon Monoxide,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0002
+CH0003,Chemical,Heavy Metals,Arsenic,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0003
+CH0004,Chemical,Heavy Metals,Cadmium,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0004
+CH0005,Chemical,Heavy Metals,Lead,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0005
+CH0006,Chemical,Heavy Metals,Mercury,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0006
+CH0007,Chemical,Food Safety,Levels of Contaminants in Food and Feed,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0007
+CH0008,Chemical,Pesticides,Pesticides – Highly Hazardous,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0008
+CH0009,Chemical,Pesticides,Residue of Pesticides,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0009
+CH0010,Chemical,Persistent Organic Pollutants (POPs),Hazardous Pesticide Contamination in Soils,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0010
+CH0011,Chemical,Pesticides,Insecticides,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0011
+CH0013,Chemical,Persistent Organic Pollutants (POPs),Dioxins and Dioxin-like Substances,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0013
+CH0014,Chemical,Persistent Organic Pollutants (POPs),Microplastics,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0014
+CH0015,Chemical,Gases,Phosphine,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0015
+CH0016,Chemical,Gases,Chlorine,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0016
+CH0017,Chemical,Hydrocarbons,Oil Pollution,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0017
+CH0018,Chemical,Hydrocarbons,Benzene,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0018
+CH0019,Chemical,"CBRNE (Chemical, Biological, Radiological, Nuclear and Explosive)",Chemical Warfare Agents,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0019
+CH0020,Chemical,Other Chemical Hazards and Toxins,Asbestos,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0020
+CH0021,Chemical,Other Chemical Hazards and Toxins,Aflatoxins,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0021
+CH0022,Chemical,Other Chemical Hazards and Toxins,Fluoride - Excess or inadequate intake,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0022
+CH0023,Chemical,Other Chemical Hazards and Toxins,Methanol,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0023
+CH0024,Chemical,Other Chemical Hazards and Toxins,Substandard and Falsified Medical Products,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0024
+CH0025,Chemical,Fisheries and Aquaculture,Marine Toxins,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/ch0025
+CHO012,Chemical,Pesticides,Fungicides,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/cho012
+EN0001,Environmental,Environmental Degradation,Household Air Pollution,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0001
+EN0002,Environmental,Environmental Degradation,Air Pollution (Point Source),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0002
+EN0003,Environmental,Environmental Degradation,Ambient (Outdoor) Air Pollution,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0003
+EN0004,Environmental,Environmental Degradation,Land Degradation,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0004
+EN0005,Environmental,Environmental Degradation,Soil Degradation,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0005
+EN0006,Environmental,Environmental Degradation,Runoff / Nonpoint Source Pollution,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0006
+EN0007,Environmental,Environmental Degradation,Salinity,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0007
+EN0008,Environmental,Environmental Degradation,Biodiversity Loss,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0008
+EN0009,Environmental,Environmental Degradation (Forestry),Deforestation,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0009
+EN0010,Environmental,Environmental Degradation,Forest Declines and Diebacks,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0010
+EN0011,Environmental,Environmental Degradation,Forest Disturbances,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0011
+EN0012,Environmental,Environmental Degradation (Forestry),Forest Invasive Species,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0012
+EN0013,Environmental,Environmental Degradation (Forestry),Wildfires,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0013
+EN0014,Environmental,Environmental Degradation,Desertification,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0014
+EN0015,Environmental,Environmental Degradation,Loss of Mangroves,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0015
+EN0016,Environmental,Environmental Degradation,Wetland Loss/Degradation,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0016
+EN0017,Environmental,Environmental Degradation,Coral Bleaching,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0017
+EN0018,Environmental,Environmental Degradation,Compressive Soils,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0018
+EN0019,Environmental,Environmental Degradation,Soil Erosion,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0019
+EN0020,Environmental,Environmental Degradation,Coastal Erosion and Shoreline Change,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0020
+EN0021,Environmental,Environmental Degradation,Permafrost Loss,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0021
+EN0022,Environmental,Environmental Degradation,Sand Mining,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0022
+EN0023,Environmental,Environmental Degradation,Sea Level Rise,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0023
+EN0024,Environmental,Environmental Degradation,Eutrophication,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/en0024
+ET0001,Extraterrestrial,Extraterrestrial,Airburst,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0001
+ET0002,Extraterrestrial,Extraterrestrial,"Geomagnetic Storm (including energetic particles related to space weather, and solar flare radio blackout [R Scale])",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0002
+ET0003,Extraterrestrial,Extraterrestrial,UV Radiation,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0003
+ET0004,Extraterrestrial,Extraterrestrial,Meteorite Impact,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0004
+ET0005,Extraterrestrial,Extraterrestrial,Ionospheric Storms,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0005
+ET0006,Extraterrestrial,Extraterrestrial,Radio Blackout,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0006
+ET0007,Extraterrestrial,Extraterrestrial,Solar Storm (Solar Radiation Storm) (S Scale),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0007
+ET0008,Extraterrestrial,Extraterrestrial,Space Hazard / Accident,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0008
+ET0009,Extraterrestrial,Extraterrestrial,Near-Earth Object,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/et0009
+GH0001,Geohazards,Seismogenic (Earthquakes),Earthquake,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0001
+GH0002,Geohazards,Seismogenic (Earthquakes),Ground Shaking (Earthquake),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0002
+GH0003,Geohazards,Seismogenic (Earthquakes),Liquefaction (Earthquake Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0003
+GH0004,Geohazards,Seismogenic (Earthquakes),"Earthquake Surface Rupture, Fissures, and Tectonic Uplift/Subsidence",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0004
+GH0005,Geohazards,Seismogenic (Earthquakes),"Subsidence and Uplift, Including Shoreline Change (Earthquake Trigger)",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0005
+GH0006,Geohazards,Seismogenic (Earthquakes),Tsunami (Earthquake Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0006
+GH0007,Geohazards,Seismogenic (Earthquakes),Landslide or Debris Flow (Earthquake Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0007
+GH0008,Geohazards,Seismogenic (Earthquakes),Ground Gases (Seismogenic),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0008
+GH0009,Geohazards,Volcanogenic,Lava Flows (Lava Domes),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0009
+GH0010,Geohazards,Volcanogenic,Ash/Tephra Fall (Physical and Chemical),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0010
+GH0011,Geohazards,Volcanogenic,Ballistics (Volcanic),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0011
+GH0012,Geohazards,Volcanogenic,Pyroclastic Density Current,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0012
+GH0013,Geohazards,Volcanogenic,Debris Flow/Lahars/Floods,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0013
+GH0014,Geohazards,Volcanogenic,Landslide (Volcanic Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0014
+GH0015,Geohazards,Volcanogenic,Ground Shaking (Volcanic Earthquake),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0015
+GH0016,Geohazards,Volcanogenic,Volcanic Gases and Aerosols,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0016
+GH0017,Geohazards,Volcanogenic,Tsunami (Volcanic Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0017
+GH0018,Geohazards,Volcanogenic,Lightning (Volcanic Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0018
+GH0019,Geohazards,Volcanogenic,Urban Fire (During/Following Volcanic Eruption),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0019
+GH0020,Geohazards,Volcanogenic,"Subsidence and Uplift, Including Shoreline Change (Magmatic/Volcanic Trigger)",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0020
+GH0021,Geohazards,Other Geohazard,"Ground Shaking (induced earthquake, reservoir fill, dams, cavity collapse, underground explosion, impact, hydrocarbon fields, shale exploration, etc.)",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0021
+GH0022,Geohazards,Other Geohazard,Liquefaction (Groundwater Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0022
+GH0023,Geohazards,Other Geohazard,Ground Fissuring,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0023
+GH0024,Geohazards,Other Geohazard,Subsidence and Uplift Including Shoreline Change,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0024
+GH0025,Geohazards,Other Geohazard,Shrink-Swell Subsidence,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0025
+GH0026,Geohazards,Other Geohazard,Sinkhole,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0026
+GH0027,Geohazards,Other Geohazard,"Ground Gases (CH4, Rn, etc.)",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0027
+GH0028,Geohazards,Other Geohazard,Riverbank Erosion,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0028
+GH0029,Geohazards,Other Geohazard,Sand Encroachment,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0029
+GH0030,Geohazards,Other Geohazard,Aquifer Recharge (Systems Failure/Outages),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0030
+GH0031,Geohazards,Other Geohazard,Submarine Landslide,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0031
+GH0032,Geohazards,Other Geohazard,Rockfall,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0032
+GH0033,Geohazards,Other Geohazard,Landscape Creep,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0033
+GH0034,Geohazards,Other Geohazard,Sediment Rock Avalanche,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0034
+GH0035,Geohazards,Other Geohazard,Tsunami (Submarine Landslide Trigger),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/gh0035
+MH0001,Meteorological and Hydrological,Convective Related,Downburst,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0001
+MH0002,Meteorological and Hydrological,Convective Related,Lightning (Electrical Storm),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0002
+MH0003,Meteorological and Hydrological,Convective Related,Thunderstorm,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0003
+MH0004,Meteorological and Hydrological,Flood,Coastal Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0004
+MH0005,Meteorological and Hydrological,Flood,Estuarine (Coastal) Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0005
+MH0006,Meteorological and Hydrological,Flood,Flash Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0006
+MH0007,Meteorological and Hydrological,Flood,Fluvial (Riverine) Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0007
+MH0008,Meteorological and Hydrological,Flood,Groundwater Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0008
+MH0009,Meteorological and Hydrological,Flood,Ice-Jam Flood Including Debris,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0009
+MH0010,Meteorological and Hydrological,Flood,Ponding (Drainage) Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0010
+MH0011,Meteorological and Hydrological,Flood,Snowmelt Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0011
+MH0012,Meteorological and Hydrological,Flood,Surface Water Flooding,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0012
+MH0013,Meteorological and Hydrological,Flood,Glacial Lake Outburst Flood,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0013
+MH0014,Meteorological and Hydrological,Lithometeors,Black Carbon (Brown Clouds),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0014
+MH0015,Meteorological and Hydrological,Lithometeors,Dust storm or Sandstorm,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0015
+MH0016,Meteorological and Hydrological,Lithometeors,Fog,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0016
+MH0017,Meteorological and Hydrological,Lithometeors,Haze,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0017
+MH0018,Meteorological and Hydrological,Lithometeors,Polluted Air,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0018
+MH0019,Meteorological and Hydrological,Lithometeors,Sand haze,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0019
+MH0020,Meteorological and Hydrological,Lithometeors,Smoke,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0020
+MH0021,Meteorological and Hydrological,Marine,Ocean Acidification,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0021
+MH0022,Meteorological and Hydrological,Marine,Rogue Wave,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0022
+MH0023,Meteorological and Hydrological,Marine,Sea Water Intrusion,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0023
+MH0024,Meteorological and Hydrological,Marine,Sea Ice (Ice Bergs),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0024
+MH0025,Meteorological and Hydrological,Marine,Ice Flow,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0025
+MH0026,Meteorological and Hydrological,Marine,Seiche,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0026
+MH0027,Meteorological and Hydrological,Marine,Storm Surge,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0027
+MH0028,Meteorological and Hydrological,Marine,Storm Tides,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0028
+MH0029,Meteorological and Hydrological,Marine,Tsunami,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0029
+MH0030,Meteorological and Hydrological,Pressure Related,Depression or Cyclone (Low Pressure Area),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0030
+MH0031,Meteorological and Hydrological,Pressure Related,Extra-tropical Cyclone,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0031
+MH0032,Meteorological and Hydrological,Pressure Related,Sub-Tropical Cyclone,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0032
+MH0033,Meteorological and Hydrological,Precipitation Related,Acid Rain,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0033
+MH0034,Meteorological and Hydrological,Precipitation Related,Blizzard,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0034
+MH0035,Meteorological and Hydrological,Precipitation Related,Drought,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0035
+MH0036,Meteorological and Hydrological,Precipitation Related,Hail,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0036
+MH0037,Meteorological and Hydrological,Precipitation Related,Ice Storm,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0037
+MH0038,Meteorological and Hydrological,Precipitation Related,Snow,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0038
+MH0039,Meteorological and Hydrological,Precipitation Related,Snow Storm,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0039
+MH0040,Meteorological and Hydrological,Temperature Related,Cold Wave,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0040
+MH0041,Meteorological and Hydrological,Temperature Related,Dzud,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0041
+MH0042,Meteorological and Hydrological,Temperature Related,Freeze,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0042
+MH0043,Meteorological and Hydrological,Temperature Related,Frost (Hoar Frost),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0043
+MH0044,Meteorological and Hydrological,Temperature Related,Freezing Rain (Supercooled Rain),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0044
+MH0045,Meteorological and Hydrological,Temperature Related,Glaze,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0045
+MH0046,Meteorological and Hydrological,Temperature Related,Ground Frost,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0046
+MH0047,Meteorological and Hydrological,Temperature Related,Heatwave,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0047
+MH0048,Meteorological and Hydrological,Temperature Related,Icing (Including Ice),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0048
+MH0049,Meteorological and Hydrological,Temperature Related,Thaw,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0049
+MH0050,Meteorological and Hydrological,Terrestrial,Avalanche,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0050
+MH0051,Meteorological and Hydrological,Terrestrial,Mud Flow,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0051
+MH0052,Meteorological and Hydrological,Terrestrial,Rock slide,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0052
+MH0053,Meteorological and Hydrological,Wind Related,Derecho,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0053
+MH0054,Meteorological and Hydrological,Wind Related,Gale (Strong Gale),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0054
+MH0055,Meteorological and Hydrological,Wind Related,Squall,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0055
+MH0056,Meteorological and Hydrological,Wind Related,Subtropical Storm,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0056
+MH0057,Meteorological and Hydrological,Wind Related,"Tropical Cyclone (Cyclonic Wind, Rain [Storm] Surge)",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0057
+MH0058,Meteorological and Hydrological,Wind Related,Tropical Storm,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0058
+MH0059,Meteorological and Hydrological,Wind Related,Tornado,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0059
+MH0060,Meteorological and Hydrological,Wind Related,Wind,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0060
+SO0001,Societal,Conflict,International Armed Conflict (IAC),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0001
+SO0002,Societal,Conflict,Non-International Armed Conflict (NIAC),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0002
+SO0003,Societal,Conflict,Civil Unrest,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0003
+SO0004,Societal,Post Conflict,Explosive Remnants of War,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0004
+SO0005,Societal,Post Conflict,Environmental Degradation from Conflict,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0005
+SO0006,Societal,Behavioural,Violence,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0006
+SO0007,Societal,Behavioural,Stampede or Crushing (Human),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0007
+SO0008,Societal,Economic,Financial shock,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/so0008
+TL0001,Technological,Radiation,Radioactive Waste,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0001
+TL0002,Technological,Radiation,Radioactive Material,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0002
+TL0003,Technological,"CBRNE (Chemical, Biological, Radiological, Nuclear and Explosive)",Radiation Agents,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0003
+TL0004,Technological,"CBRNE (Chemical, Biological, Radiological, Nuclear and Explosive)",Nuclear agents,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0004
+TL0005,Technological,Structural Failure,Building Collapse,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0005
+TL0006,Technological,Structural Failure,"Building, highrise, cladding",https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0006
+TL0007,Technological,Structural Failure,Structural Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0007
+TL0008,Technological,Structural Failure,Bridge Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0008
+TL0009,Technological,Structural Failure,Dam Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0009
+TL0010,Technological,Structural Failure,Supply Chain Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0010
+TL0011,Technological,Structural Failure,Critical Infrastructure Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0011
+TL0012,Technological,Infrastructure Failure,Nuclear Plant Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0012
+TL0013,Technological,Infrastructure Failure,Power Outage/ or Blackout,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0013
+TL0014,Technological,Infrastructure Failure,Emergency Telecommunications Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0014
+TL0015,Technological,Infrastructure Failure,Water Supply Failure,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0015
+TL0016,Technological,Infrastructure Failure,Radio and Other Telecommunication Failures,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0016
+TL0017,Technological,Cyber Hazard,Misconfiguration of Software and Hardware,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0017
+TL0018,Technological,Cyber Hazard,Non-Conformity and Interoperability,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0018
+TL0019,Technological,Cyber Hazard,Malware,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0019
+TL0020,Technological,Cyber Hazard,Data Breach,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0020
+TL0021,Technological,Cyber Hazard,Data Security-Related Hazards,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0021
+TL0022,Technological,Cyber Hazard,Disrupt,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0022
+TL0023,Technological,Cyber Hazard,Outage,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0023
+TL0024,Technological,Cyber Hazard,Personally Identifiable Information (PII) Breach,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0024
+TL0025,Technological,Cyber Hazard,Internet of Things (IOT)-Related Hazards,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0025
+TL0026,Technological,Cyber Hazard,Cyberbullying,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0026
+TL0027,Technological,Industrial Failure,Natech,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0027
+TL0028,Technological,Industrial Failure,Pollution,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0028
+TL0029,Technological,Industrial Failure,Explosion,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0029
+TL0030,Technological,Industrial Failure,Leaks and Spills,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0030
+TL0031,Technological,Industrial Failure,Soil Pollution,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0031
+TL0032,Technological,Industrial Failure,Fire,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0032
+TL0033,Technological,Industrial Failure,Mining Hazards,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0033
+TL0034,Technological,Industrial Failure,Safety Hazards Associated with Oil and Gas,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0034
+TL0035,Technological,Waste,Disaster Waste,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0035
+TL0036,Technological,Waste,Solid Waste,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0036
+TL0037,Technological,Waste,Wastewater,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0037
+TL0038,Technological,Waste,Hazardous Waste,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0038
+TL0039,Technological,Waste,Plastic Waste,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0039
+TL0040,Technological,Marine,Marine Debris,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0040
+TL0041,Technological,Waste,Electronic Waste (E-Waste),https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0041
+TL0042,Technological,Waste,Healthcare Risk Waste,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0042
+TL0043,Technological,Waste,Landfilling,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0043
+TL0044,Technological,Waste,Tailings,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0044
+TL0045,Technological,Waste,Waste Treatment Lagoons,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0045
+TL0046,Technological,Flood,Drain and Sewer Flooding,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0046
+TL0047,Technological,Flood,Reservoir Flooding,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0047
+TL0048,Technological,Transportation,Air Transportation Accident,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0048
+TL0049,Technological,Transportation,Inland Water Ways,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0049
+TL0050,Technological,Transportation,Marine Accident,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0050
+TL0051,Technological,Transportation,Rail Accident,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0051
+TL0052,Technological,Transportation,Road Traffic Accident,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0052
+TL0053,Technological,"CBRNE (Chemical, Biological, Radiological, Nuclear and Explosive)",Explosive agents,https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/tl0053

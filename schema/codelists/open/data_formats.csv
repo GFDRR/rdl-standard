@@ -9,3 +9,5 @@ geotiff,geotiff,GeoTiff
 md,markdown,Markdown
 pdf,pdf,Portable Document Format
 website,website,External website
+pqt,parquet,Parquet
+stac,stac,STAC

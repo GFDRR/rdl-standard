@@ -1,0 +1,7 @@
+Code,Title,Description
+hazard,Hazard,Hazard
+exposure,Exposure,Exposure
+vulnerability,Vulnerability,Vulnerability
+capacity,Capacity,Capacity
+probabilistic_loss,Probabilistic Loss,Probabilistic Loss
+deterministic_loss,Deterministic Loss,Deterministic Loss

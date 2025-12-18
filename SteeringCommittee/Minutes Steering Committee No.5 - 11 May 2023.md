@@ -35,11 +35,11 @@ Absent:
 
 3.  Update on Fellowship program
   * Sharing project descriptions, review for interest in collaborating / further work
-  * Arrange a fellowship workshop, in which steering committee can share their work/projects
+  * Arrange a fellowship workshop, in which the steering committee can share their work/projects
 
 4.  Update on aligning Open Data Standards and RDLS - Oasis team developing use of hazard and vulnerability metadata into Oasis models. Last meeting, requested use cases for having hazard and vulnerability standard wrapped around data in Oasis.
 
-5.  IFRC - Global Risk Databank - possiblity to use RDLS and data from Data Catalog.
+5.  IFRC - Global Risk Databank - possibility to use RDLS and data from Data Catalog.
 
 6.  Propose next SC meetings
   * Wednesday 12 July 2023
@@ -63,21 +63,21 @@ Absent:
 - Can adopt in ODS package - Johanna Carter checking what ODS needs, / doesn’t - what might be missing in RDL.
 - PH: Nasdaq “Key Facts” document provides a brief description of the most important aspects of a Model.  If Nasdaq were happy to share their template this might be useful since many OASIS vendors are already producing such documents for their models.
 - MD: Question on the integration of the ODS into RDLS - SF: lots we can learn from Oasis file structure - speaking with Joh.
-- PH: Humanitarian is still separated from the Insurance sector (humanitarian models often focus on data points such as fatalities, etc. while OASIS models can produce insured/reinsured losses).  RDLS has been designed to be taxonomy neutral. Don’t replicate or build new functions if existing in RLDS or ODS - re-use.
-- JC: it would make sense to have the Financial Terms in the RDLS exposure data given RLDS Loss component include ec/ins loss perspectives
+- PH: Humanitarian is still separated from the Insurance sector (humanitarian models often focus on data points such as fatalities, etc. while OASIS models can produce insured/reinsured losses).  RDLS has been designed to be taxonomy-neutral. Don’t replicate or build new functions if existing in RLDS or ODS - re-use.
+- JC: it would make sense to have the Financial Terms in the RDLS exposure data given RLDS Loss component includes ec/ins loss perspectives
 - Presentation of the Global Risk Data Bank by Marcus Elten
 - A project between UNDRR and IFRC - concept note
   - Middle of phase 2; A first demo 2-3 weeks
   - SteerCo includes NASA, WMO…
   - The first step is to provide a consistent database of historical event impacts - footprints, impact. 
   - SF: Ideal situation that GRD and RLDS represent the same information, GRD using RDLS metadata about historical events - GRD data into modellers to represent the event as best as possible; modellers share information beach to GRD on modelled impacts? Can SC propose some use cases to support this need?
-- CH: Data from Global Risk Datankbase could be used for parametric insurance product trigger setting (based on an understanding of past impacts)
+- CH: Data from the Global Risk Database could be used for parametric insurance product trigger setting (based on an understanding of past impacts)
 - Marcus suggested SteerCo as a place GFDRR can contribute.
 
 ## Actions
 - GFDRR to share Fellowship project descriptions.
 - Have a Fellow Workshop to share info from SC members' organisations/experiences/opportunities. AG to share workshop dates, and plan agenda.
-- ODS/Stu to log GitHub issues, email SC when bulk is done.
+- ODS/Stu to log GitHub issues, and email SC when the bulk is done.
 - Stu - set up a conversation about tax. strings. 
 - Tax type and version need to be in the metadata
 - Implementing occ/con types in separate fields - or as one string?

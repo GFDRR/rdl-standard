@@ -1,11 +1,28 @@
-Code,Title
-percentage,Percentage
-hour,Hour
-day,Day
-week,Week
-month,Month
-year,Year
-count,Count
-m2,Square meter
-hectares,Hectares
-km2,Square kilometer
+Code,Title,Description
+percentage,Percentage,
+hour,Hour,
+day,Day,
+week,Week,
+month,Month,
+year,Year,
+count,Count,
+m2,Square meter,
+hectares,Hectares,
+km2,Square kilometer,
+m,Metre,
+km,Kilometre,
+ml,Miles,
+yard,Yard,
+people,People,
+kgHa,Kilogram per hectare,
+cost,Cost,
+units,Units,"Units of production, e.g., cars, TVs, phones"
+ton,Metric tons (tonnes) of produce,
+bushels,Bushels of produce,"For Grains (wheat, rice)"
+crates,Crates of produce,
+head,Head of Livestock,"E.g., cattle, pigs"
+L,Litres of liquid produce,E.g. milk
+G,Gallons of liquid produce,E.g. milk
+kWh,Kilowatt-hours,Electricity	Energy
+barrels,Barrels,Barrels of Oil
+m3,Cubic meters,E.g. of Natural Gas	Energy
