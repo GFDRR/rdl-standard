@@ -45,8 +45,8 @@
           "exposure",
           "vulnerability",
           "capacity",
-          "probabilistic loss",
-          "deterministic loss"
+          "probabilistic_loss",
+          "deterministic_loss"
         ]
       },
       "codelist": "risk_model_type.csv",
@@ -196,15 +196,20 @@
           "title": "Exposure category",
           "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
           "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "agriculture",
+              "buildings",
+              "infrastructure",
+              "population",
+              "natural_environment",
+              "economic_indicator",
+              "development_index"
+            ]
+          },
           "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment"
-          ]
+          "openCodelist": false
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
@@ -460,10 +465,10 @@
                   "type": "string",
                   "description": "The socio-economic data sources used in the function.",
                   "enum": [
-                    "household survey",
-                    "post-disaster studies",
-                    "national census",
-                    "subnational census"
+                    "household_survey",
+                    "post_disaster_studies",
+                    "national_census",
+                    "subnational_census"
                   ],
                   "codelist": "social_data_source.csv",
                   "openCodelist": false
@@ -574,9 +579,9 @@
           "codelist": "platform_type.csv",
           "openCodelist": false,
           "enum": [
-            "cloud-based",
+            "cloud_based",
             "local",
-            "cloud-based and local"
+            "cloud_based_and_local"
           ]
         }
       },
@@ -1748,7 +1753,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "indicator_index_value"
           ]
         },
         "quantity_kind": {
@@ -1789,7 +1795,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "indicator_index_value"
           ]
         },
         "unit": {
@@ -2294,16 +2301,19 @@
           "title": "Loss type",
           "type": "array",
           "description": "The type of losses possible to produce in the model, from the closed [loss_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-type). This field indicates whether a financial module is present - this is required to compute anything other than group up or economic loss.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ground_up",
+              "insured",
+              "gross",
+              "count",
+              "net_precat",
+              "net_postcat"
+            ]
+          },
           "codelist": "loss_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "ground_up",
-            "insured",
-            "gross",
-            "count",
-            "net_precat",
-            "net_postcat"
-          ]
+          "openCodelist": false
         },
         "approach": {
           "title": "Loss approach",
