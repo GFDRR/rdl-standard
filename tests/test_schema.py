@@ -69,6 +69,6 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_null_type(path, data, no_null=True)
     
     # Here, we don't add to `errors`, in order to not count these warnings as errors.
-    validate_deep_properties(path, data)
+    # validate_deep_properties(path, data)
 
     assert not errors, 'One or more JSON Schema files are invalid. See warnings below.'
