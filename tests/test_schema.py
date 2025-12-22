@@ -29,7 +29,7 @@ validate_array_items_kwargs = {
 }
 
 def validate_metadata_presence_allow_missing(pointer):
-    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf') or pointer.startswith('/properties/links') or pointer.startswith('/hazard_process_mappings') or pointer.startswith('/intensity_measure_definitions') or pointer.startswith('/intensity_measure_mappings') or pointer.startswith('/properties/attributions/contains') or '/options' in pointer or pointer.startswith('/properties/vulnerability/anyOf/') or '/examples/' in pointer or pointer.startswith('/$defs/Resource/anyOf') or pointer.startswith('/$defs/Entity/anyOf') or pointer.startswith('/$defs/Period/properties/start/anyOf') or pointer.startswith('/$defs/Period/properties/end/anyOf') or '/codelist_' in pointer
+    return 'start/oneOf' in pointer or 'end/oneOf' in pointer or pointer.startswith('/anyOf') or pointer.startswith('/properties/links') or pointer.startswith('/hazard_process_mappings') or pointer.startswith('/intensity_measure_definitions') or pointer.startswith('/intensity_measure_mappings') or pointer.startswith('/properties/attributions/contains') or '/options' in pointer or pointer.startswith('/properties/vulnerability/anyOf/') or '/examples/' in pointer or pointer.startswith('/$defs/Resource/anyOf') or pointer.startswith('/$defs/Entity/anyOf') or pointer.startswith('/$defs/Period/properties/start/anyOf') or pointer.startswith('/$defs/Period/properties/end/anyOf') or '/codelist_' in pointer or pointer == '/$defs/VulnerabilityCommonFields'
 
 validate_metadata_presence_kwargs = {
     'allow_missing': validate_metadata_presence_allow_missing,
