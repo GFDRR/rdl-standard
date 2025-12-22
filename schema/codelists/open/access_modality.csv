@@ -1,0 +1,12 @@
+Code,Title,Definition
+file_download,file_download,file_download
+download_page,download_page,download_page
+API,API,API
+OGC_API,OGC_API,OGC_API
+GEE_collection,GEE_collection,GEE_collection
+WMS,WMS,WMS
+WFS,WFS,WFS
+WCS,WCS,WCS
+STAC,STAC,STAC
+REST,REST,REST
+dashboard,dashboard,dashboard
