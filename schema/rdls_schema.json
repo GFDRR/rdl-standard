@@ -644,10 +644,17 @@
       "type": "object",
       "description": "The vulnerability function used to calculate the impact of the hazard.",
       "required": [
+        "id",
         "approach",
         "relationship"
       ],
       "properties": {
+        "id": {
+          "title": "Vulnerability function identifier",
+          "type": "string",
+          "description": "A unique identifier for the vulnerability function. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
         "approach": {
           "title": "Vulnerability function approach",
           "description": "The approach the vulnerability function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#function-approach).",
@@ -739,10 +746,17 @@
       "type": "object",
       "description": "The fragility function used to calculate the impact of the hazard.",
       "required": [
+        "id",
         "approach",
         "relationship"
       ],
       "properties": {
+        "id": {
+          "title": "Fragility function identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this fragility function",
+          "minLength": 1
+        },
         "approach": {
           "title": "Fragility function approach",
           "description": "The approach the fragility function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#function-approach).",
@@ -860,10 +874,17 @@
       "type": "object",
       "description": "The damage-to-loss function (or damage-to-loss model) used to calculate the impact of the hazard in conjunction with a fragility function.",
       "required": [
+        "id",
         "approach",
         "relationship"
       ],
       "properties": {
+        "id": {
+          "title": "Damage-to-loss function identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this damage-to-loss function",
+          "minLength": 1
+        },
         "approach": {
           "title": "Damage-to-loss function approach",
           "description": "The approach the damage-to-loss impact function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#function-approach).",
@@ -981,10 +1002,17 @@
       "type": "object",
       "description": "The engineering demand function used to calculate the impact of the hazard.",
       "required": [
+        "id",
         "approach",
         "relationship"
       ],
       "properties": {
+        "id": {
+          "title": "Engineering demand function identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this engineering demand function",
+          "minLength": 1
+        },
         "parameter": {
           "title": "Engineering demand parameter",
           "type": "string",
@@ -1116,6 +1144,7 @@
       "type": "object",
       "description": "A socio-economic indicator or index used to characterize vulnerability.",
       "required": [
+        "id",
         "indicator_name",
         "indicator_code",
         "description",
@@ -1149,6 +1178,12 @@
         }
       ],
       "properties": {
+        "id": {
+          "title": "Socio-economic indicator identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this socio-economic indicator",
+          "minLength": 1
+        },
         "scheme": {
           "title": "Classification scheme",
           "description": "The classification scheme or framework from which the indicator is taken, from the closed [classification_scheme codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#classification-scheme).",
@@ -2640,10 +2675,17 @@
       "type": "object",
       "description": "Information about a specific category of exposed assets.",
       "required": [
+        "id",
         "category",
         "metrics"
       ],
       "properties": {
+        "id": {
+          "title": "Exposure item identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this exposure item.",
+          "minLength": 1
+        },
         "category": {
           "title": "Exposure category",
           "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/latest/reference/codelists/#exposure-category).",
