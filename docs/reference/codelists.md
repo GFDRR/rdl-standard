@@ -33,6 +33,22 @@ This codelist has the following codes:
 ```
 ````
 
+### access_modality
+
+This codelist is referenced by the following properties:
+
+- [`Resource/access_modality`](rdls_schema.json,/$defs/Resource,access_modality)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/access_modality.csv
+```
+````
+
 ### classification_scheme
 
 This codelist is referenced by the following properties:
@@ -40,9 +56,6 @@ This codelist is referenced by the following properties:
 This codelist has the following codes:
 
 ````{dropdown} Codes
----
-open:
----
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -226,14 +239,6 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`VulnerabilityCommonFields/hazard_analysis_type`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_analysis_type)
-- [`VulnerabilityFunction/hazard_analysis_type`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_analysis_type)
-- [`FragilityFunction/hazard_analysis_type`](rdls_schema.json,/$defs/FragilityFunction,hazard_analysis_type)
-- [`DamageToLossFunction/hazard_analysis_type`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_analysis_type)
-- [`EngineeringDemandFunction/hazard_analysis_type`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_analysis_type)
-- [`Event_set/analysis_type`](rdls_schema.json,/$defs/Event_set,analysis_type)
-- [`Losses/impact_and_losses/loss_frequency_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_frequency_type)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -283,15 +288,6 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`VulnerabilityCommonFields/impact_modelling`](rdls_schema.json,/$defs/VulnerabilityCommonFields,impact_modelling)
-- [`VulnerabilityFunction/impact_modelling`](rdls_schema.json,/$defs/VulnerabilityFunction,impact_modelling)
-- [`FragilityFunction/impact_modelling`](rdls_schema.json,/$defs/FragilityFunction,impact_modelling)
-- [`DamageToLossFunction/impact_modelling`](rdls_schema.json,/$defs/DamageToLossFunction,impact_modelling)
-- [`EngineeringDemandFunction/impact_modelling`](rdls_schema.json,/$defs/EngineeringDemandFunction,impact_modelling)
-- [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
-- [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
-- [`Losses/impact_and_losses/impact_modelling`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_modelling)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -308,14 +304,6 @@ open:
 ### exposure_category
 
 This codelist is referenced by the following properties:
-
-- [`VulnerabilityCommonFields/category`](rdls_schema.json,/$defs/VulnerabilityCommonFields,category)
-- [`VulnerabilityFunction/category`](rdls_schema.json,/$defs/VulnerabilityFunction,category)
-- [`FragilityFunction/category`](rdls_schema.json,/$defs/FragilityFunction,category)
-- [`DamageToLossFunction/category`](rdls_schema.json,/$defs/DamageToLossFunction,category)
-- [`EngineeringDemandFunction/category`](rdls_schema.json,/$defs/EngineeringDemandFunction,category)
-- [`Exposure_item/category`](rdls_schema.json,/$defs/Exposure_item,category)
-- [`Losses/asset_category`](rdls_schema.json,/$defs/Losses,asset_category)
 
 This codelist has the following codes:
 
@@ -352,12 +340,6 @@ open:
 ### function_approach
 
 This codelist is referenced by the following properties:
-
-- [`VulnerabilityFunction/approach`](rdls_schema.json,/$defs/VulnerabilityFunction,approach)
-- [`FragilityFunction/approach`](rdls_schema.json,/$defs/FragilityFunction,approach)
-- [`DamageToLossFunction/approach`](rdls_schema.json,/$defs/DamageToLossFunction,approach)
-- [`EngineeringDemandFunction/approach`](rdls_schema.json,/$defs/EngineeringDemandFunction,approach)
-- [`Losses/impact_and_losses/loss_approach`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_approach)
 
 This codelist has the following codes:
 
@@ -399,20 +381,6 @@ The hazard_type codelist classifies hazard phenomena by the main hazard to which
 
 This codelist is referenced by the following properties:
 
-- [`VulnerabilityCommonFields/hazard_primary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_primary)
-- [`VulnerabilityCommonFields/hazard_secondary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_secondary)
-- [`VulnerabilityFunction/hazard_primary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_primary)
-- [`VulnerabilityFunction/hazard_secondary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_secondary)
-- [`FragilityFunction/hazard_primary`](rdls_schema.json,/$defs/FragilityFunction,hazard_primary)
-- [`FragilityFunction/hazard_secondary`](rdls_schema.json,/$defs/FragilityFunction,hazard_secondary)
-- [`DamageToLossFunction/hazard_primary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_primary)
-- [`DamageToLossFunction/hazard_secondary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_secondary)
-- [`EngineeringDemandFunction/hazard_primary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_primary)
-- [`EngineeringDemandFunction/hazard_secondary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_secondary)
-- [`Hazard/type`](rdls_schema.json,/$defs/Hazard,type)
-- [`Trigger/type`](rdls_schema.json,/$defs/Trigger,type)
-- [`Losses/hazard_type`](rdls_schema.json,/$defs/Losses,hazard_type)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -427,7 +395,6 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`VulnerabilityCommonFields/impact_type`](rdls_schema.json,/$defs/VulnerabilityCommonFields,impact_type)
 - [`VulnerabilityFunction/impact_type`](rdls_schema.json,/$defs/VulnerabilityFunction,impact_type)
 - [`FragilityFunction/impact_type`](rdls_schema.json,/$defs/FragilityFunction,impact_type)
 - [`DamageToLossFunction/impact_type`](rdls_schema.json,/$defs/DamageToLossFunction,impact_type)
@@ -470,9 +437,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
-- [`Losses/asset_dimension`](rdls_schema.json,/$defs/Losses,asset_dimension)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -486,25 +450,28 @@ open:
 ```
 ````
 
+### platform_type
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/platform_type.csv
+```
+````
+
 ### process_type
 
 The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
 
 This codelist is referenced by the following properties:
-
-- [`VulnerabilityCommonFields/hazard_process_primary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_process_primary)
-- [`VulnerabilityCommonFields/hazard_process_secondary`](rdls_schema.json,/$defs/VulnerabilityCommonFields,hazard_process_secondary)
-- [`VulnerabilityFunction/hazard_process_primary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_process_primary)
-- [`VulnerabilityFunction/hazard_process_secondary`](rdls_schema.json,/$defs/VulnerabilityFunction,hazard_process_secondary)
-- [`FragilityFunction/hazard_process_primary`](rdls_schema.json,/$defs/FragilityFunction,hazard_process_primary)
-- [`FragilityFunction/hazard_process_secondary`](rdls_schema.json,/$defs/FragilityFunction,hazard_process_secondary)
-- [`DamageToLossFunction/hazard_process_primary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_process_primary)
-- [`DamageToLossFunction/hazard_process_secondary`](rdls_schema.json,/$defs/DamageToLossFunction,hazard_process_secondary)
-- [`EngineeringDemandFunction/hazard_process_primary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_process_primary)
-- [`EngineeringDemandFunction/hazard_process_secondary`](rdls_schema.json,/$defs/EngineeringDemandFunction,hazard_process_secondary)
-- [`Hazard/hazard_process`](rdls_schema.json,/$defs/Hazard,hazard_process)
-- [`Trigger/hazard_process`](rdls_schema.json,/$defs/Trigger,hazard_process)
-- [`Losses/hazard_process`](rdls_schema.json,/$defs/Losses,hazard_process)
 
 This codelist has the following codes:
 
@@ -519,11 +486,6 @@ This codelist has the following codes:
 ### relationship_type
 
 This codelist is referenced by the following properties:
-
-- [`VulnerabilityFunction/relationship`](rdls_schema.json,/$defs/VulnerabilityFunction,relationship)
-- [`FragilityFunction/relationship`](rdls_schema.json,/$defs/FragilityFunction,relationship)
-- [`DamageToLossFunction/relationship`](rdls_schema.json,/$defs/DamageToLossFunction,relationship)
-- [`EngineeringDemandFunction/relationship`](rdls_schema.json,/$defs/EngineeringDemandFunction,relationship)
 
 This codelist has the following codes:
 
@@ -542,8 +504,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Source/component`](rdls_schema.json,/$defs/Source,component)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -554,6 +514,23 @@ open:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/risk_data_type.csv
+```
+````
+
+### risk_model_type
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/risk_model_type.csv
 ```
 ````
 
@@ -573,6 +550,23 @@ open:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/seasonality.csv
+```
+````
+
+### social_data_source
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/social_data_source.csv
 ```
 ````
 

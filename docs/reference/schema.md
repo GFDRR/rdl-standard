@@ -737,21 +737,6 @@ addtargets:
 
 ## Sub-schemas
 
-### VulnerabilityCommonFields
-
-This sub-schema is referenced by the following properties:
-
-Each `VulnerabilityCommonFields` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/VulnerabilityCommonFields
-collapse: 
-  hazard_primary,hazard_secondary,hazard_process_primary,hazard_process_secondary,hazard_analysis_type,intensity_measure,category,impact_modelling,impact_metric,quantity_kind,taxonomy
-addtargets:
----
-```
-
 ### VulnerabilityFunction
 
 `VulnerabilityFunction` is defined as:
