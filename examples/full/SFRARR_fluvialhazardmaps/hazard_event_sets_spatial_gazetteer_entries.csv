@@ -1,0 +1,7 @@
+Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064232,https://datacatalog.worldbank.org/search/dataset/0064232,https://datacatalog.worldbank.org/search/dataset/0064232,https://datacatalog.worldbank.org/search/dataset/0064232,https://datacatalog.worldbank.org/search/dataset/0064232
+"Hazard metadata:
+Event sets:
+Event set identifier",0064232_EventSet1,0064232_EventSet1,0064232_EventSet1,0064232_EventSet1,0064232_EventSet1
+hazard/event_sets/0/spatial/gazetteer_entries/0/id,KAZ,KGZ,TJK,TKM,UZB
+hazard/event_sets/0/spatial/gazetteer_entries/0/scheme,ISO 3166-1 alpha-3,ISO 3166-1 alpha-3,ISO 3166-1 alpha-3,ISO 3166-1 alpha-3,ISO 3166-1 alpha-3
+hazard/event_sets/0/spatial/gazetteer_entries/0/description,Kazakhstan,Kyrgyz Republic,Tajikistan,Turkmenistan,Uzbekistan

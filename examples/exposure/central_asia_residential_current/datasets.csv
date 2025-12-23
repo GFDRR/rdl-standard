@@ -2,27 +2,18 @@ Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064251/Cent
 Title,Central-Asia-exposure-dataset---Current-residential-exposure
 Description,Regional layer of residential buildings in Central Asia
 Risk data type,exposure
-"Publisher:
-Name",World Bank
-"Publisher:
-Email address",sfraser@worldbank.org
-"Publisher:
-URL",http://www.worldbank.org
+publisher/name,World Bank
+publisher/email,sfraser@worldbank.org
+publisher/url,http://www.worldbank.org
 Dataset version,12
 Dataset purpose,"Developed as part of the regional risk assessment, under the Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia program. (https://www.gfdrr.org/en/program/SFRARR-Central-Asia)"
-Project title,Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia 
+project,Strengthening Financial Resilience and Accelerating Risk Reduction in Central Asia 
 "Spatial coverage:
 Countries",KAZ;KGZ;TJK;TKM;UZB
 License,CC-BY-4.0
-"Contact point:
-Name",Stuart Fraser
-"Contact point:
-Email address",sfraser@worldbank.org
-"Creator:
-Name",Risk Engineering and Development
-"Creator:
-URL",http://www.redrisk.com 
-"Exposure metadata:
-Exposure category",buildings
-"Exposure metadata:
-Exposure taxonomy scheme",GED4ALL
+contact_point/name,Stuart Fraser
+contact_point/email,sfraser@worldbank.org
+creator/name,Risk Engineering and Development
+creator/url,http://www.redrisk.com 
+exposure/category,buildings
+exposure/taxonomy,GED4ALL

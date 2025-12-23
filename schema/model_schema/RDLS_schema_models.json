@@ -1198,7 +1198,8 @@
             "global",
             "regional",
             "national",
-            "sub-national"
+            "sub-national",
+            "urban"
           ]
         }
       },
@@ -1754,7 +1755,7 @@
             "product",
             "disruption",
             "population",
-            "indicator_index_value"
+            "index"
           ]
         },
         "quantity_kind": {
@@ -1796,7 +1797,7 @@
             "product",
             "disruption",
             "population",
-            "indicator_index_value"
+            "index"
           ]
         },
         "unit": {

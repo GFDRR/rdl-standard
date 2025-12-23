@@ -1,13 +1,22 @@
 Code,Title,Definition
-api,api,Application Programming Interface
-csv,csv,Comma Separated Values
-json,json,JavaScript Object Notation
-geojson,geojson,Geographic JavaScript Object Notation
-shp,shapefile,ESRI Shapefile
-gpkg,geopackage,GeoPackage
-geotiff,geotiff,GeoTiff
-md,markdown,Markdown
-pdf,pdf,Portable Document Format
-website,website,External website
-pqt,parquet,Parquet
-stac,stac,STAC
+GeoTIFF (tif),GeoTIFF (tif),GeoTIFF (tif)
+Cloud Optimized GeoTIFF (cog),Cloud Optimized GeoTIFF (cog),Cloud Optimized GeoTIFF (cog)
+GRID (grd),GRID (grd),GRID (grd)
+NetCDF (nc),NetCDF (nc),NetCDF (nc)
+GRIB (grib),GRIB (grib),GRIB (grib)
+HDF5 (hdf5),HDF5 (hdf5),HDF5 (hdf5)
+Zarr (zarr),Zarr (zarr),Zarr (zarr)
+GeoPackage (gpkg),GeoPackage (gpkg),GeoPackage (gpkg)
+GeoJSON (geojson),GeoJSON (geojson),GeoJSON (geojson)
+FlatGeobuf (fgb),FlatGeobuf (fgb),FlatGeobuf (fgb)
+Shapefile (shp),Shapefile (shp),Shapefile (shp)
+File Geodatabase (gdb),File Geodatabase (gdb),File Geodatabase (gdb)
+KML (kml),KML (kml),KML (kml)
+CSV (csv),CSV (csv),CSV (csv)
+Parquet (parquet),Parquet (parquet),Parquet (parquet)
+Excel (xlsx),Excel (xlsx),Excel (xlsx)
+JSON (json),JSON (json),JSON (json)
+XML (xml),XML (xml),XML (xml)
+PDF (pdf),PDF (pdf),PDF (pdf)
+LAS (las),LAS (las),LAS (las)
+COPC (copc),COPC (copc),COPC (copc)
