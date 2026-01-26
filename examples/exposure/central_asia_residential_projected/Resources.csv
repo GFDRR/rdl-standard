@@ -8,7 +8,7 @@ Dataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.
 Files: RESIDENTIAL_[OBLAST]._2080_[SSP].csv","Central Asia projected (2080) residential exposure - for all five Central Asia countries included in the analysis, one file per Oblast (ADM1) for SSP5
 Dataset includes projected residneital data for SSP1, SSP4, SSP5 scenarios.
 Files: RESIDENTIAL_[OBLAST]._2080_[SSP].csv"
-Format,csv,csv,csv
+resources/0/format,csv,csv,csv
 Spatial resolution,500,500,500
 resources/0/downloadurl,https://datacatalogfiles.worldbank.org/ddh-published/0064254/DR0091991/P2080_SSP1.zip?versionId=2023-07-11T15:12:01.4656749Z,,
 "Temporal coverage:
