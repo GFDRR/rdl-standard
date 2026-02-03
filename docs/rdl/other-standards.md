@@ -18,15 +18,15 @@ Details about the development are reported [here](https://riskdatalibrary.org/re
 
 The RDL project performed a review of the most relevant hazard taxonomies and derived a classification focusing on those hazards and processes that are more often needed in disaster risk assessments, while mapping and matching alternative definitions into one consistent framework. There are several existing taxonomies that could have been adopted to describe hazard data:
 
-- [UNDRR](https://www.undrr.org/publication/hazard-definition-and-classification-review) (formerly UNISDR) recently proposed an extended taxonomy that covers 300 natural and anthropogenic hazards in 8 categories (Meteo-Hydrological, Geohazard, Environmental, Extraterrestrial, Chemical, Biological, Technological, Societal).
+- [UNDRR](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version) (formerly UNISDR) recently proposed an extended taxonomy that covers 300 natural and anthropogenic hazards in 8 categories (Meteo-Hydrological, Geohazard, Environmental, Extraterrestrial, Chemical, Biological, Technological, Societal).
 
 - [Disaster Risk Management Knowledge Centre](https://drmkc.jrc.ec.europa.eu/risk-data-hub) covers 32 natural and anthropogenic hazards in 8 categories (Geophysical, Hydrological, Meteorological, Climatological, Biological, Technological, Transportation, Malicious).
 
 - [Inspire](https://inspire.ec.europa.eu/codelist/NaturalHazardCategoryValue) covers 25 natural hazards in 6 categories (Geological/hydrological, Meteorological/climatological, Fires, Biological, Cosmic, Other).
 
-- [EM-DAT](https://www.emdat.be/classification) covers 34 natural and technological hazards in 9 categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial, Industrial accident, Transport accident, Miscellaneous accident).
+- [EM-DAT](https://doc.emdat.be/docs/data-structure-and-content/disaster-classification-system/) covers 34 natural and technological hazards in 9 categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial, Industrial accident, Transport accident, Miscellaneous accident).
 
-- [Munich-RE](https://www.cred.be/downloadFile.php?file=sites/default/files/DisCatClass_264.pdf) covers 27 natural hazards 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).
+- [Munich-RE](https://www.munichre.com/content/dam/munichre/contentlounge/website-pieces/documents/RMP_Climate_Change_Edition_Part1_Overview.pdf) covers 15 natural hazards.
 
 ## Exposure standards
 
