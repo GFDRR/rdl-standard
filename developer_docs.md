@@ -51,15 +51,14 @@ Subsequent instructions assume that your current working directory is `rdl-stand
 #### Update submodules
 
 ```bash
-git submodule init
-git submodule update
+git submodule update --init --recursive --remote 
 ```
 
 #### Create and activate a Python virtual environment
 
-The following instructions assume you have [Python 3.8](https://www.python.org/downloads/) or newer installed on your machine.
+The following instructions assume you have [Python 3.12](https://www.python.org/downloads/) or newer installed on your machine.
 
-You can use either `pyenv` or `python3-venv`:
+You can use your preferred method of managing Python virtual environments, e.g. `pyenv` or `python3-venv`:
 
 ##### pyenv
 
@@ -84,7 +83,7 @@ You can use either `pyenv` or `python3-venv`:
 
 ##### python3-venv
 
-If you are using Python 3.3 or newer, `venv` is included in the standard Python installation.
+`venv` is included in the standard Python installation.
 
 1. Create a virtual environment called .ve.
     a. Linux/MacOS users
