@@ -2,6 +2,18 @@
 
 This page lists changes to the Risk Data Library Standard.
 
+## 1.0 - 2026-XX-XX
+
+### Schema
+
+### Codelists
+
+- [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
+
+### Normative documentation
+
+### Non-normative documentation
+
 ## 0.2.0 - 2023-09-08
 
 ### Schema
