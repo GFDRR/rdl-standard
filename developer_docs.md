@@ -27,7 +27,7 @@ Before completing the steps below, you first need to [set up a local development
 1. Create a branch from the `dev` branch.
 1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
 1. Run the pre-commit script (`./manage.py pre-commit`) to update reference documentation and format markdown files.
-1. Run the tests (`pytest`) and [resolve any errors](#resolve-check-failures).
+1. Run the tests (`pytest tests`) and [resolve any errors](#resolve-check-failures).
 1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation).
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at \[https://rdl-standard.readthedocs.io/en/{branch name}\](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
