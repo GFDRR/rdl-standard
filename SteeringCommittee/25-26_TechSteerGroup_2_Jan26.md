@@ -26,9 +26,9 @@ Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
   - Added dataset, now 134
   - Features, request for feedback by end of Jan.
 
-- Pipeline update - stu to make sure Scott doesn't request from JBA; Stu to send Tom relevant links.
+- Pipeline update - Stu to make sure Scott doesn't request from JBA; Stu to send Tom relevant links.
 
-- Development - ODS timeline, send a summary of changes and where we would like inputs form the group.
+- Development - ODS timeline, send a summary of changes and where we would like inputs from the group.
 
 - RDL Fellows: identifying data scientists in WB client countries - greater spread of inputs and users
   - FCV countries
@@ -36,7 +36,7 @@ Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
   - Timeline - KO 14 Jan. Snapshot of projects: country, focus, TTLs. Urban focus consistently
   - FCV Scan - make it use RDLS metadata.
   - JBA - a few countries JBA are active in.
-  - Tom: PHD student from South Sudan - connect with fellow. Wider program FCDO supported, overlap with Fellow countries.
+  - Tom: PhD student from South Sudan - connect with fellow. Wider program FCDO supported, overlap with Fellow countries.
 
 - Bonn Technical Forum
   - Regional Pathways for integrated
@@ -45,7 +45,7 @@ Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
     - Hazards and assets. Some heated discussions. Will follow HIPS for hazards
     - Asset - giving as much flexibility to users, asset categories from PDNAs.
     - Pushing to have something more standardised, UN preferring flexibility.
-  - Event after - Brussels - Christos went - common meeting of DPEG - disaster prev and risk mment group
+  - Event after - Brussels - Christos went - common meeting of DPEG - disaster prevention and risk management group
     - DGs ECHO, ECFIN: European / national loss database; value of connected data.
     - Harmonization of data between the systems. Positive: country reps understood the message/value
     - Need to see how practically implemented.    
@@ -67,7 +67,7 @@ Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
   - Technical questions on standards:
     - Hazards and assets.
     - DELTA tool follows HIPS for hazards
-    - Asset - DELTA tool includes some asset categories from PDNAs (Post-Disaster Needs Assessments). With the idead to give as much flexibility to users. Strong debates between UNDRR and JRC as this approach does not facilitate interoperability between system. JRC pushed for harmonised/standardised asset categories. UN preferring flexibility.
+    - Asset - DELTA tool includes some asset categories from PDNAs (Post-Disaster Needs Assessments). With the idea to give as much flexibility to users. Strong debates between UNDRR and JRC as this approach does not facilitate interoperability between system. JRC pushed for harmonised/standardised asset categories. UN preferring flexibility.
   - DPEG/DRF group meeting (in person, 8-9 Dec 2025, Brussels)
   	- First joint meeting of two expert groups: [Expert Group for Disaster Prevention and Risk Management (DPEG)](https://ec.europa.eu/transparency/expert-groups-register/screen/expert-groups/consult?lang=en&do=groupDetail.groupDetail&groupID=3733&news=1) & Disaster Risk Financing (DRF), respectively led by DG ECHO and DG ECFIN
   	- Provided a valuable platform for dialogue between representatives of national Civil Protection authorities and financial institutions. 
