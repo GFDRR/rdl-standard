@@ -19,7 +19,6 @@ Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
 - Data pipeline - UFRA, ​
 - Current state of development​
 - Questions, feedback
-- ​
  
 
 ## Notes
