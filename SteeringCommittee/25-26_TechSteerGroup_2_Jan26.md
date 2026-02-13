@@ -38,37 +38,27 @@ Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
   - JBA - a few countries JBA are active in.
   - Tom: PhD student from South Sudan - connect with fellow. Wider program FCDO supported, overlap with Fellow countries.
 
-- Bonn Technical Forum
-  - Regional Pathways for integrated
-  - Officially released DELTA - live demos - ingest of data. Audience is mix of policy and technical
+- Bonn Technical Forum 2025
+  - One event – two tracks:
+    - [Regional Pathways for Comprehensive Risk Management for Integrated Disaster Risk Reduction and Climate Action](https://www.undrr.org/event/bonn-technical-forum-2025-regional-pathways-comprehensive-risk-management-integrated-disaster)
+    - [Accelerating tracking of hazardous events and disasters](https://www.undrr.org/event/bonn-technical-forum-2025-accelerating-tracking-hazardous-events-and-disasters)
+  - Official release of DELTA Resilience:
+    - Live demos and ingest of data.
+    - Audience was a mix of policy and technical participants.
   - Technical questions on standards:
-    - Hazards and assets. Some heated discussions. Will follow HIPS for hazards
-    - Asset - giving as much flexibility to users, asset categories from PDNAs.
-    - Pushing to have something more standardised, UN preferring flexibility.
-  - Event after - Brussels - Christos went - common meeting of DPEG - disaster prevention and risk management group
-    - DGs ECHO, ECFIN: European / national loss database; value of connected data.
-    - Harmonization of data between the systems. Positive: country reps understood the message/value
-    - Need to see how practically implemented.    
+    - Hazards and assets; some heated discussions.
+    - DELTA tool follows HIPS for hazards.
+    - Assets – DELTA tool includes some asset categories from PDNAs (Post-Disaster Needs Assessments) to give flexibility to users. Strong debates between UNDRR and JRC as this approach does not facilitate interoperability between systems; JRC pushed for harmonised/standardised asset categories, UN preferring flexibility.
      <img width="976" height="528" alt="image" src="https://github.com/user-attachments/assets/22cc87f3-3a52-474b-838d-beb102c6916d" />
      **(Sam - please confirm OK to include this image in notes)**
-
-    - IFRC GO: taxonomy they're using (GLIDE), EM-DAT classification tree. Luke Caley.
-  - Overture foundation - also in touch with JRC? PC: interesting approach.
-    - making sure standards can come to each other through different IDs.
+  - Event after – Brussels – Christos attended joint DPEG/DRF group meeting (in person, 8-9 Dec 2025, Brussels):
+    - DGs ECHO and ECFIN: discussion on European / national loss database and value of connected data.
+    - Harmonization of data between systems; positive that country representatives understood the message/value.
+    - Need to see how this will be implemented in practice.    
+  - IFRC GO: taxonomy they're using (GLIDE), EM-DAT classification tree. Luke Caley.
+  - Overture Foundation – also in touch with JRC? PC: interesting approach.
+    - Making sure standards can interoperate through different IDs.
     - WB might be working more with them.
-  - - Bonn Technical Forum 2025
-  - One event - two tracks
-  	-	[Regional Pathways for Comprehensive Risk Management for Integrated Disaster Risk Reduction and Climate Action](https://www.undrr.org/event/bonn-technical-forum-2025-regional-pathways-comprehensive-risk-management-integrated-disaster)
-  	-	[Accelerating tracking of hazardous events and disasters](https://www.undrr.org/event/bonn-technical-forum-2025-accelerating-tracking-hazardous-events-and-disasters)
-  - Officially released DELTA Resilience:
-  Audience was mix of policy and technical  	
-  	- live demos
-  	- ingest of data. 
-  - Technical questions on standards:
-    - Hazards and assets.
-    - DELTA tool follows HIPS for hazards
-    - Asset - DELTA tool includes some asset categories from PDNAs (Post-Disaster Needs Assessments). With the idea to give as much flexibility to users. Strong debates between UNDRR and JRC as this approach does not facilitate interoperability between system. JRC pushed for harmonised/standardised asset categories. UN preferring flexibility.
-  - DPEG/DRF group meeting (in person, 8-9 Dec 2025, Brussels)
   	- First joint meeting of two expert groups: [Expert Group for Disaster Prevention and Risk Management (DPEG)](https://ec.europa.eu/transparency/expert-groups-register/screen/expert-groups/consult?lang=en&do=groupDetail.groupDetail&groupID=3733&news=1) & Disaster Risk Financing (DRF), respectively led by DG ECHO and DG ECFIN
   	- Provided a valuable platform for dialogue between representatives of national Civil Protection authorities and financial institutions. 
   	- A key message highlighted was that effective disaster risk management requires integrated data and governance systems that support both operational needs (preparedness and prevention) and fiscal needs (budget planning).
