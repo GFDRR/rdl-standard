@@ -27,7 +27,7 @@ Before completing the steps below, you first need to [set up a local development
 1. Create a branch from the `dev` branch.
 1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
 1. Run the pre-commit script (`./manage.py pre-commit`) to update reference documentation and format markdown files.
-1. Run the tests (`pytest`) and [resolve any errors](#resolve-check-failures).
+1. Run the tests (`pytest tests`) and [resolve any errors](#resolve-check-failures).
 1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation).
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at \[https://rdl-standard.readthedocs.io/en/{branch name}\](https://rdl-standard.readthedocs.io/en/{branch name}).
 1. [Create a pull request](https://github.com/GFDRR/rdl-standard/compare):
@@ -51,15 +51,14 @@ Subsequent instructions assume that your current working directory is `rdl-stand
 #### Update submodules
 
 ```bash
-git submodule init
-git submodule update
+git submodule update --init --recursive --remote 
 ```
 
 #### Create and activate a Python virtual environment
 
-The following instructions assume you have [Python 3.8](https://www.python.org/downloads/) or newer installed on your machine.
+The following instructions assume you have [Python 3.12](https://www.python.org/downloads/) or newer installed on your machine.
 
-You can use either `pyenv` or `python3-venv`:
+You can use your preferred method of managing Python virtual environments, e.g. `pyenv` or `python3-venv`:
 
 ##### pyenv
 
@@ -84,7 +83,7 @@ You can use either `pyenv` or `python3-venv`:
 
 ##### python3-venv
 
-If you are using Python 3.3 or newer, `venv` is included in the standard Python installation.
+`venv` is included in the standard Python installation.
 
 1. Create a virtual environment called .ve.
     a. Linux/MacOS users
