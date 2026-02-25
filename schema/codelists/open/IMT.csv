@@ -105,5 +105,5 @@ BA:ha,Burned Area (ha),Surface area impacted by the hazard. Described in square 
 BA:km2,Burned Area (km²),Surface area impacted by the hazard. Described in square kilometers.,BA,km2,wildfire
 FWI:-,Fire Weather Index,Meteorological fire danger index.,FWI,-,wildfire
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-,universal
-MHI:-,Multi-Hazard Index,Index describing prevalence of multiple hazards.,MHI,-,universal
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-,universal
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year,universal
