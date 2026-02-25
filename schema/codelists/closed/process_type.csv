@@ -26,6 +26,7 @@ volcano_ballistics,Ballistics,"Fragments of magma and old (i.e., pre-existing) r
 lahar,Lahar,"Discrete, rapid, gravity-driven, water-saturated flows containing water and solid particles of volcanic rock, sediment, ice, wood, and other debris that originate at volcanoes."
 lava,Lava,"A lava flow forms during an eruption or eruptive episode and travels away from the source vent as fluid, relatively low-viscosity molten rock."
 pyroclastic_flow,Pyroclastic Flow,"Also known as pyroclastic density currents these are hot, fast-moving mixtures of volcanic particles and gas that originate from the gravitational collapse of explosive eruption columns, lava domes or lava-flow fronts, and from explosive lateral blasts."
+volcano_gas_aerosols,Volcanic Gases and Aerosols,"Volcanic gases and aerosols emitted by almost any type of volcanic activity, includes lake overturn."
 wildfire,Wildfire,"An unplanned or uncontrolled fire affecting natural, cultural, industrial and residential landscapes (UNDRR adapted from FAO, 2010)."
 extratropical_cyclone,Extratropical cyclone,"A low-pressure system which develops in latitudes outside the tropics (WMO, 1992)."
 tropical_cyclone,Tropical cyclone,"A warm-core, non-frontal synoptic-scale cyclone, originating over tropical or subtropical waters, with organised deep convection and closed surface wind circulation about a well-defined centre (WMO, 2017)."
