@@ -124,22 +124,6 @@ This codelist has the following codes:
 ```
 ````
 
-### impact_unit
-
-This codelist is referenced by the following properties:
-
-- [`Impact/unit`](rdls_schema.json,/$defs/Impact,unit)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/impact_unit.csv
-```
-````
-
 ### license
 
 This codelist is referenced by the following properties:
@@ -198,6 +182,7 @@ The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind V
 This codelist is referenced by the following properties:
 
 - [`Metric/quantity_kind`](rdls_schema.json,/$defs/Metric,quantity_kind)
+- [`Impact/quantity_kind`](rdls_schema.json,/$defs/Impact,quantity_kind)
 
 This codelist has the following codes:
 
@@ -227,6 +212,125 @@ This codelist has the following codes:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/roles.csv
+```
+````
+
+### unit_area
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_area.csv
+```
+````
+
+### unit_count
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_count.csv
+```
+````
+
+### unit_dimensionless_ratio
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_dimensionless_ratio.csv
+```
+````
+
+### unit_length
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_length.csv
+```
+````
+
+### unit_mass
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_mass.csv
+```
+````
+
+### unit_time
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_time.csv
+```
+````
+
+### unit_volume
+
+This codelist is referenced by the following properties:
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_volume.csv
 ```
 ````
 

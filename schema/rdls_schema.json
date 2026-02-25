@@ -2252,11 +2252,18 @@
           "openCodelist": true,
           "minLength": 1
         },
+        "quantity_kind": {
+          "title": "Impact quantity kind",
+          "type": "string",
+          "description": "The kind of quantity by which the impact is quantified, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind).",
+          "codelist": "quantity_kind.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
         "unit": {
           "title": "Impact unit",
           "type": "string",
-          "description": "The unit the impact value is expressed in, taken from the open [impact_unit codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-unit).",
-          "codelist": "impact_unit.csv",
+          "description": "The unit by which the impact is measured, taken from the open [unit codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#unit).",
           "openCodelist": true,
           "minLength": 1
         },
@@ -2273,7 +2280,121 @@
           ]
         }
       },
-      "minProperties": 1
+      "minProperties": 1,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "area"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_area.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "count"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_count.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "dimensionless_ratio"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_dimensionless_ratio.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "length"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_length.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "mass"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_mass.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "time"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_time.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "volume"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_volume.csv"
+              }
+            }
+          }
+        }
+      ]
     },
     "Classification": {
       "title": "Classification",
