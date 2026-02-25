@@ -303,7 +303,8 @@
             "pyroclastic_flow",
             "wildfire",
             "extratropical_cyclone",
-            "tropical_cyclone"
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
           ]
         },
         "hazard_process_secondary": {
@@ -342,7 +343,8 @@
             "pyroclastic_flow",
             "wildfire",
             "extratropical_cyclone",
-            "tropical_cyclone"
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
           ]
         },
         "hazard_analysis_type": {
@@ -1442,7 +1444,8 @@
               "pyroclastic_flow",
               "wildfire",
               "extratropical_cyclone",
-              "tropical_cyclone"
+              "tropical_cyclone",
+              "volcano_gas_aerosols"
             ]
           },
           "codelist": "process_type.csv",
@@ -1527,7 +1530,8 @@
               "pyroclastic_flow",
               "wildfire",
               "extratropical_cyclone",
-              "tropical_cyclone"
+              "tropical_cyclone",
+              "volcano_gas_aerosols"
             ]
           },
           "codelist": "process_type.csv",
@@ -2402,7 +2406,8 @@
             "pyroclastic_flow",
             "wildfire",
             "extratropical_cyclone",
-            "tropical_cyclone"
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
           ]
         },
         "description": {
