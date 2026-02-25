@@ -19,3 +19,4 @@ at_risk_tail_value,Tail Value at Risk,Estimated losses at or exceeding a specifi
 downtime_loss,Downtime (loss),Duration of downtime (business or service interruption).,Loss
 asset_loss,Number of assets,"The estimated number of structures, or length of infrastructure, damaged.",Loss
 displaced_count,Number of people displaced,The estimated number of people displaced due to physical damage and disruption.,Loss
+risk_index,Risk Index,"A specified index or classification of risk levels, which may be numeric or non-numeric.",Loss 
