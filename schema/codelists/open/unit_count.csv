@@ -1,2 +1,2 @@
-Code,Title,Description,Quantity Kind,QUDT URI
-count,Count,"""Count"" is a unit for a dimensionless count.",count,https://qudt.org/vocab/unit/COUNT
+Code,Title,Description,QUDT URI
+count,Count,"""Count"" is a unit for a dimensionless count.",https://qudt.org/vocab/unit/COUNT

@@ -1107,7 +1107,7 @@ Each `Metric` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Metric
-collapse:
+collapse: measurement
 addtargets:
 ---
 ```
@@ -1181,7 +1181,7 @@ Each `Impact` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Impact
-collapse:
+collapse: measurement
 addtargets:
 ---
 ```
@@ -1255,6 +1255,31 @@ Each `Losses` has the following fields:
 ---
 pointer: /$defs/Losses
 collapse: cost,impact
+addtargets:
+---
+```
+
+### Measurement
+
+`Measurement` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Measurement/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
+- [`Impact/measurement`](rdls_schema.json,/$defs/Impact,measurement)
+
+Each `Measurement` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Measurement
+collapse:
 addtargets:
 ---
 ```

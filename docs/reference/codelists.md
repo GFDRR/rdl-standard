@@ -181,8 +181,7 @@ The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind V
 
 This codelist is referenced by the following properties:
 
-- [`Metric/quantity_kind`](rdls_schema.json,/$defs/Metric,quantity_kind)
-- [`Impact/quantity_kind`](rdls_schema.json,/$defs/Impact,quantity_kind)
+- [`Measurement/quantity_kind`](rdls_schema.json,/$defs/Measurement,quantity_kind)
 
 This codelist has the following codes:
 
@@ -217,7 +216,11 @@ This codelist has the following codes:
 
 ### unit_area
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the area [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -234,7 +237,11 @@ open:
 
 ### unit_count
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the count [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -251,7 +258,11 @@ open:
 
 ### unit_dimensionless_ratio
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the dimensionless ratio [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -268,7 +279,11 @@ open:
 
 ### unit_length
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the length [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -285,7 +300,11 @@ open:
 
 ### unit_mass
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the mass [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -302,7 +321,11 @@ open:
 
 ### unit_time
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the time [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -319,7 +342,11 @@ open:
 
 ### unit_volume
 
+The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the volume [quantity kind](#quantity_kind).
+
 This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
 
@@ -370,22 +397,6 @@ This codelist has the following codes:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/country.csv
-```
-````
-
-### currency
-
-This codelist is referenced by the following properties:
-
-- [`Cost/unit`](rdls_schema.json,/$defs/Cost,unit)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/closed/currency.csv
 ```
 ````
 
@@ -692,5 +703,22 @@ open:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/spatial_scale.csv
+```
+````
+
+### unit_currency
+
+This codelist is referenced by the following properties:
+
+- [`Cost/unit`](rdls_schema.json,/$defs/Cost,unit)
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/unit_currency.csv
 ```
 ````
