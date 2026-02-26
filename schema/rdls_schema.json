@@ -2506,6 +2506,294 @@
         }
       },
       "minProperties": 1
+    },
+    "SimpleHazard": {
+      "title": "Hazard",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string",
+          "description": "The type of the hazard, from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
+          "codelist": "hazard_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
+          ]
+        },
+        "process": {
+          "title": "Process",
+          "type": "string",
+          "description": "The process that resulted in the hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "codelist": "process_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_ballistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "drought"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "agricultural_drought",
+                  "hydrological_drought",
+                  "meteorological_drought",
+                  "socioeconomic_drought"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "flood"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "fluvial_flood",
+                  "pluvial_flood",
+                  "groundwater_flood",
+                  "coastal_flood"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "earthquake"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "primary_rupture",
+                  "secondary_rupture",
+                  "ground_motion",
+                  "liquefaction"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "extreme_temperature"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "extreme_cold",
+                  "extreme_heat"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "strong_wind"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "extratropical_cyclone",
+                  "tropical_cyclone",
+                  "tornado"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "wildfire"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "wildfire"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "landslide"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "snow_avalanche",
+                  "landslide_general",
+                  "landslide_rockslide",
+                  "landslide_mudflow",
+                  "landslide_rockfall"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "tsunami"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "tsunami"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "volcanic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "ashfall",
+                  "volcano_ballistics",
+                  "lahar",
+                  "lava",
+                  "pyroclastic_flow"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "coastal_flood"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "coastal_flood",
+                  "storm_surge"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "hazard_type": {
+                "const": "convective_storm"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "hazard_process": {
+                "enum": [
+                  "tornado"
+                ]
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "minProperties": 1
