@@ -8,8 +8,10 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Codelists
 
-- [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index' to `impact_metric.csv`.
+- [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - 'IMT.csv' Expanded list and updated structure.
+- [#385](https://github.com/GFDRR/rdl-standard/pull/385) - Add 'volcano_gas_aerosols' to `process_type.csv`.
+- [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
 
 ### Normative documentation
 
