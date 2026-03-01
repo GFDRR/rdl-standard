@@ -1,0 +1,20 @@
+Code,Title,Description,Metric,Unit
+SPI:-,Standard Precipitation Index,Meteorological drought index across multiple timescales.,SPI,-
+SPEI:-,Standard Precipitation Evapotranspiration Index,Drought index incorporating temperature effects.,SPEI,-
+PDSI:-,Palmer Drought Severity Index,Long-term drought index spanning -10 (dry) to +10 (wet).,PDSI,-
+CMI:-,Crop Moisture Index,Short-term agricultural drought or moisture surplus indicator.,CMI,-
+NDVI:-,Normalized Difference Vegetation Index,Satellite-derived measure of vegetation health and biomass.,NDVI,-
+VCI:-,Vegetation Condition Index,Current vegetation health vs. historical trends.,VCI,-
+VHI:-,Vegetation Health Index,Composite index combining VCI and temperature effects.,VHI,-
+ASI:%,Agricultural Stress Index,Indicator for early identification of water-stressed cropland.,ASI,%
+WMVHI:-,Weighted Mean Vegetation Health Index,Drought severity assessment from growing season start.,WMVHI,-
+DI:-,Drought Intensity,"Classification: Extreme, Severe, Moderate, or Mild.",DI,-
+DMC:-,U.S. Drought Monitor Categories,Scale from D0 (Abnormally Dry) to D4 (Exceptional Drought).,DMC,-
+PNP:%,Percent of Normal Precipitation,Current precipitation compared to historical average.,PNP,%
+SMA:-,Soil Moisture Anomaly,Deviation from normal soil moisture levels.,SMA,-
+SA:%,Streamflow Percentile,Current streamflow compared to historical records.,SA,%
+DSCI:-,Drought Severity and Coverage Index,Continuous severity index on scale 0-500.,DSCI,-
+EDDI:-,Evaporative Demand Drought Index,Quantifies atmospheric water demand from land surface.,EDDI,-
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
