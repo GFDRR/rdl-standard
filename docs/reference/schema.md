@@ -969,14 +969,6 @@ addtargets:
 
 ### Hazard
 
-`Hazard` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Hazard/description
----
-```
-
 This sub-schema is referenced by the following properties:
 
 - [`Event_set/hazards`](rdls_schema.json,/$defs/Event_set,hazards)
@@ -987,30 +979,6 @@ Each `Hazard` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Hazard
-collapse: trigger
-addtargets:
----
-```
-
-### Trigger
-
-`Trigger` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Trigger/description
----
-```
-
-This sub-schema is referenced by the following properties:
-
-- [`Hazard/trigger`](rdls_schema.json,/$defs/Hazard,trigger)
-
-Each `Trigger` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/Trigger
 collapse:
 addtargets:
 ---

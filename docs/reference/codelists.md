@@ -23,10 +23,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/intensity`](rdls_schema.json,/properties/vulnerability,intensity)
-- [`Hazard/intensity_measure`](rdls_schema.json,/$defs/Hazard,intensity_measure)
-- [`Footprint/intensity_measure`](rdls_schema.json,/$defs/Footprint,intensity_measure)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -398,9 +394,6 @@ This codelist is referenced by the following properties:
 
 - [`vulnerability/hazard_primary`](rdls_schema.json,/properties/vulnerability,hazard_primary)
 - [`vulnerability/hazard_secondary`](rdls_schema.json,/properties/vulnerability,hazard_secondary)
-- [`Hazard/type`](rdls_schema.json,/$defs/Hazard,type)
-- [`Trigger/type`](rdls_schema.json,/$defs/Trigger,type)
-- [`Losses/hazard_type`](rdls_schema.json,/$defs/Losses,hazard_type)
 
 This codelist has the following codes:
 
@@ -473,14 +466,6 @@ open:
 ### process_type
 
 The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
-
-This codelist is referenced by the following properties:
-
-- [`vulnerability/hazard_process_primary`](rdls_schema.json,/properties/vulnerability,hazard_process_primary)
-- [`vulnerability/hazard_process_secondary`](rdls_schema.json,/properties/vulnerability,hazard_process_secondary)
-- [`Hazard/processes`](rdls_schema.json,/$defs/Hazard,processes)
-- [`Trigger/processes`](rdls_schema.json,/$defs/Trigger,processes)
-- [`Losses/hazard_process`](rdls_schema.json,/$defs/Losses,hazard_process)
 
 This codelist has the following codes:
 
