@@ -6,6 +6,11 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
+- [#392](https://github.com/GFDRR/rdl-standard/pull/392):
+  - Rationalise hazard modelling
+  - Add conditional validation of hazard process based on hazard type
+  - Add conditional validation of intensity measure based on hazard type
+
 ### Codelists
 
 - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index' to `impact_metric.csv`.
