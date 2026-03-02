@@ -2176,6 +2176,7 @@
     },
     "SimpleHazard": {
       "title": "Hazard",
+      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
       "properties": {
         "type": {
@@ -2464,6 +2465,7 @@
     },
     "Hazard": {
       "title": "Hazard",
+      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
       "allOf": [
         {
@@ -2661,6 +2663,7 @@
     },
     "HazardWithTrigger": {
       "title": "Hazard",
+      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
       "allOf": [
         {

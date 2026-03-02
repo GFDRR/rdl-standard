@@ -455,7 +455,7 @@ def pre_commit():
         if hazard != 'universal':
 
             with open(f"schema/codelists/open/imt_{hazard}.csv", "w") as f:
-                writer = csv.DictWriter(f, fieldnames=measures[0].keys())
+                writer = csv.DictWriter(f, fieldnames=measures[0].keys(), lineterminator='\n')
                 writer.writeheader()
                 writer.writerows(measures)
                 writer.writerows(hazards["universal"])
