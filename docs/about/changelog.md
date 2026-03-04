@@ -6,7 +6,7 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
-- []() - Require any of `Entity.email`, `Entity.url`. 
+- [#396](https://github.com/GFDRR/rdl-standard/pull/396) - Require any of `Entity.email`, `Entity.url`.
 
 ### Codelists
 
