@@ -1306,7 +1306,9 @@
             }
           },
           "then": {
-            "required": ["countries"],
+            "required": [
+              "countries"
+            ],
             "properties": {
               "countries": {
                 "minItems": 2
@@ -1323,7 +1325,9 @@
             }
           },
           "then": {
-            "required": ["countries"]
+            "required": [
+              "countries"
+            ]
           }
         },
         {
@@ -1335,9 +1339,11 @@
             }
           },
           "then": {
-            "required": ["countries"]
+            "required": [
+              "countries"
+            ]
           }
-        }            
+        }
       ],
       "minProperties": 1
     },
