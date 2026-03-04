@@ -2081,7 +2081,7 @@
         "hazard": {
           "title": "Hazard type",
           "description": "The main type of hazard that resulted in the losses.",
-          "$ref": "#/$defs/Hazard"
+          "$ref": "#/$defs/HazardWithTrigger"
         },
         "description": {
           "title": "Loss description",
