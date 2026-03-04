@@ -20,7 +20,7 @@ This page lists changes to the Risk Data Library Standard.
   - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'economic_indicator' and 'development_index'
 - `classification_scheme.csv`:
   - [#395](https://github.com/GFDRR/rdl-standard/pull/395)
-     - Add:
+    - Add:
       - 'HAZUS'
       - 'CDC-SVI'
       - 'INFORM'
