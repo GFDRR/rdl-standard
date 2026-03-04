@@ -6,6 +6,8 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
+- []() - Require any of `Entity.email`, `Entity.url`. 
+
 ### Codelists
 
 - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index' to `impact_metric.csv`.

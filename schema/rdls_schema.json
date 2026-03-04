@@ -776,7 +776,19 @@
           "format": "iri"
         }
       },
-      "minProperties": 1
+      "minProperties": 1,
+      "anyOf": [
+        {
+          "required": [
+            "email"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ]
     },
     "Attribution": {
       "title": "Attribution",
