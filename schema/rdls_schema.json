@@ -191,7 +191,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "taxonomy": {
@@ -2155,7 +2157,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "cost": {
@@ -2344,7 +2348,8 @@
             "pyroclastic_flow",
             "wildfire",
             "extratropical_cyclone",
-            "tropical_cyclone"
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
           ],
           "codelist": "process_type.csv",
           "openCodelist": false
@@ -2383,7 +2388,8 @@
             "pyroclastic_flow",
             "wildfire",
             "extratropical_cyclone",
-            "tropical_cyclone"
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
           ],
           "codelist": "process_type.csv",
           "openCodelist": false
@@ -2459,7 +2465,8 @@
             "mean_damage_ratio",
             "probability",
             "damage_index",
-            "loss_ratio",
+            "loss_ratio_vulnerability",
+            "loss_ratio_loss",
             "mean_loss_ratio",
             "downtime_vulnerability",
             "casualty_ratio_vulnerability",
@@ -2474,7 +2481,8 @@
             "downtime_loss",
             "asset_loss",
             "displaced_count",
-            "exposure_to_hazard"
+            "exposure_to_hazard",
+            "risk_index"
           ]
         },
         "quantity_kind": {
@@ -2507,10 +2515,7 @@
           "title": "Analysis details",
           "type": "string",
           "description": "Additional details about the analysis used to produce the function used in the modelled scenario(s).",
-          "minLength": 1,
-          "examples": [
-            "Empirical vulnerability curves derived from post-disaster damage surveys conducted after recent earthquake events in the region."
-          ]
+          "minLength": 1
         }
       }
     },
@@ -2525,14 +2530,7 @@
           "description": "The name of the damage scale used in the function, taken from the open [damage_scale_name codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#damage-scale-name).",
           "codelist": "damage_scale_name.csv",
           "openCodelist": true,
-          "minLength": 1,
-          "examples": [
-            "EMS-98",
-            "HAZUS-MH_MR4",
-            "Vision_2000",
-            "FEMA_356",
-            "Milutinovic_Trendafiloski_2003"
-          ]
+          "minLength": 1
         },
         "damage_states_names": {
           "title": "Damage states names",
@@ -2558,14 +2556,7 @@
           "description": "The name of the engineering demand parameter, taken from the open [engineering_demand_parameter codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#engineering-demand-parameter).",
           "codelist": "engineering_demand_parameter.csv",
           "openCodelist": true,
-          "minLength": 1,
-          "examples": [
-            "PA_dmg_index",
-            "peak_floor_acc",
-            "roof_drift",
-            "max_interstorey_drift_ratio",
-            "demand_capacity_ratio"
-          ]
+          "minLength": 1
         }
       }
     },
@@ -2580,33 +2571,6 @@
         "description",
         "reference_year"
       ],
-      "examples": [
-        {
-          "scheme": "GED4ALL-socio-economic",
-          "indicator_name": "Elderly population",
-          "indicator_code": "AGE_65_PLUS",
-          "description": "Population aged 65 years and older, which is more vulnerable to heat-related health impacts",
-          "reference_year": "2020"
-        },
-        {
-          "scheme": "CDC-SVI",
-          "indicator_name": "Overall Social Vulnerability Index",
-          "indicator_code": "SVI_OVERALL",
-          "description": "Overall social vulnerability score combining socioeconomic status, household composition, minority status, and housing/transportation factors",
-          "threshold": "High vulnerability (SVI > 0.75)",
-          "reference_year": "2020",
-          "uri": "https://www.atsdr.cdc.gov/placeandhealth/svi/index.html"
-        },
-        {
-          "scheme": "custom",
-          "indicator_name": "Poverty headcount ratio",
-          "indicator_code": "POV_HEADCOUNT_NATL",
-          "description": "Households living below the national poverty line with limited resources for disaster preparedness and recovery",
-          "threshold": "Below poverty line",
-          "reference_year": "2021",
-          "uri": "https://data.worldbank.org/indicator/SI.POV.DDAY"
-        }
-      ],
       "properties": {
         "id": {
           "title": "Socio-economic indicator identifier",
@@ -2617,88 +2581,65 @@
         "scheme": {
           "title": "Classification scheme",
           "description": "The classification scheme or framework from which the indicator is taken, from the closed [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme).",
-          "$ref": "#/$defs/codelist_taxonomy"
+          "type": "string",
+          "codelist": "classification_scheme.csv",
+          "openCodelist": false,
+          "enum": [
+            "GED4ALL",
+            "MOVER",
+            "GLIDE",
+            "EMDAT",
+            "USGS_EHP",
+            "OED",
+            "HAZUS",
+            "EMS-98",
+            "PAGER",
+            "CDC-SVI",
+            "INFORM",
+            "Custom"
+          ]
         },
         "indicator_name": {
           "title": "Indicator name",
           "description": "The name of the specific indicator or index used to characterize vulnerability.",
           "type": "string",
-          "minLength": 1,
-          "examples": [
-            "Poverty headcount ratio",
-            "Social Vulnerability Index",
-            "Population density",
-            "Access to healthcare facilities",
-            "Elderly population percentage",
-            "Educational attainment"
-          ]
+          "minLength": 1
         },
         "indicator_code": {
           "title": "Indicator code",
           "description": "The code or identifier for the indicator within the scheme.",
           "type": "string",
-          "minLength": 1,
-          "examples": [
-            "AGE_65_PLUS",
-            "POV_HEADCOUNT",
-            "SVI_OVERALL",
-            "POP_DENSITY",
-            "HEALTH_ACCESS"
-          ]
+          "minLength": 1
         },
         "description": {
           "title": "Description",
           "description": "Description of what this indicator measures and how it relates to vulnerability to the hazard.",
           "type": "string",
-          "minLength": 1,
-          "examples": [
-            "Population aged 65 years and older, which is more vulnerable to heat-related health impacts",
-            "Households living below the poverty line with limited resources for disaster preparedness and recovery",
-            "Overall social vulnerability score combining socioeconomic status, household composition, minority status, and housing/transportation factors"
-          ]
+          "minLength": 1
         },
         "threshold": {
           "title": "Threshold or value",
           "description": "Specific threshold or value range used to define vulnerability level (if applicable).",
-          "type": "string",
-          "examples": [
-            "Below poverty line",
-            ">65 years old",
-            "High vulnerability (SVI > 0.75)",
-            "Population density > 1000 persons/km²"
-          ]
+          "type": "string"
         },
         "reference_year": {
           "title": "Reference year",
           "description": "The year the indicator data applies to.",
           "type": "integer",
           "minimum": 1900,
-          "maximum": 2100,
-          "examples": [
-            2020,
-            2021,
-            2023
-          ]
+          "maximum": 2100
         },
         "uri": {
           "title": "URI",
           "description": "A URI to the indicator definition or data source.",
           "type": "string",
-          "format": "iri",
-          "examples": [
-            "https://www.atsdr.cdc.gov/placeandhealth/svi/index.html",
-            "https://data.worldbank.org/indicator/SI.POV.DDAY",
-            "https://drmkc.jrc.ec.europa.eu/inform-index"
-          ]
+          "format": "iri"
         },
         "analysis_details": {
           "title": "Analysis details",
           "type": "string",
           "description": "Additional details about the analysis used to produce the vulnerability function used in the modelled scenario(s).",
-          "minLength": 1,
-          "examples": [
-            "Socio-economic vulnerability index derived from census data and household surveys conducted in 2023."
-          ]
+          "minLength": 1
         }
       },
       "minProperties": 1
