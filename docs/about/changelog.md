@@ -7,7 +7,8 @@ This page lists changes to the Risk Data Library Standard.
 ### Schema
 
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373):
-  - Add `format: iri` to `license`.
+  - Add `License` to `$defs`
+  - Add `format: iri` to `License`.
   - Add field `license` to `source` object.
 
 ### Codelists
