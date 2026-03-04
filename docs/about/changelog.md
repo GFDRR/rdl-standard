@@ -6,6 +6,8 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
+- [#394](https://github.com/GFDRR/rdl-standard/pull/394) - Add conditional validation of `Location.countries` array length.
+
 ### Codelists
 
 - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index' to `impact_metric.csv`.
