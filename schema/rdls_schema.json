@@ -911,7 +911,7 @@
         },
         "license": {
           "title": "License",
-          "description": "The URL of the legal document under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the source data is made available is not included in the codelist, you may specify a custom license URL. A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended.",
+          "description": "The URL of the legal document under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the source data is made available is not included in the codelist, you may specify a custom license URL.",
           "$ref": "#/$defs/License"
         }
       },
