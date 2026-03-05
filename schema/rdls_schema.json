@@ -2266,14 +2266,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "flood"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "fluvial_flood",
                   "pluvial_flood",
