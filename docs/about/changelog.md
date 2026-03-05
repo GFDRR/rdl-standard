@@ -6,6 +6,10 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
+- [#373](https://github.com/GFDRR/rdl-standard/pull/373):
+  - Add `License` to `$defs`
+  - Add `format: iri` to `License`.
+  - Add field `license` to `source` object.
 - [#394](https://github.com/GFDRR/rdl-standard/pull/394) - Add conditional validation of `Location.countries` array length.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
@@ -17,6 +21,8 @@ This page lists changes to the Risk Data Library Standard.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - 'IMT.csv' Expanded list and updated structure.
 - [#385](https://github.com/GFDRR/rdl-standard/pull/385) - Add 'volcano_gas_aerosols' to `process_type.csv`.
 - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
+- [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
+- [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
 
 ### Normative documentation
 
