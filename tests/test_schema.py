@@ -42,10 +42,6 @@ validate_object_id_kwargs = {
     'allow_missing': validate_object_id_allow_missing
 }
 
-@pytest.mark.parametrize('path,name,data', schemas)
-def test_schema_valid(path, name, data):
-    validate_json_schema(path, name, data, metaschema)
-
 validator = Draft202012Validator(Draft202012Validator.META_SCHEMA, format_checker=FormatChecker())
 
 @pytest.mark.parametrize('path,name,data', schemas)
