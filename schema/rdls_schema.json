@@ -2068,7 +2068,7 @@
       "description": "Losses resulting from the occurrence of a hazard.",
       "required": [
         "id",
-        "hazard_type",
+        "type",
         "cost"
       ],
       "properties": {
