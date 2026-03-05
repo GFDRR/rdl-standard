@@ -7,6 +7,9 @@ This page lists changes to the Risk Data Library Standard.
 ### Schema
 
 - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
+- [#396](https://github.com/GFDRR/rdl-standard/pull/396)
+  - `Entity`: Require any of `.email`, `.url`.
+  - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
 
 ### Codelists
 
