@@ -776,7 +776,19 @@
           "format": "iri"
         }
       },
-      "minProperties": 1
+      "minProperties": 1,
+      "anyOf": [
+        {
+          "required": [
+            "email"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ]
     },
     "Attribution": {
       "title": "Attribution",
@@ -1749,7 +1761,24 @@
               "minProperties": 1
             }
           },
-          "minProperties": 1
+          "minProperties": 1,
+          "anyOf": [
+            {
+              "required": [
+                "probabilistic"
+              ]
+            },
+            {
+              "required": [
+                "empirical"
+              ]
+            },
+            {
+              "required": [
+                "deterministic"
+              ]
+            }
+          ]
         },
         "description": {
           "title": "Description",
