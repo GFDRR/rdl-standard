@@ -2561,8 +2561,7 @@
           "if": {
             "properties": {
               "quantity_kind": {
-                "const": "currency",
-                "openCodelist": false
+                "const": "currency"
               }
             }
           },
@@ -2570,7 +2569,7 @@
             "properties": {
               "unit": {
                 "codelist": "unit_currency.csv",
-                "openCodelist": true
+                "openCodelist": false
               }
             }
           }
