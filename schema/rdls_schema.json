@@ -773,7 +773,19 @@
           "format": "iri"
         }
       },
-      "minProperties": 1
+      "minProperties": 1,
+      "anyOf": [
+        {
+          "required": [
+            "email"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ]
     },
     "Attribution": {
       "title": "Attribution",
@@ -1282,6 +1294,71 @@
           ]
         }
       },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scale": {
+                "const": "global"
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "countries"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scale": {
+                "const": "regional"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "countries"
+            ],
+            "properties": {
+              "countries": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scale": {
+                "const": "national"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "countries"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scale": {
+                "const": "sub-national"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "countries"
+            ]
+          }
+        }
+      ],
       "minProperties": 1
     },
     "Gazetteer_entry": {
@@ -1751,7 +1828,24 @@
               "minProperties": 1
             }
           },
-          "minProperties": 1
+          "minProperties": 1,
+          "anyOf": [
+            {
+              "required": [
+                "probabilistic"
+              ]
+            },
+            {
+              "required": [
+                "empirical"
+              ]
+            },
+            {
+              "required": [
+                "deterministic"
+              ]
+            }
+          ]
         },
         "description": {
           "title": "Description",
