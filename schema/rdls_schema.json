@@ -713,6 +713,12 @@
           "description": "The minimum spatial separation resolvable in this resource, measured in meters.",
           "exclusiveMinimum": 0
         },
+        "spatial_aggregation": {
+          "title": "Spatial aggregation",
+          "type": "string",
+          "description": "A description of the spatial aggregation of the data in this resource.",
+          "minLength": 1
+        },
         "coordinate_system": {
           "title": "Coordinate reference system",
           "type": "string",
