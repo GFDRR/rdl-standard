@@ -144,9 +144,6 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`license`](rdls_schema.json,,license)
-- [`Source/license`](rdls_schema.json,/$defs/Source,license)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes

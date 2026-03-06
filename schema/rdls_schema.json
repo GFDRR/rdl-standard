@@ -1290,7 +1290,8 @@
             "global",
             "regional",
             "national",
-            "sub-national"
+            "sub-national",
+            "urban"
           ]
         }
       },
@@ -1328,6 +1329,20 @@
                 "minItems": 2
               }
             }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scale": {
+                "const": "urban"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "countries"
+            ]
           }
         },
         {
