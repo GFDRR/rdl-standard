@@ -1903,7 +1903,7 @@
       "required": [
         "id",
         "dimension",
-        "quantity_kind"
+        "measurement"
       ],
       "properties": {
         "id": {
