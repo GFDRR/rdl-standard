@@ -861,7 +861,7 @@ Each `Source` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Source
-collapse:
+collapse: license
 addtargets:
 ---
 ```

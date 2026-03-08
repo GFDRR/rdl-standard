@@ -7,6 +7,11 @@ This page lists changes to the Risk Data Library Standard.
 ### Schema
 
 - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
+- [#373](https://github.com/GFDRR/rdl-standard/pull/373):
+  - Add `License` to `$defs`
+  - Add `format: iri` to `License`.
+  - Add field `license` to `source` object.
+- [#394](https://github.com/GFDRR/rdl-standard/pull/394) - Add conditional validation of `Location.countries` array length.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
@@ -33,6 +38,9 @@ This page lists changes to the Risk Data Library Standard.
       - 'OED'
     - Remove'GED4ALL-socio-economic'
     - Rename 'MOVER-social-vulnerability-categories' > 'MOVER'
+- [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
+- [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
+- [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
 
 ### Normative documentation
 
