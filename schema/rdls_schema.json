@@ -2574,24 +2574,10 @@
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset, from the closed [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme). Use of GED4ALL is recommended.",
+          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset, from the open [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme). Use of GED4ALL is recommended.",
           "type": "string",
           "codelist": "classification_scheme.csv",
-          "openCodelist": false,
-          "enum": [
-            "GED4ALL",
-            "MOVER",
-            "GLIDE",
-            "EMDAT",
-            "USGS_EHP",
-            "OED",
-            "HAZUS",
-            "EMS-98",
-            "PAGER",
-            "CDC-SVI",
-            "INFORM",
-            "Custom"
-          ]
+          "openCodelist": true
         },
         "analysis_details": {
           "title": "Analysis details",
