@@ -2339,14 +2339,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "drought"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "agricultural_drought",
                   "hydrological_drought",
@@ -2381,14 +2381,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "earthquake"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "primary_rupture",
                   "secondary_rupture",
@@ -2402,14 +2402,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "extreme_temperature"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "extreme_cold",
                   "extreme_heat"
@@ -2421,14 +2421,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "strong_wind"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "extratropical_cyclone",
                   "tropical_cyclone",
@@ -2441,14 +2441,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "wildfire"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "wildfire"
                 ]
@@ -2459,14 +2459,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "landslide"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "snow_avalanche",
                   "landslide_general",
@@ -2481,14 +2481,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "tsunami"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "tsunami"
                 ]
@@ -2499,14 +2499,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "volcanic"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "ashfall",
                   "volcano_ballistics",
@@ -2521,14 +2521,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "coastal_flood"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "coastal_flood",
                   "storm_surge"
@@ -2540,14 +2540,14 @@
         {
           "if": {
             "properties": {
-              "hazard_type": {
+              "type": {
                 "const": "convective_storm"
               }
             }
           },
           "then": {
             "properties": {
-              "hazard_process": {
+              "process": {
                 "enum": [
                   "tornado"
                 ]
