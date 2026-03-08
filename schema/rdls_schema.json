@@ -2488,31 +2488,8 @@
           "type": "string",
           "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
           "codelist": "impact_metric.csv",
-          "openCodelist": false,
-          "enum": [
-            "damage_ratio",
-            "mean_damage_ratio",
-            "probability",
-            "damage_index",
-            "loss_ratio_vulnerability",
-            "loss_ratio_loss",
-            "mean_loss_ratio",
-            "downtime_vulnerability",
-            "casualty_ratio_vulnerability",
-            "economic_loss_value",
-            "insured_loss_value",
-            "casualty_count",
-            "casualty_ratio_loss",
-            "loss_annual_average_value",
-            "loss_probable_maximum_value",
-            "at_risk_value",
-            "at_risk_tail_value",
-            "downtime_loss",
-            "asset_loss",
-            "displaced_count",
-            "exposure_to_hazard",
-            "risk_index"
-          ]
+          "openCodelist": true,
+          "minLength": 1
         },
         "quantity_kind": {
           "title": "Quantity kind",
@@ -2609,24 +2586,11 @@
         },
         "scheme": {
           "title": "Classification scheme",
-          "description": "The classification scheme or framework from which the indicator is taken, from the closed [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme).",
+          "description": "The classification scheme or framework from which the indicator is taken, from the open [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme).",
           "type": "string",
           "codelist": "classification_scheme.csv",
-          "openCodelist": false,
-          "enum": [
-            "GED4ALL",
-            "MOVER",
-            "GLIDE",
-            "EMDAT",
-            "USGS_EHP",
-            "OED",
-            "HAZUS",
-            "EMS-98",
-            "PAGER",
-            "CDC-SVI",
-            "INFORM",
-            "Custom"
-          ]
+          "openCodelist": true,
+          "minLength": 1
         },
         "indicator_name": {
           "title": "Indicator name",
