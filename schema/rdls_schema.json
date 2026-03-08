@@ -94,11 +94,8 @@
     },
     "license": {
       "title": "License",
-      "type": "string",
-      "description": "A legal document giving official permission to do something with the dataset, taken from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). A Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this file may be under other license conditions.",
-      "codelist": "license.csv",
-      "openCodelist": true,
-      "minLength": 1
+      "description": "The URL of the legal document under which this dataset is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the dataset is made available is not included in the codelist, you may specify a custom license URL. When licensing a dataset, a Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this dataset can be made available under other license conditions.",
+      "$ref": "#/$defs/License"
     },
     "contact_point": {
       "title": "Contact point",
@@ -923,6 +920,11 @@
             "vulnerability",
             "loss"
           ]
+        },
+        "license": {
+          "title": "License",
+          "description": "The URL of the legal document under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the source data is made available is not included in the codelist, you may specify a custom license URL.",
+          "$ref": "#/$defs/License"
         }
       },
       "minProperties": 1
@@ -2403,6 +2405,15 @@
         }
       },
       "minProperties": 1
+    },
+    "License": {
+      "title": "License",
+      "type": "string",
+      "format": "iri",
+      "description": "The URL of the legal document under which data is made available.",
+      "codelist": "license.csv",
+      "openCodelist": true,
+      "minLength": 1
     },
     "Link": {
       "title": "Link",
