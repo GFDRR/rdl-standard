@@ -1,0 +1,8 @@
+Code,Title
+http://www.opengis.net/doc/IS/ogcapi-features-1/1.0.1,"OGC API - Features - Part 1: Core corrigendum, Version 1.0.1"
+https://docs.ogc.org/DRAFTS/19-087.html,"OGC API - Coverages - Part 1: Core, Draft"
+http://www.opengis.net/doc/IS/ogcapi-tiles-1/1.0,"OGC API - Tiles - Part 1: Core, Version 1.0"
+http://www.opengis.net/def/serviceType/ogc/wms,OGC Web Map Service
+http://www.opengis.net/def/serviceType/ogc/wfs,OGC Web Feature Service
+http://www.opengis.net/def/serviceType/ogc/wcs,OGC Web Coverage Service
+https://api.stacspec.org/v1.0.0/,"STAC API, Version 1.0.0"

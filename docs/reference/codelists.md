@@ -56,6 +56,25 @@ open:
 ```
 ````
 
+### conforms_to
+
+This codelist is referenced by the following properties:
+
+- [`Resource/conforms_to`](rdls_schema.json,/$defs/Resource,conforms_to)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/conforms_to.csv
+```
+````
+
 ### damage_scale_name
 
 This codelist is referenced by the following properties:
@@ -70,22 +89,6 @@ This codelist has the following codes:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/damage_scale_name.csv
-```
-````
-
-### data_formats
-
-This codelist is referenced by the following properties:
-
-- [`Resource/format`](rdls_schema.json,/$defs/Resource,format)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/data_formats.csv
 ```
 ````
 
