@@ -23,7 +23,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
-- [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Add 'production_loss' to `impact_metric.csv`.
+- [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Add 'production_loss' and 'exposure_to_hazard' to `impact_metric.csv`.
 
 ### Normative documentation
 
