@@ -761,7 +761,6 @@ The following table lists all loss component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/loss
-collapse: losses/0/cost,losses/0/impact
 addtargets:
 ---
 ```
@@ -1125,7 +1124,6 @@ jsonpointer: /$defs/Cost/description
 This sub-schema is referenced by the following properties:
 
 - [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
-- [`Losses/cost`](rdls_schema.json,/$defs/Losses,cost)
 
 Each `Cost` has the following fields:
 
@@ -1174,7 +1172,6 @@ jsonpointer: /$defs/Impact/description
 This sub-schema is referenced by the following properties:
 
 - [`vulnerability/impact`](rdls_schema.json,/properties/vulnerability,impact)
-- [`Losses/impact`](rdls_schema.json,/$defs/Losses,impact)
 
 Each `Impact` has the following fields:
 
@@ -1254,7 +1251,7 @@ Each `Losses` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Losses
-collapse: cost,impact
+collapse:
 addtargets:
 ---
 ```
