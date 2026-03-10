@@ -14,6 +14,17 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Restructure `Losses`:
+  - Rename `.category` to `.asset_category`
+  - Move `.cost.dimension` to `.asset_dimension`
+  - Move `.impact.type` to `.impact_and_losses.impact_type`
+  - Move `.impact.base_data_type` to `.impact_and_losses.impact_modelling`
+  - Move `.impact_metric` to `.impact_and_losses.impact_metric`
+  - Replace `.impact.unit` with `.impact_and_losses.quantity_kind`
+  - Move `.cost.unit` to `.impact_and_losses.currency`
+  - Move `.type` to `.impact_and_losses.loss_type`
+  - Move `.approach` to `.impact_and_losses.loss_approach`
+  - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
 
 ### Codelists
 
