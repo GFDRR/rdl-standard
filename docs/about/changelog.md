@@ -6,6 +6,9 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
+- [#380](https://github.com/GFDRR/rdl-standard/pull/380):
+  - `Metric` - Replace `.quantity_kind` with `.measurement.quantity_kind` and `.measurement.unit`
+  - `Impact` - Replace `.unit` with `.measurement.quantity_kind` and `.measurement.unit`
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373):
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.

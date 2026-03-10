@@ -124,6 +124,14 @@ def get_codelist_references(schema, codelist, parents=None, full_schema=None, de
           references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
       elif value.get('codelist') == f"{codelist}.csv":
         references.append(parents + [key])
+  if 'allOf' in schema:
+     for subschema in schema['allOf']:
+        if 'then' in subschema and 'properties' in subschema['then']:
+            for key, value in subschema['then']['properties'].items():
+                if 'properties' in value:
+                    references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
+                elif value.get('codelist') == f"{codelist}.csv":
+                    references.append(parents + [key])
 
   if defs_path in schema:
     for key, value in schema[defs_path].items():
