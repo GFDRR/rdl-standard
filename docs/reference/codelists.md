@@ -520,7 +520,8 @@ open:
 This codelist is referenced by the following properties:
 
 - [`risk_data_type`](rdls_schema.json,,risk_data_type)
-- [`Source/component`](rdls_schema.json,/$defs/Source,component)
+- [`Source/risk_data_type`](rdls_schema.json,/$defs/Source,risk_data_type)
+- [`Source/used_in`](rdls_schema.json,/$defs/Source,used_in)
 
 This codelist has the following codes:
 

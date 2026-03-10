@@ -887,7 +887,7 @@
     "Source": {
       "title": "Source",
       "type": "object",
-      "description": "A source of information that contributes to the creation of a dataset.",
+      "description": "A data source or other input used to create a dataset.",
       "required": [
         "id"
       ],
@@ -921,10 +921,28 @@
             "model"
           ]
         },
-        "component": {
-          "title": "Component",
+        "risk_data_type": {
+          "title": "Risk data type",
+          "type": "array",
+          "description": "The types of risk data included in the source, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+          "items": {
+            "type": "string",
+            "enum": [
+              "hazard",
+              "exposure",
+              "vulnerability",
+              "loss"
+            ]
+          },
+          "codelist": "risk_data_type.csv",
+          "openCodelist": false,
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "used_in": {
+          "title": "Used in",
           "type": "string",
-          "description": "The risk data component the source has been used in, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+          "description": "The types of risk data produced using the source as an input, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
           "codelist": "risk_data_type.csv",
           "openCodelist": false,
           "enum": [
@@ -2603,31 +2621,6 @@
           ],
           "codelist": "analysis_type.csv",
           "openCodelist": false
-        },
-        "lineage": {
-          "title": "Lineage",
-          "description": "The hazard, exposure and vulnerability datasets used to calculate the losses.",
-          "type": "object",
-          "properties": {
-            "hazard_dataset": {
-              "title": "Hazard dataset",
-              "type": "string",
-              "description": "A unique identifier for the hazard dataset used to calculate the losses. Use of an HTTP URI is recommended.",
-              "minLength": 1
-            },
-            "exposure_dataset": {
-              "title": "Exposure dataset",
-              "type": "string",
-              "description": "A unique identifier for the exposure dataset used to calculate the losses. Use of an HTTP URI is recommended.",
-              "minLength": 1
-            },
-            "vulnerability_dataset": {
-              "title": "Vulnerability dataset",
-              "type": "string",
-              "description": "A unique identifier for the vulnerability dataset used to calculate the losses. Use of an HTTP URI is recommended.",
-              "minLength": 1
-            }
-          }
         }
       },
       "minProperties": 1
