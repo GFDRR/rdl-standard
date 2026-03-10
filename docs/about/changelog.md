@@ -16,11 +16,10 @@ This page lists changes to the Risk Data Library Standard.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
 - [#400](https://github.com/GFDRR/rdl-standard/pull/400):
   - Move `.sources` to `.lineage.sources`
+  - Add `Source.risk_data_type`
+  - Rename `Source.component` to `Source.used_in`
   - Add `.lineage.description`
-  - `Losses`:
-    - Move `.hazard_id` to `.lineage.hazard_dataset`
-    - Move `.exposure_id` to `.lineage.exposure_dataset`
-    - Move `.vulnerability_id` to `.lineage.vulnerability_dataset`
+  - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
 
 ### Codelists
 
