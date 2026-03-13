@@ -742,6 +742,16 @@
           "type": "string",
           "description": "The minimum period of time resolvable in this resource, in ISO8601 duration format.",
           "format": "duration"
+        },
+        "baseline_period": {
+          "title": "Baseline period",
+          "description": "The baseline or reference period on which a forecast or projection is based.",
+          "$ref": "#/$defs/Period"
+        },
+        "climate": {
+          "title": "Climate",
+          "description": "Information about climate scenarios and models used to create the dataset.",
+          "$ref": "#/$defs/Climate"
         }
       },
       "minProperties": 1
@@ -973,6 +983,54 @@
           "type": "string",
           "description": "The duration of the period in ISO 8601 duration format, e.g. 'P50Y' for 50 years",
           "format": "duration"
+        },
+        "central_year": {
+          "title": "Central year",
+          "type": "integer",
+          "description": "The central or representative year as a single point in time rather than a period (e.g., '2050' representing the period 2040-2060). Use this instead of start/end when data represents conditions centered on a specific year.",
+          "minimum": 1000,
+          "maximum": 9999
+        }
+      },
+      "minProperties": 1
+    },
+    "Climate": {
+      "title": "Climate",
+      "type": "object",
+      "description": "Information about climate scenarios and models used to create the resource.",
+      "properties": {
+        "model": {
+          "title": "Climate model",
+          "type": "string",
+          "description": "The name or identifier of the climate model used to produce this resource",
+          "minLength": 1
+        },
+        "scenario": {
+          "title": "Climate scenario",
+          "type": "string",
+          "description": "The climate scenario under which the data was produced, from the open [climate_scenario codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#climate_scenario).",
+          "codelist": "climate_scenario.csv",
+          "openCodelist": true,
+          "enum": [
+            "SSP1-1.9",
+            "SSP1-2.6",
+            "SSP2-4.5",
+            "SSP3-7.0",
+            "SSP4-3.4",
+            "SSP4-6.0",
+            "SSP5-8.5",
+            "RCP2.6",
+            "RCP4.5",
+            "RCP6.0",
+            "RCP8.5"
+          ]
+        },
+        "percentile": {
+          "title": "Percentile",
+          "type": "number",
+          "description": "The percentile of the climate model ensemble output represented in this resource, expressed as a number between 0 and 100. For example, 50 indicates the median (50th percentile) of the ensemble.",
+          "minimum": 0,
+          "maximum": 100
         }
       },
       "minProperties": 1
