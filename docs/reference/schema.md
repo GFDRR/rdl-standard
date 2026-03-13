@@ -880,6 +880,7 @@ jsonpointer: /$defs/Period/description
 This sub-schema is referenced by the following properties:
 
 - [`Resource/temporal`](rdls_schema.json,/$defs/Resource,temporal)
+- [`Resource/baseline_period`](rdls_schema.json,/$defs/Resource,baseline_period)
 - [`Event_set/temporal`](rdls_schema.json,/$defs/Event_set,temporal)
 - [`Event/occurrence/empirical/temporal`](rdls_schema.json,/$defs/Event,occurrence/empirical/temporal)
 
@@ -888,6 +889,30 @@ Each `Period` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Period
+collapse:
+addtargets:
+---
+```
+
+### Climate
+
+`Climate` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Climate/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`Resource/climate`](rdls_schema.json,/$defs/Resource,climate)
+
+Each `Climate` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Climate
 collapse:
 addtargets:
 ---
