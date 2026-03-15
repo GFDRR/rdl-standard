@@ -17,6 +17,12 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#400](https://github.com/GFDRR/rdl-standard/pull/400):
+  - Move `.sources` to `.lineage.sources`
+  - Add `Source.risk_data_type`
+  - Rename `Source.component` to `Source.used_in`
+  - Add `.lineage.description`
+  - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
 
 ### Codelists
 

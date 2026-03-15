@@ -117,15 +117,28 @@
       "minItems": 1,
       "uniqueItems": true
     },
-    "sources": {
-      "title": "Sources",
-      "type": "array",
-      "description": "Sources of information that contribute to the creation of the dataset.",
-      "items": {
-        "$ref": "#/$defs/Source"
-      },
-      "minItems": 1,
-      "uniqueItems": true
+    "lineage": {
+      "title": "Lineage",
+      "description": "Information about the provenance of the dataset, including the inputs used and the transformation processes applied to create the dataset.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "A free-text description of the provenance of the dataset. Provenance includes processing steps (e.g., corrections, transformations, algorithms), the tools or software used, and the personnel involved. For example, clipping a source dataset or model to a specific geographic region, resampling to a different resolution, or reprojecting to a different CRS.",
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "title": "Sources",
+          "type": "array",
+          "description": "The data sources and other inputs used to create the dataset.",
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
     },
     "referenced_by": {
       "title": "Referenced by",
@@ -874,7 +887,7 @@
     "Source": {
       "title": "Source",
       "type": "object",
-      "description": "A source of information that contributes to the creation of a dataset.",
+      "description": "A data source or other input used to create a dataset.",
       "required": [
         "id"
       ],
@@ -908,10 +921,28 @@
             "model"
           ]
         },
-        "component": {
-          "title": "Component",
+        "risk_data_type": {
+          "title": "Risk data type",
+          "type": "array",
+          "description": "The types of risk data included in the source, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+          "items": {
+            "type": "string",
+            "enum": [
+              "hazard",
+              "exposure",
+              "vulnerability",
+              "loss"
+            ]
+          },
+          "codelist": "risk_data_type.csv",
+          "openCodelist": false,
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "used_in": {
+          "title": "Used in",
           "type": "string",
-          "description": "The risk data component the source has been used in, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+          "description": "The types of risk data produced using the source as an input, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
           "codelist": "risk_data_type.csv",
           "openCodelist": false,
           "enum": [
@@ -2584,24 +2615,6 @@
           ],
           "codelist": "analysis_type.csv",
           "openCodelist": false
-        },
-        "hazard_id": {
-          "title": "Hazard dataset",
-          "type": "string",
-          "description": "A unique identifier for the hazard dataset used in calculating the losses. Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "exposure_id": {
-          "title": "Exposure dataset",
-          "type": "string",
-          "description": "A unique identifier for the exposure dataset used in calculating the losses. Use of an HTTP URI is recommended.",
-          "minLength": 1
-        },
-        "vulnerability_id": {
-          "title": "Vulnerability dataset",
-          "type": "string",
-          "description": "A unique identifier for the vulnerability dataset used in in calculating the losses. Use of an HTTP URI is recommended.",
-          "minLength": 1
         }
       },
       "minProperties": 1

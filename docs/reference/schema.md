@@ -81,7 +81,7 @@ The following table lists all dataset-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources,links,hazard,exposure,vulnerability,loss
+  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -855,7 +855,7 @@ jsonpointer: /$defs/Source/description
 
 This sub-schema is referenced by the following properties:
 
-- [`sources`](rdls_schema.json,,sources)
+- [`lineage/sources`](rdls_schema.json,,lineage/sources)
 
 Each `Source` has the following fields:
 
