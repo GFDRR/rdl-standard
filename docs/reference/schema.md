@@ -81,7 +81,7 @@ The following table lists all dataset-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,sources,links,hazard,exposure,vulnerability,loss
+  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -854,7 +854,7 @@ jsonpointer: /$defs/Source/description
 
 This sub-schema is referenced by the following properties:
 
-- [`sources`](rdls_schema.json,,sources)
+- [`lineage/sources`](rdls_schema.json,,lineage/sources)
 
 Each `Source` has the following fields:
 
@@ -1105,7 +1105,7 @@ Each `Metric` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Metric
-collapse:
+collapse: measurement
 addtargets:
 ---
 ```
@@ -1177,7 +1177,7 @@ Each `Impact` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Impact
-collapse:
+collapse: measurement
 addtargets:
 ---
 ```
@@ -1261,7 +1261,6 @@ addtargets:
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Function/description
----
 ```
 
 This sub-schema is referenced by the following properties:
@@ -1339,6 +1338,29 @@ Each `SocioEconomicIndex` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/SocioEconomicIndex
+---
+```
+
+### Measurement
+
+`Measurement` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Measurement/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
+- [`Impact/measurement`](rdls_schema.json,/$defs/Impact,measurement)
+
+Each `Measurement` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Measurement
 collapse:
 addtargets:
 ---

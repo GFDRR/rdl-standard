@@ -117,15 +117,28 @@
       "minItems": 1,
       "uniqueItems": true
     },
-    "sources": {
-      "title": "Sources",
-      "type": "array",
-      "description": "Sources of information that contribute to the creation of the dataset.",
-      "items": {
-        "$ref": "#/$defs/Source"
-      },
-      "minItems": 1,
-      "uniqueItems": true
+    "lineage": {
+      "title": "Lineage",
+      "description": "Information about the provenance of the dataset, including the inputs used and the transformation processes applied to create the dataset.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "A free-text description of the provenance of the dataset. Provenance includes processing steps (e.g., corrections, transformations, algorithms), the tools or software used, and the personnel involved. For example, clipping a source dataset or model to a specific geographic region, resampling to a different resolution, or reprojecting to a different CRS.",
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "title": "Sources",
+          "type": "array",
+          "description": "The data sources and other inputs used to create the dataset.",
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
     },
     "referenced_by": {
       "title": "Referenced by",
@@ -598,7 +611,7 @@
     "Source": {
       "title": "Source",
       "type": "object",
-      "description": "A source of information that contributes to the creation of a dataset.",
+      "description": "A data source or other input used to create a dataset.",
       "required": [
         "id"
       ],
@@ -632,10 +645,28 @@
             "model"
           ]
         },
-        "component": {
-          "title": "Component",
+        "risk_data_type": {
+          "title": "Risk data type",
+          "type": "array",
+          "description": "The types of risk data included in the source, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+          "items": {
+            "type": "string",
+            "enum": [
+              "hazard",
+              "exposure",
+              "vulnerability",
+              "loss"
+            ]
+          },
+          "codelist": "risk_data_type.csv",
+          "openCodelist": false,
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "used_in": {
+          "title": "Used in",
           "type": "string",
-          "description": "The risk data component the source has been used in, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
+          "description": "The types of risk data produced using the source as an input, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type).",
           "codelist": "risk_data_type.csv",
           "openCodelist": false,
           "enum": [
@@ -1629,7 +1660,7 @@
       "required": [
         "id",
         "dimension",
-        "quantity_kind"
+        "measurement"
       ],
       "properties": {
         "id": {
@@ -1652,13 +1683,10 @@
             "population"
           ]
         },
-        "quantity_kind": {
-          "title": "Metric quantity kind",
-          "type": "string",
-          "description": "The kind of quantity by which the exposure is quantified, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind). If the metric measures a quantity kind that is not included in the codelist, look up the correct code in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html).",
-          "codelist": "quantity_kind.csv",
-          "openCodelist": true,
-          "minLength": 1
+        "measurement": {
+          "title": "Metric measurement",
+          "description": "How the metric is measured.",
+          "$ref": "#/$defs/Measurement"
         }
       },
       "minProperties": 1
@@ -1697,7 +1725,7 @@
           "title": "Cost unit",
           "type": "string",
           "description": "The unit in which the cost is specified, from the closed [currency codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#currency).",
-          "codelist": "currency.csv",
+          "codelist": "unit_currency.csv",
           "openCodelist": false,
           "enum": [
             "ADP",
@@ -2076,13 +2104,10 @@
           "openCodelist": true,
           "minLength": 1
         },
-        "unit": {
-          "title": "Impact unit",
-          "type": "string",
-          "description": "The unit the impact value is expressed in, taken from the open [impact_unit codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-unit).",
-          "codelist": "impact_unit.csv",
-          "openCodelist": true,
-          "minLength": 1
+        "measurement": {
+          "title": "Impact measurement",
+          "description": "How the impact is measured.",
+          "$ref": "#/$defs/Measurement"
         },
         "base_data_type": {
           "title": "Impact base data type",
@@ -2694,10 +2719,169 @@
           "title": "Analysis details",
           "type": "string",
           "description": "Additional details about the analysis used to produce the vulnerability function used in the modelled scenario(s).",
-          "minLength": 1
         }
       },
       "minProperties": 1
+    },
+    "Measurement": {
+      "title": "Measurement",
+      "description": "How something is measured.",
+      "type": "object",
+      "properties": {
+        "quantity_kind": {
+          "title": "Quantity kind",
+          "type": "string",
+          "description": "The kind of quantity by which it is quantified, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind).",
+          "codelist": "quantity_kind.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string",
+          "description": "The unit by which it is measured, taken from the unit [codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists) for the quantity kind.",
+          "minLength": 1
+        }
+      },
+      "minProperties": 1,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "area"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_area.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "count"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_count.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "currency"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_currency.csv",
+                "openCodelist": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "dimensionless_ratio"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_dimensionless_ratio.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "length"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_length.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "mass"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_mass.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "time"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_time.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "volume"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_volume.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "minProperties": 1

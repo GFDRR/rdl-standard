@@ -7,6 +7,9 @@ This page lists changes to the Risk Data Library Standard.
 ### Schema
 
 - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
+- [#380](https://github.com/GFDRR/rdl-standard/pull/380):
+  - `Metric` - Replace `.quantity_kind` with `.measurement.quantity_kind` and `.measurement.unit`
+  - `Impact` - Replace `.unit` with `.measurement.quantity_kind` and `.measurement.unit`
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373):
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.
@@ -15,6 +18,12 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#400](https://github.com/GFDRR/rdl-standard/pull/400):
+  - Move `.sources` to `.lineage.sources`
+  - Add `Source.risk_data_type`
+  - Rename `Source.component` to `Source.used_in`
+  - Add `.lineage.description`
+  - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
 
 ### Codelists
 

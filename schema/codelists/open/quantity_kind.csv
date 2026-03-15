@@ -1,5 +1,9 @@
-Code,Title,Definition
-area,Area,The two-dimensional size of the part of a surface.
-count,Count,A count of items.
-currency,Currency,A financial value.
-length,Length,A measure of distance.
+Code,Title,Description,QUDT URI
+area,Area,"Area is a quantity expressing the two-dimensional size of a defined part of a surface, typically a region bounded by a closed curve.",https://qudt.org/vocab/quantitykind/Area
+length,Length,"In geometric measurements, length most commonly refers to the longest dimension of an object. In some contexts, the term ""length"" is reserved for a certain dimension of an object along which the length is measured.",http://qudt.org/vocab/quantitykind/Length
+count,Count,"""Count"" is the value of a count of items.",http://qudt.org/vocab/quantitykind/Count
+currency,Currency,"In economics, currency is a generally accepted medium of exchange. These are usually the coins and banknotes of a particular government, which comprise the physical aspects of a nation's money supply. The other part of a nation's money supply consists of bank deposits (sometimes called deposit money), ownership of which can be transferred by means of cheques, debit cards, or other forms of money transfer. Deposit money and currency are money in the sense that both are acceptable as a means of payment.",http://qudt.org/vocab/quantitykind/Currency
+time,Time,"Time is a basic component of the measuring system used to sequence events, to compare the durations of events and the intervals between them, and to quantify the motions of objects.",http://qudt.org/vocab/quantitykind/Time
+dimensionless_ratio,Dimensionless Ratio,"A ratio of two quantities of the same kind, e.g. a percentage.",http://qudt.org/vocab/quantitykind/DimensionlessRatio
+volume,Volume,"The volume of a solid object is the three-dimensional concept of how much space it occupies, often quantified numerically. One-dimensional figures (such as lines) and two-dimensional shapes (such as squares) are assigned zero volume in the three-dimensional space.",http://qudt.org/vocab/quantitykind/Volume
+mass,Mass,"In physics, mass, more specifically inertial mass, can be defined as a quantitative measure of an object's resistance to acceleration. The SI unit of mass is the kilogram (kg).",http://qudt.org/vocab/quantitykind/Mass
