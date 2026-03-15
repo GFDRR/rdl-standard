@@ -618,7 +618,6 @@ The following table lists all vulnerability component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/vulnerability
-collapse: cost,impact,spatial,se_category
 addtargets:
 ---
 ```
@@ -906,7 +905,6 @@ jsonpointer: /$defs/Location/description
 This sub-schema is referenced by the following properties:
 
 - [`spatial`](rdls_schema.json,,spatial)
-- [`vulnerability/spatial`](rdls_schema.json,/properties/vulnerability,spatial)
 - [`Event_set/spatial`](rdls_schema.json,/$defs/Event_set,spatial)
 
 Each `Location` has the following fields:
@@ -1124,7 +1122,6 @@ jsonpointer: /$defs/Cost/description
 
 This sub-schema is referenced by the following properties:
 
-- [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
 - [`Losses/cost`](rdls_schema.json,/$defs/Losses,cost)
 
 Each `Cost` has the following fields:
@@ -1173,7 +1170,6 @@ jsonpointer: /$defs/Impact/description
 
 This sub-schema is referenced by the following properties:
 
-- [`vulnerability/impact`](rdls_schema.json,/properties/vulnerability,impact)
 - [`Losses/impact`](rdls_schema.json,/$defs/Losses,impact)
 
 Each `Impact` has the following fields:
@@ -1198,7 +1194,6 @@ jsonpointer: /$defs/Classification/description
 
 This sub-schema is referenced by the following properties:
 
-- [`vulnerability/se_category`](rdls_schema.json,/properties/vulnerability,se_category)
 - [`Event/disaster_identifiers`](rdls_schema.json,/$defs/Event,disaster_identifiers)
 
 Each `Classification` has the following fields:
@@ -1259,6 +1254,96 @@ addtargets:
 ---
 ```
 
+### Function
+
+`Function` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Function/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+Each `Function` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Function
+collapse: impact_measurement
+addtargets:
+---
+```
+
+### Damage_scale_states_names
+
+`Damage_scale_states_names` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Damage_scale_states_names/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+Each `Damage_scale_states_names` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Damage_scale_states_names
+collapse:
+addtargets:
+---
+```
+
+### Engineering_demand_parameter
+
+`Engineering_demand_parameter` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Engineering_demand_parameter/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+Each `Engineering_demand_parameter` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Engineering_demand_parameter
+collapse:
+addtargets:
+---
+```
+
+### SocioEconomicIndex
+
+`SocioEconomicIndex` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/SocioEconomicIndex/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`vulnerability/socio_economic`](rdls_schema.json,/properties/vulnerability,socio_economic)
+
+Each `SocioEconomicIndex` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/SocioEconomicIndex
+collapse:
+addtargets:
+---
+```
+
 ### Measurement
 
 `Measurement` is defined as:
@@ -1273,6 +1358,7 @@ This sub-schema is referenced by the following properties:
 
 - [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
 - [`Impact/measurement`](rdls_schema.json,/$defs/Impact,measurement)
+- [`Function/impact_measurement`](rdls_schema.json,/$defs/Function,impact_measurement)
 
 Each `Measurement` has the following fields:
 

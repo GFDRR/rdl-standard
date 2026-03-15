@@ -201,7 +201,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "taxonomy": {
@@ -227,405 +229,127 @@
       "title": "Vulnerability metadata",
       "type": "object",
       "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
-      "required": [
-        "hazard_primary",
-        "intensity",
-        "category",
-        "cost",
-        "impact",
-        "spatial",
-        "functions"
-      ],
       "properties": {
-        "hazard_primary": {
-          "title": "Primary hazard type",
-          "type": "string",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_secondary": {
-          "title": "Secondary hazard type",
-          "type": "string",
-          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "hazard_process_primary": {
-          "title": "Primary hazard process",
-          "type": "string",
-          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone",
-            "volcano_gas_aerosols"
-          ]
-        },
-        "hazard_process_secondary": {
-          "title": "Secondary hazard process",
-          "type": "string",
-          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone",
-            "volcano_gas_aerosols"
-          ]
-        },
-        "hazard_analysis_type": {
-          "title": "Hazard analysis type",
-          "type": "string",
-          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type).",
-          "codelist": "analysis_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "deterministic",
-            "empirical",
-            "probabilistic"
-          ]
-        },
-        "intensity": {
-          "title": "Hazard intensity measurement",
-          "description": "The metric and units the hazard intensity measurement is given in, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
-          "type": "string",
-          "codelist": "IMT.csv",
-          "openCodelist": true,
-          "minLength": 1
-        },
-        "category": {
-          "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
-          "type": "string",
-          "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment"
-          ]
-        },
-        "cost": {
-          "title": "Asset cost",
-          "type": "array",
-          "description": "The exposure costs associated with specific elements of assets detailed in the dataset.",
-          "items": {
-            "$ref": "#/$defs/Cost"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "taxonomy": {
-          "title": "Exposure taxonomy scheme",
-          "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset. Use of GED4ALL is recommended.",
-          "minLength": 1
-        },
-        "impact": {
-          "title": "Vulnerability impact",
-          "description": "The details of the vulnerability impact values produced in the modelled scenario(s).",
-          "$ref": "#/$defs/Impact"
-        },
-        "spatial": {
-          "title": "Spatial coverage",
-          "description": "The geographical area to which the vulnerability function used in the modelled scenarios applies. `.scale` must be provided. Other fields may be provided if the spatial coverage of the vulnerability function differs from the coverage specified in the dataset-level `spatial` field.",
-          "$ref": "#/$defs/Location",
-          "required": [
-            "scale"
-          ]
-        },
         "functions": {
-          "title": "Impact functions",
+          "title": "Functions",
           "type": "object",
           "description": "Details of the functions used to calculate the vulnerability dataset.",
           "properties": {
             "vulnerability": {
-              "title": "Vulnerability function",
-              "type": "object",
-              "description": "The vulnerability function used to calculate the impact of the hazard.",
-              "properties": {
-                "approach": {
-                  "title": "Vulnerability function approach",
-                  "type": "string",
-                  "description": "The approach the vulnerability function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
-                  "enum": [
-                    "analytical",
-                    "empirical",
-                    "hybrid",
-                    "judgement"
-                  ],
-                  "codelist": "function_approach.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                },
-                "relationship": {
-                  "title": "Vulnerability impact relationship type",
-                  "type": "string",
-                  "description": "The type of function relationships used to calculate the vulnerability impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
-                  "enum": [
-                    "discrete",
-                    "math_bespoke",
-                    "math_parametric"
-                  ],
-                  "codelist": "relationship_type.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                }
+              "title": "Vulnerability functions",
+              "type": "array",
+              "description": "The vulnerability functions used to calculate the impact of the hazard.",
+              "items": {
+                "allOf": [
+                  {
+                    "title": "Vulnerability function",
+                    "description": "A vulnerability function used to calculate the impact of a hazard.",
+                    "type": "object"
+                  },
+                  {
+                    "$ref": "#/$defs/Function"
+                  }
+                ]
               },
-              "minProperties": 1
+              "minItems": 1,
+              "uniqueItems": true
             },
             "fragility": {
-              "title": "Fragility function",
-              "type": "object",
-              "description": "The fragility function used to calculate the impact of the hazard.",
-              "properties": {
-                "approach": {
-                  "title": "Fragility function approach",
-                  "type": "string",
-                  "description": "The approach the fragility function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
-                  "enum": [
-                    "analytical",
-                    "empirical",
-                    "hybrid",
-                    "judgement"
-                  ],
-                  "codelist": "function_approach.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                },
-                "relationship": {
-                  "title": "Fragility impact relationship type",
-                  "type": "string",
-                  "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship type_codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
-                  "enum": [
-                    "discrete",
-                    "math_bespoke",
-                    "math_parametric"
-                  ],
-                  "codelist": "relationship_type.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                },
-                "damage_scale_name": {
-                  "title": "Damage scale name",
-                  "type": "string",
-                  "description": "The name of the damage scale used in the fragility function, taken from the open [damage_scale_name codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#damage-scale-name).",
-                  "codelist": "damage_scale_name.csv",
-                  "openCodelist": true,
-                  "minLength": 1
-                },
-                "damage_states_names": {
-                  "title": "Damage states names",
-                  "type": "array",
-                  "description": "The names of the damage states listed in the fragility function.",
-                  "items": {
-                    "type": "string",
-                    "minLength": 1
+              "title": "Fragility functions",
+              "type": "array",
+              "description": "The fragility functions used to calculate the impact of the hazard.",
+              "items": {
+                "allOf": [
+                  {
+                    "title": "Fragility function",
+                    "description": "A fragility function used to calculate the impact of a hazard.",
+                    "type": "object"
                   },
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
+                  {
+                    "$ref": "#/$defs/Function"
+                  },
+                  {
+                    "$ref": "#/$defs/Damage_scale_states_names"
+                  }
+                ]
               },
-              "minProperties": 1
+              "minItems": 1,
+              "uniqueItems": true
             },
             "damage_to_loss": {
-              "title": "Damage-to-loss function",
-              "type": "object",
-              "description": "The damage-to-loss function (or damage-to-loss model) used to calculate the impact of the hazard in conjunction with a fragility function.",
-              "properties": {
-                "approach": {
-                  "title": "Damage-to-loss function approach",
-                  "type": "string",
-                  "description": "The approach the damage-to-loss impact function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
-                  "enum": [
-                    "analytical",
-                    "empirical",
-                    "hybrid",
-                    "judgement"
-                  ],
-                  "codelist": "function_approach.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                },
-                "relationship": {
-                  "title": "Damage-to-loss impact relationship type",
-                  "type": "string",
-                  "description": "The type of function relationships used to calculate the damage-to-loss impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
-                  "enum": [
-                    "discrete",
-                    "math_bespoke",
-                    "math_parametric"
-                  ],
-                  "codelist": "relationship_type.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                },
-                "damage_scale_name": {
-                  "title": "Damage scale name",
-                  "type": "string",
-                  "description": "The name of the damage scale used in the damage-to-loss function, taken from the open [damage_scale_name codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#damage-scale-name).",
-                  "codelist": "damage_scale_name.csv",
-                  "openCodelist": true,
-                  "minLength": 1
-                },
-                "damage_states_names": {
-                  "title": "Damage states names",
-                  "type": "array",
-                  "description": "The names of the damage states listed in a damage scale.",
-                  "items": {
-                    "type": "string",
-                    "minLength": 1
+              "title": "Damage-to-loss functions",
+              "type": "array",
+              "description": "The damage-to-loss functions used to calculate the impact of the hazard in conjunction with fragility functions.",
+              "items": {
+                "allOf": [
+                  {
+                    "title": "Damage-to-loss function",
+                    "description": "A damage-to-loss function used to calculate the impact of the hazard in conjunction with a fragility function.",
+                    "type": "object"
                   },
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
+                  {
+                    "$ref": "#/$defs/Function"
+                  },
+                  {
+                    "$ref": "#/$defs/Damage_scale_states_names"
+                  }
+                ]
               },
-              "minProperties": 1
+              "minItems": 1,
+              "uniqueItems": true
             },
             "engineering_demand": {
-              "title": "Engineering demand function",
-              "type": "object",
-              "description": "The engineering demand function used to calculate the impact of the hazard.",
-              "properties": {
-                "parameter": {
-                  "title": "Engineering demand parameter",
-                  "type": "string",
-                  "description": "The name of the engineering demand parameter, taken from the open [engineering_demand_parameter codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#engineering-demand-parameter).",
-                  "codelist": "engineering_demand_parameter.csv",
-                  "openCodelist": true,
-                  "minLength": 1
-                },
-                "approach": {
-                  "title": "Engineering demand impact function approach",
-                  "type": "string",
-                  "description": "The approach the engineering demand impact function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
-                  "enum": [
-                    "analytical",
-                    "empirical",
-                    "hybrid",
-                    "judgement"
-                  ],
-                  "codelist": "function_approach.csv",
-                  "openCodelist": false,
-                  "minLength": 1
-                },
-                "relationship": {
-                  "title": "Engineering demand impact relationship type",
-                  "type": "string",
-                  "description": "The type of function relationships used to calculate the engineering impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
-                  "enum": [
-                    "discrete",
-                    "math_bespoke",
-                    "math_parametric"
-                  ],
-                  "codelist": "relationship_type.csv",
-                  "openCodelist": false
-                }
+              "title": "Engineering demand functions",
+              "type": "array",
+              "description": "The engineering demand functions used to calculate the impact of the hazard.",
+              "items": {
+                "allOf": [
+                  {
+                    "title": "Engineering demand function",
+                    "description": "An engineering demand function used to calculate the impact of a hazard.",
+                    "type": "object"
+                  },
+                  {
+                    "$ref": "#/$defs/Function"
+                  },
+                  {
+                    "$ref": "#/$defs/Damage_scale_states_names"
+                  },
+                  {
+                    "$ref": "#/$defs/Engineering_demand_parameter"
+                  }
+                ]
               },
-              "minProperties": 1
+              "minItems": 1,
+              "uniqueItems": true
             }
           },
           "minProperties": 1
         },
-        "analysis_details": {
-          "title": "Analysis details",
-          "type": "string",
-          "description": "Additional details about the analysis used to produce the vulnerability function used in the modelled scenario(s).",
-          "minLength": 1
-        },
-        "se_category": {
-          "title": "Socio-economic index category",
-          "description": "The socio-economic category vulnerable to the hazard.",
-          "$ref": "#/$defs/Classification"
+        "socio_economic": {
+          "title": "Socio-economic indices",
+          "type": "array",
+          "description": "Array of socio-economic indices vulnerable to the hazard.",
+          "items": {
+            "$ref": "#/$defs/SocioEconomicIndex"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
       },
-      "minProperties": 1
+      "minProperties": 1,
+      "anyOf": [
+        {
+          "required": [
+            "functions"
+          ]
+        },
+        {
+          "required": [
+            "socio_economic"
+          ]
+        }
+      ]
     },
     "loss": {
       "title": "Loss metadata",
@@ -2563,7 +2287,9 @@
             "buildings",
             "infrastructure",
             "population",
-            "natural_environment"
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
           ]
         },
         "cost": {
@@ -2615,6 +2341,385 @@
           ],
           "codelist": "analysis_type.csv",
           "openCodelist": false
+        },
+        "hazard_id": {
+          "title": "Hazard dataset",
+          "type": "string",
+          "description": "A unique identifier for the hazard dataset used in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "exposure_id": {
+          "title": "Exposure dataset",
+          "type": "string",
+          "description": "A unique identifier for the exposure dataset used in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "vulnerability_id": {
+          "title": "Vulnerability dataset",
+          "type": "string",
+          "description": "A unique identifier for the vulnerability dataset used in in calculating the losses. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        }
+      },
+      "minProperties": 1
+    },
+    "Function": {
+      "title": "Function",
+      "type": "object",
+      "description": "A vulnerability, fragility, damage-to-loss, or engineering-demand function.",
+      "required": [
+        "id",
+        "approach",
+        "relationship"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "type": "string",
+          "description": "A unique identifier for the function. Use of an HTTP URI is recommended.",
+          "minLength": 1
+        },
+        "approach": {
+          "title": "Approach",
+          "description": "The approach the function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach).",
+          "type": "string",
+          "enum": [
+            "analytical",
+            "empirical",
+            "hybrid",
+            "judgement"
+          ],
+          "codelist": "function_approach.csv",
+          "openCodelist": false
+        },
+        "relationship": {
+          "title": "Impact relationship type",
+          "description": "The type of function relationships used to calculate the impact values, taken from the closed [relationship_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#relationship-type).",
+          "type": "string",
+          "enum": [
+            "math_parametric",
+            "math_bespoke",
+            "discrete"
+          ],
+          "codelist": "relationship_type.csv",
+          "openCodelist": false
+        },
+        "hazard_primary": {
+          "title": "Primary hazard type",
+          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
+          "type": "string",
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "extreme_temperature",
+            "flood",
+            "wildfire",
+            "strong_wind",
+            "earthquake",
+            "landslide",
+            "tsunami",
+            "volcanic"
+          ],
+          "codelist": "hazard_type.csv",
+          "openCodelist": false
+        },
+        "hazard_secondary": {
+          "title": "Secondary hazard type",
+          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
+          "type": "string",
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "extreme_temperature",
+            "flood",
+            "wildfire",
+            "strong_wind",
+            "earthquake",
+            "landslide",
+            "tsunami",
+            "volcanic"
+          ],
+          "codelist": "hazard_type.csv",
+          "openCodelist": false
+        },
+        "hazard_process_primary": {
+          "title": "Primary hazard process",
+          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
+          "type": "string",
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_ballistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
+          ],
+          "codelist": "process_type.csv",
+          "openCodelist": false
+        },
+        "hazard_process_secondary": {
+          "title": "Secondary hazard process",
+          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
+          "type": "string",
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_ballistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
+          ],
+          "codelist": "process_type.csv",
+          "openCodelist": false
+        },
+        "hazard_analysis_type": {
+          "title": "Hazard analysis type",
+          "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type).",
+          "type": "string",
+          "enum": [
+            "probabilistic",
+            "deterministic",
+            "empirical"
+          ],
+          "codelist": "analysis_type.csv",
+          "openCodelist": false
+        },
+        "intensity_measure": {
+          "title": "Intensity measure",
+          "type": "string",
+          "description": "The metric and unit in which the intensity of a hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT). Format is typically 'measure:unit', e.g. 'PGA:g' for peak ground acceleration in g.",
+          "codelist": "IMT.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "category": {
+          "title": "Exposure category",
+          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
+          "type": "string",
+          "enum": [
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
+          ],
+          "codelist": "exposure_category.csv",
+          "openCodelist": false
+        },
+        "impact_type": {
+          "title": "Impact type",
+          "type": "string",
+          "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type).",
+          "codelist": "impact_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "direct",
+            "indirect",
+            "total"
+          ]
+        },
+        "impact_modelling": {
+          "title": "Impact modelling",
+          "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type).",
+          "type": "string",
+          "enum": [
+            "inferred",
+            "observed",
+            "simulated"
+          ],
+          "codelist": "data_calculation_type.csv",
+          "openCodelist": false
+        },
+        "impact_metric": {
+          "title": "Impact metric",
+          "type": "string",
+          "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
+          "codelist": "impact_metric.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "impact_measurement": {
+          "title": "Impact measurement",
+          "description": "How the impact is measured.",
+          "$ref": "#/$defs/Measurement"
+        },
+        "taxonomy": {
+          "title": "Exposure taxonomy scheme",
+          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset, from the open [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme). Use of GED4ALL is recommended.",
+          "type": "string",
+          "codelist": "classification_scheme.csv",
+          "openCodelist": true
+        },
+        "analysis_details": {
+          "title": "Analysis details",
+          "type": "string",
+          "description": "Additional details about the analysis used to produce the function used in the modelled scenario(s).",
+          "minLength": 1
+        }
+      }
+    },
+    "Damage_scale_states_names": {
+      "title": "Damage scale and states",
+      "type": "object",
+      "description": "The damage scale and states used in a fragility, damage-to-loss, or engineering-demand function.",
+      "properties": {
+        "damage_scale_name": {
+          "title": "Damage scale name",
+          "type": "string",
+          "description": "The name of the damage scale used in the function, taken from the open [damage_scale_name codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#damage-scale-name).",
+          "codelist": "damage_scale_name.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "damage_states_names": {
+          "title": "Damage states names",
+          "type": "array",
+          "description": "The names of the damage states listed in the function.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "Engineering_demand_parameter": {
+      "title": "Engineering demand parameter",
+      "type": "object",
+      "description": "The engineering demand parameter used in an engineering-demand function.",
+      "properties": {
+        "parameter": {
+          "title": "Engineering demand parameter",
+          "type": "string",
+          "description": "The name of the engineering demand parameter, taken from the open [engineering_demand_parameter codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#engineering-demand-parameter).",
+          "codelist": "engineering_demand_parameter.csv",
+          "openCodelist": true,
+          "minLength": 1
+        }
+      }
+    },
+    "SocioEconomicIndex": {
+      "title": "Socio-economic Indicator",
+      "type": "object",
+      "description": "A socio-economic indicator or index used to characterize vulnerability.",
+      "required": [
+        "id",
+        "indicator_name",
+        "indicator_code",
+        "description",
+        "reference_year"
+      ],
+      "properties": {
+        "id": {
+          "title": "Socio-economic indicator identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this socio-economic indicator",
+          "minLength": 1
+        },
+        "scheme": {
+          "title": "Classification scheme",
+          "description": "The classification scheme or framework from which the indicator is taken, from the open [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme).",
+          "type": "string",
+          "codelist": "classification_scheme.csv",
+          "openCodelist": true,
+          "minLength": 1
+        },
+        "indicator_name": {
+          "title": "Indicator name",
+          "description": "The name of the specific indicator or index used to characterize vulnerability.",
+          "type": "string",
+          "minLength": 1
+        },
+        "indicator_code": {
+          "title": "Indicator code",
+          "description": "The code or identifier for the indicator within the scheme.",
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "title": "Description",
+          "description": "Description of what this indicator measures and how it relates to vulnerability to the hazard.",
+          "type": "string",
+          "minLength": 1
+        },
+        "threshold": {
+          "title": "Threshold or value",
+          "description": "Specific threshold or value range used to define vulnerability level (if applicable).",
+          "type": "string"
+        },
+        "reference_year": {
+          "title": "Reference year",
+          "description": "The year the indicator data applies to.",
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "uri": {
+          "title": "URI",
+          "description": "A URI to the indicator definition or data source.",
+          "type": "string",
+          "format": "iri"
+        },
+        "analysis_details": {
+          "title": "Analysis details",
+          "type": "string",
+          "description": "Additional details about the analysis used to produce the vulnerability function used in the modelled scenario(s).",
+          "minLength": 1
         }
       },
       "minProperties": 1
