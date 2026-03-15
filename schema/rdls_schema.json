@@ -2719,6 +2719,7 @@
           "title": "Analysis details",
           "type": "string",
           "description": "Additional details about the analysis used to produce the vulnerability function used in the modelled scenario(s).",
+          "minLength": 1
         }
       },
       "minProperties": 1
