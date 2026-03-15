@@ -1261,6 +1261,7 @@ addtargets:
 ```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 jsonpointer: /$defs/Function/description
+---
 ```
 
 This sub-schema is referenced by the following properties:
@@ -1270,7 +1271,7 @@ Each `Function` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Function
-collapse: quantity_kind
+collapse: impact_measurement
 addtargets:
 ---
 ```
@@ -1338,6 +1339,8 @@ Each `SocioEconomicIndex` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/SocioEconomicIndex
+collapse:
+addtargets:
 ---
 ```
 
@@ -1355,6 +1358,7 @@ This sub-schema is referenced by the following properties:
 
 - [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
 - [`Impact/measurement`](rdls_schema.json,/$defs/Impact,measurement)
+- [`Function/impact_measurement`](rdls_schema.json,/$defs/Function,impact_measurement)
 
 Each `Measurement` has the following fields:
 

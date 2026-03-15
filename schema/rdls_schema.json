@@ -2592,10 +2592,10 @@
           "openCodelist": true,
           "minLength": 1
         },
-        "quantity_kind": {
-          "title": "Quantity kind",
-          "description": "The kind of quantity in which the impact value is expressed, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind).",
-          "$ref": "#/$defs/Metric/properties/quantity_kind"
+        "impact_measurement": {
+          "title": "Impact measurement",
+          "description": "How the impact is measured.",
+          "$ref": "#/$defs/Measurement"
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
