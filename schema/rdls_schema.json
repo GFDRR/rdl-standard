@@ -2320,10 +2320,10 @@
                 "production_loss"
               ]
             },
-            "quantity_kind": {
-              "title": "Quantity kind",
-              "description": "The kind of quantity in which the impact value is expressed, from the open [quantity_kind codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#quantity-kind).",
-              "$ref": "#/$defs/Metric/properties/quantity_kind"
+            "measurement": {
+              "title": "Measurement",
+              "description": "The way in which the impact value is measured.",
+              "$ref": "#/$defs/Measurement"
             },
             "currency": {
               "title": "Currency",
