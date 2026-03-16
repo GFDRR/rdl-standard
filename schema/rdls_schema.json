@@ -2370,7 +2370,7 @@
             "impact_type",
             "impact_modelling",
             "impact_metric",
-            "quantity_kind",
+            "measurement",
             "loss_type",
             "loss_approach",
             "loss_frequency_type"
