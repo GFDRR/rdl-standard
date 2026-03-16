@@ -3192,6 +3192,23 @@
           "if": {
             "properties": {
               "quantity_kind": {
+                "const": "mass_per_area"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_mass_per_area.csv",
+                "openCodelist": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
                 "const": "time"
               }
             }
