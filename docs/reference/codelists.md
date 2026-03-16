@@ -128,9 +128,6 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`license`](rdls_schema.json,,license)
-- [`Source/license`](rdls_schema.json,/$defs/Source,license)
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -187,9 +184,6 @@ This codelist is referenced by the following properties:
 This codelist has the following codes:
 
 ````{dropdown} Codes
----
-open:
----
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -320,6 +314,25 @@ open:
 ```
 ````
 
+### unit_mass_per_area
+
+This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_mass_per_area.csv
+```
+````
+
 ### unit_time
 
 The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the time [quantity kind](#quantity_kind).
@@ -429,7 +442,6 @@ open:
 This codelist is referenced by the following properties:
 
 - [`exposure/category`](rdls_schema.json,/properties/exposure,category)
-- [`vulnerability/category`](rdls_schema.json,/properties/vulnerability,category)
 - [`Losses/asset_category`](rdls_schema.json,/$defs/Losses,asset_category)
 - [`Function/category`](rdls_schema.json,/$defs/Function,category)
 
@@ -469,10 +481,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`vulnerability/functions/vulnerability/approach`](rdls_schema.json,/properties/vulnerability,functions/vulnerability/approach)
-- [`vulnerability/functions/fragility/approach`](rdls_schema.json,/properties/vulnerability,functions/fragility/approach)
-- [`vulnerability/functions/damage_to_loss/approach`](rdls_schema.json,/properties/vulnerability,functions/damage_to_loss/approach)
-- [`vulnerability/functions/engineering_demand/approach`](rdls_schema.json,/properties/vulnerability,functions/engineering_demand/approach)
 - [`Losses/impact_and_losses/loss_approach`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_approach)
 - [`Function/approach`](rdls_schema.json,/$defs/Function,approach)
 

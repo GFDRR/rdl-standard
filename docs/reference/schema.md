@@ -1121,9 +1121,6 @@ jsonpointer: /$defs/Cost/description
 
 This sub-schema is referenced by the following properties:
 
-- [`vulnerability/cost`](rdls_schema.json,/properties/vulnerability,cost)
-- [`Losses/cost`](rdls_schema.json,/$defs/Losses,cost)
-
 Each `Cost` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
@@ -1169,9 +1166,6 @@ jsonpointer: /$defs/Impact/description
 ```
 
 This sub-schema is referenced by the following properties:
-
-- [`vulnerability/impact`](rdls_schema.json,/properties/vulnerability,impact)
-- [`Losses/impact`](rdls_schema.json,/$defs/Losses,impact)
 
 Each `Impact` has the following fields:
 
@@ -1359,6 +1353,7 @@ This sub-schema is referenced by the following properties:
 
 - [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
 - [`Impact/measurement`](rdls_schema.json,/$defs/Impact,measurement)
+- [`Losses/impact_and_losses/measurement`](rdls_schema.json,/$defs/Losses,impact_and_losses/measurement)
 - [`Function/impact_measurement`](rdls_schema.json,/$defs/Function,impact_measurement)
 
 Each `Measurement` has the following fields:
