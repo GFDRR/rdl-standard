@@ -21,4 +21,4 @@ asset_loss,Number of assets,"The estimated number of structures, or length of in
 displaced_count,Number of people displaced,The estimated number of people displaced due to physical damage and disruption.,Loss
 risk_index,Risk Index,"A specified index or classification of risk levels, which may be numeric or non-numeric.",Loss
 production_loss,Production Loss,The reduction or interruption in the output of goods or services.,Loss
-exposure_to_hazard,Exposure to hazard,,Loss
+exposure_to_hazard,Exposure to Hazard,"Quantification of people, infrastructure, housing, production capacities or other tangible human assets located in hazard-prone areas.",Loss
