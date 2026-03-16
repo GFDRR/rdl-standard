@@ -18,6 +18,12 @@ ______________________________________________________________________
    :hidden:
 
    schema
+   reference_tables/dataset
+   reference_tables/resource
+   reference_tables/hazard
+   reference_tables/exposure
+   reference_tables/vulnerability
+   reference_tables/loss
    browser
    codelists
    package_schema

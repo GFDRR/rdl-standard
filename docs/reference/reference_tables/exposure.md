@@ -1,0 +1,1 @@
+# Exposure metadata schema
