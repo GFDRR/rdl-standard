@@ -186,8 +186,7 @@ The following table lists all hazard component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/hazard
-collapse: 
-  event_sets/0/hazards,event_sets/0/events
+collapse: event_sets/0/hazards,event_sets/0/events
 addtargets:
 ---
 ```
