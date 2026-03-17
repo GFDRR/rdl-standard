@@ -2696,7 +2696,7 @@
         },
         "hazard_primary": {
           "title": "Primary hazard type",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
+          "description": "The primary hazard involved in the modelled scenario(s).",
           "$ref": "#/$defs/Hazard"
         },
         "hazard_secondary": {
