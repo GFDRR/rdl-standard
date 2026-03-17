@@ -2523,7 +2523,8 @@
                   "volcano_ballistics",
                   "lahar",
                   "lava",
-                  "pyroclastic_flow"
+                  "pyroclastic_flow",
+                  "volcano_gas_aerosols"
                 ]
               }
             }
