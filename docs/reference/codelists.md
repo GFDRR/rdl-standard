@@ -24,7 +24,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 This codelist is referenced by the following properties:
 
 - [`Footprint/intensity_measure`](rdls_schema.json,/$defs/Footprint,intensity_measure)
-- [`Function/intensity_measure`](rdls_schema.json,/$defs/Function,intensity_measure)
 
 This codelist has the following codes:
 
@@ -720,8 +719,6 @@ The process_type codelist classifies hazard phenomena by the hazard process to w
 This codelist is referenced by the following properties:
 
 - [`SimpleHazard/process`](rdls_schema.json,/$defs/SimpleHazard,process)
-- [`Function/hazard_process_primary`](rdls_schema.json,/$defs/Function,hazard_process_primary)
-- [`Function/hazard_process_secondary`](rdls_schema.json,/$defs/Function,hazard_process_secondary)
 
 This codelist has the following codes:
 
