@@ -1314,16 +1314,6 @@
           "description": "A summary of the probabilistic occurrence scenarios that are included in the event set. You should only use this field when `event_set.analysis_type` = 'probabilistic'",
           "minLength": 1
         },
-        "spatial": {
-          "title": "Spatial coverage",
-          "description": "The geographical area covered by the the hazard analysis in this event set.",
-          "$ref": "#/$defs/Location"
-        },
-        "temporal": {
-          "title": "Temporal coverage",
-          "description": "The period of time covered by this event set.",
-          "$ref": "#/$defs/Period"
-        },
         "events": {
           "title": "Events",
           "description": "The events in this event set.",
@@ -1459,48 +1449,6 @@
           "title": "Description",
           "type": "string",
           "description": "Provides additional information about this specific event",
-          "minLength": 1
-        },
-        "footprints": {
-          "title": "Footprints",
-          "description": "The footprints for this event showing spatial distribution of hazard intensity.",
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/Footprint"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      },
-      "minProperties": 1
-    },
-    "Footprint": {
-      "title": "Footprint",
-      "description": "Information about a single hazard event footprint showing spatial distribution of hazard intensity.",
-      "type": "object",
-      "required": [
-        "id",
-        "intensity_measure"
-      ],
-      "properties": {
-        "id": {
-          "title": "Footprint identifier",
-          "type": "string",
-          "description": "A locally unique identifier for this footprint",
-          "minLength": 1
-        },
-        "intensity_measure": {
-          "title": "Hazard intensity measurement",
-          "type": "string",
-          "description": "The measurement unit used in the footprint, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT). This is typically a measurement of intensity but can also take other forms, e.g. spectral velocity or flood water depth.",
-          "codelist": "IMT.csv",
-          "openCodelist": true,
-          "minLength": 1
-        },
-        "data_uncertainty": {
-          "title": "Data uncertainty",
-          "type": "string",
-          "description": "Details of the uncertainty of the footprint that should be taken into account when interpreting the data.",
           "minLength": 1
         }
       },
