@@ -6,5 +6,5 @@ currency,Currency,"In economics, currency is a generally accepted medium of exch
 time,Time,"Time is a basic component of the measuring system used to sequence events, to compare the durations of events and the intervals between them, and to quantify the motions of objects.",http://qudt.org/vocab/quantitykind/Time
 volume,Volume,"The volume of a solid object is the three-dimensional concept of how much space it occupies, often quantified numerically. One-dimensional figures (such as lines) and two-dimensional shapes (such as squares) are assigned zero volume in the three-dimensional space.",http://qudt.org/vocab/quantitykind/Volume
 mass,Mass,"In physics, mass, more specifically inertial mass, can be defined as a quantitative measure of an object's resistance to acceleration. The SI unit of mass is the kilogram (kg).",http://qudt.org/vocab/quantitykind/Mass
-ratio,Ratio,"A dimensionless ratio of two quantities of the same kind, e.g. a percentage."
+dimensionless_ratio,Ratio (dimensionless or percent),"A dimensionless ratio of two quantities of the same kind, e.g. a percentage."
 index,Index,"A dimensionless index such as a hazard, vulnerability, or risk index or score that has been used to classify levels of hazard, vulnerability, or risk."
