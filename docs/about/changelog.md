@@ -10,6 +10,10 @@ This page lists changes to the Risk Data Library Standard.
   - Rationalise hazard modelling
   - Add conditional validation of hazard process based on hazard type
   - Add conditional validation of intensity measure based on hazard type
+- [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
+- [#380](https://github.com/GFDRR/rdl-standard/pull/380):
+  - `Metric` - Replace `.quantity_kind` with `.measurement.quantity_kind` and `.measurement.unit`
+  - `Impact` - Replace `.unit` with `.measurement.quantity_kind` and `.measurement.unit`
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373):
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.
@@ -18,12 +22,35 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#400](https://github.com/GFDRR/rdl-standard/pull/400):
+  - Move `.sources` to `.lineage.sources`
+  - Add `Source.risk_data_type`
+  - Rename `Source.component` to `Source.used_in`
+  - Add `.lineage.description`
+  - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
 
 ### Codelists
 
-- [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index' to `impact_metric.csv`.
+- `impact_metric.csv`:
+  - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index'.
+  - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes.
+  - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'exposure_to_hazard'.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - 'IMT.csv' Expanded list and updated structure.
 - [#385](https://github.com/GFDRR/rdl-standard/pull/385) - Add 'volcano_gas_aerosols' to `process_type.csv`.
+- `exposure_category.csv`:
+  - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'economic_indicator' and 'development_index'
+- `classification_scheme.csv`:
+  - [#395](https://github.com/GFDRR/rdl-standard/pull/395)
+    - Add:
+      - 'HAZUS'
+      - 'CDC-SVI'
+      - 'INFORM'
+      - 'Custom'
+      - 'EMS-98'
+      - 'PAGER'
+      - 'OED'
+    - Remove'GED4ALL-socio-economic'
+    - Rename 'MOVER-social-vulnerability-categories' > 'MOVER'
 - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.

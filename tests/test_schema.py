@@ -34,12 +34,14 @@ def validate_metadata_presence_allow_missing(pointer):
       or 'end/oneOf' in pointer
       or pointer.startswith('/anyOf')
       or pointer.startswith('/properties/links')
+      or pointer.startswith('/properties/vulnerability/anyOf/')
       or pointer.startswith('/$defs/Location/allOf')
       or pointer.startswith('/$defs/Entity/anyOf/')
       or pointer.startswith('/$defs/Event/properties/occurrence/anyOf/')
       or pointer.startswith('/$defs/Hazard/allOf')
       or pointer.startswith('/$defs/SimpleHazard/allOf')
       or pointer.startswith('/$defs/HazardWithTrigger/allOf')
+      or pointer.startswith('/$defs/Measurement/allOf')
     )
 
 validate_metadata_presence_kwargs = {
