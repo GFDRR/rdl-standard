@@ -2076,12 +2076,6 @@
           "description": "The main type of hazard that resulted in the losses.",
           "$ref": "#/$defs/HazardWithTrigger"
         },
-        "description": {
-          "title": "Loss description",
-          "type": "string",
-          "description": "Additional details of the losses.",
-          "minLength": 1
-        },
         "asset_category": {
           "title": "Asset category",
           "description": "The category of the lost assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",

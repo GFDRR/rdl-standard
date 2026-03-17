@@ -1195,7 +1195,7 @@ Each `Losses` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Losses
-collapse: hazard,cost,impact
+collapse: hazard
 addtargets:
 ---
 ```
