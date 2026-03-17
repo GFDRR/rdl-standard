@@ -68,7 +68,7 @@ This codelist has the following codes:
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/climate_scenario.csv
+:file: ../../schema/codelists/closed/climate_scenario.csv
 ```
 ````
 
@@ -143,9 +143,6 @@ This codelist has the following codes:
 ### license
 
 This codelist is referenced by the following properties:
-
-- [`license`](rdls_schema.json,,license)
-- [`Source/license`](rdls_schema.json,/$defs/Source,license)
 
 This codelist has the following codes:
 
@@ -398,6 +395,22 @@ open:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/analysis_type.csv
+```
+````
+
+### climate_scenario
+
+This codelist is referenced by the following properties:
+
+- [`Climate/scenario`](rdls_schema.json,/$defs/Climate,scenario)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/climate_scenario.csv
 ```
 ````
 

@@ -5,6 +5,7 @@ SSP2-4.5,Intermediate Emissions (4.5 W/m2),Intermediate emissions following broa
 SSP3-7.0,High Emissions (7.0 W/m2),High emissions assuming regional rivalry and no additional climate policies.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
 SSP4-3.4,Low to Intermediate Emissions (3.4 W/m2),Low to intermediate emissions assuming high inequality between and within countries with moderate mitigation efforts.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
 SSP4-6.0,High Emissions (6.0 W/m2),High emissions assuming high inequality between and within countries and limited mitigation.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
+SSP5-3.4,Low to Intermediate Emissions - Overshoot (3.4 W/m2),Overshoot pathway following high emissions before rapid decline to 3.4 W/m2 by 2100. Paired with SSP4-3.4 but assumes fossil-fuel intensive development with late-century mitigation.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
 SSP5-8.5,Very High Emissions (8.5 W/m2),Very high emissions assuming fossil-fuel intensive development and no mitigation. Upper bound of the scenario range.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
 RCP2.6,Very Low Emissions (RCP2.6),Very stringent mitigation pathway requiring net negative greenhouse gas emissions after 2070.,IPCC AR5,https://www.ipcc.ch/report/ar5/wg1/
 RCP4.5,Intermediate Emissions (RCP4.5),Intermediate stabilisation pathway with moderate mitigation efforts.,IPCC AR5,https://www.ipcc.ch/report/ar5/wg1/

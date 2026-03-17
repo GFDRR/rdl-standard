@@ -1008,9 +1008,9 @@
         "scenario": {
           "title": "Climate scenario",
           "type": "string",
-          "description": "The climate scenario under which the data was produced, from the open [climate_scenario codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#climate_scenario).",
+          "description": "The climate scenario under which the data was produced, from the closed [climate_scenario codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#climate_scenario).",
           "codelist": "climate_scenario.csv",
-          "openCodelist": true,
+          "openCodelist": false,
           "enum": [
             "SSP1-1.9",
             "SSP1-2.6",
@@ -1018,6 +1018,7 @@
             "SSP3-7.0",
             "SSP4-3.4",
             "SSP4-6.0",
+            "SSP5-3.4",
             "SSP5-8.5",
             "RCP2.6",
             "RCP4.5",
@@ -1028,7 +1029,7 @@
         "percentile": {
           "title": "Percentile",
           "type": "number",
-          "description": "The percentile of the climate model ensemble output represented in this resource, expressed as a number between 0 and 100. For example, 50 indicates the median (50th percentile) of the ensemble.",
+          "description": "The percentile of the climate model or model ensemble output represented in this resource, expressed as a number between 0 and 100. For example, 50 indicates the median (50th percentile) of the ensemble.",
           "minimum": 0,
           "maximum": 100
         }
