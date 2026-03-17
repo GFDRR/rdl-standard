@@ -6,6 +6,10 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
+- [#392](https://github.com/GFDRR/rdl-standard/pull/392):
+  - Rationalise hazard modelling
+  - Add conditional validation of hazard process based on hazard type
+  - Add conditional validation of intensity measure based on hazard type
 - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
 - [#380](https://github.com/GFDRR/rdl-standard/pull/380):
   - `Metric` - Replace `.quantity_kind` with `.measurement.quantity_kind` and `.measurement.unit`

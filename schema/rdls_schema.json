@@ -1206,176 +1206,6 @@
       },
       "minProperties": 1
     },
-    "Hazard": {
-      "title": "Hazard",
-      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
-      "type": "object",
-      "required": [
-        "id",
-        "type",
-        "processes"
-      ],
-      "properties": {
-        "id": {
-          "title": "Hazard identifier",
-          "description": "A local identifier for this hazard.",
-          "type": "string",
-          "minLength": 1
-        },
-        "type": {
-          "title": "Hazard type",
-          "description": "The hazard type for this hazard, from the closed [hazard_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#hazard-type).",
-          "type": "string",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "processes": {
-          "title": "Hazard processes",
-          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#process_type).",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "coastal_flood",
-              "storm_surge",
-              "tornado",
-              "agricultural_drought",
-              "hydrological_drought",
-              "meteorological_drought",
-              "socioeconomic_drought",
-              "primary_rupture",
-              "secondary_rupture",
-              "ground_motion",
-              "liquefaction",
-              "extreme_cold",
-              "extreme_heat",
-              "fluvial_flood",
-              "pluvial_flood",
-              "groundwater_flood",
-              "snow_avalanche",
-              "landslide_general",
-              "landslide_rockslide",
-              "landslide_mudflow",
-              "landslide_rockfall",
-              "tsunami",
-              "ashfall",
-              "volcano_ballistics",
-              "lahar",
-              "lava",
-              "pyroclastic_flow",
-              "wildfire",
-              "extratropical_cyclone",
-              "tropical_cyclone",
-              "volcano_gas_aerosols"
-            ]
-          },
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "intensity_measure": {
-          "title": "Intensity measure",
-          "description": "The metric and unit in which the intensity of this hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT).",
-          "type": "string",
-          "codelist": "IMT.csv",
-          "openCodelist": true,
-          "minLength": 1
-        },
-        "trigger": {
-          "title": "Trigger",
-          "description": "The cause of this hazard.",
-          "$ref": "#/$defs/Trigger"
-        }
-      },
-      "minProperties": 1
-    },
-    "Trigger": {
-      "title": "Trigger",
-      "description": "A cause of a hazard.",
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Hazard type",
-          "description": "The hazard type for this hazard, from the closed [hazard_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#hazard-type).",
-          "type": "string",
-          "codelist": "hazard_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "earthquake",
-            "extreme_temperature",
-            "flood",
-            "landslide",
-            "tsunami",
-            "volcanic",
-            "wildfire",
-            "strong_wind"
-          ]
-        },
-        "processes": {
-          "title": "Hazard processes",
-          "description": "The hazard process types for this hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#process_type).",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "coastal_flood",
-              "storm_surge",
-              "tornado",
-              "agricultural_drought",
-              "hydrological_drought",
-              "meteorological_drought",
-              "socioeconomic_drought",
-              "primary_rupture",
-              "secondary_rupture",
-              "ground_motion",
-              "liquefaction",
-              "extreme_cold",
-              "extreme_heat",
-              "fluvial_flood",
-              "pluvial_flood",
-              "groundwater_flood",
-              "snow_avalanche",
-              "landslide_general",
-              "landslide_rockslide",
-              "landslide_mudflow",
-              "landslide_rockfall",
-              "tsunami",
-              "ashfall",
-              "volcano_ballistics",
-              "lahar",
-              "lava",
-              "pyroclastic_flow",
-              "wildfire",
-              "extratropical_cyclone",
-              "tropical_cyclone",
-              "volcano_gas_aerosols"
-            ]
-          },
-          "codelist": "process_type.csv",
-          "openCodelist": false,
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      },
-      "minProperties": 1
-    },
     "Event_set": {
       "title": "Event set",
       "type": "object",
@@ -1397,7 +1227,15 @@
           "description": "The hazards included in this event set.",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/Hazard"
+            "$ref": "#/$defs/HazardWithTrigger",
+            "properties": {
+              "id": {
+                "title": "Hazard identifier",
+                "description": "A local identifier for this hazard.",
+                "type": "string",
+                "minLength": 1
+              }
+            }
           },
           "minItems": 1,
           "uniqueItems": true
@@ -1526,7 +1364,7 @@
         "hazard": {
           "title": "Hazard",
           "description": "The hazard to which this event relates.",
-          "$ref": "#/$defs/Hazard"
+          "$ref": "#/$defs/HazardWithTrigger"
         },
         "occurrence": {
           "title": "Occurrence",
@@ -2200,7 +2038,7 @@
       "description": "Losses resulting from the occurrence of a hazard.",
       "required": [
         "id",
-        "hazard_type",
+        "hazard",
         "asset_category",
         "asset_dimension",
         "impact_and_losses"
@@ -2218,15 +2056,16 @@
             "agricultural_losses_drought_2023"
           ]
         },
-        "hazard_type": {
+        "hazard": {
           "title": "Hazard type",
-          "description": "The main type of hazard that resulted in the losses, from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
-          "type": "string"
+          "description": "The main type of hazard that resulted in the losses.",
+          "$ref": "#/$defs/HazardWithTrigger"
         },
-        "hazard_process": {
-          "title": "Hazard process",
-          "description": "The main hazard process that resulted in the losses, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
-          "type": "string"
+        "description": {
+          "title": "Loss description",
+          "type": "string",
+          "description": "Additional details of the losses.",
+          "minLength": 1
         },
         "asset_category": {
           "title": "Asset category",
@@ -2392,6 +2231,513 @@
       },
       "minProperties": 1
     },
+    "SimpleHazard": {
+      "title": "Hazard",
+      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string",
+          "description": "The type of the hazard, from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_type).",
+          "codelist": "hazard_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "convective_storm",
+            "drought",
+            "earthquake",
+            "extreme_temperature",
+            "flood",
+            "landslide",
+            "tsunami",
+            "volcanic",
+            "wildfire",
+            "strong_wind"
+          ]
+        },
+        "process": {
+          "title": "Process",
+          "type": "string",
+          "description": "The process that resulted in the hazard, from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists.html#hazard_process_type).",
+          "codelist": "process_type.csv",
+          "openCodelist": false,
+          "enum": [
+            "coastal_flood",
+            "storm_surge",
+            "tornado",
+            "agricultural_drought",
+            "hydrological_drought",
+            "meteorological_drought",
+            "socioeconomic_drought",
+            "primary_rupture",
+            "secondary_rupture",
+            "ground_motion",
+            "liquefaction",
+            "extreme_cold",
+            "extreme_heat",
+            "fluvial_flood",
+            "pluvial_flood",
+            "groundwater_flood",
+            "snow_avalanche",
+            "landslide_general",
+            "landslide_rockslide",
+            "landslide_mudflow",
+            "landslide_rockfall",
+            "tsunami",
+            "ashfall",
+            "volcano_ballistics",
+            "lahar",
+            "lava",
+            "pyroclastic_flow",
+            "wildfire",
+            "extratropical_cyclone",
+            "tropical_cyclone",
+            "volcano_gas_aerosols"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "drought"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "agricultural_drought",
+                  "hydrological_drought",
+                  "meteorological_drought",
+                  "socioeconomic_drought"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "flood"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "fluvial_flood",
+                  "pluvial_flood",
+                  "groundwater_flood",
+                  "coastal_flood"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "earthquake"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "primary_rupture",
+                  "secondary_rupture",
+                  "ground_motion",
+                  "liquefaction"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "extreme_temperature"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "extreme_cold",
+                  "extreme_heat"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "strong_wind"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "extratropical_cyclone",
+                  "tropical_cyclone",
+                  "tornado"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "wildfire"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "wildfire"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "landslide"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "snow_avalanche",
+                  "landslide_general",
+                  "landslide_rockslide",
+                  "landslide_mudflow",
+                  "landslide_rockfall"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "tsunami"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "tsunami"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "volcanic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "ashfall",
+                  "volcano_ballistics",
+                  "lahar",
+                  "lava",
+                  "pyroclastic_flow",
+                  "volcano_gas_aerosols"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "coastal_flood"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "coastal_flood",
+                  "storm_surge"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "convective_storm"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "tornado"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Hazard": {
+      "title": "Hazard",
+      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/SimpleHazard"
+        },
+        {
+          "properties": {
+            "intensity_measure": {
+              "title": "Intensity measure",
+              "description": "The metric and unit in which the intensity of this hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT) for the hazard type.",
+              "type": "string",
+              "codelist": "IMT.csv",
+              "openCodelist": true,
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "earthquake"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_earthquake.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "flood"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_flood.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "tsunami"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_tsunami.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "coastal_flood"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_coastal_flood.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "landslide"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_landslide.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "volcanic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_volcanic.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "convective_storm"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_convective_storm.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "wildfire"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_wildfire.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "strong_wind"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_strong_wind.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "drought"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_drought.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "extreme_temperature"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_extreme_temperature.csv"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HazardWithTrigger": {
+      "title": "Hazard",
+      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/Hazard"
+        },
+        {
+          "properties": {
+            "trigger": {
+              "title": "Trigger",
+              "description": "The cause of this hazard.",
+              "$ref": "#/$defs/SimpleHazard"
+            }
+          }
+        }
+      ]
+    },
     "Function": {
       "title": "Function",
       "type": "object",
@@ -2435,123 +2781,14 @@
         },
         "hazard_primary": {
           "title": "Primary hazard type",
-          "description": "The primary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
-          "type": "string",
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "extreme_temperature",
-            "flood",
-            "wildfire",
-            "strong_wind",
-            "earthquake",
-            "landslide",
-            "tsunami",
-            "volcanic"
-          ],
-          "codelist": "hazard_type.csv",
-          "openCodelist": false
+          "description": "The primary hazard involved in the modelled scenario(s).",
+          "$ref": "#/$defs/Hazard"
         },
         "hazard_secondary": {
           "title": "Secondary hazard type",
-          "description": "The secondary hazard involved in the modelled scenario(s), from the closed [hazard type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_type).",
+          "description": "The secondary hazard involved in the modelled scenario(s).",
           "type": "string",
-          "enum": [
-            "coastal_flood",
-            "convective_storm",
-            "drought",
-            "extreme_temperature",
-            "flood",
-            "wildfire",
-            "strong_wind",
-            "earthquake",
-            "landslide",
-            "tsunami",
-            "volcanic"
-          ],
-          "codelist": "hazard_type.csv",
-          "openCodelist": false
-        },
-        "hazard_process_primary": {
-          "title": "Primary hazard process",
-          "description": "The primary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "type": "string",
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone",
-            "volcano_gas_aerosols"
-          ],
-          "codelist": "process_type.csv",
-          "openCodelist": false
-        },
-        "hazard_process_secondary": {
-          "title": "Secondary hazard process",
-          "description": "The secondary hazard process involved in the modelled scenario(s), from the closed [hazard process type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#hazard_process_type).",
-          "type": "string",
-          "enum": [
-            "coastal_flood",
-            "storm_surge",
-            "tornado",
-            "agricultural_drought",
-            "hydrological_drought",
-            "meteorological_drought",
-            "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
-            "ground_motion",
-            "liquefaction",
-            "extreme_cold",
-            "extreme_heat",
-            "fluvial_flood",
-            "pluvial_flood",
-            "groundwater_flood",
-            "snow_avalanche",
-            "landslide_general",
-            "landslide_rockslide",
-            "landslide_mudflow",
-            "landslide_rockfall",
-            "tsunami",
-            "ashfall",
-            "volcano_ballistics",
-            "lahar",
-            "lava",
-            "pyroclastic_flow",
-            "wildfire",
-            "extratropical_cyclone",
-            "tropical_cyclone",
-            "volcano_gas_aerosols"
-          ],
-          "codelist": "process_type.csv",
-          "openCodelist": false
+          "$ref": "#/$defs/Hazard"
         },
         "hazard_analysis_type": {
           "title": "Hazard analysis type",
@@ -2564,14 +2801,6 @@
           ],
           "codelist": "analysis_type.csv",
           "openCodelist": false
-        },
-        "intensity_measure": {
-          "title": "Intensity measure",
-          "type": "string",
-          "description": "The metric and unit in which the intensity of a hazard is measured, from the open [intensity measure codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#IMT). Format is typically 'measure:unit', e.g. 'PGA:g' for peak ground acceleration in g.",
-          "codelist": "IMT.csv",
-          "openCodelist": true,
-          "minLength": 1
         },
         "category": {
           "title": "Exposure category",

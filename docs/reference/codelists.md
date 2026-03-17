@@ -23,9 +23,7 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 This codelist is referenced by the following properties:
 
-- [`Hazard/intensity_measure`](rdls_schema.json,/$defs/Hazard,intensity_measure)
 - [`Footprint/intensity_measure`](rdls_schema.json,/$defs/Footprint,intensity_measure)
-- [`Function/intensity_measure`](rdls_schema.json,/$defs/Function,intensity_measure)
 
 This codelist has the following codes:
 
@@ -121,6 +119,141 @@ This codelist has the following codes:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/impact_metric.csv
+```
+````
+
+### imt_coastal_flood
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_coastal_flood.csv
+```
+````
+
+### imt_convective_storm
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_convective_storm.csv
+```
+````
+
+### imt_drought
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_drought.csv
+```
+````
+
+### imt_earthquake
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_earthquake.csv
+```
+````
+
+### imt_extreme_temperature
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_extreme_temperature.csv
+```
+````
+
+### imt_flood
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_flood.csv
+```
+````
+
+### imt_landslide
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_landslide.csv
+```
+````
+
+### imt_strong_wind
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_strong_wind.csv
+```
+````
+
+### imt_tsunami
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_tsunami.csv
+```
+````
+
+### imt_volcanic
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_volcanic.csv
+```
+````
+
+### imt_wildfire
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/imt_wildfire.csv
 ```
 ````
 
@@ -524,8 +657,7 @@ The hazard_type codelist classifies hazard phenomena by the main hazard to which
 
 This codelist is referenced by the following properties:
 
-- [`Hazard/type`](rdls_schema.json,/$defs/Hazard,type)
-- [`Trigger/type`](rdls_schema.json,/$defs/Trigger,type)
+- [`SimpleHazard/type`](rdls_schema.json,/$defs/SimpleHazard,type)
 - [`Function/hazard_primary`](rdls_schema.json,/$defs/Function,hazard_primary)
 - [`Function/hazard_secondary`](rdls_schema.json,/$defs/Function,hazard_secondary)
 
@@ -606,10 +738,7 @@ The process_type codelist classifies hazard phenomena by the hazard process to w
 
 This codelist is referenced by the following properties:
 
-- [`Hazard/processes`](rdls_schema.json,/$defs/Hazard,processes)
-- [`Trigger/processes`](rdls_schema.json,/$defs/Trigger,processes)
-- [`Function/hazard_process_primary`](rdls_schema.json,/$defs/Function,hazard_process_primary)
-- [`Function/hazard_process_secondary`](rdls_schema.json,/$defs/Function,hazard_process_secondary)
+- [`SimpleHazard/process`](rdls_schema.json,/$defs/SimpleHazard,process)
 
 This codelist has the following codes:
 
