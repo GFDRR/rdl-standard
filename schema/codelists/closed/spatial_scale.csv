@@ -1,5 +1,6 @@
-Code,Title,Definition
+Code,Title,Description
 global,Global,The entire world.
 regional,Regional,"A supranational region, e.g. Africa."
 national,National,A country.
 sub-national,Sub-national,A sub-national administrative division.
+urban,Urban,"A town, city or other human settlement."
