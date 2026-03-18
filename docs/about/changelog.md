@@ -22,6 +22,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#398](https://github.com/GFDRR/rdl-standard/pull/398) - Add `spatial_aggregation` to `Resource`.
 - [#400](https://github.com/GFDRR/rdl-standard/pull/400):
   - Move `.sources` to `.lineage.sources`
   - Add `Source.risk_data_type`
@@ -32,6 +33,10 @@ This page lists changes to the Risk Data Library Standard.
   - Add `temporal` and `spatial_resolution` at dataset level
   - Add `spatial` to `Resource`
   - Update descriptions for `spatial`, `temporal`, `spatial_resolution` and `temporal_resolution` at both dataset and resource level.
+- [#406](https://github.com/GFDRR/rdl-standard/pull/406) - Remove fields:
+  - `Event.footprint`
+  - `Event_set.temporal`
+  - `Event_set.spatial`
 
 ### Codelists
 

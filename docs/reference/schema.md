@@ -192,8 +192,7 @@ The following table lists all hazard component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/hazard
-collapse: 
-  event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
+collapse: event_sets/0/hazards,event_sets/0/events
 addtargets:
 ---
 ```
@@ -886,7 +885,6 @@ This sub-schema is referenced by the following properties:
 
 - [`temporal`](rdls_schema.json,,temporal)
 - [`Resource/temporal`](rdls_schema.json,/$defs/Resource,temporal)
-- [`Event_set/temporal`](rdls_schema.json,/$defs/Event_set,temporal)
 - [`Event/occurrence/empirical/temporal`](rdls_schema.json,/$defs/Event,occurrence/empirical/temporal)
 
 Each `Period` has the following fields:
@@ -992,7 +990,6 @@ Each `Event_set` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Event_set
-collapse: spatial,temporal
 addtargets:
 ---
 ```
@@ -1017,30 +1014,6 @@ Each `Event` has the following fields:
 ---
 pointer: /$defs/Event
 collapse: hazard
-addtargets:
----
-```
-
-### Footprint
-
-`Footprint` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Footprint/description
----
-```
-
-This sub-schema is referenced by the following properties:
-
-- [`Event/footprints`](rdls_schema.json,/$defs/Event,footprints)
-
-Each `Footprint` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/Footprint
-collapse:
 addtargets:
 ---
 ```
