@@ -15,3 +15,4 @@ AA:km2,Area Affected (km²),Surface area impacted by the hazard. Described in sq
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-
 HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
+fl_d:h,Flood duration (h),The total length of time that flooding is present on a piece of land during a flood event expressed in hours (h),fl_dur,hours
