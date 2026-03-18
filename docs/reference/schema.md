@@ -911,7 +911,6 @@ This sub-schema is referenced by the following properties:
 
 - [`spatial`](rdls_schema.json,,spatial)
 - [`Resource/spatial`](rdls_schema.json,/$defs/Resource,spatial)
-- [`Event_set/spatial`](rdls_schema.json,/$defs/Event_set,spatial)
 
 Each `Location` has the following fields:
 
