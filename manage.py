@@ -124,6 +124,22 @@ def get_codelist_references(schema, codelist, parents=None, full_schema=None, de
           references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
       elif value.get('codelist') == f"{codelist}.csv":
         references.append(parents + [key])
+  if 'allOf' in schema:
+    for subschema in schema['allOf']:
+        if 'properties' in subschema:
+            for key, value in subschema['properties'].items():
+                if 'properties' in value:
+                    references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
+                elif value.get('codelist') == f"{codelist}.csv":
+                    references.append(parents + [key])
+        if 'then' in subschema and 'properties' in subschema['then']:
+            for key, value in subschema['then']['properties'].items():
+                if 'properties' in value:
+                    references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
+                elif value.get('codelist') == f"{codelist}.csv":
+                    references.append(parents + [key])
+        if '$ref' in subschema:
+            references.extend(get_codelist_references(full_schema[defs_path][subschema['$ref'].split('/')[-1]], codelist, parents, full_schema))
 
   if defs_path in schema:
     for key, value in schema[defs_path].items():
@@ -418,6 +434,53 @@ def pre_commit():
             row_title = row_title.replace(f"{':'.join(parent_titles[0:len(parent_titles)-i])}:", "")
           
           writer.writerow([row_title.replace(":", ":\n")] + list(row[1:]))
+
+    # Derive individual hazard intensity measure codelists from parent codelist
+    with open("schema/codelists/open/IMT.csv", "r") as f:
+        reader = csv.DictReader(f)
+        next(reader)
+        data = list(reader)
+
+    hazards = {}
+
+    for code in data:
+        for hazard in code['Hazard'].split(','):
+            if hazard not in hazards:
+                hazards[hazard] = []
+            hazards[hazard].append({k: v for k, v in code.items() if k != "Hazard"})
+
+    schema['$defs']['Hazard']['allOf'] = schema['$defs']['Hazard']['allOf'][:2]
+
+    for hazard, measures in hazards.items():
+        if hazard != 'universal':
+
+            with open(f"schema/codelists/open/imt_{hazard}.csv", "w") as f:
+                writer = csv.DictWriter(f, fieldnames=measures[0].keys(), lineterminator='\n')
+                writer.writeheader()
+                writer.writerows(measures)
+                writer.writerows(hazards["universal"])
+
+            schema['$defs']['Hazard']['allOf'].append(
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": hazard
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "intensity_measure": {
+                                "codelist": f"imt_{hazard}.csv"
+                            }
+                        }
+                    }
+                }
+            )
+
+    with open("schema/rdls_schema.json", "w") as f:
+        json.dump(schema, f, indent=2)
 
     # Update schema.md
     update_schema_docs(schema)

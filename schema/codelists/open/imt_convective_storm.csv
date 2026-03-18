@@ -1,0 +1,24 @@
+Code,Title,Description,Metric,Unit
+AA:m2,Area Affected (m²),Surface area impacted by the hazard. Described in square meters.,AA,m2
+AA:km2,Area Affected (km²),Surface area impacted by the hazard. Described in square kilometers.,AA,km2
+sws_3s:km/h,3-sec sustained wind speed (kph),"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph).",sws_3s,km/h
+sws_1m:km/h,1-min sustained wind speed (kph),"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph).",sws_1m,km/h
+sws_10m:km/h,10-min sustained wind speed (kph),The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph).,sws_10m,km/h
+sws_10m:m/s,10-min sustained wind speed (m/s),The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s).,sws_10m,m/s
+PGWS:km/h,Peak gust wind speed (km/h),The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph).,PGWS,km/h
+EF:-,Enhanced Fujita Scale,Tornado intensity from EF0 to EF5 based on damage.,EF,-
+TPL:m,Tornado path length,Distance traveled by tornado along its path.,TPL,m
+TPW:m,Tornado path width,Maximum width of tornado damage path.,TPW,m
+TD:,Tornado Duration,"Time the tornado is on the ground, influencing cumulative damage.",TD,-
+PGWS:mph,Peak gust wind speed (mph),Direct wind speed estimate used in engineering and insurance modeling.,PGWS,mph
+PGWS:m/s,Peak gust wind speed (m/s),The peak gust wind speed in the open terrain. Expressed in meters per second (m/s).,PGWS,m/s
+HSI:-,Hail Severity Index,Composite hail index for insurance and risk modeling.,HSI,-
+HlMaxSz:mm,Maximum hail size,Largest hailstone diameter observed.,HlMaxSz,mm
+HlD:mm,Hailstone diameter,Most common hail metric for severity assessment.,HlD,mm
+HlProb:%,Severe hail probability,Likelihood of hail exceeding certain size threshold.,HlProb,%
+HlKE:J/m2,Hail kinetic energy,Energy per unit area for crop and roof damage assessment.,HlKE,J/m2
+ImpactE:J,Impact energy (J),"Energy released upon impact (ballistics, hail).",ImpactE,J
+EvArea:events/km²,Event Density - Count per Unit Area,"Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2.",EvArea,events/km²
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
