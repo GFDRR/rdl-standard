@@ -28,6 +28,10 @@ This page lists changes to the Risk Data Library Standard.
   - Rename `Source.component` to `Source.used_in`
   - Add `.lineage.description`
   - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
+- [#406](https://github.com/GFDRR/rdl-standard/pull/406) - Remove fields:
+  - `Event.footprint`
+  - `Event_set.temporal`
+  - `Event_set.spatial`
 
 ### Codelists
 

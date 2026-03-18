@@ -19,22 +19,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ## Open codelists
 
-### IMT
-
-This codelist is referenced by the following properties:
-
-- [`Footprint/intensity_measure`](rdls_schema.json,/$defs/Footprint,intensity_measure)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/IMT.csv
-```
-````
-
 ### classification_scheme
 
 This codelist is referenced by the following properties:
