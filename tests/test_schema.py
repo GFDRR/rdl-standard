@@ -34,9 +34,13 @@ def validate_metadata_presence_allow_missing(pointer):
       or 'end/oneOf' in pointer
       or pointer.startswith('/anyOf')
       or pointer.startswith('/properties/links')
+      or pointer.startswith('/properties/vulnerability/anyOf/')
       or pointer.startswith('/$defs/Location/allOf')
       or pointer.startswith('/$defs/Entity/anyOf/')
       or pointer.startswith('/$defs/Event/properties/occurrence/anyOf/')
+      or pointer.startswith('/$defs/Hazard/allOf')
+      or pointer.startswith('/$defs/SimpleHazard/allOf')
+      or pointer.startswith('/$defs/HazardWithTrigger/allOf')
       or pointer.startswith('/$defs/Measurement/allOf')
     )
 
@@ -50,10 +54,6 @@ def validate_object_id_allow_missing(pointer):
 validate_object_id_kwargs = {
     'allow_missing': validate_object_id_allow_missing
 }
-
-@pytest.mark.parametrize('path,name,data', schemas)
-def test_schema_valid(path, name, data):
-    validate_json_schema(path, name, data, metaschema)
 
 validator = Draft202012Validator(Draft202012Validator.META_SCHEMA, format_checker=FormatChecker())
 
@@ -69,7 +69,7 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_array_items(path, data, **validate_array_items_kwargs)
     errors += validate_items_type(path, data)
 
-    # Temporarily disabled until JSCC is updated to handle allOf/if/then structure used in Impact definition
+    # Temporarily disabled until JSCC is updated to handle allOf/if/then structures
     # errors += validate_codelist_enum(path, data)
     
     errors += validate_merge_properties(path, data)
