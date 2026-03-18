@@ -385,7 +385,6 @@ The following table lists all exposure component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/exposure
-collapse: metrics
 addtargets:
 ---
 ```
@@ -1054,7 +1053,7 @@ jsonpointer: /$defs/Metric/description
 
 This sub-schema is referenced by the following properties:
 
-- [`exposure/metrics`](rdls_schema.json,/properties/exposure,metrics)
+
 
 Each `Metric` has the following fields:
 
