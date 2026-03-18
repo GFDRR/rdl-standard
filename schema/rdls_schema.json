@@ -194,47 +194,12 @@
     },
     "exposure": {
       "title": "Exposure metadata",
-      "type": "object",
+      "type": "array",
       "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
-      "required": [
-        "category",
-        "metrics"
-      ],
-      "properties": {
-        "category": {
-          "title": "Exposure category",
-          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
-          "type": "string",
-          "codelist": "exposure_category.csv",
-          "openCodelist": false,
-          "enum": [
-            "agriculture",
-            "buildings",
-            "infrastructure",
-            "population",
-            "natural_environment",
-            "economic_indicator",
-            "development_index"
-          ]
-        },
-        "taxonomy": {
-          "title": "Exposure taxonomy scheme",
-          "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
-          "minLength": 1
-        },
-        "metrics": {
-          "title": "Exposure metrics",
-          "type": "array",
-          "description": "The measurements used to quantify the extent to which assets are exposed.",
-          "items": {
-            "$ref": "#/$defs/Metric"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
+      "items": {
+        "$ref": "#/$defs/Exposure_item"
       },
-      "minProperties": 1
+      "minItems": 1
     },
     "vulnerability": {
       "title": "Vulnerability metadata",
@@ -3100,6 +3065,57 @@
           }
         }
       ]
+    },
+    "Exposure_item": {
+      "title": "Exposure item",
+      "type": "object",
+      "description": "Information about a specific category of exposed assets.",
+      "required": [
+        "id",
+        "category",
+        "metrics"
+      ],
+      "properties": {
+        "id": {
+          "title": "Exposure item identifier",
+          "type": "string",
+          "description": "A locally unique identifier for this exposure item.",
+          "minLength": 1
+        },
+        "category": {
+          "title": "Exposure category",
+          "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
+          "type": "string",
+          "codelist": "exposure_category.csv",
+          "openCodelist": false,
+          "enum": [
+            "agriculture",
+            "buildings",
+            "infrastructure",
+            "population",
+            "natural_environment",
+            "economic_indicator",
+            "development_index"
+          ]
+        },
+        "taxonomy": {
+          "title": "Exposure taxonomy scheme",
+          "type": "string",
+          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
+          "minLength": 1
+        },
+        "metrics": {
+          "title": "Exposure metrics",
+          "type": "array",
+          "description": "The measurements used to quantify the extent to which assets are exposed.",
+          "items": {
+            "$ref": "#/$defs/Metric"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "minProperties": 1
     }
   },
   "minProperties": 1

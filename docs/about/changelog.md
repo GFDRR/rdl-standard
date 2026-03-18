@@ -42,6 +42,7 @@ This page lists changes to the Risk Data Library Standard.
   - `Event.footprint`
   - `Event_set.temporal`
   - `Event_set.spatial`
+- [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
 
 ### Codelists
 
