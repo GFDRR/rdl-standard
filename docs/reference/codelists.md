@@ -498,6 +498,22 @@ open:
 ```
 ````
 
+### climate_scenario
+
+This codelist is referenced by the following properties:
+
+- [`Climate/scenario`](rdls_schema.json,/$defs/Climate,scenario)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/climate_scenario.csv
+```
+````
+
 ### country
 
 This codelist is referenced by the following properties:

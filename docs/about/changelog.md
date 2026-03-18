@@ -22,6 +22,11 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#404](https://github.com/GFDRR/rdl-standard/pull/404)
+  - Add `Climate` object to `$defs` with fields for `model`, `scenario` and `percentile`
+  - Add `climate` to `Resource`
+  - Add `baseline_period` to `Resource`
+  - Add `central_year` to `Period`
 - [#398](https://github.com/GFDRR/rdl-standard/pull/398) - Add `spatial_aggregation` to `Resource`.
 - [#400](https://github.com/GFDRR/rdl-standard/pull/400):
   - Move `.sources` to `.lineage.sources`
@@ -63,6 +68,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
+- [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
 - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
 
 ### Normative documentation
