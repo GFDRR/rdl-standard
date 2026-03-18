@@ -81,7 +81,7 @@ The following table lists all dataset-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,links,hazard,exposure,vulnerability,loss
+  publisher,spatial,temporal,spatial_resolution,resources,referenced_by,contact_point,creator,attributions,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -103,10 +103,16 @@ The following table lists all resource-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Resource
-collapse: temporal
+collapse: temporal,spatial
 addtargets:
 ---
 ```
+
+## Spatial and temporal properties
+
+Spatial and temporal coverage and resolution should be specified at both dataset and resource level, even when they are consistent amongst a dataset's resources.
+
+If spatial or temporal coverage or resolution differ by resource, use the resource-level properties to describe the coverage and resolution of each resource, and the dataset-level properties to describe the overall coverage of the dataset. In particular, note that `spatial.gazetteer_entries` should be used to describe the overall area covered by the dataset, not each of the areas covered by the individual resources.
 
 ## Hazard metadata
 
@@ -877,6 +883,7 @@ jsonpointer: /$defs/Period/description
 
 This sub-schema is referenced by the following properties:
 
+- [`temporal`](rdls_schema.json,,temporal)
 - [`Resource/temporal`](rdls_schema.json,/$defs/Resource,temporal)
 - [`Event/occurrence/empirical/temporal`](rdls_schema.json,/$defs/Event,occurrence/empirical/temporal)
 
@@ -903,6 +910,7 @@ jsonpointer: /$defs/Location/description
 This sub-schema is referenced by the following properties:
 
 - [`spatial`](rdls_schema.json,,spatial)
+- [`Resource/spatial`](rdls_schema.json,/$defs/Resource,spatial)
 
 Each `Location` has the following fields:
 
@@ -1211,6 +1219,9 @@ jsonpointer: /$defs/Hazard/description
 
 This sub-schema is referenced by the following properties:
 
+- [`Function/hazard_primary`](rdls_schema.json,/$defs/Function,hazard_primary)
+- [`Function/hazard_secondary`](rdls_schema.json,/$defs/Function,hazard_secondary)
+
 Each `Hazard` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
@@ -1264,7 +1275,7 @@ Each `Function` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Function
-collapse: impact_measurement
+collapse: hazard_primary,hazard_secondary,impact_measurement
 addtargets:
 ---
 ```
