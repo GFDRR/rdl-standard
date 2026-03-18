@@ -1053,8 +1053,6 @@ jsonpointer: /$defs/Metric/description
 
 This sub-schema is referenced by the following properties:
 
-
-
 Each `Metric` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json

@@ -556,7 +556,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-
 - [`Losses/category`](rdls_schema.json,/$defs/Losses,category)
 - [`Function/category`](rdls_schema.json,/$defs/Function,category)
 
