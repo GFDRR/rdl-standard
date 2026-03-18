@@ -69,6 +69,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
+- [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index' to `quantity_kind.csv`.
 - [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
 - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
 
