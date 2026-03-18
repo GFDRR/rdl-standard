@@ -86,22 +86,22 @@
       "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`. The spatial coverage of the resources belonging to a dataset may differ and may be non-contiguous. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
       "$ref": "#/$defs/Location"
     },
-    "temporal_resolution": {
-      "title": "Temporal resolution",
-      "type": "string",
-      "description": "The minimum period of time resolvable amongst this dataset's resources, in ISO8601 duration format. The temporal coverage and resolution of the resources belonging to a dataset may differ, therefore the minimum temporal resolution of the dataset may not be resolvable for all resources. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
-      "format": "duration"
+    "spatial_resolution": {
+      "title": "Spatial resolution",
+      "type": "number",
+      "description": "The minimum spatial separation resolvable amongst this dataset's resources, measured in meters. The spatial coverage and resolution of the resources belonging to a dataset may differ, therefore the minimum spatial resolution of the dataset may not be resolvable for all resources. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
+      "exclusiveMinimum": 0
     },
     "temporal": {
       "title": "Temporal coverage",
       "description": "The period of time covered by the dataset. The temporal coverage of the resources belonging to a dataset may differ and may be non-contiguous. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
       "$ref": "#/$defs/Period"
     },
-    "spatial_resolution": {
-      "title": "Spatial resolution",
-      "type": "number",
-      "description": "The minimum spatial separation resolvable amongst this dataset's resources, measured in meters. The spatial coverage and resolution of the resources belonging to a dataset may differ, therefore the minimum spatial resolution of the dataset may not be resolvable for all resources. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
-      "exclusiveMinimum": 0
+    "temporal_resolution": {
+      "title": "Temporal resolution",
+      "type": "string",
+      "description": "The minimum period of time resolvable amongst this dataset's resources, in ISO8601 duration format. The temporal coverage and resolution of the resources belonging to a dataset may differ, therefore the minimum temporal resolution of the dataset may not be resolvable for all resources. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
+      "format": "duration"
     },
     "license": {
       "title": "License",
@@ -460,17 +460,6 @@
           "description": "The geographical area covered by the resource. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
           "$ref": "#/$defs/Location"
         },
-        "temporal_resolution": {
-          "title": "Temporal resolution",
-          "type": "string",
-          "description": "The minimum period of time resolvable in this resources, in ISO8601 duration format. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
-          "format": "duration"
-        },
-        "temporal": {
-          "title": "Temporal coverage",
-          "description": "The period of time covered by this resource. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
-          "$ref": "#/$defs/Period"
-        },
         "spatial_resolution": {
           "title": "Spatial resolution",
           "type": "number",
@@ -489,6 +478,17 @@
           "description": "An identifier string for the coordinate reference system (CRS) used in this resource. The CRS must be identified by a code issued by either [EPSG](https://epsg.org/) or [ESRI](https://www.esri.com/). The identifier string format is {authority}:{code}, e.g. EPSG:4326. [https://epsg.io/](https://epsg.io/) provides a searchable database of EPSG and ESRI coordinate system codes.",
           "pattern": "^(ESRI:|EPSG:)[0-9]+$",
           "minLength": 1
+        },
+        "temporal": {
+          "title": "Temporal coverage",
+          "description": "The period of time covered by this resource. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
+          "$ref": "#/$defs/Period"
+        },
+        "temporal_resolution": {
+          "title": "Temporal resolution",
+          "type": "string",
+          "description": "The minimum period of time resolvable in this resources, in ISO8601 duration format. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
+          "format": "duration"
         },
         "access_url": {
           "title": "Access Url",
