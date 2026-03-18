@@ -15,6 +15,7 @@ ImpactE:kJ,Impact energy (kJ),Impact energy in kilojoules.,ImpactE,kJ
 Vbal_size:m,Volcanic ballistic size,Diameter of volcanic projectiles.,Vbal_size,m
 Vbal_Lprob:%,Ballistic landing probability,Likelihood of ballistic landing in given area.,Vbal_Lprob,%
 Vbal_MaxRng:km,Maximum ballistic range,Maximum distance ballistics can reach from vent.,Vbal_MaxRng,km
+gas:-kT,Volume of gases emitted,"Quantifies volcanic gas emissions, typically measured in kilotonnes per day, indicating the scale of volcanic degassing and potential atmospheric impacts.",Gas_Vol,kT/day
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-
 HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
