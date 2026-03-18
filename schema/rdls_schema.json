@@ -450,6 +450,12 @@
           "description": "The minimum spatial separation resolvable in this resource, measured in meters.",
           "exclusiveMinimum": 0
         },
+        "spatial_aggregation": {
+          "title": "Spatial aggregation",
+          "type": "string",
+          "description": "The fundamental spatial unit or geometric container used to organise, summarise, or 'bin' the data within this resource. This describes whether the data is unaggregated (e.g., individual building footprints or asset points), or aggregated into standardised administrative divisions (e.g., municipalities), hydrological units (e.g., catchments), or calculated geometric grids (e.g., hexagons or square gridcells).",
+          "minLength": 1
+        },
         "coordinate_system": {
           "title": "Coordinate reference system",
           "type": "string",
