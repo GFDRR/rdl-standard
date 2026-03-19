@@ -43,6 +43,7 @@ This page lists changes to the Risk Data Library Standard.
   - `Event_set.temporal`
   - `Event_set.spatial`
 - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Add `Hazard.classification` and `Classification.title`.
+- [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
 
 ### Codelists
 
