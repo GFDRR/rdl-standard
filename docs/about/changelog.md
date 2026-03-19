@@ -53,6 +53,7 @@ This page lists changes to the Risk Data Library Standard.
   - `Event.footprint`
   - `Event_set.temporal`
   - `Event_set.spatial`
+- [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Add `Hazard.classification` and `Classification.title`.
 - [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
 
 ### Codelists
@@ -85,6 +86,11 @@ This page lists changes to the Risk Data Library Standard.
 - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index' to `quantity_kind.csv`.
 - [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
 - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
+- [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs:
+  - Add 'UNDRR-HIPS-2025' to `classification_scheme.csv`
+  - Add codes to `hazard_type.csv`
+  - Add codes to `hazard_process.csv`
+  - Add codes to `IMT.csv`
 
 ### Normative documentation
 
