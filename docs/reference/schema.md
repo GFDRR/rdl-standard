@@ -1062,28 +1062,6 @@ addtargets:
 ---
 ```
 
-### Cost
-
-`Cost` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Cost/description
----
-```
-
-This sub-schema is referenced by the following properties:
-
-Each `Cost` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/Cost
-collapse:
-addtargets:
----
-```
-
 ### Probabilistic
 
 `Probabilistic` is defined as:
@@ -1104,28 +1082,6 @@ Each `Probabilistic` has the following fields:
 ---
 pointer: /$defs/Probabilistic
 collapse:
-addtargets:
----
-```
-
-### Impact
-
-`Impact` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Impact/description
----
-```
-
-This sub-schema is referenced by the following properties:
-
-Each `Impact` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/Impact
-collapse: measurement
 addtargets:
 ---
 ```
@@ -1378,7 +1334,6 @@ jsonpointer: /$defs/Measurement/description
 This sub-schema is referenced by the following properties:
 
 - [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
-- [`Impact/measurement`](rdls_schema.json,/$defs/Impact,measurement)
 - [`Losses/impact_and_losses/measurement`](rdls_schema.json,/$defs/Losses,impact_and_losses/measurement)
 - [`Function/impact_measurement`](rdls_schema.json,/$defs/Function,impact_measurement)
 

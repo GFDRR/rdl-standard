@@ -95,7 +95,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Impact/metric`](rdls_schema.json,/$defs/Impact,metric)
 - [`Losses/impact_and_losses/impact_metric`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_metric)
 - [`Function/impact_metric`](rdls_schema.json,/$defs/Function,impact_metric)
 
@@ -556,7 +555,6 @@ This codelist is referenced by the following properties:
 
 - [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
 - [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
-- [`Impact/base_data_type`](rdls_schema.json,/$defs/Impact,base_data_type)
 - [`Losses/impact_and_losses/impact_modelling`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_modelling)
 - [`Function/impact_modelling`](rdls_schema.json,/$defs/Function,impact_modelling)
 
@@ -577,7 +575,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`exposure/category`](rdls_schema.json,/properties/exposure,category)
 - [`Losses/asset_category`](rdls_schema.json,/$defs/Losses,asset_category)
 - [`Function/category`](rdls_schema.json,/$defs/Function,category)
 
@@ -678,7 +675,6 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`Impact/type`](rdls_schema.json,/$defs/Impact,type)
 - [`Losses/impact_and_losses/impact_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_type)
 - [`Function/impact_type`](rdls_schema.json,/$defs/Function,impact_type)
 
@@ -719,7 +715,6 @@ open:
 This codelist is referenced by the following properties:
 
 - [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
-- [`Cost/dimension`](rdls_schema.json,/$defs/Cost,dimension)
 - [`Losses/asset_dimension`](rdls_schema.json,/$defs/Losses,asset_dimension)
 
 This codelist has the following codes:
@@ -854,7 +849,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Cost/unit`](rdls_schema.json,/$defs/Cost,unit)
 - [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:
