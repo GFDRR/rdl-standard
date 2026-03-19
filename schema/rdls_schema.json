@@ -1998,9 +1998,15 @@
           "type": "string",
           "minLength": 1
         },
+        "title": {
+          "title": "Title",
+          "description": "A description for the classification code.",
+          "type": "string",
+          "minLength": 1
+        },
         "description": {
           "title": "Description",
-          "description": "A textual description or title for the classification code.",
+          "description": "A description for the classification code.",
           "type": "string",
           "minLength": 1
         },
@@ -2175,14 +2181,18 @@
             "coastal_flood",
             "convective_storm",
             "drought",
-            "earthquake",
             "extreme_temperature",
             "flood",
+            "wildfire",
+            "strong_wind",
+            "earthquake",
             "landslide",
             "tsunami",
             "volcanic",
-            "wildfire",
-            "strong_wind"
+            "pest_infestation",
+            "sea_level_rise",
+            "erosion",
+            "dust_sand_storm"
           ]
         },
         "process": {
@@ -2199,8 +2209,7 @@
             "hydrological_drought",
             "meteorological_drought",
             "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
+            "rupture",
             "ground_motion",
             "liquefaction",
             "extreme_cold",
@@ -2219,10 +2228,21 @@
             "lahar",
             "lava",
             "pyroclastic_flow",
+            "volcano_gas_aerosols",
             "wildfire",
             "extratropical_cyclone",
             "tropical_cyclone",
-            "volcano_gas_aerosols"
+            "wildfire_smoke",
+            "coastal_erosion",
+            "soil_erosion",
+            "subsidence_uplift",
+            "lightning",
+            "dust_sand_storm",
+            "thunderstorm",
+            "sea_level_rise",
+            "pest",
+            "glacial_lake_outburst",
+            "hail"
           ]
         }
       },
@@ -2264,7 +2284,8 @@
                   "fluvial_flood",
                   "pluvial_flood",
                   "groundwater_flood",
-                  "coastal_flood"
+                  "coastal_flood",
+                  "glacial_lake_outburst"
                 ]
               }
             }
@@ -2285,7 +2306,8 @@
                   "primary_rupture",
                   "secondary_rupture",
                   "ground_motion",
-                  "liquefaction"
+                  "liquefaction",
+                  "subsidence_uplift"
                 ]
               }
             }
@@ -2342,7 +2364,8 @@
             "properties": {
               "process": {
                 "enum": [
-                  "wildfire"
+                  "wildfire",
+                  "wildfire_smoke"
                 ]
               }
             }
@@ -2442,7 +2465,83 @@
             "properties": {
               "process": {
                 "enum": [
-                  "tornado"
+                  "tornado",
+                  "lightning",
+                  "thunderstorm",
+                  "hail"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "dust_sand_storm"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "dust_sand_storm"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "erosion"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "coastal_erosion",
+                  "soil_erosion"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "sea_level_rise"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "sea_level_rise"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "pest_infestation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "process": {
+                "enum": [
+                  "pest"
                 ]
               }
             }
@@ -2467,6 +2566,11 @@
               "codelist": "IMT.csv",
               "openCodelist": true,
               "minLength": 1
+            },
+            "classification": {
+              "title": "Classification",
+              "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
+              "$ref": "#/$defs/Classification"
             }
           }
         },
@@ -2642,6 +2746,54 @@
             "properties": {
               "intensity_measure": {
                 "codelist": "imt_extreme_temperature.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "erosion"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_erosion.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "pest_infestation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_pest_infestation.csv"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "dust_sand_storm"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "intensity_measure": {
+                "codelist": "imt_dust_sand_storm.csv"
               }
             }
           }
