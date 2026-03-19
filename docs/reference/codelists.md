@@ -37,6 +37,25 @@ This codelist has the following codes:
 ```
 ````
 
+### conforms_to
+
+This codelist is referenced by the following properties:
+
+- [`Resource/conforms_to`](rdls_schema.json,/$defs/Resource,conforms_to)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/conforms_to.csv
+```
+````
+
 ### damage_scale_name
 
 This codelist is referenced by the following properties:
@@ -50,22 +69,6 @@ This codelist has the following codes:
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/damage_scale_name.csv
-```
-````
-
-### data_formats
-
-This codelist is referenced by the following properties:
-
-- [`Resource/format`](rdls_schema.json,/$defs/Resource,format)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/data_formats.csv
 ```
 ````
 
@@ -92,7 +95,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Impact/metric`](rdls_schema.json,/$defs/Impact,metric)
+- [`Losses/impact_and_losses/impact_metric`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_metric)
 - [`Function/impact_metric`](rdls_schema.json,/$defs/Function,impact_metric)
 
 This codelist has the following codes:
@@ -300,9 +303,6 @@ This codelist is referenced by the following properties:
 This codelist has the following codes:
 
 ````{dropdown} Codes
----
-open:
----
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -433,6 +433,25 @@ open:
 ```
 ````
 
+### unit_mass_per_area
+
+This codelist is referenced by the following properties:
+
+- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
+
+This codelist has the following codes:
+
+````{dropdown} Codes
+---
+open:
+---
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/unit_mass_per_area.csv
+```
+````
+
 ### unit_time
 
 The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the time [quantity kind](#quantity_kind).
@@ -482,7 +501,7 @@ open:
 This codelist is referenced by the following properties:
 
 - [`Event_set/analysis_type`](rdls_schema.json,/$defs/Event_set,analysis_type)
-- [`Losses/hazard_analysis_type`](rdls_schema.json,/$defs/Losses,hazard_analysis_type)
+- [`Losses/impact_and_losses/loss_frequency_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_frequency_type)
 - [`Function/hazard_analysis_type`](rdls_schema.json,/$defs/Function,hazard_analysis_type)
 
 This codelist has the following codes:
@@ -536,7 +555,7 @@ This codelist is referenced by the following properties:
 
 - [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
 - [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
-- [`Impact/base_data_type`](rdls_schema.json,/$defs/Impact,base_data_type)
+- [`Losses/impact_and_losses/impact_modelling`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_modelling)
 - [`Function/impact_modelling`](rdls_schema.json,/$defs/Function,impact_modelling)
 
 This codelist has the following codes:
@@ -556,8 +575,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`exposure/category`](rdls_schema.json,/properties/exposure,category)
-- [`Losses/category`](rdls_schema.json,/$defs/Losses,category)
+- [`Losses/asset_category`](rdls_schema.json,/$defs/Losses,asset_category)
 - [`Function/category`](rdls_schema.json,/$defs/Function,category)
 
 This codelist has the following codes:
@@ -596,7 +614,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Losses/approach`](rdls_schema.json,/$defs/Losses,approach)
+- [`Losses/impact_and_losses/loss_approach`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_approach)
 - [`Function/approach`](rdls_schema.json,/$defs/Function,approach)
 
 This codelist has the following codes:
@@ -657,7 +675,7 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`Impact/type`](rdls_schema.json,/$defs/Impact,type)
+- [`Losses/impact_and_losses/impact_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_type)
 - [`Function/impact_type`](rdls_schema.json,/$defs/Function,impact_type)
 
 This codelist has the following codes:
@@ -677,7 +695,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Losses/type`](rdls_schema.json,/$defs/Losses,type)
+- [`Losses/impact_and_losses/loss_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_type)
 
 This codelist has the following codes:
 
@@ -697,7 +715,7 @@ open:
 This codelist is referenced by the following properties:
 
 - [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
-- [`Cost/dimension`](rdls_schema.json,/$defs/Cost,dimension)
+- [`Losses/asset_dimension`](rdls_schema.json,/$defs/Losses,asset_dimension)
 
 This codelist has the following codes:
 
@@ -831,7 +849,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Cost/unit`](rdls_schema.json,/$defs/Cost,unit)
 - [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
 
 This codelist has the following codes:

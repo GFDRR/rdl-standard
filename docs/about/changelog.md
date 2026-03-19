@@ -22,6 +22,17 @@ This page lists changes to the Risk Data Library Standard.
 - [#396](https://github.com/GFDRR/rdl-standard/pull/396)
   - `Entity`: Require any of `.email`, `.url`.
   - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Restructure `Losses`:
+  - Rename `.category` to `.asset_category`
+  - Move `.cost.dimension` to `.asset_dimension`
+  - Move `.impact.type` to `.impact_and_losses.impact_type`
+  - Move `.impact.base_data_type` to `.impact_and_losses.impact_modelling`
+  - Move `.impact_metric` to `.impact_and_losses.impact_metric`
+  - Replace `.impact.unit` and `.cost.unit` with `.impact_and_losses.Measurement`
+  - Move `.type` to `.impact_and_losses.loss_type`
+  - Move `.approach` to `.impact_and_losses.loss_approach`
+  - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
+- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `Resource.conforms_to`.
 - [#404](https://github.com/GFDRR/rdl-standard/pull/404)
   - Add `Climate` object to `$defs` with fields for `model`, `scenario` and `percentile`
   - Add `climate` to `Resource`
@@ -42,6 +53,8 @@ This page lists changes to the Risk Data Library Standard.
   - `Event.footprint`
   - `Event_set.temporal`
   - `Event_set.spatial`
+- [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Add `Hazard.classification` and `Classification.title`.
+- [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
 
 ### Codelists
 
@@ -68,9 +81,16 @@ This page lists changes to the Risk Data Library Standard.
 - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
+- [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Add 'production_loss' and 'exposure_to_hazard' to `impact_metric.csv`.
+- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `conforms_to.csv`, remove `data_formats.csv`.
 - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index' to `quantity_kind.csv`.
 - [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
 - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
+- [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs:
+  - Add 'UNDRR-HIPS-2025' to `classification_scheme.csv`
+  - Add codes to `hazard_type.csv`
+  - Add codes to `hazard_process.csv`
+  - Add codes to `IMT.csv`
 
 ### Normative documentation
 

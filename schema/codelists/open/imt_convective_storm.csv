@@ -19,6 +19,10 @@ HlProb:%,Severe hail probability,Likelihood of hail exceeding certain size thres
 HlKE:J/m2,Hail kinetic energy,Energy per unit area for crop and roof damage assessment.,HlKE,J/m2
 ImpactE:J,Impact energy (J),"Energy released upon impact (ballistics, hail).",ImpactE,J
 EvArea:events/km²,Event Density - Count per Unit Area,"Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2.",EvArea,events/km²
+Ltng:kJ,Lightning energy released,"Represents the total energy discharged during lightning events, expressed in kilojoules. Useful for assessing storm severity and electrical intensity within convective systems.",LightningEnergy,kJ
+Ltng:count/km/y,lightning event per km2 per year,"Measures the annual density of lightning strikes per square kilometre, enabling comparison of lightning?prone regions and long?term storm activity trends.",LightningEvents,count/km/year
+Ltng:count,lightning event count,"A count of lightning strikes within a defined area or time period, commonly used for storm frequency analysis.",LightningEvents,-
+Ltng:cape,CAPE - High Convective Available Potential Energy (kJ).,Indicates the amount of atmospheric energy available for convection. Higher CAPE values correlate with stronger updrafts and more intense convective storms.,CAPE,kJ
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-
 HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
