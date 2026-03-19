@@ -9,3 +9,4 @@ mass,Mass,"In physics, mass, more specifically inertial mass, can be defined as 
 mass_per_area,Mass per Area,"The area density (also known as areal density, surface density, or superficial density) of a two-dimensional object is calculated as the mass per unit area. The SI derived unit is: kilogram per square metre.",https://qudt.org/vocab/quantitykind/MassPerArea
 dimensionless_ratio,Ratio (dimensionless or percent),"A dimensionless ratio of two quantities of the same kind, e.g. a percentage.",http://qudt.org/vocab/quantitykind/DimensionlessRatio
 index,Index,"A dimensionless index such as a hazard, vulnerability, or risk index or score that has been used to classify levels of hazard, vulnerability, or risk.",Not applicable
+energy,Energy,Energy is the quantity characterizing the ability of a system to do work.,http://qudt.org/vocab/quantitykind/Energy

@@ -3079,6 +3079,23 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "properties": {
+              "quantity_kind": {
+                "const": "energy"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "unit": {
+                "codelist": "unit_energy.csv",
+                "openCodelist": true
+              }
+            }
+          }
         }
       ]
     },
