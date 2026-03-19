@@ -1,6 +1,6 @@
 # Minutes of RDLS Technical Steering Committee 2025-2026 NO. 2
 
-14 January 2025 / 11:00-12:00 GMT / via Teams
+14 January 2026 / 11:00-12:00 GMT / via Teams
 
 ## Attendees
 Pierre Chrzanowski, Mattia Amadio, Stuart Fraser
