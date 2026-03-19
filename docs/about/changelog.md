@@ -32,6 +32,7 @@ This page lists changes to the Risk Data Library Standard.
   - Move `.type` to `.impact_and_losses.loss_type`
   - Move `.approach` to `.impact_and_losses.loss_approach`
   - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
+- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `Resource.conforms_to`.
 - [#404](https://github.com/GFDRR/rdl-standard/pull/404)
   - Add `Climate` object to `$defs` with fields for `model`, `scenario` and `percentile`
   - Add `climate` to `Resource`
@@ -80,6 +81,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
 - [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Add 'production_loss' and 'exposure_to_hazard' to `impact_metric.csv`.
+- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `conforms_to.csv`, remove `data_formats.csv`.
 - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index' to `quantity_kind.csv`.
 - [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
 - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
