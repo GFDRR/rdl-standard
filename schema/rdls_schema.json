@@ -382,8 +382,7 @@
       "required": [
         "id",
         "title",
-        "description",
-        "format"
+        "description"
       ],
       "properties": {
         "id": {
