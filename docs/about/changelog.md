@@ -32,12 +32,27 @@ This page lists changes to the Risk Data Library Standard.
   - Move `.type` to `.impact_and_losses.loss_type`
   - Move `.approach` to `.impact_and_losses.loss_approach`
   - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
+- [#404](https://github.com/GFDRR/rdl-standard/pull/404)
+  - Add `Climate` object to `$defs` with fields for `model`, `scenario` and `percentile`
+  - Add `climate` to `Resource`
+  - Add `baseline_period` to `Resource`
+  - Add `central_year` to `Period`
+- [#398](https://github.com/GFDRR/rdl-standard/pull/398) - Add `spatial_aggregation` to `Resource`.
 - [#400](https://github.com/GFDRR/rdl-standard/pull/400):
   - Move `.sources` to `.lineage.sources`
   - Add `Source.risk_data_type`
   - Rename `Source.component` to `Source.used_in`
   - Add `.lineage.description`
   - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
+- [#407](https://github.com/GFDRR/rdl-standard/pull/407)
+  - Add `temporal` and `spatial_resolution` at dataset level
+  - Add `spatial` to `Resource`
+  - Update descriptions for `spatial`, `temporal`, `spatial_resolution` and `temporal_resolution` at both dataset and resource level.
+- [#406](https://github.com/GFDRR/rdl-standard/pull/406) - Remove fields:
+  - `Event.footprint`
+  - `Event_set.temporal`
+  - `Event_set.spatial`
+- [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
 
 ### Codelists
 
@@ -65,6 +80,8 @@ This page lists changes to the Risk Data Library Standard.
 - [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
 - [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Add 'production_loss' and 'exposure_to_hazard' to `impact_metric.csv`.
+- [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index' to `quantity_kind.csv`.
+- [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
 - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
 
 ### Normative documentation

@@ -81,7 +81,7 @@ The following table lists all dataset-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 collapse: 
-  publisher,spatial,resources,referenced_by,contact_point,creator,attributions,links,hazard,exposure,vulnerability,loss
+  publisher,spatial,temporal,spatial_resolution,resources,referenced_by,contact_point,creator,attributions,links,hazard,exposure,vulnerability,loss
 addtargets:
 ---
 ```
@@ -103,10 +103,16 @@ The following table lists all resource-level fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Resource
-collapse: temporal
+collapse: temporal,spatial
 addtargets:
 ---
 ```
+
+## Spatial and temporal properties
+
+Spatial and temporal coverage and resolution should be specified at both dataset and resource level, even when they are consistent amongst a dataset's resources.
+
+If spatial or temporal coverage or resolution differ by resource, use the resource-level properties to describe the coverage and resolution of each resource, and the dataset-level properties to describe the overall coverage of the dataset. In particular, note that `spatial.gazetteer_entries` should be used to describe the overall area covered by the dataset, not each of the areas covered by the individual resources.
 
 ## Hazard metadata
 
@@ -186,8 +192,7 @@ The following table lists all hazard component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/hazard
-collapse: 
-  event_sets/0/hazards,event_sets/0/spatial,event_sets/0/temporal,event_sets/0/events
+collapse: event_sets/0/hazards,event_sets/0/events
 addtargets:
 ---
 ```
@@ -380,7 +385,6 @@ The following table lists all exposure component fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /properties/exposure
-collapse: metrics
 addtargets:
 ---
 ```
@@ -877,8 +881,9 @@ jsonpointer: /$defs/Period/description
 
 This sub-schema is referenced by the following properties:
 
+- [`temporal`](rdls_schema.json,,temporal)
 - [`Resource/temporal`](rdls_schema.json,/$defs/Resource,temporal)
-- [`Event_set/temporal`](rdls_schema.json,/$defs/Event_set,temporal)
+- [`Resource/baseline_period`](rdls_schema.json,/$defs/Resource,baseline_period)
 - [`Event/occurrence/empirical/temporal`](rdls_schema.json,/$defs/Event,occurrence/empirical/temporal)
 
 Each `Period` has the following fields:
@@ -886,6 +891,30 @@ Each `Period` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Period
+collapse:
+addtargets:
+---
+```
+
+### Climate
+
+`Climate` is defined as:
+
+```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
+---
+jsonpointer: /$defs/Climate/description
+---
+```
+
+This sub-schema is referenced by the following properties:
+
+- [`Resource/climate`](rdls_schema.json,/$defs/Resource,climate)
+
+Each `Climate` has the following fields:
+
+```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
+---
+pointer: /$defs/Climate
 collapse:
 addtargets:
 ---
@@ -904,7 +933,7 @@ jsonpointer: /$defs/Location/description
 This sub-schema is referenced by the following properties:
 
 - [`spatial`](rdls_schema.json,,spatial)
-- [`Event_set/spatial`](rdls_schema.json,/$defs/Event_set,spatial)
+- [`Resource/spatial`](rdls_schema.json,/$defs/Resource,spatial)
 
 Each `Location` has the following fields:
 
@@ -983,7 +1012,6 @@ Each `Event_set` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Event_set
-collapse: spatial,temporal
 addtargets:
 ---
 ```
@@ -1012,30 +1040,6 @@ addtargets:
 ---
 ```
 
-### Footprint
-
-`Footprint` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Footprint/description
----
-```
-
-This sub-schema is referenced by the following properties:
-
-- [`Event/footprints`](rdls_schema.json,/$defs/Event,footprints)
-
-Each `Footprint` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/Footprint
-collapse:
-addtargets:
----
-```
-
 ### Metric
 
 `Metric` is defined as:
@@ -1047,8 +1051,6 @@ jsonpointer: /$defs/Metric/description
 ```
 
 This sub-schema is referenced by the following properties:
-
-- [`exposure/metrics`](rdls_schema.json,/properties/exposure,metrics)
 
 Each `Metric` has the following fields:
 
@@ -1234,6 +1236,9 @@ jsonpointer: /$defs/Hazard/description
 
 This sub-schema is referenced by the following properties:
 
+- [`Function/hazard_primary`](rdls_schema.json,/$defs/Function,hazard_primary)
+- [`Function/hazard_secondary`](rdls_schema.json,/$defs/Function,hazard_secondary)
+
 Each `Hazard` has the following fields:
 
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
@@ -1287,7 +1292,7 @@ Each `Function` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Function
-collapse: impact_measurement
+collapse: hazard_primary,hazard_secondary,impact_measurement
 addtargets:
 ---
 ```
