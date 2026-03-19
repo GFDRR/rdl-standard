@@ -382,8 +382,7 @@
       "required": [
         "id",
         "title",
-        "description",
-        "format"
+        "description"
       ],
       "properties": {
         "id": {
@@ -407,7 +406,7 @@
         "media_type": {
           "title": "Media type",
           "type": "string",
-          "description": "The media type of the resource, from the open [media_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#media-type). For example a custom binary file has media_type 'application/octet-stream. A geojson file has the media_type 'application/geo+json'.",
+          "description": "The IANA media type that describes the format of the resource, from the open [media_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#media-type). The codelist provides human-readable titles for the media types. This field should be used when the IANA media type of the resource is known. If the media type of the resource is not known, an alternative label or description for the format may be provided in `.format`.",
           "codelist": "media_type.csv",
           "openCodelist": true,
           "minLength": 1
@@ -415,8 +414,14 @@
         "format": {
           "title": "Format",
           "type": "string",
-          "description": "A human-readable description of the file format of the resource, taken from the open [data_formats codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-formats).",
-          "codelist": "data_formats.csv",
+          "description": "The format of the resource, if the IANA media type of the resource is not known. Otherwise, `.media_type` should be used instead. If the resource represents an API via which the dataset is available, `.format` should be set to \"API\". For more information, see [how to describe an API](https://docs.riskdatalibrary.org/en/{{version}}/guidance/metadata/#describe-an-api).",
+          "minLength": 1
+        },
+        "conforms_to": {
+          "title": "Conforms to",
+          "description": "An established standard to which the described resource conforms, from the open [conforms_to codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#conforms-to). The codelist provides human-readable titles for the media types. If the standard is not covered by the codelist, use of an HTTP URI is recommended.",
+          "type": "string",
+          "codelist": "conforms_to.csv",
           "openCodelist": true,
           "minLength": 1
         },
@@ -464,7 +469,7 @@
         "download_url": {
           "title": "Download Url",
           "type": "string",
-          "description": "The web address this resource can be downloaded from in the given `.format`.",
+          "description": "The web address this resource can be downloaded from in the given `.media_type` or `.format`.",
           "minLength": 1
         },
         "baseline_period": {

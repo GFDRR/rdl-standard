@@ -129,3 +129,13 @@ The WSG84 CRS is equivalent to EPSG:4326 with reversed axes so, if it is not sup
 ### Publish an access-restricted resource
 
 If a resource is not available directly from a non-access-restricted URL, you ought to publish the URL of the page that describes the arrangements for obtaining access to the resource in the [`Resource.access_url`](rdls_schema.json,/$defs/Resource,access_url) field.
+
+### Describe an API
+
+If a dataset is available via an API, list the API as a separate [`Resource`](../reference/schema.md#resource) within the [`Dataset`](../reference/schema.md#dataset) and set the resource's:
+
+- [`.format`](rdls_schema.json,/$defs/Resource,format) to `"API"`
+- [`.access_url`](rdls_schema.json,/$defs/Resource,access_url) to the primary documentation URL for the API
+- [`.conforms_to`](rdls_schema.json,/$defs/Resource,conforms_to) to the canonical URI for the standard the API conforms to, if applicable. For example, if the API conforms to the OGC API - Features standard, `"http://www.opengis.net/doc/IS/ogcapi-features-1/1.0.1"`.
+
+Leave [`media_type`](rdls_schema.json,/$defs/Resource,media_type) and [`download_url`](rdls_schema.json,/$defs/Resource,download_url) blank and describe list the formats in which the dataset is available as separate resources.
