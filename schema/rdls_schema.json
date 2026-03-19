@@ -2211,14 +2211,18 @@
             "coastal_flood",
             "convective_storm",
             "drought",
-            "earthquake",
             "extreme_temperature",
             "flood",
+            "wildfire",
+            "strong_wind",
+            "earthquake",
             "landslide",
             "tsunami",
             "volcanic",
-            "wildfire",
-            "strong_wind"
+            "pest_infestation",
+            "sea_level_rise",
+            "erosion",
+            "dust_sand_storm"
           ]
         },
         "process": {
@@ -2235,8 +2239,7 @@
             "hydrological_drought",
             "meteorological_drought",
             "socioeconomic_drought",
-            "primary_rupture",
-            "secondary_rupture",
+            "rupture",
             "ground_motion",
             "liquefaction",
             "extreme_cold",
@@ -2255,10 +2258,21 @@
             "lahar",
             "lava",
             "pyroclastic_flow",
+            "volcano_gas_aerosols",
             "wildfire",
             "extratropical_cyclone",
             "tropical_cyclone",
-            "volcano_gas_aerosols"
+            "wildfire_smoke",
+            "coastal_erosion",
+            "soil_erosion",
+            "subsidence_uplift",
+            "lightning",
+            "dust_sand_storm",
+            "thunderstorm",
+            "sea_level_rise",
+            "pest",
+            "glacial_lake_outburst",
+            "hail"
           ]
         }
       },
