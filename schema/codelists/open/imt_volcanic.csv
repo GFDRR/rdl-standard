@@ -19,3 +19,4 @@ gas:-kT,Volume of gases emitted,"Quantifies volcanic gas emissions, typically me
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-
 HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-
