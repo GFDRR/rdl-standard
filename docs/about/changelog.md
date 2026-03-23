@@ -92,6 +92,7 @@ This page lists changes to the Risk Data Library Standard.
   - Add codes to `hazard_type.csv`
   - Add codes to `hazard_process.csv`
   - Add codes to `IMT.csv`
+- [#411](https://github.com/GFDRR/rdl-standard/pull/411) - Add 'fl_d:h' to `IMT.csv`.
 
 ### Normative documentation
 
