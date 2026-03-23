@@ -107,3 +107,15 @@ FWI:-,Fire Weather Index,Meteorological fire danger index.,FWI,-,wildfire
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-,universal
 HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-,universal
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year,universal
+fl_d:h,Flood duration (h),The total length of time that flooding is present on a piece of land during a flood event expressed in hours (h),fl_dur,hours,flood
+Ltng:kJ,Lightning energy released,"Represents the total energy discharged during lightning events, expressed in kilojoules. Useful for assessing storm severity and electrical intensity within convective systems.",LightningEnergy,kJ,convective_storm
+Ltng:count/km/y,lightning event per km2 per year,"Measures the annual density of lightning strikes per square kilometre, enabling comparison of lightning?prone regions and long?term storm activity trends.",LightningEvents,count/km/year,convective_storm
+Ltng:count,lightning event count,"A count of lightning strikes within a defined area or time period, commonly used for storm frequency analysis.",LightningEvents,-,convective_storm
+Ltng:cape,CAPE - High Convective Available Potential Energy (kJ).,Indicates the amount of atmospheric energy available for convection. Higher CAPE values correlate with stronger updrafts and more intense convective storms.,CAPE,kJ,convective_storm
+wf:-pm2.5,Particulate Matter,"Represents concentrations of fine inhalable particles with diameters of 2.5 micrometres or smaller, often associated with wildfire smoke and hazardous air quality.",PM,PM 2.5,wildfire
+gas:-kT,Volume of gases emitted,"Quantifies volcanic gas emissions, typically measured in kilotonnes per day, indicating the scale of volcanic degassing and potential atmospheric impacts.",Gas_Vol,kT/day,volcanic
+Er:m/yr,Coastal distance of retreat,"Measures the annual horizontal landward movement of coastlines, reflecting shoreline erosion rates and long?term coastal change.",Erosion,m/yr,erosion
+Er:mm,Surface lowering,"Captures the vertical reduction of land surface elevation in millimetres, useful for monitoring erosion, subsidence, or sediment removal processes.",Erosion,mm,erosion
+Er:T/ha,Lost sediment mass,"Represents the amount of sediment removed from a given area, enabling assessment of soil erosion severity and land degradation.",Erosion,tonnes/hectare,erosion
+Pest:count/area,Density of pests per area,"Expresses the number of pests per hectare, used in ecological assessments, agriculture monitoring, and pest outbreak prediction.",PestDensity,count/hectare,pest_infestation
+DSI:-,Dust Storm Index,"A composite index describing the severity, frequency, and impact of dust storm events, integrating multiple environmental and atmospheric factors.",DSI,-,dust_sand_storm
