@@ -1611,7 +1611,7 @@
         },
         "title": {
           "title": "Title",
-          "description": "A description for the classification code.",
+          "description": "A title for the classification code.",
           "type": "string",
           "minLength": 1
         },
@@ -3283,11 +3283,10 @@
             "development_index"
           ]
         },
-        "taxonomy": {
-          "title": "Exposure taxonomy scheme",
-          "type": "string",
-          "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset.",
-          "minLength": 1
+        "asset_type": {
+          "title": "Asset type",
+          "description": "The type of asset",
+          "$ref": "#/$defs/Classification"
         },
         "metrics": {
           "title": "Exposure metrics",
