@@ -502,6 +502,18 @@
           "$ref": "#/$defs/Climate"
         }
       },
+      "anyOf": [
+        {
+          "required": [
+            "download_url"
+          ]
+        },
+        {
+          "required": [
+            "access_url"
+          ]
+        }
+      ],
       "minProperties": 1
     },
     "Entity": {
