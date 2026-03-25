@@ -1862,6 +1862,10 @@
       "title": "Hazard",
       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
+      "required": [
+        "type",
+        "process"
+      ],
       "properties": {
         "type": {
           "title": "Type",
