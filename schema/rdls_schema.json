@@ -149,7 +149,8 @@
           "minItems": 1,
           "uniqueItems": true
         }
-      }
+      },
+      "minProperties": 1
     },
     "referenced_by": {
       "title": "Referenced by",
@@ -199,7 +200,8 @@
       "items": {
         "$ref": "#/$defs/Exposure_item"
       },
-      "minItems": 1
+      "minItems": 1,
+      "uniqueItems": true
     },
     "vulnerability": {
       "title": "Vulnerability metadata",
@@ -2488,7 +2490,8 @@
             }
           }
         }
-      ]
+      ],
+      "minProperties": 1
     },
     "HazardWithTrigger": {
       "title": "Hazard",
@@ -2507,7 +2510,8 @@
             }
           }
         }
-      ]
+      ],
+      "minProperties": 1
     },
     "Function": {
       "title": "Function",
@@ -2558,7 +2562,6 @@
         "hazard_secondary": {
           "title": "Secondary hazard type",
           "description": "The secondary hazard involved in the modelled scenario(s).",
-          "type": "string",
           "$ref": "#/$defs/Hazard"
         },
         "hazard_analysis_type": {
@@ -2631,7 +2634,8 @@
           "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset, from the open [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme). Use of GED4ALL is recommended.",
           "type": "string",
           "codelist": "classification_scheme.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minLength": 1
         },
         "analysis_details": {
           "title": "Analysis details",
@@ -2639,7 +2643,8 @@
           "description": "Additional details about the analysis used to produce the function used in the modelled scenario(s).",
           "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Damage_scale_states_names": {
       "title": "Damage scale and states",
@@ -2729,7 +2734,8 @@
         "threshold": {
           "title": "Threshold or value",
           "description": "Specific threshold or value range used to define vulnerability level (if applicable).",
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "reference_year": {
           "title": "Reference year",
