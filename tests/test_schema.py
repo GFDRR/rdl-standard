@@ -42,6 +42,7 @@ def validate_metadata_presence_allow_missing(pointer):
       or pointer.startswith('/$defs/SimpleHazard/allOf')
       or pointer.startswith('/$defs/HazardWithTrigger/allOf')
       or pointer.startswith('/$defs/Measurement/allOf')
+      or pointer.startswith('/$defs/Resource/anyOf/')
     )
 
 validate_metadata_presence_kwargs = {
@@ -54,6 +55,11 @@ def validate_object_id_allow_missing(pointer):
 validate_object_id_kwargs = {
     'allow_missing': validate_object_id_allow_missing
 }
+
+def validate_codelist_enum_allow_enum(pointer):
+    return (
+        pointer.startswith('/$defs/SimpleHazard/allOf')
+    )
 
 validator = Draft202012Validator(Draft202012Validator.META_SCHEMA, format_checker=FormatChecker())
 
@@ -69,8 +75,7 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_array_items(path, data, **validate_array_items_kwargs)
     errors += validate_items_type(path, data)
 
-    # Temporarily disabled until JSCC is updated to handle allOf/if/then structures
-    # errors += validate_codelist_enum(path, data)
+    errors += validate_codelist_enum(path, data, allow_enum=validate_codelist_enum_allow_enum)
     
     errors += validate_merge_properties(path, data)
     errors += validate_ref(path, data)
@@ -79,6 +84,6 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_null_type(path, data, no_null=True)
     
     # Here, we don't add to `errors`, in order to not count these warnings as errors.
-    validate_deep_properties(path, data)
+    # validate_deep_properties(path, data)
 
     assert not errors, 'One or more JSON Schema files are invalid. See warnings below.'

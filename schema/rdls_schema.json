@@ -1563,7 +1563,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "index"
           ]
         },
         "measurement": {
@@ -2310,7 +2311,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_earthquake.csv"
+                "type": "string",
+                "codelist": "imt_earthquake.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2326,7 +2329,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_flood.csv"
+                "type": "string",
+                "codelist": "imt_flood.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2342,7 +2347,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_tsunami.csv"
+                "type": "string",
+                "codelist": "imt_tsunami.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2358,7 +2365,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_coastal_flood.csv"
+                "type": "string",
+                "codelist": "imt_coastal_flood.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2374,7 +2383,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_landslide.csv"
+                "type": "string",
+                "codelist": "imt_landslide.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2390,7 +2401,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_volcanic.csv"
+                "type": "string",
+                "codelist": "imt_volcanic.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2406,7 +2419,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_convective_storm.csv"
+                "type": "string",
+                "codelist": "imt_convective_storm.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2422,7 +2437,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_wildfire.csv"
+                "type": "string",
+                "codelist": "imt_wildfire.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2438,7 +2455,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_strong_wind.csv"
+                "type": "string",
+                "codelist": "imt_strong_wind.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2454,7 +2473,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_drought.csv"
+                "type": "string",
+                "codelist": "imt_drought.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2470,7 +2491,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_extreme_temperature.csv"
+                "type": "string",
+                "codelist": "imt_extreme_temperature.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2486,7 +2509,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_erosion.csv"
+                "type": "string",
+                "codelist": "imt_erosion.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2502,7 +2527,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_pest_infestation.csv"
+                "type": "string",
+                "codelist": "imt_pest_infestation.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2518,7 +2545,9 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "codelist": "imt_dust_sand_storm.csv"
+                "type": "string",
+                "codelist": "imt_dust_sand_storm.csv",
+                "openCodelist": true
               }
             }
           }
@@ -2825,6 +2854,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_area.csv",
                 "openCodelist": true
               }
@@ -2842,6 +2872,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_count.csv",
                 "openCodelist": true
               }
@@ -2859,6 +2890,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_currency.csv",
                 "openCodelist": false,
                 "enum": [
@@ -3180,6 +3212,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_dimensionless_ratio.csv",
                 "openCodelist": true
               }
@@ -3197,6 +3230,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_length.csv",
                 "openCodelist": true
               }
@@ -3214,6 +3248,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_mass.csv",
                 "openCodelist": true
               }
@@ -3231,6 +3266,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_mass_per_area.csv",
                 "openCodelist": true
               }
@@ -3248,6 +3284,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_time.csv",
                 "openCodelist": true
               }
@@ -3265,6 +3302,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_volume.csv",
                 "openCodelist": true
               }
@@ -3282,6 +3320,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_energy.csv",
                 "openCodelist": true
               }
