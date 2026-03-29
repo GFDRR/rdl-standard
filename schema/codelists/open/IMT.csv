@@ -49,7 +49,7 @@ EF:-,Enhanced Fujita Scale,Tornado intensity from EF0 to EF5 based on damage.,EF
 TPL:m,Tornado path length,Distance traveled by tornado along its path.,TPL,m,convective_storm
 TPW:m,Tornado path width,Maximum width of tornado damage path.,TPW,m,convective_storm
 TD:,Tornado Duration,"Time the tornado is on the ground, influencing cumulative damage.",TD,-,convective_storm
-PGWS:mph,Peak gust wind speed (mph),Direct wind speed estimate used in engineering and insurance modeling.,PGWS,mph,convective_storm
+PGWS:mph,Peak gust wind speed (mph),Direct wind speed estimate used in engineering and insurance modeling.,PGWS,mph,"strong_wind,convective_storm"
 PGWS:m/s,Peak gust wind speed (m/s),The peak gust wind speed in the open terrain. Expressed in meters per second (m/s).,PGWS,m/s,"strong_wind,convective_storm"
 HSI:-,Hail Severity Index,Composite hail index for insurance and risk modeling.,HSI,-,convective_storm
 HlMaxSz:mm,Maximum hail size,Largest hailstone diameter observed.,HlMaxSz,mm,convective_storm
@@ -119,3 +119,6 @@ Er:mm,Surface lowering,"Captures the vertical reduction of land surface elevatio
 Er:T/ha,Lost sediment mass,"Represents the amount of sediment removed from a given area, enabling assessment of soil erosion severity and land degradation.",Erosion,tonnes/hectare,erosion
 Pest:count/area,Density of pests per area,"Expresses the number of pests per hectare, used in ecological assessments, agriculture monitoring, and pest outbreak prediction.",PestDensity,count/hectare,pest_infestation
 DSI:-,Dust Storm Index,"A composite index describing the severity, frequency, and impact of dust storm events, integrating multiple environmental and atmospheric factors.",DSI,-,dust_sand_storm
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-,"earthquake,flood,tsunami,coastal_flood,strong_wind,volcanic,landslide,wildfire"
+SA:g,Spectral acceleration (g),The maximum acceleration experienced by a damped single-degree-of-freedom oscillator at a given natural period in response to ground shaking. Expressed as a fraction of g (1 g = 9.81 m/s²).,SA,g,earthquake
+Dsize:-,Avalanche Size Class (1-5),"Qualitative scale based on volume, path, and damage potential",index,-,landslide

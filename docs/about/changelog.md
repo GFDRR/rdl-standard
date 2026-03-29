@@ -99,6 +99,15 @@ This page lists changes to the Risk Data Library Standard.
   - Add codes to `IMT.csv`
 - [#411](https://github.com/GFDRR/rdl-standard/pull/411) - Add 'fl_d:h' to `IMT.csv`.
 - [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index' in `metric_dimension.csv`.
+- [#418](https://github.com/GFDRR/rdl-standard/pull/418):
+  - `IMT.csv`: Add 'POE', 'DSize' and 'SA:g'
+  - `impact_metric.csv`: Add codes:
+    - 'fatality_ratio_vulnerability'
+    - 'fatality_count'
+    - 'fatality_ratio_loss'
+    - 'disruption_days'
+    - 'disruption_loss'
+    - 'displaced_days'
 
 ### Normative documentation
 
