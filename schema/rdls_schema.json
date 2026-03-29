@@ -1820,7 +1820,13 @@
                 "risk_index",
                 "loss_ratio_loss",
                 "loss_ratio_vulnerability",
-                "production_loss"
+                "production_loss",
+                "fatality_count",
+                "fatality_ratio_loss",
+                "disruption_loss",
+                "disruption_days",
+                "displaced_days",
+                "fatality_ratio_vulnerability"
               ]
             },
             "measurement": {
