@@ -1315,25 +1315,8 @@
           "type": "object",
           "description": "Details of the impact and loss calculations.",
           "properties": {
-            "impact_type": {
-              "title": "Impact type",
-              "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type).",
-              "$ref": "#/$defs/codelist_impact_type"
-            },
-            "impact_modelling": {
-              "title": "Impact modelling",
-              "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type).",
-              "$ref": "#/$defs/codelist_data_calculation_type"
-            },
-            "impact_metric": {
-              "title": "Impact metric",
-              "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
-              "$ref": "#/$defs/codelist_impact_metric"
-            },
-            "measurement": {
-              "title": "Measurement",
-              "description": "The way in which the impact value is measured.",
-              "$ref": "#/$defs/Measurement"
+            "impact": {
+              "$ref": "#/$defs/Impact"
             },
             "loss_type": {
               "title": "Loss type",
@@ -1568,25 +1551,8 @@
           "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category).",
           "$ref": "#/$defs/codelist_exposure_category"
         },
-        "impact_type": {
-          "title": "Impact type",
-          "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type).",
-          "$ref": "#/$defs/codelist_impact_type"
-        },
-        "impact_modelling": {
-          "title": "Impact modelling",
-          "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type).",
-          "$ref": "#/$defs/codelist_data_calculation_type"
-        },
-        "impact_metric": {
-          "title": "Impact metric",
-          "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
-          "$ref": "#/$defs/codelist_impact_metric"
-        },
-        "impact_measurement": {
-          "title": "Impact measurement",
-          "description": "How the impact is measured.",
-          "$ref": "#/$defs/Measurement"
+        "impact": {
+          "$ref": "#/$defs/Impact"
         },
         "taxonomy": {
           "title": "Exposure taxonomy scheme",
@@ -1780,6 +1746,33 @@
         }
       },
       "minProperties": 1
+    },
+    "Impact": {
+      "title": "Impact",
+      "description": "Information about how the impacts of hazards are calculated.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Impact type",
+          "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type).",
+          "$ref": "#/$defs/codelist_impact_type"
+        },
+        "modelling": {
+          "title": "Impact modelling",
+          "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type).",
+          "$ref": "#/$defs/codelist_data_calculation_type"
+        },
+        "metric": {
+          "title": "Impact metric",
+          "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
+          "$ref": "#/$defs/codelist_impact_metric"
+        },
+        "measurement": {
+          "title": "Impact measurement",
+          "description": "How the impact is measured.",
+          "$ref": "#/$defs/Measurement"
+        }
+      }
     },
     "conditional_location_scale_to_countries": {
       "allOf": [
