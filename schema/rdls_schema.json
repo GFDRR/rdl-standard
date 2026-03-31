@@ -210,7 +210,6 @@
               "items": {
                 "title": "Vulnerability function",
                 "description": "A vulnerability function used to calculate the impact of a hazard.",
-                "type": "object",
                 "allOf": [
                   {
                     "$ref": "#/$defs/Function"
@@ -227,7 +226,6 @@
               "items": {
                 "title": "Fragility function",
                 "description": "A fragility function used to calculate the impact of a hazard.",
-                "type": "object",
                 "allOf": [
                   {
                     "$ref": "#/$defs/Function"
@@ -247,7 +245,6 @@
               "items": {
                 "title": "Damage-to-loss function",
                 "description": "A damage-to-loss function used to calculate the impact of the hazard in conjunction with a fragility function.",
-                "type": "object",
                 "allOf": [
                   {
                     "$ref": "#/$defs/Function"
@@ -267,7 +264,6 @@
               "items": {
                 "title": "Engineering demand function",
                 "description": "An engineering demand function used to calculate the impact of a hazard.",
-                "type": "object",
                 "allOf": [
                   {
                     "$ref": "#/$defs/Function"
@@ -527,7 +523,6 @@
           "minLength": 1
         },
         "entity": {
-          "title": "Entity",
           "description": "An entity with a role in relation to the dataset.",
           "$ref": "#/$defs/Entity"
         },
@@ -934,7 +929,6 @@
           "description": "The hazards included in this event set.",
           "type": "array",
           "items": {
-            "$ref": "#/$defs/HazardWithTrigger",
             "properties": {
               "id": {
                 "title": "Hazard identifier",
@@ -942,7 +936,12 @@
                 "type": "string",
                 "minLength": 1
               }
-            }
+            },
+            "allOf": [
+              {
+                "$ref": "#/$defs/HazardWithTrigger"
+              }
+            ]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -1048,8 +1047,6 @@
           "description": "The frequency or likelihood of the event happening within a given time frame.",
           "properties": {
             "probabilistic": {
-              "title": "Probabilistic frequency",
-              "description": "How often the event is expected to occur. Can be return period and/or probability. Both fields are provided to allow entry of return period (most common term used across all hazards) and/or probability, which is commonly used for seismic hazard. Probability commonly refers to a probability within 1 year or 50 years, but may be relative to any duration - when `probability` is used, `span` must be specified. You should only use this object when `event_set.analysis_type` = `event_set.analysis_type` = 'probabilistic'",
               "$ref": "#/$defs/Probabilistic"
             },
             "empirical": {
@@ -1478,9 +1475,6 @@
       ]
     },
     "Hazard": {
-      "title": "Hazard",
-      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
-      "type": "object",
       "properties": {
         "intensity_measure": {
           "title": "Intensity measure",
@@ -1506,9 +1500,6 @@
       ]
     },
     "HazardWithTrigger": {
-      "title": "Hazard",
-      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
-      "type": "object",
       "properties": {
         "trigger": {
           "title": "Trigger",

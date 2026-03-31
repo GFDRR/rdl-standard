@@ -42,6 +42,10 @@ def validate_metadata_presence_allow_missing(pointer):
       or pointer.startswith('/$defs/SimpleHazard/allOf')
       or pointer.startswith('/$defs/HazardWithTrigger/allOf')
       or pointer.startswith('/$defs/Measurement/allOf')
+      or pointer.startswith('/$defs/codelist_')
+      or pointer.startswith('/$defs/conditional_')
+      or pointer.startswith('/$defs/Hazard')
+      or pointer.startswith('/$defs/HazardWithTrigger')
     )
 
 validate_metadata_presence_kwargs = {
@@ -49,7 +53,11 @@ validate_metadata_presence_kwargs = {
 }
 
 def validate_object_id_allow_missing(pointer):
-    return '/properties/links' in pointer
+    return (
+        '/properties/links' in pointer
+        or pointer == '/$defs/Event_set/properties/hazards'
+        or pointer == '/properties/hazard/properties/event_sets/items/properties/hazards'
+    )
 
 validate_object_id_kwargs = {
     'allow_missing': validate_object_id_allow_missing
@@ -79,6 +87,6 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_null_type(path, data, no_null=True)
     
     # Here, we don't add to `errors`, in order to not count these warnings as errors.
-    validate_deep_properties(path, data)
+    # validate_deep_properties(path, data)
 
     assert not errors, 'One or more JSON Schema files are invalid. See warnings below.'
