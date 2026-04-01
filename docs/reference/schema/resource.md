@@ -1,9 +1,21 @@
 # Resource schema
 
 ```{contents} On this page
-:local:
-:depth: 1
+---
+local:
+depth: 1
+---
 ```
+
+A `Resource` is defined as:
+
+```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
+---
+jsonpointer: /properties/resources/items/description
+---
+```
+
+Each dataset can have many associated resources.
 
 ## Overview
 
@@ -30,23 +42,21 @@
 ## Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
-:pointer: /properties/resources/items
-:collapse: spatial
-:externallinks: >
-:   {
-:       "spatial":{"url":"#spatial-coverage","text":"Spatial coverage"}
-:   }
+---
+pointer: /properties/resources/items
+collapse: spatial
+addtargets:
+externallinks: >-
+  {
+      "spatial":{"url":"#spatial-coverage","text":"Spatial coverage"}
+  }
+---
 ```
 
 ## Spatial coverage
-
-This schema is referenced by the following properties:
-
-* `spatial`
-
-### Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/resources/items/properties/spatial
 ---
+```

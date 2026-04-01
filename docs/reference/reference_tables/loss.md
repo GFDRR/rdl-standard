@@ -1,1 +1,0 @@
-# Loss metadata schema

@@ -16,7 +16,7 @@ RDLS defines risk-specific metadata for describing four types of dataset:
 
 For more detailed definitions of these terms, refer to the [glossary](../glossary.md).
 
-The [RDLS schema](../reference/schema.md) defines the meaning, structure and format of RDLS metadata. It defines the list of fields that can be used to describe risk datasets. RDLS metadata is structured as follows:
+The [RDLS schema](../reference/schema/index.md) defines the meaning, structure and format of RDLS metadata. It defines the list of fields that can be used to describe risk datasets. RDLS metadata is structured as follows:
 
 ![RDLS structure](../img/structure.svg)
 

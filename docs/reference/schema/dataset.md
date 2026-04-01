@@ -1,9 +1,22 @@
 # Dataset schema
 
 ```{contents} On this page
-:local:
-:depth: 1
+---
+local:
+depth: 1
+---
 ```
+
+The top-level object in the RDLS schema is a risk dataset. A risk dataset is described as:
+
+```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
+---
+jsonpointer: /description
+---
+```
+
+The general attributes of a dataset are described by fields based on the [Data Catalog Vocabulary](https://www.w3.org/TR/vocab-dcat-3/) and the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms).
+
 ## Overview
 
 ```{mermaid}
@@ -56,14 +69,6 @@
 
 ## Publisher, contact point and creator
 
-This schema is referenced by the following properties:
-
-* `publisher`
-* `contact_point`
-* `creator`
-
-### Properties
-
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/publisher
@@ -71,12 +76,6 @@ pointer: /properties/publisher
 ```
 
 ## Spatial coverage
-
-This schema is referenced by the following properties:
-
-* `spatial`
-
-### Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
@@ -86,12 +85,6 @@ pointer: /properties/spatial
 
 ## Attribution
 
-This schema is referenced by the following properties:
-
-* `attributions`
-
-### Properties
-
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/attributions/items
@@ -100,12 +93,6 @@ pointer: /properties/attributions/items
 
 ## Related resource
 
-This schema is referenced by the following properties:
-
-* `referenced_by`
-
-### Properties
-
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/referenced_by/items
@@ -113,12 +100,6 @@ pointer: /properties/referenced_by/items
 ```
 
 ## Source
-
-This schema is referenced by the following properties:
-
-* `lineage/sources`
-
-### Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
