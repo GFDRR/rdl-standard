@@ -58,9 +58,10 @@ This page lists changes to the Risk Data Library Standard.
 - [#415](https://github.com/GFDRR/rdl-standard/pull/415) - Replace `Exposure_item.taxonomy` with `Exposure_item.classification`.
 - [#422](https://github.com/GFDRR/rdl-standard/pull/422):
   - Replace `project` with `project.name` and `project.url`.
-  - Require either `Resource.download_url` or `Resource.access_url`
+  - Require either `Resource.download_url` or `Resource.access_url`.
   - Make `SimpleHazard.type` and `SimpleHazard.process` required.
-  - Align `enums` with codelist CSVs
+  - Align `enums` with codelist CSVs.
+  - Remove `Location.geometry`.
 
 ### Codelists
 

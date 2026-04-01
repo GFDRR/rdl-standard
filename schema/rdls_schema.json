@@ -1102,11 +1102,6 @@
           "minItems": 4,
           "maxItems": 4
         },
-        "geometry": {
-          "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
-          "$ref": "#/$defs/Geometry"
-        },
         "centroid": {
           "title": "Centroid",
           "type": "array",
@@ -1246,59 +1241,6 @@
           "type": "string",
           "description": "A URI for the gazetteer entry.",
           "format": "iri"
-        }
-      },
-      "minProperties": 1
-    },
-    "Geometry": {
-      "title": "Geometry",
-      "type": "object",
-      "description": "A set of coordinates denoting the vertices of the geographical area.",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
-          "codelist": "geometry_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "Point",
-            "MultiPoint",
-            "LineString",
-            "MultiLineString",
-            "Polygon",
-            "MultiPolygon"
-          ]
-        },
-        "coordinates": {
-          "title": "Coordinates",
-          "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
-          "items": {
-            "type": [
-              "number",
-              "array"
-            ],
-            "items": {
-              "type": [
-                "number",
-                "array"
-              ],
-              "items": {
-                "type": [
-                  "number",
-                  "array"
-                ],
-                "items": {
-                  "type": "number"
-                },
-                "minItems": 1
-              },
-              "minItems": 1
-            },
-            "minItems": 1
-          },
-          "minItems": 1
         }
       },
       "minProperties": 1
@@ -2326,9 +2268,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_earthquake.csv",
-                "openCodelist": true
+                "codelist": "imt_earthquake.csv"
               }
             }
           }
@@ -2344,9 +2284,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_flood.csv",
-                "openCodelist": true
+                "codelist": "imt_flood.csv"
               }
             }
           }
@@ -2362,9 +2300,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_tsunami.csv",
-                "openCodelist": true
+                "codelist": "imt_tsunami.csv"
               }
             }
           }
@@ -2380,9 +2316,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_coastal_flood.csv",
-                "openCodelist": true
+                "codelist": "imt_coastal_flood.csv"
               }
             }
           }
@@ -2398,9 +2332,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_landslide.csv",
-                "openCodelist": true
+                "codelist": "imt_landslide.csv"
               }
             }
           }
@@ -2416,9 +2348,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_volcanic.csv",
-                "openCodelist": true
+                "codelist": "imt_volcanic.csv"
               }
             }
           }
@@ -2434,9 +2364,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_convective_storm.csv",
-                "openCodelist": true
+                "codelist": "imt_convective_storm.csv"
               }
             }
           }
@@ -2452,9 +2380,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_wildfire.csv",
-                "openCodelist": true
+                "codelist": "imt_wildfire.csv"
               }
             }
           }
@@ -2470,9 +2396,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_strong_wind.csv",
-                "openCodelist": true
+                "codelist": "imt_strong_wind.csv"
               }
             }
           }
@@ -2488,9 +2412,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_drought.csv",
-                "openCodelist": true
+                "codelist": "imt_drought.csv"
               }
             }
           }
@@ -2506,9 +2428,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_extreme_temperature.csv",
-                "openCodelist": true
+                "codelist": "imt_extreme_temperature.csv"
               }
             }
           }
@@ -2524,9 +2444,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_erosion.csv",
-                "openCodelist": true
+                "codelist": "imt_erosion.csv"
               }
             }
           }
@@ -2542,9 +2460,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_pest_infestation.csv",
-                "openCodelist": true
+                "codelist": "imt_pest_infestation.csv"
               }
             }
           }
@@ -2560,9 +2476,7 @@
           "then": {
             "properties": {
               "intensity_measure": {
-                "type": "string",
-                "codelist": "imt_dust_sand_storm.csv",
-                "openCodelist": true
+                "codelist": "imt_dust_sand_storm.csv"
               }
             }
           }
