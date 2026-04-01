@@ -56,6 +56,12 @@ This page lists changes to the Risk Data Library Standard.
 - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Add `Hazard.classification` and `Classification.title`.
 - [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
 - [#415](https://github.com/GFDRR/rdl-standard/pull/415) - Replace `Exposure_item.taxonomy` with `Exposure_item.classification`.
+- [#422](https://github.com/GFDRR/rdl-standard/pull/422):
+  - Replace `project` with `project.name` and `project.url`.
+  - Require either `Resource.download_url` or `Resource.access_url`.
+  - Make `SimpleHazard.type` and `SimpleHazard.process` required.
+  - Align `enums` with codelist CSVs.
+  - Remove `Location.geometry`.
 
 ### Codelists
 
@@ -93,6 +99,7 @@ This page lists changes to the Risk Data Library Standard.
   - Add codes to `hazard_process.csv`
   - Add codes to `IMT.csv`
 - [#411](https://github.com/GFDRR/rdl-standard/pull/411) - Add 'fl_d:h' to `IMT.csv`.
+- [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index' in `metric_dimension.csv`.
 - [#418](https://github.com/GFDRR/rdl-standard/pull/418):
   - `IMT.csv`: Add 'POE', 'DSize' and 'SA:g'
   - `impact_metric.csv`: Add codes:

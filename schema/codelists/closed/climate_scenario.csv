@@ -1,4 +1,4 @@
-code,title,description,ipcc_report,url
+Code,Title,Description,IPCC Report,URL
 SSP1-1.9,Very Low Emissions (1.9 W/m2),Limits warming to 1.5 degrees C. Requires net zero CO2 around 2050 followed by net negative emissions.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
 SSP1-2.6,Low Emissions (2.6 W/m2),Limits warming to well below 2 degrees C. Strong mitigation with CO2 emissions reaching net zero after 2050.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/
 SSP2-4.5,Intermediate Emissions (4.5 W/m2),Intermediate emissions following broadly historical social and economic trends with moderate mitigation.,IPCC AR6,https://www.ipcc.ch/report/ar6/wg1/

@@ -940,7 +940,6 @@ Each `Location` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Location
-collapse: geometry
 addtargets:
 ---
 ```
@@ -964,30 +963,6 @@ Each `Gazetteer_entry` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Gazetteer_entry
-collapse:
-addtargets:
----
-```
-
-### Geometry
-
-`Geometry` is defined as:
-
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Geometry/description
----
-```
-
-This sub-schema is referenced by the following properties:
-
-- [`Location/geometry`](rdls_schema.json,/$defs/Location,geometry)
-
-Each `Geometry` has the following fields:
-
-```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
----
-pointer: /$defs/Geometry
 collapse:
 addtargets:
 ---

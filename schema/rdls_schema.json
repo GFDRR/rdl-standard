@@ -70,10 +70,27 @@
       "minLength": 1
     },
     "project": {
-      "title": "Project title",
-      "type": "string",
-      "description": "The name of the project that produced the dataset.",
-      "minLength": 1
+      "title": "Project",
+      "type": "object",
+      "description": "Information about the project that produced the dataset.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Project name",
+          "type": "string",
+          "description": "The name of the project that produced the dataset.",
+          "minLength": 1
+        },
+        "url": {
+          "title": "Project URL",
+          "type": "string",
+          "description": "A URL associated with the project.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
     },
     "details": {
       "title": "Additional details",
@@ -149,7 +166,8 @@
           "minItems": 1,
           "uniqueItems": true
         }
-      }
+      },
+      "minProperties": 1
     },
     "referenced_by": {
       "title": "Referenced by",
@@ -199,7 +217,8 @@
       "items": {
         "$ref": "#/$defs/Exposure_item"
       },
-      "minItems": 1
+      "minItems": 1,
+      "uniqueItems": true
     },
     "vulnerability": {
       "title": "Vulnerability metadata",
@@ -483,6 +502,18 @@
           "$ref": "#/$defs/Climate"
         }
       },
+      "anyOf": [
+        {
+          "required": [
+            "download_url"
+          ]
+        },
+        {
+          "required": [
+            "access_url"
+          ]
+        }
+      ],
       "minProperties": 1
     },
     "Entity": {
@@ -1071,11 +1102,6 @@
           "minItems": 4,
           "maxItems": 4
         },
-        "geometry": {
-          "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
-          "$ref": "#/$defs/Geometry"
-        },
         "centroid": {
           "title": "Centroid",
           "type": "array",
@@ -1219,59 +1245,6 @@
       },
       "minProperties": 1
     },
-    "Geometry": {
-      "title": "Geometry",
-      "type": "object",
-      "description": "A set of coordinates denoting the vertices of the geographical area.",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
-          "codelist": "geometry_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "Point",
-            "MultiPoint",
-            "LineString",
-            "MultiLineString",
-            "Polygon",
-            "MultiPolygon"
-          ]
-        },
-        "coordinates": {
-          "title": "Coordinates",
-          "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
-          "items": {
-            "type": [
-              "number",
-              "array"
-            ],
-            "items": {
-              "type": [
-                "number",
-                "array"
-              ],
-              "items": {
-                "type": [
-                  "number",
-                  "array"
-                ],
-                "items": {
-                  "type": "number"
-                },
-                "minItems": 1
-              },
-              "minItems": 1
-            },
-            "minItems": 1
-          },
-          "minItems": 1
-        }
-      },
-      "minProperties": 1
-    },
     "Event_set": {
       "title": "Event set",
       "type": "object",
@@ -1294,6 +1267,10 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/HazardWithTrigger",
+            "required": [
+              "id",
+              "process"
+            ],
             "properties": {
               "id": {
                 "title": "Hazard identifier",
@@ -1420,6 +1397,9 @@
         "hazard": {
           "title": "Hazard",
           "description": "The hazard to which this event relates.",
+          "required": [
+            "process"
+          ],
           "$ref": "#/$defs/HazardWithTrigger"
         },
         "occurrence": {
@@ -1532,7 +1512,8 @@
             "content",
             "product",
             "disruption",
-            "population"
+            "population",
+            "index"
           ]
         },
         "measurement": {
@@ -1781,7 +1762,13 @@
                 "risk_index",
                 "loss_ratio_loss",
                 "loss_ratio_vulnerability",
-                "production_loss"
+                "production_loss",
+                "fatality_count",
+                "fatality_ratio_loss",
+                "disruption_loss",
+                "disruption_days",
+                "displaced_days",
+                "fatality_ratio_vulnerability"
               ]
             },
             "measurement": {
@@ -1860,6 +1847,9 @@
       "title": "Hazard",
       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "title": "Type",
@@ -2243,6 +2233,9 @@
       "title": "Hazard",
       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
+      "required": [
+        "imt"
+      ],
       "allOf": [
         {
           "$ref": "#/$defs/SimpleHazard"
@@ -2488,7 +2481,8 @@
             }
           }
         }
-      ]
+      ],
+      "minProperties": 1
     },
     "HazardWithTrigger": {
       "title": "Hazard",
@@ -2507,7 +2501,8 @@
             }
           }
         }
-      ]
+      ],
+      "minProperties": 1
     },
     "Function": {
       "title": "Function",
@@ -2558,7 +2553,6 @@
         "hazard_secondary": {
           "title": "Secondary hazard type",
           "description": "The secondary hazard involved in the modelled scenario(s).",
-          "type": "string",
           "$ref": "#/$defs/Hazard"
         },
         "hazard_analysis_type": {
@@ -2631,7 +2625,8 @@
           "description": "The name of the taxonomy scheme used to create descriptive individual asset feature strings within the dataset, from the open [classification_scheme codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme). Use of GED4ALL is recommended.",
           "type": "string",
           "codelist": "classification_scheme.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minLength": 1
         },
         "analysis_details": {
           "title": "Analysis details",
@@ -2639,7 +2634,8 @@
           "description": "Additional details about the analysis used to produce the function used in the modelled scenario(s).",
           "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Damage_scale_states_names": {
       "title": "Damage scale and states",
@@ -2729,7 +2725,8 @@
         "threshold": {
           "title": "Threshold or value",
           "description": "Specific threshold or value range used to define vulnerability level (if applicable).",
-          "type": "string"
+          "type": "string",
+          "minLength": 1
         },
         "reference_year": {
           "title": "Reference year",
@@ -2786,6 +2783,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_area.csv",
                 "openCodelist": true
               }
@@ -2803,6 +2801,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_count.csv",
                 "openCodelist": true
               }
@@ -2820,6 +2819,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_currency.csv",
                 "openCodelist": false,
                 "enum": [
@@ -3141,6 +3141,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_dimensionless_ratio.csv",
                 "openCodelist": true
               }
@@ -3158,6 +3159,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_length.csv",
                 "openCodelist": true
               }
@@ -3175,6 +3177,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_mass.csv",
                 "openCodelist": true
               }
@@ -3192,6 +3195,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_mass_per_area.csv",
                 "openCodelist": true
               }
@@ -3209,6 +3213,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_time.csv",
                 "openCodelist": true
               }
@@ -3226,6 +3231,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_volume.csv",
                 "openCodelist": true
               }
@@ -3243,6 +3249,7 @@
           "then": {
             "properties": {
               "unit": {
+                "type": "string",
                 "codelist": "unit_energy.csv",
                 "openCodelist": true
               }
