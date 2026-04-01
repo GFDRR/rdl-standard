@@ -627,25 +627,6 @@ open:
 ```
 ````
 
-### geometry_type
-
-This codelist is referenced by the following properties:
-
-- [`Geometry/type`](rdls_schema.json,/$defs/Geometry,type)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
----
-open:
----
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/closed/geometry_type.csv
-```
-````
-
 ### hazard_type
 
 The RDLS offers a classification of hazards that are more often required in disaster risk assessments, based on the review and mapping of existing alternative definitions into one consistent framework. For more information, see [hazard taxonomies](../rdl/other-standards.md#hazard-taxonomies).

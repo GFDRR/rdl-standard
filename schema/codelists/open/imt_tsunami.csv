@@ -17,7 +17,7 @@ F_QS:kN,Quasi-static buoyant force,Buoyant force during low-velocity inundation.
 MF:m3/s2,Momentum flux,Product of flow depth and velocity squared.,MF,m3/s2
 MMF:m4/s2,Modified momentum flux,Product of momentum flux and inundation depth.,MMF,m4/s2
 Fr:-,Froude number,Flow velocity non-dimensionalized by gravity-wave velocity.,Fr,-
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-
 HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
-POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-

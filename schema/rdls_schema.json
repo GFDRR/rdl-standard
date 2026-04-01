@@ -62,10 +62,27 @@
       "minLength": 1
     },
     "project": {
-      "title": "Project title",
-      "type": "string",
-      "description": "The name of the project that produced the dataset.",
-      "minLength": 1
+      "title": "Project",
+      "type": "object",
+      "description": "Information about the project that produced the dataset.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Project name",
+          "type": "string",
+          "description": "The name of the project that produced the dataset.",
+          "minLength": 1
+        },
+        "url": {
+          "title": "Project URL",
+          "type": "string",
+          "description": "A URL associated with the project.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
     },
     "details": {
       "title": "Additional details",
@@ -141,7 +158,8 @@
           "minItems": 1,
           "uniqueItems": true
         }
-      }
+      },
+      "minProperties": 1
     },
     "referenced_by": {
       "title": "Referenced by",
@@ -191,7 +209,8 @@
       "items": {
         "$ref": "#/$defs/Exposure_item"
       },
-      "minItems": 1
+      "minItems": 1,
+      "uniqueItems": true
     },
     "vulnerability": {
       "title": "Vulnerability metadata",
@@ -463,6 +482,18 @@
           "$ref": "#/$defs/Climate"
         }
       },
+      "anyOf": [
+        {
+          "required": [
+            "download_url"
+          ]
+        },
+        {
+          "required": [
+            "access_url"
+          ]
+        }
+      ],
       "minProperties": 1
     },
     "Entity": {
@@ -781,11 +812,6 @@
           "minItems": 4,
           "maxItems": 4
         },
-        "geometry": {
-          "title": "Geometry",
-          "description": "A set of coordinates denoting the vertices of the geographical area. This field describes the extent of the geographical area. To avoid creating very large metadata, geometries should have fewer than 50 vertices.",
-          "$ref": "#/$defs/Geometry"
-        },
         "centroid": {
           "title": "Centroid",
           "type": "array",
@@ -855,59 +881,6 @@
       },
       "minProperties": 1
     },
-    "Geometry": {
-      "title": "Geometry",
-      "type": "object",
-      "description": "A set of coordinates denoting the vertices of the geographical area.",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "type": "string",
-          "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
-          "codelist": "geometry_type.csv",
-          "openCodelist": false,
-          "enum": [
-            "Point",
-            "MultiPoint",
-            "LineString",
-            "MultiLineString",
-            "Polygon",
-            "MultiPolygon"
-          ]
-        },
-        "coordinates": {
-          "title": "Coordinates",
-          "type": "array",
-          "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
-          "items": {
-            "type": [
-              "number",
-              "array"
-            ],
-            "items": {
-              "type": [
-                "number",
-                "array"
-              ],
-              "items": {
-                "type": [
-                  "number",
-                  "array"
-                ],
-                "items": {
-                  "type": "number"
-                },
-                "minItems": 1
-              },
-              "minItems": 1
-            },
-            "minItems": 1
-          },
-          "minItems": 1
-        }
-      },
-      "minProperties": 1
-    },
     "Event_set": {
       "title": "Event set",
       "type": "object",
@@ -929,6 +902,10 @@
           "description": "The hazards included in this event set.",
           "type": "array",
           "items": {
+            "required": [
+              "id",
+              "process"
+            ],
             "properties": {
               "id": {
                 "title": "Hazard identifier",
@@ -1039,6 +1016,9 @@
         "hazard": {
           "title": "Hazard",
           "description": "The hazard to which this event relates.",
+          "required": [
+            "process"
+          ],
           "$ref": "#/$defs/HazardWithTrigger"
         },
         "occurrence": {
@@ -1374,6 +1354,9 @@
       "title": "Hazard",
       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "type": "object",
+      "required": [
+        "type"
+      ],
       "properties": {
         "type": {
           "title": "Type",
@@ -1458,6 +1441,9 @@
       ]
     },
     "Hazard": {
+      "required": [
+        "intensity_measure"
+      ],      
       "properties": {
         "intensity_measure": {
           "title": "Intensity measure",
@@ -2556,7 +2542,8 @@
             }
           }
         }
-      ]
+      ],
+      "minProperties": 1
     },
     "codelist_risk_data_type": {
       "type": "string",
@@ -2852,7 +2839,8 @@
         "content",
         "product",
         "disruption",
-        "population"
+        "population",
+        "index"
       ],
       "codelist": "metric_dimension.csv",
       "openCodelist": false
