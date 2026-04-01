@@ -95,8 +95,6 @@ open:
 
 This codelist is referenced by the following properties:
 
-
-
 This codelist has the following codes:
 
 ````{dropdown} Codes
@@ -652,8 +650,6 @@ This codelist has the following codes:
 ### impact_type
 
 This codelist is referenced by the following properties:
-
-
 
 This codelist has the following codes:
 
