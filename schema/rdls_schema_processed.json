@@ -106,10 +106,27 @@
       "minLength": 1
     },
     "project": {
-      "title": "Project title",
-      "type": "string",
-      "description": "The name of the project that produced the dataset.",
-      "minLength": 1
+      "title": "Project",
+      "type": "object",
+      "description": "Information about the project that produced the dataset.",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "title": "Project name",
+          "type": "string",
+          "description": "The name of the project that produced the dataset.",
+          "minLength": 1
+        },
+        "url": {
+          "title": "Project URL",
+          "type": "string",
+          "description": "A URL associated with the project.",
+          "format": "iri"
+        }
+      },
+      "minProperties": 1
     },
     "details": {
       "title": "Additional details",
@@ -438,59 +455,6 @@
           },
           "minItems": 4,
           "maxItems": 4
-        },
-        "geometry": {
-          "title": "Geometry",
-          "type": "object",
-          "description": "A set of coordinates denoting the vertices of the geographical area.",
-          "properties": {
-            "type": {
-              "title": "Type",
-              "type": "string",
-              "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
-              "codelist": "geometry_type.csv",
-              "openCodelist": false,
-              "enum": [
-                "Point",
-                "MultiPoint",
-                "LineString",
-                "MultiLineString",
-                "Polygon",
-                "MultiPolygon"
-              ]
-            },
-            "coordinates": {
-              "title": "Coordinates",
-              "type": "array",
-              "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
-              "items": {
-                "type": [
-                  "number",
-                  "array"
-                ],
-                "items": {
-                  "type": [
-                    "number",
-                    "array"
-                  ],
-                  "items": {
-                    "type": [
-                      "number",
-                      "array"
-                    ],
-                    "items": {
-                      "type": "number"
-                    },
-                    "minItems": 1
-                  },
-                  "minItems": 1
-                },
-                "minItems": 1
-              },
-              "minItems": 1
-            }
-          },
-          "minProperties": 1
         },
         "centroid": {
           "title": "Centroid",
@@ -931,7 +895,8 @@
           "minItems": 1,
           "uniqueItems": true
         }
-      }
+      },
+      "minProperties": 1
     },
     "referenced_by": {
       "title": "Referenced by",
@@ -1368,59 +1333,6 @@
                 "minItems": 4,
                 "maxItems": 4
               },
-              "geometry": {
-                "title": "Geometry",
-                "type": "object",
-                "description": "A set of coordinates denoting the vertices of the geographical area.",
-                "properties": {
-                  "type": {
-                    "title": "Type",
-                    "type": "string",
-                    "description": "The GeoJSON geometry type that is described by `.coordinates`, from the closed [geometry_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#geometry_type).",
-                    "codelist": "geometry_type.csv",
-                    "openCodelist": false,
-                    "enum": [
-                      "Point",
-                      "MultiPoint",
-                      "LineString",
-                      "MultiLineString",
-                      "Polygon",
-                      "MultiPolygon"
-                    ]
-                  },
-                  "coordinates": {
-                    "title": "Coordinates",
-                    "type": "array",
-                    "description": "One or more GeoJSON positions according to the GeoJSON geometry type defined in `.type`. Each position is an array of numbers containing exactly two numbers with longitude (easting) first and latitude (northing) second. Coordinates must be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.",
-                    "items": {
-                      "type": [
-                        "number",
-                        "array"
-                      ],
-                      "items": {
-                        "type": [
-                          "number",
-                          "array"
-                        ],
-                        "items": {
-                          "type": [
-                            "number",
-                            "array"
-                          ],
-                          "items": {
-                            "type": "number"
-                          },
-                          "minItems": 1
-                        },
-                        "minItems": 1
-                      },
-                      "minItems": 1
-                    },
-                    "minItems": 1
-                  }
-                },
-                "minProperties": 1
-              },
               "centroid": {
                 "title": "Centroid",
                 "type": "array",
@@ -1721,6 +1633,18 @@
             "minProperties": 1
           }
         },
+        "anyOf": [
+          {
+            "required": [
+              "download_url"
+            ]
+          },
+          {
+            "required": [
+              "access_url"
+            ]
+          }
+        ],
         "minProperties": 1
       },
       "minItems": 1,
@@ -1759,6 +1683,12 @@
                 "description": "The hazards included in this event set.",
                 "type": "array",
                 "items": {
+                  "required": [
+                    "id",
+                    "intensity_measure",
+                    "process",
+                    "type"
+                  ],
                   "properties": {
                     "id": {
                       "title": "Hazard identifier",
@@ -1770,6 +1700,9 @@
                       "title": "Hazard",
                       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
                       "type": "object",
+                      "required": [
+                        "type"
+                      ],
                       "properties": {
                         "type": {
                           "title": "Type",
@@ -2427,6 +2360,9 @@
                           "title": "Hazard",
                           "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
                           "type": "object",
+                          "required": [
+                            "type"
+                          ],
                           "properties": {
                             "type": {
                               "title": "Type",
@@ -2936,6 +2872,10 @@
                           ]
                         }
                       },
+                      "required": [
+                        "intensity_measure",
+                        "type"
+                      ],
                       "title": "Hazard",
                       "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
                     },
@@ -3227,7 +3167,8 @@
                     "content",
                     "product",
                     "disruption",
-                    "population"
+                    "population",
+                    "index"
                   ],
                   "codelist": "metric_dimension.csv",
                   "openCodelist": false
@@ -3301,6 +3242,7 @@
                           "then": {
                             "properties": {
                               "unit": {
+                                "type": "string",
                                 "codelist": "unit_currency.csv",
                                 "openCodelist": false,
                                 "enum": [
@@ -3743,7 +3685,8 @@
         },
         "minProperties": 1
       },
-      "minItems": 1
+      "minItems": 1,
+      "uniqueItems": true
     },
     "vulnerability": {
       "title": "Vulnerability metadata",
@@ -3793,6 +3736,10 @@
                     "openCodelist": false
                   },
                   "hazard_primary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -4147,13 +4094,18 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
                     "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
                   },
                   "hazard_secondary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -4508,7 +4460,8 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
@@ -4637,6 +4590,7 @@
                                 "then": {
                                   "properties": {
                                     "unit": {
+                                      "type": "string",
                                       "codelist": "unit_currency.csv",
                                       "openCodelist": false,
                                       "enum": [
@@ -5133,6 +5087,10 @@
                     "openCodelist": false
                   },
                   "hazard_primary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -5487,13 +5445,18 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
                     "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
                   },
                   "hazard_secondary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -5848,7 +5811,8 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
@@ -5977,6 +5941,7 @@
                                 "then": {
                                   "properties": {
                                     "unit": {
+                                      "type": "string",
                                       "codelist": "unit_currency.csv",
                                       "openCodelist": false,
                                       "enum": [
@@ -6492,6 +6457,10 @@
                     "openCodelist": false
                   },
                   "hazard_primary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -6846,13 +6815,18 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
                     "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
                   },
                   "hazard_secondary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -7207,7 +7181,8 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
@@ -7336,6 +7311,7 @@
                                 "then": {
                                   "properties": {
                                     "unit": {
+                                      "type": "string",
                                       "codelist": "unit_currency.csv",
                                       "openCodelist": false,
                                       "enum": [
@@ -7851,6 +7827,10 @@
                     "openCodelist": false
                   },
                   "hazard_primary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -8205,13 +8185,18 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
                     "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
                   },
                   "hazard_secondary": {
+                    "required": [
+                      "intensity_measure",
+                      "type"
+                    ],
                     "properties": {
                       "intensity_measure": {
                         "title": "Intensity measure",
@@ -8566,7 +8551,8 @@
                               }
                             }
                           }
-                        ]
+                        ],
+                        "minProperties": 1
                       }
                     ],
                     "title": "Hazard",
@@ -8695,6 +8681,7 @@
                                 "then": {
                                   "properties": {
                                     "unit": {
+                                      "type": "string",
                                       "codelist": "unit_currency.csv",
                                       "openCodelist": false,
                                       "enum": [
@@ -9315,6 +9302,9 @@
                     "title": "Hazard",
                     "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
                     "type": "object",
+                    "required": [
+                      "type"
+                    ],
                     "properties": {
                       "type": {
                         "title": "Type",
@@ -9824,6 +9814,10 @@
                     ]
                   }
                 },
+                "required": [
+                  "intensity_measure",
+                  "type"
+                ],
                 "title": "Hazard",
                 "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
               },
@@ -9848,7 +9842,8 @@
                   "content",
                   "product",
                   "disruption",
-                  "population"
+                  "population",
+                  "index"
                 ],
                 "codelist": "metric_dimension.csv",
                 "openCodelist": false
@@ -9957,6 +9952,7 @@
                                 "then": {
                                   "properties": {
                                     "unit": {
+                                      "type": "string",
                                       "codelist": "unit_currency.csv",
                                       "openCodelist": false,
                                       "enum": [
