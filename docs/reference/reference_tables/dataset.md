@@ -2,53 +2,35 @@
 
 ```{contents} On this page
 :local:
+:depth: 1
 ```
 ## Overview
 
 ```{mermaid}
-    ---
-    config:
-    layout: elk
-    elk:
-        nodePlacementStrategy: SIMPLE
-    ---
-
     erDiagram
+        Direction LR
+        Dataset {
+            string id*
+            string title*
+            array risk_data_type*
+            object publisher*
+            object creator*
+            object contact_point*
+            string license*
+            object lineage
+            object spatial* "Spatial coverage"
+            object temporal "Temporal coverage"
+            object hazard "Hazard metadata"
+            object exposure "Exposure metadata"
+            object vulnerability "Vulnerability metadata"
+            object loss "Loss metadata"
 
-        dataset {
-            string id
-            string(email) title
-            string risk_data_type
-            string(iri) license
         }
 
-        publisher {
-            string name
-            string(email) email*
-            string(iri) url*
-        }
-
-        spatial {
-
-        }
-
-        contact_point {
-            string name
-            string(email) email*
-            string(iri) url*
-        }
-
-        creator {
-            string name
-            string(email) email*
-            string(iri) url*
-        }
-
-        dataset ||--|{ resource: includes
-        dataset ||--|| publisher: "published by"
-        dataset ||--|| spatial: "covers the area described by"
-        dataset ||--|| contact_point: "maintained by"
-        dataset ||--|| creator: "produced by"
+        Dataset ||--|{ Resource: "Includes"
+        Dataset ||--o{ Attribution: "Related to entity by"
+        Dataset ||--o{ "Related resource": "Referenced by"
+        Dataset ||--o{ Source: "Created using"
 ```
 
 ## Properties
@@ -61,18 +43,26 @@
 :       "contact_point":{"url":"#publisher-contact-point-and-creator","text":"Publisher, contact point, and creator"},
 :       "creator":{"url":"#publisher-contact-point-and-creator","text":"Publisher, contact point, and creator"},
 :       "spatial":{"url":"#spatial-coverage","text":"Spatial coverage"},
-:       "attributions":{"url":"#attributions","text":"Attributions"},
-:       "lineage/sources":{"url":"#sources","text":"Sources"},
-:       "referenced_by":{"url":"#referenced-by","text":"Referenced by"},
+:       "attributions":{"url":"#attribution","text":"Attribution"},
+:       "lineage/sources":{"url":"#source","text":"Source"},
+:       "referenced_by":{"url":"#related-resource","text":"Related resource"},
 :       "resources":{"url":"../resource","text":"Resource"},
-:       "hazard":{"url":"#hazard-metadata","text":"Hazard metadata"},
-:       "exposure":{"url":"#exposure-metadata","text":"Exposure metadata"},
-:       "vulnerability":{"url":"#vulnerability-metadata","text":"Vulnerability metadata"},
-:       "loss":{"url":"#loss-metadata","text":"Loss metadata"}
+:       "hazard":{"url":"../hazard","text":"Hazard metadata"},
+:       "exposure":{"url":"../exposure","text":"Exposure metadata"},
+:       "vulnerability":{"url":"../vulnerability","text":"Vulnerability metadata"},
+:       "loss":{"url":"../loss","text":"Loss metadata"}
 :   }
 ```
 
 ## Publisher, contact point and creator
+
+This schema is referenced by the following properties:
+
+* `publisher`
+* `contact_point`
+* `creator`
+
+### Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
@@ -82,13 +72,25 @@ pointer: /properties/publisher
 
 ## Spatial coverage
 
+This schema is referenced by the following properties:
+
+* `spatial`
+
+### Properties
+
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/spatial
 ---
 ```
 
-## Attributions
+## Attribution
+
+This schema is referenced by the following properties:
+
+* `attributions`
+
+### Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
@@ -96,7 +98,27 @@ pointer: /properties/attributions/items
 ---
 ```
 
-## Sources
+## Related resource
+
+This schema is referenced by the following properties:
+
+* `referenced_by`
+
+### Properties
+
+```{jsonschema} ../../../schema/rdls_schema_processed.json
+---
+pointer: /properties/referenced_by/items
+---
+```
+
+## Source
+
+This schema is referenced by the following properties:
+
+* `lineage/sources`
+
+### Properties
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---

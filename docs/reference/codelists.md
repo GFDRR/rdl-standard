@@ -95,8 +95,7 @@ open:
 
 This codelist is referenced by the following properties:
 
-- [`Losses/impact_and_losses/impact_metric`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_metric)
-- [`Function/impact_metric`](rdls_schema.json,/$defs/Function,impact_metric)
+
 
 This codelist has the following codes:
 
@@ -555,8 +554,6 @@ This codelist is referenced by the following properties:
 
 - [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
 - [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
-- [`Losses/impact_and_losses/impact_modelling`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_modelling)
-- [`Function/impact_modelling`](rdls_schema.json,/$defs/Function,impact_modelling)
 
 This codelist has the following codes:
 
@@ -675,8 +672,7 @@ This codelist has the following codes:
 
 This codelist is referenced by the following properties:
 
-- [`Losses/impact_and_losses/impact_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_type)
-- [`Function/impact_type`](rdls_schema.json,/$defs/Function,impact_type)
+
 
 This codelist has the following codes:
 

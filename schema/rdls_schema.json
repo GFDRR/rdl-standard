@@ -1537,7 +1537,6 @@
         "hazard_secondary": {
           "title": "Secondary hazard type",
           "description": "The secondary hazard involved in the modelled scenario(s).",
-          "type": "string",
           "$ref": "#/$defs/Hazard"
         },
         "hazard_analysis_type": {

@@ -1,95 +1,72 @@
 import json
-from pathlib import Path
-from referencing import Registry
-from referencing.jsonschema import DRAFT202012
+from jsonref import replace_refs
 
-def deref_and_merge(obj, registry, path="root"):
-    if isinstance(obj, list):
-        return [deref_and_merge(item, registry, f"{path}[{i}]") for i, item in enumerate(obj)]
-    if not isinstance(obj, dict):
-        return obj
+def compose_all_of(schema):
+    """
+    Recursively merges properties defined within allOf arrays into 
+    the parent object's properties.
+    """
+    if not isinstance(schema, dict):
+        return schema
 
-    # 1. Standard 2020-12 $ref merging
-    if "$ref" in obj:
-        ref_uri = obj.pop("$ref")
-        resolved = registry.resolver().lookup(ref_uri).contents
-        obj = {**resolved, **obj}
+    # Process all nested values first (Bottom-up recursion)
+    for key, value in schema.items():
+        if isinstance(value, dict):
+            schema[key] = compose_all_of(value)
+        elif isinstance(value, list):
+            schema[key] = [compose_all_of(item) for item in value]
 
-    # 2. Recursive call to process children first (so we merge from the bottom up)
-    obj = {k: deref_and_merge(v, registry, f"{path}.{k}") for k, v in obj.items()}
+    # Handle allOf composition for the current object
+    if "allOf" in schema:
+        # Ensure base containers exist
+        if "properties" not in schema:
+            schema["properties"] = {}
+        if "required" not in schema:
+            schema["required"] = []
 
-    # 3. Handle allOf merging
-    if "allOf" in obj and isinstance(obj["allOf"], list):
-        new_all_of = []
-        if "properties" not in obj:
-            obj["properties"] = {}
-
-        for i, item in enumerate(obj["allOf"]):
-            current_item_path = f"{path}.allOf[{i}]"
+        for sub_schema in schema["allOf"]:
+            # Merge properties
+            if "properties" in sub_schema:
+                for key, value in sub_schema["properties"].items():
+                    if key in schema["properties"] and schema["properties"][key] != value:
+                        print(f"Warning: Overwriting property {key} value {schema['properties'][key]} with value {value}")
+                    schema['properties'][key] = value
             
-            # --- Validation 2: Strict Conditional Check ---
-            if "if" in item:
-                # Check for any keys that aren't 'if' or 'then'
-                extra_keys = set(item.keys()) - {"if", "then"}
-                if extra_keys:
-                    raise ValueError(
-                        f"Validation Error at {current_item_path}: "
-                        f"Conditional 'if' found with unauthorized sibling keys: {extra_keys}. "
-                        f"Only 'then' is allowed."
-                    )
-                new_all_of.append(item)
+            # Merge required properties
+            if "required" in sub_schema:
+                combined_req = set(schema["required"]) | set(sub_schema["required"])
+                schema["required"] = sorted(combined_req)
             
-            # --- Validation 1: Property Collision Check ---
-            elif "properties" in item:
-                for prop_name in item["properties"]:
-                    if prop_name in obj["properties"]:
-                        raise ValueError(
-                            f"Validation Error at {path}: "
-                            f"Property collision detected for '{prop_name}'. "
-                            f"Defined in both parent and allOf item."
-                        )
-                
-                # Merge structural properties
-                obj["properties"].update(item["properties"])
-                
-                # Merge required arrays if they exist
-                if "required" in item:
-                    current_req = obj.get("required", [])
-                    obj["required"] = list(set(current_req) | set(item["required"]))
+            # Inherit title
+            if "title" not in schema and "title" in sub_schema:
+                schema["title"] = sub_schema["title"]
             
-            # Handle item that is just a schema but not a conditional or properties container
-            else:
-                # Check for collisions with top-level keys before merging
-                for k in item:
-                    if k in obj and k != "properties": # properties handled above
-                         raise ValueError(f"Collision at {path} for key: {k}")
-                obj.update(item)
+            # Inherit description
+            if  "description" not in schema and "description" in sub_schema:
+                schema["description"] = sub_schema["description"]
+        
+        schema["allOf"] = [sub_schema for sub_schema in schema["allOf"] if "properties" not in sub_schema]
 
-        # Final cleanup
-        if new_all_of:
-            obj["allOf"] = new_all_of
-        else:
-            del obj["allOf"]
+        if len(schema["allOf"]) == 0:
+            schema.pop("allOf")
+        
+        # Clean up empty containers if nothing was added
+        if not schema["properties"]:
+            schema.pop("properties")
+        if not schema["required"]:
+            schema.pop("required")
 
-    return obj
+    return schema
+                            
 
-# --- Execution ---
-input_path = Path("schema/rdls_schema.json")
-try:
-    schema = json.loads(input_path.read_text())
-    reg = Registry().with_resource(uri="", resource=DRAFT202012.create_resource(schema))
+with open('schema/rdls_schema.json', 'r') as f:
+    schema = json.load(f)
 
-    full_schema = deref_and_merge(schema, reg)
+schema = replace_refs(schema, proxies=False)
 
-    # Top-level cleanup
-    full_schema.pop("$defs", None)
-    full_schema.pop("definitions", None)
+schema.pop('$defs', None)
 
-    output_path = Path("schema/rdls_schema_processed.json")
-    output_path.write_text(json.dumps(full_schema, indent=4))
-    print(f"Successfully dereferenced and merged to {output_path}")
+schema = compose_all_of(schema)
 
-except ValueError as e:
-    print(f"FAILED: {e}")
-except Exception as e:
-    print(f"An unexpected error occurred: {e}")
+with open('schema/rdls_schema_processed.json', 'w') as f:
+    json.dump(schema, f, indent=2)

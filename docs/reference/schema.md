@@ -1184,11 +1184,7 @@ addtargets:
 
 `Hazard` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/Hazard/description
----
-```
+
 
 This sub-schema is referenced by the following properties:
 
@@ -1209,11 +1205,7 @@ addtargets:
 
 `HazardWithTrigger` is defined as:
 
-```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json
----
-jsonpointer: /$defs/HazardWithTrigger/description
----
-```
+
 
 This sub-schema is referenced by the following properties:
 
@@ -1248,7 +1240,7 @@ Each `Function` has the following fields:
 ```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json
 ---
 pointer: /$defs/Function
-collapse: hazard_primary,hazard_secondary,impact_measurement
+collapse: hazard_primary,hazard_secondary
 addtargets:
 ---
 ```
@@ -1334,8 +1326,7 @@ jsonpointer: /$defs/Measurement/description
 This sub-schema is referenced by the following properties:
 
 - [`Metric/measurement`](rdls_schema.json,/$defs/Metric,measurement)
-- [`Losses/impact_and_losses/measurement`](rdls_schema.json,/$defs/Losses,impact_and_losses/measurement)
-- [`Function/impact_measurement`](rdls_schema.json,/$defs/Function,impact_measurement)
+
 
 Each `Measurement` has the following fields:
 

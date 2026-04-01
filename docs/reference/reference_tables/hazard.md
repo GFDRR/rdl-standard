@@ -2,6 +2,17 @@
 
 ```{contents} On this page
 :local:
+:depth: 1
+```
+
+## Overview
+
+```{mermaid}
+    erDiagram
+        Direction LR
+
+        Dataset ||--o| "Hazard metadata": "Hazard data described by"
+        "Hazard metadata" o|--|{ Event_set: "Describes"
 ```
 
 ## Properties
@@ -17,13 +28,26 @@
 
 ## Event sets
 
+```{mermaid}
+    erDiagram
+        Direction LR
+
+        Event_set {
+            string id*
+            string analysis_type*
+        }
+
+        "Hazard metadata" |o--|{ Event_set: "Describes"
+        Event_set ||--|{ "Hazard": "Includes"
+        Event_set o|--|{ "Event": "Includes"
+```
+
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 :pointer: /properties/hazard/properties/event_sets/items
-:collapse: hazards,spatial,events
+:collapse: hazards,events
 :externallinks: >
 :   {
 :       "hazards":{"url":"#hazards","text":"Hazards"},
-:       "spatial":{"url":"#spatial-coverage","text":"Spatial coverage"},
 :       "events":{"url":"#events","text":"Events"}
 :   }
 ```
@@ -32,12 +56,6 @@
 
 ```{jsonschema} ../../../schema/rdls_schema_processed.json
 :pointer: /properties/hazard/properties/event_sets/items/properties/hazards/items
-```
-
-##  Spatial coverage
-
-```{jsonschema} ../../../schema/rdls_schema_processed.json
-:pointer: /properties/hazard/properties/event_sets/items/properties/spatial
 ```
 
 ## Events
