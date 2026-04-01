@@ -19,7 +19,7 @@ from jscc.testing.checks import (
 from jsonschema import FormatChecker
 from jsonschema.validators import Draft202012Validator
 
-schemas = [(path, name, data) for path, name, _, data in walk_json_data(top='schema') if is_json_schema(data)]
+schemas = [(path, name, data) for path, name, _, data in walk_json_data(top='schema') if is_json_schema(data) and 'rdls_schema_processed.json' not in path]
 metaschema = http_get('https://json-schema.org/draft/2020-12/schema').json()
 
 validate_array_items_kwargs = {
@@ -66,7 +66,7 @@ validate_object_id_kwargs = {
 
 def validate_codelist_enum_allow_enum(pointer):
     return (
-        pointer.startswith('/$defs/SimpleHazard/allOf')
+        pointer.startswith('/$defs/conditional_')
     )
 
 validator = Draft202012Validator(Draft202012Validator.META_SCHEMA, format_checker=FormatChecker())

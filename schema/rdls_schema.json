@@ -1443,7 +1443,7 @@
     "Hazard": {
       "required": [
         "intensity_measure"
-      ],      
+      ],
       "properties": {
         "intensity_measure": {
           "title": "Intensity measure",
@@ -2886,6 +2886,7 @@
       "openCodelist": false
     },
     "codelist_unit_currency": {
+      "type": "string",
       "codelist": "unit_currency.csv",
       "openCodelist": false,
       "enum": [
