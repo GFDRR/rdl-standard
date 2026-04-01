@@ -53,9 +53,9 @@
       "uniqueItems": true
     },
     "publisher": {
-      "title": "Entity",
+      "title": "Publisher",
       "type": "object",
-      "description": "A person, organization or group.",
+      "description": "The entity responsible for making the dataset available.",
       "required": [
         "name"
       ],
@@ -135,9 +135,9 @@
       "minLength": 1
     },
     "spatial": {
-      "title": "Location",
+      "title": "Spatial coverage",
       "type": "object",
-      "description": "A geographical area.",
+      "description": "The geographical area covered by the dataset. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`. The spatial coverage of the resources belonging to a dataset may differ and may be non-contiguous. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
       "properties": {
         "countries": {
           "title": "Countries",
@@ -573,9 +573,9 @@
       "exclusiveMinimum": 0
     },
     "temporal": {
-      "title": "Period",
+      "title": "Temporal coverage",
       "type": "object",
-      "description": "A period of time.",
+      "description": "The period of time covered by the dataset. The temporal coverage of the resources belonging to a dataset may differ and may be non-contiguous. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
       "properties": {
         "start": {
           "title": "Start",
@@ -637,15 +637,15 @@
       "title": "License",
       "type": "string",
       "format": "iri",
-      "description": "The URL of the legal document under which data is made available.",
+      "description": "The URL of the legal document under which this dataset is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the dataset is made available is not included in the codelist, you may specify a custom license URL. When licensing a dataset, a Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this dataset can be made available under other license conditions.",
       "codelist": "license.csv",
       "openCodelist": true,
       "minLength": 1
     },
     "contact_point": {
-      "title": "Entity",
+      "title": "Contact point",
       "type": "object",
-      "description": "A person, organization or group.",
+      "description": "Contact information for the maintainer of the dataset.",
       "required": [
         "name"
       ],
@@ -684,9 +684,9 @@
       ]
     },
     "creator": {
-      "title": "Entity",
+      "title": "Creator",
       "type": "object",
-      "description": "A person, organization or group.",
+      "description": "The entity responsible for producing the dataset.",
       "required": [
         "name"
       ],
@@ -747,7 +747,7 @@
           "entity": {
             "title": "Entity",
             "type": "object",
-            "description": "A person, organization or group.",
+            "description": "An entity with a role in relation to the dataset.",
             "required": [
               "name"
             ],
@@ -878,13 +878,15 @@
                   "loss"
                 ],
                 "codelist": "risk_data_type.csv",
-                "openCodelist": false
+                "openCodelist": false,
+                "title": "Used in",
+                "description": "The types of risk data produced using the source as an input, from the closed [risk_data_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#risk-data-type)."
               },
               "license": {
                 "title": "License",
                 "type": "string",
                 "format": "iri",
-                "description": "The URL of the legal document under which data is made available.",
+                "description": "The URL of the legal document under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the source data is made available is not included in the codelist, you may specify a custom license URL.",
                 "codelist": "license.csv",
                 "openCodelist": true,
                 "minLength": 1
@@ -1012,9 +1014,9 @@
             "minLength": 1
           },
           "spatial": {
-            "title": "Location",
+            "title": "Spatial coverage",
             "type": "object",
-            "description": "A geographical area.",
+            "description": "The geographical area covered by the resource. If specified using coordinates, the use of `.bbox` is recommended over `.geometry` or `.centroid`. For more information, refer to [spatial and temporal properties](https://docs.riskdatalibrary.org/en/{{version}}/reference/schema/#spatial-and-temporal-properties).",
             "properties": {
               "countries": {
                 "title": "Countries",
@@ -1463,9 +1465,9 @@
             "minLength": 1
           },
           "temporal": {
-            "title": "Period",
+            "title": "Temporal coverage",
             "type": "object",
-            "description": "A period of time.",
+            "description": "The period of time covered by this resource.",
             "properties": {
               "start": {
                 "title": "Start",
@@ -1536,9 +1538,9 @@
             "minLength": 1
           },
           "baseline_period": {
-            "title": "Period",
+            "title": "Baseline period",
             "type": "object",
-            "description": "A period of time.",
+            "description": "The baseline or reference period on which a forecast or projection is based.",
             "properties": {
               "start": {
                 "title": "Start",
@@ -1593,7 +1595,7 @@
           "climate": {
             "title": "Climate",
             "type": "object",
-            "description": "Information about climate scenarios and models used to create the resource.",
+            "description": "Information about climate scenarios and models used to create the dataset.",
             "properties": {
               "model": {
                 "title": "Climate model",
@@ -1697,8 +1699,8 @@
                       "minLength": 1
                     },
                     "trigger": {
-                      "title": "Hazard",
-                      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+                      "title": "Trigger",
+                      "description": "The cause of this hazard.",
                       "type": "object",
                       "required": [
                         "type"
@@ -2096,7 +2098,7 @@
                     },
                     "classification": {
                       "title": "Classification",
-                      "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                      "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                       "type": "object",
                       "required": [
                         "id"
@@ -2226,7 +2228,9 @@
                   "probabilistic"
                 ],
                 "codelist": "analysis_type.csv",
-                "openCodelist": false
+                "openCodelist": false,
+                "title": "Analysis type",
+                "description": "The type of analysis used by the hazard model, from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type)."
               },
               "frequency_distribution": {
                 "title": "Frequency distribution",
@@ -2260,7 +2264,9 @@
                   "simulated"
                 ],
                 "codelist": "data_calculation_type.csv",
-                "openCodelist": false
+                "openCodelist": false,
+                "title": "Calculation Method",
+                "description": "The methodology used for the calculation of the event set in the modelled scenario(s), taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type)."
               },
               "event_count": {
                 "title": "Event count",
@@ -2352,13 +2358,15 @@
                         "simulated"
                       ],
                       "codelist": "data_calculation_type.csv",
-                      "openCodelist": false
+                      "openCodelist": false,
+                      "title": "Model calculation method",
+                      "description": "The methodology used for the calculation of the event in the modelled scenario(s), from the closed [data calculation type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#data_calculation_type)."
                     },
                     "hazard": {
                       "properties": {
                         "trigger": {
-                          "title": "Hazard",
-                          "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+                          "title": "Trigger",
+                          "description": "The cause of this hazard.",
                           "type": "object",
                           "required": [
                             "type"
@@ -2756,7 +2764,7 @@
                         },
                         "classification": {
                           "title": "Classification",
-                          "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                          "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                           "type": "object",
                           "required": [
                             "id"
@@ -2872,12 +2880,13 @@
                           ]
                         }
                       },
+                      "title": "Hazard",
+                      "description": "The hazard to which this event relates.",
                       "required": [
                         "intensity_measure",
+                        "process",
                         "type"
-                      ],
-                      "title": "Hazard",
-                      "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                      ]
                     },
                     "occurrence": {
                       "title": "Occurrence",
@@ -2934,9 +2943,9 @@
                           "description": "The period of time over which the event occurred and the associated return period (if any). You should only use this object when `event_set.analysis_type` = 'empirical'",
                           "properties": {
                             "temporal": {
-                              "title": "Period",
+                              "title": "Temporal occurrence",
                               "type": "object",
-                              "description": "A period of time.",
+                              "description": "The period of time over which the event occurred.",
                               "properties": {
                                 "start": {
                                   "title": "Start",
@@ -3095,11 +3104,13 @@
               "development_index"
             ],
             "codelist": "exposure_category.csv",
-            "openCodelist": false
+            "openCodelist": false,
+            "title": "Exposure category",
+            "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category)."
           },
           "asset_type": {
-            "title": "Classification",
-            "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+            "title": "Asset type",
+            "description": "The type of asset",
             "type": "object",
             "required": [
               "id"
@@ -3171,11 +3182,13 @@
                     "index"
                   ],
                   "codelist": "metric_dimension.csv",
-                  "openCodelist": false
+                  "openCodelist": false,
+                  "title": "Metric dimension",
+                  "description": "The dimension on which the asset's exposure is measured, from the closed [metric_dimension codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#metric-dimension)."
                 },
                 "measurement": {
-                  "title": "Measurement",
-                  "description": "How something is measured.",
+                  "title": "Metric measurement",
+                  "description": "How the metric is measured.",
                   "type": "object",
                   "properties": {
                     "quantity_kind": {
@@ -3721,7 +3734,9 @@
                       "judgement"
                     ],
                     "codelist": "function_approach.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Approach",
+                    "description": "The approach the function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach)."
                   },
                   "relationship": {
                     "title": "Impact relationship type",
@@ -3751,7 +3766,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -4098,8 +4113,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Primary hazard type",
+                    "description": "The primary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_secondary": {
                     "required": [
@@ -4117,7 +4132,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -4464,8 +4479,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Secondary hazard type",
+                    "description": "The secondary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_analysis_type": {
                     "type": "string",
@@ -4475,7 +4490,9 @@
                       "probabilistic"
                     ],
                     "codelist": "analysis_type.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Hazard analysis type",
+                    "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type)."
                   },
                   "category": {
                     "type": "string",
@@ -4489,7 +4506,9 @@
                       "development_index"
                     ],
                     "codelist": "exposure_category.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Exposure category",
+                    "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category)."
                   },
                   "impact": {
                     "title": "Impact",
@@ -4504,7 +4523,9 @@
                           "total"
                         ],
                         "codelist": "impact_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact type",
+                        "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type)."
                       },
                       "modelling": {
                         "type": "string",
@@ -4514,16 +4535,20 @@
                           "simulated"
                         ],
                         "codelist": "data_calculation_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact modelling",
+                        "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type)."
                       },
                       "metric": {
                         "type": "string",
                         "codelist": "impact_metric.csv",
-                        "openCodelist": true
+                        "openCodelist": true,
+                        "title": "Impact metric",
+                        "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric)."
                       },
                       "measurement": {
-                        "title": "Measurement",
-                        "description": "How something is measured.",
+                        "title": "Impact measurement",
+                        "description": "How the impact is measured.",
                         "type": "object",
                         "properties": {
                           "quantity_kind": {
@@ -5072,7 +5097,9 @@
                       "judgement"
                     ],
                     "codelist": "function_approach.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Approach",
+                    "description": "The approach the function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach)."
                   },
                   "relationship": {
                     "title": "Impact relationship type",
@@ -5102,7 +5129,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -5449,8 +5476,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Primary hazard type",
+                    "description": "The primary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_secondary": {
                     "required": [
@@ -5468,7 +5495,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -5815,8 +5842,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Secondary hazard type",
+                    "description": "The secondary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_analysis_type": {
                     "type": "string",
@@ -5826,7 +5853,9 @@
                       "probabilistic"
                     ],
                     "codelist": "analysis_type.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Hazard analysis type",
+                    "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type)."
                   },
                   "category": {
                     "type": "string",
@@ -5840,7 +5869,9 @@
                       "development_index"
                     ],
                     "codelist": "exposure_category.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Exposure category",
+                    "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category)."
                   },
                   "impact": {
                     "title": "Impact",
@@ -5855,7 +5886,9 @@
                           "total"
                         ],
                         "codelist": "impact_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact type",
+                        "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type)."
                       },
                       "modelling": {
                         "type": "string",
@@ -5865,16 +5898,20 @@
                           "simulated"
                         ],
                         "codelist": "data_calculation_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact modelling",
+                        "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type)."
                       },
                       "metric": {
                         "type": "string",
                         "codelist": "impact_metric.csv",
-                        "openCodelist": true
+                        "openCodelist": true,
+                        "title": "Impact metric",
+                        "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric)."
                       },
                       "measurement": {
-                        "title": "Measurement",
-                        "description": "How something is measured.",
+                        "title": "Impact measurement",
+                        "description": "How the impact is measured.",
                         "type": "object",
                         "properties": {
                           "quantity_kind": {
@@ -6442,7 +6479,9 @@
                       "judgement"
                     ],
                     "codelist": "function_approach.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Approach",
+                    "description": "The approach the function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach)."
                   },
                   "relationship": {
                     "title": "Impact relationship type",
@@ -6472,7 +6511,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -6819,8 +6858,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Primary hazard type",
+                    "description": "The primary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_secondary": {
                     "required": [
@@ -6838,7 +6877,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -7185,8 +7224,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Secondary hazard type",
+                    "description": "The secondary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_analysis_type": {
                     "type": "string",
@@ -7196,7 +7235,9 @@
                       "probabilistic"
                     ],
                     "codelist": "analysis_type.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Hazard analysis type",
+                    "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type)."
                   },
                   "category": {
                     "type": "string",
@@ -7210,7 +7251,9 @@
                       "development_index"
                     ],
                     "codelist": "exposure_category.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Exposure category",
+                    "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category)."
                   },
                   "impact": {
                     "title": "Impact",
@@ -7225,7 +7268,9 @@
                           "total"
                         ],
                         "codelist": "impact_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact type",
+                        "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type)."
                       },
                       "modelling": {
                         "type": "string",
@@ -7235,16 +7280,20 @@
                           "simulated"
                         ],
                         "codelist": "data_calculation_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact modelling",
+                        "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type)."
                       },
                       "metric": {
                         "type": "string",
                         "codelist": "impact_metric.csv",
-                        "openCodelist": true
+                        "openCodelist": true,
+                        "title": "Impact metric",
+                        "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric)."
                       },
                       "measurement": {
-                        "title": "Measurement",
-                        "description": "How something is measured.",
+                        "title": "Impact measurement",
+                        "description": "How the impact is measured.",
                         "type": "object",
                         "properties": {
                           "quantity_kind": {
@@ -7812,7 +7861,9 @@
                       "judgement"
                     ],
                     "codelist": "function_approach.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Approach",
+                    "description": "The approach the function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach)."
                   },
                   "relationship": {
                     "title": "Impact relationship type",
@@ -7842,7 +7893,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -8189,8 +8240,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Primary hazard type",
+                    "description": "The primary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_secondary": {
                     "required": [
@@ -8208,7 +8259,7 @@
                       },
                       "classification": {
                         "title": "Classification",
-                        "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                        "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                         "type": "object",
                         "required": [
                           "id"
@@ -8555,8 +8606,8 @@
                         "minProperties": 1
                       }
                     ],
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                    "title": "Secondary hazard type",
+                    "description": "The secondary hazard involved in the modelled scenario(s)."
                   },
                   "hazard_analysis_type": {
                     "type": "string",
@@ -8566,7 +8617,9 @@
                       "probabilistic"
                     ],
                     "codelist": "analysis_type.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Hazard analysis type",
+                    "description": "The type of analysis applied to the hazard data used in the modelled scenario(s), from the closed [analysis type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists#analysis_type)."
                   },
                   "category": {
                     "type": "string",
@@ -8580,7 +8633,9 @@
                       "development_index"
                     ],
                     "codelist": "exposure_category.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Exposure category",
+                    "description": "The category of the exposed assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category)."
                   },
                   "impact": {
                     "title": "Impact",
@@ -8595,7 +8650,9 @@
                           "total"
                         ],
                         "codelist": "impact_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact type",
+                        "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type)."
                       },
                       "modelling": {
                         "type": "string",
@@ -8605,16 +8662,20 @@
                           "simulated"
                         ],
                         "codelist": "data_calculation_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact modelling",
+                        "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type)."
                       },
                       "metric": {
                         "type": "string",
                         "codelist": "impact_metric.csv",
-                        "openCodelist": true
+                        "openCodelist": true,
+                        "title": "Impact metric",
+                        "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric)."
                       },
                       "measurement": {
-                        "title": "Measurement",
-                        "description": "How something is measured.",
+                        "title": "Impact measurement",
+                        "description": "How the impact is measured.",
                         "type": "object",
                         "properties": {
                           "quantity_kind": {
@@ -9299,8 +9360,8 @@
               "hazard": {
                 "properties": {
                   "trigger": {
-                    "title": "Hazard",
-                    "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+                    "title": "Trigger",
+                    "description": "The cause of this hazard.",
                     "type": "object",
                     "required": [
                       "type"
@@ -9698,7 +9759,7 @@
                   },
                   "classification": {
                     "title": "Classification",
-                    "description": "A classification consists of at least two parts: an identifier for the list (scheme) from which the classification is taken, and an identifier for the category from that list being applied. It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.",
+                    "description": "A classification of the hazard type against an external taxonomy such as the UNDRR Hazard Information Profiles.",
                     "type": "object",
                     "required": [
                       "id"
@@ -9814,12 +9875,12 @@
                     ]
                   }
                 },
+                "title": "Hazard type",
+                "description": "The main type of hazard that resulted in the losses.",
                 "required": [
                   "intensity_measure",
                   "type"
-                ],
-                "title": "Hazard",
-                "description": "A phenomenon that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation."
+                ]
               },
               "asset_category": {
                 "type": "string",
@@ -9833,7 +9894,9 @@
                   "development_index"
                 ],
                 "codelist": "exposure_category.csv",
-                "openCodelist": false
+                "openCodelist": false,
+                "title": "Asset category",
+                "description": "The category of the lost assets, from the closed [exposure_category codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#exposure-category)."
               },
               "asset_dimension": {
                 "type": "string",
@@ -9846,7 +9909,9 @@
                   "index"
                 ],
                 "codelist": "metric_dimension.csv",
-                "openCodelist": false
+                "openCodelist": false,
+                "title": "Asset dimension",
+                "description": "The dimension of the assets that have incurred the cost, from the closed [metric_dimension codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#metric-dimension)."
               },
               "impact_and_losses": {
                 "title": "Impact and losses",
@@ -9866,7 +9931,9 @@
                           "total"
                         ],
                         "codelist": "impact_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact type",
+                        "description": "The type of impact calculated, taken from the closed [impact_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-type)."
                       },
                       "modelling": {
                         "type": "string",
@@ -9876,16 +9943,20 @@
                           "simulated"
                         ],
                         "codelist": "data_calculation_type.csv",
-                        "openCodelist": false
+                        "openCodelist": false,
+                        "title": "Impact modelling",
+                        "description": "The type of data used to calculate the impact values, taken from the closed [data_calculation_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#data-calculation-type)."
                       },
                       "metric": {
                         "type": "string",
                         "codelist": "impact_metric.csv",
-                        "openCodelist": true
+                        "openCodelist": true,
+                        "title": "Impact metric",
+                        "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric)."
                       },
                       "measurement": {
-                        "title": "Measurement",
-                        "description": "How something is measured.",
+                        "title": "Impact measurement",
+                        "description": "How the impact is measured.",
                         "type": "object",
                         "properties": {
                           "quantity_kind": {
@@ -10412,7 +10483,9 @@
                       "judgement"
                     ],
                     "codelist": "function_approach.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Loss approach",
+                    "description": "The approach the loss calculation function is based upon, taken from the closed [function_approach codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#function-approach)."
                   },
                   "loss_frequency_type": {
                     "type": "string",
@@ -10422,7 +10495,9 @@
                       "probabilistic"
                     ],
                     "codelist": "analysis_type.csv",
-                    "openCodelist": false
+                    "openCodelist": false,
+                    "title": "Loss frequency type",
+                    "description": "The type of occurrence frequency represented in the losses, from the closed [analysis_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#analysis-type)."
                   }
                 },
                 "required": [
@@ -10468,16 +10543,10 @@
           "type": "object",
           "properties": {
             "href": {
-              "title": "Link target",
-              "description": "The URL of this related resource.",
-              "format": "iri",
-              "type": "string"
+              "const": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json"
             },
             "rel": {
-              "title": "Link relation type",
-              "description": "The relationship with this related resource, from the [IANA Link Relationship Types](https://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).  The 'describedby' code must only be used in the first item in the `links` array to link to the schema that describes the structure of the data.",
-              "type": "string",
-              "minLength": 1
+              "const": "describedby"
             }
           },
           "required": [
@@ -10492,17 +10561,8 @@
         "description": "A link to a related resource.",
         "type": "object",
         "properties": {
-          "href": {
-            "title": "Link target",
-            "description": "The URL of this related resource.",
-            "format": "iri",
-            "type": "string"
-          },
           "rel": {
-            "title": "Link relation type",
-            "description": "The relationship with this related resource, from the [IANA Link Relationship Types](https://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).  The 'describedby' code must only be used in the first item in the `links` array to link to the schema that describes the structure of the data.",
-            "type": "string",
-            "minLength": 1
+            "pattern": "^(?!(describedby))"
           }
         },
         "required": [

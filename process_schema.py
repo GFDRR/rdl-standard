@@ -62,7 +62,7 @@ def compose_all_of(schema):
 with open('schema/rdls_schema.json', 'r') as f:
     schema = json.load(f)
 
-schema = replace_refs(schema, proxies=False)
+schema = replace_refs(schema, merge_props=True, proxies=False)
 
 schema.pop('$defs', None)
 
