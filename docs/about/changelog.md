@@ -109,8 +109,15 @@ This page lists changes to the Risk Data Library Standard.
     - 'disruption_days'
     - 'disruption_loss'
     - 'displaced_days'
+- [#405](https://github.com/GFDRR/rdl-standard/pull/405):
+  - Make `.description` required
+  - Reorder some properties
+  - Move repeated impact properties from `Losses` and `Function` to new `Impact` definition
+  - Refactor to reduce repetition and standardise use of allOf keyword
 
 ### Normative documentation
+
+* - [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
 
 ### Non-normative documentation
 
