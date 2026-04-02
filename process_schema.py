@@ -19,18 +19,19 @@ def compose_all_of(schema):
     # Handle allOf composition for the current object
     if "allOf" in schema:
         # Ensure base containers exist
+        new_props = {}
         if "properties" not in schema:
             schema["properties"] = {}
         if "required" not in schema:
             schema["required"] = []
 
         for sub_schema in schema["allOf"]:
-            # Merge properties
+            # Gather properties
             if "properties" in sub_schema:
                 for key, value in sub_schema["properties"].items():
                     if key in schema["properties"] and schema["properties"][key] != value:
                         print(f"Warning: Overwriting property {key} value {schema['properties'][key]} with value {value}")
-                    schema['properties'][key] = value
+                    new_props[key] = value
             
             # Merge required properties
             if "required" in sub_schema:
@@ -44,6 +45,9 @@ def compose_all_of(schema):
             # Inherit description
             if  "description" not in schema and "description" in sub_schema:
                 schema["description"] = sub_schema["description"]
+        
+        # Merge properties
+        schema['properties'] = {**new_props, **schema['properties']}
         
         schema["allOf"] = [sub_schema for sub_schema in schema["allOf"] if "properties" not in sub_schema]
 
