@@ -1,4 +1,4 @@
-# Loss metadata schema
+# Loss metadata
 
 ```{contents} On this page
 ---

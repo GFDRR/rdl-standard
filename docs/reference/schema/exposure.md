@@ -1,4 +1,4 @@
-# Exposure metadata schema
+# Exposure metadata
 
 ```{contents} On this page
 :local:

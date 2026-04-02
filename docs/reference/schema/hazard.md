@@ -1,4 +1,4 @@
-# Hazard metadata schema
+# Hazard metadata
 
 ```{contents} On this page
 ---

@@ -1,4 +1,4 @@
-# Resource schema
+# Resource
 
 ```{contents} On this page
 ---
