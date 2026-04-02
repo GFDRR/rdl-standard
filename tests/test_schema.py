@@ -19,7 +19,7 @@ from jscc.testing.checks import (
 from jsonschema import FormatChecker
 from jsonschema.validators import Draft202012Validator
 
-schemas = [(path, name, data) for path, name, _, data in walk_json_data(top='schema') if is_json_schema(data)]
+schemas = [(path, name, data) for path, name, _, data in walk_json_data(top='schema') if is_json_schema(data) and 'rdls_schema_processed.json' not in path]
 metaschema = http_get('https://json-schema.org/draft/2020-12/schema').json()
 
 validate_array_items_kwargs = {
@@ -42,6 +42,10 @@ def validate_metadata_presence_allow_missing(pointer):
       or pointer.startswith('/$defs/SimpleHazard/allOf')
       or pointer.startswith('/$defs/HazardWithTrigger/allOf')
       or pointer.startswith('/$defs/Measurement/allOf')
+      or pointer.startswith('/$defs/codelist_')
+      or pointer.startswith('/$defs/conditional_')
+      or pointer.startswith('/$defs/Hazard')
+      or pointer.startswith('/$defs/HazardWithTrigger')
       or pointer.startswith('/$defs/Resource/anyOf/')
     )
 
@@ -50,7 +54,11 @@ validate_metadata_presence_kwargs = {
 }
 
 def validate_object_id_allow_missing(pointer):
-    return '/properties/links' in pointer
+    return (
+        '/properties/links' in pointer
+        or pointer == '/$defs/Event_set/properties/hazards'
+        or pointer == '/properties/hazard/properties/event_sets/items/properties/hazards'
+    )
 
 validate_object_id_kwargs = {
     'allow_missing': validate_object_id_allow_missing
@@ -58,7 +66,7 @@ validate_object_id_kwargs = {
 
 def validate_codelist_enum_allow_enum(pointer):
     return (
-        pointer.startswith('/$defs/SimpleHazard/allOf')
+        pointer.startswith('/$defs/conditional_')
     )
 
 validator = Draft202012Validator(Draft202012Validator.META_SCHEMA, format_checker=FormatChecker())

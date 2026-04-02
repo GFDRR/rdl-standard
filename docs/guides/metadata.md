@@ -34,11 +34,11 @@ Once you have entered your metadata using the template, the next step is to [con
 
 #### Export data in JSON format
 
-If you plan to export RDLS metadata from an existing system in JSON format, you first need to identify how your existing metadata 'maps' to RDLS - that is, identifying which [data elements](https://en.wikipedia.org/wiki/Data_element) within your system match which RDLS [fields](../reference/schema.md) and [codes](../reference/codelists.md). You then need to implement your mapping in code. JSON is a widely used format so most programming languages and database engines provide support for exporting data in JSON format.
+If you plan to export RDLS metadata from an existing system in JSON format, you first need to identify how your existing metadata 'maps' to RDLS - that is, identifying which [data elements](https://en.wikipedia.org/wiki/Data_element) within your system match which RDLS [fields](../reference/schema/index.md) and [codes](../reference/codelists.md). You then need to implement your mapping in code. JSON is a widely used format so most programming languages and database engines provide support for exporting data in JSON format.
 
 It is strongly suggested that you do not author RDLS metadata in JSON format 'by hand'. However, if you do choose this approach, you ought to use a text editor with support for JSON formatting and validation, such as [Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
 
-In either case, you need to structure and format your data according to the [RDLS schema](../reference/schema.md).
+In either case, you need to structure and format your data according to the [RDLS schema](../reference/schema/index.md).
 
 Once you have prepared your RDLS metadata in JSON format, the next step is to [validate it against the RDLS schema](#convert-and-validate-your-metadata).
 
@@ -128,14 +128,14 @@ The WSG84 CRS is equivalent to EPSG:4326 with reversed axes so, if it is not sup
 
 ### Publish an access-restricted resource
 
-If a resource is not available directly from a non-access-restricted URL, you ought to publish the URL of the page that describes the arrangements for obtaining access to the resource in the [`Resource.access_url`](rdls_schema.json,/$defs/Resource,access_url) field.
+If a resource is not available directly from a non-access-restricted URL, you ought to publish the URL of the page that describes the arrangements for obtaining access to the resource in the [`Resource.access_url`](rdls_schema_processed.json,/properties/resources/items,access_url) field.
 
 ### Describe an API
 
-If a dataset is available via an API, list the API as a separate [`Resource`](../reference/schema.md#resource) within the [`Dataset`](../reference/schema.md#dataset) and set the resource's:
+If a dataset is available via an API, list the API as a separate [`Resource`](../reference/schema/resource.md) within the [`Dataset`](../reference/schema/dataset.md) and set the resource's:
 
-- [`.format`](rdls_schema.json,/$defs/Resource,format) to `"API"`
-- [`.access_url`](rdls_schema.json,/$defs/Resource,access_url) to the primary documentation URL for the API
-- [`.conforms_to`](rdls_schema.json,/$defs/Resource,conforms_to) to the canonical URI for the standard the API conforms to, if applicable. For example, if the API conforms to the OGC API - Features standard, `"http://www.opengis.net/doc/IS/ogcapi-features-1/1.0.1"`.
+- [`.format`](rdls_schema_processed.json,/properties/resources/items,format) to `"API"`
+- [`.access_url`](rdls_schema_processed.json,/properties/resources/items,access_url) to the primary documentation URL for the API
+- [`.conforms_to`](rdls_schema_processed.json,/properties/resources/items,conforms_to) to the canonical URI for the standard the API conforms to, if applicable. For example, if the API conforms to the OGC API - Features standard, `"http://www.opengis.net/doc/IS/ogcapi-features-1/1.0.1"`.
 
-Leave [`media_type`](rdls_schema.json,/$defs/Resource,media_type) and [`download_url`](rdls_schema.json,/$defs/Resource,download_url) blank and describe list the formats in which the dataset is available as separate resources.
+Leave [`media_type`](rdls_schema_processed.json,/properties/resources/items,media_type) and [`download_url`](rdls_schema_processed.json,/properties/resources/items,download_url) blank and describe list the formats in which the dataset is available as separate resources.

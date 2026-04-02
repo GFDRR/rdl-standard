@@ -6,7 +6,7 @@
 
 This section specifies the structure and format of Risk Data Library Standard (RDLS) metadata.
 
-The [schema reference](schema.md) is the canonical reference for the structure of RDLS metadata, the meaning of each field, and the rules that must be followed to publish RDLS metadata. You can also [view the schema in an interactive browser](browser.md).
+The [schema reference](schema/index.md) is the canonical reference for the structure of RDLS metadata, the meaning of each field, and the rules that must be followed to publish RDLS metadata. You can also [view the schema in an interactive browser](browser.md).
 
 The [codelist reference](codelists.md) is the canonical reference for the meaning of the codes used to limit and standardise the possible values of fields in RDLS metadata.
 
@@ -17,7 +17,7 @@ ______________________________________________________________________
    :maxdepth: 1
    :hidden:
 
-   schema
+   schema/index
    browser
    codelists
    package_schema
