@@ -6,7 +6,7 @@ This section provides guidance on how to publish RDLS metadata, guidance on how 
 .. toctree::
    :maxdepth: 2
 
-   metadata
+   metadata/index
    datasets/index
    mappings/index
 
