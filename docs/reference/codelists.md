@@ -126,7 +126,39 @@ Download CSV file
 ```
 ````
 
-### imt_coastal_flood
+### IMT
+
+The IMT codelist defines intensity measures and the hazard types to which each intensity measure applies.
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/IMT.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/open/IMT.csv
+```
+````
+
+````{seealso}
+
+For validation puropses, separate codelists for each hazard type are also provided below: 
+
+```{contents} 
+---
+local:
+depth: 1
+---
+```
+
+````
+
+#### imt_coastal_flood
 
 This codelist has the following codes:
 
@@ -145,7 +177,7 @@ Download CSV file
 ```
 ````
 
-### imt_convective_storm
+#### imt_convective_storm
 
 This codelist has the following codes:
 
@@ -164,7 +196,7 @@ Download CSV file
 ```
 ````
 
-### imt_drought
+#### imt_drought
 
 This codelist has the following codes:
 
@@ -183,7 +215,7 @@ Download CSV file
 ```
 ````
 
-### imt_earthquake
+#### imt_earthquake
 
 This codelist has the following codes:
 
@@ -202,7 +234,7 @@ Download CSV file
 ```
 ````
 
-### imt_extreme_temperature
+#### imt_extreme_temperature
 
 This codelist has the following codes:
 
@@ -221,7 +253,7 @@ Download CSV file
 ```
 ````
 
-### imt_flood
+#### imt_flood
 
 This codelist has the following codes:
 
@@ -240,7 +272,7 @@ Download CSV file
 ```
 ````
 
-### imt_landslide
+#### imt_landslide
 
 This codelist has the following codes:
 
@@ -259,7 +291,7 @@ Download CSV file
 ```
 ````
 
-### imt_strong_wind
+#### imt_strong_wind
 
 This codelist has the following codes:
 
@@ -278,7 +310,7 @@ Download CSV file
 ```
 ````
 
-### imt_tsunami
+#### imt_tsunami
 
 This codelist has the following codes:
 
@@ -297,7 +329,7 @@ Download CSV file
 ```
 ````
 
-### imt_volcanic
+#### imt_volcanic
 
 This codelist has the following codes:
 
@@ -316,7 +348,7 @@ Download CSV file
 ```
 ````
 
-### imt_wildfire
+#### imt_wildfire
 
 This codelist has the following codes:
 
