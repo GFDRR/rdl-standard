@@ -24,7 +24,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ### classification_scheme
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -44,7 +43,6 @@ Download CSV file
 
 ### conforms_to
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -67,7 +65,6 @@ Download CSV file
 
 ### damage_scale_name
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -87,7 +84,6 @@ Download CSV file
 
 ### engineering_demand_parameter
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -109,7 +105,6 @@ Download CSV file
 
 ### impact_metric
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -160,7 +155,6 @@ depth: 1
 
 #### imt_coastal_flood
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -179,7 +173,6 @@ Download CSV file
 
 #### imt_convective_storm
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -198,7 +191,6 @@ Download CSV file
 
 #### imt_drought
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -217,7 +209,6 @@ Download CSV file
 
 #### imt_earthquake
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -236,7 +227,6 @@ Download CSV file
 
 #### imt_extreme_temperature
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -255,7 +245,6 @@ Download CSV file
 
 #### imt_flood
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -274,7 +263,6 @@ Download CSV file
 
 #### imt_landslide
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -293,7 +281,6 @@ Download CSV file
 
 #### imt_strong_wind
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -312,7 +299,6 @@ Download CSV file
 
 #### imt_tsunami
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -331,7 +317,6 @@ Download CSV file
 
 #### imt_volcanic
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -350,7 +335,6 @@ Download CSV file
 
 #### imt_wildfire
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -369,7 +353,6 @@ Download CSV file
 
 ### license
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -388,7 +371,6 @@ Download CSV file
 
 ### location_gazetteers
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -410,7 +392,6 @@ Download CSV file
 
 ### media_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -435,7 +416,6 @@ Download CSV file
 
 The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -456,7 +436,6 @@ Download CSV file
 
 The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml) with the addition of 'world_bank_team_lead' and the omission of codes covered by the `creator`, `contact_point` and `publisher` fields.
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -494,7 +473,6 @@ Each codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www
 
 #### unit_area
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -516,7 +494,6 @@ Download CSV file
 
 #### unit_count
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -538,7 +515,6 @@ Download CSV file
 
 #### unit_dimensionless_ratio
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -560,7 +536,6 @@ Download CSV file
 
 #### unit_length
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -582,7 +557,6 @@ Download CSV file
 
 #### unit_mass
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -604,7 +578,6 @@ Download CSV file
 
 #### unit_mass_per_area
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -626,7 +599,6 @@ Download CSV file
 
 #### unit_time
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -648,7 +620,6 @@ Download CSV file
 
 #### unit_volume
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -672,7 +643,6 @@ Download CSV file
 
 ### analysis_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -694,7 +664,6 @@ Download CSV file
 
 ### climate_scenario
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -713,7 +682,6 @@ Download CSV file
 
 ### country
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -732,7 +700,6 @@ Download CSV file
 
 ### data_calculation_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -754,7 +721,6 @@ Download CSV file
 
 ### exposure_category
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -776,7 +742,6 @@ Download CSV file
 
 ### frequency_distribution
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -798,7 +763,6 @@ Download CSV file
 
 ### function_approach
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -824,7 +788,6 @@ The RDLS offers a classification of hazards that are more often required in disa
 
 The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -843,7 +806,6 @@ Download CSV file
 
 ### impact_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -865,7 +827,6 @@ Download CSV file
 
 ### loss_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -887,7 +848,6 @@ Download CSV file
 
 ### metric_dimension
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -911,7 +871,6 @@ Download CSV file
 
 The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -930,7 +889,6 @@ Download CSV file
 
 ### relationship_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -952,7 +910,6 @@ Download CSV file
 
 ### risk_data_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -974,7 +931,6 @@ Download CSV file
 
 ### seasonality
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -996,7 +952,6 @@ Download CSV file
 
 ### source_type
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -1018,7 +973,6 @@ Download CSV file
 
 ### spatial_scale
 
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
@@ -1044,7 +998,6 @@ Download CSV file
 [units](#units)
 
 ```
-This codelist has the following codes:
 
 ````{dropdown} Codes
 
