@@ -1,8 +1,11 @@
 # Codelists
 
-Some schema fields refer to codelists, to limit and standardise the possible values of the fields, in order to promote data interoperability.
+Some fields in the metadata standard refer to codelists to promote data interoperability. Codelists limit and standardise the possible values of the fields.
 
-Codelists can either be open or closed. **Closed codelists** are intended to be comprehensive; for example, the currency codelist covers all currencies in the world. **Open codelists** are intended to be representative, but not comprehensive.
+Codelists can either be open or closed:
+
+* **Closed codelists** are intended to be comprehensive; for example, the currency codelist covers all currencies in the world.
+* **Open codelists** are intended to be representative, but not comprehensive.
 
 Publishers must use the codes in the codelists, unless no code is appropriate. If no code is appropriate and the codelist is **open**, then a publisher may use a new code outside those in the codelist. If no code is appropriate and the codelist is **closed**, then a publisher should instead create an issue in the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard/issues).
 
@@ -24,11 +27,19 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/classification_scheme.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/classification_scheme.csv
 ```
+
 ````
 
 ### conforms_to
@@ -39,11 +50,19 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/conforms_to.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/conforms_to.csv
 ```
+
 ````
 
 ### damage_scale_name
@@ -51,11 +70,19 @@ open:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/damage_scale_name.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/damage_scale_name.csv
 ```
+
 ````
 
 ### engineering_demand_parameter
@@ -66,6 +93,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/engineering_demand_parameter.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -78,6 +112,13 @@ open:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/impact_metric.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -90,6 +131,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_coastal_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -102,6 +150,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_convective_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -114,6 +169,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_drought.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -126,10 +188,17 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_drought.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_earthquake.csv
+:file: ../../schema/codelists/open/imt_drought.csv
 ```
 ````
 
@@ -138,6 +207,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_extreme_temperature.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -150,6 +226,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -162,6 +245,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_landslide.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -174,6 +264,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_strong_wind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -186,6 +283,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_tsunami.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -198,6 +302,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_volcanic.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -210,9 +321,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
----
-open:
----
+
+```{button-link} ../../codelists/open/imt_wildfire.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -225,6 +340,13 @@ open:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/license.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -240,6 +362,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/location_gazetteers.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -252,6 +381,13 @@ open:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/media_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -266,6 +402,13 @@ The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind V
 his codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/quantity_kind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -280,6 +423,13 @@ The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://stand
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/roles.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -297,6 +447,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_area.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -314,6 +471,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_count.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -331,6 +495,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_dimensionless_ratio.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -348,6 +519,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_length.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -365,6 +543,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_mass.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -380,6 +565,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_mass_per_area.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -397,6 +589,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_time.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -414,6 +613,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/unit_volume.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -431,6 +637,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/analysis_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -443,6 +656,13 @@ open:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/climate_scenario.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -455,6 +675,13 @@ This codelist has the following codes:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/country.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -470,6 +697,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/data_calculation_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -485,6 +719,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/exposure_category.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -500,6 +741,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/frequency_distribution.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -515,6 +763,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/function_approach.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -531,6 +786,13 @@ The hazard_type codelist classifies hazard phenomena by the main hazard to which
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/hazard_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -546,6 +808,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/impact_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -561,6 +830,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/loss_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -576,6 +852,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/metric_dimension.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -590,6 +873,13 @@ The process_type codelist classifies hazard phenomena by the hazard process to w
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/process_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -605,6 +895,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/relationship_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -620,6 +917,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/risk_data_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -635,6 +939,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/seasonality.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -650,6 +961,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/source_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -665,6 +983,13 @@ This codelist has the following codes:
 ---
 open:
 ---
+
+```{button-link} ../../codelists/open/spatial_scale.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -677,6 +1002,13 @@ open:
 This codelist has the following codes:
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/unit_currency.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
