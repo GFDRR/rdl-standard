@@ -429,9 +429,13 @@ Download CSV file
 
 ### quantity_kind
 
+```{seealso}
+[units](#units)
+```
+
 The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
 
-his codelist has the following codes:
+This codelist has the following codes:
 
 ````{dropdown} Codes
 
@@ -469,9 +473,26 @@ Download CSV file
 ```
 ````
 
-### unit_area
+### units
 
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the area [quantity kind](#quantity_kind).
+For validation purposes, a separate unit codelist for each [quantity kind](#quantity_kind) is provided:
+
+```{contents} 
+---
+local:
+depth: 1
+---
+```
+
+Each codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html).
+
+```{seealso}
+
+[unit_currency](#unit_currency) (closed codelist)
+
+```
+
+#### unit_area
 
 This codelist has the following codes:
 
@@ -493,9 +514,7 @@ Download CSV file
 ```
 ````
 
-### unit_count
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the count [quantity kind](#quantity_kind).
+#### unit_count
 
 This codelist has the following codes:
 
@@ -517,9 +536,7 @@ Download CSV file
 ```
 ````
 
-### unit_dimensionless_ratio
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the dimensionless ratio [quantity kind](#quantity_kind).
+#### unit_dimensionless_ratio
 
 This codelist has the following codes:
 
@@ -541,9 +558,7 @@ Download CSV file
 ```
 ````
 
-### unit_length
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the length [quantity kind](#quantity_kind).
+#### unit_length
 
 This codelist has the following codes:
 
@@ -565,9 +580,7 @@ Download CSV file
 ```
 ````
 
-### unit_mass
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the mass [quantity kind](#quantity_kind).
+#### unit_mass
 
 This codelist has the following codes:
 
@@ -589,7 +602,7 @@ Download CSV file
 ```
 ````
 
-### unit_mass_per_area
+#### unit_mass_per_area
 
 This codelist has the following codes:
 
@@ -611,9 +624,7 @@ Download CSV file
 ```
 ````
 
-### unit_time
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the time [quantity kind](#quantity_kind).
+#### unit_time
 
 This codelist has the following codes:
 
@@ -635,9 +646,7 @@ Download CSV file
 ```
 ````
 
-### unit_volume
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the volume [quantity kind](#quantity_kind).
+#### unit_volume
 
 This codelist has the following codes:
 
@@ -1031,6 +1040,10 @@ Download CSV file
 
 ### unit_currency
 
+```{seealso}
+[units](#units)
+
+```
 This codelist has the following codes:
 
 ````{dropdown} Codes
