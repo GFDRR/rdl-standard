@@ -139,3 +139,17 @@ If a dataset is available via an API, list the API as a separate [`Resource`](..
 - [`.conforms_to`](rdls_schema_processed.json,/properties/resources/items,conforms_to) to the canonical URI for the standard the API conforms to, if applicable. For example, if the API conforms to the OGC API - Features standard, `"http://www.opengis.net/doc/IS/ogcapi-features-1/1.0.1"`.
 
 Leave [`media_type`](rdls_schema_processed.json,/properties/resources/items,media_type) and [`download_url`](rdls_schema_processed.json,/properties/resources/items,download_url) blank and describe list the formats in which the dataset is available as separate resources.
+
+### Describe location-only exposure data
+
+To describe location-only exposure data, such as building point locations, building polygons or road network polylines, set:
+
+* `exposure/category` to an appropriate value from the [`exposure_category` codelist](../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
+* `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../reference/codelists.md#metric_dimension).
+* `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
+
+```{seealso}
+
+* [Exposure metadata schema](../reference/schema/exposure.md)
+
+```

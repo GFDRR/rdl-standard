@@ -117,9 +117,11 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Normative documentation
 
-* - [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
+* [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
 
 ### Non-normative documentation
+
+* [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
 
 ## 0.2.0 - 2023-09-08
 
