@@ -10,6 +10,6 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 RUN dpkg-reconfigure --frontend=noninteractive locales
 
 COPY requirements_dev.txt /workspace/
-RUN pip3 install --user -r /workspace/requirements_dev.txt
+RUN pip3 install --user -r /workspace/requirements.txt
 
 CMD ["bash"]
