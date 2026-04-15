@@ -10,7 +10,7 @@ RDLS defines metadata tailored to describe the details of **risk datasets**, spe
 
 * **Hazard datasets** describe estimated or observed hazard intensity in disaster events (e.g. contained in geospatial layers or tables).  
 * **Exposure datasets** describe the location and attributes of population, buildings, infrastructure, natural resources and other tangible assets. 
-* **Vulnerability datasets** describe the relationship between hazard intensity and potential impacts on exposed assets by means of vulnerability and fragility curves, daamge-to-loss models or generic socio-economic vulnerability indexes.
+* **Vulnerability datasets** describe the relationship between hazard intensity and potential impacts on exposed assets by means of vulnerability and fragility curves, damage-to-loss models or generic socio-economic vulnerability indexes.
 * **Loss datasets** contain the estimated losses, risk or impact of disasters and climate shocks, as a result of analysing hazard, exposure and vulnerability. 
 
 ```{seealso}
@@ -34,22 +34,22 @@ Risk data type | Risk datasets | Raw, baseline or contextual datasets
 Hazard | <ul><li>Simulated hazard intensity for recent and historical events<li>Simulated hazard intensity for hypothetical/realistic scenario events<li>Estimated maximum hazard intensity for events of defined frequency (return period) scenarios </ul> | <ul><li> Elevation data <li>Gauge/observation records, <li>Satellite imagery or reanalysis data, <li>Environmental information including land use / land cover data or river channel hydrography <li>Climate model outputs</ul>
 Exposure | <ul><li>Age- and sex-disaggregated population for a country <li>Location, structural description and replacement cost of buildings and infrastructure in a city <li>Value and typology of agricultural crop </ul> | <ul><li>Census records <li>Satellite imagery <li>Urban extent, urban masterplans</ul>
 Vulnerability | <ul><li>Physical vulnerability and fragility curves, and associated damage-to-loss models <li>Engineering-demand   curves <li>Socio-economic vulnerability indexes</ul> | <ul><li>Household surveys <li>Building codes <li>Insurance claims data <li>Post-event damage survey data</ul>
-Loss | <ul><li> Risk Estimates: Combination of loss estimate and associated probability/frequency, i.e. AAL or return period loss estimates  <li> Scenario Loss: Loss or impacts simulated for event scenario(s) such as a hypothetical 'worst-case' or historical events. <li> Exposed Value: Subset of total exposure located within the extent of an event  footprint. No vulnerability function is applied so the result is a  measure of how many assets/people or the value of assets that are  considered affected or "at risk". <li>Historical Loss: Observed/reported losses caused by historical (previous) events, for example derived from a historical loss catalog.</ul> | <ul><li>Insurance claims data <li>Post-event damage survey data <li>Post-Disaster Needs Assessment reports</ul>
+Loss | <ul><li> Risk Estimates: Combination of loss estimate and associated probability/frequency, i.e. AAL or return period loss estimates  <li> Scenario Loss: Loss or impacts simulated for event scenario(s) such as a hypothetical 'worst-case' or historical events. <li> Exposed Value: Subset of total exposure located within the extent of an event  footprint. No vulnerability function is applied so the result is a  measure of how many assets/people or the value of assets that are  considered affected or "at risk". <li>Historical Loss: Observed/reported losses caused by historical (previous) events, for example derived from a historical loss catalog. <li>Post-event damage survey data <li>Post-Disaster Needs Assessment reports</ul> | <ul><li>Insurance claims data</ul>
 
 
 ## Metadata and content
 
 RDLS provides a schema for **metadata** about risk datasets. That is, data that describes risk datasets so that they can be found, understood, managed and used effectively.
 
-RDLS does not impose a structure or format on the **content** of risk datasets. The datasets described by RDLS may contain attributes that are not described in the metadata.
+RDLS does not impose a structure or format on the **content** of risk datasets. Datasets may include additional attributes to those described by RDLS metadata.
 
 The following table provides examples of content and metadata for each type of risk data: 
 
 Risk data type | Content | Metadata
 -- | -- | -- 
-Hazard | As a minimum, the hazard intensity at each of many locations for the event or scenario represented. | Event name and description, analysis approach, hazard(s) represented, intensity metrics used, climate scenarios represented, links to source data used to generate the hazard datasets, resources referencing methodology. 
-Exposure | Location, value, and taxonomy code of assets. | Main category of exposure, associated quantities and cost units used in the dataset, taxonomy standard, spatial extent of dataset, links to source data used to generate the hazard datasets, resources referencing methodology.
-Vulnerability | Parameter values for a vulnerability or fragility relationship. | Type of hazard, exposure and the geographic the relationship is relevant for, links to source data used to generate the relationship, resources referencing methodology.  
+Hazard | As a minimum, the hazard intensity at each of many locations for the event or scenario represented. | Event name and description, analysis approach, hazard(s) represented, intensity metrics used, climate scenarios represented. 
+Exposure | Location, category, value, and taxonomy code of assets. | Exposure categories, asset properties, associated quantities and cost units, taxonomy reference.
+Vulnerability | Vulnerability relationship between hazard intensity and exposure categories based on functions or spatial proxies. | Relevant hazard and exposure classification, details on the function type and approach, impact classification, spatial proxy indicator description.
 Loss | Impact and loss values, and location/area they apply to. | Type of hazard and exposure considered, type and unit of impact considered, datasets used in generating the losses. 
 
 ## The RDLS schema
