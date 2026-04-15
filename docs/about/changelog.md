@@ -62,6 +62,12 @@ This page lists changes to the Risk Data Library Standard.
   - Make `SimpleHazard.type` and `SimpleHazard.process` required.
   - Align `enums` with codelist CSVs.
   - Remove `Location.geometry`.
+- [#405](https://github.com/GFDRR/rdl-standard/pull/405):
+  - Make `.description` required
+  - Reorder some properties
+  - Move repeated impact properties from `Losses` and `Function` to new `Impact` definition
+  - Refactor to reduce repetition and standardise use of allOf keyword
+- [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Update `Exposure_item.asset_type.scheme` description.
 
 ### Codelists
 
@@ -109,11 +115,7 @@ This page lists changes to the Risk Data Library Standard.
     - 'disruption_days'
     - 'disruption_loss'
     - 'displaced_days'
-- [#405](https://github.com/GFDRR/rdl-standard/pull/405):
-  - Make `.description` required
-  - Reorder some properties
-  - Move repeated impact properties from `Losses` and `Function` to new `Impact` definition
-  - Refactor to reduce repetition and standardise use of allOf keyword
+- [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Remove 'USHS_EHP' and 'INFORM' from `classification_scheme.csv`.
 
 ### Normative documentation
 
