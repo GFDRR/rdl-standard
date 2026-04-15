@@ -2,7 +2,7 @@
 
 RDLS has been built based on existing open data standards.
 
-In this section you will find a short summary of the core standards upon which the RDL data model has been built. For detailed mappings between existing risk taxonomies and RDLS, refer to the [taxonomy mappings](../guides/mappings/index.md).
+In this section you will find a short summary of the core standards upon which the RDL data model has been built. For detailed mappings between existing risk taxonomies and RDLS, refer to the [hazard_type](../reference/codelists.md#hazard_type) and [process_type](../reference/codelists.md#process_type) codelists.
 
 ## General standards
 

@@ -20,7 +20,7 @@ If you are authoring new metadata by hand or converting existing metadata from a
 
 If you are exporting existing metadata from a data catalog or database and you have access to a software developer, the suggested approach is to [export data in JSON format](#export-data-in-json-format).
 
-If your risk datasets use terms from existing taxonomies or classifications, use the [taxonomy mappings](mappings/index.md) to identify the equivalent codes in RDLS.
+If your risk datasets use terms from [EM-DAT](https://www.emdat.be/) or the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version), use the mappings in the [hazard_type](../reference/codelists.md#hazard_type) and [process_type](../reference/codelists.md#process_type) codelists to identify the equivalent codes in RDLS.
 
 If you plan to describe the spatial coverage of your risk data using coordinates, you might need to [transform your coordinates to the correct coordinate reference system](#transform-coordinates-between-coordinate-reference-systems).
 
