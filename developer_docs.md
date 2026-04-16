@@ -26,6 +26,8 @@ A codespace is a development environment that's hosted in the cloud. You can con
 
 The RDLS development environment contains everything you need to edit, test and build the RDLS schema, codelists and documentation. By using a hosted development environment, you avoid any problems that might arise from setting up a development environment on your local machine.
 
+#### Create a new codespace
+
 1. Open the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard)
 2. Click the  green **<> Code** button and select **Codespaces**
 3. Click **Create codespace on <branch-name>**
