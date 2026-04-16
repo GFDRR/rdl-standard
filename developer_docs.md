@@ -37,7 +37,7 @@ A web-based version of Visual Studio Code will open in a new browser tab. For an
 * Running tests and building documentation using the [**terminal**](https://code.visualstudio.com/docs/terminal/basics)
 * Committing and pushing changes using the [**source control interface**](https://code.visualstudio.com/docs/sourcecontrol/overview#_source-control-interface) panel
 
-#### Workflow quick start: build, edit and test
+#### Workflow tutorial: build, edit and test
 
 The recommended workflow is to automatically build the documentation each time you make a change, and to run the tests before comitting any changes.
 
