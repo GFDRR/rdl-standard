@@ -39,7 +39,7 @@ A web-based version of Visual Studio Code will open in a new browser tab. For an
 
 #### Workflow tutorial: build, edit and test
 
-The recommended workflow is to automatically build the documentation each time you make a change, and to run the tests before comitting any changes.
+This tutorial introduces the recommended workflow for standard development: automatically build the documentation each time you make a change, and run tests before comitting any changes.
 
 **Build the documentation, start a webserver and rebuild on changes**
 1. Using the terminal, change to the `docs` directory: `cd docs`
