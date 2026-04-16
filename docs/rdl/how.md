@@ -1,8 +1,7 @@
 # How do I implement the RDLS?
 
-To implement the Risk Data Library Standard (RDLS), you need to author RDLS metadata to describe your risk datasets and publish it alongside your datasets. You can either author RDLS metadata from scratch, or use the RDLS Metadata Editor tool to create the metadata:
+To implement the Risk Data Library Standard (RDLS), you need to create RDLS metadata to describe your risk datasets and publish it alongside the datasets. You can either author metadata from scratch using the [RDLS Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE.html), or develop a data pipeline to transform existing metadata to RDLS format.
 
-- The [RDLS Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE.html) can be used to create RDLS metadata.
 
 For step-by-step instructions on how to publish RDLS metadata, see the guidance on [how to publish RDLS metadata](../guides/metadata.md).
 
