@@ -10,7 +10,7 @@ This page provides the following documentation for developers of the Risk Data L
 
 This section contains the following how-to guides:
 
-* [Set up a hosted development environment using GitHub Codespaces](#set-up-a-hosted-development-environment-using-github-codespaces)
+* [Use GitHub Codespaces](#use-github-codespaces)
 * [Propose changes](#propose-changes)
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Resolve check failures](#resolve-check-failures)
