@@ -30,7 +30,7 @@ The RDLS development environment contains everything you need to edit, test and 
 
 1. Open the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard)
 2. Click the  green **<> Code** button and select **Codespaces**
-3. Click **Create codespace on <branch-name>**
+3. Click **Create codespace on \<branch-name\>**
 
 A web-based version of Visual Studio Code will open in a new browser tab. For an introduction to Visual Studio Code, see [Get started with Visual Studio Code](https://code.visualstudio.com/docs/getstarted/getting-started). Key actions you'll need to perform when working on RDLS include:
 
