@@ -46,8 +46,6 @@ The [RDLS Convertor](https://metadata.riskdatalibrary.org) is a web-based tool f
 
 You ought to regularly use the RDLS Convertor to validate the structure and format of your metadata. This ensures that your metadata is compatible with tools designed to work with RDLS metadata.
 
-If your metadata is in JSON format, you need to [package your RDLS metadata](how_to.md#package-your-rdls-metadata) before submitting it to the RDLS Convertor.
-
 The RDLS Convertor reports any issues with the structure and format of your metadata. You ought to fix the issues it reports before publishing your metadata.
 
 If you prefer to use command-line tools, you can use [Flatten Tool](https://flatten-tool.readthedocs.io/) to convert RDLS metadata between spreadsheet and JSON format and you can use [Lib CoVE RDLS](https://github.com/GFDRR/rdls-lib-cove) to validate your metadata against the RDLS schema.

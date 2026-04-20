@@ -62,6 +62,7 @@ This page lists changes to the Risk Data Library Standard.
   - Make `SimpleHazard.type` and `SimpleHazard.process` required.
   - Align `enums` with codelist CSVs.
   - Remove `Location.geometry`.
+- [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Remove package schema.
 
 ### Codelists
 

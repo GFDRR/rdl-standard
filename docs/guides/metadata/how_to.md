@@ -37,10 +37,6 @@ If you are writing your own software or if you prefer to use the command line, s
 
 If you prefer to use a graphical user interface, several web-based tools are available, for example [Online UUID Generator](https://www.uuidgenerator.net/).
 
-## Package your RDLS metadata
-
-To package your RDLS metadata, use the structure and format described by the [package schema](../../reference/package_schema.md).
-
 ## Transform coordinates between coordinate reference systems
 
 Coordinates in RDLS metadata need to be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.
