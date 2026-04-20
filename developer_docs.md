@@ -10,6 +10,7 @@ This page provides the following documentation for developers of the Risk Data L
 
 This section contains the following how-to guides:
 
+* [Use GitHub Codespaces](#use-github-codespaces)
 * [Propose changes](#propose-changes)
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Resolve check failures](#resolve-check-failures)
@@ -18,6 +19,66 @@ This section contains the following how-to guides:
 * [Release a new version](#release-a-new-version)
 * [Update requirements](#update-requirements)
 * [Add an RDLS metadata example](#add-an-rdls-metadata-example)
+
+### Use GitHub Codespaces 
+
+A codespace is a development environment that's hosted in the cloud. You can connect to a codespace from your browser or from Visual Studio Code.
+
+The RDLS development environment contains everything you need to edit, test and build the RDLS schema, codelists and documentation. By using a hosted development environment, you avoid any problems that might arise from setting up a development environment on your local machine.
+
+#### Create a new codespace
+
+1. Open the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard)
+2. Click the  green **<> Code** button and select **Codespaces**
+3. Click **Create codespace on \<branch-name\>**
+
+A web-based version of Visual Studio Code will open in a new browser tab. For an introduction to Visual Studio Code, see [Get started with Visual Studio Code](https://code.visualstudio.com/docs/getstarted/getting-started). Key actions you'll need to perform when working on RDLS include:
+
+* Navigating the standard repository and opening files using the [**explorer view**](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer-view)
+* Making changes to files using the [**editor**](https://code.visualstudio.com/docs/editing/codebasics)
+* Running tests and building documentation using the [**terminal**](https://code.visualstudio.com/docs/terminal/basics)
+* Committing and pushing changes using the [**source control interface**](https://code.visualstudio.com/docs/sourcecontrol/overview#_source-control-interface) panel
+
+#### Workflow tutorial: build, edit and test
+
+This tutorial introduces the recommended workflow for standard development: automatically build the documentation each time you make a change, and run tests before comitting any changes.
+
+**Build the documentation, start a webserver and rebuild on changes**
+1. Using the terminal, change to the `docs` directory: `cd docs`
+1. Build the documentation: `make autobuild`
+1. Open the documentation in a new browser tab by ctrl+clicking on `http://127.0.0.1:8000`
+    ```diff
+    [sphinx-autobuild] Starting initial build
+    [sphinx-autobuild] > python -m sphinx build -nW -q -b dirhtml -d _readthedocs/doctrees . _readthedocs/html
+    [sphinx-autobuild] Serving on http://127.0.0.1:8000
+    [sphinx-autobuild] Waiting to detect changes...
+    ```
+
+**Edit a file**
+1. Open `docs/index.md` using the explorer view
+1. Change the title on the first line of `index.md` using the editor and save your changes (Ctrl+S)
+1. If your change breaks the build, you will see an error message. Otherwise, you'll see the following:
+    ```
+    [sphinx-autobuild] Detected changes (index.md)
+    [sphinx-autobuild] Rebuilding...
+    [sphinx-autobuild] > python -m sphinx build -nW -q -b dirhtml -d _readthedocs/doctrees . _readthedocs/html
+    [sphinx-autobuild] Serving on http://127.0.0.1:8000
+    ```
+1. View your change in the built documentation by refreshing the tab in which the documentation is open
+
+**Run tests**
+1. Add a new terminal instance by selecting the **+** icon on the top-right of the terminal panel
+1. Using the terminal, run the tests: `pytest tests`
+1. Review the test results
+    ```
+    tests/test_csv.py .                                                                                                                 [ 16%]
+    tests/test_json.py ...                                                                                                              [ 66%]
+    tests/test_schema.py ..                                                                                                             [100%]
+
+    ============================================================ 6 passed in 1.18s ============================================================
+    ```
+
+If the documentation builds successfully, you are happy with your change, and the tests pass, then you are ready to commit your change and push it to GitHub.
 
 ### Propose changes
 
