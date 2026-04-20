@@ -47,6 +47,7 @@ def validate_metadata_presence_allow_missing(pointer):
       or pointer.startswith('/$defs/Hazard')
       or pointer.startswith('/$defs/HazardWithTrigger')
       or pointer.startswith('/$defs/Resource/anyOf/')
+      or pointer.startswith('/$defs/Exposure_item/properties/asset_type/properties/scheme')
     )
 
 validate_metadata_presence_kwargs = {

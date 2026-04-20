@@ -1718,7 +1718,12 @@
         "asset_type": {
           "title": "Asset type",
           "description": "The type of asset",
-          "$ref": "#/$defs/Classification"
+          "$ref": "#/$defs/Classification",
+          "properties": {
+            "scheme": {
+              "description": "The scheme or codelist from which the classification code is taken, using the open [classification_scheme](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#classification-scheme) codelist. Use of GED4ALL is recommended."
+            }
+          }
         },
         "metrics": {
           "title": "Exposure metrics",
