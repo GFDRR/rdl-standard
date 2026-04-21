@@ -556,6 +556,7 @@ def config_inited(app, config):
 
     with open("../.temp/rdls_schema.json", "w") as f:
         json.dump(schema, f, indent=2)
+        f.write("\n")
 
     # Dereference and compose schema
     schema = replace_refs(schema, merge_props=True, proxies=False)
@@ -589,7 +590,7 @@ def env_before_read_docs(app, env, docnames):
     create_directory('_readthedocs/html/')
     shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
     shutil.copyfile('../.temp/rdls_schema_processed.json', '_readthedocs/html/rdls_schema_processed.json')
-
+    shutil.copytree('../.temp/codelists', '_readthedocs/html/codelists', dirs_exist_ok=True)
 
 def build_finished(app, exception):
     shutil.rmtree('../.temp')

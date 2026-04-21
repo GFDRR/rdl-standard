@@ -167,7 +167,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_coastal_flood.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_coastal_flood.csv
 ```
 ````
 
@@ -185,7 +185,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_convective_storm.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_convective_storm.csv
 ```
 ````
 
@@ -203,7 +203,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_drought.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
 ```
 ````
 
@@ -221,7 +221,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_drought.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
 ```
 ````
 
@@ -239,7 +239,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_extreme_temperature.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_extreme_temperature.csv
 ```
 ````
 
@@ -257,7 +257,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_flood.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_flood.csv
 ```
 ````
 
@@ -275,7 +275,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_landslide.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_landslide.csv
 ```
 ````
 
@@ -293,7 +293,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_strong_wind.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_strong_wind.csv
 ```
 ````
 
@@ -311,7 +311,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_tsunami.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_tsunami.csv
 ```
 ````
 
@@ -329,7 +329,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_volcanic.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_volcanic.csv
 ```
 ````
 
@@ -347,7 +347,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_wildfire.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_wildfire.csv
 ```
 ````
 
