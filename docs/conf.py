@@ -25,6 +25,7 @@ import os
 import shutil
 
 from distutils.dir_util import copy_tree
+from jsonref import replace_refs
 from pygit2 import Repository
 
 # -- General configuration ------------------------------------------------
@@ -414,6 +415,68 @@ def _replace_substring_in_json(data, search_substring, replace_string):
                 _replace_substring_in_json(item, search_substring, replace_string)
 
 
+def compose_all_of(schema):
+    """
+    Recursively merges properties defined within allOf arrays into 
+    the parent object's properties.
+    """
+    if not isinstance(schema, dict):
+        return schema
+
+    # Process all nested values first (Bottom-up recursion)
+    for key, value in schema.items():
+        if isinstance(value, dict):
+            schema[key] = compose_all_of(value)
+        elif isinstance(value, list):
+            schema[key] = [compose_all_of(item) for item in value]
+
+    # Handle allOf composition for the current object
+    if "allOf" in schema:
+        # Ensure base containers exist
+        new_props = {}
+        if "properties" not in schema:
+            schema["properties"] = {}
+        if "required" not in schema:
+            schema["required"] = []
+
+        for sub_schema in schema["allOf"]:
+            # Gather properties
+            if "properties" in sub_schema:
+                for key, value in sub_schema["properties"].items():
+                    if key in schema["properties"] and schema["properties"][key] != value:
+                        print(f"Warning: Overwriting property {key} value {schema['properties'][key]} with value {value}")
+                    new_props[key] = value
+            
+            # Merge required properties
+            if "required" in sub_schema:
+                combined_req = set(schema["required"]) | set(sub_schema["required"])
+                schema["required"] = sorted(combined_req)
+            
+            # Inherit title
+            if "title" not in schema and "title" in sub_schema:
+                schema["title"] = sub_schema["title"]
+            
+            # Inherit description
+            if  "description" not in schema and "description" in sub_schema:
+                schema["description"] = sub_schema["description"]
+        
+        # Merge properties
+        schema['properties'] = {**new_props, **schema['properties']}
+        
+        schema["allOf"] = [sub_schema for sub_schema in schema["allOf"] if "properties" not in sub_schema]
+
+        if len(schema["allOf"]) == 0:
+            schema.pop("allOf")
+        
+        # Clean up empty containers if nothing was added
+        if not schema["properties"]:
+            schema.pop("properties")
+        if not schema["required"]:
+            schema.pop("required")
+
+    return schema
+
+
 def setup(app):
     # Connect handlers to events
     app.connect('config-inited', config_inited)
@@ -422,18 +485,35 @@ def setup(app):
 
 
 def config_inited(app, config):
+    # Copy source schema to temp directory
     shutil.copytree('../schema', '../.temp', dirs_exist_ok=True)
-    
+
+    # Create dereferenced and composed schema
+    with open('../schema/rdls_schema.json', 'r') as f:
+        schema = json.load(f)
+
+    schema = replace_refs(schema, merge_props=True, proxies=False)
+
+    schema.pop('$defs', None)
+
+    schema = compose_all_of(schema)
+
+    with open('../.temp/rdls_schema_processed.json', 'w') as f:
+        json.dump(schema, f, indent=2)
+        f.write("\n")
+
     rtd_version = os.getenv('READTHEDOCS_VERSION')
 
     # Replace {{version}} placeholders
     if rtd_version is not None:
         replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
+        replace_substring_in_json('../.temp/rdls_schema_processed.json', '{{version}}', rtd_version)
 
 
 def env_before_read_docs(app, env, docnames):
     create_directory('_readthedocs/html/')
     shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
+    shutil.copyfile('../.temp/rdls_schema_processed.json', '_readthedocs/html/rdls_schema_processed.json')
 
 
 def build_finished(app, exception):

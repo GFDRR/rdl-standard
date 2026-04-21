@@ -7,7 +7,7 @@
 
 The `exposure` component is described as:
 
-```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 jsonpointer: /properties/exposure/description
 ---
@@ -217,7 +217,7 @@ file: ../../../examples/exposure/central_asia_residential_current/Exposure metad
 
 ## Properties
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 :pointer: /properties/exposure/items
 :collapse: metrics
 :externallinks: >
@@ -228,6 +228,6 @@ file: ../../../examples/exposure/central_asia_residential_current/Exposure metad
 
 ## Metric
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 :pointer: /properties/exposure/items/properties/metrics/items
 ```
