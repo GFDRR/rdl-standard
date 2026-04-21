@@ -38,7 +38,7 @@ important ways that you can contribute to its development.
 
 If you test the standard and have feedback for the team, then you might want to:
 
-* [start a general discussion in the forum]((https://github.com/GFDRR/rdl-standard/discussions) to share your experiences, or showcase your work
+* [start a general discussion in the forum](https://github.com/GFDRR/rdl-standard/discussions) to share your experiences, or showcase your work
 * submit a change proposal for discussion by the community
 * [review existing proposals or issues](https://github.com/GFDRR/rdl-standard/issues) to add your thoughts based on your experience 
 
