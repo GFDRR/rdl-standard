@@ -477,6 +477,20 @@ def compose_all_of(schema):
     return schema
 
 
+def remove_key(data, target_key):
+    if isinstance(data, dict):
+        # Create a list of keys to avoid 'RuntimeError: dictionary changed size'
+        for key in list(data.keys()):
+            if key == target_key:
+                del data[key]
+            else:
+                remove_key(data[key], target_key)
+    elif isinstance(data, list):
+        for item in data:
+            remove_key(item, target_key)
+    return data
+
+
 def setup(app):
     # Connect handlers to events
     app.connect('config-inited', config_inited)
@@ -501,6 +515,14 @@ def config_inited(app, config):
     with open('../.temp/rdls_schema_processed.json', 'w') as f:
         json.dump(schema, f, indent=2)
         f.write("\n")
+    
+    # Remove allOf / anyOf keywords for display in schema browser
+    schema = remove_key(schema, 'allOf')
+    schema = remove_key(schema, 'anyOf')
+
+    with open('../.temp/rdls_schema_processed_browser.json', 'w') as f:
+        json.dump(schema, f, indent=2)
+        f.write("\n")
 
     rtd_version = os.getenv('READTHEDOCS_VERSION')
 
@@ -508,6 +530,7 @@ def config_inited(app, config):
     if rtd_version is not None:
         replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
         replace_substring_in_json('../.temp/rdls_schema_processed.json', '{{version}}', rtd_version)
+        replace_substring_in_json('../.temp/rdls_schema_processed_browser.json', '{{version}}', rtd_version)
 
 
 def env_before_read_docs(app, env, docnames):
