@@ -20,12 +20,14 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import csv
 import json
 import os
 import shutil
 
 from distutils.dir_util import copy_tree
 from jsonref import replace_refs
+from pathlib import Path
 from pygit2 import Repository
 
 # -- General configuration ------------------------------------------------
@@ -499,13 +501,63 @@ def setup(app):
 
 
 def config_inited(app, config):
-    # Copy source schema to temp directory
-    shutil.copytree('../schema', '../.temp', dirs_exist_ok=True)
 
-    # Create dereferenced and composed schema
-    with open('../schema/rdls_schema.json', 'r') as f:
+    with open("../schema/rdls_schema.json", "r") as f:
         schema = json.load(f)
 
+    # Derive individual hazard intensity measure codelists from parent codelist
+    codelists_path = Path("../.temp/codelists/open")
+    codelists_path.mkdir(parents=True, exist_ok=True)
+    
+    with open("../schema/codelists/open/IMT.csv", "r") as f:
+        reader = csv.DictReader(f)
+        next(reader)
+        data = list(reader)
+
+    hazards = {}
+
+    for code in data:
+        for hazard in code['Hazard'].split(','):
+            if hazard not in hazards:
+                hazards[hazard] = []
+            hazards[hazard].append({k: v for k, v in code.items() if k != "Hazard"})
+
+    allOf = []
+
+    for hazard, measures in hazards.items():
+        if hazard != 'universal':
+
+            with open(f"../.temp/codelists/open/imt_{hazard}.csv", "w") as f:
+                writer = csv.DictWriter(f, fieldnames=measures[0].keys(), lineterminator='\n')
+                writer.writeheader()
+                writer.writerows(measures)
+                writer.writerows(hazards["universal"])
+
+            allOf.append(
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": hazard
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "intensity_measure": {
+                                "codelist": f"imt_{hazard}.csv"
+                            }
+                        }
+                    }
+                }
+            )
+    
+    schema['$defs']['conditional_hazard_type_to_intensity_measure']['allOf'] = allOf
+
+    with open("../.temp/rdls_schema.json", "w") as f:
+        json.dump(schema, f, indent=2)
+
+    # Dereference and compose schema
     schema = replace_refs(schema, merge_props=True, proxies=False)
 
     schema.pop('$defs', None)
