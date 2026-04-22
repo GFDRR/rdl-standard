@@ -25,7 +25,7 @@ pytestmark = pytest.mark.filterwarnings('always')
 def test_valid():
     """
     Ensures all CSV files are valid: no empty rows or columns, no leading or trailing whitespace in cells, same number
-    of cells in each row.
+    of cells in each row, and unique values in the Code column for codelists.
     """
     errors = 0
 
@@ -34,13 +34,14 @@ def test_valid():
         width = len(fieldnames)
         columns = []
 
-        duplicates = len(fieldnames) - len(set(fieldnames))
-        if duplicates:
+        duplicate_headers = len(fieldnames) - len(set(fieldnames))
+        if duplicate_headers:
             errors += 1
-            warnings.warn(f'ERROR: {path} has {duplicates} duplicate column headers')
+            warnings.warn(f'ERROR: {path} has {duplicate_headers} duplicate column headers')
 
+        # rows is typically a list or re-iteratable collection in walk_csv_data
         for row_index, row in enumerate(rows, 2):
-            expected = len(row) + duplicates
+            expected = len(row) + duplicate_headers
             if expected != width:
                 errors += 1
                 warnings.warn(f'ERROR: {path} has {expected} not {width} columns in row {row_index}')
@@ -67,9 +68,26 @@ def test_valid():
                                           f'{row_index},{col_index}')
 
         for col_index, column in enumerate(columns, 1):
+            header = fieldnames[col_index - 1] if col_index <= len(fieldnames) else None
+            
             if not any(column) and codelist:
                 errors += 1
                 warnings.warn(f'ERROR: {path} has empty column {col_index}')
+
+            # New logic: Check for non-unique values in the "Code" column
+            if header == 'Code':
+                seen = set()
+                duplicates = set()
+                for value in column:
+                    if value is not None and value != '':
+                        if value in seen:
+                            duplicates.add(value)
+                        seen.add(value)
+                
+                if duplicates:
+                    errors += 1
+                    warnings.warn(f'ERROR: {path} has non-unique values in the Code column: '
+                                  f'{", ".join(map(str, sorted(duplicates)))}')
 
         output = StringIO()
         writer = csv.DictWriter(output, fieldnames=fieldnames, lineterminator='\n')

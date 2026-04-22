@@ -105,7 +105,7 @@ BA:ha,Burned Area (ha),Surface area impacted by the hazard. Described in square 
 BA:km2,Burned Area (km²),Surface area impacted by the hazard. Described in square kilometers.,BA,km2,wildfire
 FWI:-,Fire Weather Index,Meteorological fire danger index.,FWI,-,wildfire
 riskidx:-,Risk score,Composite risk quantification.,riskidx,-,universal
-HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-,universal
+HzI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HzI,-,universal
 EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year,universal
 fl_d:h,Flood duration (h),The total length of time that flooding is present on a piece of land during a flood event expressed in hours (h),fl_dur,hours,flood
 Ltng:kJ,Lightning energy released,"Represents the total energy discharged during lightning events, expressed in kilojoules. Useful for assessing storm severity and electrical intensity within convective systems.",LightningEnergy,kJ,convective_storm
