@@ -24,4 +24,4 @@ jobs:
 
       - name: Run mdformat check
         run: |
-          mdformat --check docs/ --exclude docs/reference/schema/
+          mdformat --check docs/ --exclude "docs/reference/schema/.*"
