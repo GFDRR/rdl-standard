@@ -25,10 +25,13 @@ import json
 import os
 import shutil
 
-from distutils.dir_util import copy_tree
-from jsonref import replace_refs
 from pathlib import Path
-from pygit2 import Repository
+from sphinx.util import logging
+
+logger = logging.getLogger(__name__)
+
+from referencing import Registry
+from referencing.jsonschema import DRAFT202012
 
 # -- General configuration ------------------------------------------------
 
@@ -417,6 +420,45 @@ def _replace_substring_in_json(data, search_substring, replace_string):
                 _replace_substring_in_json(item, search_substring, replace_string)
 
 
+def dereference(schema):
+    resource = DRAFT202012.create_resource(schema)
+
+    base_uri = schema.get("$id", "")
+    registry = Registry().with_resource(uri=base_uri, resource=resource)
+    
+    resolver = registry.resolver(base_uri=base_uri)
+
+    def walk_and_resolve(obj):
+        if isinstance(obj, dict):
+            if "$ref" in obj:
+                ref_value = obj["$ref"]
+                try:
+                    resolved = resolver.lookup(ref_value).contents
+                    
+                    merged = dict(resolved)
+                    for key, value in obj.items():
+                        if key == "$ref":
+                            continue
+                        if key == "properties" and "properties" in merged:
+                            merged[key] = {**merged[key], **value}
+                        else:
+                            merged[key] = value
+                    
+                    return walk_and_resolve(merged)
+                except Exception as e:
+                    print(f"Warning: Could not resolve {ref_value}: {e}")
+                    return obj
+
+            return {k: walk_and_resolve(v) for k, v in obj.items()}
+        
+        elif isinstance(obj, list):
+            return [walk_and_resolve(i) for i in obj]
+        
+        return obj
+
+    return walk_and_resolve(schema)
+
+
 def compose_all_of(schema):
     """
     Recursively merges properties defined within allOf arrays into 
@@ -446,7 +488,7 @@ def compose_all_of(schema):
             if "properties" in sub_schema:
                 for key, value in sub_schema["properties"].items():
                     if key in schema["properties"] and schema["properties"][key] != value:
-                        print(f"Warning: Overwriting property {key} value {schema['properties'][key]} with value {value}")
+                        logger.warning(f"Overwriting property {key} value {schema['properties'][key]} with value {value}")
                     new_props[key] = value
             
             # Merge required properties
@@ -559,7 +601,7 @@ def config_inited(app, config):
         f.write("\n")
 
     # Dereference and compose schema
-    schema = replace_refs(schema, merge_props=True, proxies=False)
+    schema = dereference(schema)
 
     schema.pop('$defs', None)
 
