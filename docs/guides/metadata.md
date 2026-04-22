@@ -144,9 +144,9 @@ Leave [`media_type`](rdls_schema_processed.json,/properties/resources/items,medi
 
 To describe location-only exposure data, such as building point locations, building polygons or road network polylines, set:
 
-* `exposure/category` to an appropriate value from the [`exposure_category` codelist](../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
-* `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../reference/codelists.md#metric_dimension).
-* `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
+- `exposure/category` to an appropriate value from the [`exposure_category` codelist](../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
+- `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../reference/codelists.md#metric_dimension).
+- `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
 
 ```{seealso}
 
