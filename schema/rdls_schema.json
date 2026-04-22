@@ -1297,7 +1297,13 @@
           "description": "Details of the impact and loss calculations.",
           "properties": {
             "impact": {
-              "$ref": "#/$defs/Impact"
+              "$ref": "#/$defs/Impact",
+              "required": [
+                "type",
+                "modelling",
+                "metric",
+                "measurement"
+              ]
             },
             "loss_type": {
               "title": "Loss type",
@@ -1326,10 +1332,6 @@
             }
           },
           "required": [
-            "impact_type",
-            "impact_modelling",
-            "impact_metric",
-            "measurement",
             "loss_type",
             "loss_approach",
             "loss_frequency_type"
