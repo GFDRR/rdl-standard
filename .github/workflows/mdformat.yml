@@ -17,11 +17,7 @@ jobs:
           python-version: '3.13' # mdformat --exclude is only available on Python 3.13+
           cache: 'pip'
 
-      - name: Install mdformat
-        run: |
-          python -m pip install --upgrade pip
-          pip install mdformat-myst
-
-      - name: Run mdformat check
-        run: |
-          mdformat --check docs/ --exclude "docs/reference/schema/.*"
+      - name: Run mdformat via pre-commit
+        uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: mdformat --all-files
