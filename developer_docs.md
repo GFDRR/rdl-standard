@@ -87,7 +87,6 @@ Before completing the steps below, you first need to [set up a local development
 1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
 1. Create a branch from the `dev` branch.
 1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
-1. Run the pre-commit script (`./manage.py pre-commit`) to update reference documentation and format markdown files.
 1. Run the tests (`pytest tests`) and [resolve any errors](#resolve-check-failures).
 1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation).
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at \[https://rdl-standard.readthedocs.io/en/{branch name}\](https://rdl-standard.readthedocs.io/en/{branch name}).
@@ -177,12 +176,6 @@ You can use your preferred method of managing Python virtual environments, e.g. 
 ```bash
 pip install --upgrade pip setuptools
 pip install -r requirements.txt
-```
-
-Install Flatten Tool:
-
-```bash
-pip install ./flatten-tool
 ```
 
 ### Resolve check failures
@@ -297,7 +290,6 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
 }
 ```
 1. Save your example JSON file to `examples/{component}/{title}/example.json` where `{component}` is the risk data component the example relates to (hazard, exposure, loss or vulnerability) and `{title}` is the title of the example.
-1. Run `./manage.py pre-commit` to create a CSV version of the example.
 1. Add Sphinx directives to the Markdown files in `docs` to render your example in the built documentation.
 
 ## Style guides
