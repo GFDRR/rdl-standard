@@ -20,12 +20,18 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import csv
 import json
 import os
 import shutil
 
-from distutils.dir_util import copy_tree
-from pygit2 import Repository
+from pathlib import Path
+from sphinx.util import logging
+
+logger = logging.getLogger(__name__)
+
+from referencing import Registry
+from referencing.jsonschema import DRAFT202012
 
 # -- General configuration ------------------------------------------------
 
@@ -414,6 +420,185 @@ def _replace_substring_in_json(data, search_substring, replace_string):
                 _replace_substring_in_json(item, search_substring, replace_string)
 
 
+def dereference(schema):
+    resource = DRAFT202012.create_resource(schema)
+
+    base_uri = schema.get("$id", "")
+    registry = Registry().with_resource(uri=base_uri, resource=resource)
+    
+    resolver = registry.resolver(base_uri=base_uri)
+
+    def walk_and_resolve(obj):
+        if isinstance(obj, dict):
+            if "$ref" in obj:
+                ref_value = obj["$ref"]
+                try:
+                    resolved = resolver.lookup(ref_value).contents
+                    
+                    merged = dict(resolved)
+                    for key, value in obj.items():
+                        if key == "$ref":
+                            continue
+                        if key == "properties" and "properties" in merged:
+                            merged[key] = {**merged[key], **value}
+                        else:
+                            merged[key] = value
+                    
+                    return walk_and_resolve(merged)
+                except Exception as e:
+                    print(f"Warning: Could not resolve {ref_value}: {e}")
+                    return obj
+
+            return {k: walk_and_resolve(v) for k, v in obj.items()}
+        
+        elif isinstance(obj, list):
+            return [walk_and_resolve(i) for i in obj]
+        
+        return obj
+
+    return walk_and_resolve(schema)
+
+
+def compose_all_of(schema):
+    """
+    Recursively merges properties defined within allOf arrays into 
+    the parent object's properties.
+    """
+    if not isinstance(schema, dict):
+        return schema
+
+    # Process all nested values first (Bottom-up recursion)
+    for key, value in schema.items():
+        if isinstance(value, dict):
+            schema[key] = compose_all_of(value)
+        elif isinstance(value, list):
+            schema[key] = [compose_all_of(item) for item in value]
+
+    # Handle allOf composition for the current object
+    if "allOf" in schema:
+        # Ensure base containers exist
+        new_props = {}
+        if "properties" not in schema:
+            schema["properties"] = {}
+        if "required" not in schema:
+            schema["required"] = []
+
+        for sub_schema in schema["allOf"]:
+            # Gather properties
+            if "properties" in sub_schema:
+                for key, value in sub_schema["properties"].items():
+                    if key in schema["properties"] and schema["properties"][key] != value:
+                        logger.warning(f"Overwriting property {key} value {schema['properties'][key]} with value {value}")
+                    new_props[key] = value
+            
+            # Merge required properties
+            if "required" in sub_schema:
+                combined_req = set(schema["required"]) | set(sub_schema["required"])
+                schema["required"] = sorted(combined_req)
+            
+            # Inherit title
+            if "title" not in schema and "title" in sub_schema:
+                schema["title"] = sub_schema["title"]
+            
+            # Inherit description
+            if  "description" not in schema and "description" in sub_schema:
+                schema["description"] = sub_schema["description"]
+        
+        # Merge properties
+        schema['properties'] = {**new_props, **schema['properties']}
+        
+        schema["allOf"] = [sub_schema for sub_schema in schema["allOf"] if "properties" not in sub_schema]
+
+        if len(schema["allOf"]) == 0:
+            schema.pop("allOf")
+        
+        # Clean up empty containers if nothing was added
+        if not schema["properties"]:
+            schema.pop("properties")
+        if not schema["required"]:
+            schema.pop("required")
+
+    return schema
+
+
+def update_conditional_codelist(schema, source_csv, output_dir, schema_def_key, property_name, include_universal=False, include_enum=False):
+    """
+    Refactors the derivation of hazard-specific codelists and schema definitions.
+    """
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+    
+    with open(source_csv, "r") as f:
+        # DictReader handles headers automatically; no next() needed
+        reader = csv.DictReader(f)
+        data = list(reader)
+
+    # Group data by hazard
+    hazards = {}
+    for row in data:
+        hazard_list = row.get('Hazard', '').split(',')
+        # Remove 'Hazard' from the data that goes into the new CSV files
+        clean_row = {k: v for k, v in row.items() if k != "Hazard"}
+        
+        for hazard in hazard_list:
+            if not hazard: continue
+            hazards.setdefault(hazard, []).append(clean_row)
+
+    universal_data = hazards.get("universal", []) if include_universal else []
+    all_of_logic = []
+
+    for hazard, items in hazards.items():
+        if hazard == 'universal':
+            continue
+
+        filename = f"{source_csv.split('/')[-1].replace('.csv', f'_{hazard.lower()}.csv')}"
+        file_full_path = output_path / filename
+
+        # Write the specific hazard CSV
+        with open(file_full_path, "w") as f:
+            if items:
+                writer = csv.DictWriter(f, fieldnames=items[0].keys(), lineterminator='\n')
+                writer.writeheader()
+                writer.writerows(items)
+                if include_universal:
+                    writer.writerows(universal_data)
+
+        # Build the schema 'if/then' block
+        condition = {
+            "if": {"properties": {"type": {"const": hazard}}},
+            "then": {
+                "properties": {
+                    property_name: {
+                        "codelist": filename
+                    }
+                }
+            }
+        }
+
+        # Add enum if required
+        if include_enum:
+            condition["then"]["properties"][property_name]["enum"] = [i['Code'] for i in items]
+
+        all_of_logic.append(condition)
+
+    # Update the schema object
+    schema['$defs'][schema_def_key]['allOf'] = all_of_logic
+
+
+def remove_key(data, target_key):
+    if isinstance(data, dict):
+        # Create a list of keys to avoid 'RuntimeError: dictionary changed size'
+        for key in list(data.keys()):
+            if key == target_key:
+                del data[key]
+            else:
+                remove_key(data[key], target_key)
+    elif isinstance(data, list):
+        for item in data:
+            remove_key(item, target_key)
+    return data
+
+
 def setup(app):
     # Connect handlers to events
     app.connect('config-inited', config_inited)
@@ -422,19 +607,69 @@ def setup(app):
 
 
 def config_inited(app, config):
-    shutil.copytree('../schema', '../.temp', dirs_exist_ok=True)
+
+    with open("../schema/rdls_schema.json", "r") as f:
+        schema = json.load(f)
+
+    # 1. Update IMT
+    update_conditional_codelist(
+        schema=schema,
+        source_csv="../schema/codelists/open/imt.csv",
+        output_dir="../.temp/codelists/open",
+        schema_def_key="conditional_hazard_type_to_intensity_measure",
+        property_name="intensity_measure",
+        include_universal=True,
+        include_enum=False
+    )
+
+    # 2. Update Process Type
+    update_conditional_codelist(
+        schema=schema,
+        source_csv="../schema/codelists/closed/process_type.csv",
+        output_dir="../.temp/codelists/closed",
+        schema_def_key="conditional_hazard_type_to_process",
+        property_name="process",
+        include_universal=False,
+        include_enum=True
+    )
+
+    with open("../.temp/rdls_schema.json", "w") as f:
+        json.dump(schema, f, indent=2)
+        f.write("\n")
+
+    # Dereference and compose schema
+    schema = dereference(schema)
+
+    schema.pop('$defs', None)
+
+    schema = compose_all_of(schema)
+
+    with open('../.temp/rdls_schema_processed.json', 'w') as f:
+        json.dump(schema, f, indent=2)
+        f.write("\n")
     
+    # Remove allOf / anyOf keywords for display in schema browser
+    schema = remove_key(schema, 'allOf')
+    schema = remove_key(schema, 'anyOf')
+
+    with open('../.temp/rdls_schema_processed_browser.json', 'w') as f:
+        json.dump(schema, f, indent=2)
+        f.write("\n")
+
     rtd_version = os.getenv('READTHEDOCS_VERSION')
 
     # Replace {{version}} placeholders
     if rtd_version is not None:
         replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
+        replace_substring_in_json('../.temp/rdls_schema_processed.json', '{{version}}', rtd_version)
+        replace_substring_in_json('../.temp/rdls_schema_processed_browser.json', '{{version}}', rtd_version)
 
 
 def env_before_read_docs(app, env, docnames):
     create_directory('_readthedocs/html/')
     shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
-
+    shutil.copyfile('../.temp/rdls_schema_processed.json', '_readthedocs/html/rdls_schema_processed.json')
+    shutil.copytree('../.temp/codelists', '_readthedocs/html/codelists', dirs_exist_ok=True)
 
 def build_finished(app, exception):
     shutil.rmtree('../.temp')

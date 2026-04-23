@@ -26,6 +26,8 @@ certifi==2025.11.12
     # via requests
 cffi==2.0.0
     # via pygit2
+cfgv==3.5.0
+    # via pre-commit
 charset-normalizer==3.4.4
     # via requests
 click==8.3.1
@@ -35,6 +37,8 @@ click==8.3.1
     #   uvicorn
 colorama==0.4.6
     # via sphinx-autobuild
+distlib==0.4.0
+    # via virtualenv
 docutils==0.21.2
     # via
     #   myst-parser
@@ -43,8 +47,14 @@ docutils==0.21.2
     #   sphinx-togglebutton
     #   sphinxcontrib-opendataservices
     #   sphinxcontrib-opendataservices-jsonschema
+filelock==3.29.0
+    # via
+    #   python-discovery
+    #   virtualenv
 h11==0.16.0
     # via uvicorn
+identify==2.6.19
+    # via pre-commit
 idna==3.11
     # via
     #   anyio
@@ -119,6 +129,8 @@ myst-parser==4.0.1
     #   -r requirements.in
     #   sphinxcontrib-opendataservices
     #   sphinxcontrib-opendataservices-jsonschema
+nodeenv==1.10.0
+    # via pre-commit
 ocdsextensionregistry==0.7.0
     # via ocdskit
 ocdskit==1.5.0
@@ -130,9 +142,14 @@ packaging==25.0
     #   pytest
     #   sphinx
 platformdirs==4.5.1
-    # via requests-cache
+    # via
+    #   python-discovery
+    #   requests-cache
+    #   virtualenv
 pluggy==1.6.0
     # via pytest
+pre-commit==4.6.0
+    # via -r requirements.in
 pycparser==2.23
     # via cffi
 pygit2==1.19.0
@@ -143,10 +160,13 @@ pygments==2.19.2
     #   sphinx
 pytest==9.0.2
     # via -r requirements.in
+python-discovery==1.2.2
+    # via virtualenv
 pyyaml==6.0.3
     # via
     #   -r requirements.in
     #   myst-parser
+    #   pre-commit
     #   sphinxcontrib-mermaid
 referencing==0.37.0
     # via
@@ -242,6 +262,8 @@ urllib3==2.6.2
     #   requests-cache
 uvicorn==0.38.0
     # via sphinx-autobuild
+virtualenv==21.2.4
+    # via pre-commit
 watchfiles==1.1.1
     # via sphinx-autobuild
 wcwidth==0.2.14
