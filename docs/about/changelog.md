@@ -12,7 +12,7 @@ Changes in this section are grouped by the schema component that they affect.
 
 Changes in this section affect more than one schema component.
 
-- [#392](https://github.com/GFDRR/rdl-standard/pull/392), [#409(https://github.com/GFDRR/rdl-standard/pull/409) (affects Hazard, Vulnerability and Loss):
+- [#392](https://github.com/GFDRR/rdl-standard/pull/392), (#409(https://github.com/GFDRR/rdl-standard/pull/409) (affects Hazard, Vulnerability and Loss):
   - Rationalise hazard modelling
   - Add conditional validation of hazard process based on hazard type
   - Add conditional validation of intensity measure based on hazard type
@@ -94,7 +94,7 @@ Changes in this section affect more than one schema component.
 
 ### Codelists
 
-Changes in this section are grouped by the codelist that they affect. 
+Changes in this section are grouped by the codelist that they affect.
 
 - `classification_scheme.csv`:
   - Add codes:
