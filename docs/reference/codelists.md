@@ -1001,7 +1001,7 @@ Download CSV file
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/unit_currency.csv
+```{button-link} ../../codelists/closed/unit_currency.csv
 :color: primary
 :shadow:
 Download CSV file
