@@ -7,7 +7,7 @@
 
 The `exposure` component is described as:
 
-```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
 ---
 jsonpointer: /properties/exposure/description
 ---
@@ -31,6 +31,74 @@ The following example shows RDLS metadata for the [Central Asia projected reside
 
 `````{tab-set}
 
+````{tab-item} Metadata (tabular)
+hazard
+
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/Resources.csv
+---
+
+```
+
+```{csv-table-no-translate} Attributions
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/Attributions.csv
+---
+
+```
+
+```{csv-table-no-translate} Referenced by
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/Referenced by.csv
+---
+
+```
+
+```{csv-table-no-translate} Sources
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/Sources.csv
+---
+
+```
+
+```{csv-table-no-translate} Gazetteer entries (spatial coverage)
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/Spatial coverage_Gazetteer entries.csv
+---
+
+```
+
+```{csv-table-no-translate} Exposure metrics
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_projected/Exposure metadata_Exposure metrics.csv
+---
+
+```
+
+````
+
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
@@ -47,6 +115,75 @@ The following example shows RDLS metadata for the [Central Asia projected reside
 The following example shows RDLS metadata for the [Central Asia current residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings) in tabular format and JSON format.
 
 `````{tab-set}
+
+````{tab-item} Metadata (tabular)
+
+In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
+
+```{csv-table-no-translate} Datasets
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/datasets.csv
+---
+
+```
+
+```{csv-table-no-translate} Resources
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/Resources.csv
+---
+
+```
+
+```{csv-table-no-translate} Attributions
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/Attributions.csv
+---
+
+```
+
+```{csv-table-no-translate} Referenced by
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/Referenced by.csv
+---
+
+```
+
+```{csv-table-no-translate} Sources
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/Sources.csv
+---
+
+```
+
+```{csv-table-no-translate} Gazetteer entries (spatial coverage)
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/Spatial coverage_Gazetteer entries.csv
+---
+
+```
+
+```{csv-table-no-translate} Exposure metrics
+---
+stub-columns: 1
+widths: auto
+file: ../../../examples/exposure/central_asia_residential_current/Exposure metadata_Exposure metrics.csv
+---
+
+```
+
+````
 
 ````{tab-item} Metadata (JSON)
 
@@ -80,7 +217,7 @@ The following example shows RDLS metadata for the [Central Asia current resident
 
 ## Properties
 
-```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsonschema} ../../../schema/rdls_schema_processed.json
 :pointer: /properties/exposure/items
 :collapse: metrics
 :externallinks: >
@@ -91,6 +228,6 @@ The following example shows RDLS metadata for the [Central Asia current resident
 
 ## Metric
 
-```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsonschema} ../../../schema/rdls_schema_processed.json
 :pointer: /properties/exposure/items/properties/metrics/items
 ```

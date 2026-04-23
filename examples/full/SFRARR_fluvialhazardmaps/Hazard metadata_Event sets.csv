@@ -1,0 +1,10 @@
+Dataset identifier,https://datacatalog.worldbank.org/search/dataset/0064232
+Event set identifier,0064232_EventSet1
+Analysis type,probabilistic
+Seasonality distribution,uniform
+Calculation Method,simulated
+Event count,10000
+"Spatial coverage:
+Countries",KAZ;KGZ;TJK;TKM;UZB
+"Spatial coverage:
+Spatial scale",regional

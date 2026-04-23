@@ -9,7 +9,7 @@ depth: 1
 
 The `loss` component is described as:
 
-```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
 ---
 jsonpointer: /properties/loss/description
 ---
@@ -39,7 +39,7 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
 
 ## Properties
 
-```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/loss/properties/losses/items
 collapse: hazard
@@ -52,7 +52,7 @@ externallinks: >-
 
 ## Hazard
 
-```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/loss/properties/losses/items/properties/hazard
 externallinks: >-

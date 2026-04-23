@@ -1,0 +1,8 @@
+Dataset identifier,https://www.wri.org/data/aqueduct-floods-hazard-maps
+Resource identifier,1
+Resource title,Flood hazard maps 
+Resource description,Collection of fluvial and pluvial hazard maps; baseline and climate scenarios
+Format,geotiff
+Spatial resolution,1000
+Coordinate reference system,EPSG:4326
+Access Url,http://wri-projects.s3.amazonaws.com/AqueductFloodTool/download/v2/index.html
