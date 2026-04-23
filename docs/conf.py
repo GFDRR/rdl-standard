@@ -521,6 +521,70 @@ def compose_all_of(schema):
     return schema
 
 
+def update_conditional_codelist(schema, source_csv, output_dir, schema_def_key, property_name, include_universal=False, include_enum=False):
+    """
+    Refactors the derivation of hazard-specific codelists and schema definitions.
+    """
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+    
+    with open(source_csv, "r") as f:
+        # DictReader handles headers automatically; no next() needed
+        reader = csv.DictReader(f)
+        data = list(reader)
+
+    # Group data by hazard
+    hazards = {}
+    for row in data:
+        hazard_list = row.get('Hazard', '').split(',')
+        # Remove 'Hazard' from the data that goes into the new CSV files
+        clean_row = {k: v for k, v in row.items() if k != "Hazard"}
+        
+        for hazard in hazard_list:
+            if not hazard: continue
+            hazards.setdefault(hazard, []).append(clean_row)
+
+    universal_data = hazards.get("universal", []) if include_universal else []
+    all_of_logic = []
+
+    for hazard, items in hazards.items():
+        if hazard == 'universal':
+            continue
+
+        filename = f"{source_csv.split('/')[-1].replace('.csv', f'_{hazard.lower()}.csv')}"
+        file_full_path = output_path / filename
+
+        # Write the specific hazard CSV
+        with open(file_full_path, "w") as f:
+            if items:
+                writer = csv.DictWriter(f, fieldnames=items[0].keys(), lineterminator='\n')
+                writer.writeheader()
+                writer.writerows(items)
+                if include_universal:
+                    writer.writerows(universal_data)
+
+        # Build the schema 'if/then' block
+        condition = {
+            "if": {"properties": {"type": {"const": hazard}}},
+            "then": {
+                "properties": {
+                    property_name: {
+                        "codelist": filename
+                    }
+                }
+            }
+        }
+
+        # Add enum if required
+        if include_enum:
+            condition["then"]["properties"][property_name]["enum"] = [i['Code'] for i in items]
+
+        all_of_logic.append(condition)
+
+    # Update the schema object
+    schema['$defs'][schema_def_key]['allOf'] = all_of_logic
+
+
 def remove_key(data, target_key):
     if isinstance(data, dict):
         # Create a list of keys to avoid 'RuntimeError: dictionary changed size'
@@ -547,54 +611,27 @@ def config_inited(app, config):
     with open("../schema/rdls_schema.json", "r") as f:
         schema = json.load(f)
 
-    # Derive individual hazard intensity measure codelists from parent codelist
-    codelists_path = Path("../.temp/codelists/open")
-    codelists_path.mkdir(parents=True, exist_ok=True)
-    
-    with open("../schema/codelists/open/IMT.csv", "r") as f:
-        reader = csv.DictReader(f)
-        next(reader)
-        data = list(reader)
+    # 1. Update IMT
+    update_conditional_codelist(
+        schema=schema,
+        source_csv="../schema/codelists/open/imt.csv",
+        output_dir="../.temp/codelists/open",
+        schema_def_key="conditional_hazard_type_to_intensity_measure",
+        property_name="intensity_measure",
+        include_universal=True,
+        include_enum=False
+    )
 
-    hazards = {}
-
-    for code in data:
-        for hazard in code['Hazard'].split(','):
-            if hazard not in hazards:
-                hazards[hazard] = []
-            hazards[hazard].append({k: v for k, v in code.items() if k != "Hazard"})
-
-    allOf = []
-
-    for hazard, measures in hazards.items():
-        if hazard != 'universal':
-
-            with open(f"../.temp/codelists/open/imt_{hazard}.csv", "w") as f:
-                writer = csv.DictWriter(f, fieldnames=measures[0].keys(), lineterminator='\n')
-                writer.writeheader()
-                writer.writerows(measures)
-                writer.writerows(hazards["universal"])
-
-            allOf.append(
-                {
-                    "if": {
-                        "properties": {
-                            "type": {
-                                "const": hazard
-                            }
-                        }
-                    },
-                    "then": {
-                        "properties": {
-                            "intensity_measure": {
-                                "codelist": f"imt_{hazard}.csv"
-                            }
-                        }
-                    }
-                }
-            )
-    
-    schema['$defs']['conditional_hazard_type_to_intensity_measure']['allOf'] = allOf
+    # 2. Update Process Type
+    update_conditional_codelist(
+        schema=schema,
+        source_csv="../schema/codelists/closed/process_type.csv",
+        output_dir="../.temp/codelists/closed",
+        schema_def_key="conditional_hazard_type_to_process",
+        property_name="process",
+        include_universal=False,
+        include_enum=True
+    )
 
     with open("../.temp/rdls_schema.json", "w") as f:
         json.dump(schema, f, indent=2)

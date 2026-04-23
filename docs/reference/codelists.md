@@ -114,13 +114,13 @@ Download CSV file
 ```
 ````
 
-### IMT
+### imt
 
 The IMT codelist defines intensity measures and the hazard types to which each intensity measure applies.
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/IMT.csv
+```{button-link} ../../codelists/open/imt.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -129,13 +129,13 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/IMT.csv
+:file: ../../schema/codelists/open/imt.csv
 ```
 ````
 
 ````{seealso}
 
-For validation puropses, separate codelists for each hazard type are also provided below: 
+For validation purposes, separate codelists for each hazard type are also provided below: 
 
 ```{contents} 
 ---
@@ -812,7 +812,7 @@ Download CSV file
 
 ### process_type
 
-The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report) and the codelist includes a mapping to [EM-DAT](https://www.emdat.be/) and the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version).
+The process_type codelist defines hazard processes and the hazard types to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report) and the codelist includes a mapping to [EM-DAT](https://www.emdat.be/) and the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version).
 
 ````{dropdown} Codes
 
@@ -826,6 +826,274 @@ Download CSV file
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/process_type.csv
+```
+````
+
+````{seealso}
+
+For validation purposes, separate codelists for each hazard type are also provided below: 
+
+```{contents} 
+---
+local:
+depth: 1
+---
+```
+
+````
+
+#### process_type_coastal_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_coastal_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_coastal_flood.csv
+```
+````
+
+#### process_type_convective_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_convective_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_convective_storm.csv
+```
+````
+
+#### process_type_drought
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_drought.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_drought.csv
+```
+````
+
+#### process_type_dust_sand_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_dust_sand_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_dust_sand_storm.csv
+```
+````
+
+#### process_type_earthquake
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_earthquake.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_earthquake.csv
+```
+````
+
+#### process_type_erosion
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_erosion.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_erosion.csv
+```
+````
+
+#### process_type_extreme_temperature
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_extreme_temperature.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_extreme_temperature.csv
+```
+````
+
+#### process_type_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_flood.csv
+```
+````
+
+#### process_type_landslide
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_landslide.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_landslide.csv
+```
+````
+
+#### process_type_pest_infestation
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_pest_infestation.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_pest_infestation.csv
+```
+````
+
+#### process_type_sea_level_rise
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_sea_level_rise.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_sea_level_rise.csv
+```
+````
+
+#### process_type_strong_wind
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_strong_wind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_strong_wind.csv
+```
+````
+
+#### process_type_tsunami
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_tsunami.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_tsunami.csv
+```
+````
+
+#### process_type_volcanic
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_volcanic.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_volcanic.csv
+```
+````
+
+#### process_type_wildfire
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_wildfire.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_wildfire.csv
 ```
 ````
 
