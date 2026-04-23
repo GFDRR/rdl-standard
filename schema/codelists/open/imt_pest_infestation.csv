@@ -1,0 +1,5 @@
+Code,Title,Description,Metric,Unit
+Pest:count/area,Density of pests per area,"Expresses the number of pests per hectare, used in ecological assessments, agriculture monitoring, and pest outbreak prediction.",PestDensity,count/hectare
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year

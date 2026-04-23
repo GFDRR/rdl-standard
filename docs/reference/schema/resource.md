@@ -9,7 +9,7 @@ depth: 1
 
 A `Resource` is defined as:
 
-```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
 ---
 jsonpointer: /properties/resources/items/description
 ---
@@ -41,7 +41,7 @@ Each dataset can have many associated resources.
 
 ## Properties
 
-```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/resources/items
 collapse: spatial
@@ -55,7 +55,7 @@ externallinks: >-
 
 ## Spatial coverage
 
-```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
+```{jsonschema} ../../../schema/rdls_schema_processed.json
 ---
 pointer: /properties/resources/items/properties/spatial
 ---

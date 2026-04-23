@@ -1,0 +1,23 @@
+Code,Title,Description,Metric,Unit
+PGA:gal,Peak ground acceleration in gal,Peak ground acceleration expressed in gal (1 gal = 0.01 m/s²).,PGA,gal
+PGA:m/s2,Peak ground acceleration in m/s²,Peak ground acceleration expressed in meters per second squared.,PGA,m/s2
+PGV:m/s,Peak ground velocity in m/s,The greatest speed of ground shaking during an earthquake.,PGV,m/s
+PGV:cm/s,Peak ground velocity in cm/s,Peak ground velocity expressed in centimeters per second.,PGV,cm/s
+AvgSa:m/s2,Average spectral acceleration,Mean spectral acceleration at periods crucial for risk assessment.,AvgSa,m/s2
+Sa_1:m/s2,Spectral acceleration (1 sec),Spectral acceleration at 1-second period.,Sa_1,m/s2
+Sa_03:m/s2,Spectral acceleration (0.3 sec),Spectral acceleration at 0.3-second period.,Sa_03,m/s2
+Sd(T1):m,Spectral displacement,Maximum displacement of structure at fundamental period.,Sd(T1),m
+Sv(T1):m/s,Spectral velocity,Maximum velocity of structure at fundamental period.,Sv(T1),m/s
+PGDf:m,Permanent ground deformation,Displacement of ground surface due to fault movement.,PGDf,m
+D:s,Significant duration,Time interval of strong ground shaking.,D,s
+D_B:s,Bracketed duration,Time between first and last threshold exceedances.,D_B,s
+IA:m/s,Arias intensity,Measure of ground motion strength.,IA,m/s
+Neq:-,Effective number of cycles,Relationship between cycle count and damage potential.,Neq,-
+CAV:m/s,Cumulative absolute velocity,Integrated absolute acceleration over earthquake duration.,CAV,m/s
+MMI:-,Modified Mercalli Intensity,Seismic intensity scale from I (Not felt) to X (Extreme).,MMI,-
+EMS:-,European Macroseismic Scale,Seismic intensity scale from I (Not felt) to XII (Completely devastating).,EMS,-
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-
+SA:g,Spectral acceleration (g),The maximum acceleration experienced by a damped single-degree-of-freedom oscillator at a given natural period in response to ground shaking. Expressed as a fraction of g (1 g = 9.81 m/s²).,SA,g
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year

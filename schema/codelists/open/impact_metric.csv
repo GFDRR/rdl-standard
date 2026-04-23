@@ -1,4 +1,4 @@
-Code,Title,Description,Category
+Code,Title,Definition,Category
 damage_ratio,Damage ratio,The estimated repair cost of an asset divided by the total replacement cost of the asset [0-n] used in vulnerability functions.,Vulnerability
 mean_damage_ratio,Mean damage ratio,The mean value in a distribution of estimated repair costs divided by the total replacement cost of an asset [0-n] used in vulnerability functions.,Vulnerability
 probability,Probability,The probability of reaching or exceeding a damage limit state specified in a fragility function [%].,Vulnerability

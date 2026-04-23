@@ -1,0 +1,14 @@
+Code,Title,Description,Metric,Unit
+sws_3s:km/h,3-sec sustained wind speed (kph),"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph).",sws_3s,km/h
+sws_1m:km/h,1-min sustained wind speed (kph),"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph).",sws_1m,km/h
+sws_10m:km/h,10-min sustained wind speed (kph),The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph).,sws_10m,km/h
+sws_10m:m/s,10-min sustained wind speed (m/s),The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s).,sws_10m,m/s
+PGWS:km/h,Peak gust wind speed (km/h),The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph).,PGWS,km/h
+MSLP:mbar,Minimum sea level pressure (mbar),Atmospheric pressure in millibars (tropical cyclone intensity).,MSLP,mbar
+MSLP:hPa,Minimum sea level pressure (hPa),Atmospheric pressure in hectopascals.,MSLP,hPa
+PGWS:mph,Peak gust wind speed (mph),Direct wind speed estimate used in engineering and insurance modeling.,PGWS,mph
+PGWS:m/s,Peak gust wind speed (m/s),The peak gust wind speed in the open terrain. Expressed in meters per second (m/s).,PGWS,m/s
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
