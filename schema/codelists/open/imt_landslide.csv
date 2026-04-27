@@ -1,0 +1,24 @@
+Code,Title,Description,Metric,Unit
+wd:m,Inundation depth above ground (m),Inundation depth measured relative to ground level. Expressed in meters (m).,wd,m
+wd:cm,Inundation depth above ground (cm),Inundation depth measured relative to ground level. Expressed in centimeters (cm).,wd,cm
+wd:dm,Inundation depth above ground (dm),Inundation depth measured relative to ground level. Expressed in decimeters (dm).,wd,dm
+wv:m/s,Flow velocity (m/s),"The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s).",wv,m/s
+AA:m2,Area Affected (m²),Surface area impacted by the hazard. Described in square meters.,AA,m2
+AA:km2,Area Affected (km²),Surface area impacted by the hazard. Described in square kilometers.,AA,km2
+EvArea:events/km²,Event Density - Count per Unit Area,"Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2.",EvArea,events/km²
+ls_fd:m,Landslide flow depth,Depth of landslide flow in meters.,ls_fd,m
+ls_mfd:m,Maximum foundation displacement,Maximum foundation displacement due to landslide.,ls_mfd,m
+SD_lsl:m,Landslide displacement,Displacement associated with slow-moving landslides.,SD_lsl,m
+I_DF:m3/s2,Debris-flow intensity index,Landslide intensity index (Jakob et al. 2012).,I_DF,m3/s2
+rf_KE:kJ,Rockfall kinetic energy,Kinetic energy of rockfall as function of mass and velocity.,rf_KE,kJ
+IP:kPa,Impact Pressure,Force exerted by avalanche on objects,IP,kPa
+LSI:-,Landslide Susceptibility Index,Probability based on terrain and environmental factors.,LSI,-
+DP:-,Destructive Potential,Classification based on observed or expected damage.,DP,-
+PE:% of slope area,Planimetric Extent,Proportion of a slope affected by landslides,PE,% of slope area
+Rdist:m,Runout distance,Horizontal distance traveled downslope.,Rdist,m
+Vol:m3,Volume,Total volume of material involved.,Vol,m3
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-
+Dsize:-,Avalanche Size Class (1-5),"Qualitative scale based on volume, path, and damage potential",index,-
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year

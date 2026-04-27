@@ -20,7 +20,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import csv
 import json
 import os
 import shutil
@@ -650,21 +649,11 @@ def config_inited(app, config):
         json.dump(schema, f, indent=2)
         f.write("\n")
     
-    # Remove allOf / anyOf keywords for display in schema browser
-    schema = remove_key(schema, 'allOf')
-    schema = remove_key(schema, 'anyOf')
-
-    with open('../.temp/rdls_schema_processed_browser.json', 'w') as f:
-        json.dump(schema, f, indent=2)
-        f.write("\n")
-
     rtd_version = os.getenv('READTHEDOCS_VERSION')
 
     # Replace {{version}} placeholders
     if rtd_version is not None:
         replace_substring_in_json('../.temp/rdls_schema.json', '{{version}}', rtd_version)
-        replace_substring_in_json('../.temp/rdls_schema_processed.json', '{{version}}', rtd_version)
-        replace_substring_in_json('../.temp/rdls_schema_processed_browser.json', '{{version}}', rtd_version)
 
 
 def env_before_read_docs(app, env, docnames):

@@ -1,0 +1,5 @@
+Code,Title,Description,Metric,Unit
+DSI:-,Dust Storm Index,"A composite index describing the severity, frequency, and impact of dust storm events, integrating multiple environmental and atmospheric factors.",DSI,-
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-
+HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
