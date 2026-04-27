@@ -29,12 +29,14 @@ You may have multiple resources for different return periods (e.g., 10-year, 50-
 Under the Hazard section:
 
 #### Event sets
+
 - **Analysis type**: `probabilistic`
 - **Calculation method**: `simulated` or `statistical`
 - **Event count**: Number of return period scenarios included
 - **Occurrence range**: Range description (e.g., "1/10 to 1/500 years")
 
 #### Hazards (within the event set)
+
 - **Hazard type**: `wind`
 - **Processes**: `tropical_cyclone`
 - **Intensity measure**: `v_ect(3s):kph` (3-second gust wind speed in km/h) or `v_ect(1m):mph` (1-minute sustained wind in mph)

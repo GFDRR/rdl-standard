@@ -27,10 +27,13 @@ Add resources for your loss database files:
 Under the Loss section:
 
 #### Loss category
+
 - **Category**: `economic`
 
 #### Hazard event reference
+
 Link to the specific hazard event:
+
 - **Hazard type**: `earthquake`
 - **Event name**: Official name or designation of the earthquake
 - **Event date**: Date of occurrence (ISO 8601 format: YYYY-MM-DD)
@@ -38,30 +41,36 @@ Link to the specific hazard event:
 - **Event location**: Epicenter coordinates or affected region
 
 #### Loss metrics
+
 Define what loss types are measured:
 
 **Metric 1 - Direct structural damage:**
+
 - **Loss type**: `direct`
 - **Dimension**: `structure`
 - **Unit**: Currency code (e.g., `USD`)
 - **Reference year**: Year for currency valuation
 
 **Metric 2 - Direct contents damage** (optional):
+
 - **Loss type**: `direct`
 - **Dimension**: `content`
 - **Unit**: Currency code
 
 **Metric 3 - Business interruption** (optional):
+
 - **Loss type**: `indirect`
 - **Dimension**: `business_interruption`
 - **Unit**: Currency code
 
 **Metric 4 - Casualties** (optional):
+
 - **Loss type**: `human`
 - **Dimension**: `fatalities` or `injuries`
 - **Unit**: `people` or `count`
 
 #### Temporal information
+
 - **Assessment date**: When losses were assessed or reported
 - **Time period**: If losses accumulated over time (e.g., business interruption duration)
 
@@ -79,6 +88,7 @@ Define the geographic extent of losses:
 Your loss database should include:
 
 **For spatially-aggregated losses:**
+
 - Geographic unit ID (e.g., admin code, district ID)
 - Geographic unit name
 - Geometry or coordinates (if spatial)
@@ -90,6 +100,7 @@ Your loss database should include:
 - Fatalities and injuries
 
 **Example CSV structure:**
+
 ```
 District_Code,District_Name,Direct_Loss_Structure_USD,Direct_Loss_Content_USD,Buildings_Damaged,Population_Affected,Fatalities
 YEM001,Sana'a,125000000,45000000,2500,150000,45
@@ -98,6 +109,7 @@ YEM003,Aden,52000000,18000000,1200,60000,15
 ```
 
 **For building-level losses:**
+
 - Building ID
 - Location (coordinates)
 - Building type/taxonomy
@@ -139,6 +151,7 @@ YEM003,Aden,52000000,18000000,1200,60000,15
 ## Linking to hazard and exposure data
 
 When possible, provide linkages to:
+
 - **Hazard**: Reference the earthquake event in a hazard catalog
 - **Exposure**: Link to building inventory or exposure dataset for affected area
 - **Vulnerability**: Reference damage functions used if losses are modeled rather than observed

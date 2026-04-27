@@ -27,6 +27,7 @@ Add one or more resources representing your earthquake catalog files:
 Under the Hazard section:
 
 #### Event sets
+
 - **Analysis type**: `historical` (empirical/observed events)
 - **Calculation method**: `observed`
 - **Event count**: Total number of recorded earthquakes
@@ -35,6 +36,7 @@ Under the Hazard section:
 - **Occurrence time span**: Time period in ISO 8601 duration format (e.g., `P50Y` for 50 years)
 
 #### Hazards (within the event set)
+
 - **Hazard type**: `earthquake`
 - **Processes**: `ground_shaking`
 - **Intensity measure**: `PGA:g` (peak ground acceleration) or `v_ects:MW` (moment magnitude)
@@ -50,6 +52,7 @@ Define the geographic extent:
 ## Example data structure
 
 Your CSV file should include columns such as:
+
 - Event ID
 - Date/time (ISO 8601 format)
 - Latitude

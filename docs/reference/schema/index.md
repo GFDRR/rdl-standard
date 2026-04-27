@@ -38,6 +38,3 @@ For general definitions of hazard, exposure, vulnerability and loss, please see 
 Spatial and temporal coverage and resolution should be specified at both dataset and resource level, even when they are consistent amongst a dataset's resources.
 
 If spatial or temporal coverage or resolution differ by resource, use the resource-level properties to describe the coverage and resolution of each resource, and the dataset-level properties to describe the overall coverage of the dataset. In particular, note that `spatial.gazetteer_entries` should be used to describe the overall area covered by the dataset, not each of the areas covered by the individual resources.
-
-
-

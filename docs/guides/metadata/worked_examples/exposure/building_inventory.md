@@ -27,33 +27,42 @@ Add resources for your building inventory files:
 Under the Exposure section:
 
 #### Category
+
 - **Category**: `buildings`
 
 #### Taxonomy
+
 Select the appropriate taxonomy source:
+
 - **Source**: `GED4ALL` (Global Exposure Database for All)
 - Alternative sources: custom taxonomy, national building codes, PAGER
 
 #### Metrics
+
 Define what is being measured for each building:
 
 **Metric 1 - Structure value:**
+
 - **Dimension**: `structure`
 - **Quantity kind**: `currency`
 - **Unit**: Currency code (e.g., `USD`, `EUR`)
 
 **Metric 2 - Building count** (if aggregated):
+
 - **Dimension**: `buildings`
 - **Quantity kind**: `count`
 - **Unit**: `1` (dimensionless count)
 
 **Metric 3 - Floor area** (optional):
+
 - **Dimension**: `structure`
 - **Quantity kind**: `area`
 - **Unit**: `m2`
 
 #### Occupancy
+
 Specify building use types present in the inventory:
+
 - `residential`
 - `commercial`
 - `industrial`
@@ -72,6 +81,7 @@ Define the geographic extent:
 ## Example data structure
 
 Your building inventory should include attributes such as:
+
 - Building ID
 - Geometry (point or polygon)
 - Occupancy type

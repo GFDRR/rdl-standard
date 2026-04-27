@@ -23,6 +23,7 @@ Add resources for flood hazard map files:
 - **Coordinate reference system**: `EPSG:4326` or appropriate projected CRS for the region
 
 You may have separate files for:
+
 - Flood extent (binary inundation)
 - Flood depth (water depth values)
 - Flow velocity (if available)
@@ -32,6 +33,7 @@ You may have separate files for:
 Under the Hazard section:
 
 #### Event sets
+
 - **Analysis type**: `historical` (for observed events) or `scenario` (for modeled events)
 - **Calculation method**: `observed`, `simulated`, or `inferred`
 - **Event count**: Number of flood events documented
@@ -40,6 +42,7 @@ Under the Hazard section:
 - **Occurrence time span**: Duration in ISO 8601 format
 
 #### Hazards (within the event set)
+
 - **Hazard type**: `flood`
 - **Processes**: Select one or more:
   - `fluvial_flood` (river flooding)

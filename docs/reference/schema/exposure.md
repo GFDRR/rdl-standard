@@ -1,8 +1,10 @@
 # Exposure metadata
 
 ```{contents} On this page
-:local:
-:depth: 1
+---
+local:
+depth: 1
+---
 ```
 
 The `exposure` component is described as:

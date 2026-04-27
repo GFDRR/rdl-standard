@@ -27,22 +27,27 @@ Add resources for your population data files:
 Under the Exposure section:
 
 #### Category
+
 - **Category**: `population`
 
 #### Metrics
+
 Define what is being measured:
 
 **Metric 1 - Population count:**
+
 - **Dimension**: `population`
 - **Quantity kind**: `count`
 - **Unit**: `people` or `1` (dimensionless count)
 
 **Metric 2 - Population density** (optional):
+
 - **Dimension**: `population`
 - **Quantity kind**: `density`
 - **Unit**: `people/km2`
 
 #### Temporal information
+
 - **Reference year**: Year of census or population estimate
 - **Projection scenario** (if applicable): Baseline, SSP scenarios, etc.
 
@@ -58,6 +63,7 @@ Define the geographic extent:
 ## Example data structure
 
 Your population dataset should include:
+
 - Administrative unit ID/code
 - Administrative unit name
 - Geometry (polygon) or link to spatial boundaries

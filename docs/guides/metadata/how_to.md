@@ -21,7 +21,7 @@ For example, the [GHS-BUILT-S R2023A - GHS built-up surface grid, derived from S
 
 If you are authoring RDLS metadata for a dataset that is not already uniquely identified by a persistent HTTP URI, you ought to generate a persistent HTTP URI for the dataset. For example, by adding the dataset to a data catalog that assigns persistent HTTP URIs.
 
-Otherwise, if you cannot generate a persistent HTTP URI for a dataset, for example, because you are authoring RDLS metadata before adding the dataset to a data catalog, you ought to set `id` to a globally unique identifier of your choice, such as a version 4 [Universally Unique Identifier (UUID)]((https://en.wikipedia.org/wiki/Universally_unique_identifier).
+Otherwise, if you cannot generate a persistent HTTP URI for a dataset, for example, because you are authoring RDLS metadata before adding the dataset to a data catalog, you ought to set `id` to a globally unique identifier of your choice, such as a version 4 [Universally Unique Identifier (UUID)](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
 If you are writing your own software or if you prefer to use the command line, several libraries and tools are available to generate UUIDS, for example:
 
@@ -65,9 +65,9 @@ Leave [`media_type`](rdls_schema_processed.json,/properties/resources/items,medi
 
 To describe location-only exposure data, such as building point locations, building polygons or road network polylines, set:
 
-* `exposure/category` to an appropriate value from the [`exposure_category` codelist](../../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
-* `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../../reference/codelists.md#metric_dimension).
-* `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
+- `exposure/category` to an appropriate value from the [`exposure_category` codelist](../../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
+- `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../../reference/codelists.md#metric_dimension).
+- `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
 
 ```{seealso}
 

@@ -23,6 +23,7 @@ Add resources for your accessibility analysis files:
 - **Coordinate reference system**: `EPSG:4326` or appropriate projected CRS
 
 You may have multiple resources for:
+
 - Road network data
 - Service locations (points)
 - Accessibility zones (isochrones or travel time grids)
@@ -33,32 +34,40 @@ You may have multiple resources for:
 Under the Exposure section:
 
 #### Category
+
 - **Category**: `infrastructure`
 
 #### Taxonomy
+
 - **Source**: Custom or infrastructure classification system
 - **Codes**: Specify service types (e.g., healthcare, education, emergency response)
 
 #### Metrics
+
 Define what is being measured:
 
 **Metric 1 - Travel time:**
+
 - **Dimension**: `accessibility`
 - **Quantity kind**: `time`
 - **Unit**: `minutes` or `seconds`
 
 **Metric 2 - Distance** (optional):
+
 - **Dimension**: `accessibility`
 - **Quantity kind**: `length`
 - **Unit**: `km` or `m`
 
 **Metric 3 - Service capacity** (optional):
+
 - **Dimension**: `structure`
 - **Quantity kind**: `count`
 - **Unit**: `1` (e.g., number of beds, classrooms)
 
 #### Occupancy
+
 Specify infrastructure types:
+
 - `healthcare`
 - `education`
 - `emergency_services`
@@ -79,6 +88,7 @@ Define the geographic extent:
 Your accessibility dataset should include:
 
 **Service locations:**
+
 - Service ID
 - Service type/category
 - Coordinates
@@ -86,6 +96,7 @@ Your accessibility dataset should include:
 - Operating status
 
 **Road network:**
+
 - Road segment ID
 - Road class/type
 - Speed limit or average travel speed
@@ -93,6 +104,7 @@ Your accessibility dataset should include:
 - Geometry (line)
 
 **Accessibility results:**
+
 - Location identifier
 - Nearest service ID
 - Travel time (minutes)
