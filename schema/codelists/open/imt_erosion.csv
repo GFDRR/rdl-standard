@@ -1,7 +1,0 @@
-Code,Title,Description,Metric,Unit
-Er:m/yr,Coastal distance of retreat,"Measures the annual horizontal landward movement of coastlines, reflecting shoreline erosion rates and long?term coastal change.",Erosion,m/yr
-Er:mm,Surface lowering,"Captures the vertical reduction of land surface elevation in millimetres, useful for monitoring erosion, subsidence, or sediment removal processes.",Erosion,mm
-Er:T/ha,Lost sediment mass,"Represents the amount of sediment removed from a given area, enabling assessment of soil erosion severity and land degradation.",Erosion,tonnes/hectare
-riskidx:-,Risk score,Composite risk quantification.,riskidx,-
-HI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HI,-
-EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year
