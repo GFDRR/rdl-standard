@@ -17,6 +17,12 @@ The exposure component describes metadata for datasets containing information on
 
 The exposure component uses exposure categories consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
+```{seealso}
+
+* [How to describe location-only exposure data](../../guides/metadata/how_to.md#describe-location-only-exposure-data)
+
+```
+
 ## Examples
 
 ``````{dropdown} Example: Central Asia projected residential exposure dataset

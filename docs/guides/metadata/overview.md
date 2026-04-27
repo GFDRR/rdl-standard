@@ -19,7 +19,7 @@ It is *strongly suggested* that you do not author RDLS metadata in JSON format â
 
 If you are exporting existing metadata from a data catalog or database, and you have access to a software developer, the suggested approach is to [develop a data pipeline](#develop-a-data-pipeline) to transform your metadata to RDLS format.
 
-In either case, if your risk datasets use terms from existing taxonomies or classifications, use the [taxonomy mappings](../mappings/index.md) to identify the equivalent codes in RDLS.
+In either case, if your risk datasets use terms from [EM-DAT](https://www.emdat.be/) or the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version), use the mappings in the [hazard_type](../../reference/codelists.md#hazard_type) and [process_type](../../reference/codelists.md#process_type) codelists to identify the equivalent codes in RDLS.
 
 If you are publishing an access-restricted resource, see [how to publish an access-restricted resource](how_to.md#publish-an-access-restricted-resource).
 
