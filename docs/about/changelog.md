@@ -122,7 +122,7 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Non-normative documentation
 
-* - [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Add worked examples, update overview of how to publish RDLS metadata.
+* - [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Add worked examples, update overview and how-to guides for publishing RDLS metadata.
 
 ## 0.2.0 - 2023-09-08
 

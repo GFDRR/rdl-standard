@@ -4,7 +4,9 @@ This page contains how-to guides for specific topics. To learn about the process
 
 ## Assign a dataset identifier
 
-You need to assign a unique identifier (`id`) to each dataset for which you are publishing RDLS metadata. The preferred approach is to use a persistent HTTP URI in accordance with Data on the Web Best Practices [\$8.7 Data Identifiers](https://www.w3.org/TR/dwbp/#DataIdentifiers).
+The [RDLS Metadata Editor](overview.md#author-metadata-using-the-rdls-metadata-editor) assigns dataset identifiers. However, if you are authoring data via another method, you need to assign a unique identifier (`id`) to each dataset for which you are publishing RDLS metadata.
+
+The preferred approach is to use a persistent HTTP URI in accordance with Data on the Web Best Practices [\$8.7 Data Identifiers](https://www.w3.org/TR/dwbp/#DataIdentifiers).
 
 If you are authoring RDLS metadata for a dataset that is already uniquely identified by a persistent HTTP URI, you ought to set `id` to the existing HTTP URI for the dataset.
 
@@ -19,11 +21,9 @@ For example, the [GHS-BUILT-S R2023A - GHS built-up surface grid, derived from S
 
 If you are authoring RDLS metadata for a dataset that is not already uniquely identified by a persistent HTTP URI, you ought to generate a persistent HTTP URI for the dataset. For example, by adding the dataset to a data catalog that assigns persistent HTTP URIs.
 
-Otherwise, if you cannot generate a persistent HTTP URI for a dataset, for example, because you are authoring RDLS metadata before adding the dataset to a data catalog, you ought to set `id` to a globally unique identifier of your choice, such as a version 4 [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). For more information, see [how to generate a universally unique identifier](#generate-a-universally-unique-identifier).
+Otherwise, if you cannot generate a persistent HTTP URI for a dataset, for example, because you are authoring RDLS metadata before adding the dataset to a data catalog, you ought to set `id` to a globally unique identifier of your choice, such as a version 4 [Universally Unique Identifier (UUID)]((https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-## Generate a universally unique identifier
-
-If you are writing your own software or if you prefer to use the command line, several libraries and tools are available to generate universally unique identifiers (UUIDS), for example:
+If you are writing your own software or if you prefer to use the command line, several libraries and tools are available to generate UUIDS, for example:
 
 - Golang - [google/uuid](https://pkg.go.dev/github.com/google/uuid)
 - PHP - [ramsey/uuid](https://github.com/ramsey/uuid)
@@ -46,8 +46,6 @@ If the coordinates in your data sources are specified in a different CRS, before
 If your data pipeline includes a Geographic Information System such as ArcGIS or QGIS, these tools can transform coordinates from one CRS to another. If you are writing your own software, or if you prefer to use the command line, several libraries and tools are available, including [PROJ](https://proj.org/).
 
 If you prefer to use a graphical user interface, several web-based tools are available, including [epsg.io](https://epsg.io/transform).
-
-The WSG84 CRS is equivalent to EPSG:4326 with reversed axes so, if it is not supported by your chosen transformation tool, you can instead transform your coordinates to EPSG:4326 and manually order your coordinates in longitude, latitude order.
 
 ## Publish an access-restricted resource
 
