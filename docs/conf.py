@@ -27,9 +27,6 @@ import shutil
 
 from pathlib import Path
 from sphinx.util import logging
-
-logger = logging.getLogger(__name__)
-
 from referencing import Registry
 from referencing.jsonschema import DRAFT202012
 
@@ -464,6 +461,9 @@ def compose_all_of(schema):
     Recursively merges properties defined within allOf arrays into 
     the parent object's properties.
     """
+
+    logger = logging.getLogger(__name__)
+    
     if not isinstance(schema, dict):
         return schema
 
@@ -541,7 +541,8 @@ def update_conditional_codelist(schema, source_csv, output_dir, schema_def_key, 
         clean_row = {k: v for k, v in row.items() if k != "Hazard"}
         
         for hazard in hazard_list:
-            if not hazard: continue
+            if not hazard:
+                continue
             hazards.setdefault(hazard, []).append(clean_row)
 
     universal_data = hazards.get("universal", []) if include_universal else []
@@ -607,8 +608,9 @@ def setup(app):
 
 
 def config_inited(app, config):
+    shutil.copytree('../schema', '../.temp', dirs_exist_ok=True)
 
-    with open("../schema/rdls_schema.json", "r") as f:
+    with open("../.temp/rdls_schema.json", "r") as f:
         schema = json.load(f)
 
     # 1. Update IMT
@@ -667,9 +669,7 @@ def config_inited(app, config):
 
 def env_before_read_docs(app, env, docnames):
     create_directory('_readthedocs/html/')
-    shutil.copyfile('../.temp/rdls_schema.json', '_readthedocs/html/rdls_schema.json')
-    shutil.copyfile('../.temp/rdls_schema_processed.json', '_readthedocs/html/rdls_schema_processed.json')
-    shutil.copytree('../.temp/codelists', '_readthedocs/html/codelists', dirs_exist_ok=True)
+    shutil.copytree('../.temp', '_readthedocs/html', dirs_exist_ok=True)
 
 def build_finished(app, exception):
     shutil.rmtree('../.temp')
