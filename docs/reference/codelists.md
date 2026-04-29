@@ -4,8 +4,8 @@ Some fields in the metadata standard refer to codelists to promote data interope
 
 Codelists can either be open or closed:
 
-* **Closed codelists** are intended to be comprehensive; for example, the currency codelist covers all currencies in the world.
-* **Open codelists** are intended to be representative, but not comprehensive.
+- **Closed codelists** are intended to be comprehensive; for example, the currency codelist covers all currencies in the world.
+- **Open codelists** are intended to be representative, but not comprehensive.
 
 Publishers must use the codes in the codelists, unless no code is appropriate. If no code is appropriate and the codelist is **open**, then a publisher may use a new code outside those in the codelist. If no code is appropriate and the codelist is **closed**, then a publisher should instead create an issue in the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard/issues).
 
@@ -23,7 +23,6 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 ## Open codelists
 
 ### classification_scheme
-
 
 ````{dropdown} Codes
 
@@ -43,12 +42,10 @@ Download CSV file
 
 ### conforms_to
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/conforms_to.csv
 :color: primary
 :shadow:
@@ -64,7 +61,6 @@ Download CSV file
 ````
 
 ### damage_scale_name
-
 
 ````{dropdown} Codes
 
@@ -84,12 +80,10 @@ Download CSV file
 
 ### engineering_demand_parameter
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/engineering_demand_parameter.csv
 :color: primary
 :shadow:
@@ -104,7 +98,6 @@ Download CSV file
 ````
 
 ### impact_metric
-
 
 ````{dropdown} Codes
 
@@ -121,13 +114,13 @@ Download CSV file
 ```
 ````
 
-### IMT
+### imt
 
 The IMT codelist defines intensity measures and the hazard types to which each intensity measure applies.
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/IMT.csv
+```{button-link} ../../codelists/open/imt.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -136,13 +129,13 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/IMT.csv
+:file: ../../schema/codelists/open/imt.csv
 ```
 ````
 
 ````{seealso}
 
-For validation puropses, separate codelists for each hazard type are also provided below: 
+For validation purposes, separate codelists for each hazard type are also provided below: 
 
 ```{contents} 
 ---
@@ -155,7 +148,6 @@ depth: 1
 
 #### imt_coastal_flood
 
-
 ````{dropdown} Codes
 
 ```{button-link} ../../codelists/open/imt_coastal_flood.csv
@@ -167,12 +159,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_coastal_flood.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_coastal_flood.csv
 ```
 ````
 
 #### imt_convective_storm
-
 
 ````{dropdown} Codes
 
@@ -185,13 +176,12 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_convective_storm.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_convective_storm.csv
 ```
 ````
 
 #### imt_drought
 
-
 ````{dropdown} Codes
 
 ```{button-link} ../../codelists/open/imt_drought.csv
@@ -203,13 +193,12 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_drought.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
 ```
 ````
 
 #### imt_earthquake
 
-
 ````{dropdown} Codes
 
 ```{button-link} ../../codelists/open/imt_drought.csv
@@ -221,12 +210,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_drought.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
 ```
 ````
 
 #### imt_extreme_temperature
-
 
 ````{dropdown} Codes
 
@@ -239,12 +227,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_extreme_temperature.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_extreme_temperature.csv
 ```
 ````
 
 #### imt_flood
-
 
 ````{dropdown} Codes
 
@@ -257,12 +244,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_flood.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_flood.csv
 ```
 ````
 
 #### imt_landslide
-
 
 ````{dropdown} Codes
 
@@ -275,12 +261,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_landslide.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_landslide.csv
 ```
 ````
 
 #### imt_strong_wind
-
 
 ````{dropdown} Codes
 
@@ -293,12 +278,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_strong_wind.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_strong_wind.csv
 ```
 ````
 
 #### imt_tsunami
-
 
 ````{dropdown} Codes
 
@@ -311,12 +295,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_tsunami.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_tsunami.csv
 ```
 ````
 
 #### imt_volcanic
-
 
 ````{dropdown} Codes
 
@@ -329,12 +312,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_volcanic.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_volcanic.csv
 ```
 ````
 
 #### imt_wildfire
-
 
 ````{dropdown} Codes
 
@@ -347,12 +329,11 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_wildfire.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_wildfire.csv
 ```
 ````
 
 ### license
-
 
 ````{dropdown} Codes
 
@@ -371,12 +352,10 @@ Download CSV file
 
 ### location_gazetteers
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/location_gazetteers.csv
 :color: primary
 :shadow:
@@ -391,7 +370,6 @@ Download CSV file
 ````
 
 ### media_type
-
 
 ````{dropdown} Codes
 
@@ -416,7 +394,6 @@ Download CSV file
 
 The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
 
-
 ````{dropdown} Codes
 
 ```{button-link} ../../codelists/open/quantity_kind.csv
@@ -435,7 +412,6 @@ Download CSV file
 ### roles
 
 The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml) with the addition of 'world_bank_team_lead' and the omission of codes covered by the `creator`, `contact_point` and `publisher` fields.
-
 
 ````{dropdown} Codes
 
@@ -456,7 +432,7 @@ Download CSV file
 
 For validation purposes, a separate unit codelist for each [quantity kind](#quantity_kind) is provided:
 
-```{contents} 
+```{contents}
 ---
 local:
 depth: 1
@@ -473,12 +449,10 @@ Each codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www
 
 #### unit_area
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_area.csv
 :color: primary
 :shadow:
@@ -494,12 +468,10 @@ Download CSV file
 
 #### unit_count
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_count.csv
 :color: primary
 :shadow:
@@ -515,12 +487,10 @@ Download CSV file
 
 #### unit_dimensionless_ratio
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_dimensionless_ratio.csv
 :color: primary
 :shadow:
@@ -536,12 +506,10 @@ Download CSV file
 
 #### unit_length
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_length.csv
 :color: primary
 :shadow:
@@ -557,12 +525,10 @@ Download CSV file
 
 #### unit_mass
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_mass.csv
 :color: primary
 :shadow:
@@ -578,12 +544,10 @@ Download CSV file
 
 #### unit_mass_per_area
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_mass_per_area.csv
 :color: primary
 :shadow:
@@ -599,12 +563,10 @@ Download CSV file
 
 #### unit_time
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_time.csv
 :color: primary
 :shadow:
@@ -620,12 +582,10 @@ Download CSV file
 
 #### unit_volume
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/unit_volume.csv
 :color: primary
 :shadow:
@@ -643,12 +603,10 @@ Download CSV file
 
 ### analysis_type
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/analysis_type.csv
 :color: primary
 :shadow:
@@ -663,7 +621,6 @@ Download CSV file
 ````
 
 ### climate_scenario
-
 
 ````{dropdown} Codes
 
@@ -682,7 +639,6 @@ Download CSV file
 
 ### country
 
-
 ````{dropdown} Codes
 
 ```{button-link} ../../codelists/open/country.csv
@@ -700,12 +656,10 @@ Download CSV file
 
 ### data_calculation_type
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/data_calculation_type.csv
 :color: primary
 :shadow:
@@ -721,12 +675,10 @@ Download CSV file
 
 ### exposure_category
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/exposure_category.csv
 :color: primary
 :shadow:
@@ -742,12 +694,10 @@ Download CSV file
 
 ### frequency_distribution
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/frequency_distribution.csv
 :color: primary
 :shadow:
@@ -763,12 +713,10 @@ Download CSV file
 
 ### function_approach
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/function_approach.csv
 :color: primary
 :shadow:
@@ -788,6 +736,7 @@ The RDLS offers a classification of hazards that are more often required in disa
 
 The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
 
+The hazard_type codelist includes a mapping from the RDLS hazard types to the hazard categories defined in the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version).
 
 ````{dropdown} Codes
 
@@ -806,12 +755,10 @@ Download CSV file
 
 ### impact_type
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/impact_type.csv
 :color: primary
 :shadow:
@@ -827,12 +774,10 @@ Download CSV file
 
 ### loss_type
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/loss_type.csv
 :color: primary
 :shadow:
@@ -848,12 +793,10 @@ Download CSV file
 
 ### metric_dimension
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/metric_dimension.csv
 :color: primary
 :shadow:
@@ -869,8 +812,7 @@ Download CSV file
 
 ### process_type
 
-The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
-
+The process_type codelist defines hazard processes and the hazard types to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report) and the codelist includes a mapping to [EM-DAT](https://www.emdat.be/) and the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version).
 
 ````{dropdown} Codes
 
@@ -887,14 +829,280 @@ Download CSV file
 ```
 ````
 
-### relationship_type
+````{seealso}
 
+For validation purposes, separate codelists for each hazard type are also provided below: 
+
+```{contents} 
+---
+local:
+depth: 1
+---
+```
+
+````
+
+#### process_type_coastal_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_coastal_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_coastal_flood.csv
+```
+````
+
+#### process_type_convective_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_convective_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_convective_storm.csv
+```
+````
+
+#### process_type_drought
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_drought.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_drought.csv
+```
+````
+
+#### process_type_dust_sand_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_dust_sand_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_dust_sand_storm.csv
+```
+````
+
+#### process_type_earthquake
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_earthquake.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_earthquake.csv
+```
+````
+
+#### process_type_erosion
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_erosion.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_erosion.csv
+```
+````
+
+#### process_type_extreme_temperature
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_extreme_temperature.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_extreme_temperature.csv
+```
+````
+
+#### process_type_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_flood.csv
+```
+````
+
+#### process_type_landslide
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_landslide.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_landslide.csv
+```
+````
+
+#### process_type_pest_infestation
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_pest_infestation.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_pest_infestation.csv
+```
+````
+
+#### process_type_sea_level_rise
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_sea_level_rise.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_sea_level_rise.csv
+```
+````
+
+#### process_type_strong_wind
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_strong_wind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_strong_wind.csv
+```
+````
+
+#### process_type_tsunami
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_tsunami.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_tsunami.csv
+```
+````
+
+#### process_type_volcanic
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_volcanic.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_volcanic.csv
+```
+````
+
+#### process_type_wildfire
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_wildfire.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_wildfire.csv
+```
+````
+
+### relationship_type
 
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/relationship_type.csv
 :color: primary
 :shadow:
@@ -910,12 +1118,10 @@ Download CSV file
 
 ### risk_data_type
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/risk_data_type.csv
 :color: primary
 :shadow:
@@ -931,12 +1137,10 @@ Download CSV file
 
 ### seasonality
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/seasonality.csv
 :color: primary
 :shadow:
@@ -952,12 +1156,10 @@ Download CSV file
 
 ### source_type
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/source_type.csv
 :color: primary
 :shadow:
@@ -973,12 +1175,10 @@ Download CSV file
 
 ### spatial_scale
 
-
 ````{dropdown} Codes
 ---
 open:
 ---
-
 ```{button-link} ../../codelists/open/spatial_scale.csv
 :color: primary
 :shadow:

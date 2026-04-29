@@ -10,6 +10,7 @@ This page provides the following documentation for developers of the Risk Data L
 
 This section contains the following how-to guides:
 
+* [Use GitHub Codespaces](#use-github-codespaces)
 * [Propose changes](#propose-changes)
 * [Set up a local development environment](#set-up-a-local-development-environment)
 * [Resolve check failures](#resolve-check-failures)
@@ -19,6 +20,66 @@ This section contains the following how-to guides:
 * [Update requirements](#update-requirements)
 * [Add an RDLS metadata example](#add-an-rdls-metadata-example)
 
+### Use GitHub Codespaces 
+
+A codespace is a development environment that's hosted in the cloud. You can connect to a codespace from your browser or from Visual Studio Code.
+
+The RDLS development environment contains everything you need to edit, test and build the RDLS schema, codelists and documentation. By using a hosted development environment, you avoid any problems that might arise from setting up a development environment on your local machine.
+
+#### Create a new codespace
+
+1. Open the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard)
+2. Click the  green **<> Code** button and select **Codespaces**
+3. Click **Create codespace on \<branch-name\>**
+
+A web-based version of Visual Studio Code will open in a new browser tab. For an introduction to Visual Studio Code, see [Get started with Visual Studio Code](https://code.visualstudio.com/docs/getstarted/getting-started). Key actions you'll need to perform when working on RDLS include:
+
+* Navigating the standard repository and opening files using the [**explorer view**](https://code.visualstudio.com/docs/getstarted/userinterface#_explorer-view)
+* Making changes to files using the [**editor**](https://code.visualstudio.com/docs/editing/codebasics)
+* Running tests and building documentation using the [**terminal**](https://code.visualstudio.com/docs/terminal/basics)
+* Committing and pushing changes using the [**source control interface**](https://code.visualstudio.com/docs/sourcecontrol/overview#_source-control-interface) panel
+
+#### Workflow tutorial: build, edit and test
+
+This tutorial introduces the recommended workflow for standard development: automatically build the documentation each time you make a change, and run tests before comitting any changes.
+
+**Build the documentation, start a webserver and rebuild on changes**
+1. Using the terminal, change to the `docs` directory: `cd docs`
+1. Build the documentation: `make autobuild`
+1. Open the documentation in a new browser tab by ctrl+clicking on `http://127.0.0.1:8000`
+    ```diff
+    [sphinx-autobuild] Starting initial build
+    [sphinx-autobuild] > python -m sphinx build -nW -q -b dirhtml -d _readthedocs/doctrees . _readthedocs/html
+    [sphinx-autobuild] Serving on http://127.0.0.1:8000
+    [sphinx-autobuild] Waiting to detect changes...
+    ```
+
+**Edit a file**
+1. Open `docs/index.md` using the explorer view
+1. Change the title on the first line of `index.md` using the editor and save your changes (Ctrl+S)
+1. If your change breaks the build, you will see an error message. Otherwise, you'll see the following:
+    ```
+    [sphinx-autobuild] Detected changes (index.md)
+    [sphinx-autobuild] Rebuilding...
+    [sphinx-autobuild] > python -m sphinx build -nW -q -b dirhtml -d _readthedocs/doctrees . _readthedocs/html
+    [sphinx-autobuild] Serving on http://127.0.0.1:8000
+    ```
+1. View your change in the built documentation by refreshing the tab in which the documentation is open
+
+**Run tests**
+1. Add a new terminal instance by selecting the **+** icon on the top-right of the terminal panel
+1. Using the terminal, run the tests: `pytest tests`
+1. Review the test results
+    ```
+    tests/test_csv.py .                                                                                                                 [ 16%]
+    tests/test_json.py ...                                                                                                              [ 66%]
+    tests/test_schema.py ..                                                                                                             [100%]
+
+    ============================================================ 6 passed in 1.18s ============================================================
+    ```
+
+If the documentation builds successfully, you are happy with your change, and the tests pass, then you are ready to commit your change and push it to GitHub.
+
 ### Propose changes
 
 Before completing the steps below, you first need to [set up a local development environment](#set-up-a-local-development-environment) so that you can resolve build errors and test failures before pushing your changes to GitHub. Alternatively, if your change is simple, you can use the [GitHub web editor](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files) and skip the running the pre-commit script, running the tests and building the documentation locally.
@@ -26,7 +87,6 @@ Before completing the steps below, you first need to [set up a local development
 1. Agree on a proposal in a [GitHub issue](https://github.com/GFDRR/rdl-standard/issues).
 1. Create a branch from the `dev` branch.
 1. Make your changes. Do not use normative keywords in non-normative content. For more information, see [normative and non-normative content in RDLS](https://docs.google.com/document/d/13g1SZO3ZSHbkymtc69lQOu9vB9vlZVZnodAcxC50l1M/edit#).
-1. Run the pre-commit script (`./manage.py pre-commit`) to update reference documentation and format markdown files.
 1. Run the tests (`pytest tests`) and [resolve any errors](#resolve-check-failures).
 1. [Build the documentation](#build-the-documentation), [resolve any errors](#resolve-check-failures) and [preview your changes locally](#build-the-documentation).
 1. Commit your changes to your branch and push it to GitHub. Your changes are available for anyone to preview at \[https://rdl-standard.readthedocs.io/en/{branch name}\](https://rdl-standard.readthedocs.io/en/{branch name}).
@@ -118,12 +178,6 @@ pip install --upgrade pip setuptools
 pip install -r requirements.txt
 ```
 
-Install Flatten Tool:
-
-```bash
-pip install ./flatten-tool
-```
-
 ### Resolve check failures
 
 #### mdformat
@@ -201,8 +255,6 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
   git push --follow-tags
 ```
 
-
-
 ### Update requirements
 
 1. Install `pip-tools`.
@@ -219,25 +271,6 @@ To deploy the `dev` branch to the live documentation site, [create a pull reques
    pip-sync requirements.txt
    ```
 1. Commit your changes.
-
-
-## Add an RDLS metadata example
-
-1. Author your example RDLS metadata in JSON format. You can use either a text editor or the [RDLS spreadsheet template](https://github.com/GFDRR/rdls-spreadsheet-template/) and [Flatten Tool](https://flatten-tool.readthedocs.io/en/latest/). Your example RDLS metadata must be wrapped in an outer `datasets` array, e.g.
-
-```json
-{
-  "datasets": [
-    {
-      "id": "1",
-      "title": "My example RDLS metadata"
-    }
-  ]
-}
-```
-1. Save your example JSON file to `examples/{component}/{title}/example.json` where `{component}` is the risk data component the example relates to (hazard, exposure, loss or vulnerability) and `{title}` is the title of the example.
-1. Run `./manage.py pre-commit` to create a CSV version of the example.
-1. Add Sphinx directives to the Markdown files in `docs` to render your example in the built documentation.
 
 ## Style guides
 
@@ -323,7 +356,29 @@ The following files are created by running a build and are not version controlle
 
 #### Configuration
 
-The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. So that links within the schema work on branches, the configuration replaces `{{version}}` placeholders in `schema/rdls_schema.json` and copies the processed schema to `docs/_readthedocs/html` for inclusion in the built documentation.
+The Sphinx configuration for this project is based on the [Open Data Services Sphinx Base](https://github.com/OpenDataServices/sphinx-base) and is defined in `docs/conf.py`. As part of the documentation build process, `conf.py` processes the schema and codelists for inclusion in the published documentation:
+
+##### Schema processing
+
+`conf.py` outputs the following schema files in `docs/_readthedocs/html`:
+
+* `rdls_schema.json` - a copy of the `schema/rdls_schema.json` with the following changes:
+  * `$defs/conditional_hazard_type_to_process` populated with conditional validation logic according to the hazard type / process mapping documented in `process_type.csv`
+  * `$defs/conditional_hazard_type_to_intensity_measure` populated with conditional validation logic according to the hazard type / intensity measure mapping documented in `imt.csv`
+* `rdls_schema_processed.json` - the above file with the following additional changes:
+  * References to definitions in the schema are dereferenced according to the JSON Schema 2020-12 specification
+  * Inherited schemas defined under the `allOf` keyword are merged with the parent schema.
+* `rdls_schema_processed_browser.json` - the above file with the following additional changes:
+  * Any remaining `allOf` and `anyOf` keywords, typically used to implement either/or validation of required fields, are removed for compatibility with the schema browser.
+
+In all cases, `{{version}}` placeholders are replaced with the current branch name / version number.
+
+##### Codelist processing
+
+`conf.py` outputs the following codelist files in `docs/_readthedocs/html/codelists`:
+
+* Individual `process_type_<hazard_type>.csv` codelists for each hazard type, e.g. `process_type_earthquake.csv`
+* Individual `imt_<hazard_type>.csv` codelists for each hazard type, e.g. `imt_earthquake.csv`
 
 ### Read the Docs
 
@@ -351,3 +406,7 @@ You can find credentials for Read the Docs in the Open Data Services password da
 ### manage.py
 
 The standard repository includes a command-line utility for administrative tasks. For information on the available commands, run `./manage.py --help`.
+
+### pre-commit hooks
+
+A pre-commit hook is used to format Markdown files in the `docs` directory.

@@ -1,4 +1,4 @@
-Code,Title,Definition
+Code,Title,Description
 ground_up,Ground up,Monetary amount indicating the total loss before any impact of insurance is applied.
 insured,Insured,Monetary amount of loss that is insured by private or (sub)sovereign insurance solutions.
 gross,Gross Loss,"Monetary amount indicating an insurers loss after deductibles, limits or co-insurance are applied, but before any reinsurance."
