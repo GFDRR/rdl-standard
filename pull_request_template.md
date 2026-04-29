@@ -12,13 +12,12 @@
 
 If you added, removed or renamed a field:
 
-- [ ] Update the `collapse` option of the jsonschema directives for dataset, resource, hazard, exposure, vulnerability and loss on `reference/schema/index.md`
-- [ ] Update the diagrams in `reference/schema/md`
+- [ ] Update the `collapse` and `externallinks` options of the jsonschema directives in `reference/schema/`
+- [ ] Update the diagrams in `reference/schema/`
 - [ ] Update the JSON files in `examples`
 
 Always:
 
-- [ ] Run `./manage.py` pre-commit
 - [ ] Update the changelog ([style guide](developer_docs.md#changelog-style-guide))
 
 **Having trouble?**

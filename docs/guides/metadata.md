@@ -20,7 +20,7 @@ If you are authoring new metadata by hand or converting existing metadata from a
 
 If you are exporting existing metadata from a data catalog or database and you have access to a software developer, the suggested approach is to [export data in JSON format](#export-data-in-json-format).
 
-If your risk datasets use terms from existing taxonomies or classifications, use the [taxonomy mappings](mappings/index.md) to identify the equivalent codes in RDLS.
+If your risk datasets use terms from [EM-DAT](https://www.emdat.be/) or the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version), use the mappings in the [hazard_type](../reference/codelists.md#hazard_type) and [process_type](../reference/codelists.md#process_type) codelists to identify the equivalent codes in RDLS.
 
 If you plan to describe the spatial coverage of your risk data using coordinates, you might need to [transform your coordinates to the correct coordinate reference system](#transform-coordinates-between-coordinate-reference-systems).
 
@@ -144,9 +144,9 @@ Leave [`media_type`](rdls_schema_processed.json,/properties/resources/items,medi
 
 To describe location-only exposure data, such as building point locations, building polygons or road network polylines, set:
 
-* `exposure/category` to an appropriate value from the [`exposure_category` codelist](../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
-* `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../reference/codelists.md#metric_dimension).
-* `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
+- `exposure/category` to an appropriate value from the [`exposure_category` codelist](../reference/codelists.md#exposure_category), e.g. 'buildings' in the case of building point locations or polygons, or 'infrastructure' in the case of road network polylines.
+- `exposure/metrics/dimension` to 'structure', from the [`metric_dimension` codelist](../reference/codelists.md#metric_dimension).
+- `exposure/metrics/measurement/quantity_kind` to an appropriate value from the [`quantity_kind` codelist](../reference/codelists.md#quantity_kind), e.g. 'area' for building polygons, or 'length' for road network polylines.
 
 ```{seealso}
 
