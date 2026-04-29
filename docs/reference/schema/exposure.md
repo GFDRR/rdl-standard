@@ -25,16 +25,24 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ## Examples
 
-``````{dropdown} Example: Central Asia projected residential exposure dataset
-
-The following example shows RDLS metadata for the [Central Asia projected residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure) in tabular format and JSON format.
+``````{dropdown} Example: GHSL Population map
+---
+open:
+---
+The following example shows RDLS metadata for the [GHSL Population map](https://catalog.riskdatalibrary.org/datasets/rdls_exp-jrc_glb_population/) in JSON format.
 
 `````{tab-set}
+
+````{tab-item} Figure
+
+```{figure} ../../../examples/exposure/ghsl/figure.png
+```
+````
 
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
-.. jsoninclude:: ../../../examples/exposure/central_asia_residential_projected/example.json
+.. jsoninclude:: ../../../examples/exposure/ghsl/example.json
    :jsonpointer: /datasets/0
    :title: Example
 ```
@@ -42,16 +50,22 @@ The following example shows RDLS metadata for the [Central Asia projected reside
 `````
 ``````
 
-``````{dropdown} Example: Central Asia current residential exposure dataset
+``````{dropdown} Example: World Settlement Footprint Evolution
 
-The following example shows RDLS metadata for the [Central Asia current residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings) in tabular format and JSON format.
+The following example shows RDLS metadata for the [World Settlement Footprint Evolution](https://catalog.riskdatalibrary.org/datasets/rdls_exp-dlr_glb_wsfevo/) in JSON format.
 
 `````{tab-set}
+
+````{tab-item} Figure
+
+```{figure} ../../../examples/exposure/wsf/figure.png
+```
+````
 
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
-.. jsoninclude:: ../../../examples/exposure/central_asia_residential_current/example.json
+.. jsoninclude:: ../../../examples/exposure/wsf/example.json
    :jsonpointer: /datasets/0
    :title: Example
 ```
