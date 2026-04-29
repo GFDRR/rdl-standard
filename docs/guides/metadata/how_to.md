@@ -39,9 +39,11 @@ If you prefer to use a graphical user interface, several web-based tools are ava
 
 ## Transform coordinates between coordinate reference systems
 
-Coordinates in RDLS metadata need to be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.
+Coordinates in RDLS spatial metadata (bounding box and centroid) need to be specified using the World Geodetic System 1984 (WGS 84) datum, with longitude and latitude units of decimal degrees. This is equivalent to the coordinate reference system identified by the Open Geospatial Consortium URN urn:ogc:def:crs:OGC::CRS84.
 
-If the coordinates in your data sources are specified in a different CRS, before publishing your RDLS metadata, you first need to transform the coordinates to the correct CRS.
+The dataset spatial content does not necessarily need conversion to this standard, as long as the CRS in use is correctly stated in `Resource.coordinate_system`.
+
+If the coordinates in your metadata are specified in a different CRS, before publishing your RDLS metadata, you first need to transform the coordinates to the correct CRS.
 
 If your data pipeline includes a Geographic Information System such as ArcGIS or QGIS, these tools can transform coordinates from one CRS to another. If you are writing your own software, or if you prefer to use the command line, several libraries and tools are available, including [PROJ](https://proj.org/).
 
