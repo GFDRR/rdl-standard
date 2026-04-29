@@ -43,7 +43,7 @@ The following example shows RDLS metadata for the [GHSL Population map](https://
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/exposure/ghsl/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 
@@ -66,7 +66,7 @@ The following example shows RDLS metadata for the [World Settlement Footprint Ev
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/exposure/wsf/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 

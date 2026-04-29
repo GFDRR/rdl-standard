@@ -50,7 +50,7 @@ The following example shows RDLS metadata for the [Fathom Global Flood Map](http
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/hazard/fathom/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 
@@ -75,7 +75,7 @@ The following example shows RDLS metadata for the [UNOSAT Flood event in SSD](ht
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/hazard/unosat/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 

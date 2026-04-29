@@ -57,7 +57,7 @@ The following example shows RDLS metadata the [Tomorrow's Cities Flood Risk Asse
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/Loss/nairobi/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 
@@ -81,7 +81,7 @@ The following example shows RDLS metadata for [Global multi-hazard average annua
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/Loss/global/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 
@@ -106,7 +106,7 @@ The following example shows RDLS metadata for the [DesInventar Disaster Loss and
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/Loss/desinventar/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 
