@@ -1,4 +1,4 @@
-Code,Title,Definition
+Code,Title,Description
 PA_dmg_index,Park-Ang damage index,"The Park-Ang damage index (Park et al., 1987) accounts for the effect of maximum deformation and cyclic loads."
 peak_floor_acc,Peak floor acceleration,The maximum acceleration at any floor within a structure during an earthquake.
 roof_drift,Roof drift ratio,The ratio of the peak lateral roof displacement to the building height.
