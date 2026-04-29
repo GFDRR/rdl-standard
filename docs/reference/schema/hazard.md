@@ -35,7 +35,7 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
 ---
 open:
 ---
-The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in tabular format and JSON format.
+The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in JSON format.
 
 `````{tab-set}
 
@@ -58,15 +58,15 @@ The following example shows RDLS metadata for the [Fathom Global Flood Map](http
 
 ``````
 
-``````{dropdown} Example: Aqueduct Floods Hazard Maps
+``````{dropdown} Example: UNOSAT Flood event in SSD
 
-The following example shows RDLS metadata for the [Aqueduct Floods Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) in tabular format and JSON format.
+The following example shows RDLS metadata for the [UNOSAT Flood event in SSD](https://unosat.org/products/4174) in JSON format.
 
 `````{tab-set}
 
 ````{tab-item} Figure
 
-```{figure} ../../../examples/hazard/aqueduct/figure.png
+```{figure} ../../../examples/hazard/unosat/figure.png
 ```
 
 ````
@@ -74,7 +74,7 @@ The following example shows RDLS metadata for the [Aqueduct Floods Hazard Maps](
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
-.. jsoninclude:: ../../../examples/hazard/aqueduct/example.json
+.. jsoninclude:: ../../../examples/hazard/unosat/example.json
    :jsonpointer: /datasets/0
    :title: Example
 ```
