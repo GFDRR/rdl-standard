@@ -153,6 +153,7 @@ Changes in this section are grouped by the codelist that they affect.
 ### Normative documentation
 
 - [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
+- [#452](https://github.com/GFDRR/rdl-standard/pull/452) - Update examples in reference documentation.
 
 ### Non-normative documentation
 
