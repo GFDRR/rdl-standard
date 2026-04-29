@@ -20,7 +20,5 @@ ______________________________________________________________________
    schema/index
    browser
    codelists
-   package_schema
-   
 
 ```

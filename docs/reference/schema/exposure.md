@@ -1,8 +1,10 @@
 # Exposure metadata
 
 ```{contents} On this page
-:local:
-:depth: 1
+---
+local:
+depth: 1
+---
 ```
 
 The `exposure` component is described as:
@@ -19,7 +21,7 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ```{seealso}
 
-* [How to describe location-only exposure data](../../guides/metadata.md#describe-location-only-exposure-data)
+* [How to describe location-only exposure data](../../guides/metadata/how_to.md#describe-location-only-exposure-data)
 
 ```
 
