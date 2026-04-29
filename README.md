@@ -48,4 +48,4 @@ Visit the Creative Commons website for [official translations of the licence tex
 
 ## Maintainer documentation
 
-For developer and maintainer documentation, see [developer_docs.md](developer_docs.md).
+For developer and maintainer documentation, see [wiki](https://github.com/GFDRR/rdl-standard/wiki).

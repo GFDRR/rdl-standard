@@ -49,7 +49,7 @@ one of three ways:
 
 * if you have noticed an error in the specification, then please [file an issue](https://github.com/GFDRR/rdl-standard/issues) so that it can be fixed
 * if you have a proposal for revising or extending the standard, then please [submit a change proposal](https://github.com/GFDRR/rdl-standard/issues). We've created an [issue template](https://github.com/GFDRR/rdl-standard/blob/main/.github/ISSUE_TEMPLATE/change-proposal.md) that helps you provide useful context for the suggested change
-* by [submitting a pull request with the suggested change](developer_docs.md#propose-changes)
+* by [submitting a pull request with the suggested change](https://github.com/GFDRR/rdl-standard/wiki/How%E2%80%90to-guides#propose-changes)
 
 We recommend filing an issue or change proposal as the first step, so that fixes and changes can be discussed with the community.
 
