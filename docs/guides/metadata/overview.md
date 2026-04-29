@@ -38,7 +38,8 @@ For each component selected, a color-coded tab is created. Each tab includes inp
 - open text field + dropdown suggestions from the standard open codelists, e.g. License
 
 Components are designed to hold multiple items within the same dataset.
-'Save Progress' button allows to maintain the dataset content in the browser during an editing session, but it is advised to always ‘Export JSON’, using Load 'Existing Metadata' for later editing.
+
+Save Progress' button allows to maintain the dataset content in the browser during an editing session, but it is advised to always ‘Export JSON’, using Load 'Existing Metadata'. Editing of existing metadata files can be done via ‘Load Existing Metadata’ button.
 
 The ‘Validate Metadata’ button will show if there are mandatory fields that require to be fixed. Once validation is successful for all fields, the ‘Publish to RDL catalog’ button is enabled: it allows users to post their dataset in the [RDL catalog](https://catalog.riskdatalibrary.org/). See the [Publish your metadata](#publish-your-metadata) section.
 
