@@ -157,7 +157,12 @@ Changes in this section are grouped by the codelist that they affect.
 ### Non-normative documentation
 
 - [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Add worked examples, update overview and how-to guides for publishing RDLS metadata.
+- [#452](https://github.com/GFDRR/rdl-standard/pull/452) - Update examples in reference documentation.
+
+### Non-normative documentation
+
 - [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
+- [#433](https://github.com/GFDRR/rdl-standard/pull/433) - Update [How do I implement the RDLS?](../rdl/how.md).
 - [#431](https://github.com/GFDRR/rdl-standard/pull/431) - Update [What is the RDLS?](../rdl/what.md).
 - [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Remove `guides/metadata/mappings.md` in favour of mappings documented in codelists.
 

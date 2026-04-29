@@ -1,3 +1,14 @@
+import sys
+import os
+import re
+from pathlib import Path
+
+# Add the directory containing conf.py to the search path
+docs_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs'))
+sys.path.insert(0, docs_path)
+
+from conf import compose_all_of, dereference
+
 from jscc.testing.filesystem import walk_json_data
 from jscc.schema import is_json_schema
 from jscc.testing.util import http_get
@@ -27,6 +38,48 @@ validate_array_items_kwargs = {
         '/$defs/Geometry/properties/coordinates/items',  # recursion
     },
 }
+
+
+def validate_required_properties_presence(path, data):
+    """
+    Check that all properties listed in 'required' are defined in 'properties' 
+    or 'patternProperties', including those inherited via allOf.
+    """
+    # 1. Resolve references and merge allOf properties
+    try:
+        dereferenced_data = dereference(data)
+        dereferenced_data.pop('$defs', None)
+        composed_data = compose_all_of(dereferenced_data)
+    except Exception as e:
+        print(f"Error composing schema for {path}: {e}")
+        return 1
+
+    errors = 0
+
+    def walk(obj, pointer):
+        nonlocal errors
+        if not isinstance(obj, dict):
+            return
+
+        if "required" in obj and isinstance(obj["required"], list):
+            # Get defined properties and pattern keys from the composed object
+            defined_properties = set(obj.get("properties", {}).keys())
+            pattern_properties = set(obj.get("patternProperties", {}).keys())
+            
+            for prop in obj["required"]:
+                # Check local properties and regex patterns
+                if prop not in defined_properties and not any(re.search(pat, prop) for pat in pattern_properties):
+                    print(f"{path}{pointer}: '{prop}' is required but missing from 'properties' in the composed schema.")
+                    errors += 1
+
+        # Recursively check nested objects
+        for key, value in obj.items():
+            if isinstance(value, (dict, list)):
+                walk(value, f"{pointer}/{key}")
+
+    walk(composed_data, "")
+    return errors
+
 
 def validate_metadata_presence_allow_missing(pointer):
     return (
@@ -85,6 +138,8 @@ def validate_json_schema(path, name, data, schema):
     errors += validate_items_type(path, data)
 
     errors += validate_codelist_enum(path, data, allow_enum=validate_codelist_enum_allow_enum)
+
+    errors += validate_required_properties_presence(path, data)
     
     errors += validate_merge_properties(path, data)
     errors += validate_ref(path, data)
@@ -95,4 +150,4 @@ def validate_json_schema(path, name, data, schema):
     # Here, we don't add to `errors`, in order to not count these warnings as errors.
     # validate_deep_properties(path, data)
 
-    assert not errors, 'One or more JSON Schema files are invalid. See warnings below.'
+    assert not errors, 'One or more JSON Schema files are invalid. See warnings above.'

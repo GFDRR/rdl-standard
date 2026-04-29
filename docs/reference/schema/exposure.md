@@ -9,7 +9,7 @@ depth: 1
 
 The `exposure` component is described as:
 
-```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 jsonpointer: /properties/exposure/description
 ---
@@ -27,171 +27,48 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ## Examples
 
-``````{dropdown} Example: Central Asia projected residential exposure dataset
-
-The following example shows RDLS metadata for the [Central Asia projected residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064254/Central-Asia-exposure-dataset---Projected-residential-exposure) in tabular format and JSON format.
+``````{dropdown} Example: GHSL Population map
+---
+open:
+---
+The following example shows RDLS metadata for the [GHSL Population map](https://catalog.riskdatalibrary.org/datasets/rdls_exp-jrc_glb_population/) in JSON format.
 
 `````{tab-set}
 
-````{tab-item} Metadata (tabular)
-hazard
+````{tab-item} Figure
 
-```{csv-table-no-translate} Datasets
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/datasets.csv
----
-
+```{figure} ../../../examples/exposure/ghsl/figure.png
 ```
-
-```{csv-table-no-translate} Resources
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/Resources.csv
----
-
-```
-
-```{csv-table-no-translate} Attributions
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/Attributions.csv
----
-
-```
-
-```{csv-table-no-translate} Referenced by
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/Referenced by.csv
----
-
-```
-
-```{csv-table-no-translate} Sources
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/Sources.csv
----
-
-```
-
-```{csv-table-no-translate} Gazetteer entries (spatial coverage)
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/Spatial coverage_Gazetteer entries.csv
----
-
-```
-
-```{csv-table-no-translate} Exposure metrics
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_projected/Exposure metadata_Exposure metrics.csv
----
-
-```
-
 ````
 
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
-.. jsoninclude:: ../../../examples/exposure/central_asia_residential_projected/example.json
-   :jsonpointer: /datasets/0
+.. jsoninclude:: ../../../examples/exposure/ghsl/example.json
+   :jsonpointer:
    :title: Example
 ```
 
 `````
 ``````
 
-``````{dropdown} Example: Central Asia current residential exposure dataset
+``````{dropdown} Example: World Settlement Footprint Evolution
 
-The following example shows RDLS metadata for the [Central Asia current residential exposure dataset](https://datacatalog.worldbank.org/search/dataset/0064251/Central-Asia-exposure-dataset---Residential-buildings) in tabular format and JSON format.
+The following example shows RDLS metadata for the [World Settlement Footprint Evolution](https://catalog.riskdatalibrary.org/datasets/rdls_exp-dlr_glb_wsfevo/) in JSON format.
 
 `````{tab-set}
 
-````{tab-item} Metadata (tabular)
+````{tab-item} Figure
 
-In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
-
-```{csv-table-no-translate} Datasets
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/datasets.csv
----
-
+```{figure} ../../../examples/exposure/wsf/figure.png
 ```
-
-```{csv-table-no-translate} Resources
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/Resources.csv
----
-
-```
-
-```{csv-table-no-translate} Attributions
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/Attributions.csv
----
-
-```
-
-```{csv-table-no-translate} Referenced by
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/Referenced by.csv
----
-
-```
-
-```{csv-table-no-translate} Sources
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/Sources.csv
----
-
-```
-
-```{csv-table-no-translate} Gazetteer entries (spatial coverage)
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/Spatial coverage_Gazetteer entries.csv
----
-
-```
-
-```{csv-table-no-translate} Exposure metrics
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/exposure/central_asia_residential_current/Exposure metadata_Exposure metrics.csv
----
-
-```
-
 ````
 
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
-.. jsoninclude:: ../../../examples/exposure/central_asia_residential_current/example.json
-   :jsonpointer: /datasets/0
+.. jsoninclude:: ../../../examples/exposure/wsf/example.json
+   :jsonpointer:
    :title: Example
 ```
 
@@ -219,7 +96,7 @@ file: ../../../examples/exposure/central_asia_residential_current/Exposure metad
 
 ## Properties
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 :pointer: /properties/exposure/items
 :collapse: metrics
 :externallinks: >
@@ -230,6 +107,6 @@ file: ../../../examples/exposure/central_asia_residential_current/Exposure metad
 
 ## Metric
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 :pointer: /properties/exposure/items/properties/metrics/items
 ```

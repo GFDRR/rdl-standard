@@ -1,0 +1,163 @@
+{
+  "id": "rdls_lss-GIRI_AAL",
+  "title": "Global multi-hazard average annual loss",
+  "description": "Values of average annual loss (AAL) including all hazards. The AAL provides an estimator of losses that are likely to occur every year due to a specific hazard. Values of AAL are calculated per country, sector (buildings, power, telecommunications, roads and railways, water and wastewater, oil and gas, ports and airports) and subsector. Global scale analysis, covering historical and future climate projections (SSP1, SSP5).",
+  "risk_data_type": [
+    "loss"
+  ],
+  "version": "1",
+  "project": {
+    "name": "Global Infrastructure Risk Model and Resilience Index (GIRI)",
+    "url": "https://giri.unepgrid.ch/"
+  },
+  "details": "The multi-hazard average annual loss dataset integrates risk from multiple natural hazards (floods, cyclones, earthquakes, tsunamis, landslides, drought) to estimate expected annual economic losses to buildings and infrastructure. Estimates are provided for historical climate conditions and future climate scenarios (SSP1 and SSP5) to assess climate change impacts on risk.",
+  "spatial": {
+    "scale": "global"
+  },
+  "license": "CC-BY-4.0",
+  "attributions": [
+    {
+      "id": "attribution_resource_provider_1",
+      "role": "resource_provider",
+      "entity": {
+        "name": "CDRI",
+        "url": "https://cdri.world/"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "id": "AAL_HST",
+      "title": "Multi-hazard AAL (Historical)",
+      "description": "Total average annual loss for buildings and infrastructure under historical climate conditions (1979-2016)",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://giri.unepgrid.ch/facts-figures/multi-hazards",
+      "temporal": {
+        "start": "1979-01-01",
+        "end": "2016-12-31"
+      },
+      "data_format": "CSV (csv)",
+      "access_modality": "dashboard"
+    },
+    {
+      "id": "AAL_SSP1",
+      "title": "Multi-hazard AAL (SSP1)",
+      "description": "Total average annual loss for buildings and infrastructure under SSP1 climate projection (lower bound)",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://giri.unepgrid.ch/facts-figures/multi-hazards",
+      "temporal": {
+        "start": "2017-01-01",
+        "end": "2100-12-31"
+      },
+      "data_format": "CSV (csv)",
+      "access_modality": "dashboard"
+    },
+    {
+      "id": "AAL_SSP5",
+      "title": "Multi-hazard AAL (SSP5)",
+      "description": "Total average annual loss for buildings and infrastructure under SSP5 climate projection (upper bound)",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://giri.unepgrid.ch/facts-figures/multi-hazards",
+      "temporal": {
+        "start": "2017-01-01",
+        "end": "2100-12-31"
+      },
+      "data_format": "CSV (csv)",
+      "access_modality": "dashboard"
+    }
+  ],
+  "loss": {
+    "losses": [
+      {
+        "id": "AAL_FL",
+        "asset_category": "buildings",
+        "asset_dimension": "structure",
+        "impact_and_losses": {
+          "impact_type": "direct",
+          "impact_modelling": "inferred",
+          "impact_metric": "economic_loss_value",
+          "quantity_kind": "monetary",
+          "currency": "USD",
+          "loss_type": "gross",
+          "loss_approach": "analytical",
+          "loss_frequency_type": "probabilistic",
+          "measurement": {
+            "quantity_kind": "value",
+            "unit": "USD"
+          }
+        },
+        "hazard": {
+          "type": "flood",
+          "process": "fluvial_flood",
+          "intensity_measure": "flow_depth_ground:m"
+        }
+      },
+      {
+        "id": "AAL_EQ",
+        "asset_category": "buildings",
+        "asset_dimension": "structure",
+        "impact_and_losses": {
+          "impact_type": "direct",
+          "impact_modelling": "inferred",
+          "impact_metric": "economic_loss_value",
+          "quantity_kind": "monetary",
+          "currency": "USD",
+          "loss_type": "gross",
+          "loss_approach": "analytical",
+          "loss_frequency_type": "probabilistic",
+          "measurement": {
+            "quantity_kind": "value",
+            "unit": "USD"
+          }
+        },
+        "hazard": {
+          "type": "earthquake",
+          "process": "ground_motion",
+          "intensity_measure": "PGA:m/s2"
+        }
+      },
+      {
+        "id": "AAL_LS",
+        "asset_category": "buildings",
+        "asset_dimension": "structure",
+        "impact_and_losses": {
+          "impact_type": "direct",
+          "impact_modelling": "inferred",
+          "impact_metric": "economic_loss_value",
+          "quantity_kind": "monetary",
+          "currency": "USD",
+          "loss_type": "gross",
+          "loss_approach": "analytical",
+          "loss_frequency_type": "probabilistic",
+          "measurement": {
+            "quantity_kind": "value",
+            "unit": "USD"
+          }
+        },
+        "hazard": {
+          "type": "landslide",
+          "process": "landslide_general",
+          "intensity_measure": "generic_intensity:units"
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "href": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json",
+      "rel": "describedby"
+    }
+  ],
+  "publisher": {
+    "name": "UNEP-GRID",
+    "url": "https://unepgrid.ch/en"
+  },
+  "creator": {
+    "name": "UNEP Grid Geneva",
+    "url": "https://www.unepgrid.ch"
+  },
+  "contact_point": {
+    "name": "Mattia Amadio",
+    "email": "mamadio@worldbank.org"
+  }
+}
