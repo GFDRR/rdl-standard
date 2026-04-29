@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `hazard`
-- **Title**: "Historical earthquake catalog for [region]"
+- **Title**: "Historical earthquake catalog for \[region\]"
 - **Description**: Brief description of the catalog coverage period and source
 - **Publisher**: Organization maintaining the earthquake catalog
 - **License**: Appropriate license (e.g., CC-BY-4.0, public domain)

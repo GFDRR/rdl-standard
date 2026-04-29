@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `loss`
-- **Title**: "Economic losses from [earthquake event name/date]"
+- **Title**: "Economic losses from \[earthquake event name/date\]"
 - **Description**: Brief description of the earthquake event, affected regions, and data collection methodology
 - **Publisher**: Organization that compiled the loss data (e.g., government agency, World Bank, insurance association)
 - **License**: Appropriate license

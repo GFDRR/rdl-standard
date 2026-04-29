@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `hazard`
-- **Title**: "Flood inundation maps for [event/region]"
+- **Title**: "Flood inundation maps for \[event/region\]"
 - **Description**: Brief description of the flood events, modeling approach, or observational data source
 - **Publisher**: Organization that created or compiled the flood maps
 - **License**: Appropriate license

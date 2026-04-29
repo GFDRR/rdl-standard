@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `exposure`
-- **Title**: "Service accessibility analysis for [region]"
+- **Title**: "Service accessibility analysis for \[region\]"
 - **Description**: Brief description of the accessibility analysis, services included, and methodology (e.g., network analysis, isochrones)
 - **Publisher**: Organization that performed the accessibility analysis
 - **License**: Appropriate license

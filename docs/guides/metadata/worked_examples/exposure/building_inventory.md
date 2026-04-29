@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `exposure`
-- **Title**: "Building inventory for [region]"
+- **Title**: "Building inventory for \[region\]"
 - **Description**: Brief description of the building database, data collection method, and coverage
 - **Publisher**: Organization that compiled or maintains the building inventory
 - **License**: Appropriate license

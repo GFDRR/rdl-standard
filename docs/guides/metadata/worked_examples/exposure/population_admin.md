@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `exposure`
-- **Title**: "Population data for [region]"
+- **Title**: "Population data for \[region\]"
 - **Description**: Brief description of the population data source, survey year, and aggregation level
 - **Publisher**: National statistical office or organization providing the data
 - **License**: Appropriate license

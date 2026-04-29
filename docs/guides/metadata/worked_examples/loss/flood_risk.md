@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `loss` (risk is expressed as expected losses)
-- **Title**: "Flood risk assessment for [infrastructure type/region]"
+- **Title**: "Flood risk assessment for \[infrastructure type/region\]"
 - **Description**: Brief description of the risk model, infrastructure covered, and methodology
 - **Publisher**: Organization that developed the risk model
 - **License**: Appropriate license

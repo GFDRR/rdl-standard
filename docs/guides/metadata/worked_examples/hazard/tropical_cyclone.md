@@ -9,7 +9,7 @@
 Select the following values when describing your dataset:
 
 - **Risk data type**: `hazard`
-- **Title**: "Probabilistic tropical cyclone wind hazard maps for [region]"
+- **Title**: "Probabilistic tropical cyclone wind hazard maps for \[region\]"
 - **Description**: Brief description of the modeling approach and GEV analysis methodology
 - **Publisher**: Organization or research institution that produced the model
 - **License**: Appropriate license
