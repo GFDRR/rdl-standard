@@ -18,8 +18,8 @@ If you added, removed or renamed a field:
 
 Always:
 
-- [ ] Update the changelog ([style guide](developer_docs.md#changelog-style-guide))
+- [ ] Update the changelog ([style guide](https://github.com/GFDRR/rdl-standard/wiki/Style-guides#changelog-style-guide))
 
 **Having trouble?**
 
-See [how to resolve check failures](https://github.com/GFDRR/rdl-standard/blob/dev/developer_docs.md#resolve-check-failures).
+See [how to resolve check failures](https://github.com/GFDRR/rdl-standard/wiki/How%E2%80%90to-guides#resolve-check-failures).
