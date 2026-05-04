@@ -139,7 +139,7 @@ Changes in this section are grouped by the codelist that they affect.
       - 'SA:g'
   - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - Rename codes and update code format
   - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs
-  - [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Adding imt for sea level rise 
+  - [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Adding imt for sea level rise
 - `license.csv`:
   - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - Replace codes with license URLs, update titles
   - [#440](https://github.com/GFDRR/rdl-standard/pull/440) - Add CC BY-NC 4.0 license to license.csv
