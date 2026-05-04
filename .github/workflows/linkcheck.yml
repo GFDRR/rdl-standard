@@ -23,4 +23,4 @@ jobs:
       - name: Run Sphinx Linkcheck
         working-directory: ./docs
         run: |
-          sphinx-build -b linkcheck -q . /_readthedocs/html
+          sphinx-build -b linkcheck -q . _readthedocs/html
