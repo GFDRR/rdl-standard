@@ -1,0 +1,27 @@
+name: Link Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install sphinx
+          if [ -f docs/requirements.txt ]; then pip install -r docs/requirements.txt; fi
+
+      - name: Run Sphinx Linkcheck
+        continue-on-error: true # Don't block PRs if the check fails
+        run: |
+          sphinx-build -b linkcheck docs/ docs/_build/linkcheck
