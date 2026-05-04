@@ -57,6 +57,15 @@ plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 # MyST heading anchors
 myst_heading_anchors = 5
 
+linkcheck_ignore = [
+    # Relative links to files created by custom code in conf.py
+    r'\.\./\.\./codelists/.*\.csv$',
+    # Links containing a {{version}} placeholder
+    r'.*(\{\{version\}\}|%7B%7Bversion%7D%7D).*',
+    # Relative links in the schema reference section
+    r'\.\./(exposure|hazard|loss|resource|vulnerability).*'
+]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
