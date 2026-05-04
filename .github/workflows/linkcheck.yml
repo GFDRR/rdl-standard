@@ -21,6 +21,5 @@ jobs:
           pip install requirements.txt
 
       - name: Run Sphinx Linkcheck
-        continue-on-error: true # Don't block PRs if the check fails
         run: |
           sphinx-build -b linkcheck docs/ docs/_build/linkcheck
