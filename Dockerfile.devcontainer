@@ -11,6 +11,5 @@ RUN dpkg-reconfigure --frontend=noninteractive locales
 
 COPY requirements.txt /workspace/
 RUN pip3 install --user -r /workspace/requirements.txt
-RUN pre-commit install
 
 CMD ["bash"]
