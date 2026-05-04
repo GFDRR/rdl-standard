@@ -21,5 +21,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Sphinx Linkcheck
+        working-directory: ./docs
         run: |
-          sphinx-build -b linkcheck docs/ docs/_build/linkcheck
+          sphinx-build -b linkcheck -q . /_readthedocs/html
