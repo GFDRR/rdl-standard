@@ -2,3 +2,6 @@
 *.swp
 .vscode
 tests/__pycache__
+docs/__pycache__/conf.cpython-312.pyc
+docs/_static/docson
+.temp

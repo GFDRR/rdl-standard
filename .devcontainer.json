@@ -12,5 +12,6 @@
     }
   },
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-  "workspaceFolder": "/workspace"
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "pre-commit install && pre-commit install-hooks"
 }

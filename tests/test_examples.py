@@ -24,7 +24,6 @@ with open(SCHEMA_PATH, 'r') as f:
 # and the FormatChecker to validate dates, emails, and IRIs
 validator = Draft202012Validator(schema_data, format_checker=FormatChecker())
 
-@pytest.mark.skip(reason="Examples will be updated in a future PR.")
 @pytest.mark.parametrize('example_path', get_example_files())
 def test_example_validation(example_path):
     """
