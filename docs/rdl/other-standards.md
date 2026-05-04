@@ -24,9 +24,9 @@ The RDL project performed a review of the most relevant hazard taxonomies and de
 
 - [Inspire](https://inspire.ec.europa.eu/codelist/NaturalHazardCategoryValue) covers 25 natural hazards in 6 categories (Geological/hydrological, Meteorological/climatological, Fires, Biological, Cosmic, Other).
 
-- [EM-DAT](https://www.emdat.be/classification) covers 34 natural and technological hazards in 9 categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial, Industrial accident, Transport accident, Miscellaneous accident).
+- [EM-DAT](https://doc.emdat.be/docs/data-structure-and-content/glossary) covers 34 natural and technological hazards in 9 categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial, Industrial accident, Transport accident, Miscellaneous accident).
 
-- [Munich-RE](https://www.cred.be/downloadFile.php?file=sites/default/files/DisCatClass_264.pdf) covers 27 natural hazards 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).
+- [Munich-RE](https://www.cred.be/sites/default/files/DisCatClass_264.pdf) covers 27 natural hazards 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).
 
 ## Exposure standards
 
@@ -34,19 +34,19 @@ The exposure schema can accommodate different descriptions of assets using a tax
 
 ### GED4ALL
 
-In 2018 an international consortium led by the Global Earthquake Model Foundation (GEM) developed an open, multi-scale exposure data schema for multi-hazard analysis ([GED4ALL](https://wiki.openstreetmap.org/wiki/GED4ALL)) in response to input from community consultation. GED4ALL simplified certain detailed engineering aspects of the original global exposure model focussed on earthquake hazards ([GED4GEM](https://journals.sagepub.com/doi/10.1177/8755293020919429)), while also expanding the exposure parameters included, so the impacts of other hazards could be related to exposure data using the standard. In this standard, GED4ALL is used as a reference in the exposure, vulnerability and loss components, to describe the exposure type to which losses relate, and to facilitate matching of appropriate vulnerability functions to exposure data, for example. Details about the development of GED4ALL are reported [here](https://riskdatalibrary.org/resources).
+In 2018 an international consortium led by the Global Earthquake Model Foundation (GEM) developed an open, multi-scale exposure data schema for multi-hazard analysis ([GED4ALL](https://wiki.openstreetmap.org/wiki/GED4ALL)) in response to input from community consultation. GED4ALL simplified certain detailed engineering aspects of the original global exposure model focussed on earthquake hazards ([GED4GEM](https://www.globalquakemodel.org/gempublications/exposure-model-for-european-seismic-risk-assessment)), while also expanding the exposure parameters included, so the impacts of other hazards could be related to exposure data using the standard. In this standard, GED4ALL is used as a reference in the exposure, vulnerability and loss components, to describe the exposure type to which losses relate, and to facilitate matching of appropriate vulnerability functions to exposure data, for example. Details about the development of GED4ALL are reported [here](https://riskdatalibrary.org/resources).
 
 GED4ALL can be populated with building-level data from OpenStreetMap (OSM) following the [guidance](https://wiki.openstreetmap.org/wiki/GED4ALL) from the Humanitarian OSM Team, which collects contributions from the community on how OSM tags can be best aligned with the GED4ALL taxonomy. This is the suggested option for classification of exposure data in the RDL.
 
 ### GEM Building Taxonomy
 
-The [GEM Building Taxonomy](https://www.globalquakemodel.org/gempublications/GEM-building-taxonomy-version-2.0) is dedicated to building characteristics relevant to assessing vulnerability to seismic events. It describes characteristics such as an asset's height, number of storeys, age, occupancy, material, type of roof, floor, foundations and structural system. [TaxtWEB](https://platform.openquake.org/taxtweb) is a tool developed by GEM to assist with the generation of the taxonomy string which is used to describe these attributes.
+The [GEM Building Taxonomy](https://www.globalquakemodel.org/gempublications/GEM-building-taxonomy-version-2.0) is dedicated to building characteristics relevant to assessing vulnerability to seismic events. It describes characteristics such as an asset's height, number of storeys, age, occupancy, material, type of roof, floor, foundations and structural system. [GEM taxonomy tools](https://github.com/gem/gem_taxonomy) assist with the generation and validation of the taxonomy string which is used to describe these attributes.
 
 Example: The string `CR/HEX:1/YEX:1981/RES+RES1` describes a residential single family building, of reinforced concrete construction, built in 1981. This is the short version of the taxonomy, the long version explicitly includes all of the unknown fields too.
 
 ### Open Exposure Data (OED)
 
-[OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/develop/OpenExposureData/Docs), or [online](https://oasislmf.github.io/OpenDataStandards/index.html).
+[OED](https://github.com/OasisLMF/ODS_OpenExposureData) is a standard curated by the Oasis community for the insurance industry. The aim of OED is to provide the industry with a robust, open, and transparent data format. The detailed descriptions of the OED taxonomy to describe an asset (structure, infrastructure, or human) are covered in ['Open Exposure Data Spec.xlsx' with reference and background information](https://github.com/OasisLMF/ODS_OpenExposureData/tree/main/Docs).
 
 Example: In the Open Exposure Data (OED) Standard and other insurance industry models, asset characteristics are separated into individual columns. This record describes a building classified as general residential, single storey, constructed from adobe masonry, with an unknown year of construction:
 
