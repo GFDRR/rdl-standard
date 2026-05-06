@@ -112,6 +112,7 @@ Changes in this section are grouped by the codelist that they affect.
     - [#434](https://github.com/GFDRR/rdl-standard/pull/434) - 'USHS_EHP'
   - Rename codes:
     - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - 'MOVER-social-vulnerability-categories' to 'MOVER'
+  - [#440](https://github.com/GFDRR/rdl-standard/pull/440) - Fix typo in GLIDE category
 - `exposure_category.csv`:
   - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'economic_indicator' and 'development_index'
 - `hazard_type.csv`:
@@ -141,6 +142,7 @@ Changes in this section are grouped by the codelist that they affect.
   - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs
 - `license.csv`:
   - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - Replace codes with license URLs, update titles
+  - [#440](https://github.com/GFDRR/rdl-standard/pull/440) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
 - `metric_dimension.csv`:
   - [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index'.
 - `process_type.csv`:
