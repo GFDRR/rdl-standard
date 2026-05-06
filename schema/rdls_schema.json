@@ -971,7 +971,7 @@
         },
         "events": {
           "title": "Events",
-          "description": "The events in this event set.",
+          "description": "The events in this event set. Use this section to specify individual events features that differ from the main event set.",
           "type": "array",
           "items": {
             "$ref": "#/$defs/Event"
