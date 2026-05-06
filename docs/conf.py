@@ -63,7 +63,14 @@ linkcheck_ignore = [
     # Links containing a {{version}} placeholder
     r'.*(\{\{version\}\}|%7B%7Bversion%7D%7D).*',
     # Relative links in the schema reference section
-    r'\.\./(exposure|hazard|loss|resource|vulnerability).*'
+    r'\.\./(exposure|hazard|loss|resource|vulnerability).*',
+    # Links that work, but are not accessible to the link checker due to robots.txt or similar
+    r'^https://linux\.die\.net/man/3/libuuid$',
+    r'^https://www\.sciencedirect\.com/science/article/pii/S2212420923000742$',
+    r'^https://docs\.air-worldwide\.com/Database/CEDE/10\.0/webframe\.html#topic1\.html$',
+    r'^https://docs\.air-worldwide\.com/Database/CEDE/10\.0/webframe\.html#topic32\.html$',
+    r'^https://docs\.air-worldwide\.com/Database/CEDE/10\.0/webframe\.html#topic33\.html$',
+    r'^https://gpss\.worldbank\.org/index\.php/en/node/571$'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
