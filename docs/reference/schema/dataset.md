@@ -25,6 +25,7 @@ The general attributes of a dataset are described by fields based on the [Data C
         Dataset {
             string id*
             string title*
+            string description*
             array risk_data_type*
             object publisher*
             object creator*
