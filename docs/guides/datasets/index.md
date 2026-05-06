@@ -1,6 +1,6 @@
 # How to publish risk datasets
 
-This section provides guidance on how to publish risk datasets. For guidance on how to publish RDLS metadata, see [how to publish RDLS metadata](../metadata.md).
+This section provides guidance on how to publish risk datasets. For guidance on how to publish RDLS metadata, see [how to publish RDLS metadata](../metadata/index.md).
 
 ```{eval-rst}
 .. toctree::

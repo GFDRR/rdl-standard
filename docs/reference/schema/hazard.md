@@ -9,7 +9,7 @@ depth: 1
 
 The `hazard` component is described as:
 
-```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 jsonpointer: /properties/hazard/description
 ---
@@ -35,7 +35,7 @@ The hazard component uses hazard_type, process_type and intensity_measure consis
 ---
 open:
 ---
-The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in tabular format and JSON format.
+The following example shows RDLS metadata for the [Fathom Global Flood Map](https://www.fathom.global/product/global-flood-map/) in JSON format.
 
 `````{tab-set}
 
@@ -46,53 +46,11 @@ The following example shows RDLS metadata for the [Fathom Global Flood Map](http
 
 ````
 
-````{tab-item} Metadata (tabular)
-
-In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
-
-```{csv-table-no-translate} Datasets
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/fathom/datasets.csv
----
-
-```
-
-```{csv-table-no-translate} Resources
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/fathom/Resources.csv
----
-
-```
-
-```{csv-table-no-translate} Event sets
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/fathom/Hazard metadata_Event sets.csv
----
-
-```
-
-```{csv-table-no-translate} Event set hazards
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/fathom/Hazard metadata_Event sets_Hazards.csv
----
-
-```
-
-````
-
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
 .. jsoninclude:: ../../../examples/hazard/fathom/example.json
-   :jsonpointer: /datasets/0
+   :jsonpointer:
    :title: Example
 ```
 
@@ -100,57 +58,15 @@ file: ../../../examples/hazard/fathom/Hazard metadata_Event sets_Hazards.csv
 
 ``````
 
-``````{dropdown} Example: Aqueduct Floods Hazard Maps
+``````{dropdown} Example: UNOSAT Flood event in SSD
 
-The following example shows RDLS metadata for the [Aqueduct Floods Hazard Maps](https://www.wri.org/data/aqueduct-floods-hazard-maps) in tabular format and JSON format.
+The following example shows RDLS metadata for the [UNOSAT Flood event in SSD](https://unosat.org/products/4174) in JSON format.
 
 `````{tab-set}
 
 ````{tab-item} Figure
 
-```{figure} ../../../examples/hazard/aqueduct/figure.png
-```
-
-````
-
-````{tab-item} Metadata (tabular)
-
-In tabular format, the metadata consists of several tables. To aid comprehension, the metadata is presented column wise using field titles.
-
-```{csv-table-no-translate} Datasets
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/aqueduct/datasets.csv
----
-
-```
-
-```{csv-table-no-translate} Resources
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/aqueduct/Resources.csv
----
-
-```
-
-```{csv-table-no-translate} Event sets
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/aqueduct/Hazard metadata_Event sets.csv
----
-
-```
-
-```{csv-table-no-translate} Event set hazards
----
-stub-columns: 1
-widths: auto
-file: ../../../examples/hazard/aqueduct/Hazard metadata_Event sets_Hazards.csv
----
-
+```{figure} ../../../examples/hazard/unosat/figure.png
 ```
 
 ````
@@ -158,8 +74,8 @@ file: ../../../examples/hazard/aqueduct/Hazard metadata_Event sets_Hazards.csv
 ````{tab-item} Metadata (JSON)
 
 ```{eval-rst}
-.. jsoninclude:: ../../../examples/hazard/aqueduct/example.json
-   :jsonpointer: /datasets/0
+.. jsoninclude:: ../../../examples/hazard/unosat/example.json
+   :jsonpointer:
    :title: Example
 ```
 
@@ -170,7 +86,7 @@ file: ../../../examples/hazard/aqueduct/Hazard metadata_Event sets_Hazards.csv
 
 ## Properties
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/hazard
 collapse: event_sets
@@ -197,7 +113,7 @@ externallinks: >-
         Event_set o|--|{ "Event": "Includes"
 ```
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/hazard/properties/event_sets/items
 collapse: hazards,events
@@ -225,7 +141,7 @@ externallinks: >-
         "Event_set" |o--o{ Event: "Includes"
 ```
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/hazard/properties/event_sets/items/properties/events/items
 collapse: hazard
@@ -238,7 +154,7 @@ externallinks: >-
 
 ## Hazard
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/hazard/properties/event_sets/items/properties/hazards/items
 ---
