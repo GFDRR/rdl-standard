@@ -68,6 +68,7 @@ Changes in this section affect more than one schema component.
   - `Event.footprint`
   - `Event_set.temporal`
   - `Event_set.spatial`
+- [#441](https://github.com/GFDRR/rdl-standard/pull/441) - Update description of `.events`.
 
 #### Exposure
 
