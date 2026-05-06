@@ -12,7 +12,7 @@ Changes in this section are grouped by the schema component that they affect.
 
 Changes in this section affect more than one schema component.
 
-- [#392](https://github.com/GFDRR/rdl-standard/pull/392), (#409(https://github.com/GFDRR/rdl-standard/pull/409) (affects Hazard, Vulnerability and Loss):
+- [#392](https://github.com/GFDRR/rdl-standard/pull/392), [#409](https://github.com/GFDRR/rdl-standard/pull/409) (affects Hazard, Vulnerability and Loss):
   - Rationalise hazard modelling
   - Add conditional validation of hazard process based on hazard type
   - Add conditional validation of intensity measure based on hazard type
@@ -157,10 +157,15 @@ Changes in this section are grouped by the codelist that they affect.
 
 ### Non-normative documentation
 
-- [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
-- [#431](https://github.com/GFDRR/rdl-standard/pull/431) - Update [What is the RDLS?](../rdl/what.md).
+- [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Add worked examples, update overview and how-to guides for publishing RDLS metadata.
+- [#452](https://github.com/GFDRR/rdl-standard/pull/452) - Update examples in reference documentation.
 
-* [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Remove `guides/metadata/mappings.md` in favour of mappings documented in codelists.
+### Non-normative documentation
+
+- [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
+- [#433](https://github.com/GFDRR/rdl-standard/pull/433) - Update [How do I implement the RDLS?](../rdl/how.md).
+- [#431](https://github.com/GFDRR/rdl-standard/pull/431) - Update [What is the RDLS?](../rdl/what.md).
+- [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Remove `guides/metadata/mappings.md` in favour of mappings documented in codelists.
 
 ## 0.2.0 - 2023-09-08
 

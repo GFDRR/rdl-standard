@@ -354,7 +354,7 @@
           "$ref": "#/$defs/Link",
           "properties": {
             "href": {
-              "const": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json"
+              "const": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json"
             },
             "rel": {
               "const": "describedby"

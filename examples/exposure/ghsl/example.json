@@ -1,0 +1,86 @@
+{
+  "id": "rdls_exp_ghsl_global_hum_pop",
+  "title": " GHS population grid multitemporal (1975-2030) ",
+  "description": "The spatial raster dataset depicts the distribution of residential population, expressed as the number of people per cell. Residential population estimates between 1975 and 2020 in 5-year intervals and projections to 2025 and 2030 derived from CIESIN GPWv4.11 were disaggregated from census or administrative units to grid cells, informed by the distribution, volume, and classification of built-up as mapped in the Global Human Settlement Layer (GHSL) global layer per corresponding epoch. ",
+  "risk_data_type": [
+    "exposure"
+  ],
+  "publisher": {
+    "name": "Copernicus",
+    "url": "https://human-settlement.emergency.copernicus.eu/"
+  },
+  "version": "R2023",
+  "project": {
+    "name": "GHSL - Global Human Settlement Layer",
+    "url": "https://human-settlement.emergency.copernicus.eu/"
+  },
+  "details": "This dataset is an update of the product released in 2022. Major improvements are the following: use of built-up volume maps (GHS-BUILT-V R2022A); use of more recent and detailed population estimates derived from GPWv4.11 integrating both UN World Population Prospects 2022 country population data and World Urbanisation Prospects 2018 data on Cities; revision of GPWv4.11 population growthrates by convergence to upper administrative level growthrates; systematic improvement of census coastlines; systematic revision of census units declared as unpopulated; integration of non-residential built-up volume information (GHS-BUILT-V_NRES R2023A); spatial resolution of 100m Mollweide (and 3 arcseconds in WGS84); projections to 2030.",
+  "contact_point": {
+    "name": "JRC GHSL",
+    "email": "jrc-ghsl-data@ec.europa.eu",
+    "url": "https://data.jrc.ec.europa.eu/dataset/2ff68a52-5b5b-4a22-8f40-c41da8332cfe"
+  },
+  "creator": {
+    "name": "EC Joint Research Centre",
+    "url": "https://human-settlement.emergency.copernicus.eu/ghs_pop2023.php"
+  },
+  "spatial": {
+    "scale": "global"
+  },
+  "temporal": {
+    "start": "1975-01-01",
+    "end": "2030-12-31"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "referenced_by": [
+    {
+      "author_names": [
+        "Marcello Schiavina",
+        "Sergio Freire",
+        "Alessandra Carioli",
+        "Kytt MacManus"
+      ],
+      "name": "GHS-POP R2023A - GHS population grid multitemporal (1975-2030)",
+      "date_published": "2023-01-01",
+      "url": "http://data.europa.eu/89h/2ff68a52-5b5b-4a22-8f40-c41da8332cfe",
+      "doi": "10.2905/2FF68A52-5B5B-4A22-8F40-C41DA8332CFE",
+      "id": "reference_YpnOc6ds"
+    }
+  ],
+  "resources": [
+    {
+      "title": "GHS population grid (R2023)",
+      "description": "The product is available for different epochs, resolutions and coordinate systems, but not all the combinations are available.",
+      "access_url": "https://human-settlement.emergency.copernicus.eu/download.php?ds=pop",
+      "media_type": "image/tiff;application=geotiff",
+      "spatial": {
+        "scale": "global"
+      },
+      "spatial_resolution": 90,
+      "coordinate_system": "ESRI:54009",
+      "id": "resource_wFzHZaaT"
+    }
+  ],
+  "exposure": [
+    {
+      "metrics": [
+        {
+          "id": "metric_r7kCCvfl",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          },
+          "dimension": "population"
+        }
+      ],
+      "category": "population",
+      "id": "item_QWMOqZs6"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json",
+      "rel": "describedby"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ For specific examples of different types of risk dataset, refer to the schema re
 
 ## What isn't a risk dataset:
 
-RDLS is not intended to describe the **'raw', 'baseline' or 'contextual' datasets** used in creating hazard maps, exposure datasets and vulnerability curves.  Many of these datasets' can be very well described using existing geospatial metadata standards, such as ISO 19115 or Dublin Core, and do not require the risk-specific details that are the focus of RDLS. Datasets used in the creation of a risk dataset can be linked to from the `lineage/sources` array of a risk dataset's metadata.
+RDLS is not intended to describe the **'raw', 'baseline' or 'contextual' datasets** used in creating hazard maps, exposure datasets and vulnerability curves. Many of these datasets' can be very well described using existing geospatial metadata standards, such as ISO 19115 or Dublin Core, and do not require the risk-specific details that are the focus of RDLS. Datasets used in the creation of a risk dataset can be linked to from the `lineage/sources` array of a risk dataset's metadata.
 
 The following table provides examples of risk datasets and 'raw', 'baseline' or 'contextual' dataset for each type of risk data:
 
