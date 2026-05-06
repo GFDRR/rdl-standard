@@ -269,6 +269,7 @@ Changes in this section are grouped by the codelist that they affect.
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
 - [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
 - [#214](https://github.com/GFDRR/rdl-standard/pull/214) - use consistent separators in `classification_scheme.csv` codes.
+- [#459](https://github.com/GFDRR/rdl-standard/pull/459) - update currency codelist with current and historic ISO 4217 codes, update `manage.py` to automate this process.
 
 ### Normative documentation
 
