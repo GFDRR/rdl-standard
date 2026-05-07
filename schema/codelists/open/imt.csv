@@ -24,7 +24,7 @@ wd_f:m,Inundation depth above floor (m),Inundation depth measured relative to bu
 wd_f:cm,Inundation depth above floor (cm),Inundation depth measured relative to building floor level. Expressed in centimeters (cm).,wd_f,cm,"flood,tsunami,coastal_flood"
 wd_f:dm,Inundation depth above floor (dm),Inundation depth measured relative to building floor level. Expressed in decimeters (dm).,wd_f,dm,"flood,tsunami,coastal_flood"
 wv:m/s,Flow velocity (m/s),"The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s).",wv,m/s,"flood,tsunami,coastal_flood,landslide,volcanic"
-slr:cm,Sea level rise,Long-term rise in sea level affecting coastal hazards.,slr,cm,"flood,tsunami,coastal_flood"
+slr:cm,Sea level rise,Long-term rise in sea level affecting coastal hazards.,slr,cm,sea_level_rise
 pptn1:mm,1-hour precipitation,Maximum rainfall depth in any 1-hour period.,pptn1,mm,flood
 pptn24:mm,24-hour precipitation,Maximum rainfall depth in any 24-hour period.,pptn24,mm,flood
 pptn_tot:mm,Total event precipitation,Total cumulative precipitation for entire event.,pptn_tot,mm,flood

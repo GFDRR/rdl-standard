@@ -41,7 +41,7 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
 ---
 open:
 ---
-The following example shows RDLS metadata the [Tomorrow's Cities Flood Risk Assessment Dataset for Nairobi, Kenya](https://catalog.riskdatalibrary.org/datasets/rdls_hevl-kentmrwcities_nairobi/) in JSON format.
+The following example shows RDLS metadata for the [Tomorrow's Cities Flood Risk Assessment Dataset for Nairobi, Kenya](https://catalog.riskdatalibrary.org/datasets/rdls_hevl-kentmrwcities_nairobi/) in JSON format.
 
 `````{tab-set}
 

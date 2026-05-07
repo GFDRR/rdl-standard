@@ -92,6 +92,7 @@ Changes in this section affect more than one schema component.
   - Move `.type` to `.impact_and_losses.loss_type`
   - Move `.approach` to `.impact_and_losses.loss_approach`
   - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
+- [#453](https://github.com/GFDRR/rdl-standard/pull/453) Added `disaster_identifiers` to `losses`
 
 ### Codelists
 
@@ -140,9 +141,10 @@ Changes in this section are grouped by the codelist that they affect.
       - 'SA:g'
   - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - Rename codes and update code format
   - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs
+  - [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Adding imt for sea level rise
 - `license.csv`:
   - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - Replace codes with license URLs, update titles
-  - [#440](https://github.com/GFDRR/rdl-standard/pull/440) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
+  - [#440](https://github.com/GFDRR/rdl-standard/pull/440), [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
 - `metric_dimension.csv`:
   - [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index'.
 - `process_type.csv`:
@@ -156,18 +158,17 @@ Changes in this section are grouped by the codelist that they affect.
 ### Normative documentation
 
 - [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
+- [#460](https://github.com/GFDRR/rdl-standard/pull/460) - Minor edits to reference documentation.
 
 ### Non-normative documentation
 
 - [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Add worked examples, update overview and how-to guides for publishing RDLS metadata.
-- [#452](https://github.com/GFDRR/rdl-standard/pull/452) - Update examples in reference documentation.
-
-### Non-normative documentation
-
 - [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
 - [#433](https://github.com/GFDRR/rdl-standard/pull/433) - Update [How do I implement the RDLS?](../rdl/how.md).
 - [#431](https://github.com/GFDRR/rdl-standard/pull/431) - Update [What is the RDLS?](../rdl/what.md).
 - [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Remove `guides/metadata/mappings.md` in favour of mappings documented in codelists.
+- [#452](https://github.com/GFDRR/rdl-standard/pull/452) - Update examples in reference documentation.
+- [#460](https://github.com/GFDRR/rdl-standard/pull/460) - Minor edits to documentation.
 
 ## 0.2.0 - 2023-09-08
 
@@ -270,6 +271,7 @@ Changes in this section are grouped by the codelist that they affect.
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
 - [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
 - [#214](https://github.com/GFDRR/rdl-standard/pull/214) - use consistent separators in `classification_scheme.csv` codes.
+- [#459](https://github.com/GFDRR/rdl-standard/pull/459) - update currency codelist with current and historic ISO 4217 codes, update `manage.py` to automate this process.
 
 ### Normative documentation
 
