@@ -92,6 +92,7 @@ Changes in this section affect more than one schema component.
   - Move `.type` to `.impact_and_losses.loss_type`
   - Move `.approach` to `.impact_and_losses.loss_approach`
   - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
+- [#453](https://github.com/GFDRR/rdl-standard/pull/453) Added `disaster_identifiers` to `losses`
 
 ### Codelists
 
@@ -140,9 +141,10 @@ Changes in this section are grouped by the codelist that they affect.
       - 'SA:g'
   - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - Rename codes and update code format
   - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs
+  - [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Adding imt for sea level rise
 - `license.csv`:
   - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - Replace codes with license URLs, update titles
-  - [#440](https://github.com/GFDRR/rdl-standard/pull/440) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
+  - [#440](https://github.com/GFDRR/rdl-standard/pull/440), [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
 - `metric_dimension.csv`:
   - [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index'.
 - `process_type.csv`:

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
+  "$id": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json",
   "title": "Risk dataset (Risk Data Library Schema)",
   "description": "A collection of risk data, published or curated by a single entity, consisting of one or more resources and described using metadata structured according to the [Risk Data Library Standard](https://docs.riskdatalibrary.org/).",
   "type": "object",
@@ -1280,6 +1280,16 @@
           "title": "Hazard type",
           "description": "The main type of hazard that resulted in the losses.",
           "$ref": "#/$defs/HazardWithTrigger"
+        },
+        "disaster_identifiers": {
+          "title": "Disaster identifiers",
+          "type": "array",
+          "description": "Identifiers for the disaster to which this event relates.",
+          "items": {
+            "$ref": "#/$defs/Classification"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "asset_category": {
           "title": "Asset category",
