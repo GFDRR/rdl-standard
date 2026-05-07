@@ -20,3 +20,4 @@ jsonschema
 pyyaml
 pygit2
 pre-commit
+lxml

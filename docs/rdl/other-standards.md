@@ -26,7 +26,7 @@ The RDL project performed a review of the most relevant hazard taxonomies and de
 
 - [EM-DAT](https://www.emdat.be/classification) covers 34 natural and technological hazards in 9 categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial, Industrial accident, Transport accident, Miscellaneous accident).
 
-- [Munich-RE](https://www.cred.be/downloadFile.php?file=sites/default/files/DisCatClass_264.pdf) covers 27 natural hazards 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).
+- [Munich-RE](https://www.cred.be/downloadFile.php?file=sites/default/files/DisCatClass_264.pdf) covers 27 natural hazards in 13 main categories (Geophysical, Meteorological, Hydrological, Climatological, Biological, Extraterrestrial).
 
 ## Exposure standards
 
