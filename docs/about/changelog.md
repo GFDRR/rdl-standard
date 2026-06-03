@@ -51,6 +51,8 @@ Changes in this section affect more than one schema component.
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.
   - Add field `license` to `source` object.
+- [482](https://github.com/GFDRR/rdl-standard/pull/482):
+  - Add `Affiliation` to `$defs/Entity`
 
 #### Resource
 
