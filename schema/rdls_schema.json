@@ -765,7 +765,14 @@
             "RCP2.6",
             "RCP4.5",
             "RCP6.0",
-            "RCP8.5"
+            "RCP8.5",
+            "CMIP7-H",
+            "CMIP7-HL",
+            "CMIP7-M",
+            "CMIP7-ML",
+            "CMIP7-L",
+            "CMIP7-LN",
+            "CMIP7-VL"
           ]
         },
         "percentile": {
