@@ -17,7 +17,7 @@ jsonpointer: /properties/hazard/description
 
 The hazard component describes metadata about modeled natural hazards data, including hazard intensity footprints of historical or hypothetical events, return period hazard maps, hazard or susceptibility index, and stochastic event sets. The metadata defines the hazard type, physical process and intensity measures used in the dataset. Multiple hazards and processes (including cascading events) can be defined for each hazard, enabling users to describe dataset that contain, for example, earthquake ground shaking and liquefaction, and tsunami inundation triggered by the earthquake.
 
-The hazard component uses hazard type, process type and intensity_measure consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
+The hazard component uses hazard type, process type and intensity measure consistent with the vulnerability and loss components of this standard. Spatial reference and location information are described using existing external standards. Temporal information can include date and duration of events or year of scenario, and is defined using the Dublin Core standards.
 
 ## Overview
 
@@ -25,8 +25,22 @@ The hazard component uses hazard type, process type and intensity_measure consis
     erDiagram
         Direction LR
 
+        Event_set {
+            string id*
+            object hazard*
+            string analysis_type*
+        }
+
+        Event {
+            string id*
+            object hazard*
+            string calculation_method*
+            string occurrence*
+        }    
+
         Dataset ||--o| "Hazard metadata": "Hazard data described by"
         "Hazard metadata" o|--|{ Event_set: "Describes"
+        Event_set o|--|{ "Event": "Contains"
 ```
 
 ## Examples

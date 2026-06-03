@@ -160,6 +160,7 @@ Changes in this section are grouped by the codelist that they affect.
 
 - [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
 - [#460](https://github.com/GFDRR/rdl-standard/pull/460) - Minor edits to reference documentation.
+- [#461](https://github.com/GFDRR/rdl-standard/pull/461) - Minor edits to reference documentation.
 
 ### Non-normative documentation
 
