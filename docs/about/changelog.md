@@ -156,7 +156,7 @@ Changes in this section are grouped by the codelist that they affect.
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
 - `classification_scheme.csv`:
   - Add codes:
-    - [#469](https://github.com/GFDRR/rdl-standard/pull/469) - Add 7 CMIP7 scenarios
+    - [#481](https://github.com/GFDRR/rdl-standard/pull/481) - Add 7 CMIP7 scenarios
 
 ### Normative documentation
 
