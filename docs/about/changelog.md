@@ -51,6 +51,9 @@ Changes in this section affect more than one schema component.
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.
   - Add field `license` to `source` object.
+- [#483](https://github.com/GFDRR/rdl-standard/pull/483):
+  - Remove `Format: iri` from `$defs/license`
+  - Add `Citation` to `$defs/source`
 
 #### Resource
 

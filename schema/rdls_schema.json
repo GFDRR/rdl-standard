@@ -125,7 +125,7 @@
     },
     "license": {
       "title": "License",
-      "description": "The URL of the legal document under which this dataset is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the dataset is made available is not included in the codelist, you may specify a custom license URL. When licensing a dataset, a Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this dataset can be made available under other license conditions.",
+      "description": "The license under which this dataset is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). This can be a URL to a legal document (e.g., https://creativecommons.org/licenses/by/4.0/) or a text description (e.g., 'Commercial license', 'Proprietary'). When licensing a dataset, a Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this dataset can be made available under other license conditions.",
       "$ref": "#/$defs/License"
     },
     "contact_point": {
@@ -647,6 +647,12 @@
           "description": "The uniform resource locator for the source, e.g. the web address at which the source can be accessed.",
           "format": "iri"
         },
+        "citation": {
+          "title": "Citation",
+          "type": "string",
+          "description": "The bibliographic citation for the source. This should follow standard citation formats and include authors, year, title, publisher, and other relevant information.",
+          "minLength": 1
+        },
         "type": {
           "title": "type",
           "type": "string",
@@ -675,7 +681,7 @@
         },
         "license": {
           "title": "License",
-          "description": "The URL of the legal document under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). If the license under which the source data is made available is not included in the codelist, you may specify a custom license URL.",
+          "description": "The license under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). This can be a URL to a legal document or a text description (e.g., 'Commercial license', 'Proprietary').",
           "$ref": "#/$defs/License"
         }
       },
@@ -1222,8 +1228,7 @@
     "License": {
       "title": "License",
       "type": "string",
-      "format": "iri",
-      "description": "The URL of the legal document under which data is made available.",
+      "description": "The license under which data is made available. This can be a URL to a legal document (e.g., https://creativecommons.org/licenses/by/4.0/) or a text description (e.g., 'Commercial license', 'Proprietary').",
       "codelist": "license.csv",
       "openCodelist": true,
       "minLength": 1
