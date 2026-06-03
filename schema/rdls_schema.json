@@ -483,15 +483,33 @@
           "$ref": "#/$defs/Climate"
         }
       },
-      "anyOf": [
+      "allOf": [
         {
-          "required": [
-            "download_url"
+          "anyOf": [
+            {
+              "required": [
+                "download_url"
+              ]
+            },
+            {
+              "required": [
+                "access_url"
+              ]
+            }
           ]
         },
         {
-          "required": [
-            "access_url"
+          "anyOf": [
+            {
+              "required": [
+                "media_type"
+              ]
+            },
+            {
+              "required": [
+                "format"
+              ]
+            }
           ]
         }
       ],
