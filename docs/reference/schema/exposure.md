@@ -25,6 +25,23 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 
 ```
 
+## Overview
+
+```{mermaid}
+    erDiagram
+        Direction LR
+
+        Exposure_item {
+            string id*
+            string category*
+            object asset_type
+        }
+
+        Dataset ||--o{ "Exposure metadata": ""
+        "Exposure metadata" o|--|{ Exposure_item: "Describes exposure of"
+        Exposure_item o|--|{ "Metric": "Exposure quantified by"
+```
+
 ## Examples
 
 ``````{dropdown} Example: GHSL Population map
@@ -76,23 +93,6 @@ The following example shows RDLS metadata for the [World Settlement Footprint Ev
 
 `````
 ``````
-
-## Overview
-
-```{mermaid}
-    erDiagram
-        Direction LR
-
-        Exposure_item {
-            string id*
-            string category*
-            object asset_type
-        }
-
-        Dataset ||--o{ "Exposure metadata": ""
-        "Exposure metadata" o|--|{ Exposure_item: "Describes exposure of"
-        Exposure_item o|--|{ "Metric": "Exposure quantified by"
-```
 
 ## Properties
 
