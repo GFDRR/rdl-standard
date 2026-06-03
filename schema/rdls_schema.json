@@ -185,7 +185,7 @@
     "hazard": {
       "title": "Hazard metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+      "description": "Metadata that is specific to datasets that describe natural processes or phenomena that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
       "required": [
         "event_sets"
       ],
@@ -206,7 +206,7 @@
     "exposure": {
       "title": "Exposure metadata",
       "type": "array",
-      "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets located in hazard-prone areas.",
+      "description": "Metadata that is specific to datasets that describe the situation of people, infrastructure, housing, production capacities and other tangible human assets that might be located in hazard-prone areas.",
       "items": {
         "$ref": "#/$defs/Exposure_item"
       },
@@ -216,7 +216,7 @@
     "vulnerability": {
       "title": "Vulnerability metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe the physical fragility and vulnerability relationships in relation to specific hazards or combinations of individual hazards.",
+      "description": "Metadata that is specific to datasets that describe the vulnerability relationships in relation to specific hazards, or geospatial indices associated with the chance of suffering losses from hazard events.",
       "properties": {
         "functions": {
           "title": "Functions",
@@ -330,7 +330,7 @@
     "loss": {
       "title": "Loss metadata",
       "type": "object",
-      "description": "Metadata that is specific to datasets that describe measures of impact in the form of damage or destruction caused by a disaster.",
+      "description": "Metadata that is specific to datasets that describe probabilistic risk or empirical measures of impact in the form of damage or destruction caused by a disaster.",
       "properties": {
         "losses": {
           "title": "Losses",
