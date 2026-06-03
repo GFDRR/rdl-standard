@@ -654,7 +654,7 @@
           "minLength": 1
         },
         "type": {
-          "title": "type",
+          "title": "Type",
           "type": "string",
           "description": "The nature of the source, from the closed [source_type codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#source-type).",
           "codelist": "source_type.csv",
