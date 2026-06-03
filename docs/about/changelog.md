@@ -154,6 +154,9 @@ Changes in this section are grouped by the codelist that they affect.
   - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index'.
 - `spatial_scale.csv`:
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
+- `classification_scheme.csv`:
+  - Add codes:
+    - [#469](https://github.com/GFDRR/rdl-standard/pull/469) - Add 7 CMIP7 scenarios
 
 ### Normative documentation
 
