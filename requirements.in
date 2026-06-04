@@ -14,8 +14,10 @@ mdformat-myst
 requests
 click
 pytest
-jscc
+git+https://github.com/duncandewhurst/jscc.git@rdls#egg=jscc
 ocdskit
 jsonschema
 pyyaml
 pygit2
+pre-commit
+lxml

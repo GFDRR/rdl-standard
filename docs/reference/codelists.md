@@ -1,8 +1,11 @@
 # Codelists
 
-Some schema fields refer to codelists, to limit and standardise the possible values of the fields, in order to promote data interoperability.
+Some fields in the metadata standard refer to codelists to promote data interoperability. Codelists limit and standardise the possible values of the fields.
 
-Codelists can either be open or closed. **Closed codelists** are intended to be comprehensive; for example, the currency codelist covers all currencies in the world. **Open codelists** are intended to be representative, but not comprehensive.
+Codelists can either be open or closed:
+
+- **Closed codelists** are intended to be comprehensive; for example, the currency codelist covers all currencies in the world.
+- **Open codelists** are intended to be representative, but not comprehensive.
 
 Publishers must use the codes in the codelists, unless no code is appropriate. If no code is appropriate and the codelist is **open**, then a publisher may use a new code outside those in the codelist. If no code is appropriate and the codelist is **closed**, then a publisher should instead create an issue in the [RDLS GitHub repository](https://github.com/GFDRR/rdl-standard/issues).
 
@@ -21,69 +24,72 @@ Codes are case-sensitive, and are generally provided as English language camelCa
 
 ### classification_scheme
 
-This codelist is referenced by the following properties:
-
-- [`Classification/scheme`](rdls_schema.json,/$defs/Classification,scheme)
-- [`Function/taxonomy`](rdls_schema.json,/$defs/Function,taxonomy)
-- [`SocioEconomicIndex/scheme`](rdls_schema.json,/$defs/SocioEconomicIndex,scheme)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/classification_scheme.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/classification_scheme.csv
 ```
+
 ````
 
 ### conforms_to
-
-This codelist is referenced by the following properties:
-
-- [`Resource/conforms_to`](rdls_schema.json,/$defs/Resource,conforms_to)
-
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/conforms_to.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/conforms_to.csv
 ```
+
 ````
 
 ### damage_scale_name
 
-This codelist is referenced by the following properties:
-
-- [`Damage_scale_states_names/damage_scale_name`](rdls_schema.json,/$defs/Damage_scale_states_names,damage_scale_name)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/damage_scale_name.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/open/damage_scale_name.csv
 ```
+
 ````
 
 ### engineering_demand_parameter
-
-This codelist is referenced by the following properties:
-
-- [`Engineering_demand_parameter/parameter`](rdls_schema.json,/$defs/Engineering_demand_parameter,parameter)
-
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/engineering_demand_parameter.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -93,14 +99,14 @@ open:
 
 ### impact_metric
 
-This codelist is referenced by the following properties:
-
-- [`Losses/impact_and_losses/impact_metric`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_metric)
-- [`Function/impact_metric`](rdls_schema.json,/$defs/Function,impact_metric)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/impact_metric.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -108,148 +114,235 @@ This codelist has the following codes:
 ```
 ````
 
-### imt_coastal_flood
+### imt
 
-This codelist has the following codes:
+The IMT codelist defines intensity measures and the hazard types to which each intensity measure applies.
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_coastal_flood.csv
+:file: ../../schema/codelists/open/imt.csv
 ```
 ````
 
-### imt_convective_storm
+````{seealso}
 
-This codelist has the following codes:
+For validation purposes, separate codelists for each hazard type are also provided below: 
 
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_convective_storm.csv
-```
-````
-
-### imt_drought
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_drought.csv
-```
-````
-
-### imt_earthquake
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_earthquake.csv
-```
-````
-
-### imt_extreme_temperature
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_extreme_temperature.csv
-```
-````
-
-### imt_flood
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_flood.csv
-```
-````
-
-### imt_landslide
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_landslide.csv
-```
-````
-
-### imt_strong_wind
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_strong_wind.csv
-```
-````
-
-### imt_tsunami
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_tsunami.csv
-```
-````
-
-### imt_volcanic
-
-This codelist has the following codes:
-
-````{dropdown} Codes
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/open/imt_volcanic.csv
-```
-````
-
-### imt_wildfire
-
-This codelist has the following codes:
-
-````{dropdown} Codes
+```{contents} 
 ---
-open:
+local:
+depth: 1
 ---
+```
+
+````
+
+#### imt_coastal_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_coastal_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../schema/codelists/open/imt_wildfire.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_coastal_flood.csv
+```
+````
+
+#### imt_convective_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_convective_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_convective_storm.csv
+```
+````
+
+#### imt_drought
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_drought.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
+```
+````
+
+#### imt_earthquake
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_earthquake.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_earthquake.csv
+```
+````
+
+#### imt_extreme_temperature
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_extreme_temperature.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_extreme_temperature.csv
+```
+````
+
+#### imt_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_flood.csv
+```
+````
+
+#### imt_landslide
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_landslide.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_landslide.csv
+```
+````
+
+#### imt_strong_wind
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_strong_wind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_strong_wind.csv
+```
+````
+
+#### imt_tsunami
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_tsunami.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_tsunami.csv
+```
+````
+
+#### imt_volcanic
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_volcanic.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_volcanic.csv
+```
+````
+
+#### imt_wildfire
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/open/imt_wildfire.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/open/imt_wildfire.csv
 ```
 ````
 
 ### license
 
-This codelist is referenced by the following properties:
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/license.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -259,16 +352,16 @@ This codelist has the following codes:
 
 ### location_gazetteers
 
-This codelist is referenced by the following properties:
-
-- [`Gazetteer_entry/scheme`](rdls_schema.json,/$defs/Gazetteer_entry,scheme)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/location_gazetteers.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -278,13 +371,14 @@ open:
 
 ### media_type
 
-This codelist is referenced by the following properties:
-
-- [`Resource/media_type`](rdls_schema.json,/$defs/Resource,media_type)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/media_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -294,15 +388,20 @@ This codelist has the following codes:
 
 ### quantity_kind
 
+```{seealso}
+[units](#units)
+```
+
 The quantity kind codelist is a subset of the codes in the [QUDT Quantity Kind Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html). It includes a code for the [currency quantity kind](https://qudt.org/vocab/quantitykind/Currency), which does not appear in the vocabulary because QUDT lists currencies in a separate graph from other quantity kinds.
 
-This codelist is referenced by the following properties:
-
-- [`Measurement/quantity_kind`](rdls_schema.json,/$defs/Measurement,quantity_kind)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/quantity_kind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -314,13 +413,14 @@ This codelist has the following codes:
 
 The roles codelist is based on the [ISO19115 CI_RoleCode codelist](https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml) with the addition of 'world_bank_team_lead' and the omission of codes covered by the `creator`, `contact_point` and `publisher` fields.
 
-This codelist is referenced by the following properties:
-
-- [`Attribution/role`](rdls_schema.json,/$defs/Attribution,role)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/roles.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -328,20 +428,37 @@ This codelist has the following codes:
 ```
 ````
 
-### unit_area
+### units
 
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the area [quantity kind](#quantity_kind).
+For validation purposes, a separate unit codelist for each [quantity kind](#quantity_kind) is provided:
 
-This codelist is referenced by the following properties:
+```{contents}
+---
+local:
+depth: 1
+---
+```
 
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
+Each codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html).
 
-This codelist has the following codes:
+```{seealso}
+
+[unit_currency](#unit_currency) (closed codelist)
+
+```
+
+#### unit_area
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_area.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -349,20 +466,18 @@ open:
 ```
 ````
 
-### unit_count
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the count [quantity kind](#quantity_kind).
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_count
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_count.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -370,20 +485,18 @@ open:
 ```
 ````
 
-### unit_dimensionless_ratio
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the dimensionless ratio [quantity kind](#quantity_kind).
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_dimensionless_ratio
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_dimensionless_ratio.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -391,20 +504,18 @@ open:
 ```
 ````
 
-### unit_length
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the length [quantity kind](#quantity_kind).
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_length
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_length.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -412,20 +523,18 @@ open:
 ```
 ````
 
-### unit_mass
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the mass [quantity kind](#quantity_kind).
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_mass
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_mass.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -433,18 +542,18 @@ open:
 ```
 ````
 
-### unit_mass_per_area
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_mass_per_area
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_mass_per_area.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -452,20 +561,18 @@ open:
 ```
 ````
 
-### unit_time
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the time [quantity kind](#quantity_kind).
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_time
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_time.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -473,20 +580,18 @@ open:
 ```
 ````
 
-### unit_volume
-
-The area codelist is a subset of the codes in the [QUDT Unit Vocabulary](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html), applicable to the volume [quantity kind](#quantity_kind).
-
-This codelist is referenced by the following properties:
-
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+#### unit_volume
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/unit_volume.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -498,18 +603,16 @@ open:
 
 ### analysis_type
 
-This codelist is referenced by the following properties:
-
-- [`Event_set/analysis_type`](rdls_schema.json,/$defs/Event_set,analysis_type)
-- [`Losses/impact_and_losses/loss_frequency_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_frequency_type)
-- [`Function/hazard_analysis_type`](rdls_schema.json,/$defs/Function,hazard_analysis_type)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/analysis_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -519,13 +622,14 @@ open:
 
 ### climate_scenario
 
-This codelist is referenced by the following properties:
-
-- [`Climate/scenario`](rdls_schema.json,/$defs/Climate,scenario)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/climate_scenario.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -535,13 +639,14 @@ This codelist has the following codes:
 
 ### country
 
-This codelist is referenced by the following properties:
-
-- [`Location/countries`](rdls_schema.json,/$defs/Location,countries)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/country.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -551,19 +656,16 @@ This codelist has the following codes:
 
 ### data_calculation_type
 
-This codelist is referenced by the following properties:
-
-- [`Event_set/calculation_method`](rdls_schema.json,/$defs/Event_set,calculation_method)
-- [`Event/calculation_method`](rdls_schema.json,/$defs/Event,calculation_method)
-- [`Losses/impact_and_losses/impact_modelling`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_modelling)
-- [`Function/impact_modelling`](rdls_schema.json,/$defs/Function,impact_modelling)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/data_calculation_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -573,17 +675,16 @@ open:
 
 ### exposure_category
 
-This codelist is referenced by the following properties:
-
-- [`Losses/asset_category`](rdls_schema.json,/$defs/Losses,asset_category)
-- [`Function/category`](rdls_schema.json,/$defs/Function,category)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/exposure_category.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -593,16 +694,16 @@ open:
 
 ### frequency_distribution
 
-This codelist is referenced by the following properties:
-
-- [`Event_set/frequency_distribution`](rdls_schema.json,/$defs/Event_set,frequency_distribution)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/frequency_distribution.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -612,40 +713,20 @@ open:
 
 ### function_approach
 
-This codelist is referenced by the following properties:
-
-- [`Losses/impact_and_losses/loss_approach`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_approach)
-- [`Function/approach`](rdls_schema.json,/$defs/Function,approach)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/function_approach.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/function_approach.csv
-```
-````
-
-### geometry_type
-
-This codelist is referenced by the following properties:
-
-- [`Geometry/type`](rdls_schema.json,/$defs/Geometry,type)
-
-This codelist has the following codes:
-
-````{dropdown} Codes
----
-open:
----
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../schema/codelists/closed/geometry_type.csv
 ```
 ````
 
@@ -655,15 +736,16 @@ The RDLS offers a classification of hazards that are more often required in disa
 
 The hazard_type codelist classifies hazard phenomena by the main hazard to which they relate. Hazard phenomena can also be classified by the hazard process to which they relate. For more information, see the [process_type codelist](#process_type).
 
-This codelist is referenced by the following properties:
-
-- [`SimpleHazard/type`](rdls_schema.json,/$defs/SimpleHazard,type)
-- [`Function/hazard_primary`](rdls_schema.json,/$defs/Function,hazard_primary)
-- [`Function/hazard_secondary`](rdls_schema.json,/$defs/Function,hazard_secondary)
-
-This codelist has the following codes:
+The hazard_type codelist includes a mapping from the RDLS hazard types to the hazard categories defined in the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version).
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/hazard_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -673,17 +755,16 @@ This codelist has the following codes:
 
 ### impact_type
 
-This codelist is referenced by the following properties:
-
-- [`Losses/impact_and_losses/impact_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/impact_type)
-- [`Function/impact_type`](rdls_schema.json,/$defs/Function,impact_type)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/impact_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -693,16 +774,16 @@ open:
 
 ### loss_type
 
-This codelist is referenced by the following properties:
-
-- [`Losses/impact_and_losses/loss_type`](rdls_schema.json,/$defs/Losses,impact_and_losses/loss_type)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/loss_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -712,17 +793,16 @@ open:
 
 ### metric_dimension
 
-This codelist is referenced by the following properties:
-
-- [`Metric/dimension`](rdls_schema.json,/$defs/Metric,dimension)
-- [`Losses/asset_dimension`](rdls_schema.json,/$defs/Losses,asset_dimension)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/metric_dimension.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -732,15 +812,16 @@ open:
 
 ### process_type
 
-The process_type codelist classifies hazard phenomena by the hazard process to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report).
-
-This codelist is referenced by the following properties:
-
-- [`SimpleHazard/process`](rdls_schema.json,/$defs/SimpleHazard,process)
-
-This codelist has the following codes:
+The process_type codelist defines hazard processes and the hazard types to which they relate. Hazard phenomena can also be the main hazard to which they relate. For more information, see the [hazard_type codelist](#hazard_type). Process types are based primarily on the [UNDRR Hazard terminology](https://www.undrr.org/publication/hazard-definition-and-classification-review-technical-report) and the codelist includes a mapping to [EM-DAT](https://www.emdat.be/) and the [UNDRR Hazard Information Profiles](https://www.undrr.org/publication/documents-and-publications/hazard-information-profiles-hips-2025-version).
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/open/process_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -748,18 +829,286 @@ This codelist has the following codes:
 ```
 ````
 
+````{seealso}
+
+For validation purposes, separate codelists for each hazard type are also provided below: 
+
+```{contents} 
+---
+local:
+depth: 1
+---
+```
+
+````
+
+#### process_type_coastal_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_coastal_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_coastal_flood.csv
+```
+````
+
+#### process_type_convective_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_convective_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_convective_storm.csv
+```
+````
+
+#### process_type_drought
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_drought.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_drought.csv
+```
+````
+
+#### process_type_dust_sand_storm
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_dust_sand_storm.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_dust_sand_storm.csv
+```
+````
+
+#### process_type_earthquake
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_earthquake.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_earthquake.csv
+```
+````
+
+#### process_type_erosion
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_erosion.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_erosion.csv
+```
+````
+
+#### process_type_extreme_temperature
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_extreme_temperature.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_extreme_temperature.csv
+```
+````
+
+#### process_type_flood
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_flood.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_flood.csv
+```
+````
+
+#### process_type_landslide
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_landslide.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_landslide.csv
+```
+````
+
+#### process_type_pest_infestation
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_pest_infestation.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_pest_infestation.csv
+```
+````
+
+#### process_type_sea_level_rise
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_sea_level_rise.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_sea_level_rise.csv
+```
+````
+
+#### process_type_strong_wind
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_strong_wind.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_strong_wind.csv
+```
+````
+
+#### process_type_tsunami
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_tsunami.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_tsunami.csv
+```
+````
+
+#### process_type_volcanic
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_volcanic.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_volcanic.csv
+```
+````
+
+#### process_type_wildfire
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/process_type_wildfire.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../docs/_readthedocs/html/codelists/closed/process_type_wildfire.csv
+```
+````
+
 ### relationship_type
-
-This codelist is referenced by the following properties:
-
-- [`Function/relationship`](rdls_schema.json,/$defs/Function,relationship)
-
-This codelist has the following codes:
 
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/relationship_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -769,18 +1118,16 @@ open:
 
 ### risk_data_type
 
-This codelist is referenced by the following properties:
-
-- [`risk_data_type`](rdls_schema.json,,risk_data_type)
-- [`Source/risk_data_type`](rdls_schema.json,/$defs/Source,risk_data_type)
-- [`Source/used_in`](rdls_schema.json,/$defs/Source,used_in)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/risk_data_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -790,16 +1137,16 @@ open:
 
 ### seasonality
 
-This codelist is referenced by the following properties:
-
-- [`Event_set/seasonality`](rdls_schema.json,/$defs/Event_set,seasonality)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/seasonality.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -809,16 +1156,16 @@ open:
 
 ### source_type
 
-This codelist is referenced by the following properties:
-
-- [`Source/type`](rdls_schema.json,/$defs/Source,type)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/source_type.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -828,16 +1175,16 @@ open:
 
 ### spatial_scale
 
-This codelist is referenced by the following properties:
-
-- [`Location/scale`](rdls_schema.json,/$defs/Location,scale)
-
-This codelist has the following codes:
-
 ````{dropdown} Codes
 ---
 open:
 ---
+```{button-link} ../../codelists/open/spatial_scale.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
@@ -847,13 +1194,19 @@ open:
 
 ### unit_currency
 
-This codelist is referenced by the following properties:
+```{seealso}
+[units](#units)
 
-- [`Measurement/unit`](rdls_schema.json,/$defs/Measurement,unit)
-
-This codelist has the following codes:
+```
 
 ````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/unit_currency.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto

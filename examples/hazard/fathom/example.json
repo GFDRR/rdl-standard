@@ -1,97 +1,116 @@
 {
-  "datasets": [
+  "id": "rdls_hzd-F3_FCV",
+  "title": "Flood hazard maps for 16 FCV countries",
+  "description": "Third release of the probabilistic modelling of fluvial, pluvial and coastal flood hazard developed by Fathom. This selection includes 16 countries among the most vulnerable to climate change, such as Pakistan, Somalia, and Yemen, which often struggle with limited data resources. Under World Bank agreement, Fathom offers free-of-charge access to flood data for these countries for non-commercial use.",
+  "risk_data_type": [
+    "hazard"
+  ],
+  "publisher": {
+    "name": "Fathom",
+    "url": "https://www.fathom.global/"
+  },
+  "version": "3",
+  "purpose": "Fathom Global hazard maps can support risk screening and analysis at the sub-national level. Caution is advised when using these data as the only source of flood hazard information for site-specific analysis. The model is driven by global assumptions; it can provide a useful overview of the likely hazard in a particular area, however local data should be sought out before detailed planning or operational decisions are made. The data are not suitable for engineering-level analysis (such as construction of bridges or flood defences).",
+  "details": "The FATHOM flood-hazard model is a global gridded dataset of flood hazard produced at the global scale. It provides flood extent and water depth to ground (in centimeters) for three types of flood phenomena: - Fluvial (or river) flooding occurs when a river exceeds its capacity and inundates surrounding areas. - Pluvial (or surface water) flooding occurs when extreme rainfall exceeds surface drainage capacity. - Coastal flooding occurs when a combination of storm-surge, tides and waves lead to water levels that submerge the coastal land. There are two options for each flood type: Defended and Undefended (fluvial and coastal only). Defended scenarios account for protection standards in proportion to country wealth to reduce the chance of hazard occurrence. It does not take account location-specific physical protection measures. The model covers 4 time periods: - 2020 (present baseline) - 2030 (near future) - 2050 (mid-century) - 2080 (far future) Future periods include 4 model realizations, each one describing a different climate scenario: - SSP1 – 2.6 (limited emissions) - SSP2 – 4.5 - SSP3 – 7.0 - SSP5 – 8.5 (high emissions) Each scenario set is made of 10 events each representing a different intensity and probability of occurrence, expressed as “return period”. These are framed as 1 in 5, 10, 20, 50, 100, 200, 500 and 1,000 years. ",
+  "contact_point": {
+    "name": "Mattia Amadio",
+    "email": "mamadio@worldbank.org"
+  },
+  "creator": {
+    "name": "SSBN ltd",
+    "url": "https://www.fathom.global/"
+  },
+  "spatial": {
+    "scale": "regional",
+    "countries": [
+      "BFA",
+      "BDI",
+      "CAF",
+      "TCD",
+      "COD",
+      "DJI",
+      "HND",
+      "MDG",
+      "FSM",
+      "MOZ",
+      "PAK",
+      "PNG",
+      "SOM",
+      "SSD",
+      "TLS",
+      "YEM"
+    ]
+  },
+  "spatial_resolution": 30,
+  "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "resources": [
     {
-      "id": "FTH_example",
-      "title": "FATHOM flood hazard maps",
-      "description": "Probabilistic modelling of fluvial and pluvial flood hazard",
-      "risk_data_type": [
-        "hazard"
-      ],
-      "publisher": {
-        "name": "Fathom",
-        "url": "https://www.fathom.global/"
-      },
-      "version": "2",
-      "details": "The FATHOM flood-hazard model (previously known as SSBN), is a global gridded dataset of flood hazard produced at the global scale. It provides flood water extent and depth for a range of pluvial and fluvial hazard scenarios, expressed as “return period”, which indicates the probability of occurrence (i.e. once in 5, 10, 20, 50, 75, 100, 200, 250, 500, 750 and 1000 years). The Data are at 3 arc second (approximately 90m) resolution and have a global coverage between 56°S and 60°N. Each country set includes three subsets:\n- Fluvial Undefended (FU): no flood defence accounted\n- Fluvial Defended (FD): flood defence estimated by protection standards proxied by GDP (FloProS)\n- Pluvial Undefended (PU): pluvial cumulation hazard maps, no flood defence accounted",
+      "title": " Fathom v3 FCV countries request",
+      "description": "Request form to access Fathom Flood Hazard Maps for 16 FCV countries. ",
+      "access_url": "https://forms.office.com/r/u55iJgeZGU",
+      "media_type": "image/tiff;application=geotiff",
       "spatial": {
-        "scale": "national"
-      },
-      "license": "commercial",
-      "contact_point": {
-        "name": "Mattia Amadio",
-        "email": "mamadio@worldbank.org"
-      },
-      "creator": {
-        "name": "Mattia Amadio",
-        "email": "mamadio@worldbank.org"
-      },
-      "resources": [
-        {
-          "id": "1",
-          "title": "Fluvial hazard - Undefended",
-          "description": "Fluvial flood hazard maps (10), not accounting any flood defence",
-          "format": "geotiff",
-          "spatial_resolution": 90,
-          "coordinate_system": "EPSG:4326",
-          "download_url": "http://example.com/FTH-THA-fluvial-undefended"
-        },
-        {
-          "id": "2",
-          "title": "Fluvial hazard - Defended",
-          "description": "Fluvial flood hazard maps (10), accounting for flood defence (estimate)",
-          "format": "geotiff",
-          "spatial_resolution": 90,
-          "coordinate_system": "EPSG:4326",
-          "download_url": "http://example.com/FTH-THA-fluvial-defended"
-        },
-        {
-          "id": "3",
-          "title": "Pluvial hazard - Undefended",
-          "description": "Pluvial flood hazard maps (10), not accounting any flood defence",
-          "format": "geotiff",
-          "spatial_resolution": 90,
-          "coordinate_system": "EPSG:4326",
-          "download_url": "http://example.com/FTH-THA-pluvial-undefended"
-        }
-      ],
-      "hazard": {
-        "event_sets": [
-          {
-            "id": "1",
-            "analysis_type": "probabilistic",
-            "calculation_method": "simulated",
-            "event_count": 10,
-            "occurrence_range": "1/10 to 1/1000 years",
-            "spatial": {
-              "scale": "global"
-            },
-            "hazards": [
-              {
-                "id": "1",
-                "type": "flood",
-                "processes": [
-                  "fluvial_flood"
-                ],
-                "intensity_measure": "fl_wd:m"
-              },
-              {
-                "id": "2",
-                "type": "flood",
-                "processes": [
-                  "pluvial_flood"
-                ],
-                "intensity_measure": "fl_wd:m"
-              }
-            ]
-          }
+        "scale": "national",
+        "countries": [
+          "BFA",
+          "BDI",
+          "CAF",
+          "TCD",
+          "COD",
+          "DJI",
+          "HND",
+          "MDG",
+          "FSM",
+          "MOZ",
+          "PAK",
+          "PNG",
+          "SOM",
+          "SSD",
+          "TLS",
+          "YEM"
         ]
       },
-      "links": [
-        {
-          "href": "https://docs.riskdatalibrary.org/en/0__2__0/rdls_schema.json",
-          "rel": "describedby"
-        }
-      ]
+      "baseline_period": {
+        "central_year": 2020
+      },
+      "id": "resource_cDAPBUUC"
+    }
+  ],
+  "hazard": {
+    "event_sets": [
+      {
+        "hazards": [
+          {
+            "id": "hazard_mSn26wkr",
+            "type": "flood",
+            "process": "fluvial_flood",
+            "intensity_measure": "flow_depth_ground:cm"
+          },
+          {
+            "id": "hazard_G9F82lIQ",
+            "type": "flood",
+            "process": "pluvial_flood",
+            "intensity_measure": "flow_depth_ground:cm"
+          },
+          {
+            "id": "hazard_1c9SyLRK",
+            "type": "flood",
+            "process": "coastal_flood",
+            "intensity_measure": "flow_depth_ground:cm"
+          }
+        ],
+        "analysis_type": "probabilistic",
+        "frequency_distribution": "generalized_extreme_value",
+        "calculation_method": "simulated",
+        "occurrence_range": "1/10 to 1/1000 years ",
+        "id": "event_set_JGsFpd1d"
+      }
+    ]
+  },
+  "links": [
+    {
+      "href": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json",
+      "rel": "describedby"
     }
   ]
 }

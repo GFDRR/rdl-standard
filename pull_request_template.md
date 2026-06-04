@@ -12,15 +12,14 @@
 
 If you added, removed or renamed a field:
 
-- [ ] Update the `collapse` option of the jsonschema directives for dataset, resource, hazard, exposure, vulnerability and loss on `reference/schema.md`
-- [ ] Update the diagrams in `reference/schema/md`
+- [ ] Update the `collapse` and `externallinks` options of the jsonschema directives in `reference/schema/`
+- [ ] Update the diagrams in `reference/schema/`
 - [ ] Update the JSON files in `examples`
 
 Always:
 
-- [ ] Run `./manage.py` pre-commit
-- [ ] Update the changelog ([style guide](developer_docs.md#changelog-style-guide))
+- [ ] Update the changelog ([style guide](https://github.com/GFDRR/rdl-standard/wiki/Style-guides#changelog-style-guide))
 
 **Having trouble?**
 
-See [how to resolve check failures](https://github.com/GFDRR/rdl-standard/blob/dev/developer_docs.md#resolve-check-failures).
+See [how to resolve check failures](https://github.com/GFDRR/rdl-standard/wiki/How%E2%80%90to-guides#resolve-check-failures).
