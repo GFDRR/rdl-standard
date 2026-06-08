@@ -1,0 +1,124 @@
+Code,Title,Description,Metric,Unit,Hazard
+PGA:g,Peak ground acceleration in g,The largest increase in velocity recorded at a particular location during an earthquake. Expressed in g-force.,PGA,g,earthquake
+PGA:gal,Peak ground acceleration in gal,Peak ground acceleration expressed in gal (1 gal = 0.01 m/s²).,PGA,gal,earthquake
+PGA:m/s2,Peak ground acceleration in m/s²,Peak ground acceleration expressed in meters per second squared.,PGA,m/s2,earthquake
+PGV:m/s,Peak ground velocity in m/s,The greatest speed of ground shaking during an earthquake.,PGV,m/s,earthquake
+PGV:cm/s,Peak ground velocity in cm/s,Peak ground velocity expressed in centimeters per second.,PGV,cm/s,earthquake
+AvgSa:m/s2,Average spectral acceleration,Mean spectral acceleration at periods crucial for risk assessment.,AvgSa,m/s2,earthquake
+Sa_1:m/s2,Spectral acceleration (1 sec),Spectral acceleration at 1-second period.,Sa_1,m/s2,earthquake
+Sa_03:m/s2,Spectral acceleration (0.3 sec),Spectral acceleration at 0.3-second period.,Sa_03,m/s2,earthquake
+Sd(T1):m,Spectral displacement,Maximum displacement of structure at fundamental period.,Sd(T1),m,earthquake
+Sv(T1):m/s,Spectral velocity,Maximum velocity of structure at fundamental period.,Sv(T1),m/s,earthquake
+PGDf:m,Permanent ground deformation,Displacement of ground surface due to fault movement.,PGDf,m,earthquake
+D:s,Significant duration,Time interval of strong ground shaking.,D,s,earthquake
+D_B:s,Bracketed duration,Time between first and last threshold exceedances.,D_B,s,earthquake
+IA:m/s,Arias intensity,Measure of ground motion strength.,IA,m/s,earthquake
+Neq:-,Effective number of cycles,Relationship between cycle count and damage potential.,Neq,-,earthquake
+CAV:m/s,Cumulative absolute velocity,Integrated absolute acceleration over earthquake duration.,CAV,m/s,earthquake
+MMI:-,Modified Mercalli Intensity,Seismic intensity scale from I (Not felt) to X (Extreme).,MMI,-,earthquake
+EMS:-,European Macroseismic Scale,Seismic intensity scale from I (Not felt) to XII (Completely devastating).,EMS,-,earthquake
+wd:m,Flow depth above ground (m),Flow depth measured relative to ground level. Expressed in meters (m).,wd,m,"flood,tsunami,coastal_flood,landslide,volcanic"
+wd:cm,Flow depth above ground (cm),Flow depth measured relative to ground level. Expressed in centimeters (cm).,wd,cm,"flood,tsunami,coastal_flood,landslide,volcanic"
+wd:dm,Flow depth above ground (dm),Flow depth measured relative to ground level. Expressed in decimeters (dm).,wd,dm,"flood,tsunami,coastal_flood,landslide,volcanic"
+wd_f:m,Flow depth above floor (m),Flow depth measured relative to building floor level. Expressed in meters (m).,wd_f,m,"flood,tsunami,coastal_flood"
+wd_f:cm,Flow depth above floor (cm),Flow depth measured relative to building floor level. Expressed in centimeters (cm).,wd_f,cm,"flood,tsunami,coastal_flood"
+wd_f:dm,Flow depth above floor (dm),Flow depth measured relative to building floor level. Expressed in decimeters (dm).,wd_f,dm,"flood,tsunami,coastal_flood"
+wv:m/s,Flow velocity (m/s),"The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s).",wv,m/s,"flood,tsunami,coastal_flood,landslide,volcanic"
+slr:cm,Sea level rise,Long-term rise in sea level affecting coastal hazards.,slr,cm,sea_level_rise
+pptn1:mm,1-hour precipitation,Maximum rainfall depth in any 1-hour period.,pptn1,mm,flood
+pptn24:mm,24-hour precipitation,Maximum rainfall depth in any 24-hour period.,pptn24,mm,flood
+pptn_tot:mm,Total event precipitation,Total cumulative precipitation for entire event.,pptn_tot,mm,flood
+AA:m2,Area Affected (m²),Surface area impacted by the hazard. Described in square meters.,AA,m2,"flood,tsunami,coastal_flood,landslide,volcanic,convective_storm,wildfire"
+AA:km2,Area Affected (km²),Surface area impacted by the hazard. Described in square kilometers.,AA,km2,"flood,tsunami,coastal_flood,landslide,volcanic,convective_storm,wildfire"
+Rh_tsi:m,Tsunami wave runup height,Maximum elevation reached by tsunami waves on land.,Rh_tsi,m,tsunami
+h_tsi:m,Tsunami inundation height,Height of tsunami water above ground level.,h_tsi,m,tsunami
+Fh_tsi:m,Tsunami horizontal force,Lateral force exerted by tsunami.,Fh_tsi,m,tsunami
+F_drag:kN,Hydrodynamic drag force,Drag force exerted by flowing water on structures.,F_drag,kN,tsunami
+F_QS:kN,Quasi-static buoyant force,Buoyant force during low-velocity inundation.,F_QS,kN,tsunami
+MF:m3/s2,Momentum flux,Product of flow depth and velocity squared.,MF,m3/s2,tsunami
+MMF:m4/s2,Modified momentum flux,Product of momentum flux and inundation depth.,MMF,m4/s2,tsunami
+Fr:-,Froude number,Flow velocity non-dimensionalized by gravity-wave velocity.,Fr,-,tsunami
+sws_3s:km/h,3-sec sustained wind speed (kph),"The average speed of the wind over a 3-second time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph).",sws_3s,km/h,"strong_wind,convective_storm"
+sws_1m:km/h,1-min sustained wind speed (kph),"The average speed of the wind over a 1-minute time period, measured at a height of 10 meters (about 33 feet) above the ground or sea surface. Expressed in kilometers per hour (kph).",sws_1m,km/h,"strong_wind,convective_storm"
+sws_10m:km/h,10-min sustained wind speed (kph),The average wind speed over a period of 10 minutes. Expressed in kilometers per hour (kph).,sws_10m,km/h,"strong_wind,convective_storm"
+sws_10m:m/s,10-min sustained wind speed (m/s),The average wind speed over a period of 10 minutes. Expressed in meters per second (m/s).,sws_10m,m/s,"strong_wind,convective_storm"
+PGWS:km/h,Peak gust wind speed (km/h),The peak gust wind speed in the open terrain. Expressed in kilometers per hour (kph).,PGWS,km/h,"strong_wind,convective_storm"
+MSLP:mbar,Minimum sea level pressure (mbar),Atmospheric pressure in millibars (tropical cyclone intensity).,MSLP,mbar,strong_wind
+MSLP:hPa,Minimum sea level pressure (hPa),Atmospheric pressure in hectopascals.,MSLP,hPa,strong_wind
+EF:-,Enhanced Fujita Scale,Tornado intensity from EF0 to EF5 based on damage.,EF,-,convective_storm
+TPL:m,Tornado path length,Distance traveled by tornado along its path.,TPL,m,convective_storm
+TPW:m,Tornado path width,Maximum width of tornado damage path.,TPW,m,convective_storm
+TD:,Tornado Duration,"Time the tornado is on the ground, influencing cumulative damage.",TD,-,convective_storm
+PGWS:mph,Peak gust wind speed (mph),Direct wind speed estimate used in engineering and insurance modeling.,PGWS,mph,"strong_wind,convective_storm"
+PGWS:m/s,Peak gust wind speed (m/s),The peak gust wind speed in the open terrain. Expressed in meters per second (m/s).,PGWS,m/s,"strong_wind,convective_storm"
+HSI:-,Hail Severity Index,Composite hail index for insurance and risk modeling.,HSI,-,convective_storm
+HlMaxSz:mm,Maximum hail size,Largest hailstone diameter observed.,HlMaxSz,mm,convective_storm
+HlD:mm,Hailstone diameter,Most common hail metric for severity assessment.,HlD,mm,convective_storm
+HlProb:%,Severe hail probability,Likelihood of hail exceeding certain size threshold.,HlProb,%,convective_storm
+HlKE:J/m2,Hail kinetic energy,Energy per unit area for crop and roof damage assessment.,HlKE,J/m2,convective_storm
+ImpactE:J,Impact energy (J),"Energy released upon impact (ballistics, hail).",ImpactE,J,"convective_storm,volcanic"
+EvArea:events/km²,Event Density - Count per Unit Area,"Number of events in a unit area, e.g. count of landslide, rockfall, volcanic ballistics/projectiles, tornadoes in a km2.",EvArea,events/km²,"convective_storm,landslide,volcanic"
+SPI:-,Standard Precipitation Index,Meteorological drought index across multiple timescales.,SPI,-,drought
+SPEI:-,Standard Precipitation Evapotranspiration Index,Drought index incorporating temperature effects.,SPEI,-,drought
+PDSI:-,Palmer Drought Severity Index,Long-term drought index spanning -10 (dry) to +10 (wet).,PDSI,-,drought
+CMI:-,Crop Moisture Index,Short-term agricultural drought or moisture surplus indicator.,CMI,-,drought
+NDVI:-,Normalized Difference Vegetation Index,Satellite-derived measure of vegetation health and biomass.,NDVI,-,drought
+VCI:-,Vegetation Condition Index,Current vegetation health vs. historical trends.,VCI,-,drought
+VHI:-,Vegetation Health Index,Composite index combining VCI and temperature effects.,VHI,-,drought
+ASI:%,Agricultural Stress Index,Indicator for early identification of water-stressed cropland.,ASI,%,drought
+WMVHI:-,Weighted Mean Vegetation Health Index,Drought severity assessment from growing season start.,WMVHI,-,drought
+DI:-,Drought Intensity,"Classification: Extreme, Severe, Moderate, or Mild.",DI,-,drought
+DMC:-,U.S. Drought Monitor Categories,Scale from D0 (Abnormally Dry) to D4 (Exceptional Drought).,DMC,-,drought
+PNP:%,Percent of Normal Precipitation,Current precipitation compared to historical average.,PNP,%,drought
+SMA:-,Soil Moisture Anomaly,Deviation from normal soil moisture levels.,SMA,-,drought
+SA:%,Streamflow Percentile,Current streamflow compared to historical records.,SA,%,drought
+DSCI:-,Drought Severity and Coverage Index,Continuous severity index on scale 0-500.,DSCI,-,drought
+EDDI:-,Evaporative Demand Drought Index,Quantifies atmospheric water demand from land surface.,EDDI,-,drought
+AirTemp:C,Air temperature (°C),Ambient air temperature in Celsius.,AirTemp,C,extreme_temperature
+AirTemp:F,Air temperature (°F),Ambient air temperature in Fahrenheit.,AirTemp,F,extreme_temperature
+WBGT:C,Wet Bulb Globe Temperature,"Heat stress index incorporating temperature, humidity, wind, and solar radiation.",WBGT,C,extreme_temperature
+WBT:C,Wet Bulb Temperature,Temperature at which sweat no longer evaporates efficiently.,WBT,C,extreme_temperature
+HI:-,Heat Index,Apparent temperature combining air temperature and humidity.,HI,-,extreme_temperature
+EHF:-,Excess Heat Factor,Heatwave severity based on temperature anomalies.,EHF,-,extreme_temperature
+CDD:-,Cooling Degree Days,Measures energy demand for cooling buildings.,CDD,-,extreme_temperature
+AT:-,Apparent Temperature,Perceived temperature based on humidity and wind (similar to heat index).,AT,-,extreme_temperature
+HD:-,Number of Hot Days,Days exceeding a threshold (e.g. >35°C).,HD,-,extreme_temperature
+ls_fd:m,Landslide flow depth,Depth of landslide flow in meters.,ls_fd,m,landslide
+ls_mfd:m,Maximum foundation displacement,Maximum foundation displacement due to landslide.,ls_mfd,m,landslide
+SD_lsl:m,Landslide displacement,Displacement associated with slow-moving landslides.,SD_lsl,m,landslide
+I_DF:m3/s2,Debris-flow intensity index,Landslide intensity index (Jakob et al. 2012).,I_DF,m3/s2,landslide
+rf_KE:kJ,Rockfall kinetic energy,Kinetic energy of rockfall as function of mass and velocity.,rf_KE,kJ,landslide
+IP:kPa,Impact Pressure,Force exerted by avalanche on objects,IP,kPa,landslide
+LSI:-,Landslide Susceptibility Index,Probability based on terrain and environmental factors.,LSI,-,landslide
+DP:-,Destructive Potential,Classification based on observed or expected damage.,DP,-,landslide
+PE:% of slope area,Planimetric Extent,Proportion of a slope affected by landslides,PE,% of slope area,landslide
+Rdist:m,Runout distance,Horizontal distance traveled downslope.,Rdist,m,"landslide,volcanic"
+Vol:m3,Volume,Total volume of material involved.,Vol,m3,landslide
+h_vaf:mm,Volcanic ash fall thickness,Accumulated depth of ash following eruption.,h_vaf,mm,volcanic
+L_vaf:kg/m2,Volcanic ash loading,Load of accumulated ash per unit area.,L_vaf,kg/m2,volcanic
+vei:-,Volcanic Explosivity Index,Logarithmic scale of eruption explosiveness.,vei,-,volcanic
+ImpactE:kJ,Impact energy (kJ),Impact energy in kilojoules.,ImpactE,kJ,volcanic
+Vbal_size:m,Volcanic ballistic size,Diameter of volcanic projectiles.,Vbal_size,m,volcanic
+Vbal_Lprob:%,Ballistic landing probability,Likelihood of ballistic landing in given area.,Vbal_Lprob,%,volcanic
+Vbal_MaxRng:km,Maximum ballistic range,Maximum distance ballistics can reach from vent.,Vbal_MaxRng,km,volcanic
+BA:ha,Burned Area (ha),Surface area impacted by the hazard. Described in square kilometers.,BA,ha,wildfire
+BA:km2,Burned Area (km²),Surface area impacted by the hazard. Described in square kilometers.,BA,km2,wildfire
+FWI:-,Fire Weather Index,Meteorological fire danger index.,FWI,-,wildfire
+riskidx:-,Risk score,Composite risk quantification.,riskidx,-,universal
+HzI:-,Hazard Index,Index describing the level or classification of a hazard or multiple hazards.,HzI,-,universal
+EvYr:events/year,Event Frequency - Count per Year,Number of events in a year,EvYr,events/year,universal
+fl_d:h,Flood duration (h),The total length of time that flooding is present on a piece of land during a flood event expressed in hours (h),fl_dur,hours,flood
+Ltng:kJ,Lightning energy released,"Represents the total energy discharged during lightning events, expressed in kilojoules. Useful for assessing storm severity and electrical intensity within convective systems.",LightningEnergy,kJ,convective_storm
+Ltng:count/km/y,lightning event per km2 per year,"Measures the annual density of lightning strikes per square kilometre, enabling comparison of lightning?prone regions and long?term storm activity trends.",LightningEvents,count/km/year,convective_storm
+Ltng:count,lightning event count,"A count of lightning strikes within a defined area or time period, commonly used for storm frequency analysis.",LightningEvents,-,convective_storm
+Ltng:cape,CAPE - High Convective Available Potential Energy (kJ).,Indicates the amount of atmospheric energy available for convection. Higher CAPE values correlate with stronger updrafts and more intense convective storms.,CAPE,kJ,convective_storm
+wf:-pm2.5,Particulate Matter,"Represents concentrations of fine inhalable particles with diameters of 2.5 micrometres or smaller, often associated with wildfire smoke and hazardous air quality.",PM,PM 2.5,wildfire
+gas:-kT,Volume of gases emitted,"Quantifies volcanic gas emissions, typically measured in kilotonnes per day, indicating the scale of volcanic degassing and potential atmospheric impacts.",Gas_Vol,kT/day,volcanic
+Er:m/yr,Coastal distance of retreat,"Measures the annual horizontal landward movement of coastlines, reflecting shoreline erosion rates and long?term coastal change.",Erosion,m/yr,erosion
+Er:mm,Surface lowering,"Captures the vertical reduction of land surface elevation in millimetres, useful for monitoring erosion, subsidence, or sediment removal processes.",Erosion,mm,erosion
+Er:T/ha,Lost sediment mass,"Represents the amount of sediment removed from a given area, enabling assessment of soil erosion severity and land degradation.",Erosion,tonnes/hectare,erosion
+Pest:count/area,Density of pests per area,"Expresses the number of pests per hectare, used in ecological assessments, agriculture monitoring, and pest outbreak prediction.",PestDensity,count/hectare,pest_infestation
+DSI:-,Dust Storm Index,"A composite index describing the severity, frequency, and impact of dust storm events, integrating multiple environmental and atmospheric factors.",DSI,-,dust_sand_storm
+POE:-,Probability of exceedance,The probability of a hazard event being exceeded within a defined time span (e.g. 1 year or 50 years). Expressed as a dimensionless value between 0 and 1.,POE,-,"earthquake,flood,tsunami,coastal_flood,strong_wind,volcanic,landslide,wildfire"
+SA:g,Spectral acceleration (g),The maximum acceleration experienced by a damped single-degree-of-freedom oscillator at a given natural period in response to ground shaking. Expressed as a fraction of g (1 g = 9.81 m/s²).,SA,g,earthquake
+Dsize:-,Avalanche Size Class (1-5),"Qualitative scale based on volume, path, and damage potential",index,-,landslide

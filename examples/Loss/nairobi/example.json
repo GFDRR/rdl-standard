@@ -1,0 +1,509 @@
+{
+  "id": "rdls_hevl-kentmrwcities_nairobi",
+  "title": "Tomorrow's Cities Flood Risk Assessment Dataset for Nairobi, Kenya",
+  "description": "Flood risk data package for Nairobi, Kenya, providing 100-year return period flood hazard (vector-based depth points), synthetic future urban exposure datasets (buildings, households, individuals, land use) for five community planning scenarios (Business, Elders, Women, Youth1, Youth2), flood depth-damage vulnerability functions for buildings, and flood impact assessment results. Developed as part of the Tomorrow's Cities GCRF Urban Disaster Risk Hub project for risk-informed decision making in urban planning.",
+  "risk_data_type": [
+    "hazard",
+    "exposure",
+    "vulnerability",
+    "loss"
+  ],
+  "publisher": {
+    "name": "Tomorrow's Cities",
+    "email": "support@tomorrowscities.org",
+    "url": "https://data.tomorrowscities.org/"
+  },
+  "version": "1",
+  "purpose": "To support flood risk assessment and risk-informed urban planning decision making for Nairobi by providing spatial hazard, synthetic future exposure, vulnerability functions, and impact assessment datasets for participatory community planning scenarios.",
+  "project": {
+    "name": "Tomorrow's Cities - GCRF Urban Disaster Risk Hub",
+    "url": "https://tomorrowscities.org/"
+  },
+  "details": "The dataset includes: (i) 100-year return period flood hazard as vector point grid (127,422 point features) with water depth (IM) values in GeoJSON format, plus flood depth-damage vulnerability functions for 6,300 building typologies at 9 water depths (0-6m) in JSON columnar format; (ii) five future exposure dataset variants representing different community planning scenarios, each containing building footprints (5,815 buildings, 116 typologies in MultiPolygon geometry) with structural taxonomy, household data, individual demographics, and land use plans (110 zones, 25 categories); and (iii) flood impact results per scenario including building damage states, impact metrics, and nearest road node connectivity. Note: Only flood hazard is present despite the Multi Hazard Dataset naming. No road, power, or other infrastructure data in exposure datasets.",
+  "contact_point": {
+    "name": "Menteşe, E.Y. - Anofa Engineering, Planning and Informatics Ltd.",
+    "email": "emin.mentese@anofa.co",
+    "url": "https://orcid.org/0000-0002-7187-4384"
+  },
+  "creator": {
+    "name": "Tomorrow's Cities",
+    "email": "support@tomorrowscities.org",
+    "url": "https://data.tomorrowscities.org/"
+  },
+  "spatial": {
+    "scale": "sub-national",
+    "countries": [
+      "KEN"
+    ],
+    "bbox": [
+      36.8,
+      -1.35,
+      36.9,
+      -1.25
+    ],
+    "gazetteer_entries": [
+      {
+        "scheme": "GEONAMES",
+        "description": "Kenya",
+        "uri": "https://www.geonames.org/192950/kenya.html",
+        "id": "gazetteer_1"
+      },
+      {
+        "scheme": "GEONAMES",
+        "description": "Nairobi",
+        "uri": "https://www.geonames.org/184745/nairobi.html",
+        "id": "gazetteer_2"
+      }
+    ]
+  },
+  "license": "CC0-1.0",
+  "attributions": [
+    {
+      "id": "attribution_funder",
+      "role": "funder",
+      "entity": {
+        "name": "Natural Environment Research Council (NERC)",
+        "email": "press@ukri.org",
+        "url": "https://www.ukri.org/councils/nerc/"
+      }
+    },
+    {
+      "id": "attribution_collaborator",
+      "role": "collaborator",
+      "entity": {
+        "name": "University College London",
+        "email": "servicedesk@ucl.ac.uk",
+        "url": "https://www.ucl.ac.uk/"
+      }
+    }
+  ],
+  "lineage": {
+    "sources": [
+      {
+        "name": "OpenStreetMap building footprints",
+        "description": "Building footprints derived from OpenStreetMap database, modified and attributed to represent future urban context with structural taxonomy for flood risk assessment.",
+        "url": "https://www.openstreetmap.org/",
+        "license": "ODbL-1.0",
+        "id": "source_1"
+      },
+      {
+        "name": "Synthetic population generation algorithm",
+        "description": "Bespoke algorithms developed to generate synthetic future population (households and individuals) based on population projections and land use plans through participatory community engagement.",
+        "url": "https://doi.org/10.1016/j.ijdrr.2023.103651",
+        "license": "Unknown",
+        "id": "source_2"
+      },
+      {
+        "name": "Flood hazard modelling",
+        "description": "100-year return period flood simulation providing water depth intensity measures as vector point grid (127,422 points) for the Nairobi study area.",
+        "license": "Unknown",
+        "id": "source_3"
+      },
+      {
+        "name": "Depth-damage vulnerability functions for flood",
+        "description": "Vulnerability functions defining damage ratio as a function of water depth for 6,300 building typologies at 9 water depth levels (0, 0.5, 1, 1.5, 2, 3, 4, 5, 6m).",
+        "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC105688",
+        "license": "Unknown",
+        "id": "source_4"
+      }
+    ]
+  },
+  "referenced_by": [
+    {
+      "author_names": [
+        "Gemma Cremen",
+        "Carmine Galasso",
+        "John McCloskey",
+        "Alejandro Barcena",
+        "Maggie Creed",
+        "Maria Evangelina Filippi",
+        "Roberto Gentile",
+        "Luke T. Jenkins",
+        "Mehmet Kalaycioglu",
+        "Emin Yahya Mentese",
+        "Manoranjan Muthusamy",
+        "Karim Tarbali",
+        "Robert Šakić Trogrlić"
+      ],
+      "name": "A state-of-the-art decision-support environment for risk-sensitive and pro-poor urban planning and design in Tomorrow's cities",
+      "date_published": "2022-12-29",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2212420922006197",
+      "doi": "https://doi.org/10.1016/j.ijdrr.2022.103400",
+      "id": "reference_1"
+    },
+    {
+      "author_names": [
+        "Emin Yahya Menteşe",
+        "Gemma Cremen",
+        "Roberto Gentile",
+        "Carmine Galasso",
+        "Maria Evangelina Filippi",
+        "John McCloskey"
+      ],
+      "name": "Future exposure modelling for risk-informed decision making in urban planning",
+      "date_published": "2023-03-27",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2212420923001310",
+      "doi": "https://doi.org/10.1016/j.ijdrr.2023.103651",
+      "id": "reference_2"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Nairobi Multi Hazard Dataset",
+      "description": "Flood hazard dataset containing: (1) 100-year return period flood depth GeoJSON (127,422 point features with IM/depth values); (2) Flood depth-damage vulnerability functions for 6,300 building typologies in JSON columnar dict format. Note: Only flood hazard present despite Multi Hazard naming.",
+      "data_format": "GeoJSON (geojson)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-multi-hazard-dataset",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-multi-hazard-dataset/resource/e5f04bdc-5409-4558-874b-d79b3649a6b6",
+      "id": "resource_hazard_multihazard"
+    },
+    {
+      "title": "Nairobi Future Exposure Dataset - Business",
+      "description": "Future urban exposure dataset for Business community planning scenario, including building footprints (5,815 buildings, 116 typologies) with structural taxonomy, household data, individual demographics, and land use plan (110 zones). Data formats: GeoJSON for spatial data, XLSX for tabular data.",
+      "data_format": "GeoJSON (geojson)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-business",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-business/resource/84f14e0d-0d20-42cd-9610-b79066e6e788",
+      "temporal": {
+        "duration": "P50Y"
+      },
+      "id": "resource_exposure_business"
+    },
+    {
+      "title": "Nairobi Future Exposure Dataset - Elders",
+      "description": "Future urban exposure dataset for Elders community planning scenario. Data formats: GeoJSON, XLSX.",
+      "data_format": "GeoJSON (geojson)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-elders",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-elders/resource/8c58c990-b4ff-4067-b152-405258ddd001",
+      "temporal": {
+        "duration": "P50Y"
+      },
+      "id": "resource_exposure_elders"
+    },
+    {
+      "title": "Nairobi Future Exposure Dataset - Women",
+      "description": "Future urban exposure dataset for Women community planning scenario. Data formats: GeoJSON, XLSX.",
+      "data_format": "GeoJSON (geojson)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-women",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-women/resource/bc4e5e3e-b6bc-412c-974f-8fe33ac8f478",
+      "temporal": {
+        "duration": "P50Y"
+      },
+      "id": "resource_exposure_women"
+    },
+    {
+      "title": "Nairobi Future Exposure Dataset - Youth1",
+      "description": "Future urban exposure dataset for Youth Group 1 community planning scenario. Data formats: GeoJSON, XLSX.",
+      "data_format": "GeoJSON (geojson)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-youth1",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-youth1/resource/86c505f3-95d4-4da5-bb2b-f15d85eb64c8",
+      "temporal": {
+        "duration": "P50Y"
+      },
+      "id": "resource_exposure_youth1"
+    },
+    {
+      "title": "Nairobi Future Exposure Dataset - Youth2",
+      "description": "Future urban exposure dataset for Youth Group 2 community planning scenario. Data formats: GeoJSON, XLSX.",
+      "data_format": "GeoJSON (geojson)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-youth2",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-future-exposure-dataset-youth2/resource/a28e7d87-0f82-4658-80cf-ecfba8de3ad8",
+      "temporal": {
+        "duration": "P50Y"
+      },
+      "id": "resource_exposure_youth2"
+    },
+    {
+      "title": "Nairobi Impact Results - Business",
+      "description": "Flood impact assessment results for Business scenario, including building damage states and impact metrics. Data formats: GeoJSON, File Geodatabase (GDB).",
+      "data_format": "File Geodatabase (gdb)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-business",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-business/resource/662f53c0-25b5-458a-8f8a-cbbd1eb46623",
+      "id": "resource_impact_business"
+    },
+    {
+      "title": "Nairobi Impact Results - Elders",
+      "description": "Flood impact assessment results for Elders scenario. Data formats: GeoJSON, File Geodatabase (GDB).",
+      "data_format": "File Geodatabase (gdb)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-elders",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-elders/resource/7f442350-a96b-46bc-86d7-8c2646128032",
+      "id": "resource_impact_elders"
+    },
+    {
+      "title": "Nairobi Impact Results - Women",
+      "description": "Flood impact assessment results for Women scenario. Data formats: GeoJSON, File Geodatabase (GDB).",
+      "data_format": "File Geodatabase (gdb)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-women",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-women/resource/33925fbe-41fb-4df7-b52e-10563f421362",
+      "id": "resource_impact_women"
+    },
+    {
+      "title": "Nairobi Impact Results - Youth1",
+      "description": "Flood impact assessment results for Youth Group 1 scenario. Data formats: GeoJSON, File Geodatabase (GDB).",
+      "data_format": "File Geodatabase (gdb)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-youth1",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-youth1/resource/5eb24c6b-9187-435e-b314-6f1e0bc28cab",
+      "id": "resource_impact_youth1"
+    },
+    {
+      "title": "Nairobi Impact Results - Youth2",
+      "description": "Flood impact assessment results for Youth Group 2 scenario. Data formats: GeoJSON, File Geodatabase (GDB).",
+      "data_format": "File Geodatabase (gdb)",
+      "access_modality": "file_download",
+      "coordinate_system": "EPSG:4326",
+      "access_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-youth2",
+      "download_url": "https://data.tomorrowscities.org/dataset/nairobi-impact-results-youth2/resource/d01bba13-cd3f-4605-b518-fff9473f7bf4",
+      "id": "resource_impact_youth2"
+    }
+  ],
+  "hazard": {
+    "event_sets": [
+      {
+        "id": "event_set_flood_nairobi",
+        "analysis_type": "probabilistic",
+        "calculation_method": "simulated",
+        "event_count": 1,
+        "hazards": [
+          {
+            "id": "hazard_flood",
+            "type": "flood",
+            "hazard_process": "fluvial_flood",
+            "intensity_measure": "wd:m",
+            "process": "fluvial_flood"
+          }
+        ],
+        "events": [
+          {
+            "id": "event_flood_nairobi_100yr",
+            "calculation_method": "simulated",
+            "description": "100-year return period flood depth for Nairobi provided as vector point grid GeoJSON (127,422 point features). Each point contains IM (intensity measure / water depth in metres) and projected x/y coordinates. File: _nairobi_flood_depth_100yr.geojson",
+            "hazard": {
+              "id": "hazard_flood",
+              "type": "flood",
+              "hazard_process": "fluvial_flood",
+              "intensity_measure": "wd:m",
+              "process": "fluvial_flood"
+            },
+            "occurrence": {
+              "probabilistic": {
+                "return_period": 100,
+                "event_rate": 0.01
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "exposure": [
+    {
+      "id": "exposure_buildings",
+      "category": "buildings",
+      "taxonomy": "GED4ALL",
+      "metrics": [
+        {
+          "id": "metric_building_count",
+          "dimension": "structure",
+          "quantity_kind": "count",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          }
+        },
+        {
+          "id": "metric_building_replacement_value",
+          "dimension": "structure",
+          "quantity_kind": "currency",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          }
+        },
+        {
+          "id": "metric_building_footprint_area",
+          "dimension": "structure",
+          "quantity_kind": "area",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          }
+        }
+      ]
+    },
+    {
+      "id": "exposure_population",
+      "category": "population",
+      "taxonomy": "GED4ALL",
+      "metrics": [
+        {
+          "id": "metric_population_residents",
+          "dimension": "population",
+          "quantity_kind": "count",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          }
+        },
+        {
+          "id": "metric_population_households",
+          "dimension": "population",
+          "quantity_kind": "count",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          }
+        },
+        {
+          "id": "metric_population_individuals",
+          "dimension": "population",
+          "quantity_kind": "count",
+          "measurement": {
+            "quantity_kind": "count",
+            "unit": "count"
+          }
+        }
+      ]
+    },
+    {
+      "id": "exposure_landuse",
+      "category": "economic_indicator",
+      "taxonomy": "GED4ALL",
+      "metrics": [
+        {
+          "id": "metric_landuse_area",
+          "dimension": "index",
+          "quantity_kind": "area",
+          "measurement": {
+            "quantity_kind": "index"
+          }
+        }
+      ]
+    }
+  ],
+  "vulnerability": {
+    "functions": {
+      "vulnerability": [
+        {
+          "approach": "analytical",
+          "relationship": "discrete",
+          "hazard_primary": {
+            "type": "flood",
+            "process": "fluvial_flood",
+            "intensity_measure": "flow_depth_ground:m"
+          },
+          "hazard_process_primary": "fluvial_flood",
+          "hazard_analysis_type": "probabilistic",
+          "intensity_measure": "wd:m",
+          "category": "buildings",
+          "impact_type": "direct",
+          "impact_modelling": "simulated",
+          "impact_metric": "damage_ratio",
+          "quantity_kind": "ratio",
+          "taxonomy": "Custom",
+          "analysis_details": "Depth-damage vulnerability functions defining damage ratio as a function of water depth (0-6m at 9 discrete levels: 0, 0.5, 1, 1.5, 2, 3, 4, 5, 6m) for 6,300 building typologies classified by lateral resistance system (Adb, BrCfl, BrCri, BrM, RCi), code level (LC, MC, HC), storeys, and occupancy type (Res, ResCom, Com, Edu, Hea, Ind). Functions based on consultation with local partners and JRC global flood depth-damage database.",
+          "id": "vulnerability_function_flood_buildings"
+        }
+      ]
+    },
+    "socio_economic": [
+      {
+        "scheme": "Custom",
+        "indicator_name": "Household income level",
+        "indicator_code": "income",
+        "description": "Income level attribute for synthetic households used as socio-economic indicator in the exposure dataset.",
+        "reference_year": 1900,
+        "id": "socioeconomic_income"
+      },
+      {
+        "scheme": "Custom",
+        "indicator_name": "Education attainment status",
+        "indicator_code": "eduattstat",
+        "description": "Education attainment status for synthetic individuals used as socio-economic indicator in the exposure dataset.",
+        "reference_year": 1900,
+        "id": "socioeconomic_education"
+      }
+    ]
+  },
+  "loss": {
+    "losses": [
+      {
+        "hazard_type": "flood",
+        "hazard_process": "fluvial_flood",
+        "asset_category": "buildings",
+        "asset_dimension": "structure",
+        "impact_and_losses": {
+          "impact_type": "direct",
+          "impact_modelling": "simulated",
+          "impact_metric": "damage_ratio",
+          "quantity_kind": "count",
+          "loss_type": "ground_up",
+          "loss_approach": "analytical",
+          "loss_frequency_type": "probabilistic",
+          "measurement": {
+            "quantity_kind": "value",
+            "unit": "USD"
+          }
+        },
+        "description": "Building damage state results from flood impact assessment for each community planning scenario (Business, Elders, Women, Youth1, Youth2).",
+        "id": "loss_flood_buildings",
+        "hazard": {
+          "id": "hazard_flood",
+          "type": "flood",
+          "process": "fluvial_flood",
+          "intensity_measure": "wd:m"
+        }
+      },
+      {
+        "hazard_type": "flood",
+        "hazard_process": "fluvial_flood",
+        "asset_category": "population",
+        "asset_dimension": "population",
+        "impact_and_losses": {
+          "impact_type": "direct",
+          "impact_modelling": "simulated",
+          "impact_metric": "displaced_count",
+          "quantity_kind": "count",
+          "loss_type": "ground_up",
+          "loss_approach": "analytical",
+          "loss_frequency_type": "probabilistic",
+          "measurement": {
+            "quantity_kind": "value",
+            "unit": "USD"
+          }
+        },
+        "description": "Affected population results from flood impact assessment for each community planning scenario.",
+        "id": "loss_flood_population",
+        "hazard": {
+          "id": "hazard_flood",
+          "type": "flood",
+          "process": "fluvial_flood",
+          "intensity_measure": "wd:m"
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "href": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json",
+      "rel": "describedby"
+    }
+  ]
+}

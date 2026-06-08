@@ -1,46 +1,19 @@
 #!/usr/bin/env python3
 import click
 import csv
-import glob
 import json
-import logging
-import os
+import re
 import requests
-import shutil
-import subprocess
 
-from collections import OrderedDict
-from contextlib import contextmanager
-from io import StringIO
 from pathlib import Path
+from lxml import etree
+from contextlib import contextmanager
+
 
 basedir = Path(__file__).resolve().parent
-referencedir = basedir / 'docs' / 'reference'
+
 schemadir = basedir / 'schema'
 codelistdir = schemadir / 'codelists'
-exampledir = basedir / 'examples'
-
-
-def read_lines(filename):
-    """Read a file and return a list of lines."""
-
-    with open(filename, 'r') as f:
-        return f.readlines()
-
-
-def write_lines(filename, lines):
-    """Write a list of lines to a file."""
-
-    with open(filename, 'w') as f:
-        f.writelines(lines)
-
-
-def csv_load(url, delimiter=','):
-    """
-    Loads CSV data into a ``csv.DictReader`` from the given URL.
-    """
-    reader = csv.DictReader(StringIO(get(url).text), delimiter=delimiter)
-    return reader
 
 
 @contextmanager
@@ -56,6 +29,22 @@ def csv_dump(path, fieldnames):
     finally:
         f.close()
 
+def json_dump(filename, data):
+    """
+    Writes JSON data to the given filename.
+    """
+    with (schemadir / filename).open('w') as f:
+        json.dump(data, f, indent=2)
+        f.write('\n')
+
+
+def json_load(filename, library=json):
+    """
+    Loads JSON data from the given filename.
+    """
+    with (schemadir / filename).open() as f:
+        return library.load(f)
+
 
 def get(url):
     """
@@ -67,482 +56,9 @@ def get(url):
     return response
 
 
-def json_dump(filename, data):
-    """
-    Writes JSON data to the given filename.
-    """
-    with (schemadir / filename).open('w') as f:
-        json.dump(data, f, indent=2)
-        f.write('\n')
-
-
-def delete_directory_contents(directory_path):
-  """
-  Deletes the contents of a directory on disk.
-  """
-  for filename in os.listdir(directory_path):
-    file_path = os.path.join(directory_path, filename)
-    try:
-        if os.path.isfile(file_path) or os.path.islink(file_path):
-            os.unlink(file_path)
-        elif os.path.isdir(file_path):
-            shutil.rmtree(file_path)
-    except Exception as e:
-        print('Failed to delete %s. Reason: %s' % (file_path, e))
-
-
-def json_load(filename, library=json):
-    """
-    Loads JSON data from the given filename.
-    """
-    with (schemadir / filename).open() as f:
-        return library.load(f)
-
-
-def get_codelist_references(schema, codelist, parents=None, full_schema=None, defs_path='$defs'):
-  """
-  Recursively generate a list of JSON pointers that reference a codelist in JSON schema.
-
-  :param schema: The JSON schema
-  :codelist: The name of the definition
-  :parents: A list of the parents of schema
-  :full_schema: The full schema
-  :defs_path: The path under which definitions are located in the schema
-  """
-
-  references = []
-
-  if parents is None:
-    parents = []
-
-  if full_schema is None:
-    full_schema = schema
-
-  if 'properties' in schema:
-    for key, value in schema['properties'].items():   
-      if 'properties' in value:
-          references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
-      elif value.get('codelist') == f"{codelist}.csv":
-        references.append(parents + [key])
-  if 'allOf' in schema:
-    for subschema in schema['allOf']:
-        if 'properties' in subschema:
-            for key, value in subschema['properties'].items():
-                if 'properties' in value:
-                    references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
-                elif value.get('codelist') == f"{codelist}.csv":
-                    references.append(parents + [key])
-        if 'then' in subschema and 'properties' in subschema['then']:
-            for key, value in subschema['then']['properties'].items():
-                if 'properties' in value:
-                    references.extend(get_codelist_references(value, codelist, parents + [key], full_schema))
-                elif value.get('codelist') == f"{codelist}.csv":
-                    references.append(parents + [key])
-        if '$ref' in subschema:
-            references.extend(get_codelist_references(full_schema[defs_path][subschema['$ref'].split('/')[-1]], codelist, parents, full_schema))
-
-  if defs_path in schema:
-    for key, value in schema[defs_path].items():
-      references.extend(get_codelist_references(value, codelist, [key], full_schema))
-  
-  return references
-
-
-def generate_codelist_markdown(codelist, type, references, definitions, defs_path):
-  """Generate reference markdown for codelist"""
-
-  markdown = []
-
-  markdown = ["This codelist is referenced by the following properties:\n\n"]
-
-  for ref in references:
-    # noqa: Remove array indices because they do not appear in the HTML anchors generated by the json schema directive
-    ref = [part for part in ref if part != '0']
-
-    url = 'rdls_schema.json,'
-
-    # Omit nested references
-    if ref[0] in definitions:
-        url += f"/$defs/{ref[0]},{'/'.join(ref[1:])}"
-    elif ref[0] in ['hazard', 'exposure', 'vulnerability', 'loss']:
-        url += f"/properties/{ref[0]},{'/'.join(ref[1:])}"
-    else:
-        url += f",{'/'.join(ref)}"
-    
-    markdown.append(f"- [`{'/'.join(ref)}`]({url})\n")
-
-  newline = "\n"
-
-  markdown.extend([
-    "\nThis codelist has the following codes:\n\n"
-    "````{dropdown} Codes\n",
-    f"{f':open:{newline}' if len(read_lines(f'{codelistdir}/{type}/{codelist}.csv')) < 10 else ''}",
-    "```{csv-table-no-translate}\n",
-    ":header-rows: 1\n",
-    ":widths: auto\n",
-    f":file: ../../schema/codelists/{type}/{codelist}.csv\n",
-    "```\n",
-    "````\n\n"
-  ])
-
-  return markdown
-
-
-def update_codelist_docs(schema):
-  """Update docs/reference/codelists.md"""
-
-  if '$defs' in schema:
-     defs_path = '$defs'
-  elif 'definitions' in schema:
-     defs_path = 'definitions'
-  else:
-    raise KeyError("Schema contains neither $defs nor definitions.")
-
-  # Load codelist reference
-  codelist_reference = read_lines(referencedir / 'codelists.md')
-
-  # Get codelist names and types (open or closed) from the codelist directory and get a list of references for each codelist
-  codelists = {}
-
-  for path in glob.glob(f"{codelistdir}/*/*.csv"):
-      codelist = path.split("/")[-1].split(".")[0]
-      codelists[codelist] = {
-        "type": path.split("/")[-2],
-        "content": [f"### {codelist}\n",],
-        "references": get_codelist_references(schema, codelist, defs_path=defs_path)
-        }
-  
-  # Sort codelists alphabetically
-  codelists = OrderedDict(sorted(codelists.items()))
-
-  # Preserve content that appears before the generated reference content for each codelist 
-  for i in range(0, len(codelist_reference)):
-      line = codelist_reference[i]       
-      
-      if line[:4] == "### ":
-          codelist = line[4:-1]
-          
-          # Drop codelists that don't appear in the codelists directory 
-          if codelist in codelists:
-              j = i+1
-              
-              while j < len(codelist_reference) and codelist_reference[j] != "This codelist is referenced by the following properties:\n":
-                  codelists[codelist]["content"].append(codelist_reference[j])
-                  j += 1
-
-  # Preserve introductory content up to an including the ## Open codelists heading
-  codelist_reference = codelist_reference[:codelist_reference.index("## Open codelists\n") + 1]
-  codelist_reference.append("\n")
-
-  # Update reference for open and closed codelists
-  closed_codelist_reference = ["## Closed codelists\n\n"]
-  
-  for key, value in codelists.items():
-    value['content'].extend(generate_codelist_markdown(key, value['type'], value['references'], schema[defs_path], defs_path))
-    if value["type"] == "open":
-        codelist_reference.extend(value['content'])
-    else:
-        closed_codelist_reference.extend(value['content'])
-    
-  codelist_reference.extend(closed_codelist_reference)
-
-  write_lines(referencedir / 'codelists.md', codelist_reference)
-
-
-def get_definition_references(schema, defn, parents=None, full_schema=None, include_nested=True, defs_path='$defs'):
-    """
-    Recursively generate a list of JSON pointers that reference a definition in JSON schema.
-
-    :param schema: The JSON schema
-    :param defn: The name of the definition
-    :param parents: A list of the parents of schema
-    :param full_schema: The full schema
-    :param include_nested: Whether to include nested references
-    :defs_path: The path under which definitions are located in the schema
-    """
-
-    references = []
-
-    if parents is None:
-        parents = []
-
-    if full_schema is None:
-        full_schema = schema
-
-    if 'properties' in schema:
-        for key, value in schema['properties'].items():
-            if value.get('type') == 'array' and '$ref' in value['items']:
-                if value['items']['$ref'] == f"#/{defs_path}/{defn}":
-                    references.append(parents + [key, '0'])
-                elif include_nested:
-                    references.extend(get_definition_references(
-                        full_schema[defs_path][value['items']['$ref'].split('/')[-1]],
-                        defn,
-                        parents + [key, '0'],
-                        full_schema, include_nested))
-            elif '$ref' in value:
-                if value['$ref'] == f"#/{defs_path}/{defn}":
-                    references.append(parents + [key])
-                elif include_nested:
-                    references.extend(get_definition_references(
-                        full_schema[defs_path][value['$ref'].split('/')[-1]],
-                        defn,
-                        parents + [key],
-                        full_schema, include_nested))
-            elif 'properties' in value:
-                references.extend(get_definition_references(value,
-                                                            defn,
-                                                            parents + [key],
-                                                            full_schema,
-                                                            include_nested))
-
-    if defs_path in schema:
-        for key, value in schema[defs_path].items():
-            references.extend(get_definition_references(value, defn, [key], full_schema, include_nested))
-
-    return references
-
-
-def update_schema_docs(schema):
-  """Update schema.md"""    
-
-  if '$defs' in schema:
-     defs_path = '$defs'
-  elif 'definitions' in schema:
-     defs_path = 'definitions'
-  else:
-    raise KeyError("Schema contains neither $defs nor definitions.")
-
-  # Load schema reference
-  schema_reference = read_lines(referencedir / 'schema.md')
-
-  # Preserve content that appears before the generated reference content for each component
-  components_index = schema_reference.index("## Sub-schemas\n") + 2
-
-  for i in range(components_index, len(schema_reference)):
-      if schema_reference[i][:5] == "### ":
-          defn = schema_reference[i][5:-1]
-          
-          # Drop definitions that don't appear in the schema
-          if defn in schema["$defs"]:
-              schema["$defs"][defn]["content"] = []
-              j = i+1
-
-              # while j < len(schema_reference) and not schema_reference[j].startswith("```{admonition}") and schema_reference[j] != 'This component is referenced by the following properties:\n':
-              while j < len(schema_reference) and not schema_reference[j].startswith("```{admonition}") and schema_reference[j] != f"`{defn}` is defined as:\n":
-                schema["$defs"][defn]["content"].append(schema_reference[j])
-                j = j+1
-
-  # Preserve introductory content up to and including the sentence below the ## Sub-schemas heading
-  schema_reference = schema_reference[:components_index]
-  schema_reference.append("\n")
-    
-  # Generate standard reference content for each definition
-  for defn, definition in schema["$defs"].items():
-      definition["content"] = definition.get("content", [])
-      
-      # Omit Resource and Exposure definitions and string definitions, which will be moved to CSV codelists
-      if defn not in ['Resource', 'Hazard_metadata', 'Exposure'] and definition.get('type') == 'object':
-
-        # Add heading
-        definition["content"].insert(0, f"### {defn}\n")
-                          
-        # Add description
-        if 'description' in definition:
-          definition["content"].extend([
-              f"`{defn}` is defined as:\n\n",
-              "```{jsoninclude-quote} ../../docs/_readthedocs/html/rdls_schema.json\n",
-              f":jsonpointer: /$defs/{defn}/description\n",
-              "```\n\n"
-          ])
-
-        # Add a list of properties that reference this definition
-        definition["references"] = get_definition_references(schema, defn, include_nested=False, defs_path=defs_path)
-        definition["content"].append("This sub-schema is referenced by the following properties:\n")
-
-        for ref in definition["references"]:
-            # noqa: Remove array indices because they do not appear in the HTML anchors generated by the json schema directive
-            ref = [part for part in ref if part != '0']
-
-            url = 'rdls_schema.json,'
-
-            # Omit nested references
-            if ref[0] in schema['$defs']:
-                url += f"/$defs/{ref[0]},{'/'.join(ref[1:])}"
-            elif ref[0] in ['hazard', 'exposure', 'vulnerability', 'loss']:
-                url += f"/properties/{ref[0]},{'/'.join(ref[1:])}"
-            else:
-                url += f",{'/'.join(ref)}"
-
-            definition["content"].append(f"* [`{'/'.join(ref)}`]({url})\n")
-
-        if definition.get('additionalProperties') == False:
-          definition["content"].append(f"\nAdditional properties are not permitted within `{defn}` objects.\n")
-
-        # Add schema table
-        definition["content"].extend([
-            f"\nEach `{defn}` has the following fields:\n\n", 
-            "```{jsonschema} ../../docs/_readthedocs/html/rdls_schema.json\n",
-            f":pointer: /$defs/{defn}\n",
-            f":collapse: {','.join([key for key, value in definition.get('properties',{}).items() if '$ref' in value])}\n",
-            ":addtargets:\n",
-            "```\n\n",
-        ])
-
-        schema_reference.extend(definition["content"])     
-
-  write_lines(referencedir / 'schema.md', schema_reference)
-
-
 @click.group()
 def cli():
     pass
-
-
-@cli.command()
-def pre_commit():
-    """Update example CSV files, update reference documentation and format Markdown files.
-    """
-
-    # Load schema
-    schema = json_load('rdls_schema.json')
-
-    # Remove example CSV files
-    for path in glob.glob(f"{exampledir}/*/*/*.csv"):
-       os.remove(path)
-    
-    # Generate example CSV files
-    for example_path in glob.glob(f"{exampledir}/*/*/example.json"):      
-           
-      command = f"flatten-tool flatten -s schema/rdls_schema.json -f csv --root-list-path datasets -m datasets -o {'/'.join(example_path.split('/')[:-1])} --truncation-length 50 --use-titles --remove-empty-schema-columns --line-terminator LF {example_path}"
-      
-      subprocess.run(command.split(" "))
-
-    for path in glob.glob(f"{exampledir}/*/*/*.csv"):
-      with open(path, 'r') as f:
-         # Transpose example CSV files for column-wise presentation
-         rows = zip(*csv.reader(f))
-      
-      with open(path, 'w') as f:
-        writer = csv.writer(f, lineterminator="\n")
-        
-        # Omit titles of parent objects
-        parent_titles = path.split("/")[-1].split(".csv")[0].split("_")
-        for row in rows:
-          row_title = row[0]
-          for i in range(0, len(parent_titles)):
-            row_title = row_title.replace(f"{':'.join(parent_titles[0:len(parent_titles)-i])}:", "")
-          
-          writer.writerow([row_title.replace(":", ":\n")] + list(row[1:]))
-
-    # Derive individual hazard intensity measure codelists from parent codelist
-    with open("schema/codelists/open/IMT.csv", "r") as f:
-        reader = csv.DictReader(f)
-        next(reader)
-        data = list(reader)
-
-    hazards = {}
-
-    for code in data:
-        for hazard in code['Hazard'].split(','):
-            if hazard not in hazards:
-                hazards[hazard] = []
-            hazards[hazard].append({k: v for k, v in code.items() if k != "Hazard"})
-
-    schema['$defs']['Hazard']['allOf'] = schema['$defs']['Hazard']['allOf'][:2]
-
-    for hazard, measures in hazards.items():
-        if hazard != 'universal':
-
-            with open(f"schema/codelists/open/imt_{hazard}.csv", "w") as f:
-                writer = csv.DictWriter(f, fieldnames=measures[0].keys(), lineterminator='\n')
-                writer.writeheader()
-                writer.writerows(measures)
-                writer.writerows(hazards["universal"])
-
-            schema['$defs']['Hazard']['allOf'].append(
-                {
-                    "if": {
-                        "properties": {
-                            "type": {
-                                "const": hazard
-                            }
-                        }
-                    },
-                    "then": {
-                        "properties": {
-                            "intensity_measure": {
-                                "codelist": f"imt_{hazard}.csv"
-                            }
-                        }
-                    }
-                }
-            )
-
-    with open("schema/rdls_schema.json", "w") as f:
-        json.dump(schema, f, indent=2)
-
-    # Update schema.md
-    update_schema_docs(schema)
-
-    # Update codelists.md
-    update_codelist_docs(schema)
-
-    # Run mdformat
-    subprocess.run(['mdformat', 'docs'])
-
-@cli.command()
-def update_media_type():
-    """
-    Update media_type.csv from IANA.
-
-    Ignores deprecated and obsolete media types.
-    """
-    # https://www.iana.org/assignments/media-types/media-types.xhtml
-
-    # See "Registries included below".
-    registries = [
-        'application',
-        'audio',
-        'font',
-        'image',
-        'message',
-        'model',
-        'multipart',
-        'text',
-        'video',
-    ]
-
-    with csv_dump('codelists/open/media_type.csv', ['Code', 'Title']) as writer:
-        for registry in registries:
-            # See "Available Formats" under each heading.
-            reader = csv_load(f'https://www.iana.org/assignments/media-types/{registry}.csv')
-            for row in reader:
-                if ' ' in row['Name']:
-                    name, message = row['Name'].split(' ', 1)
-                else:
-                    name, message = row['Name'], None
-                code = f"{registry}/{name}"
-                template = row['Template']
-                # All messages are expected to be about deprecation and obsoletion.
-                if message:
-                    logging.warning('%s: %s', message, code)
-                # "x-emf" has "image/emf" in its "Template" value (but it is deprecated).
-                elif template and template != code:
-                    raise Exception(f"expected {code}, got {template}")
-                else:
-                    writer.writerow([code, name])
-
-        writer.writerow(['offline/print', 'print'])
-
-
-@cli.command()
-@click.pass_context
-def update_codelists(ctx):
-    """
-    Update external codelists
-    """
-    ctx.invoke(update_media_type)
 
 
 @cli.command()
@@ -558,6 +74,60 @@ def format_csv(filename):
     with open(filename, 'w') as f:
         writer = csv.writer(f, lineterminator='\n')
         writer.writerows(data)
+
+
+@cli.command()
+def update_currency():
+    """
+    Update currency.csv from ISO 4217.
+    """
+    # https://www.iso.org/iso-4217-currency-codes.html
+    # https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=currency-codes
+
+    # "List One: Current Currency & Funds"
+    current_codes = {}
+    url = 'https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml'  # noqa: E501
+    tree = etree.fromstring(get(url).content)
+    for node in tree.xpath('//CcyNtry'):
+        match = node.xpath('./Ccy')
+        # Entries like Antarctica have no universal currency.
+        if match:
+            code = node.xpath('./Ccy')[0].text
+            title = node.xpath('./CcyNm')[0].text.strip()
+            if code not in current_codes:
+                current_codes[code] = title
+            # We should expect currency titles to be consistent across countries.
+            elif current_codes[code] != title:
+                raise Exception(f'expected {current_codes[code]}, got {title}')
+
+    # "List Three: Historic Denominations (Currencies & Funds)"
+    historic_codes = {}
+    url = 'https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-three.xml'  # noqa: E501
+    tree = etree.fromstring(get(url).content)
+    for node in tree.xpath('//HstrcCcyNtry'):
+        code = node.xpath('./Ccy')[0].text
+        title = node.xpath('./CcyNm')[0].text.strip()
+        valid_until = node.xpath('./WthdrwlDt')[0].text
+        # Use ISO8601 interval notation.
+        valid_until = re.sub(r'^(\d{4})-(\d{4})$', r'\1/\2', valid_until.replace(' to ', '/'))
+        if code not in current_codes:
+            if code not in historic_codes:
+                historic_codes[code] = {'Title': title, 'Valid Until': valid_until}
+            # If the code is historical, use the most recent title and valid date.
+            elif valid_until > historic_codes[code]['Valid Until']:
+                historic_codes[code] = {'Title': title, 'Valid Until': valid_until}
+
+    with csv_dump('schema/codelists/closed/unit_currency.csv', ['Code', 'Title', 'Valid Until']) as writer:
+        for code in sorted(current_codes):
+            writer.writerow([code, current_codes[code], None])
+        for code in sorted(historic_codes):
+            writer.writerow([code, historic_codes[code]['Title'], historic_codes[code]['Valid Until']])
+
+    schema = json_load('rdls_schema.json')
+    codes = sorted(list(current_codes) + list(historic_codes))
+    schema['$defs']['codelist_unit_currency']['enum'] = codes
+
+    json_dump('rdls_schema.json', schema)
 
 
 if __name__ == '__main__':

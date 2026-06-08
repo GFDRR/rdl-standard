@@ -4,7 +4,7 @@ This section describes common data formats and file types developed during a ris
 
 The data structure and packaging of the output as obtained from the data analysts do not always align with the way we want users of the **Risk Data Library** to search and download data.
 
-Data shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/rdl) are provided as individual `RESOURCES`; it is encouraged to group these according to geography and theme:
+Data shared in risk catalogues (e.g. [Risk Data Library Collection](https://datacatalog.worldbank.org/search/collections/RDL) are provided as individual `RESOURCES`; it is encouraged to group these according to geography and theme:
 
 - **GEOGRAPHY**: data covering a multi-country region might be split into individual countries' datasets.
 - **THEME**: for risk data, this includes hazard, sector or asset type.

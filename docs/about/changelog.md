@@ -6,22 +6,84 @@ This page lists changes to the Risk Data Library Standard.
 
 ### Schema
 
-- [#392](https://github.com/GFDRR/rdl-standard/pull/392):
+Changes in this section are grouped by the schema component that they affect.
+
+#### Cross-cutting
+
+Changes in this section affect more than one schema component.
+
+- [#392](https://github.com/GFDRR/rdl-standard/pull/392), [#409](https://github.com/GFDRR/rdl-standard/pull/409) (affects Hazard, Vulnerability and Loss):
   - Rationalise hazard modelling
   - Add conditional validation of hazard process based on hazard type
   - Add conditional validation of intensity measure based on hazard type
-- [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
-- [#380](https://github.com/GFDRR/rdl-standard/pull/380):
+  - Add `Hazard.classification` and `Classification.title`
+- [#380](https://github.com/GFDRR/rdl-standard/pull/380) (affects Exposure, Vulnerability and Loss):
   - `Metric` - Replace `.quantity_kind` with `.measurement.quantity_kind` and `.measurement.unit`
   - `Impact` - Replace `.unit` with `.measurement.quantity_kind` and `.measurement.unit`
+- [#396](https://github.com/GFDRR/rdl-standard/pull/396) (affects Dataset and Hazard):
+  - `Entity`: Require any of `.email`, `.url`.
+  - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#400](https://github.com/GFDRR/rdl-standard/pull/400) (affects Dataset and Loss):
+  - Move `.sources` to `.lineage.sources`
+  - Add `Source.risk_data_type`
+  - Rename `Source.component` to `Source.used_in`
+  - Add `.lineage.description`
+  - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
+- [#407](https://github.com/GFDRR/rdl-standard/pull/407) (affects Dataset and Resource)
+  - Add `temporal` and `spatial_resolution` at dataset level
+  - Add `spatial` to `Resource`
+  - Update descriptions for `spatial`, `temporal`, `spatial_resolution` and `temporal_resolution` at both dataset and resource level.
+- [#422](https://github.com/GFDRR/rdl-standard/pull/422) (affects Dataset, Resource, Hazard, Vulnerability and Loss):
+  - Replace `project` with `project.name` and `project.url`.
+  - Require either `Resource.download_url` or `Resource.access_url`.
+  - Make `SimpleHazard.type` and `SimpleHazard.process` required.
+  - Align `enums` with codelist CSVs.
+  - Remove `Location.geometry`.
+- [#405](https://github.com/GFDRR/rdl-standard/pull/405) (affects Dataset, Vulnerability and Losses):
+  - Make `.description` required
+  - Reorder some properties
+  - Move repeated impact properties from `Losses` and `Function` to new `Impact` definition
+  - Refactor to reduce repetition and standardise use of allOf keyword
+
+#### Dataset
+
 - [#373](https://github.com/GFDRR/rdl-standard/pull/373):
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.
   - Add field `license` to `source` object.
-- [#394](https://github.com/GFDRR/rdl-standard/pull/394) - Add conditional validation of `Location.countries` array length.
-- [#396](https://github.com/GFDRR/rdl-standard/pull/396)
-  - `Entity`: Require any of `.email`, `.url`.
-  - `Event.ocurrence`: Require any of `.probabilistic`, `.empirical`, `.deterministic`.
+- [#482](https://github.com/GFDRR/rdl-standard/pull/482):
+  - Add `Affiliation` to `$defs/Entity`
+
+#### Resource
+
+- [#404](https://github.com/GFDRR/rdl-standard/pull/404)
+  - Add `Climate` object to `$defs` with fields for `model`, `scenario` and `percentile`
+  - Add `climate` to `Resource`
+  - Add `baseline_period` to `Resource`
+  - Add `central_year` to `Period`
+- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `Resource.conforms_to`.
+- [#398](https://github.com/GFDRR/rdl-standard/pull/398) - Add `spatial_aggregation` to `Resource`.
+
+#### Hazard
+
+- [#406](https://github.com/GFDRR/rdl-standard/pull/406) - Remove fields:
+  - `Event.footprint`
+  - `Event_set.temporal`
+  - `Event_set.spatial`
+- [#441](https://github.com/GFDRR/rdl-standard/pull/441) - Update description of `.events`.
+
+#### Exposure
+
+- [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
+- [#415](https://github.com/GFDRR/rdl-standard/pull/415) - Replace `Exposure_item.taxonomy` with `Exposure_item.classification`.
+- [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Update `Exposure_item.asset_type.scheme` description.
+
+#### Vulnerability
+
+- [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Refactor vulnerability component.
+
+### Loss
+
 - [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Restructure `Losses`:
   - Rename `.category` to `.asset_category`
   - Move `.cost.dimension` to `.asset_dimension`
@@ -32,96 +94,85 @@ This page lists changes to the Risk Data Library Standard.
   - Move `.type` to `.impact_and_losses.loss_type`
   - Move `.approach` to `.impact_and_losses.loss_approach`
   - Move `.hazard_analysis_type` to `.losses_and_impact.loss_frequency_type`
-- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `Resource.conforms_to`.
-- [#404](https://github.com/GFDRR/rdl-standard/pull/404)
-  - Add `Climate` object to `$defs` with fields for `model`, `scenario` and `percentile`
-  - Add `climate` to `Resource`
-  - Add `baseline_period` to `Resource`
-  - Add `central_year` to `Period`
-- [#398](https://github.com/GFDRR/rdl-standard/pull/398) - Add `spatial_aggregation` to `Resource`.
-- [#400](https://github.com/GFDRR/rdl-standard/pull/400):
-  - Move `.sources` to `.lineage.sources`
-  - Add `Source.risk_data_type`
-  - Rename `Source.component` to `Source.used_in`
-  - Add `.lineage.description`
-  - Remove `.hazard_id`, `.exposure_id` and `.vulnerability_id` from `Losses`
-- [#407](https://github.com/GFDRR/rdl-standard/pull/407)
-  - Add `temporal` and `spatial_resolution` at dataset level
-  - Add `spatial` to `Resource`
-  - Update descriptions for `spatial`, `temporal`, `spatial_resolution` and `temporal_resolution` at both dataset and resource level.
-- [#406](https://github.com/GFDRR/rdl-standard/pull/406) - Remove fields:
-  - `Event.footprint`
-  - `Event_set.temporal`
-  - `Event_set.spatial`
-- [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Add `Hazard.classification` and `Classification.title`.
-- [#408](https://github.com/GFDRR/rdl-standard/pull/408) - Make `exposure` an array of `Exposure_items`.
-- [#415](https://github.com/GFDRR/rdl-standard/pull/415) - Replace `Exposure_item.taxonomy` with `Exposure_item.classification`.
-- [#422](https://github.com/GFDRR/rdl-standard/pull/422):
-  - Replace `project` with `project.name` and `project.url`.
-  - Require either `Resource.download_url` or `Resource.access_url`.
-  - Make `SimpleHazard.type` and `SimpleHazard.process` required.
-  - Align `enums` with codelist CSVs.
-  - Remove `Location.geometry`.
+- [#453](https://github.com/GFDRR/rdl-standard/pull/453) Added `disaster_identifiers` to `losses`
 
 ### Codelists
 
-- `impact_metric.csv`:
-  - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - Add 'risk_index'.
-  - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes.
-  - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'exposure_to_hazard'.
-- [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - 'IMT.csv' Expanded list and updated structure.
-- [#385](https://github.com/GFDRR/rdl-standard/pull/385) - Add 'volcano_gas_aerosols' to `process_type.csv`.
-- `exposure_category.csv`:
-  - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'economic_indicator' and 'development_index'
+Changes in this section are grouped by the codelist that they affect.
+
 - `classification_scheme.csv`:
-  - [#395](https://github.com/GFDRR/rdl-standard/pull/395)
-    - Add:
+  - Add codes:
+    - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - 'UNDRR-HIPS-2025'
+    - [#395](https://github.com/GFDRR/rdl-standard/pull/395):
       - 'HAZUS'
       - 'CDC-SVI'
-      - 'INFORM'
       - 'Custom'
       - 'EMS-98'
       - 'PAGER'
       - 'OED'
-    - Remove'GED4ALL-socio-economic'
-    - Rename 'MOVER-social-vulnerability-categories' > 'MOVER'
-- [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes in `impact_metric.csv`.
-- [#370](https://github.com/GFDRR/rdl-standard/pull/370) - 'IMT.csv' Expanded list and updated structure.
-- [#373](https://github.com/GFDRR/rdl-standard/pull/373) - 'license.csv' Expanded list and updated structure.
-- [#402](https://github.com/GFDRR/rdl-standard/pull/402) - Add 'production_loss' and 'exposure_to_hazard' to `impact_metric.csv`.
-- [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `conforms_to.csv`, remove `data_formats.csv`.
-- [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index' to `quantity_kind.csv`.
-- [#404](https://github.com/GFDRR/rdl-standard/pull/404) - Add `climate_scenario.csv` as closed codelist.
-- [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban' to `spatial_scale.csv`.
-- [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs:
-  - Add 'UNDRR-HIPS-2025' to `classification_scheme.csv`
-  - Add codes to `hazard_type.csv`
-  - Add codes to `hazard_process.csv`
-  - Add codes to `IMT.csv`
-- [#411](https://github.com/GFDRR/rdl-standard/pull/411) - Add 'fl_d:h' to `IMT.csv`.
-- [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index' in `metric_dimension.csv`.
-- [#418](https://github.com/GFDRR/rdl-standard/pull/418):
-  - `IMT.csv`: Add 'POE', 'DSize' and 'SA:g'
-  - `impact_metric.csv`: Add codes:
-    - 'fatality_ratio_vulnerability'
-    - 'fatality_count'
-    - 'fatality_ratio_loss'
-    - 'disruption_days'
-    - 'disruption_loss'
-    - 'displaced_days'
-- [#405](https://github.com/GFDRR/rdl-standard/pull/405):
-  - Make `.description` required
-  - Reorder some properties
-  - Move repeated impact properties from `Losses` and `Function` to new `Impact` definition
-  - Refactor to reduce repetition and standardise use of allOf keyword
+  - Remove codes:
+    - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - 'GED4ALL-socio-economic'
+    - [#434](https://github.com/GFDRR/rdl-standard/pull/434) - 'USHS_EHP'
+  - Rename codes:
+    - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - 'MOVER-social-vulnerability-categories' to 'MOVER'
+  - [#440](https://github.com/GFDRR/rdl-standard/pull/440) - Fix typo in GLIDE category
+- `exposure_category.csv`:
+  - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - Add 'economic_indicator' and 'development_index'
+- `hazard_type.csv`:
+  - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs.
+- `impact_metric.csv`:
+  - Add codes:
+    - [#381](https://github.com/GFDRR/rdl-standard/pull/381) - 'risk_index'
+    - [#395](https://github.com/GFDRR/rdl-standard/pull/395) - 'exposure_to_hazard'
+    - [#402](https://github.com/GFDRR/rdl-standard/pull/402) - 'production_loss' and 'exposure_to_hazard'
+    - [#418](https://github.com/GFDRR/rdl-standard/pull/418):
+      - 'fatality_ratio_vulnerability'
+      - 'fatality_count'
+      - 'fatality_ratio_loss'
+      - 'disruption_days'
+      - 'disruption_loss'
+      - 'displaced_days'
+  - Rename codes:
+    - [#384](https://github.com/GFDRR/rdl-standard/pull/384) - Rename non-unique 'loss_ratio' codes
+- `imt.csv`:
+  - Add codes
+    - [#411](https://github.com/GFDRR/rdl-standard/pull/411) - 'fl_d:h'
+    - [#418](https://github.com/GFDRR/rdl-standard/pull/418):
+      - 'POE'
+      - 'DSize'
+      - 'SA:g'
+  - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - Rename codes and update code format
+  - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs
+  - [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Adding imt for sea level rise
+  - [#467](https://github.com/GFDRR/rdl-standard/pull/467) - Replace 'inundation' with 'flow' for clarity and compatibility with landslide hazard
+- `license.csv`:
+  - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - Replace codes with license URLs, update titles
+  - [#440](https://github.com/GFDRR/rdl-standard/pull/440), [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
+- `metric_dimension.csv`:
+  - [#422](https://github.com/GFDRR/rdl-standard/pull/422) - Add missing title and description for 'index'.
+- `process_type.csv`:
+  - [#385](https://github.com/GFDRR/rdl-standard/pull/385) - Add 'volcano_gas_aerosols'
+  - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs.
+- `quantity_kind.csv`:
+  - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index'.
+- `spatial_scale.csv`:
+  - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
 
 ### Normative documentation
 
-* [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
+- [#405](https://github.com/GFDRR/rdl-standard/pull/405) - Restructure schema reference documentation.
+- [#460](https://github.com/GFDRR/rdl-standard/pull/460) - Minor edits to reference documentation.
+- [#461](https://github.com/GFDRR/rdl-standard/pull/461) - Minor edits to reference documentation.
 
 ### Non-normative documentation
 
-* [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
+- [#427](https://github.com/GFDRR/rdl-standard/pull/427) - Add worked examples, update overview and how-to guides for publishing RDLS metadata.
+- [#429](https://github.com/GFDRR/rdl-standard/pull/429) - Add guidance on describing location-only exposure data.
+- [#433](https://github.com/GFDRR/rdl-standard/pull/433) - Update [How do I implement the RDLS?](../rdl/how.md).
+- [#431](https://github.com/GFDRR/rdl-standard/pull/431) - Update [What is the RDLS?](../rdl/what.md).
+- [#434](https://github.com/GFDRR/rdl-standard/pull/434) - Remove `guides/metadata/mappings.md` in favour of mappings documented in codelists.
+- [#452](https://github.com/GFDRR/rdl-standard/pull/452) - Update examples in reference documentation.
+- [#460](https://github.com/GFDRR/rdl-standard/pull/460) - Minor edits to documentation.
 
 ## 0.2.0 - 2023-09-08
 
@@ -224,6 +275,7 @@ This page lists changes to the Risk Data Library Standard.
 - [#189](https://github.com/GFDRR/rdl-standard/pull/189) - add 'ISO 3166-1 alpha-3' to 'location_gazetteers.csv and 'generalized_extreme_value' to 'frequency_distribution.csv'
 - [#136](https://github.com/GFDRR/rdl-standard/issues/136)- add description for secondary_rupture.
 - [#214](https://github.com/GFDRR/rdl-standard/pull/214) - use consistent separators in `classification_scheme.csv` codes.
+- [#459](https://github.com/GFDRR/rdl-standard/pull/459) - update currency codelist with current and historic ISO 4217 codes, update `manage.py` to automate this process.
 
 ### Normative documentation
 

@@ -9,7 +9,7 @@ depth: 1
 
 The top-level object in the RDLS schema is a risk dataset. A risk dataset is described as:
 
-```{jsoninclude-quote} ../../../schema/rdls_schema_processed.json
+```{jsoninclude-quote} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 jsonpointer: /description
 ---
@@ -25,6 +25,7 @@ The general attributes of a dataset are described by fields based on the [Data C
         Dataset {
             string id*
             string title*
+            string description*
             array risk_data_type*
             object publisher*
             object creator*
@@ -48,7 +49,7 @@ The general attributes of a dataset are described by fields based on the [Data C
 
 ## Properties
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 :collapse: publisher,contact_point,creator,spatial,attributions,lineage/sources,referenced_by,resources,hazard,exposure,vulnerability,loss
 :externallinks: >
 :   {
@@ -69,7 +70,7 @@ The general attributes of a dataset are described by fields based on the [Data C
 
 ## Publisher, contact point and creator
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/publisher
 ---
@@ -77,7 +78,7 @@ pointer: /properties/publisher
 
 ## Spatial coverage
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/spatial
 ---
@@ -85,7 +86,7 @@ pointer: /properties/spatial
 
 ## Attribution
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/attributions/items
 ---
@@ -93,7 +94,7 @@ pointer: /properties/attributions/items
 
 ## Related resource
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/referenced_by/items
 ---
@@ -101,7 +102,7 @@ pointer: /properties/referenced_by/items
 
 ## Source
 
-```{jsonschema} ../../../schema/rdls_schema_processed.json
+```{jsonschema} ../../../docs/_readthedocs/html/rdls_schema_processed.json
 ---
 pointer: /properties/lineage/properties/sources/items
 ---

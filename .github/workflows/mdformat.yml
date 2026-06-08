@@ -1,0 +1,23 @@
+name: Markdown Linting
+
+on: [push, pull_request]
+
+jobs:
+  format-check:
+    name: mdformat check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' # mdformat --exclude is only available on Python 3.13+
+          cache: 'pip'
+
+      - name: Run mdformat via pre-commit
+        uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: mdformat --all-files
