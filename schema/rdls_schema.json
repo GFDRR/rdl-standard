@@ -131,7 +131,7 @@
     "rights": {
       "title": "Rights",
       "type": "string",
-      "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field. Based on Dublin Core accessRights and Rights.",
+      "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field.",
       "minLength": 1
     },          
     "contact_point": {
@@ -693,7 +693,7 @@
         "rights": {
           "title": "Rights",
           "type": "string",
-          "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field. Based on Dublin Core accessRights and Rights.",
+          "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field.",
           "minLength": 1
         }        
       },
