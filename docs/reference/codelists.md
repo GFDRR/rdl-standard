@@ -201,7 +201,7 @@ Download CSV file
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/imt_drought.csv
+```{button-link} ../../codelists/open/imt_earthquake.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -210,7 +210,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_earthquake.csv
 ```
 ````
 

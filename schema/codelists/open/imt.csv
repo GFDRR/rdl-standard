@@ -17,12 +17,12 @@ Neq:-,Effective number of cycles,Relationship between cycle count and damage pot
 CAV:m/s,Cumulative absolute velocity,Integrated absolute acceleration over earthquake duration.,CAV,m/s,earthquake
 MMI:-,Modified Mercalli Intensity,Seismic intensity scale from I (Not felt) to X (Extreme).,MMI,-,earthquake
 EMS:-,European Macroseismic Scale,Seismic intensity scale from I (Not felt) to XII (Completely devastating).,EMS,-,earthquake
-wd:m,Inundation depth above ground (m),Inundation depth measured relative to ground level. Expressed in meters (m).,wd,m,"flood,tsunami,coastal_flood,landslide,volcanic"
-wd:cm,Inundation depth above ground (cm),Inundation depth measured relative to ground level. Expressed in centimeters (cm).,wd,cm,"flood,tsunami,coastal_flood,landslide,volcanic"
-wd:dm,Inundation depth above ground (dm),Inundation depth measured relative to ground level. Expressed in decimeters (dm).,wd,dm,"flood,tsunami,coastal_flood,landslide,volcanic"
-wd_f:m,Inundation depth above floor (m),Inundation depth measured relative to building floor level. Expressed in meters (m).,wd_f,m,"flood,tsunami,coastal_flood"
-wd_f:cm,Inundation depth above floor (cm),Inundation depth measured relative to building floor level. Expressed in centimeters (cm).,wd_f,cm,"flood,tsunami,coastal_flood"
-wd_f:dm,Inundation depth above floor (dm),Inundation depth measured relative to building floor level. Expressed in decimeters (dm).,wd_f,dm,"flood,tsunami,coastal_flood"
+wd:m,Flow depth above ground (m),Flow depth measured relative to ground level. Expressed in meters (m).,wd,m,"flood,tsunami,coastal_flood,landslide,volcanic"
+wd:cm,Flow depth above ground (cm),Flow depth measured relative to ground level. Expressed in centimeters (cm).,wd,cm,"flood,tsunami,coastal_flood,landslide,volcanic"
+wd:dm,Flow depth above ground (dm),Flow depth measured relative to ground level. Expressed in decimeters (dm).,wd,dm,"flood,tsunami,coastal_flood,landslide,volcanic"
+wd_f:m,Flow depth above floor (m),Flow depth measured relative to building floor level. Expressed in meters (m).,wd_f,m,"flood,tsunami,coastal_flood"
+wd_f:cm,Flow depth above floor (cm),Flow depth measured relative to building floor level. Expressed in centimeters (cm).,wd_f,cm,"flood,tsunami,coastal_flood"
+wd_f:dm,Flow depth above floor (dm),Flow depth measured relative to building floor level. Expressed in decimeters (dm).,wd_f,dm,"flood,tsunami,coastal_flood"
 wv:m/s,Flow velocity (m/s),"The rate at which a fluid flows in a flood, tsunami, landslide, lahar, debris flow or other. Expressed in meters per second (m/s).",wv,m/s,"flood,tsunami,coastal_flood,landslide,volcanic"
 slr:cm,Sea level rise,Long-term rise in sea level affecting coastal hazards.,slr,cm,sea_level_rise
 pptn1:mm,1-hour precipitation,Maximum rainfall depth in any 1-hour period.,pptn1,mm,flood
