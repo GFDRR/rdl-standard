@@ -540,6 +540,29 @@
           "type": "string",
           "description": "A URL associated with the entity.",
           "format": "iri"
+        },
+        "affiliation": {
+          "title": "Affiliation",
+          "type": "object",
+          "description": "The organization or institution with which the entity is affiliated.",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "title": "Affiliation name",
+              "type": "string",
+              "description": "The name of the affiliated organization.",
+              "minLength": 1
+            },
+            "url": {
+              "title": "Affiliation URL",
+              "type": "string",
+              "description": "A URL for the affiliated organization. Preferably use a ROR (Research Organization Registry) identifier (e.g., https://ror.org/example).",
+              "format": "iri"
+            }
+          },
+          "minProperties": 1
         }
       },
       "minProperties": 1,
