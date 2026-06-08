@@ -158,7 +158,7 @@ Changes in this section are grouped by the codelist that they affect.
 - `spatial_scale.csv`:
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
 - `taxonomy_ged4all.csv`:
-  - [#485](https://github.com/GFDRR/rdl-standard/pull/484) - Add codelist to support inclusion of id codes for classification scheme = GED4ALL.
+  - [#485](https://github.com/GFDRR/rdl-standard/pull/485) - Add codelist to support inclusion of id codes for classification scheme = GED4ALL.
 
 ### Normative documentation
 
