@@ -128,6 +128,12 @@
       "description": "The license under which this dataset is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). This can be a URL to a legal document (e.g., https://creativecommons.org/licenses/by/4.0/) or a text description (e.g., 'Commercial license', 'Proprietary'). When licensing a dataset, a Public Domain Dedication or [Open Definition Conformant](https://opendefinition.org/licenses/) license is recommended. Documents linked from this dataset can be made available under other license conditions.",
       "$ref": "#/$defs/License"
     },
+    "rights": {
+      "title": "Rights",
+      "type": "string",
+      "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field. Based on Dublin Core accessRights and Rights.",
+      "minLength": 1
+    },          
     "contact_point": {
       "title": "Contact point",
       "description": "Contact information for the maintainer of the dataset.",
@@ -683,7 +689,13 @@
           "title": "License",
           "description": "The license under which the source data is made available, from the open [license codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#license). This can be a URL to a legal document or a text description (e.g., 'Commercial license', 'Proprietary').",
           "$ref": "#/$defs/License"
-        }
+        },
+        "rights": {
+          "title": "Rights",
+          "type": "string",
+          "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field. Based on Dublin Core accessRights and Rights.",
+          "minLength": 1
+        }        
       },
       "minProperties": 1
     },

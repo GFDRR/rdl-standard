@@ -54,6 +54,7 @@ Changes in this section affect more than one schema component.
 - [#483](https://github.com/GFDRR/rdl-standard/pull/483):
   - Remove `Format: iri` from `$defs/license`
   - Add `Citation` to `$defs/source`
+  - Add `Rights` related to license in general attributes and in `$defs/source`
 
 #### Resource
 
