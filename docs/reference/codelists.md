@@ -1192,6 +1192,28 @@ Download CSV file
 ```
 ````
 
+### taxonomy_ged4all
+
+```{seealso}
+[classification scheme](#classification-scheme)
+
+```
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/taxonomy_ged4all.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/taxonomy_ged4all.csv
+```
+````
+
 ### unit_currency
 
 ```{seealso}
