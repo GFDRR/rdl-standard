@@ -231,13 +231,13 @@
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
         }
 
-        /* Special styling for problematic nested arrays */
+        /* Special styling for nested classification arrays like disaster_identifiers */
         .array-field[data-array-name*="disaster_identifiers"] .card {
-            border-left-color: #dc3545;
+            border-left-color: #6f42c1; /* Purple to distinguish from regular arrays */
         }
 
         .array-field[data-array-name*="disaster_identifiers"] .card .card-body {
-            background-color: #fff5f5;
+            background-color: #f8f5ff; /* Light purple background */
         }
 
         /* Footer Styles */
@@ -349,6 +349,36 @@
             }
         }
 
+        /* Header navigation links styling */
+        header nav .nav-link {
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        header nav .nav-link:hover {
+            background-color: #1a1f36;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(33, 37, 41, 0.3);
+        }
+
+        header nav .nav-link b {
+            font-weight: 600;
+        }
+
+        /* Component description example links styling */
+        .form-text a {
+            text-decoration: none;
+        }
+
+        .form-text a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -371,10 +401,10 @@
                             <a class="nav-link" href="http://riskdatalibrary.org/" target="_blank"><b>RDL Project</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://docs.riskdatalibrary.org/" target="_blank"><b>Documentation</b></a>
-                        </li>
+                            <a class="nav-link" href="https://catalog.riskdatalibrary.org/" target="_blank"><b>Risk Data Catalog</b></a>
+                        </li>                        
                         <li class="nav-item">
-                            <a class="nav-link" href="https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE.html" target="_blank"><b>Metadata Editor</b></a>
+                            <a class="nav-link" href="https://docs.riskdatalibrary.org/" target="_blank"><b>Documentation</b></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://gfdrr.github.io/CCDR-tools/home.html" target="_blank"><b>Tools</b></a>
@@ -390,7 +420,7 @@
                 <!-- Schema Version Selection -->
                 <div class="card mb-3">
                     <div class="card-header">
-                        <h5>📋 Schema Configuration</h5>
+                        <h5>⚙️ Schema Configuration</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
@@ -459,7 +489,7 @@
                             <button id="validateForm" class="btn btn-outline-primary btn-sm w-100 mb-2">🔍 Validate Metadata</button>
                             <button id="exportJson" class="btn btn-success btn-sm w-100 mb-2">Export JSON</button>
                             <button id="exportXml" class="btn btn-success btn-sm w-100 mb-2">Export XML</button>
-                            <button id="publishGitHub" class="btn btn-warning btn-sm w-100 mb-2" disabled>📤 Publish to GitHub</button>
+                            <button id="publishGitHub" class="btn btn-warning btn-sm w-100 mb-2" disabled>📤 Publish to RDL catalog</button>
                         </div>
                 </div>
             </div>
@@ -488,7 +518,7 @@
                                     <div class="text-center text-muted py-5">
                                         <div style="font-size: 4rem;">🌍</div>
                                         <p>Schema will load automatically and configure sections as needed</p>
-                                        <small class="text-muted">Refactored with unified field creation and improved dependency handling - meant to work with RDLS v0.3 or later</small>
+                                        <small class="text-muted">Unified field creation with improved dependency handling for RDLS v1.0</small>
                                     </div>
                                 </div>
                             </div>
@@ -564,20 +594,48 @@
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-info">
-                        <strong>Setup Instructions:</strong>
+                        <strong>GitHub Authentication:</strong>
+                        <p class="mb-2">To publish datasets to the RDLS catalogue, you'll need a GitHub Personal Access Token. The editor will automatically:</p>
                         <ol class="mb-0 mt-2">
-                            <li>Create a <a href="https://github.com/settings/tokens" target="_blank">Personal Access Token</a> with <code>repo</code> permissions</li>
-                            <li>Enter your token below (it will be stored securely in your session)</li>
-                            <li>Confirm the target repository and branch settings</li>
+                            <li>Create a fork of the catalogue repository in your account (if needed)</li>
+                            <li>Commit your dataset to your fork</li>
+                            <li>Open a pull request for review by repository admins</li>
                         </ol>
                     </div>
 
-                    <form id="githubConfigForm">
-                        <div class="mb-3">
-                            <label for="githubToken" class="form-label">GitHub Personal Access Token <span class="text-danger">*</span></label>
-                            <input type="password" class="form-control" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" required>
-                            <div class="form-text">Your token is stored securely and only for this session</div>
+                    <div id="githubAuthSection">
+                        <div id="notAuthenticated">
+                            <div class="mb-3">
+                                <label for="githubToken" class="form-label">
+                                    <strong>GitHub Personal Access Token</strong>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="password" class="form-control" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" required>
+                                <div class="form-text">
+                                    <a href="https://github.com/settings/tokens/new?description=RDLS%20Metadata%20Editor&scopes=public_repo" target="_blank" class="text-decoration-none">
+                                        🔑 Create a new token
+                                    </a> with <code>public_repo</code> scope only. Your token is stored only in your browser session.
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-success w-100" onclick="authenticateWithToken()">
+                                <i class="bi bi-check-circle"></i> Verify Token
+                            </button>
                         </div>
+
+                        <div id="authenticated" style="display: none;">
+                            <div class="alert alert-success mb-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>✅ Authenticated as <span id="githubUsername"></span></strong>
+                                        <br><small class="text-muted">Token valid for this session</small>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="logoutGithub()">Sign Out</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="githubConfigForm" style="display: none;">
 
                         <div class="mb-3">
                             <label for="githubRepo" class="form-label">Target Repository</label>
@@ -587,7 +645,7 @@
 
                         <div class="mb-3">
                             <label for="githubBranch" class="form-label">Target Branch</label>
-                            <input type="text" class="form-control" id="githubBranch" value="rdl-0.3" readonly>
+                            <input type="text" class="form-control" id="githubBranch" value="rdl-1.0" readonly>
                             <div class="form-text">Base branch for the pull request</div>
                         </div>
 
@@ -602,8 +660,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success" id="testGithubConnection">Test Connection</button>
-                    <button type="button" class="btn btn-primary" id="publishToGithub">Publish Dataset</button>
+                    <button type="button" class="btn btn-primary" id="publishToGithub" onclick="publishToGithub()">Publish to Catalogue</button>
                 </div>
             </div>
         </div>
@@ -797,35 +854,66 @@
             {code: 'MHI:-', title: 'Multi-hazard Index'}
         ];
 
-        // Function to get filtered IMT options based on hazard type
-        function getFilteredIMTOptions(selectedHazardType) {
-            // Use legacy mapping if schema-based mapping not loaded yet
-            const mapping = HAZARD_IMT_MAPPING || LEGACY_HAZARD_IMT_MAPPING;
-
-            if (!selectedHazardType || !mapping || !mapping[selectedHazardType]) {
-                // Return all IMT options if no hazard selected or unknown hazard
+        // Function to get filtered IMT options based on hazard type (using schema conditionals)
+        async function getFilteredIMTOptions(selectedHazardType) {
+            if (!currentSchema || !selectedHazardType) {
+                // Fallback to legacy mapping if no schema or hazard type
+                const mapping = HAZARD_IMT_MAPPING || LEGACY_HAZARD_IMT_MAPPING;
                 const allIMTs = [];
                 if (mapping) {
                     Object.values(mapping).forEach(imts => allIMTs.push(...imts));
                 }
                 allIMTs.push(...UNIVERSAL_IMTS);
 
-                // Remove duplicates
                 const uniqueIMTs = allIMTs.filter((imt, index, self) =>
                     index === self.findIndex(i => i.code === imt.code)
                 );
                 return uniqueIMTs;
             }
 
-            // Return hazard-specific IMTs plus universal ones
-            const hazardIMTs = [...mapping[selectedHazardType]];
-            hazardIMTs.push(...UNIVERSAL_IMTS);
-            return hazardIMTs;
+            // Get Hazard definition from schema
+            const hazardDef = SchemaNavigator.getDefinitionAtPath(currentSchema, '$defs.Hazard');
+
+            if (!hazardDef || !hazardDef.allOf) {
+                // Fallback to legacy if schema doesn't have conditional logic
+                const mapping = HAZARD_IMT_MAPPING || LEGACY_HAZARD_IMT_MAPPING;
+                if (mapping && mapping[selectedHazardType]) {
+                    return [...mapping[selectedHazardType], ...UNIVERSAL_IMTS];
+                }
+                return UNIVERSAL_IMTS;
+            }
+
+            // Use schema's conditional logic to get IMT codelist
+            try {
+                const imtOptions = await CodelistManager.getConditionalCodelist(
+                    hazardDef,
+                    'intensity_measure',
+                    { type: selectedHazardType }
+                );
+
+                // Convert to format expected by UI (array of {code, title} objects)
+                const formattedOptions = imtOptions.map(code => ({
+                    code: code,
+                    title: code // Could be enhanced with descriptions from codelist
+                }));
+
+                // Add universal IMTs
+                formattedOptions.push(...UNIVERSAL_IMTS);
+                return formattedOptions;
+            } catch (error) {
+                console.error('Error loading IMT options from schema:', error);
+                // Fallback to legacy mapping
+                const mapping = HAZARD_IMT_MAPPING || LEGACY_HAZARD_IMT_MAPPING;
+                if (mapping && mapping[selectedHazardType]) {
+                    return [...mapping[selectedHazardType], ...UNIVERSAL_IMTS];
+                }
+                return UNIVERSAL_IMTS;
+            }
         }
 
         // Function to update IMT dropdowns when hazard changes
-        function updateIMTOptionsForHazard(hazardType) {
-            const filteredOptions = getFilteredIMTOptions(hazardType);
+        async function updateIMTOptionsForHazard(hazardType) {
+            const filteredOptions = await getFilteredIMTOptions(hazardType);
 
             // Find all intensity_measure fields and update them
             // This includes both select elements and combobox inputs
@@ -928,9 +1016,11 @@
         }
 
         let currentSchema = null;
+        let currentSchemaVersion = '1.0'; // Track current schema version for URL substitutions
         let currentFormData = {};
         let activeSections = new Set(['general']);
         let fieldValidationStatus = new Map();
+        let hasRunFullValidation = false;
 
         // Object editor state
         let currentObjectEditor = {
@@ -957,12 +1047,7 @@
             'hazard.process': 'hazard.type',
             'hazard.intensity_measure': 'hazard.type',
 
-            // Currency dependencies
-            'loss.impact_and_losses.currency': 'loss.impact_and_losses.impact_unit',
-            'loss.losses.impact_and_losses.currency': 'loss.losses.impact_and_losses.impact_unit',
-
             // Hazard section (hazards array)
-            'hazards.hazard_process': 'hazards.type',
             'hazards.process': 'hazards.type',
             'hazards.intensity_measure': 'hazards.type',
 
@@ -1110,12 +1195,14 @@
          * Handles all field creation needs across normal, modal, and array contexts
          */
         class FieldCreationContext {
-            constructor(type = 'normal', container = null, itemData = null, arrayName = null) {
+            constructor(type = 'normal', container = null, itemData = null, arrayName = null, componentType = null, itemSchema = null) {
                 this.type = type; // 'normal', 'modal', 'inline', 'array'
                 this.container = container;
                 this.idPrefix = type === 'modal' ? 'modal_' : '';
                 this.itemData = itemData; // For inline context, stores the item being edited
                 this.arrayName = arrayName; // For inline context, stores the array name (e.g., 'hazards', 'losses')
+                this.componentType = componentType; // Component type: 'hazard', 'exposure', 'vulnerability', 'loss'
+                this.itemSchema = itemSchema; // For inline context, stores the item schema (for checking required fields)
             }
 
             createField(name, property, value, options = {}) {
@@ -1150,7 +1237,9 @@
             createField(name, property, value, options = {}) {
                 // Skip ID fields in certain contexts
                 // ID fields are auto-generated and should not be editable
-                if (name === 'id' || (name.includes('.id') && (this.context.type === 'array' || this.context.type === 'inline'))) {
+                // EXCEPT for Classification objects where 'id' is the user-provided classification code
+                const isClassificationId = property && property.title === 'Classification identifier';
+                if (!isClassificationId && (name === 'id' || (name.includes('.id') && (this.context.type === 'array' || this.context.type === 'inline')))) {
                     return document.createElement('div');
                 }
 
@@ -1308,12 +1397,6 @@
                 console.log(`[CREATE STRING] Creating string input for: ${name}, context: ${this.context.type}`);
                 console.log(`[CREATE STRING]   has enum:`, !!getEnumValues(property, currentSchema));
 
-                // Special handling for currency fields - ensure they have enum options
-                if (name.includes('currency') || name === 'currency') {
-                    if (!property.enum) {
-                        property = {...property, enum: ['USD', 'EUR', 'GBP', 'JPY', 'CHF', 'CAD', 'AUD']};
-                    }
-                }
 
                 // v1.0: Check for conditional codelists FIRST (before dependency check)
                 // Fields like 'unit' have conditional codelists and should be comboboxes, not dependent selects
@@ -1358,7 +1441,7 @@
                 } else if (property.suggestions && property.openCodelist) {
                     // Legacy: suggestions-based combobox
                     return this.createCombobox(name, property, value, options);
-                } else if (property.anyOf && this.isFlexibleDateField(property)) {
+                } else if ((property.oneOf || property.anyOf) && this.isFlexibleDateField(property)) {
                     // Handle flexible date fields (YYYY, YYYY-MM, or YYYY-MM-DD)
                     return this.createFlexibleDateInput(name, property, value, options);
                 } else if (property.format === 'date') {
@@ -1367,7 +1450,7 @@
                     return this.createEmailInput(name, property, value, options);
                 } else if (property.format === 'iri') {
                     return this.createUrlInput(name, property, value, options);
-                } else if (name.includes('description') || name.includes('purpose') || name.includes('notes') || name.includes('details') || name.includes('lineage')) {
+                } else if (name.includes('description') || name.includes('purpose') || name.includes('notes') || name.includes('details') || name.includes('lineage') || name.includes('citation')) {
                     return this.createTextareaInput(name, property, value, options);
                 } else {
                     return this.createTextInput(name, property, value, options);
@@ -1428,6 +1511,8 @@
                 } else if (fieldBaseName === 'details') {
                     textarea.maxLength = 5000;
                 } else if (fieldBaseName === 'purpose') {
+                    textarea.maxLength = 1500;
+                } else if (fieldBaseName === 'citation') {
                     textarea.maxLength = 1500;
                 } else if (property.maxLength) {
                     textarea.maxLength = property.maxLength;
@@ -1523,11 +1608,12 @@
             }
 
             isFlexibleDateField(property) {
-                // Check if the anyOf array contains date format patterns
-                if (!property.anyOf || !Array.isArray(property.anyOf)) return false;
+                // Check if the oneOf or anyOf array contains date format patterns
+                const schemas = property.oneOf || property.anyOf;
+                if (!schemas || !Array.isArray(schemas)) return false;
 
                 // Look for date format or year/year-month patterns
-                return property.anyOf.some(schema =>
+                return schemas.some(schema =>
                     schema.format === 'date' ||
                     (schema.pattern && (
                         schema.pattern.includes('\\d{4}') ||
@@ -1537,6 +1623,7 @@
             }
 
             createFlexibleDateInput(name, property, value, options) {
+                console.log(`[CREATE FLEXIBLE DATE] Field: ${name}, value:`, value, `(type: ${typeof value})`);
                 const wrapper = document.createElement('div');
                 wrapper.style.position = 'relative';
 
@@ -1549,7 +1636,13 @@
                     input.name = this.context.getFieldId(name);
                     input.id = this.context.getFieldId(name);
                 }
-                input.value = value || '';
+                // Only set value if there is one - otherwise placeholder won't show
+                if (value) {
+                    input.value = value;
+                    console.log(`[CREATE FLEXIBLE DATE] Set value: "${input.value}"`);
+                } else {
+                    console.log(`[CREATE FLEXIBLE DATE] No value set, placeholder should be visible`);
+                }
 
                 // Add pattern for basic validation (year, year-month, or full date)
                 input.pattern = '^\\d{4}(-\\d{2}(-\\d{2})?)?$';
@@ -1846,8 +1939,25 @@
                         }
 
                         // If no conditional codelist found, load the default codelist
-                        if (suggestions.length === 0 && property.codelist) {
+                        // Skip if codelist is 'placeholder' (used for conditional codelists)
+                        if (suggestions.length === 0 && property.codelist && property.codelist !== 'placeholder') {
                             suggestions = await CodelistManager.loadCodelist(property.codelist);
+                        }
+
+                        // Special handling for classification_scheme: filter by field purpose
+                        if (property.codelist === 'classification_scheme.csv' && suggestions.length > 0) {
+                            // Detect field purpose from field path
+                            console.log(`[CLASSIFICATION SCHEME] Field name: ${fieldName}, Codelist: ${property.codelist}`);
+                            const fieldPurpose = this.getClassificationFieldPurpose(fieldName);
+                            console.log(`[CLASSIFICATION SCHEME] Detected field purpose: ${fieldPurpose}`);
+                            if (fieldPurpose) {
+                                console.log(`[CLASSIFICATION SCHEME] Filtering ${suggestions.length} schemes for purpose: ${fieldPurpose}`);
+                                const beforeCount = suggestions.length;
+                                suggestions = CodelistManager.filterClassificationSchemes(suggestions, fieldPurpose);
+                                console.log(`[CLASSIFICATION SCHEME] Filtered from ${beforeCount} to ${suggestions.length} schemes`);
+                            } else {
+                                console.log(`[CLASSIFICATION SCHEME] No field purpose detected, showing all ${suggestions.length} schemes`);
+                            }
                         }
                     } else if (property.suggestions) {
                         // Use static suggestions if provided
@@ -1858,6 +1968,11 @@
                     dropdownMenu.innerHTML = '';
 
                     if (suggestions && suggestions.length > 0) {
+                        // Check if this is a unit field with currency codelist
+                        const isUnitField = fieldName === 'unit' || fieldName.endsWith('.unit');
+                        const isCurrencyCodelist = property.codelist === 'unit_currency.csv';
+                        const showCodeInDropdown = isUnitField && isCurrencyCodelist;
+
                         suggestions.forEach(suggestion => {
                             const item = document.createElement('li');
                             const link = document.createElement('a');
@@ -1868,7 +1983,12 @@
                             const suggestionCode = typeof suggestion === 'object' ? suggestion.code : suggestion;
                             const suggestionTitle = typeof suggestion === 'object' ? suggestion.title : suggestion;
 
-                            link.textContent = suggestionTitle;
+                            // Display format: "[Code] Title" only for currency unit fields
+                            if (showCodeInDropdown && typeof suggestion === 'object' && suggestion.code && suggestion.title && suggestion.code !== suggestion.title) {
+                                link.textContent = `[${suggestionCode}] ${suggestionTitle}`;
+                            } else {
+                                link.textContent = suggestionTitle;
+                            }
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
                                 input.value = suggestionCode; // Save code value
@@ -1929,6 +2049,155 @@
                     return '$defs.Measurement';
                 }
                 // Add more mappings as needed
+                return null;
+            }
+
+            getComponentTypeFromFieldName(fieldName) {
+                // First priority: use componentType from context if available
+                if (this.context.componentType) {
+                    console.log(`[COMPONENT DETECTION] Using componentType from context: ${this.context.componentType}`);
+                    return this.context.componentType;
+                }
+
+                // Extract component type from field path
+                // Field names like: "hazard.classification.scheme", "exposure.classification.scheme", etc.
+                const parts = fieldName.split('.');
+
+                // Check for main component types in field path
+                if (parts.includes('hazard') || parts.includes('hazards')) {
+                    return 'hazard';
+                }
+                if (parts.includes('exposure') || parts.includes('exposures')) {
+                    return 'exposure';
+                }
+                if (parts.includes('vulnerability') || parts.includes('vulnerabilities')) {
+                    return 'vulnerability';
+                }
+                if (parts.includes('loss') || parts.includes('losses')) {
+                    return 'loss';
+                }
+
+                // For inline context, check the array name from context
+                if (this.context.type === 'inline' && this.context.arrayName) {
+                    const arrayName = this.context.arrayName.toLowerCase();
+                    if (arrayName.includes('hazard')) return 'hazard';
+                    if (arrayName.includes('exposure')) return 'exposure';
+                    if (arrayName.includes('vulnerabilit')) return 'vulnerability';
+                    if (arrayName.includes('loss')) return 'loss';
+                }
+
+                // Fallback: use signature fields to detect component type
+                // These are unique fields that only appear in specific components
+                const signatureFields = {
+                    'asset_type': 'exposure',
+                    'taxonomy': 'exposure',
+                    'intensity_measure': 'hazard',
+                    'process': 'hazard',
+                    'trigger': 'hazard',
+                    'vulnerability_function': 'vulnerability',
+                    'impact_function': 'vulnerability',
+                    'loss_approach': 'loss',
+                    'loss_frequency_type': 'loss'
+                };
+
+                // Check if any part of the field path matches a signature field
+                for (const part of parts) {
+                    if (signatureFields[part]) {
+                        return signatureFields[part];
+                    }
+                }
+
+                return null;
+            }
+
+            getClassificationFieldPurpose(fieldName) {
+                // Determine what TYPE of thing is being classified based on field path and context
+                // Returns: 'disaster_identifier', 'hazard_classification', 'building_taxonomy', or 'socioeconomic_index'
+
+                console.log(`[FIELD PURPOSE] Field name: ${fieldName}`);
+                console.log(`[FIELD PURPOSE] Context type: ${this.context?.type}, arrayName: ${this.context?.arrayName}`);
+
+                const parts = fieldName.split('.');
+
+                // For inline/modal contexts, the arrayName tells us what type of object is being edited
+                // arrayName can be a full path like "vulnerability.socio_economic" or just "disaster_identifiers"
+                if (this.context && this.context.arrayName) {
+                    const arrayName = this.context.arrayName.toLowerCase();
+                    console.log(`[FIELD PURPOSE] Checking arrayName: ${arrayName}`);
+
+                    // Disaster identifiers - used to identify disasters
+                    if (arrayName.includes('disaster_identifier')) {
+                        console.log(`[FIELD PURPOSE] Detected disaster_identifier from arrayName`);
+                        return 'disaster_identifier';
+                    }
+
+                    // Asset types - used to classify buildings/assets
+                    if (arrayName.includes('asset_type')) {
+                        console.log(`[FIELD PURPOSE] Detected building_taxonomy from arrayName (asset_type)`);
+                        return 'building_taxonomy';
+                    }
+
+                    // Socioeconomic indices - used for socioeconomic classification
+                    // Can be "indicators", "socio_economic", or similar
+                    if (arrayName.includes('indicator') || arrayName.includes('socio_economic') || arrayName.includes('socioeconomic')) {
+                        console.log(`[FIELD PURPOSE] Detected socioeconomic_index from arrayName`);
+                        return 'socioeconomic_index';
+                    }
+
+                    // Taxonomy - used for building classification (in vulnerability context)
+                    if (arrayName.includes('taxonomy')) {
+                        console.log(`[FIELD PURPOSE] Detected building_taxonomy from arrayName (taxonomy)`);
+                        return 'building_taxonomy';
+                    }
+
+                    // Note: If we reach here with an arrayName set but not matched above,
+                    // it might be a nested object edit (not an array item)
+                    console.log(`[FIELD PURPOSE] arrayName set but not matched: ${arrayName}`);
+                }
+
+                // Check field path patterns for each classification type
+                // Order matters: check more specific patterns first!
+
+                // 1. DISASTER IDENTIFIER - identifies a disaster event
+                // Pattern: *.disaster_identifiers[*].scheme
+                if (parts.includes('disaster_identifiers')) {
+                    console.log(`[FIELD PURPOSE] Detected disaster_identifier from field path (disaster_identifiers)`);
+                    return 'disaster_identifier';
+                }
+
+                // 2. SOCIOECONOMIC INDEX - classifies socioeconomic factors
+                // Pattern: vulnerability.*.indicators[*].scheme OR *.socio_economic.*
+                if (parts.includes('indicators') || parts.includes('socio_economic') || parts.includes('socioeconomic')) {
+                    console.log(`[FIELD PURPOSE] Detected socioeconomic_index from field path`);
+                    return 'socioeconomic_index';
+                }
+
+                // 3. BUILDING TAXONOMY - classifies buildings/assets
+                // Pattern: exposure.*.asset_type[*].scheme OR vulnerability.*.taxonomy
+                if (parts.includes('asset_type') || parts.includes('taxonomy')) {
+                    console.log(`[FIELD PURPOSE] Detected building_taxonomy from field path`);
+                    return 'building_taxonomy';
+                }
+
+                // 4. HAZARD CLASSIFICATION - classifies hazard types
+                // Pattern: *.classification.* (in hazard, vulnerability/hazard, loss/hazard contexts)
+                // This is found in: hazard.classification.scheme, vulnerability.hazard.classification.scheme, loss.hazard.classification.scheme
+                // Must check this AFTER checking for disaster_identifiers to avoid conflicts
+                if (parts.includes('classification')) {
+                    console.log(`[FIELD PURPOSE] Detected hazard_classification from field path (classification)`);
+                    return 'hazard_classification';
+                }
+
+                // If fieldName is just "scheme" and we haven't detected context yet,
+                // we need to check what object we're inside based on sibling fields or parent context
+                // For now, this shouldn't happen if arrayName is set correctly
+                if (fieldName === 'scheme') {
+                    console.log(`[FIELD PURPOSE] Field is just 'scheme' with no clear context - returning null`);
+                    console.log(`[FIELD PURPOSE] This suggests arrayName is not being set correctly in the context`);
+                    return null;
+                }
+
+                console.log(`[FIELD PURPOSE] Could not detect field purpose - returning null`);
                 return null;
             }
 
@@ -2136,7 +2405,7 @@
                 itemsContainer.id = `${this.context.getFieldId(name)}_items`;
                 
                 const renderArrayItems = () => {
-                    console.log(`[RENDER] renderArrayItems called for ${name}, arrayData length: ${arrayData.length}`);
+                    console.log(`[RENDER ${name}] length=${arrayData.length}, items:`, JSON.parse(JSON.stringify(arrayData)));
                     itemsContainer.innerHTML = '';
 
                     // Check if items are objects (handles $ref, type: 'object', or allOf with object schemas)
@@ -2320,26 +2589,61 @@
                             const newItem = {};
 
                             // Initialize with appropriate ID based on object type
-                            if (name === 'metrics') {
-                                newItem.id = generateUniqueId('metric');
-                            } else if (name === 'cost') {
-                                newItem.id = generateUniqueId('cost');
-                            } else if (name === 'hazards') {
-                                newItem.id = generateUniqueId('hazard');
-                            } else if (name === 'events' || name.includes('.events')) {
-                                newItem.id = generateUniqueId('event');
-                            } else {
-                                newItem.id = generateUniqueId('item');
+                            // EXCEPT for Classification objects (disaster_identifiers) where id is user-provided
+                            const isClassificationArray = name.endsWith('.disaster_identifiers') || name === 'disaster_identifiers';
+
+                            if (!isClassificationArray) {
+                                if (name === 'metrics') {
+                                    newItem.id = generateUniqueId('metric');
+                                } else if (name === 'cost') {
+                                    newItem.id = generateUniqueId('cost');
+                                } else if (name === 'hazards') {
+                                    newItem.id = generateUniqueId('hazard');
+                                } else if (name === 'events' || name.includes('.events')) {
+                                    newItem.id = generateUniqueId('event');
+                                } else {
+                                    newItem.id = generateUniqueId('item');
+                                }
                             }
+                            // For Classification objects, leave id empty for user input
                             
+                            console.log(`[ADD ITEM] Adding to ${name}, arrayData was ${arrayData.length}, pushing:`, newItem);
+                            const newIndex = arrayData.length;
                             arrayData.push(newItem);
+                            console.log(`[ADD ITEM] After push, arrayData is now ${arrayData.length}`);
                             renderArrayItems();
+                            // Auto-scroll to the newly added item
+                            setTimeout(() => {
+                                const items = itemsContainer.querySelectorAll('.card, .array-item');
+                                const newItem = items[newIndex];
+                                if (newItem) {
+                                    newItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                    // Add a subtle highlight effect
+                                    newItem.style.transition = 'background-color 0.5s';
+                                    const originalBg = newItem.style.backgroundColor;
+                                    newItem.style.backgroundColor = '#fff3cd';
+                                    setTimeout(() => {
+                                        newItem.style.backgroundColor = originalBg;
+                                    }, 1000);
+                                }
+                            }, 100);
                         } else {
                             openObjectEditor(name, arrayData.length, property.items, arrayData, renderArrayItems);
                         }
                     } else if (resolvedItems && resolvedItems.type === 'string') {
+                        const newIndex = arrayData.length;
                         arrayData.push('');
                         renderArrayItems();
+                        // Auto-scroll to the newly added item
+                        setTimeout(() => {
+                            const items = itemsContainer.querySelectorAll('.array-item');
+                            const newItem = items[newIndex];
+                            if (newItem) {
+                                newItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                const input = newItem.querySelector('input, select');
+                                if (input) input.focus();
+                            }
+                        }, 100);
                         if (this.context.type === 'normal') {
                             updateFormData();
                             // Trigger validation for spatial fields when countries array changes
@@ -2352,8 +2656,17 @@
                             }
                         }
                     } else {
+                        const newIndex = arrayData.length;
                         arrayData.push({});
                         renderArrayItems();
+                        // Auto-scroll to the newly added item
+                        setTimeout(() => {
+                            const items = itemsContainer.querySelectorAll('.card, .array-item');
+                            const newItem = items[newIndex];
+                            if (newItem) {
+                                newItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }
+                        }, 100);
                         if (this.context.type === 'normal') {
                             updateFormData();
                             // Trigger validation for spatial fields when countries array changes
@@ -2401,6 +2714,7 @@
 
                 // Create inline fields for properties
                 if (itemSchema && itemSchema.properties) {
+                    console.log(`[INLINE EDITOR ${arrayName}] Creating inline editor with properties:`, Object.keys(itemSchema.properties));
                     // Sort properties for better UI ordering
                     const propertyEntries = Object.entries(itemSchema.properties);
                     const requiredFields = itemSchema.required || [];
@@ -2428,12 +2742,6 @@
                     });
 
                     propertyEntries.forEach(([key, prop]) => {
-                        if (key === 'id') return; // Skip ID field
-
-                        const fieldDiv = document.createElement('div');
-                        fieldDiv.className = 'mb-2';
-                        fieldDiv.setAttribute('data-field-name', key);
-
                         // Resolve $ref if present to get the full property schema
                         // Preserve original title and description when resolving
                         let resolvedProp = prop;
@@ -2444,26 +2752,52 @@
                             }
                         }
 
+                        // Skip ID field EXCEPT for Classification objects where id is user-provided
+                        const isClassificationId = resolvedProp && resolvedProp.title === 'Classification identifier';
+                        if (key === 'id' && !isClassificationId) return;
+
+                        const fieldDiv = document.createElement('div');
+                        fieldDiv.className = 'mb-2';
+                        fieldDiv.setAttribute('data-field-name', key);
+
                         // Create a sub-context for inline editing
                         // Don't use ID/name attributes to avoid polluting FormData
                         // Pass item data so dependent fields can look up parent values
                         // Pass array name to help with context-specific field handling (e.g., trigger visibility)
-                        const inlineContext = new FieldCreationContext('inline', fieldDiv, item, arrayName);
+                        // Infer component type from array name for classification_scheme filtering
+                        const inferredComponentType = arrayName ?
+                            (arrayName.toLowerCase().includes('exposure') ? 'exposure' :
+                             arrayName.toLowerCase().includes('hazard') ? 'hazard' :
+                             arrayName.toLowerCase().includes('vulnerabilit') ? 'vulnerability' :
+                             arrayName.toLowerCase().includes('loss') ? 'loss' : null) : null;
+                        const inlineContext = new FieldCreationContext('inline', fieldDiv, item, arrayName, inferredComponentType, itemSchema);
                         // Use resolvedProp instead of prop to ensure nested object schemas are fully expanded
                         const fieldElement = inlineContext.createField(key, resolvedProp, item[key]);
 
-                        // Only set up simple change listener for non-object fields
-                        // Object fields contain multiple nested inputs that need special handling
-                        if (resolvedProp.type !== 'object') {
+                        // Only set up simple change listener for non-object and non-array fields
+                        // Object fields and array fields contain multiple nested inputs that need special handling
+                        if (resolvedProp.type !== 'object' && resolvedProp.type !== 'array') {
                             // Set up change listener to update the item data
                             const input = fieldElement.querySelector('input, select, textarea');
                             if (input) {
                                 // Set initial value if item has data
-                                if (item[key] !== undefined) {
+                                if (item[key] !== undefined && item[key] !== null) {
                                     if (input.type === 'checkbox') {
                                         input.checked = item[key];
                                     } else {
-                                        input.value = item[key];
+                                        // Handle case where value might be an object (e.g., {code, title})
+                                        // Extract just the code string for display and update the item data
+                                        let displayValue = item[key];
+                                        console.log(`[INLINE LOAD ${arrayName}] Field ${key}[${index}] type: ${typeof displayValue}, value:`, displayValue);
+
+                                        if (typeof displayValue === 'object' && displayValue !== null && !Array.isArray(displayValue)) {
+                                            displayValue = displayValue.code || displayValue.title || '';
+                                            console.log(`[INLINE LOAD] Extracted from object: ${displayValue}`);
+                                            // Clean up the item data to store string instead of object
+                                            item[key] = displayValue;
+                                            arrayData[index][key] = displayValue;
+                                        }
+                                        input.value = displayValue || '';
                                     }
                                 }
 
@@ -2581,80 +2915,6 @@
                         fieldDiv.appendChild(fieldElement);
                         cardBody.appendChild(fieldDiv);
 
-                        // DIRECT FIX: Add currency field immediately after quantity_kind in array cards
-                        if (key === 'quantity_kind') {
-                            const currencyDiv = document.createElement('div');
-                            currencyDiv.className = 'mb-2';
-                            currencyDiv.setAttribute('data-field-name', 'currency');
-
-                            const currencyProperty = {
-                                "type": "string",
-                                "enum": ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "CNY", "SEK", "NOK", "DKK", "PLN", "CZK", "HUF", "RON", "BGN", "HRK"],
-                                "title": "Currency"
-                            };
-
-                            // Create context - don't use ID/name to avoid polluting FormData
-                            // Pass item data so dependent fields can look up parent values
-                            const currencyContext = new FieldCreationContext('inline', currencyDiv, item, arrayName);
-                            console.log(`[CURRENCY FIELD] Created context with type: ${currencyContext.type}`);
-                            const savedCurrencyValue = item['currency'];
-                            console.log(`[CURRENCY FIELD] Creating currency field for ${arrayName}[${index}], savedValue: "${savedCurrencyValue}"`);
-                            const currencyElement = currencyContext.createField('currency', currencyProperty, savedCurrencyValue);
-                            console.log(`[CURRENCY FIELD] Currency element created, checking for id attribute...`);
-
-                            // Check value before appending
-                            const selectBeforeAppend = currencyElement.querySelector('select, input');
-                            console.log(`[CURRENCY FIELD] Value BEFORE appending to currencyDiv: "${selectBeforeAppend?.value}"`);
-
-                            currencyDiv.appendChild(currencyElement);
-
-                            console.log(`[CURRENCY FIELD] Value AFTER appending to currencyDiv: "${selectBeforeAppend?.value}"`);
-
-                            // Add currency field right after the quantity_kind field FIRST
-                            cardBody.appendChild(currencyDiv);
-
-                            console.log(`[CURRENCY FIELD] Value AFTER appending to cardBody: "${selectBeforeAppend?.value}"`);
-                            console.log(`[CURRENCY FIELD] Is disabled after appending: ${selectBeforeAppend?.disabled}`);
-
-                            // THEN set up value and listeners AFTER it's in the DOM
-                            const currencyInput = currencyElement.querySelector('select, input');
-                            if (currencyInput) {
-                                console.log(`[CURRENCY FIELD] Currency input ID: "${currencyInput.id}", name: "${currencyInput.name}"`);
-                                console.log(`[CURRENCY FIELD] Currency input disabled status: ${currencyInput.disabled}`);
-
-                                // Add change listener BEFORE setting value
-                                currencyInput.addEventListener('change', (e) => {
-                                    item['currency'] = e.target.value;
-                                    arrayData[index]['currency'] = e.target.value;
-                                    console.log(`Updated ${arrayName}[${index}].currency = ${e.target.value}`);
-                                });
-
-                                // Set initial value AFTER appending to DOM
-                                if (savedCurrencyValue) {
-                                    // Force the select to have the right value by finding and selecting the option
-                                    const optionToSelect = currencyInput.querySelector(`option[value="${savedCurrencyValue}"]`);
-                                    if (optionToSelect) {
-                                        optionToSelect.selected = true;
-                                        currencyInput.value = savedCurrencyValue;
-                                        console.log(`[CURRENCY FIELD] Set value for ${arrayName}[${index}] to: "${savedCurrencyValue}", actual value: "${currencyInput.value}", option.selected: ${optionToSelect.selected}`);
-                                    } else {
-                                        console.warn(`[CURRENCY FIELD] Could not find option with value "${savedCurrencyValue}"`);
-                                    }
-
-                                    // Check if value persists after a short delay
-                                    setTimeout(() => {
-                                        console.log(`[CURRENCY FIELD] Value check after 100ms for ${arrayName}[${index}]: "${currencyInput.value}" (expected "${savedCurrencyValue}")`);
-                                        if (currencyInput.value !== savedCurrencyValue) {
-                                            console.warn(`[CURRENCY FIELD] VALUE WAS CHANGED! Expected "${savedCurrencyValue}" but got "${currencyInput.value}"`);
-                                        }
-                                    }, 100);
-                                } else {
-                                    console.log(`[CURRENCY FIELD] No saved value for ${arrayName}[${index}], current value: "${currencyInput.value}"`);
-                                }
-                            }
-
-                            // Currency field will be handled by the unified dependency system
-                        }
                     });
                 }
                 
@@ -2673,81 +2933,9 @@
                 
                 actions.appendChild(removeBtn);
                 cardBody.appendChild(actions);
-                
+
                 card.appendChild(cardBody);
-                
-                // Handle currency field visibility after card is created
-                // Use immediate execution to avoid closure issues with 'card' variable
-                (function(currentCard, currentItem, cardIndex, dataArray) {
-                    setTimeout(() => {
-                        const quantityKindField = currentCard.querySelector('[data-field-name="quantity_kind"] select, [data-field-name="quantity_kind"] input');
-                        const currencyField = currentCard.querySelector('[data-field-name="currency"]');
 
-                        if (quantityKindField && currencyField) {
-                            const currencyInput = currencyField.querySelector('select, input');
-
-                            // DEBUG: Log all relevant state
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: === DETAILED STATE ===`);
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: currentItem.quantity_kind="${currentItem.quantity_kind}"`);
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: quantityKindField.value="${quantityKindField?.value}"`);
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: currentItem.currency="${currentItem.currency}"`);
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: dataArray[${cardIndex}].quantity_kind="${dataArray[cardIndex]?.quantity_kind}"`);
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: dataArray[${cardIndex}].currency="${dataArray[cardIndex]?.currency}"`);
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: Currency value BEFORE any changes: "${currencyInput?.value}"`);
-
-                            const currentValue = currentItem.quantity_kind || quantityKindField.value;
-                            console.log(`[INIT CURRENCY] Card ${cardIndex}: Resolved quantity_kind="${currentValue}", will ${currentValue === 'monetary' ? 'ENABLE' : 'DISABLE'} currency`);
-
-                            if (currentValue === 'monetary') {
-                                if (currencyInput) {
-                                    // Save the current value before enabling (enabling can reset the value in some browsers)
-                                    const savedValue = currentItem.currency || dataArray[cardIndex]?.currency;
-                                    console.log(`[INIT CURRENCY] Card ${cardIndex}: About to enable, will restore value: "${savedValue}"`);
-
-                                    currencyInput.disabled = false;
-                                    currencyInput.required = true;
-
-                                    console.log(`[INIT CURRENCY] Card ${cardIndex}: Enabled currency field, value after enabling: "${currencyInput.value}"`);
-
-                                    // Restore the value if it was cleared by enabling
-                                    if (savedValue && currencyInput.value !== savedValue) {
-                                        console.log(`[INIT CURRENCY] Card ${cardIndex}: Value was cleared by enabling, restoring to "${savedValue}"`);
-                                        const optionToRestore = currencyInput.querySelector(`option[value="${savedValue}"]`);
-                                        if (optionToRestore) {
-                                            optionToRestore.selected = true;
-                                            currencyInput.value = savedValue;
-                                            console.log(`[INIT CURRENCY] Card ${cardIndex}: Restored value to "${currencyInput.value}"`);
-                                        }
-                                    }
-                                }
-                                const label = currencyField.querySelector('label');
-                                if (label && !label.innerHTML.includes('*')) {
-                                    label.innerHTML += ' <span class="text-danger">*</span>';
-                                }
-                            } else {
-                                if (currencyInput) {
-                                    currencyInput.disabled = true;
-                                    currencyInput.required = false;
-                                    // Clear the value if quantity_kind is not monetary AND there's a value
-                                    // This handles the case where a stale value persists
-                                    if (currencyInput.value && currencyInput.value !== '') {
-                                        console.warn(`[INIT CURRENCY] Card ${cardIndex}: ⚠️ CLEARING currency value "${currencyInput.value}" because quantity_kind="${currentValue}"`);
-                                        console.warn(`[INIT CURRENCY] Card ${cardIndex}: This might be the bug! Saved currency was "${currentItem.currency || dataArray[cardIndex]?.currency}"`);
-                                        currencyInput.value = '';
-                                        // Also update the item data
-                                        currentItem.currency = '';
-                                        if (dataArray && dataArray[cardIndex]) {
-                                            dataArray[cardIndex].currency = '';
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            console.warn(`[INIT CURRENCY] Card ${cardIndex}: Missing fields - quantityKindField:${!!quantityKindField}, currencyField:${!!currencyField}`);
-                        }
-                    }, 50);
-                })(card, item, index, arrayData);
-                
                 return card;
             }
 
@@ -2910,7 +3098,8 @@
                         }
 
                         // Pass itemData to sub-context so nested fields can access parent item data for dependencies
-                        const subContext = new FieldCreationContext(this.context.type, this.context.container, this.context.itemData || value);
+                        // Also pass componentType so classification_scheme filtering works correctly
+                        const subContext = new FieldCreationContext(this.context.type, this.context.container, this.context.itemData || value, this.context.arrayName, this.context.componentType);
                         // Use resolvedProp to ensure nested properties get full schema with allOf expanded
                         const field = subContext.createField(`${name}.${key}`, resolvedProp || prop, fieldValue, options);
                         console.log(`[CREATE OBJECT]   Appending field to container, field tagName: ${field.tagName}, className: ${field.className}`);
@@ -2939,74 +3128,8 @@
             }
 
             handleDependencies(container, name, property, value) {
-                // Special handling for currency field - always show but disable unless quantity_kind is 'monetary'
-                // SKIP for inline context to avoid clearing values (inline arrays handle currency separately)
-                if (name.includes('currency') || name === 'currency') {
-                    // Skip currency handling for inline context - it's handled separately
-                    if (this.context.type === 'inline') {
-                        console.log(`[HANDLE DEPENDENCIES] Skipping currency handling for inline context field: ${name}`);
-                        return;
-                    }
-                    const currencyInput = container.querySelector('select, input');
-                    if (currencyInput) {
-                        currencyInput.disabled = true; // Default to disabled
-
-                        // Find the related quantity_kind field name
-                        let quantityKindFieldName = null;
-                        if (name.includes('impact_and_losses')) {
-                            quantityKindFieldName = name.replace(/currency$/, 'quantity_kind');
-                        } else if (name.includes('metrics')) {
-                            quantityKindFieldName = name.replace(/currency$/, 'quantity_kind');
-                        } else if (name.includes('losses.impact_and_losses')) {
-                            quantityKindFieldName = name.replace(/currency$/, 'quantity_kind');
-                        } else {
-                            quantityKindFieldName = name.replace(/currency$/, 'quantity_kind');
-                        }
-
-                        // Helper to update currency field state
-                        function updateCurrencyState() {
-                            const qkValue = getNestedValue(currentFormData, quantityKindFieldName);
-                            if (qkValue === 'monetary') {
-                                currencyInput.disabled = false;
-                                currencyInput.required = true;
-                            } else {
-                                currencyInput.disabled = true;
-                                currencyInput.required = false;
-                                currencyInput.value = '';
-                            }
-                        }
-
-                        // Initial check - ensure currency starts disabled unless quantity_kind is monetary
-                        // Skip this for modal context as modal data isn't in currentFormData yet
-                        if (this.context.type !== 'modal') {
-                            setTimeout(() => {
-                                const currentValue = getNestedValue(currentFormData, quantityKindFieldName) || '';
-                                currencyInput.disabled = currentValue !== 'monetary';
-                                currencyInput.required = currentValue === 'monetary';
-                                if (currentValue !== 'monetary') {
-                                    currencyInput.value = '';
-                                }
-                                updateCurrencyState();
-                            }, 0);
-                        }
-
-                        // Listen for changes on the related quantity_kind field
-                        // Skip this for modal context as it uses dependency handlers instead
-                        if (this.context.type !== 'modal') {
-                            setTimeout(() => {
-                                const qkInput = document.getElementById(this.context.getFieldId(quantityKindFieldName));
-                                if (qkInput) {
-                                    // Listen to all relevant events for complete dropdown/typing support
-                                    qkInput.addEventListener('change', updateCurrencyState);
-                                    qkInput.addEventListener('input', updateCurrencyState);
-                                    if (qkInput.tagName === 'SELECT') {
-                                        qkInput.addEventListener('click', updateCurrencyState);
-                                    }
-                                }
-                            }, 100);
-                        }
-                    }
-                }
+                // Legacy currency field handling removed - currency is now part of the unit field
+                // with conditional codelist based on quantity_kind
             }
 
             resolveSchemaRef(ref) {
@@ -3097,6 +3220,12 @@
             }
 
             isRequiredField(name, property, options) {
+                // For inline context, check the itemSchema passed through context
+                if (this.context.type === 'inline' && this.context.itemSchema) {
+                    const requiredFields = this.context.itemSchema.required || [];
+                    return requiredFields.includes(name);
+                }
+
                 // Spatial scale is always mandatory when spatial coverage is included
                 if (name === 'spatial.scale') {
                     return true;
@@ -3172,14 +3301,10 @@
                         }
                     }
 
-                    // Check if field is required in nested objects (for modal contexts where field names are flattened)
-                    if (itemSchema && itemSchema.properties) {
-                        for (const [propName, propSchema] of Object.entries(itemSchema.properties)) {
-                            if (propSchema.type === 'object' && propSchema.required && propSchema.required.includes(name)) {
-                                return true;
-                            }
-                        }
-                    }
+                    // Don't check nested object required fields here - they are handled by nested field names (e.g., "hazard.process")
+                    // The buggy check below was incorrectly marking ALL fields named 'process' as required
+                    // just because 'hazard' object has 'process' in its required array
+                    // This has been removed to fix incorrect required field highlighting
                 }
 
                 // Check top-level required fields (general section)
@@ -3258,12 +3383,6 @@
                     }
                 }
 
-                // Currency field is required only when impact_unit is monetary
-                if (name.includes('currency') && name.includes('impact_and_losses')) {
-                    const parentPath = name.replace('currency', 'impact_unit');
-                    const parentValue = getNestedValue(currentFormData, parentPath);
-                    return parentValue === 'monetary';
-                }
 
                 return false;
             }
@@ -3340,8 +3459,8 @@
             }
 
             setupListeners(element, name, property, options = {}) {
-                const eventHandler = (e) => {
-                    this.handleFieldChange(e, name, property, options);
+                const eventHandler = async (e) => {
+                    await this.handleFieldChange(e, name, property, options);
                 };
 
                 if (element.tagName === 'SELECT') {
@@ -3357,7 +3476,8 @@
 
             // getEventType method removed - event handling now done directly in setupListeners
 
-            handleFieldChange(event, name, property, options) {
+            async handleFieldChange(event, name, property, options) {
+                // ASYNC VERSION - Updated for v1.0 IMT loading
                 const value = this.getFieldValue(event.target);
                 console.log(`[SETUP LISTENERS] handleFieldChange called for field: ${name}, context: ${this.context.type}, value: ${value}`);
 
@@ -3542,9 +3662,9 @@
                                         this.rebuildDependentDropdown(dependentField, fullDependentFieldName, newValue);
                                     } else if (dependentFieldName.includes('intensity_measure')) {
                                         console.log(`[DEPENDENCY] Updating IMT field with hazard type "${newValue}"`);
-                                        this.updateIMTField(dependentField, newValue);
-                                    } else if (dependentFieldName.includes('currency')) {
-                                        this.toggleCurrencyField(dependentField, newValue);
+                                        this.updateIMTField(dependentField, newValue).catch(err => {
+                                            console.error('[DEPENDENCY] Error updating IMT field:', err);
+                                        });
                                     } else if (dependentFieldName.includes('unit')) {
                                         console.log(`[DEPENDENCY] Reloading unit codelist with quantity_kind "${newValue}"`);
                                         // Reset the unit field value when quantity_kind changes
@@ -3583,7 +3703,9 @@
                                         this.rebuildDependentDropdown(dependentField, fullDependentFieldName, newValue);
                                     } else if (dependentFieldName.includes('intensity_measure')) {
                                         console.log(`[DEPENDENCY] Fallback: Updating IMT field`);
-                                        this.updateIMTField(dependentField, newValue);
+                                        this.updateIMTField(dependentField, newValue).catch(err => {
+                                            console.error('[DEPENDENCY] Fallback: Error updating IMT field:', err);
+                                        });
                                     } else if (dependentFieldName.includes('unit')) {
                                         console.log(`[DEPENDENCY] Fallback: Reloading unit codelist`);
                                         // Reset the unit field value when quantity_kind changes
@@ -3636,9 +3758,9 @@
                                 this.rebuildDependentDropdown(dependentField, fullDependentFieldName, newValue);
                             } else if (dependentFieldName.includes('intensity_measure')) {
                                 // Use specialized IMT filtering based on hazard type
-                                this.updateIMTField(dependentField, newValue);
-                            } else if (dependentFieldName.includes('currency')) {
-                                this.toggleCurrencyField(dependentField, newValue);
+                                this.updateIMTField(dependentField, newValue).catch(err => {
+                                    console.error('[DEPENDENCY] Error updating IMT field:', err);
+                                });
                             } else if (dependentFieldName.includes('unit')) {
                                 // v1.0: unit is a combobox with conditional codelist based on quantity_kind
                                 // Only works if the combobox dropdown was properly created
@@ -3673,159 +3795,14 @@
                                                 changedFieldName.includes('hazard_type');
 
                     if (isRelevantHazardField) {
-                        console.log(`Hazard type changed: ${changedFieldName} = ${newValue}`);
-                        updateIMTOptionsForHazard(newValue);
+                        console.log(`[ASYNC CHECK] Hazard type changed: ${changedFieldName} = ${newValue}`);
+                        // Call async function without await - allows it to run in background
+                        updateIMTOptionsForHazard(newValue).catch(err => {
+                            console.error('Error updating IMT options:', err);
+                        });
                     }
                 }
 
-                // Special handling for impact_unit field to show/hide currency
-                if (changedFieldName.includes('impact_unit') || (this.context.type === 'modal' && changedFieldName === 'impact_unit')) {
-                    let currencyFieldName;
-                    if (this.context.type === 'modal') {
-                        currencyFieldName = 'currency';
-                    } else {
-                        currencyFieldName = changedFieldName.replace('impact_unit', 'currency');
-                    }
-                    
-                    const currencyField = document.getElementById(this.context.getFieldId(currencyFieldName));
-                    
-                    console.log(`Impact unit changed: ${changedFieldName} = ${newValue}`);
-                    console.log(`Looking for currency field: ${this.context.getFieldId(currencyFieldName)}`);
-                    console.log(`Currency field found:`, !!currencyField);
-                    
-                    if (currencyField) {
-                        this.toggleCurrencyFieldContainer(currencyField.closest('.form-field, .modal-form-field'), newValue);
-                    }
-                }
-
-                // Special handling for quantity_kind field to show/hide currency
-                if (changedFieldName.includes('quantity_kind') || (this.context.type === 'modal' && changedFieldName === 'quantity_kind') || (this.context.type === 'inline' && changedFieldName === 'quantity_kind')) {
-                    console.log(`[CURRENCY TOGGLE] quantity_kind changed to ${newValue}, context: ${this.context.type}`);
-
-                    if (this.context.type === 'inline') {
-                        // For inline context, use closest card approach
-                        const currentCard = event.target.closest('.card[data-item-index]');
-                        const cardIndex = currentCard?.getAttribute('data-item-index');
-                        console.log(`[CURRENCY TOGGLE] Event target:`, event.target);
-                        console.log(`[CURRENCY TOGGLE] Found card with index:`, cardIndex);
-
-                        if (currentCard) {
-                            // Find ONLY the direct child card-body of this specific card
-                            const cardBody = currentCard.querySelector(':scope > .card-body');
-
-                            // Try to find currency field - it might be at the top level OR nested
-                            // For nested fields (like impact_and_losses.currency), construct the full path
-                            let currencyFieldDiv = null;
-                            if (cardBody) {
-                                // First try direct child with data-field-name="currency"
-                                currencyFieldDiv = cardBody.querySelector(':scope > [data-field-name="currency"]');
-
-                                // If not found, construct the full currency field name from the quantity_kind field name
-                                if (!currencyFieldDiv && changedFieldName.includes('.')) {
-                                    const currencyFieldName = changedFieldName.replace('quantity_kind', 'currency');
-                                    console.log(`[CURRENCY TOGGLE] Trying nested currency field: "${currencyFieldName}"`);
-                                    // Search anywhere in cardBody (not just direct children) for nested fields
-                                    currencyFieldDiv = cardBody.querySelector(`[data-field-name="${currencyFieldName}"]`);
-
-                                    // Also try searching by ID if data-field-name doesn't exist
-                                    if (!currencyFieldDiv) {
-                                        const currencyFieldId = this.context.getFieldId(currencyFieldName);
-                                        const currencyInputById = currentCard.querySelector(`#${CSS.escape(currencyFieldId)}`);
-                                        if (currencyInputById) {
-                                            console.log(`[CURRENCY TOGGLE] Found currency field by ID: "${currencyFieldId}"`);
-                                            currencyFieldDiv = currencyInputById.closest('[data-field-name], .form-field, .mb-2');
-                                        }
-                                    }
-                                }
-                            }
-
-                            console.log(`[CURRENCY TOGGLE] Card body found:`, !!cardBody);
-                            console.log(`[CURRENCY TOGGLE] Currency field div found:`, !!currencyFieldDiv);
-
-                            if (currencyFieldDiv) {
-                                const currencyInput = currencyFieldDiv.querySelector('input, select');
-                                const label = currencyFieldDiv.querySelector('label');
-
-                                console.log(`[CURRENCY TOGGLE] Currency input ID:`, currencyInput?.id);
-                                console.log(`[CURRENCY TOGGLE] Will ${newValue === 'monetary' ? 'ENABLE' : 'DISABLE'} currency in card index ${cardIndex}`);
-
-                                if (newValue === 'monetary') {
-                                    if (currencyInput) {
-                                        currencyInput.disabled = false;
-                                        currencyInput.required = true;
-                                    }
-                                    if (label && !label.innerHTML.includes('*')) {
-                                        label.innerHTML += ' <span class="text-danger">*</span>';
-                                    }
-                                } else {
-                                    if (currencyInput) {
-                                        currencyInput.disabled = true;
-                                        currencyInput.required = false;
-                                        currencyInput.value = '';
-                                    }
-                                    if (label) {
-                                        label.innerHTML = label.innerHTML.replace(' <span class="text-danger">*</span>', '');
-                                    }
-                                }
-                            } else {
-                                console.warn(`[CURRENCY TOGGLE] Currency field not found in card ${cardIndex}`);
-                            }
-                        } else {
-                            console.warn(`[CURRENCY TOGGLE] Parent card not found for event target:`, event.target);
-                        }
-                    } else {
-                        // For modal and normal context, use ID-based approach
-                        let currencyFieldName;
-                        if (this.context.type === 'modal') {
-                            // For modal context, try to preserve the full path structure
-                            if (changedFieldName.includes('.')) {
-                                currencyFieldName = changedFieldName.replace('quantity_kind', 'currency');
-                            } else {
-                                currencyFieldName = 'currency';
-                            }
-                        } else {
-                            currencyFieldName = changedFieldName.replace('quantity_kind', 'currency');
-                        }
-
-                        console.log(`[CURRENCY TOGGLE] Constructed currency field name: "${currencyFieldName}"`);
-                        const currencyFieldId = this.context.getFieldId(currencyFieldName);
-                        console.log(`[CURRENCY TOGGLE] Looking for currency field with ID: "${currencyFieldId}"`);
-                        const currencyField = document.getElementById(currencyFieldId);
-                        console.log(`[CURRENCY TOGGLE] Currency field found:`, !!currencyField);
-
-                        if (currencyField) {
-                            const container = currencyField.closest('.form-field, .modal-form-field');
-                            console.log(`[CURRENCY TOGGLE] Container found:`, !!container);
-                            if (container) {
-                                console.log(`[CURRENCY TOGGLE] Calling toggleCurrencyFieldContainer with value: "${newValue}"`);
-                                this.toggleCurrencyFieldContainer(container, newValue);
-                            } else {
-                                // Fallback: handle the field directly if no container found
-                                console.log(`[CURRENCY TOGGLE] Calling toggleCurrencyField directly with value: "${newValue}"`);
-                                this.toggleCurrencyField(currencyField, newValue);
-                            }
-
-                            // Also ensure the field state is properly set regardless of container
-                            console.log(`[CURRENCY TOGGLE] Setting field state directly, monetary=${newValue === 'monetary'}`);
-                            if (newValue === 'monetary') {
-                                currencyField.disabled = false;
-                                currencyField.required = true;
-                            } else {
-                                currencyField.disabled = true;
-                                currencyField.required = false;
-                                // Only clear value during user interactions, not initial setup
-                                if (newValue !== undefined && newValue !== null) {
-                                    currencyField.value = '';
-                                }
-                            }
-
-                            // Add a small delay to check final state after all event handlers
-                            setTimeout(() => {
-                                console.log(`[CURRENCY TOGGLE] FINAL STATE CHECK - disabled:`, currencyField.disabled, `value:`, currencyField.value);
-                            }, 100);
-                        }
-                    }
-                }
 
                 // v1.0: No special handling for license field - it's now a simple IRI/URL field with codelist suggestions
 
@@ -3847,14 +3824,6 @@
                         dependents.push(dependent);
                     }
                 });
-
-                // Special case: hazard_process can depend on either 'type' or 'hazard_type'
-                // depending on context (hazards vs losses)
-                if (baseParentFieldName === 'type' || baseParentFieldName === 'hazard_type') {
-                    if (!dependents.includes('hazard_process')) {
-                        dependents.push('hazard_process');
-                    }
-                }
 
                 // For IMT, add it if parent is 'type' or ends with 'type'
                 if (baseParentFieldName === 'type') {
@@ -3959,9 +3928,11 @@
                 console.log(`[REBUILD DROPDOWN] Dropdown rebuilt with ${availableOptions.length} options`);
             }
 
-            updateIMTField(element, hazardType) {
+            async updateIMTField(element, hazardType) {
                 // Update a single intensity_measure field with filtered options based on hazard type
-                const filteredOptions = getFilteredIMTOptions(hazardType);
+                console.log(`[UPDATE IMT] Loading IMT options for hazard type: ${hazardType}`);
+                const filteredOptions = await getFilteredIMTOptions(hazardType);
+                console.log(`[UPDATE IMT] Loaded ${filteredOptions.length} IMT options`);
 
                 if (element.tagName === 'SELECT') {
                     // Handle select dropdowns
@@ -4177,6 +4148,11 @@
                     console.log(`[RELOAD COMBOBOX] Cleared dropdown, populating with ${suggestions.length} suggestions`);
 
                     if (suggestions && suggestions.length > 0) {
+                        // Check if this is a currency unit field
+                        const isUnitField = fieldBaseName === 'unit';
+                        const isCurrency = parentValue === 'currency';
+                        const showCodeInDropdown = isUnitField && isCurrency;
+
                         suggestions.forEach(suggestion => {
                             const item = document.createElement('li');
                             const link = document.createElement('a');
@@ -4187,7 +4163,12 @@
                             const suggestionCode = typeof suggestion === 'object' ? suggestion.code : suggestion;
                             const suggestionTitle = typeof suggestion === 'object' ? suggestion.title : suggestion;
 
-                            link.textContent = suggestionTitle;
+                            // Display format: "[Code] Title" only for currency unit fields
+                            if (showCodeInDropdown && typeof suggestion === 'object' && suggestion.code && suggestion.title && suggestion.code !== suggestion.title) {
+                                link.textContent = `[${suggestionCode}] ${suggestionTitle}`;
+                            } else {
+                                link.textContent = suggestionTitle;
+                            }
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
                                 inputElement.value = suggestionCode;
@@ -4215,53 +4196,6 @@
                 }
             }
 
-            toggleCurrencyField(currencyField, impactUnitValue) {
-                // This method handles the field element directly - use disabled instead of hiding
-                if (impactUnitValue === 'monetary') {
-                    currencyField.disabled = false;
-                    currencyField.required = true;
-                } else {
-                    currencyField.disabled = true;
-                    currencyField.required = false;
-                    currencyField.value = '';
-                }
-            }
-
-            toggleCurrencyFieldContainer(container, quantityKindValue) {
-                // This method handles the container (form-field div) - use disabled instead of hiding
-                console.log(`[toggleCurrencyFieldContainer] Called with value: "${quantityKindValue}"`);
-                const label = container.querySelector('label');
-                const input = container.querySelector('select, input');
-                console.log(`[toggleCurrencyFieldContainer] Input found:`, !!input, `Input ID:`, input?.id);
-                console.log(`[toggleCurrencyFieldContainer] Input disabled before:`, input?.disabled);
-
-                if (quantityKindValue === 'monetary') {
-                    console.log(`[toggleCurrencyFieldContainer] Value is monetary, ENABLING field`);
-                    if (input) {
-                        input.disabled = false;
-                        input.required = true;
-                        console.log(`[toggleCurrencyFieldContainer] Input disabled after setting to false:`, input.disabled);
-                    }
-
-                    if (label && !label.innerHTML.includes('*')) {
-                        label.innerHTML += ' <span class="text-danger">*</span>';
-                        container.classList.add('required');
-                    }
-                } else {
-                    console.log(`[toggleCurrencyFieldContainer] Value is NOT monetary, DISABLING field`);
-                    if (input) {
-                        input.disabled = true;
-                        input.required = false;
-                        input.value = '';
-                        console.log(`[toggleCurrencyFieldContainer] Input disabled after setting to true:`, input.disabled);
-                    }
-
-                    if (label) {
-                        label.innerHTML = label.innerHTML.replace(' <span class="text-danger">*</span>', '');
-                        container.classList.remove('required');
-                    }
-                }
-            }
         }
 
         /**
@@ -4282,16 +4216,17 @@
             /**
              * Parse CSV text to array of objects with code and title
              * Expected format: CSV with 'Code' and 'Title' columns (minimum)
-             * Returns: [{code: 'value', title: 'Display Name'}, ...]
+             * Returns: [{code: 'value', title: 'Display Name', category: 'Category'}, ...]
              */
             static parseCSV(csvText) {
                 const lines = csvText.trim().split('\n');
                 if (lines.length === 0) return [];
 
-                // Parse header to find 'Code' and 'Title' columns (case-insensitive)
+                // Parse header to find 'Code', 'Title', and 'Category' columns (case-insensitive)
                 const header = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
                 const codeIndex = header.findIndex(h => h.toLowerCase() === 'code');
                 const titleIndex = header.findIndex(h => h.toLowerCase() === 'title');
+                const categoryIndex = header.findIndex(h => h.toLowerCase() === 'category');
 
                 if (codeIndex === -1) {
                     console.warn('CSV does not have a "Code" column, using first column');
@@ -4304,13 +4239,36 @@
                         .filter(item => item.code && item.code.length > 0);
                 }
 
-                // Extract code and title from CSV
+                // Extract code, title, and category from CSV
                 return lines.slice(1)
                     .map(line => {
-                        const cells = line.split(',').map(c => c.trim().replace(/^"|"$/g, ''));
+                        // Use a more robust CSV parsing to handle commas in quoted fields
+                        const cells = [];
+                        let currentCell = '';
+                        let inQuotes = false;
+
+                        for (let i = 0; i < line.length; i++) {
+                            const char = line[i];
+                            if (char === '"') {
+                                inQuotes = !inQuotes;
+                            } else if (char === ',' && !inQuotes) {
+                                cells.push(currentCell.trim().replace(/^"|"$/g, ''));
+                                currentCell = '';
+                            } else {
+                                currentCell += char;
+                            }
+                        }
+                        cells.push(currentCell.trim().replace(/^"|"$/g, ''));
+
                         const code = cells[codeIndex] || null;
                         const title = titleIndex !== -1 ? cells[titleIndex] : code;
-                        return code ? { code, title: title || code } : null;
+                        const category = categoryIndex !== -1 ? cells[categoryIndex] : null;
+
+                        const item = { code, title: title || code };
+                        if (category) {
+                            item.category = category;
+                        }
+                        return code ? item : null;
                     })
                     .filter(item => item !== null);
             }
@@ -4323,12 +4281,22 @@
             static async loadCodelist(codelistName) {
                 // Check cache first
                 if (this.cache.has(codelistName)) {
+                    console.log(`[LOAD CODELIST] Using cached ${codelistName} (${this.cache.get(codelistName).length} items)`);
                     return this.cache.get(codelistName);
                 }
 
                 try {
-                    const url = this.baseUrl + codelistName;
-                    console.log(`Loading codelist: ${url}`);
+                    // Determine if this is a closed codelist
+                    // Closed codelists: unit_currency.csv and others that should not be extended
+                    const closedCodelists = ['unit_currency.csv'];
+                    const isClosed = closedCodelists.includes(codelistName);
+
+                    // Build URL: use closed/ directory for closed codelists, open/ for others
+                    const baseUrlPath = 'https://docs.riskdatalibrary.org/en/1.0-dev/codelists/';
+                    const subdirectory = isClosed ? 'closed/' : 'open/';
+                    const url = baseUrlPath + subdirectory + codelistName;
+
+                    console.log(`[LOAD CODELIST] Loading ${codelistName} from: ${url} (${isClosed ? 'closed' : 'open'})`);
 
                     const response = await fetch(url);
                     if (!response.ok) {
@@ -4336,15 +4304,20 @@
                     }
 
                     const csvText = await response.text();
+                    console.log(`[LOAD CODELIST] Fetched ${csvText.length} characters of CSV data`);
+
                     const values = this.parseCSV(csvText);
 
                     // Cache the result
                     this.cache.set(codelistName, values);
 
-                    console.log(`Loaded ${values.length} values from ${codelistName}`);
+                    console.log(`[LOAD CODELIST] Loaded ${values.length} values from ${codelistName}`);
+                    if (values.length > 0) {
+                        console.log(`[LOAD CODELIST] First few values:`, values.slice(0, 3));
+                    }
                     return values;
                 } catch (error) {
-                    console.error(`Failed to load codelist ${codelistName}:`, error);
+                    console.error(`[LOAD CODELIST] Failed to load codelist ${codelistName}:`, error);
                     // Return empty array on error (graceful degradation)
                     this.cache.set(codelistName, []);
                     return [];
@@ -4359,12 +4332,24 @@
              * @returns {Promise<Array<string>>} - Array of codelist values
              */
             static async getConditionalCodelist(schemaDefinition, fieldName, parentData) {
+                console.log(`[GET CONDITIONAL CODELIST] Field: ${fieldName}, parentData:`, parentData);
+
                 // First, get the codelist name from conditional rules
-                const codelistName = ConditionalValidator.getConditionalCodelist(
-                    schemaDefinition,
-                    fieldName,
-                    parentData
-                );
+                let codelistName = null;
+                try {
+                    console.log(`[GET CONDITIONAL CODELIST] About to call ConditionalValidator.getConditionalCodelist`);
+                    codelistName = ConditionalValidator.getConditionalCodelist(
+                        schemaDefinition,
+                        fieldName,
+                        parentData
+                    );
+                    console.log(`[GET CONDITIONAL CODELIST] Call completed successfully`);
+                } catch (error) {
+                    console.error(`[GET CONDITIONAL CODELIST] Error calling ConditionalValidator:`, error);
+                    codelistName = null;
+                }
+
+                console.log(`[GET CONDITIONAL CODELIST] ConditionalValidator returned codelist: ${codelistName}`);
 
                 if (!codelistName) {
                     // No conditional codelist, check base definition
@@ -4372,13 +4357,53 @@
                         schemaDefinition.properties[fieldName] &&
                         schemaDefinition.properties[fieldName].codelist) {
                         const baseCodelist = schemaDefinition.properties[fieldName].codelist;
+                        console.log(`[GET CONDITIONAL CODELIST] Using base codelist: ${baseCodelist}`);
                         return await this.loadCodelist(baseCodelist);
                     }
+                    console.log(`[GET CONDITIONAL CODELIST] No codelist found, returning empty array`);
                     return [];
                 }
 
                 // Load the conditional codelist
+                console.log(`[GET CONDITIONAL CODELIST] Loading conditional codelist: ${codelistName}`);
                 return await this.loadCodelist(codelistName);
+            }
+
+            /**
+             * Filter classification schemes based on field purpose
+             * @param {Array} schemes - Array of scheme objects with category property
+             * @param {string} fieldPurpose - Field purpose (disaster_identifier, hazard_classification, building_taxonomy, socioeconomic_index)
+             * @returns {Array} - Filtered array of schemes
+             */
+            static filterClassificationSchemes(schemes, fieldPurpose) {
+                if (!fieldPurpose || !schemes || schemes.length === 0) {
+                    return schemes;
+                }
+
+                // Category to field purpose mapping based on user requirements
+                const categoryMapping = {
+                    'Disaster identifier': ['disaster_identifier'],
+                    'Hazard classification': ['hazard_classification'],
+                    'Building taxonomy': ['building_taxonomy'],
+                    'Socio-economic index': ['socioeconomic_index']
+                };
+
+                const purposeLower = fieldPurpose.toLowerCase();
+
+                return schemes.filter(scheme => {
+                    if (!scheme.category) {
+                        // If no category specified, include it for all field purposes
+                        return true;
+                    }
+
+                    const allowedPurposes = categoryMapping[scheme.category];
+                    if (!allowedPurposes) {
+                        // Unknown category, include it to be safe
+                        return true;
+                    }
+
+                    return allowedPurposes.includes(purposeLower);
+                });
             }
 
             /**
@@ -4639,22 +4664,48 @@
              * Used for intensity_measure codelists that depend on hazard type
              */
             static getConditionalCodelist(schemaDefinition, fieldName, parentData) {
+                console.log(`[CONDITIONAL VALIDATOR] getConditionalCodelist called for field: ${fieldName}`);
+                console.log(`[CONDITIONAL VALIDATOR] parentData:`, parentData);
+                console.log(`[CONDITIONAL VALIDATOR] schemaDefinition has allOf:`, !!(schemaDefinition && schemaDefinition.allOf));
+
                 if (!schemaDefinition || !schemaDefinition.allOf) {
+                    console.log(`[CONDITIONAL VALIDATOR] No schema or allOf, returning null`);
                     return null;
                 }
 
                 // Find applicable if-then rule
                 const result = this.evaluateConditionals(schemaDefinition, parentData);
+                console.log(`[CONDITIONAL VALIDATOR] evaluateConditionals returned ${result.applicableRules.length} applicable rules`);
 
                 for (const rule of result.applicableRules) {
+                    console.log(`[CONDITIONAL VALIDATOR] Checking rule, has properties:`, !!(rule.schema && rule.schema.properties));
                     if (rule.schema.properties && rule.schema.properties[fieldName]) {
-                        const fieldSchema = rule.schema.properties[fieldName];
+                        let fieldSchema = rule.schema.properties[fieldName];
+                        console.log(`[CONDITIONAL VALIDATOR] Found rule for field ${fieldName}`);
+                        console.log(`[CONDITIONAL VALIDATOR] fieldSchema object:`, JSON.stringify(fieldSchema, null, 2));
+
+                        // If fieldSchema is a $ref, resolve it first
+                        if (fieldSchema.$ref) {
+                            console.log(`[CONDITIONAL VALIDATOR] fieldSchema has $ref: ${fieldSchema.$ref}, resolving...`);
+                            const resolved = resolveReferenceSimple(fieldSchema.$ref);
+                            if (resolved) {
+                                fieldSchema = resolved;
+                                console.log(`[CONDITIONAL VALIDATOR] Resolved $ref to:`, JSON.stringify(fieldSchema, null, 2));
+                            } else {
+                                console.log(`[CONDITIONAL VALIDATOR] Failed to resolve $ref`);
+                            }
+                        }
+
+                        console.log(`[CONDITIONAL VALIDATOR] has codelist:`, !!fieldSchema.codelist, `has enum:`, !!fieldSchema.enum);
+                        console.log(`[CONDITIONAL VALIDATOR] codelist value:`, fieldSchema.codelist);
                         if (fieldSchema.codelist) {
+                            console.log(`[CONDITIONAL VALIDATOR] Returning codelist: ${fieldSchema.codelist}`);
                             return fieldSchema.codelist;
                         }
                     }
                 }
 
+                console.log(`[CONDITIONAL VALIDATOR] No matching rule found, returning null`);
                 return null;
             }
 
@@ -4718,13 +4769,6 @@
                     );
                 }
 
-                // v0.3 compatibility: Special handling for spatial.scale (removed in v1.0)
-                if (fieldName === 'spatial.scale' && currentSchema.$id && currentSchema.$id.includes('0__3__0')) {
-                    if (!value || (typeof value === 'string' && value.trim() === '')) {
-                        isValid = false;
-                        errorMessage = 'Required field';
-                    }
-                }
                 // Check if field is conditionally forbidden
                 else if (isConditionallyForbidden) {
                     if (value && value !== '') {
@@ -4938,7 +4982,9 @@
 
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('[INIT] DOMContentLoaded fired');
             setupEventListeners();
+            console.log('[INIT] After setupEventListeners');
             // Auto-load v1.0 schema
             loadSchema('1.0');
             loadFromStorage();
@@ -4947,6 +4993,7 @@
         });
 
         function setupEventListeners() {
+            console.log('[SETUP] Setting up event listeners...');
             // Section checkboxes
             SECTIONS.forEach(section => {
                 document.getElementById(`${section}Check`).addEventListener('change', function() {
@@ -4982,11 +5029,17 @@
             document.getElementById('publishGitHub').addEventListener('click', openGithubConfig);
 
             // GitHub modal event listeners
-            document.getElementById('testGithubConnection').addEventListener('click', testGithubConnection);
             document.getElementById('publishToGithub').addEventListener('click', publishToGithub);
 
             // Object editor modal
-            document.getElementById('saveObjectBtn').addEventListener('click', saveCurrentObject);
+            const saveObjBtn = document.getElementById('saveObjectBtn');
+            console.log('[SETUP] Save Object Button found:', !!saveObjBtn);
+            if (saveObjBtn) {
+                saveObjBtn.addEventListener('click', saveCurrentObject);
+                console.log('[SETUP] Save Object Button listener attached');
+            } else {
+                console.error('[SETUP] Save Object Button NOT FOUND!');
+            }
         }
 
         function loadSchemaVersions() {
@@ -4996,13 +5049,13 @@
             Object.keys(RDLS_VERSIONS).forEach(version => {
                 const option = document.createElement('option');
                 option.value = version;
-                const isLatest = version === '0.3';
-                option.textContent = `RDLS ${version}${isLatest ? ' (dev)' : ''}`;
+                const isLatest = version === '1.0';
+                option.textContent = `RDLS ${version}${isLatest ? ' (latest)' : ''}`;
                 select.appendChild(option);
             });
-            
+
             // Auto-select the latest version
-            select.value = '0.3';
+            select.value = '1.0';
             loadSelectedSchema();
         }
 
@@ -5017,24 +5070,8 @@
 
             console.log('Testing conditional validation with v1.0 schema...');
 
-            // Test 1: Hazard type conditional for Location (if scale="regional" then countries minItems=2)
-            // Note: In v1.0, scale is removed, so this test is for v0.3 compatibility
-            if (currentSchema.$id && currentSchema.$id.includes('0__3__0')) {
-                console.log('\nTest 1: Location scale conditions (v0.3)');
-                const locationDef = SchemaNavigator.getDefinitionAtPath(currentSchema, 'properties.spatial');
-                if (locationDef && locationDef.allOf) {
-                    const testData1 = { scale: 'regional', countries: ['USA'] };
-                    const result1 = ConditionalValidator.evaluateConditionals(locationDef, testData1);
-                    console.log('  Regional scale with 1 country:', result1);
-
-                    const testData2 = { scale: 'global' };
-                    const result2 = ConditionalValidator.evaluateConditionals(locationDef, testData2);
-                    console.log('  Global scale:', result2);
-                }
-            }
-
-            // Test 2: Hazard type → intensity_measure codelist (v1.0)
-            console.log('\nTest 2: Hazard type conditional codelists (v1.0)');
+            // Test 1: Hazard type → intensity_measure codelist
+            console.log('\nTest 1: Hazard type conditional codelists');
             const hazardDef = SchemaNavigator.getDefinitionAtPath(currentSchema, '$defs.Hazard');
             if (hazardDef && hazardDef.allOf) {
                 const testDataEarthquake = { type: 'earthquake' };
@@ -5049,8 +5086,8 @@
                 console.log('  Flood intensity_measure codelist:', codelistFlood);
             }
 
-            // Test 3: Schema navigator
-            console.log('\nTest 3: Schema Navigator');
+            // Test 2: Schema navigator
+            console.log('\nTest 2: Schema Navigator');
             const entityDef = SchemaNavigator.getDefinitionAtPath(currentSchema, '$defs.Entity');
             console.log('  Entity definition found:', entityDef ? 'Yes' : 'No');
             if (entityDef) {
@@ -5059,13 +5096,10 @@
 
             console.log('=== Conditional Validation Tests Complete ===\n');
 
-            // Test 4: Codelist loading (async, non-blocking)
-            // Only test if we're on v1.0 schema
-            if (currentSchema.$id && currentSchema.$id.includes('1__0__0')) {
-                testCodelistLoading().catch(err =>
-                    console.error('Codelist loading test failed:', err)
-                );
-            }
+            // Test 3: Codelist loading (async, non-blocking)
+            testCodelistLoading().catch(err =>
+                console.error('Codelist loading test failed:', err)
+            );
         }
 
         async function testCodelistLoading() {
@@ -5119,12 +5153,15 @@
         async function loadSchema(version) {
             if (!version) version = '1.0';
 
+            // Store the version globally for URL substitutions
+            currentSchemaVersion = version;
+
             updateSchemaStatus('Loading RDLS v1.0 schema...', 'text-info');
-            
+
             try {
                 const response = await fetch(RDLS_VERSIONS[version]);
                     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                
+
                 currentSchema = await response.json();
 
                 // Add currency field definitions where needed - comprehensive search
@@ -5188,36 +5225,10 @@
                     console.log('v1.0: IMT definitions not in schema (will load from codelists)');
                 }
 
-                if (currentSchema.intensity_measure_mappings) {
-                    // v0.3 schema compatibility
-                    HAZARD_IMT_MAPPING = {};
-                    for (const [hazardType, imtCodes] of Object.entries(currentSchema.intensity_measure_mappings)) {
-                        if (hazardType === 'universal') {
-                            UNIVERSAL_IMTS = imtCodes.map(code => {
-                                const def = IMT_DEFINITIONS[code];
-                                return {
-                                    code: code,
-                                    title: def ? def.title : code,
-                                    description: def ? def.description : ''
-                                };
-                            });
-                        } else {
-                            HAZARD_IMT_MAPPING[hazardType] = imtCodes.map(code => {
-                                const def = IMT_DEFINITIONS[code];
-                                return {
-                                    code: code,
-                                    title: def ? def.title : code,
-                                    description: def ? def.description : ''
-                                };
-                            });
-                        }
-                    }
-                    console.log('Loaded IMT mappings from schema');
-                } else {
-                    // v1.0: Use legacy mappings until codelist loading implemented
-                    HAZARD_IMT_MAPPING = LEGACY_HAZARD_IMT_MAPPING;
-                    console.log('v1.0: Using legacy IMT mappings (TODO: load from codelists)');
-                }
+                // RDLS v1.0 uses conditional logic in $defs.Hazard.allOf for IMT mappings
+                // IMT options are loaded dynamically via CodelistManager.getConditionalCodelist()
+                // Legacy mappings kept as fallback only
+                console.log('IMT mappings will be loaded dynamically from schema conditional logic');
 
                 // Reset form data when switching schema versions
                 currentFormData = {};
@@ -5258,7 +5269,7 @@
             const file = event.target.files[0];
             if (file && file.type === 'application/json') {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = async function(e) {
                     try {
                         currentSchema = JSON.parse(e.target.result);
                         const isV21 = currentSchema.title && (currentSchema.title.includes('v3.0') || currentSchema.$id && currentSchema.$id.includes('0__2__1'));
@@ -5504,7 +5515,9 @@
             });
 
             // Create unified context for normal form fields
-            const context = new FieldCreationContext('normal', form);
+            // Pass componentType for component sections (hazard, exposure, vulnerability, loss)
+            const componentType = SECTIONS.includes(sectionName) ? sectionName : null;
+            const context = new FieldCreationContext('normal', form, null, null, componentType);
 
             if (sectionName === 'general') {
                 const title = document.createElement('h5');
@@ -5568,6 +5581,7 @@
                                     <strong>${label}</strong> <span class="badge bg-danger">Required</span><br>
                                     <small class="text-muted">${entity.name}</small>
                                     ${entity.email ? `<br><small class="text-muted">${entity.email}</small>` : ''}
+                                    ${entity.affiliation?.name ? `<br><small class="text-muted">Affiliation: ${entity.affiliation.name}</small>` : ''}
                                 </div>
                                 <button type="button" class="btn btn-sm btn-outline-primary"
                                         onclick="editRootEntity('${role}')">Edit</button>
@@ -5601,6 +5615,7 @@
                             <div>
                                 <strong>${attr.role ? attr.role.replace(/_/g, ' ').toUpperCase() : 'No role specified'}</strong><br>
                                 <small class="text-muted">${attr.entity?.name || 'Unnamed entity'}</small>
+                                ${attr.entity?.affiliation?.name ? `<br><small class="text-muted">Affiliation: ${attr.entity.affiliation.name}</small>` : ''}
                             </div>
                             <div>
                                 <button type="button" class="btn btn-sm btn-outline-primary me-1"
@@ -5684,10 +5699,12 @@
                     // Add info icon button to toggle description
                     const toggleBtn = document.createElement('button');
                     toggleBtn.type = 'button';
-                    toggleBtn.className = 'btn btn-link btn-sm text-decoration-none ms-2 p-0';
-                    toggleBtn.style.fontSize = '1.2rem';
-                    toggleBtn.innerHTML = '<span class="toggle-icon">ℹ️</span>';
-                    toggleBtn.title = 'Toggle description';
+                    toggleBtn.className = 'btn btn-outline-info btn-sm ms-2';
+                    toggleBtn.style.fontSize = '0.9rem';
+                    toggleBtn.style.padding = '0.25rem 0.5rem';
+                    toggleBtn.style.borderRadius = '0.25rem';
+                    toggleBtn.innerHTML = '<span class="toggle-icon">ℹ️ Instructions & Examples</span>';
+                    toggleBtn.title = 'Click to view instructions and examples for this component';
 
                     const descriptionId = `${sectionName}-description`;
 
@@ -5707,10 +5724,32 @@
                         'loss': 'This component is meant to cover both empirical disaster events, as well as probabilistic risk modelling outputs.'
                     };
 
-                    // Combine schema description with extended description
+                    // Example links for each component
+                    const exampleLinks = {
+                        'hazard': `<br><br><strong>Examples:</strong><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/hazard/flood_inundation/" target="_blank" rel="noopener noreferrer">• Flood hazard maps</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/hazard/tropical_cyclone/" target="_blank" rel="noopener noreferrer">• Probabilistic tropical cyclone model</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/hazard/earthquake_catalog/" target="_blank" rel="noopener noreferrer">• Historical earthquake catalog</a>`,
+                        'exposure': `<br><br><strong>Examples:</strong><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/exposure/building_inventory/" target="_blank" rel="noopener noreferrer">• Building inventory database</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/exposure/population_admin/" target="_blank" rel="noopener noreferrer">• Population dataset by administrative boundaries</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/exposure/service_accessibility/" target="_blank" rel="noopener noreferrer">• Service accessibility analysis over road networks</a>`,
+                        'vulnerability': `<br><br><strong>Examples:</strong><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/vulnerability/flood_damage_curves/" target="_blank" rel="noopener noreferrer">• Flood depth-damage functions</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/vulnerability/earthquake_fragility/" target="_blank" rel="noopener noreferrer">• Earthquake fragility curves for building structures</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/vulnerability/wealth_index/" target="_blank" rel="noopener noreferrer">• Relative wealth index</a>`,
+                        'loss': `<br><br><strong>Examples:</strong><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/loss/flood_risk/" target="_blank" rel="noopener noreferrer">• Flood risk model</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/loss/earthquake_loss/" target="_blank" rel="noopener noreferrer">• Earthquake loss database</a>`
+                    };
+
+                    // Combine schema description with extended description and examples
                     let fullDescription = parseMarkdownLinks(sectionSchema.description);
                     if (extendedDescriptions[sectionName]) {
                         fullDescription += ' ' + extendedDescriptions[sectionName];
+                    }
+                    if (exampleLinks[sectionName]) {
+                        fullDescription += exampleLinks[sectionName];
                     }
                     description.innerHTML = fullDescription;
 
@@ -5720,10 +5759,12 @@
                         const isHidden = description.classList.contains('collapse');
                         if (isHidden) {
                             description.classList.remove('collapse');
-                            toggleBtn.innerHTML = '<span class="toggle-icon">▼</span>';
+                            toggleBtn.innerHTML = '<span class="toggle-icon">▲ Hide Instructions</span>';
+                            toggleBtn.className = 'btn btn-info btn-sm ms-2';
                         } else {
                             description.classList.add('collapse');
-                            toggleBtn.innerHTML = '<span class="toggle-icon">ℹ️</span>';
+                            toggleBtn.innerHTML = '<span class="toggle-icon">ℹ️ Instructions & Examples</span>';
+                            toggleBtn.className = 'btn btn-outline-info btn-sm ms-2';
                         }
                     });
 
@@ -5926,6 +5967,9 @@
         function parseMarkdownLinks(text) {
             if (!text) return text;
 
+            // Replace {{version}} placeholder with current schema version
+            text = text.replace(/\{\{version\}\}/g, currentSchemaVersion);
+
             // Convert markdown links
             text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(match, linkText, url) {
                 return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-primary text-decoration-none">${linkText} <small>↗</small></a>`;
@@ -6042,6 +6086,8 @@
                 return;
             }
 
+            console.log(`[OPEN MODAL ${arrayName}] index=${objectIndex}, array.length=${arrayData?.length}`);
+
             if (objectSchema.$ref) {
                 objectSchema = resolveReference(objectSchema.$ref);
             } else if (objectSchema.allOf) {
@@ -6056,6 +6102,7 @@
             arrayData: arrayData,
             renderCallback: renderCallback
             };
+
 
             const modalTitle = document.getElementById('objectEditorModalLabel');
             modalTitle.textContent = `Edit ${objectSchema.title || arrayName}`;
@@ -6086,10 +6133,32 @@
             fieldsContainer.innerHTML = '';
 
             // Create unified context for modal fields
-            const modalContext = new FieldCreationContext('modal', fieldsContainer);
+            // Infer component type from array name for classification_scheme filtering
+            console.log(`[MODAL CONTEXT] Opening modal for arrayName: ${arrayName}`);
+            const inferredComponentType = arrayName ?
+                (arrayName.toLowerCase().includes('exposure') ? 'exposure' :
+                 arrayName.toLowerCase().includes('hazard') ? 'hazard' :
+                 arrayName.toLowerCase().includes('vulnerabilit') ? 'vulnerability' :
+                 arrayName.toLowerCase().includes('loss') ? 'loss' : null) : null;
+            console.log(`[MODAL CONTEXT] Inferred component type: ${inferredComponentType}`);
+            const modalContext = new FieldCreationContext('modal', fieldsContainer, null, arrayName, inferredComponentType);
 
             if (objectSchema.properties) {
+            console.log(`[MODAL FIELDS] Rendering fields for ${arrayName}, schema properties:`, Object.keys(objectSchema.properties));
+
+            // Clean up misplaced disaster_identifiers from event_set level
+            if (arrayName && arrayName.includes('event_sets') && objectData.disaster_identifiers) {
+                console.log(`[MODAL FIELDS] Found misplaced disaster_identifiers at event_set level, removing...`);
+                delete objectData.disaster_identifiers;
+            }
+
             Object.entries(objectSchema.properties).forEach(([key, property]) => {
+                // Skip disaster_identifiers at event_set level - it belongs to individual events
+                if (arrayName && arrayName.includes('event_sets') && key === 'disaster_identifiers') {
+                    console.log(`[MODAL FIELDS] Skipping ${key} - belongs to Event, not EventSet`);
+                    return;
+                }
+
                 // If this property is an array, allow editing its items inline
                 if (property.type === 'array') {
                 // Use the array from objectData if present, ensuring we maintain existing data
@@ -6195,8 +6264,8 @@
                         hazardDisplay += ` / ${process}`;
                     }
                     summaryText = hazardDisplay;
-                } else if (arrayName.includes('losses') && objectData.hazard_type) {
-                    summaryText = objectData.hazard_type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + ' Loss';
+                } else if (arrayName.includes('losses') && objectData.hazard && objectData.hazard.type) {
+                    summaryText = objectData.hazard.type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) + ' Loss';
                 } else if (arrayName.includes('socio_economic') && objectData.indicator_name) {
                     summaryText = objectData.indicator_name;
                 } else if (objectData.name) {
@@ -6313,18 +6382,36 @@
         }
 
         function saveCurrentObject() {
+            console.log('[SAVE OBJECT] Save button clicked');
             const form = document.getElementById('objectEditorForm');
             const formData = new FormData(form);
+            console.log('[SAVE OBJECT] Form data collected');
 
             // v1.0: Handle root-level Entity objects (publisher, creator, contact_point)
             if (currentObjectEditor.isRootEntity) {
                 const entityData = {};
 
-                // Extract form data for Entity fields (name, email, url)
+                // Extract form data for Entity fields (name, email, url, affiliation)
                 for (const [key, value] of formData.entries()) {
                     const cleanKey = key.replace('modal_', '');
                     if (value && value !== '') {
-                        entityData[cleanKey] = value;
+                        // Handle nested fields like affiliation.name, affiliation.url
+                        if (cleanKey.includes('.')) {
+                            const parts = cleanKey.split('.');
+                            const parentKey = parts[0];
+                            const childKey = parts[1];
+
+                            // Initialize nested object if it doesn't exist
+                            if (!entityData[parentKey]) {
+                                entityData[parentKey] = {};
+                            }
+
+                            // Set the nested property
+                            entityData[parentKey][childKey] = value;
+                        } else {
+                            // Simple property
+                            entityData[cleanKey] = value;
+                        }
                     }
                 }
 
@@ -6360,12 +6447,23 @@
             // Find all array containers in the modal and extract their current data
             const arrayContainers = document.querySelectorAll('#objectEditorFields .array-field');
             arrayContainers.forEach(container => {
+                // Skip array containers that are nested inside inline editor cards
+                // These will be handled when processing the parent card
+                const isNestedInCard = container.closest('.card[data-item-index]');
+                if (isNestedInCard) {
+                    console.log(`[SAVE ARRAY] Skipping nested array container inside card`);
+                    return;
+                }
+
                 const containerId = container.querySelector('[id$="_items"]')?.id;
                 if (containerId) {
                     const fieldName = containerId.replace('modal_', '').replace('_items', '');
 
                     // Check if this is a simple array (strings, numbers) or object array
-                    const cards = container.querySelectorAll('.card[data-item-index]');
+                    // IMPORTANT: Only select direct children to avoid selecting nested array cards
+                    const cards = Array.from(container.querySelectorAll('.card[data-item-index]')).filter(card =>
+                        card.parentElement === container || card.parentElement?.parentElement === container
+                    );
                     const simpleItems = container.querySelectorAll('.array-item');
 
                     if (cards.length > 0) {
@@ -6376,6 +6474,8 @@
                         const liveArrayData = firstCard?._arrayDataRef;
                         const existingArrayData = liveArrayData || objectData[fieldName] || [];
                         const arrayData = [];
+
+                        console.log(`[SAVE ARRAY ${fieldName}] cards=${cards.length}, existing=${existingArrayData.length}`);
 
                     cards.forEach((card, index) => {
                         // Start with existing item data to preserve inline editor updates
@@ -6435,7 +6535,77 @@
                         Object.entries(coordGroups).forEach(([fieldName, values]) => {
                             item[fieldName] = values;
                         });
-                        
+
+                        // Process nested array containers within this card (e.g., disaster_identifiers within an event)
+                        const nestedArrayContainers = card.querySelectorAll('.array-field');
+                        nestedArrayContainers.forEach(nestedContainer => {
+                            const nestedContainerId = nestedContainer.querySelector('[id$="_items"]')?.id;
+                            if (nestedContainerId) {
+                                const nestedFieldName = nestedContainerId.replace('modal_', '').replace('_items', '');
+                                console.log(`[SAVE NESTED ARRAY] Processing ${nestedFieldName} inside ${fieldName}[${index}]`);
+
+                                // Get the cards from this nested array
+                                const nestedCards = Array.from(nestedContainer.querySelectorAll('.card[data-item-index]')).filter(c =>
+                                    c.parentElement === nestedContainer || c.parentElement?.parentElement === nestedContainer
+                                );
+
+                                if (nestedCards.length > 0) {
+                                    const nestedArrayData = [];
+                                    const nestedLiveData = nestedCards[0]?._arrayDataRef;
+
+                                    nestedCards.forEach((nestedCard, nestedIndex) => {
+                                        const nestedItem = nestedLiveData && nestedLiveData[nestedIndex] ?
+                                            JSON.parse(JSON.stringify(nestedLiveData[nestedIndex])) : {};
+
+                                        // Capture all inputs in the nested card
+                                        const nestedInputs = nestedCard.querySelectorAll('input, select, textarea');
+                                        nestedInputs.forEach(input => {
+                                            const inputName = (input.name || input.id).replace('modal_', '');
+                                            if (inputName && inputName !== 'id') {
+                                                const rawValue = input.type === 'checkbox' ? input.checked : input.value;
+                                                if (input.type === 'checkbox' || rawValue !== '') {
+                                                    let convertedValue = input.type === 'checkbox' ? rawValue : convertValueBySchema(inputName, rawValue);
+
+                                                    // Ensure we're not saving objects for string fields (e.g., scheme)
+                                                    if (typeof convertedValue === 'object' && convertedValue !== null && !Array.isArray(convertedValue)) {
+                                                        convertedValue = convertedValue.code || convertedValue.title || String(convertedValue);
+                                                        console.log(`[SAVE NESTED] Field ${inputName} had object value, extracted string: ${convertedValue}`);
+                                                    }
+
+                                                    if (inputName.includes('.')) {
+                                                        setNestedValue(nestedItem, inputName, convertedValue);
+                                                    } else {
+                                                        nestedItem[inputName] = convertedValue;
+                                                    }
+                                                }
+                                            }
+                                        });
+
+                                        // Preserve ID
+                                        if (!nestedItem.id && nestedLiveData && nestedLiveData[nestedIndex]?.id) {
+                                            nestedItem.id = nestedLiveData[nestedIndex].id;
+                                        }
+                                        // Only auto-generate ID for non-Classification objects
+                                        // Classification objects (like disaster_identifiers) require user-provided id
+                                        const isClassificationArray = nestedFieldName === 'disaster_identifiers' || nestedFieldName.endsWith('.disaster_identifiers');
+                                        if (!nestedItem.id && !isClassificationArray) {
+                                            nestedItem.id = generateUniqueId('item');
+                                        }
+
+                                        // Skip empty Classification objects (no id means user didn't fill it in)
+                                        if (isClassificationArray && !nestedItem.id) {
+                                            console.log(`[SAVE NESTED ARRAY] Skipping empty Classification object (no id provided)`);
+                                        } else {
+                                            nestedArrayData.push(nestedItem);
+                                        }
+                                    });
+
+                                    item[nestedFieldName] = nestedArrayData;
+                                    console.log(`[SAVE NESTED ARRAY] Saved ${nestedArrayData.length} items to ${fieldName}[${index}].${nestedFieldName}`);
+                                }
+                            }
+                        });
+
                         // Preserve the ID if it exists
                         if (objectData[fieldName] && objectData[fieldName][index] && objectData[fieldName][index].id) {
                             item.id = objectData[fieldName][index].id;
@@ -6540,13 +6710,16 @@
                 // If no values specified, don't add to objectData (will be empty in output)
             });
             
-            // Get the full array data and update/add the object
-            let fullArrayDataUpdated = getNestedValue(currentFormData, currentObjectEditor.arrayName);
+            // Use the arrayData reference that was passed when opening the modal
+            let fullArrayDataUpdated = currentObjectEditor.arrayData;
+            console.log(`[SAVE MODAL ${currentObjectEditor.arrayName}] index=${currentObjectEditor.objectIndex}, array.length=${fullArrayDataUpdated?.length}`);
+
             if (!fullArrayDataUpdated) {
-                fullArrayDataUpdated = [];
+                fullArrayDataUpdated = getNestedValue(currentFormData, currentObjectEditor.arrayName) || [];
                 setNestedValue(currentFormData, currentObjectEditor.arrayName, fullArrayDataUpdated);
+                console.log(`[SAVE MODAL] Fallback: initialized empty array`);
             }
-            
+
             // Ensure the object has an ID
             if (currentObjectEditor.objectIndex >= fullArrayDataUpdated.length) {
                 let idPrefix = 'item';
@@ -6577,40 +6750,56 @@
                 }
             }
 
-            // Clean up empty nested objects (e.g., hazard objects with only an ID or no meaningful data)
-            // This prevents saving incomplete objects that would fail schema validation
-            function cleanupEmptyObjects(obj) {
-                if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) return obj;
+            // Clean up ONLY nested objects within events (hazard, occurrence)
+            // Don't remove events themselves or other important structures
+            function cleanupEmptyNestedObjects(obj, depth = 0) {
+                if (typeof obj !== 'object' || obj === null) return obj;
 
-                const keys = Object.keys(obj);
-                // If object only has an 'id' key, or is empty, return undefined to remove it
-                if (keys.length === 0 || (keys.length === 1 && keys[0] === 'id')) {
-                    return undefined;
+                // Don't process arrays at top level - we want to preserve events array
+                if (Array.isArray(obj)) {
+                    // Clean each item in the array but keep the array itself
+                    obj.forEach((item, index) => {
+                        if (typeof item === 'object' && item !== null) {
+                            cleanupEmptyNestedObjects(item, depth + 1);
+                        }
+                    });
+                    return obj;
                 }
 
-                // Check if all non-id values are empty
-                const hasNonIdData = keys.some(k => {
-                    if (k === 'id') return false;
-                    const val = obj[k];
-                    return val !== undefined && val !== null && val !== '';
-                });
+                // Clean nested objects and properties
+                for (const key in obj) {
+                    if (typeof obj[key] === 'object' && obj[key] !== null) {
+                        if (Array.isArray(obj[key])) {
+                            // Recursively process arrays
+                            cleanupEmptyNestedObjects(obj[key], depth + 1);
+                        } else {
+                            // Check if this nested object is empty (only has id or completely empty)
+                            const nestedKeys = Object.keys(obj[key]);
+                            const isEmpty = nestedKeys.length === 0 ||
+                                          (nestedKeys.length === 1 && nestedKeys[0] === 'id') ||
+                                          nestedKeys.every(k => {
+                                              if (k === 'id') return true;
+                                              const val = obj[key][k];
+                                              return val === undefined || val === null || val === '' ||
+                                                     (typeof val === 'object' && !Array.isArray(val) && Object.keys(val).length === 0);
+                                          });
 
-                if (!hasNonIdData) {
-                    return undefined; // Remove this object
+                            if (isEmpty) {
+                                // Remove this empty nested object
+                                delete obj[key];
+                            } else {
+                                // Recursively clean this nested object
+                                cleanupEmptyNestedObjects(obj[key], depth + 1);
+                            }
+                        }
+                    }
                 }
 
                 return obj;
             }
 
-            // Apply cleanup to nested objects in objectData
-            for (const key in objectData) {
-                if (typeof objectData[key] === 'object' && !Array.isArray(objectData[key]) && objectData[key] !== null) {
-                    const cleaned = cleanupEmptyObjects(objectData[key]);
-                    if (cleaned === undefined) {
-                        delete objectData[key]; // Remove empty nested object
-                    }
-                }
-            }
+            // Apply cleanup - this will remove empty hazard/occurrence objects but preserve events
+            cleanupEmptyNestedObjects(objectData);
 
             // Update the array
             if (currentObjectEditor.objectIndex >= fullArrayDataUpdated.length) {
@@ -6621,11 +6810,16 @@
             
             setNestedValue(currentFormData, currentObjectEditor.arrayName, fullArrayDataUpdated);
             updatePreview();
-            generateForm();
-            
+
+            // Call the render callback to update the array display
+            if (currentObjectEditor.renderCallback) {
+                console.log(`[SAVE MODAL] Calling renderCallback`);
+                currentObjectEditor.renderCallback();
+            }
+
             const modal = bootstrap.Modal.getInstance(document.getElementById('objectEditorModal'));
             modal.hide();
-            
+
             updateFormStatus('success', 'Object saved successfully');
         }
 
@@ -6643,7 +6837,7 @@
             const overallStatus = document.getElementById('overallValidation');
             const publishButton = document.getElementById('publishGitHub');
 
-            if (totalFields === 0) {
+            if (totalFields === 0 || !hasRunFullValidation) {
                 overallStatus.className = 'badge bg-secondary';
                 overallStatus.textContent = 'Not validated';
                 publishButton.disabled = true;
@@ -6654,7 +6848,7 @@
                 overallStatus.textContent = 'All valid';
                 publishButton.disabled = false;
                 publishButton.className = 'btn btn-success btn-sm w-100 mb-2';
-                publishButton.title = 'Publish validated dataset to GitHub';
+                publishButton.title = 'Publish validated dataset to RDL catalog';
             } else {
                 overallStatus.className = 'badge bg-warning';
                 overallStatus.textContent = `${validFields}/${totalFields} valid`;
@@ -6710,6 +6904,15 @@
                         }
                     }
                 }
+            }
+
+            // Special handling for known integer fields when schema lookup fails
+            const integerFields = ['central_year', 'event_count'];
+            const baseName = fieldName.split('.').pop();
+
+            if (!property && integerFields.includes(baseName)) {
+                const intValue = parseInt(value, 10);
+                return isNaN(intValue) ? value : intValue;
             }
 
             if (!property) {
@@ -6805,6 +7008,10 @@
                                 currentFormData[key][spatialKey] = newFormData[key][spatialKey];
                             }
                         });
+                        // Remove stale flat coord keys that should only exist as arrays
+                        ['bbox_0','bbox_1','bbox_2','bbox_3','centroid_0','centroid_1'].forEach(k => {
+                            delete currentFormData[key][k];
+                        });
                         // Keep the countries array from preservation above
                     } else {
                         currentFormData[key] = newFormData[key];
@@ -6813,7 +7020,15 @@
                     currentFormData[key] = newFormData[key];
                 }
             });
-            
+
+            // Always purge flat coord keys from currentFormData (root and spatial),
+            // regardless of whether the spatial merge branch ran.
+            const _flatCoordKeys = ['bbox_0','bbox_1','bbox_2','bbox_3','centroid_0','centroid_1'];
+            _flatCoordKeys.forEach(k => delete currentFormData[k]);
+            if (currentFormData.spatial) {
+                _flatCoordKeys.forEach(k => delete currentFormData.spatial[k]);
+            }
+
             updatePreview();
             autoSave();
 
@@ -6832,7 +7047,7 @@
             const schemaFieldOrder = [
                 'id', 'title', 'description', 'risk_data_type', 'publisher', 'version', 'purpose',
                 'project', 'details', 'contact_point', 'creator', 'spatial', 'spatial_resolution',
-                'temporal', 'temporal_resolution', 'license',
+                'temporal', 'temporal_resolution', 'license', 'rights',
                 'attributions', 'lineage', 'referenced_by', 'resources',
                 'hazard', 'exposure', 'vulnerability', 'loss', 'links'
             ];
@@ -6861,6 +7076,32 @@
                     filteredData[key] = value;
                 }
             });
+
+            // Remove flat bbox_N / centroid_N keys from wherever they may have accumulated
+            // (root level or inside spatial) and ensure they appear only as proper arrays.
+            const coordFlatDefs = [
+                { arrayKey: 'bbox',     flatKeys: ['bbox_0', 'bbox_1', 'bbox_2', 'bbox_3'] },
+                { arrayKey: 'centroid', flatKeys: ['centroid_0', 'centroid_1'] }
+            ];
+            function stripFlatCoordKeys(obj) {
+                coordFlatDefs.forEach(({ arrayKey, flatKeys }) => {
+                    if (!flatKeys.some(k => k in obj)) return;
+                    if (!Array.isArray(obj[arrayKey])) {
+                        const vals = flatKeys
+                            .map(k => (obj[k] !== '' && obj[k] != null) ? parseFloat(obj[k]) : null)
+                            .filter(v => v !== null && !isNaN(v));
+                        if (vals.length) obj[arrayKey] = vals;
+                    }
+                    flatKeys.forEach(k => delete obj[k]);
+                });
+            }
+            // Root level (filteredData is a local object — safe to mutate directly)
+            stripFlatCoordKeys(filteredData);
+            // Inside spatial (filteredData.spatial refs currentFormData — shallow-copy first)
+            if (filteredData.spatial) {
+                filteredData.spatial = Object.assign({}, filteredData.spatial);
+                stripFlatCoordKeys(filteredData.spatial);
+            }
 
             return filteredData;
         }
@@ -6943,6 +7184,12 @@
             const totalFields = fieldValidationStatus.size;
             const validFields = Array.from(fieldValidationStatus.values()).filter(status => status.isValid).length;
 
+            // Mark that full validation has been run
+            hasRunFullValidation = true;
+
+            // Update the validation display (including publish button state)
+            updateValidationDisplay();
+
             if (validFields === totalFields && totalFields > 0) {
                 updateFormStatus('success', 'RDLS Compliant ✓');
                 alert('✅ All fields are valid! Your metadata is RDLS compliant.');
@@ -7001,6 +7248,12 @@
                         (!resource.access_url || resource.access_url.trim() === '')) {
                         resourcesValid = false;
                         resourceError = `Resource ${resourceNum} must have either download_url or access_url`;
+                        break;
+                    }
+                    if ((!resource.media_type || resource.media_type.trim() === '') &&
+                        (!resource.format || resource.format.trim() === '')) {
+                        resourcesValid = false;
+                        resourceError = `Resource ${resourceNum} must have either media_type or format`;
                         break;
                     }
                 }
@@ -7095,13 +7348,18 @@
             let exposureValid = true;
             let exposureError = '';
 
-            if (hasExposureType && exposureSectionActive) {
-                const exposures = currentFormData.exposure || [];
-
-                if (!exposures.length) {
+            // Check if exposure section is active - if so, it must have data AND be in risk_data_type
+            if (exposureSectionActive) {
+                if (!hasExposureType) {
                     exposureValid = false;
-                    exposureError = 'Dataset with exposure risk_data_type must have at least one exposure item';
+                    exposureError = 'Exposure component is active but "exposure" is not selected in risk_data_type';
                 } else {
+                    const exposures = currentFormData.exposure || [];
+
+                    if (!exposures.length) {
+                        exposureValid = false;
+                        exposureError = 'Dataset with exposure risk_data_type must have at least one exposure item';
+                    } else {
                     // Check each exposure item
                     for (let i = 0; i < exposures.length; i++) {
                         const exposure = exposures[i];
@@ -7152,6 +7410,7 @@
 
                         if (!exposureValid) break;
                     }
+                    }
                 }
             }
 
@@ -7167,23 +7426,27 @@
             let lossValid = true;
             let lossError = '';
 
-            if (hasLossType && lossSectionActive) {
-                const losses = (currentFormData.loss && currentFormData.loss.losses) || [];
-
-
-                if (!losses.length) {
+            // Check if loss section is active - if so, it must have data AND be in risk_data_type
+            if (lossSectionActive) {
+                if (!hasLossType) {
                     lossValid = false;
-                    lossError = 'Dataset with loss risk_data_type must have at least one loss item';
+                    lossError = 'Loss component is active but "loss" is not selected in risk_data_type';
                 } else {
+                    const losses = (currentFormData.loss && currentFormData.loss.losses) || [];
+
+                    if (!losses.length) {
+                        lossValid = false;
+                        lossError = 'Dataset with loss risk_data_type must have at least one loss item';
+                    } else {
                     // Define required loss attributes with correct field paths
                     const requiredLossAttributes = [
-                        { field: 'hazard_type', name: 'hazard type' },
+                        { field: 'hazard.type', name: 'hazard type' },
                         { field: 'asset_category', name: 'asset category' },
                         { field: 'asset_dimension', name: 'asset dimension' },
                         { field: 'impact_and_losses.impact_type', name: 'impact type' },
                         { field: 'impact_and_losses.impact_modelling', name: 'impact modelling' },
                         { field: 'impact_and_losses.impact_metric', name: 'impact metric' },
-                        { field: 'impact_and_losses.quantity_kind', name: 'quantity kind' },
+                        { field: 'impact_and_losses.measurement.quantity_kind', name: 'quantity kind' },
                         { field: 'impact_and_losses.loss_type', name: 'loss type' },
                         { field: 'impact_and_losses.loss_approach', name: 'loss approach' },
                         { field: 'impact_and_losses.loss_frequency_type', name: 'loss frequency type' }
@@ -7196,11 +7459,16 @@
 
                         // Check each required attribute
                         for (const attr of requiredLossAttributes) {
-                            // Handle nested field paths (e.g., 'impact_and_losses.impact_type')
+                            // Handle nested field paths (e.g., 'impact_and_losses.impact_type', 'impact_and_losses.measurement.quantity_kind')
                             let fieldValue;
                             if (attr.field.includes('.')) {
                                 const parts = attr.field.split('.');
-                                fieldValue = loss[parts[0]] && loss[parts[0]][parts[1]];
+                                // Navigate through nested object properties
+                                fieldValue = loss;
+                                for (const part of parts) {
+                                    fieldValue = fieldValue && fieldValue[part];
+                                    if (!fieldValue) break;
+                                }
                             } else {
                                 fieldValue = loss[attr.field];
                             }
@@ -7213,6 +7481,7 @@
                         }
 
                         if (!lossValid) break;
+                    }
                     }
                 }
             }
@@ -7228,13 +7497,18 @@
             let vulnerabilityValid = true;
             let vulnerabilityError = '';
 
-            if (hasVulnerabilityType && vulnerabilitySectionActive) {
-                const vulnerability = currentFormData.vulnerability;
-
-                if (!vulnerability) {
+            // Check if vulnerability section is active - if so, it must have data AND be in risk_data_type
+            if (vulnerabilitySectionActive) {
+                if (!hasVulnerabilityType) {
                     vulnerabilityValid = false;
-                    vulnerabilityError = 'Dataset with vulnerability risk_data_type must have vulnerability metadata';
+                    vulnerabilityError = 'Vulnerability component is active but "vulnerability" is not selected in risk_data_type';
                 } else {
+                    const vulnerability = currentFormData.vulnerability;
+
+                    if (!vulnerability) {
+                        vulnerabilityValid = false;
+                        vulnerabilityError = 'Dataset with vulnerability risk_data_type must have vulnerability metadata';
+                    } else {
                     // Check which approach is being used
                     // hasFunctions should only be true if there are actual non-empty function arrays
                     const hasFunctions = vulnerability.functions && Object.keys(vulnerability.functions).some(key => {
@@ -7270,13 +7544,12 @@
                         // Function-based approach: validate required vulnerability attributes
                         const requiredVulnerabilityAttributes = [
                             { field: 'hazard_primary', name: 'primary hazard type' },
-                            { field: 'hazard_analysis_type', name: 'hazard analysis type' },
-                            { field: 'intensity_measure', name: 'hazard intensity measurement' },
+                            { field: 'hazard_primary.intensity_measure', name: 'hazard intensity measurement' },
                             { field: 'category', name: 'exposure category' },
-                            { field: 'impact_type', name: 'impact type' },
-                            { field: 'impact_modelling', name: 'impact modelling' },
-                            { field: 'impact_metric', name: 'impact metric' },
-                            { field: 'quantity_kind', name: 'quantity kind' }
+                            { field: 'impact.type', name: 'impact type' },
+                            { field: 'impact.modelling', name: 'impact modelling' },
+                            { field: 'impact.metric', name: 'impact metric' },
+                            { field: 'impact.measurement.quantity_kind', name: 'quantity kind' }
                         ];
 
                         // Check each function type (vulnerability, fragility, damage_to_loss, engineering_demand)
@@ -7290,7 +7563,21 @@
 
                                     // Check each required attribute
                                     for (const attr of requiredVulnerabilityAttributes) {
-                                        if (!func[attr.field] || func[attr.field].toString().trim() === '') {
+                                        // Handle nested field paths (e.g., 'impact.type', 'impact.measurement.quantity_kind')
+                                        let fieldValue;
+                                        if (attr.field.includes('.')) {
+                                            const parts = attr.field.split('.');
+                                            // Navigate through nested object properties
+                                            fieldValue = func;
+                                            for (const part of parts) {
+                                                fieldValue = fieldValue && fieldValue[part];
+                                                if (!fieldValue) break;
+                                            }
+                                        } else {
+                                            fieldValue = func[attr.field];
+                                        }
+
+                                        if (!fieldValue || fieldValue.toString().trim() === '') {
                                             vulnerabilityValid = false;
                                             vulnerabilityError = `${funcType} function ${funcNum} is missing required ${attr.name}`;
                                             break;
@@ -7303,6 +7590,7 @@
 
                             if (!vulnerabilityValid) break;
                         }
+                    }
                     }
                 }
             }
@@ -7318,58 +7606,70 @@
             let hazardValid = true;
             let hazardError = '';
 
-            if (hasHazardType && hazardSectionActive && currentFormData.hazard && currentFormData.hazard.event_sets) {
-                const eventSets = currentFormData.hazard.event_sets;
+            // Check if hazard section is active - if so, it must have data AND be in risk_data_type
+            if (hazardSectionActive) {
+                if (!hasHazardType) {
+                    hazardValid = false;
+                    hazardError = 'Hazard component is active but "hazard" is not selected in risk_data_type';
+                } else {
+                    // Check if hazard has event_sets with at least one event_set
+                    const eventSets = (currentFormData.hazard && currentFormData.hazard.event_sets) || [];
 
-                for (let i = 0; i < eventSets.length; i++) {
-                    const eventSet = eventSets[i];
-                    const eventSetNum = i + 1;
-                    const events = eventSet.events || [];
+                    if (!eventSets.length) {
+                        hazardValid = false;
+                        hazardError = 'Dataset with hazard risk_data_type must have at least one event_set';
+                    } else {
+                        for (let i = 0; i < eventSets.length; i++) {
+                        const eventSet = eventSets[i];
+                        const eventSetNum = i + 1;
+                        const events = eventSet.events || [];
 
-                    if (events.length === 0) continue; // Skip validation if no events
+                        if (events.length === 0) continue; // Skip validation if no events
 
-                    // Check if event_set has hazard information
-                    const hasEventSetHazards = eventSet.hazards && eventSet.hazards.length > 0;
-                    const hasEventSetCalculationMethod = eventSet.calculation_method && eventSet.calculation_method.trim() !== '';
+                        // Check if event_set has hazard information
+                        const hasEventSetHazards = eventSet.hazards && eventSet.hazards.length > 0;
+                        const hasEventSetCalculationMethod = eventSet.calculation_method && eventSet.calculation_method.trim() !== '';
 
-                    // Get first hazard from event_set (if exists)
-                    const eventSetHazard = hasEventSetHazards ? eventSet.hazards[0] : null;
-                    const hasEventSetType = eventSetHazard && eventSetHazard.type && eventSetHazard.type.trim() !== '';
-                    const hasEventSetProcess = eventSetHazard && eventSetHazard.hazard_process && eventSetHazard.hazard_process.trim() !== '';
+                        // Get first hazard from event_set (if exists)
+                        const eventSetHazard = hasEventSetHazards ? eventSet.hazards[0] : null;
+                        const hasEventSetType = eventSetHazard && eventSetHazard.type && eventSetHazard.type.trim() !== '';
+                        const hasEventSetProcess = eventSetHazard && eventSetHazard.process && eventSetHazard.process.trim() !== '';
 
-                    // Validate each event
-                    for (let j = 0; j < events.length; j++) {
-                        const event = events[j];
-                        const eventNum = j + 1;
+                        // Validate each event
+                        for (let j = 0; j < events.length; j++) {
+                            const event = events[j];
+                            const eventNum = j + 1;
 
-                        // Check if event has its own hazard and calculation_method
-                        const hasEventHazard = event.hazard && typeof event.hazard === 'object';
-                        const hasEventType = hasEventHazard && event.hazard.type && event.hazard.type.trim() !== '';
-                        const hasEventProcess = hasEventHazard && event.hazard.hazard_process && event.hazard.hazard_process.trim() !== '';
-                        const hasEventCalculationMethod = event.calculation_method && event.calculation_method.trim() !== '';
+                            // Check if event has its own hazard and calculation_method
+                            const hasEventHazard = event.hazard && typeof event.hazard === 'object';
+                            const hasEventType = hasEventHazard && event.hazard.type && event.hazard.type.trim() !== '';
+                            const hasEventProcess = hasEventHazard && event.hazard.process && event.hazard.process.trim() !== '';
+                            const hasEventCalculationMethod = event.calculation_method && event.calculation_method.trim() !== '';
 
-                        // Rule: If event_set doesn't have type, process, or calculation_method,
-                        // then events MUST have them
-                        if (!hasEventSetType && !hasEventType) {
-                            hazardValid = false;
-                            hazardError = `Event set ${eventSetNum}, Event ${eventNum}: hazard type must be specified either at event_set level or event level`;
-                            break;
+                            // Rule: If event_set doesn't have type, process, or calculation_method,
+                            // then events MUST have them
+                            if (!hasEventSetType && !hasEventType) {
+                                hazardValid = false;
+                                hazardError = `Event set ${eventSetNum}, Event ${eventNum}: hazard type must be specified either at event_set level or event level`;
+                                break;
+                            }
+
+                            if (!hasEventSetProcess && !hasEventProcess) {
+                                hazardValid = false;
+                                hazardError = `Event set ${eventSetNum}, Event ${eventNum}: hazard process must be specified either at event_set level or event level`;
+                                break;
+                            }
+
+                            if (!hasEventSetCalculationMethod && !hasEventCalculationMethod) {
+                                hazardValid = false;
+                                hazardError = `Event set ${eventSetNum}, Event ${eventNum}: calculation_method must be specified either at event_set level or event level`;
+                                break;
+                            }
                         }
 
-                        if (!hasEventSetProcess && !hasEventProcess) {
-                            hazardValid = false;
-                            hazardError = `Event set ${eventSetNum}, Event ${eventNum}: hazard process must be specified either at event_set level or event level`;
-                            break;
-                        }
-
-                        if (!hasEventSetCalculationMethod && !hasEventCalculationMethod) {
-                            hazardValid = false;
-                            hazardError = `Event set ${eventSetNum}, Event ${eventNum}: calculation_method must be specified either at event_set level or event level`;
-                            break;
+                        if (!hazardValid) break;
                         }
                     }
-
-                    if (!hazardValid) break;
                 }
             }
 
@@ -7564,7 +7864,7 @@
             const schemaFieldOrder = [
                 'id', 'title', 'description', 'risk_data_type', 'publisher', 'version', 'purpose',
                 'project', 'details', 'contact_point', 'creator', 'spatial', 'spatial_resolution',
-                'temporal', 'temporal_resolution', 'license',
+                'temporal', 'temporal_resolution', 'license', 'rights',
                 'attributions', 'lineage', 'referenced_by', 'resources',
                 'hazard', 'exposure', 'vulnerability', 'loss', 'links'
             ];
@@ -7775,62 +8075,153 @@
             const datasetTitle = currentFormData.title || currentFormData.name || 'rdls-dataset';
             document.getElementById('datasetTitle').value = sanitizeFilename(datasetTitle);
 
-            // Load saved GitHub token if exists
-            const savedToken = sessionStorage.getItem('githubToken');
-            if (savedToken) {
-                document.getElementById('githubToken').value = savedToken;
-            }
+            // Check authentication state
+            checkGithubAuthState();
 
             const modal = new bootstrap.Modal(document.getElementById('githubConfigModal'));
             modal.show();
         }
 
-        async function testGithubConnection() {
-            const token = document.getElementById('githubToken').value;
-            const repo = document.getElementById('githubRepo').value;
-            const statusDiv = document.getElementById('githubConfigStatus');
+        // GitHub Configuration
+        const TARGET_REPO_OWNER = 'GFDRR';
+        const TARGET_REPO_NAME = 'rdl-jkan';
+        const TARGET_REPO = `${TARGET_REPO_OWNER}/${TARGET_REPO_NAME}`;
+        const TARGET_BRANCH = 'rdl-1.0'; // Target branch for PRs
+
+        // Initialize GitHub auth state on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            checkGithubAuthState();
+        });
+
+        async function authenticateWithToken() {
+            const token = document.getElementById('githubToken').value.trim();
 
             if (!token) {
                 showGithubStatus('error', 'Please enter a GitHub token');
                 return;
             }
 
+            if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
+                showGithubStatus('error', 'Invalid token format. Token should start with "ghp_" or "github_pat_"');
+                return;
+            }
+
+            showGithubStatus('info', '🔄 Verifying token...');
+
+            try {
+                // Verify token by getting user info
+                const userResponse = await githubRequest(token, 'user');
+
+                // Token is valid, store it
+                sessionStorage.setItem('github_access_token', token);
+                sessionStorage.setItem('github_username', userResponse.login);
+
+                checkGithubAuthState();
+                showGithubStatus('success', `✅ Successfully authenticated as ${userResponse.login}!`);
+
+            } catch (error) {
+                console.error('Token verification error:', error);
+                showGithubStatus('error', `❌ Authentication failed: ${error.message}`);
+            }
+        }
+
+        function checkGithubAuthState() {
+            const token = sessionStorage.getItem('github_access_token');
+            const username = sessionStorage.getItem('github_username');
+
+            if (token && username) {
+                document.getElementById('notAuthenticated').style.display = 'none';
+                document.getElementById('authenticated').style.display = 'block';
+                document.getElementById('githubUsername').textContent = username;
+
+                // Show publish button if authenticated
+                const publishBtn = document.getElementById('publishToGithub');
+                if (publishBtn) publishBtn.disabled = false;
+            } else {
+                document.getElementById('notAuthenticated').style.display = 'block';
+                document.getElementById('authenticated').style.display = 'none';
+
+                // Disable publish button if not authenticated
+                const publishBtn = document.getElementById('publishToGithub');
+                if (publishBtn) publishBtn.disabled = true;
+            }
+        }
+
+        function logoutGithub() {
+            sessionStorage.removeItem('github_access_token');
+            sessionStorage.removeItem('github_username');
+            checkGithubAuthState();
+            showGithubStatus('info', 'Signed out successfully');
+        }
+
+        async function testGithubConnection() {
+            const token = sessionStorage.getItem('github_access_token');
+            const statusDiv = document.getElementById('githubConfigStatus');
+
+            if (!token) {
+                showGithubStatus('error', 'Please sign in with GitHub first');
+                return;
+            }
+
             showGithubStatus('info', 'Testing connection...');
 
             try {
-                const response = await fetch(`https://api.github.com/repos/${repo}`, {
+                const userResponse = await githubRequest(token, 'user');
+                showGithubStatus('success', `✅ Connected as ${userResponse.login}`);
+            } catch (error) {
+                showGithubStatus('error', `❌ Connection failed: ${error.message}`);
+            }
+        }
+
+        async function ensureUserFork(token, username) {
+            showGithubStatus('info', '🔍 Checking for existing fork...');
+
+            try {
+                // Check if user already has a fork
+                const forkResponse = await fetch(`https://api.github.com/repos/${username}/${TARGET_REPO_NAME}`, {
                     headers: {
                         'Authorization': `token ${token}`,
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
 
-                if (response.ok) {
-                    const repoData = await response.json();
-                    sessionStorage.setItem('githubToken', token);
-                    showGithubStatus('success', `✅ Connected to ${repoData.full_name}. You have ${repoData.permissions.push ? 'write' : 'read'} access.`);
-                } else if (response.status === 401) {
-                    showGithubStatus('error', '❌ Invalid token. Please check your Personal Access Token.');
-                } else if (response.status === 404) {
-                    showGithubStatus('error', '❌ Repository not found or no access.');
-                } else {
-                    showGithubStatus('error', `❌ Connection failed: ${response.statusText}`);
+                if (forkResponse.ok) {
+                    const forkData = await forkResponse.json();
+                    if (forkData.fork && forkData.parent.full_name === TARGET_REPO) {
+                        showGithubStatus('success', '✅ Fork already exists');
+                        return `${username}/${TARGET_REPO_NAME}`;
+                    }
                 }
+
+                // Fork doesn't exist, create it
+                showGithubStatus('info', '🍴 Creating fork in your account...');
+                const createForkResponse = await githubRequest(token, `repos/${TARGET_REPO}/forks`, {
+                    method: 'POST',
+                    body: JSON.stringify({})
+                });
+
+                // Wait a moment for fork to be ready
+                showGithubStatus('info', '⏳ Waiting for fork to be ready...');
+                await new Promise(resolve => setTimeout(resolve, 3000));
+
+                showGithubStatus('success', `✅ Fork created: ${createForkResponse.full_name}`);
+                return createForkResponse.full_name;
+
             } catch (error) {
-                showGithubStatus('error', `❌ Network error: ${error.message}`);
+                throw new Error(`Failed to create fork: ${error.message}`);
             }
         }
 
         async function publishToGithub() {
-            const token = document.getElementById('githubToken').value;
-            const repo = document.getElementById('githubRepo').value;
-            const baseBranch = document.getElementById('githubBranch').value;
+            const token = sessionStorage.getItem('github_access_token');
+            const username = sessionStorage.getItem('github_username');
+            const baseBranch = TARGET_BRANCH;
             const datasetTitle = document.getElementById('datasetTitle').value;
             const statusDiv = document.getElementById('githubConfigStatus');
 
             // Input validation
-            if (!token) {
-                showGithubStatus('error', 'Please enter a GitHub token');
+            if (!token || !username) {
+                showGithubStatus('error', 'Please sign in with GitHub first');
                 return;
             }
 
@@ -7854,11 +8245,9 @@
 
             // Disable publish button during operation
             const publishBtn = document.getElementById('publishToGithub');
-            const testBtn = document.getElementById('testGithubConnection');
             publishBtn.disabled = true;
-            testBtn.disabled = true;
 
-            showGithubStatus('info', 'Publishing to GitHub...');
+            showGithubStatus('info', '🚀 Starting publication process...');
 
             try {
                 // Package dataset first to get the ID
@@ -7874,24 +8263,42 @@
                 const filename = datasetId ? `${datasetId}.json` : `${sanitizeFilename(datasetTitle)}-${timestamp}.json`;
                 const branchName = datasetId ? `rdl-dataset-${datasetId}` : `rdl-dataset-${sanitizeFilename(datasetTitle)}-${timestamp}`;
 
-                // Step 1: Get base branch SHA
+                // Step 1: Ensure user has a fork
+                const userForkRepo = await ensureUserFork(token, username);
+
+                // Step 2: Get base branch SHA from MAIN repo (not fork)
                 showGithubStatus('info', '📡 Getting base branch information...');
-                const baseResponse = await githubRequest(token, `repos/${repo}/git/ref/heads/${baseBranch}`);
+                const baseResponse = await githubRequest(token, `repos/${TARGET_REPO}/git/ref/heads/${baseBranch}`);
                 const baseSha = baseResponse.object.sha;
 
-                // Step 2: Create new branch
-                showGithubStatus('info', '🌿 Creating new branch...');
-                await githubRequest(token, `repos/${repo}/git/refs`, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        ref: `refs/heads/${branchName}`,
-                        sha: baseSha
-                    })
-                });
+                // Step 3: Create new branch in USER'S FORK
+                showGithubStatus('info', '🌿 Creating branch in your fork...');
+                try {
+                    await githubRequest(token, `repos/${userForkRepo}/git/refs`, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            ref: `refs/heads/${branchName}`,
+                            sha: baseSha
+                        })
+                    });
+                } catch (error) {
+                    // If branch already exists, try to update it
+                    if (error.message.includes('422')) {
+                        showGithubStatus('info', '🔄 Branch exists, updating...');
+                        await githubRequest(token, `repos/${userForkRepo}/git/refs/heads/${branchName}`, {
+                            method: 'PATCH',
+                            body: JSON.stringify({
+                                sha: baseSha,
+                                force: true
+                            })
+                        });
+                    } else {
+                        throw error;
+                    }
+                }
 
-                // Step 3: Create/update file
-                showGithubStatus('info', '📄 Uploading dataset file...');
-                // Use UTF-8 safe base64 encoding to handle special characters
+                // Step 4: Create/update file in USER'S FORK
+                showGithubStatus('info', '📄 Uploading dataset file to your fork...');
                 const jsonString = JSON.stringify(cleanedData, null, 2);
                 const content = btoa(unescape(encodeURIComponent(jsonString)));
                 const commitMessage = `Add RDLS dataset: ${datasetTitle}
@@ -7901,7 +8308,7 @@ Dataset published via RDLS Metadata Editor
 - Description: ${cleanedData.datasets?.[0]?.description ? cleanedData.datasets[0].description.substring(0, 100) + '...' : 'No description'}
 - Timestamp: ${new Date().toISOString()}`;
 
-                await githubRequest(token, `repos/${repo}/contents/_datasets/json/${filename}`, {
+                await githubRequest(token, `repos/${userForkRepo}/contents/_datasets/json/${filename}`, {
                     method: 'PUT',
                     body: JSON.stringify({
                         message: commitMessage,
@@ -7910,13 +8317,13 @@ Dataset published via RDLS Metadata Editor
                     })
                 });
 
-                // Step 4: Create Pull Request
+                // Step 5: Create Pull Request from USER'S FORK to MAIN REPO
                 showGithubStatus('info', '🔄 Creating pull request...');
-                const prResponse = await githubRequest(token, `repos/${repo}/pulls`, {
+                const prResponse = await githubRequest(token, `repos/${TARGET_REPO}/pulls`, {
                     method: 'POST',
                     body: JSON.stringify({
                         title: `Add RDLS Dataset: ${datasetTitle}`,
-                        head: branchName,
+                        head: `${username}:${branchName}`, // Important: user:branch format
                         base: baseBranch,
                         body: `## New RDLS Dataset Submission
 
@@ -7931,6 +8338,7 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
 - Published via RDLS Metadata Editor
 - Timestamp: ${new Date().toISOString()}
 - Validation: ✅ Passed
+- Submitted by: @${username}
 
 ---
 🤖 This pull request was automatically generated by the RDLS Metadata Editor.`
@@ -7940,9 +8348,6 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                 // Success!
                 const prUrl = prResponse.html_url;
                 showGithubStatus('success', `🎉 Successfully published! <a href="${prUrl}" target="_blank">View Pull Request #${prResponse.number}</a>`);
-
-                // Store token for future use
-                sessionStorage.setItem('githubToken', token);
 
                 // Show confirmation and offer to close modal
                 setTimeout(() => {
@@ -7960,14 +8365,16 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                 console.error('GitHub publish error:', error);
                 let errorMessage = 'Publication failed: ';
 
-                if (error.message.includes('422')) {
-                    errorMessage += 'Branch might already exist. Try with a different dataset title.';
+                if (error.message.includes('fork')) {
+                    errorMessage += 'Could not create fork. Please try again or create a fork manually.';
+                } else if (error.message.includes('422')) {
+                    errorMessage += 'Branch or PR already exists. Try with a different dataset title.';
                 } else if (error.message.includes('403')) {
-                    errorMessage += 'Access denied. Please check your token permissions.';
+                    errorMessage += 'Access denied. Please check your GitHub permissions.';
                 } else if (error.message.includes('401')) {
-                    errorMessage += 'Authentication failed. Please check your token.';
+                    errorMessage += 'Authentication failed. Please sign in again.';
                 } else if (error.message.includes('404')) {
-                    errorMessage += 'Repository not found or no access.';
+                    errorMessage += 'Repository not found.';
                 } else if (error.message.toLowerCase().includes('network')) {
                     errorMessage += 'Network connection error. Please check your internet connection.';
                 } else {
@@ -7976,9 +8383,8 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
 
                 showGithubStatus('error', `❌ ${errorMessage}`);
             } finally {
-                // Re-enable buttons
+                // Re-enable button
                 publishBtn.disabled = false;
-                testBtn.disabled = false;
             }
         }
 
@@ -8076,7 +8482,7 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                     compatible: false,
                     editorVersion: editorVersion,
                     dataVersion: null,
-                    message: 'The JSON file does not contain a schema version reference in the "links" field.\n\nThis file may have been created with an older version of the RDL schema (v0.3 or earlier).'
+                    message: 'The JSON file does not contain a schema version reference in the "links" field.\n\nThis file may have been created with an older version of the RDL schema.'
                 };
             }
 
@@ -8126,78 +8532,6 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
             };
         }
 
-        function migrateAttributionData(data) {
-            const migratedData = { ...data };
-
-            // v1.0: publisher, creator, and contact_point are root-level Entity objects
-            // They should NOT be migrated to attributions array
-            // Only migrate if we detect old v0.x structure (attributions array with these roles)
-
-            // No attribution migration needed for v1.0 - these fields stay at root level
-            // If there are duplicate entries in attributions array, remove them
-            if (migratedData.attributions && Array.isArray(migratedData.attributions)) {
-                const rootLevelRoles = ['publisher', 'creator', 'contact_point'];
-                migratedData.attributions = migratedData.attributions.filter(attr => {
-                    // Remove attributions that duplicate root-level fields
-                    return !rootLevelRoles.includes(attr.role);
-                });
-            }
-
-            // Migrate old resource field names (format -> data_format, media_type removed)
-            if (migratedData.resources && Array.isArray(migratedData.resources)) {
-                migratedData.resources = migratedData.resources.map(resource => {
-                    const migratedResource = { ...resource };
-
-                    // Migrate format to data_format with full names
-                    if (migratedResource.format) {
-                        // Map old format values to new data_format values with full names
-                        const formatMapping = {
-                            'geotiff': 'GeoTIFF (tif)',
-                            'tif': 'GeoTIFF (tif)',
-                            'cog': 'Cloud Optimized GeoTIFF (cog)',
-                            'netcdf': 'NetCDF (nc)',
-                            'nc': 'NetCDF (nc)',
-                            'hdf5': 'HDF5 (hdf5)',
-                            'zarr': 'Zarr (zarr)',
-                            'geopackage': 'GeoPackage (gpkg)',
-                            'gpkg': 'GeoPackage (gpkg)',
-                            'geojson': 'GeoJSON (geojson)',
-                            'flatgeobuf': 'FlatGeobuf (fgb)',
-                            'fgb': 'FlatGeobuf (fgb)',
-                            'shapefile': 'Shapefile (shp)',
-                            'shp': 'Shapefile (shp)',
-                            'gdb': 'File Geodatabase (gdb)',
-                            'kml': 'KML (kml)',
-                            'csv': 'CSV (csv)',
-                            'parquet': 'Parquet (parquet)',
-                            'xlsx': 'Excel (xlsx)',
-                            'json': 'JSON (json)',
-                            'xml': 'XML (xml)',
-                            'pdf': 'PDF (pdf)',
-                            'las': 'LAS (las)',
-                            'copc': 'COPC (copc)'
-                        };
-                        migratedResource.data_format = formatMapping[migratedResource.format.toLowerCase()] || migratedResource.format;
-                        delete migratedResource.format;
-                    }
-
-                    // Remove media_type (no longer used)
-                    if (migratedResource.media_type !== undefined) {
-                        delete migratedResource.media_type;
-                    }
-
-                    // Set default access_modality if not present
-                    if (!migratedResource.access_modality) {
-                        // Default to 'download' if download_url exists, otherwise 'website'
-                        migratedResource.access_modality = migratedResource.download_url ? 'download' : 'website';
-                    }
-
-                    return migratedResource;
-                });
-            }
-
-            return migratedData;
-        }
 
         function loadData() {
             const input = document.createElement('input');
@@ -8232,10 +8566,11 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                                 return;
                             }
 
-                            // Migrate attribution data from old format to new format
-                            loadedData = migrateAttributionData(loadedData);
-
                             currentFormData = loadedData;
+
+                            // Reset validation flag when loading new data
+                            hasRunFullValidation = false;
+                            fieldValidationStatus.clear();
 
                             // Activate sections based on loaded data
                             activeSections.clear();
@@ -8280,7 +8615,8 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                 
                 // Clear validation status
                 fieldValidationStatus.clear();
-                
+                hasRunFullValidation = false;
+
                 // Reset active sections to just general
                 activeSections.clear();
                 activeSections.add('general');
@@ -8377,7 +8713,7 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
             console.log('2. Hazard process dependency test:');
             const modalProcessDep = FIELD_DEPENDENCIES['processes'];
             console.log(`   Modal processes depends on: ${modalProcessDep}`);
-            const lossProcessDep = FIELD_DEPENDENCIES['loss.hazard_process'];
+            const lossProcessDep = FIELD_DEPENDENCIES['hazard.process'];
             console.log(`   Loss hazard_process depends on: ${lossProcessDep}`);
             
             // Test 3: Array context handling
@@ -8417,7 +8753,7 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                 // Test hazard type -> process dependencies in all contexts
                 const hazardTypeFields = [
                     'vulnerability.hazard_primary',
-                    'loss.hazard_type',
+                    'loss.hazard.type',
                     'hazards.type'
                 ];
                 
@@ -8431,7 +8767,7 @@ ${cleanedData.datasets?.[0]?.description || 'No description provided'}
                         if (fieldName.includes('vulnerability')) {
                             processFieldName = fieldName.replace('hazard_primary', 'hazard_process_primary');
                         } else if (fieldName.includes('loss')) {
-                            processFieldName = fieldName.replace('hazard_type', 'hazard_process');
+                            processFieldName = fieldName.replace('hazard.type', 'hazard.process');
                         } else if (fieldName.includes('hazards')) {
                             processFieldName = fieldName.replace('type', 'processes');
                         }
