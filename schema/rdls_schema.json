@@ -2416,6 +2416,7 @@
       "codelist": "unit_currency.csv",
       "openCodelist": false,
       "enum": [
+        "INT",
         "ADP",
         "AED",
         "AFA",
