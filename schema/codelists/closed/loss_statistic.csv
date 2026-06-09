@@ -1,5 +1,5 @@
 Code,Title,Description
-annual_average,Annual average loss (AAL),Expected loss per year averaged over the full loss exceedance probability curve. impact_type denotes total, direct, or indirect.
+annual_average,Annual average loss (AAL),"Expected loss per year averaged over the full loss exceedance probability curve. impact_type denotes total, direct, or indirect."
 probable_maximum,Probable maximum loss (PML),"Estimated maximum loss at a given exceedance probability or return period, assuming normal functioning of passive protective features."
 value_at_risk,Value at risk (VaR),Minimum loss likely to be equalled or exceeded at a given annual probability.
 tail_value_at_risk,Tail value at risk (TVaR),Average loss conditional on exceeding the value at risk threshold.

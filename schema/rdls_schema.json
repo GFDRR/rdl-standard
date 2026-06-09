@@ -2397,10 +2397,10 @@
         "probable_maximum",
         "value_at_risk",
         "tail_value_at_risk"
-      ],      
+      ],
       "codelist": "loss_statistic.csv",
       "openCodelist": false
-    },    
+    },
     "codelist_function_approach": {
       "type": "string",
       "enum": [
