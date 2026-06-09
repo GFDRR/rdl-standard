@@ -82,7 +82,7 @@
         },
         "description": "Observed persons indirectly affected (disruption to services, commerce, work) from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 20 events with data out of 40 total coastal flood events.",
         "hazard": {
-            "trigger": {
+          "trigger": {
             "type": "strong_wind",
             "process": "storm_surge"
           },
@@ -110,7 +110,7 @@
         },
         "description": "Observed deaths directly caused by disaster events from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 4 events with data out of 40 total coastal flood events.",
         "hazard": {
-            "trigger": {
+          "trigger": {
             "type": "strong_wind",
             "process": "storm_surge"
           },
@@ -138,7 +138,7 @@
         },
         "description": "Observed persons temporarily evacuated from homes or workplaces from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 1 events with data out of 40 total coastal flood events.",
         "hazard": {
-            "trigger": {
+          "trigger": {
             "type": "strong_wind",
             "process": "storm_surge"
           },
@@ -166,7 +166,7 @@
         },
         "description": "Observed homes with non-structural damage, still habitable from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 7 events with data out of 40 total coastal flood events.",
         "hazard": {
-            "trigger": {
+          "trigger": {
             "type": "strong_wind",
             "process": "storm_surge"
           },
@@ -194,7 +194,7 @@
         },
         "description": "Observed homes destroyed beyond habitability from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 2 events with data out of 40 total coastal flood events.",
         "hazard": {
-            "trigger": {
+          "trigger": {
             "type": "strong_wind",
             "process": "storm_surge"
           },
