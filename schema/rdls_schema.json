@@ -133,7 +133,7 @@
       "type": "string",
       "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field.",
       "minLength": 1
-    },          
+    },
     "contact_point": {
       "title": "Contact point",
       "description": "Contact information for the maintainer of the dataset.",
@@ -718,7 +718,7 @@
           "type": "string",
           "description": "Information about rights held in and over the source, including access rights and usage restrictions. This field may contain a rights management statement or reference a service providing such information. For detailed license terms, use the `license` field.",
           "minLength": 1
-        }        
+        }
       },
       "minProperties": 1
     },
