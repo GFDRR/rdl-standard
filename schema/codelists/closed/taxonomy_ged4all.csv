@@ -59,7 +59,7 @@ pip-mtr,Pipeline - Material,material=*,The material transported by the pipeline,
 pip-jnt,Pipeline - Joint Type,joint=*,"This is the proposed joint tag, associated with pipelines",infrastructure
 pip-sol,Pipeline - Soil Type,material=soil and type=*,"The material key is used to specify soil, in conjunction with the type key when specifying the kind of soil",infrastructure
 pip-dia,Pipeline - Diameter,diameter=*,"Specifies the nominal diameter of the pipeline, in millimeters",infrastructure
-stk,Storage tank,man_made=storage_tank,"Storage tanks are containers that hold liquids, compressed gases (gas tank) or mediums used for short- or long-term storage. ",infrastructure
+stk,Storage tank,man_made=storage_tank,"Storage tanks are containers that hold liquids, compressed gases (gas tank) or mediums used for short- or long-term storage",infrastructure
 stk-pos,Storage tank - Position,,The location of the storage tank,infrastructure
 stk-hgt,Storage tank - Height,height=*,Height in meters,infrastructure
 stk-mtr,Storage tank - Material,material=*,Main material the storage tank is made of,infrastructure
