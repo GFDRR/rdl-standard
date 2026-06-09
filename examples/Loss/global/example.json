@@ -44,7 +44,7 @@
       "description": "Total average annual loss for buildings and infrastructure under SSP1 climate projection (lower bound)",
       "coordinate_system": "EPSG:4326",
       "access_url": "https://giri.unepgrid.ch/facts-figures/multi-hazards",
-      "media_type": "text/csv",      
+      "media_type": "text/csv",
       "temporal": {
         "start": "2017-01-01",
         "end": "2100-12-31"
@@ -56,7 +56,7 @@
       "description": "Total average annual loss for buildings and infrastructure under SSP5 climate projection (upper bound)",
       "coordinate_system": "EPSG:4326",
       "access_url": "https://giri.unepgrid.ch/facts-figures/multi-hazards",
-      "media_type": "text/csv",      
+      "media_type": "text/csv",
       "temporal": {
         "start": "2017-01-01",
         "end": "2100-12-31"
