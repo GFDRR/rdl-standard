@@ -157,6 +157,8 @@ Changes in this section are grouped by the codelist that they affect.
   - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index'.
 - `spatial_scale.csv`:
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
+- `impact_metric.csv`:
+  - [#488](https://github.com/GFDRR/rdl-standard/pull/488) - Revise 'impact_metric' codelist, add new 'loss_statistic' closed codelist.
 
 ### Normative documentation
 

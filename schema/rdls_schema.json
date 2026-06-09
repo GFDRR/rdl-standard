@@ -2390,6 +2390,17 @@
       "codelist": "impact_metric.csv",
       "openCodelist": true
     },
+    "codelist_loss_statistic": {
+      "type": "string",
+      "enum": [
+        "annual_average",
+        "probable_maximum",
+        "value_at_risk",
+        "tail_value_at_risk"
+      ],      
+      "codelist": "loss_statistic.csv",
+      "openCodelist": false
+    },    
     "codelist_function_approach": {
       "type": "string",
       "enum": [

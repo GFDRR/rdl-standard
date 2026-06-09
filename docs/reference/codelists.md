@@ -607,7 +607,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/analysis_type.csv
+```{button-link} ../../codelists/closed/analysis_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -624,7 +624,7 @@ Download CSV file
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/climate_scenario.csv
+```{button-link} ../../codelists/closed/climate_scenario.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -641,7 +641,7 @@ Download CSV file
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/country.csv
+```{button-link} ../../codelists/closed/country.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -660,7 +660,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/data_calculation_type.csv
+```{button-link} ../../codelists/closed/data_calculation_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -679,7 +679,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/exposure_category.csv
+```{button-link} ../../codelists/closed/exposure_category.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -698,7 +698,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/frequency_distribution.csv
+```{button-link} ../../codelists/closed/frequency_distribution.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -717,7 +717,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/function_approach.csv
+```{button-link} ../../codelists/closed/function_approach.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -740,7 +740,7 @@ The hazard_type codelist includes a mapping from the RDLS hazard types to the ha
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/hazard_type.csv
+```{button-link} ../../codelists/closed/hazard_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -759,7 +759,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/impact_type.csv
+```{button-link} ../../codelists/closed/impact_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -778,7 +778,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/loss_type.csv
+```{button-link} ../../codelists/closed/loss_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -791,13 +791,32 @@ Download CSV file
 ```
 ````
 
+### loss_statistic
+
+````{dropdown} Codes
+---
+open:
+---
+```{button-link} ../../codelists/closed/loss_statistic.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/loss_statistic.csv
+```
+````
+
 ### metric_dimension
 
 ````{dropdown} Codes
 ---
 open:
 ---
-```{button-link} ../../codelists/open/metric_dimension.csv
+```{button-link} ../../codelists/closed/metric_dimension.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -816,7 +835,7 @@ The process_type codelist defines hazard processes and the hazard types to which
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/process_type.csv
+```{button-link} ../../codelists/closed/process_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -1103,7 +1122,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/relationship_type.csv
+```{button-link} ../../codelists/closed/relationship_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -1122,7 +1141,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/risk_data_type.csv
+```{button-link} ../../codelists/closed/risk_data_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -1141,7 +1160,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/seasonality.csv
+```{button-link} ../../codelists/closed/seasonality.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -1160,7 +1179,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/source_type.csv
+```{button-link} ../../codelists/closed/source_type.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -1179,7 +1198,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/spatial_scale.csv
+```{button-link} ../../codelists/closed/spatial_scale.csv
 :color: primary
 :shadow:
 Download CSV file
