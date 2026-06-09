@@ -1195,7 +1195,7 @@ Download CSV file
 ### taxonomy_ged4all
 
 ```{seealso}
-[classification scheme](#classification-scheme)
+[classification scheme](#classification_scheme)
 
 ```
 
