@@ -6,12 +6,12 @@ displaced,Displaced,People displaced due to physical damage and disruption.
 ppl_affected,Directly affected,"The estimated number of people directly affected by a disaster. What constitutes 'affected' should be defined by the risk project, and described in metadata."
 ppl_dwellings_damaged,Dwellings damaged,People residing in dwellings with non-structural damage; may remain habitable with repair.
 ppl_dwellings_destroyed,Dwellings destroyed,"People residing in dwellings levelled, collapsed, washed away, or otherwise uninhabitable and requiring full reconstruction."
-livelihoods,Livelihoods disrupted or destroyed,"People whose livelihoods were disrupted or destroyed. Component of ppl_affected. Definition of 'livelihoods disrupted' must be specified in project metadata."
+livelihoods,Livelihoods disrupted or destroyed,People whose livelihoods were disrupted or destroyed. Component of ppl_affected. Definition of 'livelihoods disrupted' must be specified in project metadata.
 bldg_damaged,Buildings damaged,"Number, value or proportion of buildings damaged."
 bldg_destroyed,Buildings destroyed,"Number, value or proportion of buildings destroyed."
 infra_damaged,Infrastructure damaged,"Number, value or proportion of infrastructure damaged."
 infra_destroyed,Infrastructure destroyed,"Number, value or proportion of infrastructure destroyed."
-damage,Direct damage to assets,"Estimated repair cost as currency or ratio. Single value or mean of a distribution."
+damage,Direct damage to assets,Estimated repair cost as currency or ratio. Single value or mean of a distribution.
 damage_index,Damage index,Index or classification of damage level; may be numeric or non-numeric.
 exceedance_probability,Exceedance probability,Probability of reaching or exceeding a damage limit state in a fragility function.
 loss,Loss,"Monetary value of economic impact: damage (replacement value of destroyed assets) plus losses (economic flows foregone due to asset absence). impact_type denotes total, direct, or indirect. loss_type denotes gross, ground-up, insured, etc."
