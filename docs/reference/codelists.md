@@ -842,23 +842,6 @@ depth: 1
 
 ````
 
-#### process_type_coastal_flood
-
-````{dropdown} Codes
-
-```{button-link} ../../codelists/closed/process_type_coastal_flood.csv
-:color: primary
-:shadow:
-Download CSV file
-```
-
-```{csv-table-no-translate}
-:header-rows: 1
-:widths: auto
-:file: ../../docs/_readthedocs/html/codelists/closed/process_type_coastal_flood.csv
-```
-````
-
 #### process_type_convective_storm
 
 ````{dropdown} Codes

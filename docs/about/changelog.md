@@ -71,6 +71,10 @@ Changes in this section affect more than one schema component.
   - `Event_set.temporal`
   - `Event_set.spatial`
 - [#441](https://github.com/GFDRR/rdl-standard/pull/441) - Update description of `.events`.
+- [#487](https://github.com/GFDRR/rdl-standard/pull/487) - Solve coastal flood duplication in  `hazard_type` and `process_type`.
+  - Remove `coastal_flood` from `hazard_type`
+  - Remove `coastal_flood` dependency from "coastal_flood" in `process_type`
+  - Change `storm_surge` dependency from "coastal_flood" to "strong_wind" in `process_type`
 
 #### Exposure
 
