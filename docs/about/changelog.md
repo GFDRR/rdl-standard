@@ -159,6 +159,8 @@ Changes in this section are grouped by the codelist that they affect.
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
 - `impact_metric.csv`:
   - [#488](https://github.com/GFDRR/rdl-standard/pull/488) - Revise 'impact_metric' codelist, add new 'loss_statistic' closed codelist.
+- `taxonomy_ged4all.csv`:
+  - [#485](https://github.com/GFDRR/rdl-standard/pull/485) - Add codelist to support inclusion of id codes for classification scheme = GED4ALL.
 
 ### Normative documentation
 
