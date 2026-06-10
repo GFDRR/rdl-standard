@@ -85,7 +85,7 @@
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Tabular data as excel file.",
       "download_url": "https://unosat.org/static//unosat_filesystem/4174/UNOSAT_Population_Exposure_FL20250110SSD_13Aug_17Aug2025_SouthSudan_Week38.xlsx",
-      "media_type": "application/vnd.ms-excel",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,Excel (xlsx)",
       "spatial": {
         "scale": "national",
         "countries": [
