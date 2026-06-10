@@ -157,6 +157,8 @@ Changes in this section are grouped by the codelist that they affect.
   - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index'.
 - `spatial_scale.csv`:
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
+- `climate_scenario.csv`:
+  - [#481](https://github.com/GFDRR/rdl-standard/pull/481) - Add 7 CMIP7 scenarios
 - `unit_currency.csv`:
   - [#486](https://github.com/GFDRR/rdl-standard/pull/486) - Fix date format for currency; add INT -International Dollar (PPP adjusted); add `valuation_year` related to `unit_currency.csv`
 - `taxonomy_ged4all.csv`:
