@@ -53,7 +53,7 @@
       "id": "resource_002",
       "title": "Disaster tabular data for Sri Lanka",
       "description": "Disaster tabular data for Sri Lanka",
-      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "media_type": "application/vnd.ms-excel",
       "download_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184/resource/4cb4bd14-e5ba-4443-af23-948bfb05f479/download/di_report-srilanka.xls",
       "access_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184"
     }
