@@ -1,0 +1,103 @@
+Code,Title,OSM_key,Description,Exposure_category
+bui-dir,Buildings - Direction,building:direction=*,"Proposed OSM direction tag, associated with buildings (parallel_to_street, perpendicular_to_street, unknown)",buildings
+bui-lvl,Buildings - Levels,building:levels=*,Number of above-ground levels of a building,buildings
+bui-lvl-und,Buildings - Levels underground,building:levels:underground=*,Number of below-ground levels of a building,buildings
+bui-hgt,Buildings - Height,building:height=*,Describes the height of a building in meters,buildings
+bui-slp,Buildings - Slope,building:ground_slope=*,Describes the slope of the building in relation to the ground in degrees,buildings
+bui-dte,Buildings - Date of Construction or Retrofit,building:age=*,"Proposed OSM age tag, associated with buildings (pre_2000, post_2000, unknown)",buildings
+bui-cnd,Buildings - Condition,building:condition=*,"Describes the condition of the building (good, average, poor, unknown)",buildings
+bui-srd,Buildings - Surroundings,building:adjacency=*,"Describe the neighbouring condition of the building( attached, free_standing)",buildings
+bui-geo,Buildings - Geological site,building:geological_site=*,"Describes the geological site the building is built upon (flat_land, river_bank, slopy_land, landslide_prone_area, flood_prone_area, river_bank)",buildings
+bui-occ,Buildings - Occupancy,building=*,"Describe the building purpose ( residential, commercial, public, mixed_use, industrial, agriculture, assembly, government, educational, unknown)",buildings
+bui-cap,Buildings - Capacity,capacity:persons=*,Describe the number of people a building can support,buildings
+bui-shp,Buildings - Shape of the Building Plan,building:shape=*,"Proposed shape tag, associated with buildings (square, rectangular, l_shape, curved, triangular, polygonal, e_shape, h_shape, s_shape, t_shape, u_c_shape, x-shape, y-shape, irregular, unknown)",buildings
+bui-str-irr,Buildings - Structural Irregularity,building:irregularity=*,"Proposed OSM irregularity tag, associated with buildings (regular, irregular, unknown)",buildings
+bui-gfl-hyd,Buildings - Ground Floor Hydrodynamics,ground_floor:openings=*,"Proposed OSM openings tag, associated with building ground floors (yes, no, unknown)",buildings
+bui-gfl-hgt,Buildings - Ground Floor Height,ground_floor:height=*,"Proposed OSM height tag in meters, associated with building ground floors",buildings
+bui-llrs,Buildings - Lateral Load-Resisting System,building:lateral:system=*,"Proposed lateral load resisting system of buildings (moment_frame, infilled_frame, braced_frame, post_beam, wall, dual_framewall, flat_slab, waffle_slab ,infill_flatslab, infill_waffleslab, hybrid, unknown)",buildings
+bui-mtr,Buildings - Material of Exterior Walls,building:material=*,"Material for the exterior walls (concrete, glass, earth, masonry, metal, vegetation, wood, stucco, plastic, vinyl, cement, unknown)",buildings
+bui-llrs-mtr,Buildings - Material of the Lateral Load-Resisting System,building:lateral:material=*,"Proposed lateral load resisting material tag (concrete_reinforced, concrete, concrete_steel, metal, masonary_reinforced, masonry, masonry_confined, earth, earth_reinforced, wood, other, unknown )",buildings
+bui-opn,Buildings - Openings,wall:openings=*,"Proposed OSM openings tag, associated with building walls (yes, no, unknown)",buildings
+bui-rof-shp,Buildings - Roof shape,roof:shape=*,"Well known roof shapes (flat, pitched, monopitch, sawtooth, curved, complex_regular, complex_irregular, unknown)",buildings
+bui-rof-mtr,Buildings - Roof material,roof:material=*,"Outer material for the building roof (masonry, earth, concrete, metal, wood, fabric, slate, stone, clay, unknown)",buildings
+bui-flr-mtr,Buildings - Floor material,floor:material=*,"Material of the building floor (masonry, earth, concrete, metal, wood, unknown)",buildings
+bui-fnd,Buildings - Foundation,building:foundation=*,"Proposed OSM foundation tag, associated with buildings (shallow, deep, unknown)",buildings
+bui-fir,Buildings - Fire Protection,building:fireproof=*,"Information on a building's fire-resistance rating (yes, no, unknown)",buildings
+trs-rod,Transport - Road,highway=*,"Main key used for identifying any kind of road, street or path. The value of the key helps indicate the importance of the highway within the road network as a whole",infrastructure
+trs-mtw,Transport - Motorway,highway=motorway,"Restricted access major divided highway, normally with 2 or more running lanes plus emergency hard shoulder. Equivalent to the Freeway, Autobahn, etc",infrastructure
+trs-trk,Transport - Trunk,highway=trunk,Most important roads in a country's system that aren't motorways (need not necessarily be a divided highway),infrastructure
+trs-prr,Transport - Primary road,highway=primary,"Next most important roads in a country's system (often link large towns) A major highway linking large towns, in developed countries normally with 2 lanes",infrastructure
+trs-scr,Transport - Secondary road,highway=secondary,Next most important roads in a country's system (often link towns),infrastructure
+trs-trr,Transport - Tertiary road,highway=tertiary,Next most important roads in a country's system (often link smaller towns and villages),infrastructure
+trs-unr,Transport - Unclassified road,highway=unclassified,"Least most important through roads in a country's system – i.e. minor roads of a lower classification than tertiary, but which serve a purpose other than access to properties. Often link villages and hamlets",infrastructure
+trs-rsr,Transport - Residential road,highway=residential,"Roads that serve as an access to housing, without function of connecting settlements. Often lined with housing",infrastructure
+trs-srr,Transport - Service road,highway=service,"Access roads to, or within an industrial estate, camp site, business park, car park etc",infrastructure
+trs-rwy,Transport - Railway,railway=*,"Main key used for all forms of transport using metal rails, including mainline services, subways, heritage lines and trams",infrastructure
+trs-lrl,Transport - Light Rail,railway=light_rail,"Higher-standard tram system, normally in its own right-of-way. Often it connects towns and thus reaches a considerable length (tens of kilometers)",infrastructure
+trs-mrl,Transport - Monorail,railway=monorail,Railway with only a single rail. A monorail can run above the rail such as in Las Vegas and Disneyland or can suspend below the rail such as the Wuppertal Schwebebahn (Germany),infrastructure
+trs-ral,Transport - Rail,railway=rail,Full sized passenger or freight trains in the standard gauge for the country or state,infrastructure
+trs-sbw,Transport - Subway,railway=subway,City passenger underground rail service running mostly grade separated,infrastructure
+trs-trm,Transport - Tram,railway=tram,"One or two carriage rail vehicles, usually sharing motor road",infrastructure
+trs-brg,Transport - Bridge,bridge=*,"When a road, railway, path canal, pipeline or similar is leading over a bridge",infrastructure
+trs-brg-mtr,Transport - Bridge Material,bridge:material=*,"Main material of construction: general material (concrete, masonry, steel, iron, wood, mixed) and detailed material",infrastructure
+trs-brg-str,Transport - Bridge Structure,bridge:structure=*,"Describes the load-bearing architecture of individual bridge spans (arch, beam, truss, floating, suspension, cable-stayed, simple-suspension, humpback)",infrastructure
+trs-brg-dck,Transport - Bridge Deck Characteristics,bridge:width=*,"Include the width, length and height of the deck in meters",infrastructure
+trs-brg-dss,Transport - Bridge Deck structural system,bridge:support=*,"Indicate the position of the abutments and piers which support a bridge from beneath (pier, abutment, lift_pier, pivot_pier)",infrastructure
+trs-brg-pdc,Transport - Bridge Pier to deck connection,pier:connection=*,"Proposed OSM pier connection tag, associated with bridges (value options: not_isolated, isolated, unknown)",infrastructure
+trs-brg-psc,Transport - Bridge Pier to Superstructure Connection,pier:superstructure=*,"Proposed OSM pier superstructure tag, associated with bridges (value options: single-column, multi-column, unknown)",infrastructure
+trs-brg-nop,Transport - Bridge Number of Piers,bridge:total_piers=*,"Proposed OSM total piers tag, associated with bridges (number of piers",infrastructure
+trs-brg-pir-shp,Transport - Bridge Shape of Section of the Pier,pier:shape=*,"Proposed OSM pier shape tag, associated with bridges (cylindrical, rectangular, oblong, wall-type, unknown)",infrastructure
+trs-brg-pir-hgt,Transport - Bridge Height of the Pier,pier:height=*,"Proposed OSM pier height tag, associated with bridges (height in meters)",infrastructure
+trs-brg-spn,Transport - Bridge Span,pier:span=*,"Proposed OSM pier span tag, associated with bridges (single, multi-span, unknown)",infrastructure
+trs-brg-abt,Transport - Bridge Connections to the Abutments,abutment:connection=*,"Proposed OSM abutment connection tag, associated with bridges (free, monolithic, isolated, unknown)",infrastructure
+trs-brg-cfg,Transport - Bridge Configuration,bridge:configuration=*,"Proposed OSM bridge configuration tag, associated with bridges (regular, semi_regular,  irregular, unknown)",infrastructure
+trs-brg-ssm,Transport - Bridge Level of Seismicity,bridge:seismicity=*,"Proposed OSM bridge seismicity tag, associated with bridges (no_design, designed, unknown)",infrastructure
+pip,Pipeline,man_made=pipeline,"A major pipeline carrying gas, water, oil, etc.",infrastructure
+pip-cnt,Pipeline - Content,substance=*,"The substance transported within the pipeline. If the medium is not known, do NOT specify this tag",infrastructure
+pip-pos,Pipeline - Position,location=*,"The location of the pipeline (underground, overground, overhead, underwater",infrastructure
+pip-mtr,Pipeline - Material,material=*,The material transported by the pipeline,infrastructure
+pip-jnt,Pipeline - Joint Type,joint=*,"This is the proposed joint tag, associated with pipelines",infrastructure
+pip-sol,Pipeline - Soil Type,material=soil and type=*,"The material key is used to specify soil, in conjunction with the type key when specifying the kind of soil",infrastructure
+pip-dia,Pipeline - Diameter,diameter=*,"Specifies the nominal diameter of the pipeline, in millimeters",infrastructure
+stk,Storage tank,man_made=storage_tank,"Storage tanks are containers that hold liquids, compressed gases (gas tank) or mediums used for short- or long-term storage",infrastructure
+stk-pos,Storage tank - Position,,The location of the storage tank,infrastructure
+stk-hgt,Storage tank - Height,height=*,Height in meters,infrastructure
+stk-mtr,Storage tank - Material,material=*,Main material the storage tank is made of,infrastructure
+stk-anc,Storage tank - Anchorage,anchored=*,"Proposed OSM anchored key, associated with storage tanks (yes, no, unknown)",infrastructure
+stk-shp,Storage tank - Shape,diameter=*,The shape can be determined by the height-to-diameter ratio,infrastructure
+stk-cnt,Storage tank - Content,content=*,What the storage tank typically holds,infrastructure
+pwr-sub,Power grid - Substation,power=substation,"Place dedicated to step-up or step-down the voltage=* within an electrical power grid, generally linked to the rest of the electrical network by one or more sets of power=lines and which may contains one or more power=transformers",infrastructure
+pwr-trn,Power grid - Transmission,substation=transmission,Substation whose main function is to connect and switch transmission lines transmitting power between areas,infrastructure
+pwr-trf,Power grid - Transformer,power=transformer,Static device that converts a given power voltage to another power voltage. Usually located within a substation,infrastructure
+pwr-vlt,Power grid - Voltage,voltage=*,The highest voltage of operation within the facility,infrastructure
+pwr-anc,Power grid - Anchorage,anchored=*,"Proposed OSM anchored key, associated with storage tanks (yes, no, unknown)",infrastructure
+pwr-cod,Power grid - Code Provisions,substation:code=*,"Proposed OSM provision code key, associated with storage tanks (none, low, moderate, high, unknown)",infrastructure
+pwr-twr,Power grid - Tower,power=tower,For big towers or pylons carrying electricity cables. Normally constructed from steel latticework and carry high voltage electricity cables,infrastructure
+pwr-twr-mtr,Power grid - Tower material,material=*,"Default value is steel (steel, wood, concrete, aluminium, composite)",infrastructure
+pwr-twr-str,Power grid - Tower structure,structure=*,"Default value for steel towers is lattice (lattice, tubular, solid)",infrastructure
+pwr-twr-hgt,Power grid - Tower height,height=*,Height in meter of the tower,infrastructure
+pwr-lin,Power grid - Power line,power=line,"High-voltage power lines used for power transmission, supported by towers/pylons, or in some places or situations, by poles",infrastructure
+pwr-lin-vlt,Power grid - Power line voltage,voltage=*,Voltage at which the line is operated (operating voltage),infrastructure
+pwr-lin-opr,Power grid - Power line operator,operator=*,Name of the company which operates this power line section (cable operator),infrastructure
+pwr-lin-cbl,Power grid - Power line cables number,cables=*,Number of different phase conductors for this power line section (number of cables),infrastructure
+pwr-lin-crc,Power grid - Power line circuits number,circuits=*,Number of different and separated electrical circuits built within this power line section (number of circuits),infrastructure
+pwr-plt,Power grid - Power plant,power=plant,An industrial facility for the generation of energy,infrastructure
+pwr-plt-src,Power grid - Power plant Energy Source,plant:source=*,"The source of the energy generated by a power plant (oil, geothermal, nuclear, hydroelectric, wind, solar, tidal wave, gas, biomass)",infrastructure
+pwr-plt-cap,Power grid - Power plant Capacity,plant:output:electricity=*,Power plants can output multiple forms of energy (yes / x W / x kW / x MW / x GW),infrastructure
+agr-fml,Agriculture - Farmland area,landuse=farmland,"Area of farmland used for tillage and pasture (animals, vegetables, flowers, fruit growing)",agriculture
+agr-crp,Agriculture - Farmland crop type,crop=*,The crop produced by cultivated land,agriculture
+agr-anm,Agriculture - Farmland animal produce,produce=live_animal,Where the whole live animal is produced/sold,agriculture
+env-fst,Natural environment - Forest,landuse=forest,Forest or woodland is an area covered by trees,natural_environment
+env-fst-cls,Natural environment - Closed Forest,landuse=forest,Area covered by trees,natural_environment
+env-wdl,Natural environment - Woodland,natural=wood,Area covered by trees,natural_environment
+env-scr,Natural environment - Scrub,natural=scrub,"Plant community characterized by vegetation dominated by shrubs (bush), often also including grasses, herbs, and geophytes",natural_environment
+env-dws,Natural environment - Dwarf-scrub and Related Communities,natural=heath,"A dwarf-shrub habitat, characterized by open, low growing woody vegetation, often dominated by heather plants",natural_environment
+env-hrb,Natural environment - Herbaceous Vegetation,wetland=*,"Tall graminoid vegetation, medium tall grassland, short grassland, forb vegetation or hydromorphic fresh-water vegetation",natural_environment
+sei-eco,Socio-economic indicator - Economy,Not Applicable,Measures the welfare and social security levels of communities,economic_indicator
+sei-edu,Socio-economic indicator - Education,Not Applicable,"Provides information about invested resources and expected outcome of education, access and participation to education",economic_indicator
+sei-env,Socio-economic indicator - Environment,Not Applicable,"Defines the underlying conditions that make an environment susceptible to damage, disaster experience and prevalence",economic_indicator
+sei-gov,Socio-economic indicator - Governance and Institutional Capacity,Not Applicable,"Institutional performance and regulatory efficiency, corruption control and stability of political system",economic_indicator
+sei-hlt,Socio-economic indicator - Health,Not Applicable,Population health conditions and health sector capabilities,economic_indicator
+sei-idx,Socio-economic indicator - Index,Not Applicable,"Range of indexes that cover different sectors, for example, the Disaster Risk Index used by the United Nation Development programme to monitor the global evolution of risk",economic_indicator
+sei-inf,Socio-economic indicator - Infrastructure,Not Applicable,"Transportation and communication infrastructure, status and access to utility lifelines",economic_indicator
+sei-pop,Socio-economic indicator - Population,Not Applicable,"Defines community demographics: structure, distribution and size",population
