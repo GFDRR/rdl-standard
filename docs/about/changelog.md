@@ -53,6 +53,10 @@ Changes in this section affect more than one schema component.
   - Add field `license` to `source` object.
 - [#482](https://github.com/GFDRR/rdl-standard/pull/482):
   - Add `Affiliation` to `$defs/Entity`
+- [#483](https://github.com/GFDRR/rdl-standard/pull/483):
+  - Remove `Format: iri` from `$defs/license`
+  - Add `Citation` to `$defs/source`
+  - Add `Rights` related to license in general attributes and in `$defs/source`
 
 #### Resource
 
@@ -71,6 +75,10 @@ Changes in this section affect more than one schema component.
   - `Event_set.temporal`
   - `Event_set.spatial`
 - [#441](https://github.com/GFDRR/rdl-standard/pull/441) - Update description of `.events`.
+- [#487](https://github.com/GFDRR/rdl-standard/pull/487) - Solve coastal flood duplication in  `hazard_type` and `process_type`.
+  - Remove `coastal_flood` from `hazard_type`
+  - Remove `coastal_flood` dependency from "coastal_flood" in `process_type`
+  - Change `storm_surge` dependency from "coastal_flood" to "strong_wind" in `process_type`
 
 #### Exposure
 
@@ -157,6 +165,12 @@ Changes in this section are grouped by the codelist that they affect.
   - [#403](https://github.com/GFDRR/rdl-standard/pull/403) - Add 'index'.
 - `spatial_scale.csv`:
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
+- `climate_scenario.csv`:
+  - [#481](https://github.com/GFDRR/rdl-standard/pull/481) - Add 7 CMIP7 scenarios
+- `unit_currency.csv`:
+  - [#486](https://github.com/GFDRR/rdl-standard/pull/486) - Fix date format for currency; add INT -International Dollar (PPP adjusted); add `valuation_year` related to `unit_currency.csv`
+- `taxonomy_ged4all.csv`:
+  - [#485](https://github.com/GFDRR/rdl-standard/pull/485) - Add codelist to support inclusion of id codes for classification scheme = GED4ALL.
 
 ### Normative documentation
 
