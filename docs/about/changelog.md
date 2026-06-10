@@ -2,7 +2,7 @@
 
 This page lists changes to the Risk Data Library Standard.
 
-## 1.0 - 2026-XX-XX
+## 1.0 - 2026-06-10
 
 ### Schema
 
