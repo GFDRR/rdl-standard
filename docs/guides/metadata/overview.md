@@ -13,7 +13,7 @@ The process for publishing RDLS metadata can be divided into two phases:
 
 You should prepare your metadata in [Java Script Object Notation (JSON)](https://www.json.org/) format, which is the main metadata format used in data catalogues.
 
-The recommended approach to prepare RDLS metadata is to use the [RDLS Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE_v1.html), it offers input guidance, validation and export functionality.
+The recommended approach to prepare RDLS metadata is to use the [RDLS Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE.html), it offers input guidance, validation and export functionality.
 
 It is *strongly suggested* that you do not author RDLS metadata in JSON format ‘by hand’ as doing so is time-consuming and error-prone. However, if you do choose this approach, you ought to use a text editor with support for JSON formatting and schema validation, such as [Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
 
