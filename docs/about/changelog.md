@@ -67,7 +67,7 @@ Changes in this section affect more than one schema component.
   - Add `central_year` to `Period`
 - [#401](https://github.com/GFDRR/rdl-standard/pull/401) - Add `Resource.conforms_to`.
 - [#398](https://github.com/GFDRR/rdl-standard/pull/398) - Add `spatial_aggregation` to `Resource`.
-- [#484](https://github.com/GFDRR/rdl-standard/pull/484) - Add `anOf` to `Resource` for `media_type` and `format`.
+- [#484](https://github.com/GFDRR/rdl-standard/pull/484) - Make either `.media_type` or `.format` required in `Resource`.
 
 #### Hazard
 
