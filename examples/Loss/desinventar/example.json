@@ -1,7 +1,7 @@
 {
   "id": "rdls_lss-lkaundrr_desinventar",
   "title": "DesInventar Disaster Loss and Damage Dataset for Sri Lanka",
-  "description": "National disaster loss inventory for Sri Lanka from the DesInventar Sendai Framework Monitor database, compiled by Disaster Management Centre (DMC) and published by the United Nations Office for Disaster Risk Reduction (UNDRR). Contains 17,729 event-level loss records covering historical, with observed impacts from coastal_flood, convective_storm, drought, extreme_temperature, flood, landslide, strong_wind, tsunami, wildfire events. Loss data includes human casualties, displacement, building damage, economic losses, agricultural damage, and infrastructure impacts. [Source: This metadata record was automatically extracted from the Humanitarian Data Exchange (HDX) at https://data.humdata.org] [Original dataset: https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184]",
+  "description": "National disaster loss inventory for Sri Lanka from the DesInventar Sendai Framework Monitor database, compiled by Disaster Management Centre (DMC) and published by the United Nations Office for Disaster Risk Reduction (UNDRR). Contains 17,729 event-level loss records covering historical, with observed impacts from convective_storm, drought, extreme_temperature, flood, landslide, strong_wind, tsunami, wildfire events. Loss data includes human casualties, displacement, building damage, economic losses, agricultural damage, and infrastructure impacts. [Source: This metadata record was automatically extracted from the Humanitarian Data Exchange (HDX) at https://data.humdata.org] [Original dataset: https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184]",
   "risk_data_type": [
     "loss"
   ],
@@ -80,11 +80,15 @@
             "unit": "USD"
           }
         },
-        "description": "Observed persons indirectly affected (disruption to services, commerce, work) from coastal flood (SURGE, TIDAL WAVE) events in Sri Lanka. DesInventar records: 20 events with data out of 40 total coastal flood events.",
+        "description": "Observed persons indirectly affected (disruption to services, commerce, work) from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 20 events with data out of 40 total coastal flood events.",
         "hazard": {
-          "type": "coastal_flood",
-          "process": "storm_surge",
-          "intensity_measure": "generic_intensity:units"
+          "trigger": {
+            "type": "strong_wind",
+            "process": "storm_surge"
+          },
+          "type": "flood",
+          "process": "coastal_flood",
+          "intensity_measure": "flow_depth_ground:m"
         }
       },
       {
@@ -104,11 +108,15 @@
             "unit": "USD"
           }
         },
-        "description": "Observed deaths directly caused by disaster events from coastal flood (SURGE, TIDAL WAVE) events in Sri Lanka. DesInventar records: 4 events with data out of 40 total coastal flood events.",
+        "description": "Observed deaths directly caused by disaster events from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 4 events with data out of 40 total coastal flood events.",
         "hazard": {
-          "type": "coastal_flood",
-          "process": "storm_surge",
-          "intensity_measure": "generic_intensity:units"
+          "trigger": {
+            "type": "strong_wind",
+            "process": "storm_surge"
+          },
+          "type": "flood",
+          "process": "coastal_flood",
+          "intensity_measure": "flow_depth_ground:m"
         }
       },
       {
@@ -128,11 +136,15 @@
             "unit": "USD"
           }
         },
-        "description": "Observed persons temporarily evacuated from homes or workplaces from coastal flood (SURGE, TIDAL WAVE) events in Sri Lanka. DesInventar records: 1 events with data out of 40 total coastal flood events.",
+        "description": "Observed persons temporarily evacuated from homes or workplaces from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 1 events with data out of 40 total coastal flood events.",
         "hazard": {
-          "type": "coastal_flood",
-          "process": "storm_surge",
-          "intensity_measure": "generic_intensity:units"
+          "trigger": {
+            "type": "strong_wind",
+            "process": "storm_surge"
+          },
+          "type": "flood",
+          "process": "coastal_flood",
+          "intensity_measure": "flow_depth_ground:m"
         }
       },
       {
@@ -152,11 +164,15 @@
             "unit": "USD"
           }
         },
-        "description": "Observed homes with non-structural damage, still habitable from coastal flood (SURGE, TIDAL WAVE) events in Sri Lanka. DesInventar records: 7 events with data out of 40 total coastal flood events.",
+        "description": "Observed homes with non-structural damage, still habitable from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 7 events with data out of 40 total coastal flood events.",
         "hazard": {
-          "type": "coastal_flood",
-          "process": "storm_surge",
-          "intensity_measure": "generic_intensity:units"
+          "trigger": {
+            "type": "strong_wind",
+            "process": "storm_surge"
+          },
+          "type": "flood",
+          "process": "coastal_flood",
+          "intensity_measure": "flow_depth_ground:m"
         }
       },
       {
@@ -176,11 +192,15 @@
             "unit": "USD"
           }
         },
-        "description": "Observed homes destroyed beyond habitability from coastal flood (SURGE, TIDAL WAVE) events in Sri Lanka. DesInventar records: 2 events with data out of 40 total coastal flood events.",
+        "description": "Observed homes destroyed beyond habitability from coastal flood (triggered by storm surge) events in Sri Lanka. DesInventar records: 2 events with data out of 40 total coastal flood events.",
         "hazard": {
-          "type": "coastal_flood",
-          "process": "storm_surge",
-          "intensity_measure": "generic_intensity:units"
+          "trigger": {
+            "type": "strong_wind",
+            "process": "storm_surge"
+          },
+          "type": "flood",
+          "process": "coastal_flood",
+          "intensity_measure": "flow_depth_ground:m"
         }
       },
       {

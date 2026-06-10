@@ -1408,7 +1408,6 @@
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
-            "coastal_flood",
             "convective_storm",
             "drought",
             "extreme_temperature",
@@ -1432,8 +1431,6 @@
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
-            "coastal_flood",
-            "storm_surge",
             "tornado",
             "agricultural_drought",
             "hydrological_drought",
@@ -1446,6 +1443,7 @@
             "extreme_heat",
             "fluvial_flood",
             "pluvial_flood",
+            "coastal_flood",
             "groundwater_flood",
             "snow_avalanche",
             "landslide_general",
@@ -1462,6 +1460,7 @@
             "wildfire",
             "extratropical_cyclone",
             "tropical_cyclone",
+            "storm_surge",
             "wildfire_smoke",
             "coastal_erosion",
             "soil_erosion",
