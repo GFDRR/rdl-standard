@@ -1720,6 +1720,12 @@
           "type": "string",
           "description": "The unit by which it is measured, taken from the unit [codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists) for the quantity kind.",
           "minLength": 1
+        },
+        "valuation_year": {
+          "title": "Valuation year",
+          "type": "string",
+          "description": "The year of the monetary valuation, expressed as a 4-digit year (YYYY). Applicable when quantity_kind is 'currency'.",
+          "pattern": "^[0-9]{4}$"
         }
       },
       "minProperties": 1,
@@ -2417,6 +2423,7 @@
       "codelist": "unit_currency.csv",
       "openCodelist": false,
       "enum": [
+        "INT",
         "ADP",
         "AED",
         "AFA",

@@ -1,4 +1,5 @@
 Code,Title,Valid Until
+INT,International Dollar (PPP-adjusted),
 AED,UAE Dirham,
 AFN,Afghani,
 ALL,Lek,
@@ -213,12 +214,12 @@ CSJ,Krona A/53,1989/1990
 CSK,Koruna,1993-03
 CUC,Peso Convertible,2021-06
 CYP,Cyprus Pound,2008-01
-DDM,Mark der DDR,1990-07/1990-09
+DDM,Mark der DDR,1990-10
 DEM,Deutsche Mark,2002-03
 ECS,Sucre,2000-09
 ECV,Unidad de Valor Constante (UVC),2000-09
 EEK,Kroon,2011-01
-ESA,Spanish Peseta,1978/1981
+ESA,Spanish Peseta,1981-12
 ESB,"""A"" Account (convertible Peseta Account)",1994-12
 ESP,Spanish Peseta,2002-03
 FIM,Markka,2002-03
@@ -230,14 +231,14 @@ GNE,Syli,1989-12
 GNS,Syli,1986-02
 GQE,Ekwele,1986-06
 GRD,Drachma,2002-03
-GWE,Guinea Escudo,1978/1981
+GWE,Guinea Escudo,1976-02
 GWP,Guinea-Bissau Peso,1997-05
 HRD,Croatian Dinar,1995-01
 HRK,Kuna,2023-01
 IEP,Irish Pound,2002-03
-ILP,Pound,1978/1981
-ILR,Old Shekel,1989/1990
-ISJ,Old Krona,1989/1990
+ILP,Pound,1980-02
+ILR,Old Shekel,1985-09
+ISJ,Old Krona,1981-01
 ITL,Italian Lira,2002-03
 LAJ,Pathet Lao Kip,1979-12
 LSM,Loti,1985-05
@@ -255,7 +256,7 @@ MTL,Maltese Lira,2008-01
 MTP,Maltese Pound,1983-06
 MVQ,Maldive Rupee,1989-12
 MXP,Mexican Peso,1993-01
-MZE,Mozambique Escudo,1978/1981
+MZE,Mozambique Escudo,1980-06
 MZM,Mozambique Metical,2006-06
 NIC,Cordoba,1990-10
 NLG,Netherlands Guilder,2002-03
@@ -264,7 +265,7 @@ PEI,Inti,1991-07
 PES,Sol,1986-02
 PLZ,Zloty,1997-01
 PTE,Portuguese Escudo,2002-03
-RHD,Rhodesian Dollar,1978/1981
+RHD,Rhodesian Dollar,1980-04
 ROK,Leu A/52,1989/1990
 ROL,Old Leu,2005-06
 RUR,Russian Ruble,2004-01
