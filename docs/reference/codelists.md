@@ -1179,7 +1179,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/spatial_scale.csv
+```{button-link} ../../codelists/closed/spatial_scale.csv
 :color: primary
 :shadow:
 Download CSV file
