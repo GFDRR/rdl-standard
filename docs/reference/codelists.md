@@ -201,7 +201,7 @@ Download CSV file
 
 ````{dropdown} Codes
 
-```{button-link} ../../codelists/open/imt_drought.csv
+```{button-link} ../../codelists/open/imt_earthquake.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -210,7 +210,7 @@ Download CSV file
 ```{csv-table-no-translate}
 :header-rows: 1
 :widths: auto
-:file: ../../docs/_readthedocs/html/codelists/open/imt_drought.csv
+:file: ../../docs/_readthedocs/html/codelists/open/imt_earthquake.csv
 ```
 ````
 
@@ -1189,6 +1189,28 @@ Download CSV file
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/spatial_scale.csv
+```
+````
+
+### taxonomy_ged4all
+
+```{seealso}
+[classification scheme](#classification_scheme)
+
+```
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/taxonomy_ged4all.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/taxonomy_ged4all.csv
 ```
 ````
 

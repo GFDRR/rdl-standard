@@ -51,6 +51,8 @@ Changes in this section affect more than one schema component.
   - Add `License` to `$defs`
   - Add `format: iri` to `License`.
   - Add field `license` to `source` object.
+- [#482](https://github.com/GFDRR/rdl-standard/pull/482):
+  - Add `Affiliation` to `$defs/Entity`
 
 #### Resource
 
@@ -142,6 +144,7 @@ Changes in this section are grouped by the codelist that they affect.
   - [#370](https://github.com/GFDRR/rdl-standard/pull/370), [#383](https://github.com/GFDRR/rdl-standard/pull/383) - Rename codes and update code format
   - [#409](https://github.com/GFDRR/rdl-standard/pull/409) - Align with UNDRR HIPs
   - [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Adding imt for sea level rise
+  - [#467](https://github.com/GFDRR/rdl-standard/pull/467) - Replace 'inundation' with 'flow' for clarity and compatibility with landslide hazard
 - `license.csv`:
   - [#373](https://github.com/GFDRR/rdl-standard/pull/373) - Replace codes with license URLs, update titles
   - [#440](https://github.com/GFDRR/rdl-standard/pull/440), [#453](https://github.com/GFDRR/rdl-standard/pull/453) - Add 'https://creativecommons.org/licenses/by-nc/4.0/'
@@ -156,6 +159,8 @@ Changes in this section are grouped by the codelist that they affect.
   - [#397](https://github.com/GFDRR/rdl-standard/pull/397) - Add 'urban'.
 - `climate_scenario.csv`:
   - [#481](https://github.com/GFDRR/rdl-standard/pull/481) - Add 7 CMIP7 scenarios
+- `taxonomy_ged4all.csv`:
+  - [#485](https://github.com/GFDRR/rdl-standard/pull/485) - Add codelist to support inclusion of id codes for classification scheme = GED4ALL.
 
 ### Normative documentation
 
