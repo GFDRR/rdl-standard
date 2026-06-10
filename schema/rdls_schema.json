@@ -1840,6 +1840,11 @@
           "description": "The metric used to describe the impact, taken from the open [impact_metric codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#impact-metric).",
           "$ref": "#/$defs/codelist_impact_metric"
         },
+        "loss_statistic": {
+          "title": "Loss statistic",
+          "description": "The type of statistical summary applied to the loss values, from the closed [loss_statistic codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists/#loss-statistic).",
+          "$ref": "#/$defs/codelist_loss_statistic"
+        },
         "measurement": {
           "title": "Impact measurement",
           "description": "How the impact is measured.",

@@ -13,7 +13,7 @@ The process for publishing RDLS metadata can be divided into two phases:
 
 You should prepare your metadata in [Java Script Object Notation (JSON)](https://www.json.org/) format, which is the main metadata format used in data catalogues.
 
-The recommended approach to prepare RDLS metadata is to use the [RDLS Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE_v1.html), it offers input guidance, validation and export functionality.
+The recommended approach to prepare RDLS metadata is to use the [RDLS Metadata Editor](https://docs.riskdatalibrary.org/en/latest/_static/RDL_MDE.html), it offers input guidance, validation and export functionality.
 
 It is *strongly suggested* that you do not author RDLS metadata in JSON format ‘by hand’ as doing so is time-consuming and error-prone. However, if you do choose this approach, you ought to use a text editor with support for JSON formatting and schema validation, such as [Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
 
@@ -25,7 +25,7 @@ If you are publishing an access-restricted resource, see [how to publish an acce
 
 ### Author metadata using the RDLS Metadata Editor
 
-The [RDLS Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE_v1.html) is a web-based tool for authoring RDLS metadata. It ensures that the metadata you enter is structured and formatted correctly, provides a live preview of the metadata in JSON format, and validates the metadata against the latest version of the [RDLS schema](../../reference/schema/index.md).
+The [RDLS Metadata Editor](https://docs.riskdatalibrary.org/en/latest/_static/RDL_MDE.html) is a web-based tool for authoring RDLS metadata. It ensures that the metadata you enter is structured and formatted correctly, provides a live preview of the metadata in JSON format, and validates the metadata against the latest version of the [RDLS schema](../../reference/schema/index.md).
 
 The graphic interface allows users to quickly select which risk components are covered by a dataset.
 
@@ -49,7 +49,7 @@ A data pipeline is a series of processing steps that transforms your existing me
 
 If you plan to develop a data pipeline to transform existing metadata to RDLS format, you first need to identify how your existing metadata ‘maps’ to RDLS - that is, identifying which [data elements](https://en.wikipedia.org/wiki/Data_element) within your metadata match which RDLS [fields](../../reference/schema/index.md) and [codes](../../reference/codelists.md). You then need to create a data pipeline that implements your mapping in code. To get help with creating a data pipeline, [contact the RDLS team](mailto:contact@riskdatalibrary.org).
 
-You need to ensure that your data is structured and formatted correctly according to the [RDLS schema](../../reference/schema/index.md). Once you have prepared your RDLS metadata in JSON format, the next step is to validate it against the RDLS schema. You can validate individual files using the [Metadata Editor](https://gfdrr.github.io/CCDR-tools/_static/RDL_MDE_v1.html). Batch validation functionality is not yet available, but is on the development roadmap.
+You need to ensure that your data is structured and formatted correctly according to the [RDLS schema](../../reference/schema/index.md). Once you have prepared your RDLS metadata in JSON format, the next step is to validate it against the RDLS schema. You can validate individual files using the [Metadata Editor](https://docs.riskdatalibrary.org/en/latest/_static/RDL_MDE.html). Batch validation functionality is not yet available, but is on the development roadmap.
 
 ## Publish your metadata
 
