@@ -1,4 +1,6 @@
 Code,Title
+text/html,HTML (html)
+text/plain,Text (txt)
 image/tiff;application=geotiff,GeoTIFF (tif)
 image/tiff;application=geotiff;profile=cloud-optimized,Cloud Optimized GeoTIFF (cog)
 application/netcdf,NetCDF (nc)
@@ -10,7 +12,6 @@ application/vnd.flatgeobuf,FlatGeobuf (fgb)
 application/vnd.shp,Shapefile (shp)
 application/x-filegdb,File Geodatabase (gdb)
 application/vnd.google-earth.kml+xml,KML (kml)
-text/csv,CSV (csv)
 application/vnd.apache.parquet,Parquet (parquet)
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,Excel (xlsx)
 application/json,JSON (json)
@@ -18,7 +19,6 @@ application/xml,XML (xml)
 application/pdf,PDF (pdf)
 application/vnd.las,LAS (las)
 application/vnd.laszip+copc,COPC (copc)
-text/plain,Text (txt)
 application/x-hdf,HDF (hdf)
 application/3dtiles+json,3D Tiles
 application/vnd.pmtiles,PMTiles
