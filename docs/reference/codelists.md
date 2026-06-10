@@ -1162,7 +1162,7 @@ Download CSV file
 ---
 open:
 ---
-```{button-link} ../../codelists/open/spatial_scale.csv
+```{button-link} ../../codelists/closed/spatial_scale.csv
 :color: primary
 :shadow:
 Download CSV file
@@ -1172,6 +1172,28 @@ Download CSV file
 :header-rows: 1
 :widths: auto
 :file: ../../schema/codelists/closed/spatial_scale.csv
+```
+````
+
+### taxonomy_ged4all
+
+```{seealso}
+[classification scheme](#classification_scheme)
+
+```
+
+````{dropdown} Codes
+
+```{button-link} ../../codelists/closed/taxonomy_ged4all.csv
+:color: primary
+:shadow:
+Download CSV file
+```
+
+```{csv-table-no-translate}
+:header-rows: 1
+:widths: auto
+:file: ../../schema/codelists/closed/taxonomy_ged4all.csv
 ```
 ````
 
