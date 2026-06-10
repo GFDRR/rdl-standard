@@ -98,7 +98,7 @@
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Interactive geodashboard.",
       "access_url": "https://unosat.maps.arcgis.com/apps/dashboards/b3c40fc3e6ec46668b26019db0b11f7c",
-      "media_type": "application/x-filegdb",
+      "media_type": "text/html",
       "spatial": {
         "scale": "national",
         "countries": [
