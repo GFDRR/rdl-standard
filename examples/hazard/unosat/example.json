@@ -46,66 +46,66 @@
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Pdf report",
       "download_url": "https://unosat.org/static/unosat_filesystem/4174/UNOSAT_A3_Natural_Landscape_FL20250110SSD_13Aug_17Aug2025_SouthSudan_Week38.pdf",
+      "media_type": "application/pdf",
       "spatial": {
         "scale": "national",
         "countries": [
           "SSD"
         ]
       },
-      "id": "resource_BKFdFrar",
-      "access_modality": "download"
+      "id": "resource_BKFdFrar"
     },
     {
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Map data as geodatabase",
       "download_url": "https://unosat.org/static/unosat_filesystem/4174/FL20220424SSD_gdb.zip",
+      "media_type": "application/x-filegdb",
       "spatial": {
         "scale": "national",
         "countries": [
           "SSD"
         ]
       },
-      "id": "resource_w6NBAvrk",
-      "access_modality": "download"
+      "id": "resource_w6NBAvrk"
     },
     {
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Map data as shapefile.",
       "download_url": "https://unosat.org/static/unosat_filesystem/4174/FL20220424SSD_SHP.zip",
+      "media_type": "application/vnd.shp",
       "spatial": {
         "scale": "national",
         "countries": [
           "SSD"
         ]
       },
-      "id": "resource_rFavBRsN",
-      "access_modality": "download"
+      "id": "resource_rFavBRsN"
     },
     {
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Tabular data as excel file.",
       "download_url": "https://unosat.org/static//unosat_filesystem/4174/UNOSAT_Population_Exposure_FL20250110SSD_13Aug_17Aug2025_SouthSudan_Week38.xlsx",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,Excel (xlsx)",
       "spatial": {
         "scale": "national",
         "countries": [
           "SSD"
         ]
       },
-      "id": "resource_LnChc3yl",
-      "access_modality": "download"
+      "id": "resource_LnChc3yl"
     },
     {
       "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
       "description": "Interactive geodashboard.",
       "access_url": "https://unosat.maps.arcgis.com/apps/dashboards/b3c40fc3e6ec46668b26019db0b11f7c",
+      "media_type": "text/html",
       "spatial": {
         "scale": "national",
         "countries": [
           "SSD"
         ]
       },
-      "id": "resource_qO1qZSIY",
-      "access_modality": "website"
+      "id": "resource_qO1qZSIY"
     }
   ],
   "hazard": {

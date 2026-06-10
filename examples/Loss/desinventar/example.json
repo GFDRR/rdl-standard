@@ -38,16 +38,14 @@
       "id": "hdx_dataset_metadata_json",
       "title": "HDX dataset metadata (JSON)",
       "description": "Dataset-level metadata exported from HDX.",
-      "data_format": "JSON (json)",
-      "access_modality": "file_download",
+      "media_type": "application/json",
       "download_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184/download_metadata?format=json"
     },
     {
       "id": "resource_001",
       "title": "Disaster data for Sri Lanka",
       "description": "Disaster data for Sri Lanka",
-      "data_format": "Shapefile (shp)",
-      "access_modality": "file_download",
+      "media_type": "application/vnd.shp",
       "download_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184/resource/49adba32-509f-49e7-b63e-928ef743c52e/download/srilanka.zip",
       "access_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184"
     },
@@ -55,8 +53,7 @@
       "id": "resource_002",
       "title": "Disaster tabular data for Sri Lanka",
       "description": "Disaster tabular data for Sri Lanka",
-      "data_format": "Excel (xlsx)",
-      "access_modality": "file_download",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,Excel (xlsx)",
       "download_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184/resource/4cb4bd14-e5ba-4443-af23-948bfb05f479/download/di_report-srilanka.xls",
       "access_url": "https://data.humdata.org/dataset/08c9ca36-8b95-4361-abf1-ce21bfc49184"
     }
