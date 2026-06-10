@@ -698,7 +698,7 @@
     <script>
         // RDLS Schema Configuration
         const RDLS_VERSIONS = {
-            '1.0': 'rdls_schema_v1.json'
+            '1.0': 'https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json'
         };
 
         const SECTIONS = ['hazard', 'exposure', 'vulnerability', 'loss'];
@@ -1055,9 +1055,11 @@
             'intensity_measure': 'type', // For inline/modal hazard objects
             'process': 'type', // For inline/modal hazard objects
 
-            // v1.0: Measurement object - unit field depends on quantity_kind
+            // v1.0: Measurement object - unit and valuation_year fields depend on quantity_kind
             'unit': 'quantity_kind',
-            'measurement.unit': 'measurement.quantity_kind'
+            'measurement.unit': 'measurement.quantity_kind',
+            'valuation_year': 'quantity_kind',
+            'measurement.valuation_year': 'measurement.quantity_kind'
         };
 
         // Auto-completion suggestions for common fields
@@ -1983,11 +1985,12 @@
                             const suggestionCode = typeof suggestion === 'object' ? suggestion.code : suggestion;
                             const suggestionTitle = typeof suggestion === 'object' ? suggestion.title : suggestion;
 
-                            // Display format: "[Code] Title" only for currency unit fields
+                            // Display format: "[Code] Title (valid until YYYY-MM)" for currency unit fields
+                            const validUntilSuffix = (typeof suggestion === 'object' && suggestion.validUntil) ? ` (valid until ${suggestion.validUntil})` : '';
                             if (showCodeInDropdown && typeof suggestion === 'object' && suggestion.code && suggestion.title && suggestion.code !== suggestion.title) {
-                                link.textContent = `[${suggestionCode}] ${suggestionTitle}`;
+                                link.textContent = `[${suggestionCode}] ${suggestionTitle}${validUntilSuffix}`;
                             } else {
-                                link.textContent = suggestionTitle;
+                                link.textContent = suggestionTitle + validUntilSuffix;
                             }
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
@@ -3103,6 +3106,15 @@
                         // Use resolvedProp to ensure nested properties get full schema with allOf expanded
                         const field = subContext.createField(`${name}.${key}`, resolvedProp || prop, fieldValue, options);
                         console.log(`[CREATE OBJECT]   Appending field to container, field tagName: ${field.tagName}, className: ${field.className}`);
+
+                        // valuation_year is only applicable when quantity_kind = 'currency'
+                        if (key === 'valuation_year') {
+                            const currentQuantityKind = value && value['quantity_kind'];
+                            if (currentQuantityKind !== 'currency') {
+                                field.style.display = 'none';
+                            }
+                        }
+
                         contentContainer.appendChild(field);
                     });
                 }
@@ -3672,6 +3684,17 @@
                                         dependentField.dispatchEvent(new Event('input', { bubbles: true }));
                                         dependentField.dispatchEvent(new Event('change', { bubbles: true }));
                                         this.reloadComboboxCodelist(dependentField, fullDependentFieldName, newValue);
+                                    } else if (dependentFieldName.includes('valuation_year')) {
+                                        const fieldWrapper = dependentField.closest('.form-field, .modal-form-field');
+                                        if (fieldWrapper) {
+                                            if (newValue === 'currency') {
+                                                fieldWrapper.style.display = '';
+                                            } else {
+                                                fieldWrapper.style.display = 'none';
+                                                dependentField.value = '';
+                                                dependentField.dispatchEvent(new Event('input', { bubbles: true }));
+                                            }
+                                        }
                                     }
                                 }
                             } else {
@@ -3713,6 +3736,17 @@
                                         dependentField.dispatchEvent(new Event('input', { bubbles: true }));
                                         dependentField.dispatchEvent(new Event('change', { bubbles: true }));
                                         this.reloadComboboxCodelist(dependentField, fullDependentFieldName, newValue);
+                                    } else if (dependentFieldName.includes('valuation_year')) {
+                                        const fieldWrapper = dependentField.closest('.form-field, .modal-form-field');
+                                        if (fieldWrapper) {
+                                            if (newValue === 'currency') {
+                                                fieldWrapper.style.display = '';
+                                            } else {
+                                                fieldWrapper.style.display = 'none';
+                                                dependentField.value = '';
+                                                dependentField.dispatchEvent(new Event('input', { bubbles: true }));
+                                            }
+                                        }
                                     }
                                 } else {
                                     console.error(`[DEPENDENCY] Fallback: Failed to find dependent field with ID "${dependentFieldId}"`);
@@ -3772,6 +3806,17 @@
                                     this.reloadComboboxCodelist(dependentField, fullDependentFieldName, newValue);
                                 } else {
                                     console.log(`[DEPENDENCY] Unit field doesn't have combobox structure, skipping reload`);
+                                }
+                            } else if (dependentFieldName.includes('valuation_year')) {
+                                const fieldWrapper = dependentField.closest('.form-field, .modal-form-field');
+                                if (fieldWrapper) {
+                                    if (newValue === 'currency') {
+                                        fieldWrapper.style.display = '';
+                                    } else {
+                                        fieldWrapper.style.display = 'none';
+                                        dependentField.value = '';
+                                        dependentField.dispatchEvent(new Event('input', { bubbles: true }));
+                                    }
                                 }
                             }
                         }
@@ -4163,11 +4208,12 @@
                             const suggestionCode = typeof suggestion === 'object' ? suggestion.code : suggestion;
                             const suggestionTitle = typeof suggestion === 'object' ? suggestion.title : suggestion;
 
-                            // Display format: "[Code] Title" only for currency unit fields
+                            // Display format: "[Code] Title (valid until YYYY-MM)" for currency unit fields
+                            const validUntilSuffix = (typeof suggestion === 'object' && suggestion.validUntil) ? ` (valid until ${suggestion.validUntil})` : '';
                             if (showCodeInDropdown && typeof suggestion === 'object' && suggestion.code && suggestion.title && suggestion.code !== suggestion.title) {
-                                link.textContent = `[${suggestionCode}] ${suggestionTitle}`;
+                                link.textContent = `[${suggestionCode}] ${suggestionTitle}${validUntilSuffix}`;
                             } else {
-                                link.textContent = suggestionTitle;
+                                link.textContent = suggestionTitle + validUntilSuffix;
                             }
                             link.addEventListener('click', (e) => {
                                 e.preventDefault();
@@ -4210,7 +4256,7 @@
             }
 
             static get baseUrl() {
-                return 'https://docs.riskdatalibrary.org/en/1.0-dev/codelists/open/';
+                return 'https://docs.riskdatalibrary.org/en/latest/codelists/open/';
             }
 
             /**
@@ -4222,11 +4268,12 @@
                 const lines = csvText.trim().split('\n');
                 if (lines.length === 0) return [];
 
-                // Parse header to find 'Code', 'Title', and 'Category' columns (case-insensitive)
+                // Parse header to find 'Code', 'Title', 'Category', and 'Valid Until' columns (case-insensitive)
                 const header = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
                 const codeIndex = header.findIndex(h => h.toLowerCase() === 'code');
                 const titleIndex = header.findIndex(h => h.toLowerCase() === 'title');
                 const categoryIndex = header.findIndex(h => h.toLowerCase() === 'category');
+                const validUntilIndex = header.findIndex(h => h.toLowerCase() === 'valid until');
 
                 if (codeIndex === -1) {
                     console.warn('CSV does not have a "Code" column, using first column');
@@ -4263,10 +4310,14 @@
                         const code = cells[codeIndex] || null;
                         const title = titleIndex !== -1 ? cells[titleIndex] : code;
                         const category = categoryIndex !== -1 ? cells[categoryIndex] : null;
+                        const validUntil = validUntilIndex !== -1 ? cells[validUntilIndex] : null;
 
                         const item = { code, title: title || code };
                         if (category) {
                             item.category = category;
+                        }
+                        if (validUntil) {
+                            item.validUntil = validUntil;
                         }
                         return code ? item : null;
                     })
@@ -4292,7 +4343,7 @@
                     const isClosed = closedCodelists.includes(codelistName);
 
                     // Build URL: use closed/ directory for closed codelists, open/ for others
-                    const baseUrlPath = 'https://docs.riskdatalibrary.org/en/1.0-dev/codelists/';
+                    const baseUrlPath = 'https://docs.riskdatalibrary.org/en/latest/codelists/';
                     const subdirectory = isClosed ? 'closed/' : 'open/';
                     const url = baseUrlPath + subdirectory + codelistName;
 
@@ -5202,16 +5253,19 @@
                 if (!currentSchema.hazard_process_mappings) {
                     currentSchema.hazard_process_mappings = {
                         "drought": ["agricultural_drought", "hydrological_drought", "meteorological_drought", "socioeconomic_drought"],
-                        "flood": ["fluvial_flood", "pluvial_flood", "groundwater_flood", "coastal_flood"],
-                        "earthquake": ["primary_rupture", "secondary_rupture", "ground_motion", "liquefaction"],
+                        "flood": ["fluvial_flood", "pluvial_flood", "groundwater_flood", "coastal_flood", "glacial_lake_outburst"],
+                        "earthquake": ["rupture", "ground_motion", "liquefaction", "subsidence_uplift"],
                         "extreme_temperature": ["extreme_cold", "extreme_heat"],
-                        "strong_wind": ["extratropical_cyclone", "tropical_cyclone", "tornado"],
-                        "wildfire": ["wildfire"],
+                        "strong_wind": ["extratropical_cyclone", "tropical_cyclone", "tornado", "storm_surge"],
+                        "wildfire": ["wildfire", "wildfire_smoke"],
                         "landslide": ["snow_avalanche", "landslide_general", "landslide_rockslide", "landslide_mudflow", "landslide_rockfall"],
                         "tsunami": ["tsunami"],
-                        "volcanic": ["ashfall", "volcano_ballistics", "lahar", "lava", "pyroclastic_flow"],
-                        "coastal_flood": ["coastal_flood", "storm_surge"],
-                        "convective_storm": ["tornado"]
+                        "volcanic": ["ashfall", "volcano_ballistics", "lahar", "lava", "pyroclastic_flow", "volcano_gas_aerosols"],
+                        "convective_storm": ["tornado", "lightning", "thunderstorm", "hail"],
+                        "dust_sand_storm": ["dust_sand_storm"],
+                        "erosion": ["coastal_erosion", "soil_erosion"],
+                        "sea_level_rise": ["sea_level_rise"],
+                        "pest_infestation": ["pest"],
                     };
                 }
 
@@ -5727,20 +5781,20 @@
                     // Example links for each component
                     const exampleLinks = {
                         'hazard': `<br><br><strong>Examples:</strong><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/hazard/flood_inundation/" target="_blank" rel="noopener noreferrer">• Flood hazard maps</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/hazard/tropical_cyclone/" target="_blank" rel="noopener noreferrer">• Probabilistic tropical cyclone model</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/hazard/earthquake_catalog/" target="_blank" rel="noopener noreferrer">• Historical earthquake catalog</a>`,
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/hazard/flood_inundation/" target="_blank" rel="noopener noreferrer">• Flood hazard maps</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/hazard/tropical_cyclone/" target="_blank" rel="noopener noreferrer">• Probabilistic tropical cyclone model</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/hazard/earthquake_catalog/" target="_blank" rel="noopener noreferrer">• Historical earthquake catalog</a>`,
                         'exposure': `<br><br><strong>Examples:</strong><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/exposure/building_inventory/" target="_blank" rel="noopener noreferrer">• Building inventory database</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/exposure/population_admin/" target="_blank" rel="noopener noreferrer">• Population dataset by administrative boundaries</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/exposure/service_accessibility/" target="_blank" rel="noopener noreferrer">• Service accessibility analysis over road networks</a>`,
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/exposure/building_inventory/" target="_blank" rel="noopener noreferrer">• Building inventory database</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/exposure/population_admin/" target="_blank" rel="noopener noreferrer">• Population dataset by administrative boundaries</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/exposure/service_accessibility/" target="_blank" rel="noopener noreferrer">• Service accessibility analysis over road networks</a>`,
                         'vulnerability': `<br><br><strong>Examples:</strong><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/vulnerability/flood_damage_curves/" target="_blank" rel="noopener noreferrer">• Flood depth-damage functions</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/vulnerability/earthquake_fragility/" target="_blank" rel="noopener noreferrer">• Earthquake fragility curves for building structures</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/vulnerability/wealth_index/" target="_blank" rel="noopener noreferrer">• Relative wealth index</a>`,
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/vulnerability/flood_damage_curves/" target="_blank" rel="noopener noreferrer">• Flood depth-damage functions</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/vulnerability/earthquake_fragility/" target="_blank" rel="noopener noreferrer">• Earthquake fragility curves for building structures</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/vulnerability/wealth_index/" target="_blank" rel="noopener noreferrer">• Relative wealth index</a>`,
                         'loss': `<br><br><strong>Examples:</strong><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/loss/flood_risk/" target="_blank" rel="noopener noreferrer">• Flood risk model</a><br>
-                            <a href="https://docs.riskdatalibrary.org/en/mde_examples/guides/metadata/worked_examples/loss/earthquake_loss/" target="_blank" rel="noopener noreferrer">• Earthquake loss database</a>`
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/loss/flood_risk/" target="_blank" rel="noopener noreferrer">• Flood risk model</a><br>
+                            <a href="https://docs.riskdatalibrary.org/en/latest/guides/metadata/worked_examples/loss/earthquake_loss/" target="_blank" rel="noopener noreferrer">• Earthquake loss database</a>`
                     };
 
                     // Combine schema description with extended description and examples
@@ -6195,6 +6249,21 @@
                             }
                         }, 100);
                     }
+
+                    // Add valuation_year field after currency unit
+                    const valuationYearProperty = {
+                        "title": "Valuation year",
+                        "type": "string",
+                        "description": "The year of the monetary valuation (YYYY).",
+                        "pattern": "^[0-9]{4}$"
+                    };
+                    const savedValuationYear = objectData['valuation_year'];
+                    const valuationYearElement = modalContext.createField('valuation_year', valuationYearProperty, savedValuationYear);
+                    // Hide unless quantity_kind is already 'currency'
+                    if (objectData['quantity_kind'] !== 'currency') {
+                        valuationYearElement.style.display = 'none';
+                    }
+                    fieldsContainer.appendChild(valuationYearElement);
 
                     // Currency field will be handled by the unified dependency system
                 }
