@@ -806,7 +806,14 @@
             "RCP2.6",
             "RCP4.5",
             "RCP6.0",
-            "RCP8.5"
+            "RCP8.5",
+            "CMIP7-H",
+            "CMIP7-HL",
+            "CMIP7-M",
+            "CMIP7-ML",
+            "CMIP7-L",
+            "CMIP7-LN",
+            "CMIP7-VL"
           ]
         },
         "percentile": {
@@ -1419,7 +1426,6 @@
           "codelist": "hazard_type.csv",
           "openCodelist": false,
           "enum": [
-            "coastal_flood",
             "convective_storm",
             "drought",
             "extreme_temperature",
@@ -1443,8 +1449,6 @@
           "codelist": "process_type.csv",
           "openCodelist": false,
           "enum": [
-            "coastal_flood",
-            "storm_surge",
             "tornado",
             "agricultural_drought",
             "hydrological_drought",
@@ -1457,6 +1461,7 @@
             "extreme_heat",
             "fluvial_flood",
             "pluvial_flood",
+            "coastal_flood",
             "groundwater_flood",
             "snow_avalanche",
             "landslide_general",
@@ -1473,6 +1478,7 @@
             "wildfire",
             "extratropical_cyclone",
             "tropical_cyclone",
+            "storm_surge",
             "wildfire_smoke",
             "coastal_erosion",
             "soil_erosion",
@@ -1738,6 +1744,12 @@
           "type": "string",
           "description": "The unit by which it is measured, taken from the unit [codelist](https://docs.riskdatalibrary.org/en/{{version}}/reference/codelists) for the quantity kind.",
           "minLength": 1
+        },
+        "valuation_year": {
+          "title": "Valuation year",
+          "type": "string",
+          "description": "The year of the monetary valuation, expressed as a 4-digit year (YYYY). Applicable when quantity_kind is 'currency'.",
+          "pattern": "^[0-9]{4}$"
         }
       },
       "minProperties": 1,
@@ -2424,6 +2436,7 @@
       "codelist": "unit_currency.csv",
       "openCodelist": false,
       "enum": [
+        "INT",
         "ADP",
         "AED",
         "AFA",
