@@ -1935,10 +1935,6 @@
             "properties": {
               "unit": {
                 "$ref": "#/$defs/codelist_unit_currency"
-              },
-              "valuation_year": {
-                "type": "string",
-                "pattern": "^[0-9]{4}$"
               }
             }
           }
