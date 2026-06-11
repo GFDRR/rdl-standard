@@ -1426,15 +1426,22 @@
                 const dependsOn = FIELD_DEPENDENCIES[name];
                 console.log(`[CREATE STRING]   checking FIELD_DEPENDENCIES['${name}']:`, dependsOn);
                 if (dependsOn) {
-                    console.log(`[CREATE STRING]   has dependency on: ${dependsOn}, creating dependent select`);
-                    // For inline context, get parent value from itemData; otherwise from currentFormData
-                    let parentValue;
-                    if (this.context.type === 'inline' && this.context.itemData) {
-                        parentValue = this.context.itemData[dependsOn];
-                    } else {
-                        parentValue = getNestedValue(currentFormData, dependsOn);
+                    // Only create a dependent select if the field actually has options to populate.
+                    // Some fields (e.g. valuation_year) are in FIELD_DEPENDENCIES only for show/hide
+                    // logic and have no enum/codelist — they should fall through to a regular input.
+                    const hasSelectableOptions = !!(getEnumValues(property, currentSchema) || property.codelist || property.suggestions);
+                    if (hasSelectableOptions) {
+                        console.log(`[CREATE STRING]   has dependency on: ${dependsOn}, creating dependent select`);
+                        // For inline context, get parent value from itemData; otherwise from currentFormData
+                        let parentValue;
+                        if (this.context.type === 'inline' && this.context.itemData) {
+                            parentValue = this.context.itemData[dependsOn];
+                        } else {
+                            parentValue = getNestedValue(currentFormData, dependsOn);
+                        }
+                        return this.createDependentSelect(name, property, value, dependsOn, parentValue, options);
                     }
-                    return this.createDependentSelect(name, property, value, dependsOn, parentValue, options);
+                    console.log(`[CREATE STRING]   dependency is show/hide only (no options), falling through to regular input`);
                 }
 
                 // Check for enum (handles both direct enum and $ref)
@@ -1474,11 +1481,23 @@
                     input.id = this.context.getFieldId(name);
                 }
                 input.value = value || '';
-                
+
                 if (property.minLength) input.minLength = property.minLength;
                 if (property.maxLength) input.maxLength = property.maxLength;
-                if (property.pattern) input.pattern = property.pattern;
-                
+                if (property.pattern) {
+                    input.pattern = property.pattern;
+                    // For digit-only fixed-length patterns like ^[0-9]{4}$, enforce in real time
+                    const digitsOnlyMatch = property.pattern.match(/^\^\[0-9\]\{(\d+)\}\$$/);
+                    if (digitsOnlyMatch) {
+                        const exactLength = parseInt(digitsOnlyMatch[1], 10);
+                        input.maxLength = exactLength;
+                        input.inputMode = 'numeric';
+                        input.addEventListener('input', () => {
+                            input.value = input.value.replace(/[^0-9]/g, '').slice(0, exactLength);
+                        });
+                    }
+                }
+
                 this.context.setupEventListeners(input, name, property, options);
                 wrapper.appendChild(input);
                 
