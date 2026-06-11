@@ -467,7 +467,7 @@
                         </div>
 
                         <!-- Custom Schema Upload -->
-                        <!-- Comment out custom upload for public release
+                        <!-- Comment out for public release 
                         <div class="mb-3">
                             <label class="form-label">Custom Schema:</label>
                             <div class="file-drop-zone" id="schemaDropZone">
@@ -5063,14 +5063,14 @@
                 });
             });
 
-            // File upload
-            document.getElementById('schemaDropZone').addEventListener('click', () => 
-                document.getElementById('schemaFile').click()
-            );
-            document.getElementById('schemaFile').addEventListener('change', handleSchemaFile);
-            
-            // Drag and drop
-            setupDragAndDrop();
+            // File upload (custom schema UI may be hidden for public release)
+            const schemaDropZone = document.getElementById('schemaDropZone');
+            const schemaFileInput = document.getElementById('schemaFile');
+            if (schemaDropZone && schemaFileInput) {
+                schemaDropZone.addEventListener('click', () => schemaFileInput.click());
+                schemaFileInput.addEventListener('change', handleSchemaFile);
+                setupDragAndDrop();
+            }
 
             // Buttons
             document.getElementById('exportJson').addEventListener('click', exportJson);
@@ -5393,6 +5393,7 @@
 
         function setupDragAndDrop() {
             const dropZone = document.getElementById('schemaDropZone');
+            if (!dropZone) return;
             dropZone.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 dropZone.classList.add('dragover');
