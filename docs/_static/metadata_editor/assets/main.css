@@ -1,0 +1,372 @@
+        .section-checkbox {
+            margin-bottom: 0.5rem;
+        }
+        .tab-content {
+            min-height: 400px;
+        }
+        .nav-tabs .nav-link {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        .nav-tabs .nav-link.hazard-tab {
+            background-color: #e6f3ff;
+            border-color: #007fc3;
+            color: #007fc3;
+        }
+        .nav-tabs .nav-link.hazard-tab.active {
+            background-color: #007fc3;
+            border-color: #007fc3;
+            color: white;
+        }
+        .nav-tabs .nav-link.exposure-tab {
+            background-color: #e6fffe;
+            border-color: #00cbab;
+            color: #00cbab;
+        }
+        .nav-tabs .nav-link.exposure-tab.active {
+            background-color: #00cbab;
+            border-color: #00cbab;
+            color: white;
+        }
+        .nav-tabs .nav-link.vulnerability-tab {
+            background-color: #fff9e6;
+            border-color: #ffc757;
+            color: #b8941f;
+        }
+        .nav-tabs .nav-link.vulnerability-tab.active {
+            background-color: #ffc757;
+            border-color: #ffc757;
+            color: white;
+        }
+        .nav-tabs .nav-link.loss-tab {
+            background-color: #ffe6ec;
+            border-color: #f3436a;
+            color: #f3436a;
+        }
+        .nav-tabs .nav-link.loss-tab.active {
+            background-color: #f3436a;
+            border-color: #f3436a;
+            color: white;
+        }
+        .nav-tabs .nav-link.general-tab {
+            background-color: #f8f9fa;
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+        .nav-tabs .nav-link.general-tab.active {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            color: white;
+        }
+        .form-field { 
+            margin-bottom: 1rem; 
+            position: relative;
+        }
+        .validation-indicator {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            z-index: 10;
+            font-size: 1.2rem;
+        }
+        .validation-indicator.valid {
+            color: #28a745;
+        }
+        .validation-indicator.invalid {
+            color: #dc3545;
+        }
+        .field-with-validation {
+            padding-right: 35px;
+        }
+        .autocomplete-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 0.375rem 0.375rem;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+        }
+        .autocomplete-suggestion {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        .autocomplete-suggestion:hover {
+            background-color: #f8f9fa;
+        }
+        .combobox-wrapper {
+            position: relative;
+        }
+        .combobox-wrapper .dropdown-toggle {
+            border-left: none;
+            padding: 0.375rem 0.5rem;
+        }
+        .combobox-wrapper .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .combobox-wrapper .btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .array-field { 
+            border: 1px solid #dee2e6; 
+            padding: 1rem; 
+            border-radius: 0.375rem; 
+            margin-bottom: 1rem; 
+            background-color: #fafafa;
+        }
+        .array-item { 
+            background-color: #f8f9fa; 
+            padding: 0.5rem; 
+            margin: 0.5rem 0; 
+            border-radius: 0.25rem; 
+            border: 1px solid #e9ecef;
+        }
+        .object-field { 
+            border: 1px solid #e9ecef; 
+            padding: 1rem; 
+            border-radius: 0.375rem; 
+            margin-bottom: 1rem; 
+            background-color: #fbfcfd; 
+        }
+        .required { 
+            border-left: 3px solid #dc3545; 
+            padding-left: 0.5rem;
+        }
+        .schema-status {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        .file-drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .file-drop-zone:hover { border-color: #007bff; }
+        .file-drop-zone.dragover { border-color: #28a745; background-color: #f8f9fa; }
+        .validation-progress {
+            margin-bottom: 1rem;
+        }
+        .object-summary-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .object-summary-title {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+        .object-summary-details {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .object-modal {
+            max-width: 800px;
+        }
+        .modal-form-field {
+            margin-bottom: 1rem;
+        }
+        .field-hint {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+        .bbox-field {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .bbox-field input {
+            font-size: 0.9rem;
+        }
+        .bbox-preview {
+            background-color: #f8f9fa !important;
+            font-family: 'Courier New', monospace !important;
+            color: #495057;
+            border: 1px solid #ced4da;
+        }
+
+        /* Inline array editing styles */
+        .array-field .card {
+            border-left: 4px solid #0d6efd;
+            margin-bottom: 0.75rem;
+        }
+
+        .array-field .card .card-body {
+            background-color: #f8f9ff;
+        }
+
+        .array-field .modal-form-field {
+            margin-bottom: 0.75rem;
+        }
+
+        .array-field .card:hover {
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+
+        /* Special styling for nested classification arrays like disaster_identifiers */
+        .array-field[data-array-name*="disaster_identifiers"] .card {
+            border-left-color: #6f42c1; /* Purple to distinguish from regular arrays */
+        }
+
+        .array-field[data-array-name*="disaster_identifiers"] .card .card-body {
+            background-color: #f8f5ff; /* Light purple background */
+        }
+
+        /* Footer Styles */
+        .modern-footer {
+            background-color: #1a1f36;
+            color: #ecf0f1;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-branding h5 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            margin: 1rem 0;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-branding p {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .footer-sponsors {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-sponsor-label {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-sponsor-logos {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .footer-sponsor-logos img {
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-sponsor-logos img:first-child {
+            height: 45px;
+        }
+
+        .footer-sponsor-logos img:last-child {
+            height: 20px;
+        }
+
+        .footer-section h5 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Header navigation links styling */
+        header nav .nav-link {
+            color: #495057;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        header nav .nav-link:hover {
+            background-color: #1a1f36;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(33, 37, 41, 0.3);
+        }
+
+        header nav .nav-link b {
+            font-weight: 600;
+        }
+
+        /* Component description example links styling */
+        .form-text a {
+            text-decoration: none;
+        }
+
+        .form-text a:hover {
+            text-decoration: underline;
+        }
+

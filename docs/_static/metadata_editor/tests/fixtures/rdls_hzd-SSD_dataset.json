@@ -1,0 +1,165 @@
+{
+  "id": "rdls_hzd-SSD_dataset",
+  "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
+  "description": "This map illustrates cumulative satellite-detected water using VIIRS in South Sudan between 13 to 17 August 2025, compared with the period from 25 to 29 April 2025. Within the cloud-free analysed areas of about 620,000 km², a total of about 26,000 km² of land appears to be affected by flood waters. Water extent appears to have increased of about 15,000 km² since the period between 25 to 29 April 2025 within the cloud-free analysed areas. Based on Worldpop population data and the maximal flood water extent ~416,000 people are potentially exposed or living close to flooded areas. This is a preliminary analysis and has not yet been validated in the field. Please send ground feedback to the United Nations Satellite Centre (UNOSAT).",
+  "risk_data_type": [
+    "hazard"
+  ],
+  "publisher": {
+    "name": "UNOSAT",
+    "email": "emergencymapping@unosat.org",
+    "url": "https://unosat.org/"
+  },
+  "contact_point": {
+    "name": "UNOSAT",
+    "email": "emergencymapping@unosat.org",
+    "url": "https://unosat.org/"
+  },
+  "creator": {
+    "name": "UNOSAT",
+    "email": "emergencymapping@unosat.org",
+    "url": "https://unosat.org/"
+  },
+  "spatial": {
+    "scale": "national",
+    "countries": [
+      "SSD"
+    ]
+  },
+  "spatial_resolution": 375,
+  "temporal": {
+    "start": "2025-08-13",
+    "end": "2025-08-17",
+    "duration": "P5D"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "referenced_by": [
+    {
+      "name": "UNOSAT",
+      "date_published": "2025-08-20",
+      "url": "https://unosat.org/products/4174",
+      "id": "reference_h1CBlqBs"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
+      "description": "Pdf report",
+      "download_url": "https://unosat.org/static/unosat_filesystem/4174/UNOSAT_A3_Natural_Landscape_FL20250110SSD_13Aug_17Aug2025_SouthSudan_Week38.pdf",
+      "media_type": "application/pdf",
+      "spatial": {
+        "scale": "national",
+        "countries": [
+          "SSD"
+        ]
+      },
+      "id": "resource_BKFdFrar"
+    },
+    {
+      "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
+      "description": "Map data as geodatabase",
+      "download_url": "https://unosat.org/static/unosat_filesystem/4174/FL20220424SSD_gdb.zip",
+      "media_type": "application/x-filegdb",
+      "spatial": {
+        "scale": "national",
+        "countries": [
+          "SSD"
+        ]
+      },
+      "id": "resource_w6NBAvrk"
+    },
+    {
+      "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
+      "description": "Map data as shapefile.",
+      "download_url": "https://unosat.org/static/unosat_filesystem/4174/FL20220424SSD_SHP.zip",
+      "media_type": "application/vnd.shp",
+      "spatial": {
+        "scale": "national",
+        "countries": [
+          "SSD"
+        ]
+      },
+      "id": "resource_rFavBRsN"
+    },
+    {
+      "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
+      "description": "Tabular data as excel file.",
+      "download_url": "https://unosat.org/static//unosat_filesystem/4174/UNOSAT_Population_Exposure_FL20250110SSD_13Aug_17Aug2025_SouthSudan_Week38.xlsx",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,Excel (xlsx)",
+      "spatial": {
+        "scale": "national",
+        "countries": [
+          "SSD"
+        ]
+      },
+      "id": "resource_LnChc3yl"
+    },
+    {
+      "title": "Satellite detected water extents between 13 and 17 August 2025 over South Sudan",
+      "description": "Interactive geodashboard.",
+      "access_url": "https://unosat.maps.arcgis.com/apps/dashboards/b3c40fc3e6ec46668b26019db0b11f7c",
+      "media_type": "text/html",
+      "spatial": {
+        "scale": "national",
+        "countries": [
+          "SSD"
+        ]
+      },
+      "id": "resource_qO1qZSIY"
+    }
+  ],
+  "hazard": {
+    "event_sets": [
+      {
+        "hazards": [
+          {
+            "id": "hazard_cRcsPC3N",
+            "classification": {
+              "id": "item_3xOTuoMe"
+            },
+            "type": "flood",
+            "process": "fluvial_flood",
+            "intensity_measure": "affected_area:km2"
+          }
+        ],
+        "events": [
+          {
+            "id": "event_0OVTePH3",
+            "calculation_method": "inferred",
+            "hazard": {
+              "id": "hazard_cRcsPC3N",
+              "type": "flood",
+              "process": "fluvial_flood",
+              "intensity_measure": "affected_area:km2"
+            },
+            "occurrence": {
+              "empirical": {
+                "temporal": {
+                  "start": "2025-08-13",
+                  "end": "2025-08-17",
+                  "duration": "P5D"
+                }
+              }
+            }
+          }
+        ],
+        "disaster_identifiers": [
+          {
+            "id": "item_OyKerPgs",
+            "uri": "FL20250110SSD",
+            "scheme": "GLIDE"
+          }
+        ],
+        "analysis_type": "empirical",
+        "calculation_method": "inferred",
+        "id": "event_set_n2b2nKAw"
+      }
+    ]
+  },
+  "links": [
+    {
+      "href": "https://docs.riskdatalibrary.org/en/1__0__0/rdls_schema.json",
+      "rel": "describedby"
+    }
+  ]
+}
