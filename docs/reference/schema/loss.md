@@ -41,7 +41,7 @@ Loss datasets can be explicitly linked to the exposure, hazard, and vulnerabilit
 ---
 open:
 ---
-The following example shows RDLS metadata for the [Tomorrow's Cities Flood Risk Assessment Dataset for Nairobi, Kenya](https://catalog.riskdatalibrary.org/datasets/rdls_hevl-kentmrwcities_nairobi/) in JSON format.
+The following example shows RDLS metadata for the [Tomorrow's Cities Flood Risk Assessment Dataset for Nairobi, Kenya](https://catalog.riskdatalibrary.org/datasets/rdls_hevl-ken_tmrwcities_nairobi/) in JSON format.
 
 `````{tab-set}
 
@@ -90,7 +90,7 @@ The following example shows RDLS metadata for [Global multi-hazard average annua
 
 ``````{dropdown} Example: DesInventar Disaster Loss and Damage Dataset for Sri Lanka
 
-The following example shows RDLS metadata for the [DesInventar Disaster Loss and Damage Dataset for Sri Lanka](https://catalog.riskdatalibrary.org/datasets/rdls_lss-lkaundrr_desinventar/) in JSON format.
+The following example shows RDLS metadata for the [DesInventar Disaster Loss and Damage Dataset for Sri Lanka](https://catalog.riskdatalibrary.org/datasets/rdls_lss-lka_undrr_desinventar/) in JSON format.
 
 `````{tab-set}
 
