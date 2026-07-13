@@ -48,7 +48,7 @@ The exposure component uses exposure categories consistent with the vulnerabilit
 ---
 open:
 ---
-The following example shows RDLS metadata for the [GHSL Population map](https://catalog.riskdatalibrary.org/datasets/rdls_exp-jrc_glb_population/) in JSON format.
+The following example shows RDLS metadata for the [GHSL Population map](https://catalog.riskdatalibrary.org/datasets/rdls_exp-jrc_ghspopulationgridmultitem/) in JSON format.
 
 `````{tab-set}
 
@@ -71,7 +71,7 @@ The following example shows RDLS metadata for the [GHSL Population map](https://
 
 ``````{dropdown} Example: World Settlement Footprint Evolution
 
-The following example shows RDLS metadata for the [World Settlement Footprint Evolution](https://catalog.riskdatalibrary.org/datasets/rdls_exp-dlr_glb_wsfevo/) in JSON format.
+The following example shows RDLS metadata for the [World Settlement Footprint Evolution](https://catalog.riskdatalibrary.org/datasets/rdls_exp-crstac_worldsettlementfootprintwsf_wsfevolution/) in JSON format.
 
 `````{tab-set}
 
