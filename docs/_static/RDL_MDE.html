@@ -6750,7 +6750,7 @@
                     });
 
                         // Update the object data with the current array state
-                        objectData[fieldName] = arrayData;
+                        setNestedValue(objectData, fieldName, arrayData);
                     } else if (simpleItems.length > 0) {
                         // Simple array (strings, numbers, etc.)
                         const arrayData = [];
@@ -6763,7 +6763,7 @@
                                 }
                             }
                         });
-                        objectData[fieldName] = arrayData;
+                        setNestedValue(objectData, fieldName, arrayData);
                     }
                 }
             });
@@ -7667,6 +7667,8 @@
                     } else if (hasFunctions) {
                         // Function-based approach: validate required vulnerability attributes
                         const requiredVulnerabilityAttributes = [
+                            { field: 'approach', name: 'approach' },
+                            { field: 'relationship', name: 'impact relationship type' },
                             { field: 'hazard_primary', name: 'primary hazard type' },
                             { field: 'hazard_primary.intensity_measure', name: 'hazard intensity measurement' },
                             { field: 'category', name: 'exposure category' },
