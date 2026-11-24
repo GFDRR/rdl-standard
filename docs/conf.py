@@ -73,6 +73,11 @@ linkcheck_ignore = [
     r'^https://gpss\.worldbank\.org/index\.php/en/node/571$'
 ]
 
+# GitHub project pages return 400 unless the request accepts HTML
+linkcheck_request_headers = {
+    'https://github.com/': {'Accept': 'text/html'},
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
