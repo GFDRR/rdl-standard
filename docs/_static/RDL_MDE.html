@@ -7567,10 +7567,10 @@
                         { field: 'hazard.type', name: 'hazard type' },
                         { field: 'asset_category', name: 'asset category' },
                         { field: 'asset_dimension', name: 'asset dimension' },
-                        { field: 'impact_and_losses.impact_type', name: 'impact type' },
-                        { field: 'impact_and_losses.impact_modelling', name: 'impact modelling' },
-                        { field: 'impact_and_losses.impact_metric', name: 'impact metric' },
-                        { field: 'impact_and_losses.measurement.quantity_kind', name: 'quantity kind' },
+                        { field: 'impact_and_losses.impact.type', name: 'impact type' },
+                        { field: 'impact_and_losses.impact.modelling', name: 'impact modelling' },
+                        { field: 'impact_and_losses.impact.metric', name: 'impact metric' },
+                        { field: 'impact_and_losses.impact.measurement.quantity_kind', name: 'quantity kind' },
                         { field: 'impact_and_losses.loss_type', name: 'loss type' },
                         { field: 'impact_and_losses.loss_approach', name: 'loss approach' },
                         { field: 'impact_and_losses.loss_frequency_type', name: 'loss frequency type' }
@@ -7583,7 +7583,7 @@
 
                         // Check each required attribute
                         for (const attr of requiredLossAttributes) {
-                            // Handle nested field paths (e.g., 'impact_and_losses.impact_type', 'impact_and_losses.measurement.quantity_kind')
+                            // Handle nested field paths (e.g., 'impact_and_losses.impact.type', 'impact_and_losses.impact.measurement.quantity_kind')
                             let fieldValue;
                             if (attr.field.includes('.')) {
                                 const parts = attr.field.split('.');
