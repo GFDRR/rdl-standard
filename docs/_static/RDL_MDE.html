@@ -7055,6 +7055,22 @@
             return value;
         }
 
+        /**
+         * Merge a value read from the form into the stored one. Arrays of objects
+         * (e.g. lineage.sources) have no named inputs, so they are missing from what
+         * is read: objects are merged key by key to keep them, and the array fields
+         * keep their reference to the stored array.
+         */
+        function mergeFormValue(existing, incoming) {
+            const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+            if (Array.isArray(existing) && isObject(incoming)) return existing;
+            if (!isObject(existing) || !isObject(incoming)) return incoming;
+            Object.keys(incoming).forEach(key => {
+                existing[key] = mergeFormValue(existing[key], incoming[key]);
+            });
+            return existing;
+        }
+
         function updateFormData() {
             const allForms = document.querySelectorAll('#metadataTabContent form');
             const newFormData = {};
@@ -7129,7 +7145,7 @@
                         // Merge spatial properties but preserve the countries array
                         Object.keys(newFormData[key] || {}).forEach(spatialKey => {
                             if (spatialKey !== 'countries') {
-                                currentFormData[key][spatialKey] = newFormData[key][spatialKey];
+                                currentFormData[key][spatialKey] = mergeFormValue(currentFormData[key][spatialKey], newFormData[key][spatialKey]);
                             }
                         });
                         // Remove stale flat coord keys that should only exist as arrays
@@ -7138,10 +7154,10 @@
                         });
                         // Keep the countries array from preservation above
                     } else {
-                        currentFormData[key] = newFormData[key];
+                        currentFormData[key] = mergeFormValue(currentFormData[key], newFormData[key]);
                     }
                 } else {
-                    currentFormData[key] = newFormData[key];
+                    currentFormData[key] = mergeFormValue(currentFormData[key], newFormData[key]);
                 }
             });
 
