@@ -42,8 +42,8 @@ OTHER_KEYWORDS = {
 
 NODE_SCRIPT = """
 const { getSchemaErrors, getTextErrors, describeCatalogueError } = require(process.argv[1]);
-const { schema, datasets } = JSON.parse(require('fs').readFileSync(0, 'utf8'));
-const results = datasets.map(dataset => [...getSchemaErrors(dataset, schema), ...getTextErrors(dataset)]
+const { schema, datasets, checkFormats } = JSON.parse(require('fs').readFileSync(0, 'utf8'));
+const results = datasets.map(dataset => [...getSchemaErrors(dataset, schema, checkFormats), ...getTextErrors(dataset)]
     .map(error => ({ path: error.path, text: describeCatalogueError(error) })));
 console.log(JSON.stringify(results));
 """
@@ -78,14 +78,16 @@ CATALOGUE_VALIDATOR = validators.extend(
 )(SCHEMA)
 
 
-def run_editor_check(datasets):
+def run_editor_check(datasets, check_formats=False):
     """The errors that the editor finds in each dataset."""
     node = shutil.which("node")
     if not node:
         pytest.skip("Node.js is not installed")
     result = subprocess.run(
         [node, "-e", NODE_SCRIPT, str(VALIDATOR_PATH)],
-        input=json.dumps({"schema": SCHEMA, "datasets": datasets}),
+        input=json.dumps(
+            {"schema": SCHEMA, "datasets": datasets, "checkFormats": check_formats}
+        ),
         capture_output=True,
         encoding="utf-8",
         check=True,
@@ -175,6 +177,7 @@ def test_editor_agrees_with_catalogue():
 @pytest.mark.parametrize("name", EXAMPLES)
 def test_editor_accepts_examples(name):
     assert run_editor_check([EXAMPLES[name]]) == [[]]
+    assert run_editor_check([EXAMPLES[name]], check_formats=True) == [[]]
 
 
 def test_editor_describes_errors():
@@ -185,6 +188,24 @@ def test_editor_describes_errors():
     assert 'resources 1 › spatial: "countries" is required' in texts
     assert "title: has text with the wrong encoding: …CafÃ©…" in texts
     assert len(texts) == 2
+
+
+def test_editor_checks_formats():
+    dataset = copy.deepcopy(next(iter(EXAMPLES.values())))
+    dataset["project"] = {"name": "A project", "url": "www.example.org"}
+    dataset["publisher"]["email"] = "not an address"
+    dataset["temporal_resolution"] = "Annual"
+    dataset["resources"][0]["temporal"] = {"start": "last year", "end": "2024-05"}
+    paths = [
+        ["project", "url"],
+        ["publisher", "email"],
+        ["resources", 0, "temporal", "start"],
+        ["temporal_resolution"],
+    ]
+    errors = run_editor_check([dataset], check_formats=True)[0]
+    assert sort_paths(error["path"] for error in errors) == sort_paths(paths)
+    # As in the catalogue
+    assert run_editor_check([dataset]) == [[]]
 
 
 def test_editor_file_versions():

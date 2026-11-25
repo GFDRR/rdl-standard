@@ -9,48 +9,48 @@
 }
 .nav-tabs .nav-link.hazard-tab {
     background-color: #e6f3ff;
-    border-color: #007fc3;
-    color: #007fc3;
+    border-color: #0071b0;
+    color: #0071b0;
 }
 .nav-tabs .nav-link.hazard-tab.active {
-    background-color: #007fc3;
-    border-color: #007fc3;
+    background-color: #0071b0;
+    border-color: #0071b0;
     color: white;
 }
 .nav-tabs .nav-link.exposure-tab {
     background-color: #e6fffe;
-    border-color: #00cbab;
-    color: #00cbab;
+    border-color: #00806c;
+    color: #00806c;
 }
 .nav-tabs .nav-link.exposure-tab.active {
-    background-color: #00cbab;
-    border-color: #00cbab;
+    background-color: #00806c;
+    border-color: #00806c;
     color: white;
 }
 .nav-tabs .nav-link.vulnerability-tab {
     background-color: #fff9e6;
     border-color: #ffc757;
-    color: #b8941f;
+    color: #7a5c00;
 }
 .nav-tabs .nav-link.vulnerability-tab.active {
     background-color: #ffc757;
     border-color: #ffc757;
-    color: white;
+    color: #3d2e00;
 }
 .nav-tabs .nav-link.loss-tab {
     background-color: #ffe6ec;
-    border-color: #f3436a;
-    color: #f3436a;
+    border-color: #d41f52;
+    color: #d41f52;
 }
 .nav-tabs .nav-link.loss-tab.active {
-    background-color: #f3436a;
-    border-color: #f3436a;
+    background-color: #d41f52;
+    border-color: #d41f52;
     color: white;
 }
 .nav-tabs .nav-link.general-tab {
     background-color: #f8f9fa;
     border-color: #6c757d;
-    color: #6c757d;
+    color: #565e64;
 }
 .nav-tabs .nav-link.general-tab.active {
     background-color: #6c757d;
@@ -60,22 +60,6 @@
 .form-field { 
     margin-bottom: 1rem; 
     position: relative;
-}
-.validation-indicator {
-    position: absolute;
-    right: 10px;
-    top: 35px;
-    z-index: 10;
-    font-size: 1.2rem;
-}
-.validation-indicator.valid {
-    color: #28a745;
-}
-.validation-indicator.invalid {
-    color: #dc3545;
-}
-.field-with-validation {
-    padding-right: 35px;
 }
 .autocomplete-suggestions {
     position: absolute;
@@ -114,6 +98,14 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+.combobox-wrapper .dropdown-menu {
+    max-height: 200px;
+    max-width: 100%;
+    overflow-y: auto;
+}
+.combobox-wrapper .dropdown-item {
+    white-space: normal;
+}
 .array-field { 
     border: 1px solid #dee2e6; 
     padding: 1rem; 
@@ -135,6 +127,16 @@
     margin-bottom: 1rem; 
     background-color: #fbfcfd; 
 }
+.object-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+summary.object-title {
+    cursor: pointer;
+}
+.array-field.is-disabled {
+    opacity: 0.6;
+}
 .required { 
     border-left: 3px solid #dc3545; 
     padding-left: 0.5rem;
@@ -142,20 +144,6 @@
 .schema-status {
     font-size: 0.875rem;
     margin-top: 0.5rem;
-}
-.file-drop-zone {
-    border: 2px dashed #ccc;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-}
-.file-drop-zone:hover { border-color: #007bff; }
-.file-drop-zone.dragover { border-color: #28a745; background-color: #f8f9fa; }
-.validation-progress {
-    margin-bottom: 1rem;
 }
 .object-summary-card {
     background-color: #f8f9fa;
@@ -172,9 +160,6 @@
 .object-summary-details {
     font-size: 0.875rem;
     color: #6c757d;
-}
-.modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
 }
 .object-modal {
     max-width: 800px;
@@ -194,16 +179,6 @@
     padding: 1rem;
     margin-bottom: 1rem;
 }
-.bbox-field input {
-    font-size: 0.9rem;
-}
-.bbox-preview {
-    background-color: #f8f9fa !important;
-    font-family: 'Courier New', monospace !important;
-    color: #495057;
-    border: 1px solid #ced4da;
-}
-
 /* Inline array editing styles */
 .array-field .card {
     border-left: 4px solid #0d6efd;
@@ -220,15 +195,6 @@
 
 .array-field .card:hover {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-/* Special styling for nested classification arrays like disaster_identifiers */
-.array-field[data-array-name*="disaster_identifiers"] .card {
-    border-left-color: #6f42c1; /* Purple to distinguish from regular arrays */
-}
-
-.array-field[data-array-name*="disaster_identifiers"] .card .card-body {
-    background-color: #f8f5ff; /* Light purple background */
 }
 
 /* Footer Styles */
@@ -338,6 +304,75 @@
     .footer-content {
         grid-template-columns: 1fr;
     }
+}
+
+/* Validation */
+.side-panel {
+    position: sticky;
+    top: 1rem;
+}
+@media (max-width: 991.98px) {
+    .side-panel {
+        position: static;
+    }
+}
+.problem-list {
+    max-height: 30vh;
+    overflow-y: auto;
+    margin: 0.5rem 0 0;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+}
+.problem-list:empty {
+    display: none;
+}
+.problem-link {
+    border: 0;
+    padding: 0.15rem 0;
+    background: none;
+    color: #b02a37;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+.problem-link:hover {
+    text-decoration: underline;
+}
+.problem-text {
+    width: 100%;
+    margin-top: 0.25rem;
+    color: #b02a37;
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
+}
+[aria-invalid="true"],
+.object-summary-card.has-problem,
+.array-item.has-problem {
+    border-color: #dc3545;
+}
+.nav-tabs .nav-link.has-problem::after {
+    content: " !";
+    color: #dc3545;
+    font-weight: 700;
+}
+.nav-tabs .nav-link.active.has-problem::after {
+    color: inherit;
+}
+#outputPreview {
+    max-height: 40vh;
+    overflow: auto;
+    font-size: 0.75rem;
+}
+
+/* Sections */
+.section-badge.general { background-color: #6c757d; }
+.section-badge.hazard { background-color: #0071b0; }
+.section-badge.exposure { background-color: #00806c; }
+.section-badge.vulnerability { background-color: #ffc757; color: #3d2e00; }
+.section-badge.loss { background-color: #d41f52; }
+
+/* Header */
+.header-logo {
+    height: 80px;
 }
 
 /* Header navigation links styling */

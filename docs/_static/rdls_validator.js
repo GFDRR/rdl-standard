@@ -4,9 +4,10 @@
 /**
  * Schema validation, with the rules that the catalogue applies to each pull request
  * (python/check_datasets.py and python/validator.py in GFDRR/rdl-jkan). It covers the
- * JSON Schema keywords that the RDLS schema uses. As in the catalogue, `format` is not checked.
+ * JSON Schema keywords that the RDLS schema uses. As in the catalogue, `format` is not checked,
+ * unless checkFormats is true.
  */
-function getSchemaErrors(dataset, schema) {
+function getSchemaErrors(dataset, schema, checkFormats = false) {
     const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
     const toKey = value => {
         if (Array.isArray(value)) return `[${value.map(toKey).join()}]`;
@@ -21,6 +22,15 @@ function getSchemaErrors(dataset, schema) {
         integer: Number.isInteger,
         boolean: value => typeof value === 'boolean',
         null: value => value === null
+    };
+    const formats = {
+        email: { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'is not a valid email address' },
+        iri: { pattern: /^[A-Za-z][A-Za-z0-9+.-]*:\S+$/, message: 'is not a valid URL: it should start with https://' },
+        date: { pattern: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/, message: 'is not a valid date, such as 2024-01-15' },
+        duration: {
+            pattern: /^P(?=.)(\d+W|(\d+Y)?(\d+M)?(\d+D)?(T(?=.)(\d+H)?(\d+M)?(\d+(\.\d+)?S)?)?)$/,
+            message: 'is not a valid duration, such as P1Y, P3M or PT2H'
+        }
     };
     const shorten = (text, length = 60) => text.length > length ? `${text.slice(0, length)}…` : text;
     const quote = value => shorten(JSON.stringify(value));
@@ -50,6 +60,8 @@ function getSchemaErrors(dataset, schema) {
             if (length < rule.minLength) add(`must have at least ${rule.minLength} character(s)`);
             if (length > rule.maxLength) add(`must have at most ${rule.maxLength} character(s)`);
             if (rule.pattern && !new RegExp(rule.pattern, 'u').test(value)) add(`${quote(value)} does not have the expected format (${rule.pattern})`);
+            const format = checkFormats && formats[rule.format];
+            if (format && !format.pattern.test(value)) add(`${quote(value)} ${format.message}`);
         }
         if (typeof value === 'number') {
             if (value < rule.minimum) add(`${value} is less than the minimum of ${rule.minimum}`);
