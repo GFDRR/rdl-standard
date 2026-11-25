@@ -43,6 +43,8 @@ Save Progress' button allows to maintain the dataset content in the browser duri
 
 The ‘Validate Metadata’ button will show if there are mandatory fields that require to be fixed. Once validation is successful for all fields, the ‘Publish to RDL catalog’ button is enabled: it allows users to post their dataset in the [RDL catalog](https://catalog.riskdatalibrary.org/). See the [Publish your metadata](#publish-your-metadata) section.
 
+To edit a dataset that is already in the [RDL catalog](https://catalog.riskdatalibrary.org/), use the ‘Edit Dataset from Catalog’ button and paste the URL of the dataset page. The id of the dataset is kept, and publishing proposes an update of the dataset instead of a new one.
+
 ### Develop a data pipeline
 
 A data pipeline is a series of processing steps that transforms your existing metadata to RDLS format in bulk. It might be as simple as a Python script for a one-off transformation of simple metadata, or a scheduled pipeline created using [dlt](https://github.com/dlt-hub/dlt) and [dbt](https://github.com/dbt-labs/dbt-core) for periodic transformation of complex metadata.

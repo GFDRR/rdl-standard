@@ -70,7 +70,8 @@ linkcheck_ignore = [
     r'^https://docs\.air-worldwide\.com/Database/CEDE/10\.0/webframe\.html#topic1\.html$',
     r'^https://docs\.air-worldwide\.com/Database/CEDE/10\.0/webframe\.html#topic32\.html$',
     r'^https://docs\.air-worldwide\.com/Database/CEDE/10\.0/webframe\.html#topic33\.html$',
-    r'^https://gpss\.worldbank\.org/index\.php/en/node/571$'
+    r'^https://gpss\.worldbank\.org/index\.php/en/node/571$',
+    r'^https://www\.gfdrr\.org(/.*)?$'
 ]
 
 # GitHub project pages return 400 unless the request accepts HTML
