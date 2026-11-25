@@ -1605,8 +1605,16 @@
                 textarea.addEventListener('input', autoResize);
                 textarea.addEventListener('focus', autoResize);
 
-                // Initial resize
-                setTimeout(autoResize, 0);
+                // Fit the height to the text at first, and again when the width changes:
+                // the page can be very narrow while it loads, e.g. in a background tab.
+                let fittedWidth = 0;
+                new ResizeObserver(() => {
+                    const width = textarea.offsetWidth;
+                    if (width > 0 && width !== fittedWidth) {
+                        fittedWidth = width;
+                        requestAnimationFrame(autoResize);
+                    }
+                }).observe(textarea);
 
                 this.context.setupEventListeners(textarea, name, property, options);
                 wrapper.appendChild(textarea);
@@ -8078,7 +8086,8 @@
         }
 
         function cleanEmptyValues(obj) {
-            // Recursively remove empty strings, empty arrays, and null/undefined values
+            // Recursively trim strings, and remove empty strings, empty arrays, and null/undefined values
+            if (typeof obj === 'string') obj = obj.trim();
             if (Array.isArray(obj)) {
                 // Filter out empty values from arrays
                 const filtered = obj
@@ -8156,7 +8165,7 @@
             const packagedData = packageDataset(getFilteredFormData());
             if (editingDataset) packagedData.datasets[0].id = editingDataset.id;
             // Clean empty values before export
-            const cleanedData = replaceRejectedCharacters(cleanEmptyValues(packagedData));
+            const cleanedData = cleanEmptyValues(replaceRejectedCharacters(packagedData));
             return editingDataset?.original ? alignKeyOrder(cleanedData, editingDataset.original) : cleanedData;
         }
 
