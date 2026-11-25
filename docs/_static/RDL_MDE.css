@@ -35,7 +35,7 @@
 .nav-tabs .nav-link.vulnerability-tab.active {
     background-color: #ffc757;
     border-color: #ffc757;
-    color: #3d2e00;
+    color: white;
 }
 .nav-tabs .nav-link.loss-tab {
     background-color: #ffe6ec;
@@ -367,7 +367,7 @@ summary.object-title {
 .section-badge.general { background-color: #6c757d; }
 .section-badge.hazard { background-color: #0071b0; }
 .section-badge.exposure { background-color: #00806c; }
-.section-badge.vulnerability { background-color: #ffc757; color: #3d2e00; }
+.section-badge.vulnerability { background-color: #ffc757; }
 .section-badge.loss { background-color: #d41f52; }
 
 /* Header */
