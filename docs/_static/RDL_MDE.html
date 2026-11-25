@@ -5,36 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDLS Metadata Editor</title>
     <link rel="icon" href="https://riskdatalibrary.org/assets/images/favicon/favicon.png" type="image/png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="RDL_MDE.css?v=40b76a11" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="RDL_MDE.css?v=77d9269d" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid">
         <header class="py-4 border-bottom">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
                 <div class="d-flex align-items-center gap-3">
-                    <img src="https://gfdrr.github.io/CCDR-tools/_static/logo_flat.png" alt="GFDRR Logo" style="height: 100px;">
+                    <img src="https://gfdrr.github.io/CCDR-tools/_static/logo_flat.png" alt="GFDRR" class="header-logo">
                     <div>
                         <h1 class="h3 mb-1">RDLS Metadata Editor</h1>
                         <p class="text-muted mb-0">
-                            Metadata creation with guided dependencies and validation
-                            <span class="badge bg-primary ms-2">RDLS v1.0 and later</span>
+                            Describe risk datasets with the Risk Data Library Standard
+                            <span class="badge bg-primary ms-2">RDLS v1.0</span>
                         </p>
                     </div>
                 </div>
-                <nav>
+                <nav aria-label="RDL websites">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="http://riskdatalibrary.org/" target="_blank"><b>RDL Project</b></a>
+                            <a class="nav-link" href="https://riskdatalibrary.org/" target="_blank" rel="noopener noreferrer"><b>RDL Project</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://catalog.riskdatalibrary.org/" target="_blank"><b>Risk Data Catalog</b></a>
-                        </li>                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://docs.riskdatalibrary.org/" target="_blank"><b>Documentation</b></a>
+                            <a class="nav-link" href="https://catalog.riskdatalibrary.org/" target="_blank" rel="noopener noreferrer"><b>Risk Data Catalog</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://gfdrr.github.io/CCDR-tools/home.html" target="_blank"><b>Tools</b></a>
+                            <a class="nav-link" href="https://docs.riskdatalibrary.org/" target="_blank" rel="noopener noreferrer"><b>Documentation</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://gfdrr.github.io/CCDR-tools/home.html" target="_blank" rel="noopener noreferrer"><b>Tools</b></a>
                         </li>
                     </ul>
                 </nav>
@@ -46,100 +46,77 @@
         <div id="editorNotice" class="mt-3" role="status"></div>
 
         <div class="row mt-4">
-            <!-- Configuration Panel -->
-            <div class="col-md-3">
-                <!-- Schema Version Selection -->
+            <!-- Sections and actions -->
+            <div class="col-lg-3 col-xl-2 mb-3">
                 <div class="card mb-3">
                     <div class="card-header">
-                        <h5>⚙️ Schema Configuration</h5>
+                        <h2 class="h6 mb-0">Dataset sections</h2>
                     </div>
                     <div class="card-body">
-                        <div class="mb-3">
-                            <label class="form-label">Schema Version:</label>
-                            <div class="alert alert-info py-2 mb-2">
-                                <strong>RDLS v1.0</strong>
-                            </div>
-                            <div id="schemaStatus" class="schema-status text-muted"></div>
+                        <div class="section-checkbox">
+                            <input type="checkbox" id="generalCheck" class="form-check-input" checked disabled>
+                            <label for="generalCheck" class="form-check-label ms-2">
+                                <span class="badge section-badge general">General</span>
+                            </label>
                         </div>
-
-                        <!-- Section Selectors -->
-                        <div class="mb-3">
-                            <label class="form-label">Dataset Sections:</label>
-                            <div class="section-checkbox">
-                                <input type="checkbox" id="generalCheck" class="form-check-input" checked disabled>
-                                <label for="generalCheck" class="form-check-label ms-2">
-                                    <span class="badge bg-secondary">General Metadata</span> (Required)
-                                </label>
-                            </div>
-                            <div class="section-checkbox">
-                                <input type="checkbox" id="hazardCheck" class="form-check-input">
-                                <label for="hazardCheck" class="form-check-label ms-2">
-                                    <span class="badge" style="background-color: #007fc3;">Hazard Metadata</span>
-                                </label>
-                            </div>
-                            <div class="section-checkbox">
-                                <input type="checkbox" id="exposureCheck" class="form-check-input">
-                                <label for="exposureCheck" class="form-check-label ms-2">
-                                    <span class="badge" style="background-color: #00cbab;">Exposure Metadata</span>
-                                </label>
-                            </div>
-                            <div class="section-checkbox">
-                                <input type="checkbox" id="vulnerabilityCheck" class="form-check-input">
-                                <label for="vulnerabilityCheck" class="form-check-label ms-2">
-                                    <span class="badge" style="background-color: #ffc757">Vulnerability Metadata</span>
-                                </label>
-                            </div>
-                            <div class="section-checkbox">
-                                <input type="checkbox" id="lossCheck" class="form-check-input">
-                                <label for="lossCheck" class="form-check-label ms-2">
-                                    <span class="badge" style="background-color: #f3436a;">Loss Metadata</span>
-                                </label>
-                            </div>
+                        <div class="section-checkbox">
+                            <input type="checkbox" id="hazardCheck" class="form-check-input">
+                            <label for="hazardCheck" class="form-check-label ms-2">
+                                <span class="badge section-badge hazard">Hazard</span>
+                            </label>
                         </div>
-
-                        <!-- Custom Schema Upload -->
-                        <!-- Comment out for public release 
-                        <div class="mb-3">
-                            <label class="form-label">Custom Schema:</label>
-                            <div class="file-drop-zone" id="schemaDropZone">
-                                <small>📁 Drop RDLS schema file here<br>or click to browse</small>
-                                <input type="file" id="schemaFile" accept=".json" style="display: none;">
-                            </div>
+                        <div class="section-checkbox">
+                            <input type="checkbox" id="exposureCheck" class="form-check-input">
+                            <label for="exposureCheck" class="form-check-label ms-2">
+                                <span class="badge section-badge exposure">Exposure</span>
+                            </label>
                         </div>
-                        -->
+                        <div class="section-checkbox">
+                            <input type="checkbox" id="vulnerabilityCheck" class="form-check-input">
+                            <label for="vulnerabilityCheck" class="form-check-label ms-2">
+                                <span class="badge section-badge vulnerability">Vulnerability</span>
+                            </label>
+                        </div>
+                        <div class="section-checkbox">
+                            <input type="checkbox" id="lossCheck" class="form-check-input">
+                            <label for="lossCheck" class="form-check-label ms-2">
+                                <span class="badge section-badge loss">Loss</span>
+                            </label>
+                        </div>
+                        <p class="form-text mb-0">Tick what the dataset holds. At least one is needed.</p>
+                        <div id="schemaStatus" class="schema-status text-muted" role="status"></div>
                     </div>
                 </div>
 
-                <!-- Actions Panel -->
                 <div class="card">
                     <div class="card-header">
-                        <h6>💾 Data Management</h6>
+                        <h2 class="h6 mb-0">Dataset</h2>
                     </div>
-                        <div class="card-body">
-                            <button id="editDataset" class="btn btn-outline-secondary btn-sm w-100 mb-2">✏️ Edit Dataset from Catalog</button>
-                            <button id="loadData" class="btn btn-outline-secondary btn-sm w-100 mb-2">Load Existing Metadata</button>
-                            <button id="saveProgress" class="btn btn-outline-info btn-sm w-100 mb-2">Save Progress</button>
-                            <button id="resetForm" class="btn btn-outline-warning btn-sm w-100 mb-2">🔄 Reset All Data</button>
-                            <button id="validateForm" class="btn btn-outline-primary btn-sm w-100 mb-2">🔍 Validate Metadata</button>
-                            <button id="exportJson" class="btn btn-success btn-sm w-100 mb-2">Export JSON</button>
-                            <button id="exportXml" class="btn btn-success btn-sm w-100 mb-2">Export XML</button>
-                            <button id="publishGitHub" class="btn btn-warning btn-sm w-100 mb-2" disabled>📤 Publish to RDL catalog</button>
-                        </div>
+                    <div class="card-body">
+                        <button type="button" id="editDataset" class="btn btn-outline-secondary btn-sm w-100 mb-2">Edit Dataset from Catalog</button>
+                        <button type="button" id="loadData" class="btn btn-outline-secondary btn-sm w-100 mb-2">Load JSON File</button>
+                        <button type="button" id="saveProgress" class="btn btn-outline-secondary btn-sm w-100 mb-2">Save Progress</button>
+                        <button type="button" id="resetForm" class="btn btn-outline-danger btn-sm w-100 mb-2">Reset All Data</button>
+                        <hr class="my-2">
+                        <button type="button" id="validateForm" class="btn btn-primary btn-sm w-100 mb-2">Validate Metadata</button>
+                        <button type="button" id="exportJson" class="btn btn-outline-success btn-sm w-100 mb-2">Export JSON</button>
+                        <button type="button" id="publishGitHub" class="btn btn-outline-success btn-sm w-100 mb-2" disabled>Publish to RDL catalog</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Form Generation Area -->
-            <div class="col-md-6">
-                <div class="card h-100">
+            <div class="col-lg-6 col-xl-7 mb-3">
+                <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5>📋 RDLS Metadata Form</h5>
-                        <span id="formStatus" class="badge bg-secondary">No schema loaded</span>
+                        <h2 class="h6 mb-0">Metadata</h2>
+                        <span id="formStatus" class="badge bg-secondary" role="status">Loading…</span>
                     </div>
                     <div class="card-body">
                         <!-- Tab Navigation -->
                         <ul class="nav nav-tabs" id="metadataTabs" role="tablist" style="display: none;">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active general-tab" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab">
+                                <button class="nav-link active general-tab" id="general-tab" data-bs-toggle="tab" data-bs-target="#general" type="button" role="tab" aria-controls="general" aria-selected="true">
                                     General
                                 </button>
                             </li>
@@ -147,13 +124,9 @@
 
                         <!-- Tab Content -->
                         <div class="tab-content" id="metadataTabContent">
-                            <div class="tab-pane fade show active" id="general" role="tabpanel">
+                            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
                                 <div id="metadataForm">
-                                    <div class="text-center text-muted py-5">
-                                        <div style="font-size: 4rem;">🌍</div>
-                                        <p>Schema will load automatically and configure sections as needed</p>
-                                        <small class="text-muted">Unified field creation with improved dependency handling for RDLS v1.0</small>
-                                    </div>
+                                    <p class="text-center text-muted py-5">Loading the RDL Standard…</p>
                                 </div>
                             </div>
                         </div>
@@ -161,33 +134,25 @@
                 </div>
             </div>
 
-            <!-- Output Preview -->
-            <div class="col-md-3">
-                <div class="card h-100">
-                    <div class="card-header">
-                        <h6>👀 Live Preview & Validation</h6>
-                    </div>
-                    <div class="card-body">
-                        <!-- Validation Progress -->
-                        <div class="validation-progress">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <small class="text-muted"><strong>Validation Status</strong></small>
-                                <span id="overallValidation" class="badge bg-secondary">Not validated</span>
-                            </div>
-                            <div class="progress mb-2" style="height: 8px;">
-                                <div id="validationProgress" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
-                            </div>
-                            <small class="text-muted">
-                                <span id="validFieldCount">0</span>/<span id="totalFieldCount">0</span> fields valid
-                            </small>
+            <!-- Validation and preview -->
+            <div class="col-lg-3 mb-3">
+                <div class="side-panel">
+                    <div class="card mb-3" id="validationSummary" tabindex="-1">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h2 class="h6 mb-0">Validation</h2>
+                            <span id="overallValidation" class="badge bg-secondary">Not validated</span>
                         </div>
-                        
-                        <pre id="outputPreview" class="bg-light p-3 rounded" style="font-size: 0.8rem; max-height: 600px; overflow-y: auto;">
-{
-  "message": "Refactored RDLS metadata will appear here..."
-}
-                        </pre>
-                        
+                        <div class="card-body">
+                            <p id="validationMessage" class="small mb-0" role="status"></p>
+                            <ol id="problemList" class="problem-list"></ol>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h6 mb-0">Preview</h2>
+                        </div>
+                        <div class="card-body">
+                            <pre id="outputPreview" class="bg-light p-3 rounded mb-0" tabindex="0" aria-label="Preview of the metadata"></pre>
                         </div>
                     </div>
                 </div>
@@ -196,15 +161,15 @@
     </div>
 
     <!-- Object Editor Modal -->
-    <div class="modal fade" id="objectEditorModal" tabindex="-1" aria-labelledby="objectEditorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg object-modal">
+    <div class="modal fade" id="objectEditorModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="objectEditorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable object-modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="objectEditorModalLabel">Edit Object</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="objectEditorForm" class="needs-validation" novalidate>
+                    <form id="objectEditorForm" novalidate>
                         <div id="objectEditorFields">
                             <!-- Dynamic form fields will be inserted here -->
                         </div>
@@ -244,26 +209,24 @@
                                     <strong>GitHub Personal Access Token</strong>
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input type="password" class="form-control" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" required>
+                                <input type="password" class="form-control" id="githubToken" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" required>
                                 <div class="form-text">
-                                    <a href="https://github.com/settings/tokens/new?description=RDLS%20Metadata%20Editor&scopes=public_repo" target="_blank" class="text-decoration-none">
-                                        🔑 Create a new token
+                                    <a href="https://github.com/settings/tokens/new?description=RDLS%20Metadata%20Editor&scopes=public_repo" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                                        Create a new token
                                     </a> with <code>public_repo</code> scope only. Your token is stored only in your browser session.
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-success w-100" onclick="authenticateWithToken()">
-                                <i class="bi bi-check-circle"></i> Verify Token
-                            </button>
+                            <button type="button" class="btn btn-success w-100" id="verifyToken">Verify Token</button>
                         </div>
 
                         <div id="authenticated" style="display: none;">
                             <div class="alert alert-success mb-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <strong>✅ Authenticated as <span id="githubUsername"></span></strong>
+                                        <strong>Authenticated as <span id="githubUsername"></span></strong>
                                         <br><small class="text-muted">Token valid for this session</small>
                                     </div>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="logoutGithub()">Sign Out</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="signOut">Sign Out</button>
                                 </div>
                             </div>
                         </div>
@@ -328,35 +291,32 @@
     <!-- Filename Export Modal -->
     <div class="modal fade" id="filenameModal" tabindex="-1" aria-labelledby="filenameModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <form class="modal-content" id="exportForm" novalidate>
                 <div class="modal-header">
-                    <h5 class="modal-title" id="filenameModalLabel">Export File</h5>
+                    <h5 class="modal-title" id="filenameModalLabel">Export JSON</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="exportFilename" class="form-label">Filename</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="exportFilename" placeholder="Enter filename">
-                            <span class="input-group-text" id="exportExtension">.json</span>
-                        </div>
-                        <small class="form-text text-muted">Enter the filename without extension</small>
+                    <label for="exportFilename" class="form-label">Filename</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="exportFilename" autocomplete="off" spellcheck="false">
+                        <span class="input-group-text">.json</span>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success" id="confirmExport">Export</button>
+                    <button type="submit" class="btn btn-success">Export</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
     <!-- Include Dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
     <!-- The versions keep browsers from mixing old and new files; tests/test_mde_validator.py checks them -->
-    <script src="rdls_validator.js?v=ca467824"></script>
-    <script src="RDL_MDE.js?v=9b0058b5"></script>
+    <script src="rdls_validator.js?v=47ae30f9"></script>
+    <script src="RDL_MDE.js?v=1674a38f"></script>
 
     <footer class="modern-footer">
         <div class="footer-content">
@@ -365,7 +325,7 @@
                 <div class="footer-logo">
                     <img src="https://catalog.riskdatalibrary.org/img/logos/gfdrr-logo-white.svg" alt="GFDRR">
                 </div>
-                <p>© 2023 Global Facility for Disaster Reduction and Recovery</p>
+                <p>© Global Facility for Disaster Reduction and Recovery</p>
             </div>
             <div class="footer-sponsors">
                 <span class="footer-sponsor-label">Sponsored by</span>
@@ -377,23 +337,23 @@
             <div class="footer-section">
                 <h5>RDL</h5>
                 <ul>
-                    <li><a href="http://riskdatalibrary.org/" target="_blank">Website</a></li>
-                    <li><a href="https://docs.riskdatalibrary.org/" target="_blank">Docs</a></li>
-                    <li><a href="https://gfdrr.github.io/CCDR-tools/home.html" target="_blank">Tools</a></li>
+                    <li><a href="https://riskdatalibrary.org/" target="_blank" rel="noopener noreferrer">Website</a></li>
+                    <li><a href="https://docs.riskdatalibrary.org/" target="_blank" rel="noopener noreferrer">Docs</a></li>
+                    <li><a href="https://gfdrr.github.io/CCDR-tools/home.html" target="_blank" rel="noopener noreferrer">Tools</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h5>Project</h5>
                 <ul>
-                    <li><a href="http://riskdatalibrary.org/about" target="_blank">About</a></li>
-                    <li><a href="http://riskdatalibrary.org/team" target="_blank">Team</a></li>
+                    <li><a href="https://riskdatalibrary.org/about" target="_blank" rel="noopener noreferrer">About</a></li>
+                    <li><a href="https://riskdatalibrary.org/team" target="_blank" rel="noopener noreferrer">Team</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h5>Legal</h5>
                 <ul>
-                    <li><a href="http://riskdatalibrary.org/privacy" target="_blank">Privacy Policy</a></li>
-                    <li><a href="http://riskdatalibrary.org/legal" target="_blank">Disclaimer</a></li>
+                    <li><a href="https://riskdatalibrary.org/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+                    <li><a href="https://riskdatalibrary.org/legal" target="_blank" rel="noopener noreferrer">Disclaimer</a></li>
                     <li><a href="mailto:contact@riskdatalibrary.org?subject=RDL%20Metadata%20Editor%20Enquiry">Contact</a></li>
                 </ul>
             </div>
