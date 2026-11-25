@@ -43,7 +43,7 @@ Save Progress' button allows to maintain the dataset content in the browser duri
 
 The ‘Validate Metadata’ button will show if there are mandatory fields that require to be fixed. Once validation is successful for all fields, the ‘Publish to RDL catalog’ button is enabled: it allows users to post their dataset in the [RDL catalog](https://catalog.riskdatalibrary.org/). See the [Publish your metadata](#publish-your-metadata) section.
 
-To edit a dataset that is already in the [RDL catalog](https://catalog.riskdatalibrary.org/), add its id to the address of the editor, as in `RDL_MDE.html?dataset=<id>`. The id of the dataset is kept, and publishing proposes an update of the dataset instead of a new one.
+To edit a dataset that is already in the [RDL catalog](https://catalog.riskdatalibrary.org/), use the ‘Edit Dataset from Catalog’ button and paste the URL of the dataset page. The id of the dataset is kept, and publishing proposes an update of the dataset instead of a new one.
 
 ### Develop a data pipeline
 

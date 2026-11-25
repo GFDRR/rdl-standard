@@ -489,6 +489,7 @@
                         <h6>💾 Data Management</h6>
                     </div>
                         <div class="card-body">
+                            <button id="editDataset" class="btn btn-outline-secondary btn-sm w-100 mb-2">✏️ Edit Dataset from Catalog</button>
                             <button id="loadData" class="btn btn-outline-secondary btn-sm w-100 mb-2">Load Existing Metadata</button>
                             <button id="saveProgress" class="btn btn-outline-info btn-sm w-100 mb-2">Save Progress</button>
                             <button id="resetForm" class="btn btn-outline-warning btn-sm w-100 mb-2">🔄 Reset All Data</button>
@@ -669,6 +670,31 @@
                     <button type="button" class="btn btn-primary" id="publishToGithub">Publish to Catalogue</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Edit Dataset Modal -->
+    <div class="modal fade" id="editDatasetModal" tabindex="-1" aria-labelledby="editDatasetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form class="modal-content" id="editDatasetForm" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editDatasetModalLabel">Edit a dataset from the catalog</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="editDatasetUrl" class="form-label">Dataset URL</label>
+                    <input type="text" class="form-control" id="editDatasetUrl" autocomplete="off" spellcheck="false"
+                           placeholder="https://catalog.riskdatalibrary.org/datasets/..." aria-describedby="editDatasetHelp editDatasetFeedback">
+                    <div id="editDatasetHelp" class="form-text">
+                        Paste the address of the dataset page in the <a href="https://catalog.riskdatalibrary.org/" target="_blank" rel="noopener noreferrer">RDL catalog</a>. What you are working on now is kept in this browser.
+                    </div>
+                    <div id="editDatasetFeedback" class="mt-2" role="status"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="confirmEditDataset">Edit Dataset</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -5099,6 +5125,10 @@
             document.getElementById('exportJson').addEventListener('click', exportJson);
             document.getElementById('exportXml').addEventListener('click', exportXml);
             document.getElementById('saveProgress').addEventListener('click', saveProgress);
+            document.getElementById('editDataset').addEventListener('click', showEditDatasetModal);
+            document.getElementById('editDatasetForm').addEventListener('submit', submitEditDataset);
+            document.getElementById('editDatasetModal').addEventListener('shown.bs.modal', () => document.getElementById('editDatasetUrl').focus());
+            document.getElementById('editDatasetModal').addEventListener('hidden.bs.modal', () => { editDatasetRequest++; });
             document.getElementById('loadData').addEventListener('click', loadData);
             document.getElementById('validateForm').addEventListener('click', validateForm);
             document.getElementById('resetForm').addEventListener('click', resetForm);
@@ -9084,6 +9114,75 @@ ${details}
                 clearEditorNotice();
             }
             return true;
+        }
+
+        // ---- Choosing a dataset by its address in the catalogue ----
+
+        let editDatasetRequest = 0;
+
+        function showEditDatasetModal() {
+            document.getElementById('editDatasetUrl').value = '';
+            showEditDatasetFeedback('', '');
+            document.getElementById('confirmEditDataset').disabled = false;
+            new bootstrap.Modal(document.getElementById('editDatasetModal')).show();
+        }
+
+        function showEditDatasetFeedback(className, message) {
+            const feedback = document.getElementById('editDatasetFeedback');
+            feedback.className = `mt-2 ${className}`;
+            feedback.textContent = message;
+        }
+
+        /** The dataset id in the address of a dataset page, or in an id given as it is */
+        function parseDatasetReference(text) {
+            const reference = text.trim();
+            if (!reference) {
+                throw new UserFacingError('Paste the URL of the dataset you want to edit.');
+            }
+            if (DATASET_ID_PATTERN.test(reference)) return reference;
+
+            let url = null;
+            try {
+                url = new URL(/^https?:\/\//i.test(reference) ? reference : `https://${reference}`);
+            } catch (e) {
+                // Reported below, as any other text that is not a dataset address
+            }
+            const isCatalog = url && url.hostname === new URL(CATALOG_URL).hostname;
+            const match = isCatalog ? url.pathname.match(/^\/datasets\/([^/]+)\/?$/) : null;
+            if (!match || !DATASET_ID_PATTERN.test(match[1])) {
+                throw new UserFacingError(`This is not the address of a dataset in the catalog. It should look like ${CATALOG_URL}/datasets/rdls_hzd-example/`);
+            }
+            return match[1];
+        }
+
+        async function submitEditDataset(event) {
+            event.preventDefault();
+            const request = ++editDatasetRequest;
+            const button = document.getElementById('confirmEditDataset');
+            button.disabled = true;
+            try {
+                const id = parseDatasetReference(document.getElementById('editDatasetUrl').value);
+                if (!currentSchema) {
+                    throw new UserFacingError('The RDLS schema has not loaded yet. Please try again in a moment.');
+                }
+                if (editingDataset && editingDataset.id === id) {
+                    throw new UserFacingError('You are already editing this dataset.');
+                }
+
+                // Leave the current work only for a dataset that can be opened
+                showEditDatasetFeedback('text-muted', 'Looking for the dataset…');
+                await fetchCatalogDataset(id);
+                if (request !== editDatasetRequest) return; // the window was closed meanwhile
+                if (!autoSave()) {
+                    throw new UserFacingError('Your current work could not be saved in this browser. Export it before you open another dataset.');
+                }
+                window.location.assign(`${window.location.pathname}?dataset=${id}`);
+            } catch (error) {
+                if (request !== editDatasetRequest) return;
+                console.error('Could not open the dataset:', error);
+                showEditDatasetFeedback('text-danger', error instanceof UserFacingError ? error.message : `The dataset could not be opened: ${error.message}`);
+                button.disabled = false;
+            }
         }
 
         function readEditDraft(id) {
