@@ -29,13 +29,13 @@
 }
 .nav-tabs .nav-link.vulnerability-tab {
     background-color: #fff9e6;
-    border-color: #ffc757;
-    color: #7a5c00;
+    border-color: #b87900;
+    color: #8a5a00;
 }
 .nav-tabs .nav-link.vulnerability-tab.active {
-    background-color: #ffc757;
-    border-color: #ffc757;
-    color: #3d2e00;
+    background-color: #b87900;
+    border-color: #b87900;
+    color: white;
 }
 .nav-tabs .nav-link.loss-tab {
     background-color: #ffe6ec;
@@ -367,7 +367,7 @@ summary.object-title {
 .section-badge.general { background-color: #6c757d; }
 .section-badge.hazard { background-color: #0071b0; }
 .section-badge.exposure { background-color: #00806c; }
-.section-badge.vulnerability { background-color: #ffc757; color: #3d2e00; }
+.section-badge.vulnerability { background-color: #b87900; }
 .section-badge.loss { background-color: #d41f52; }
 
 /* Header */
